@@ -73,7 +73,7 @@
             function saveChar() {
                 var blob = new Blob(["Character: \n Name:" + chosenName + "\n Strength: " + calcStrength + "\n Skill: " + calcSkill + "\n\n\n ---"], {type: "text/plain;charset=utf-8"});
                 var Fn = chosenName + "St" + calcStrength + "Sk" + calcSkill + ".txt";
-                if(confirm("Please save your character data for future use")) {
+                if(confirm("Save your character data for future use?")) {
                     saveAs(blob, Fn);
                 }
             }
