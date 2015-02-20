@@ -1,10 +1,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <body>
-<frameset cols="33%,34%,33%">
-  <frame id="chat1" src="">
-  <frame id="chat2" src="">
-  <frame id="chat3" src="">
-</frameset>
+<style>
+  body, html {
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+  }
+  iframe {
+    display:inline-block;
+    margin:0;
+  }
+</style>
+
+  <iframe id="chat1" src="" height="100%" width="33%"></iframe>
+  <iframe id="chat2" src="" height="100%" width="34%"></iframe>
+  <iframe id="chat3" src="" height="100%" width="33%"></iframe>
   <script>
     var chatOne = document.getElementById("chat1");
     var chatTwo = document.getElementById("chat2");
