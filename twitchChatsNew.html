@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<style>
+  body, html {
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+  }
+  iframe {
+    display:inline-block;
+    margin:0;
+    height:100%;
+    width:330px;
+  }
+  #chats {
+    height:100%;
+    width:100%
+    margin:0;
+    overflow-y:hidden;
+    overflow-x:auto;
+  }
+</style>
+  <div id="chats"></div>
+  <script>
+    var str = window.location.href;
+    var streamers = str.split("?")[1].split("&");
+    var chatsDiv = document.getElementById("chats");
+    for (var i = 0; i < streamers.length; i++) {
+      chatsDiv.innerHTML+="<iframe src='http:\/\/www.twitch.tv/" + streamers[i] + "\/chat'></iframe>"
+    }
+  </script>
+</body>
+</html>
