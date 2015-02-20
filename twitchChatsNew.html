@@ -27,7 +27,7 @@
     var streamers = str.split("?")[1].split("&");
     var chatsDiv = document.getElementById("chats");
     for (var i = 0; i < streamers.length; i++) {
-      chatsDiv.innerHTML+="<iframe src='http:\/\/www.twitch.tv/" + streamers[i] + "\/chat'></iframe>"
+      chatsDiv.innerHTML+="<iframe src='http:\/\/www.twitch.tv/" + streamers[i].toLowerCase() + "\/chat'></iframe>"
     }
   </script>
 </body>
