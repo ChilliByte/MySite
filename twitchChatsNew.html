@@ -24,11 +24,21 @@
   <div id="chats"></div>
   <script>
     var str = window.location.href;
+    //Fetch URL and store it in str as a string
     var streamers = str.split("?")[1].split("&");
+    //The split method converts a string to an array, splitting it when it matches the argument.
+    //str.split("?") Will return this array [The site url, and everything after the ?, eg "MKtheWorst&Eneija" etc]
+    //the succeding [1] will return the second object in the array, i.e. the string with the streamers names in
+    //.split("&") will convert that string into an array with streamers names in e.g. ["MKtheWorst","Eneija"]
     var chatsDiv = document.getElementById("chats");
+    //This Div is where the chat windows are shown
     for (var i = 0; i < streamers.length; i++) {
       chatsDiv.innerHTML+="<iframe src='http:\/\/www.twitch.tv/" + streamers[i].toLowerCase() + "\/chat'></iframe>"
     }
+    
+    //The twitch chat is actualy an iframe to twitch.tv/streamerName/chat. 
+    //I am simply looping through the array of names, and appending an Iframe to the div, making sure it's lowercase first
+    //giving it a src with the streamers name added in. E.g. <iframe src="http://twitch.tv/mktheworst/chat"></iframe>
   </script>
 </body>
 </html>
