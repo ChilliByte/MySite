@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>MultiTwitch Chat</head>
+<body>
+<style>
+html,body {
+  padding:0;
+  margin:0;
+  width:100%
+  height:100%
+}
+frameset {
+  height:100%;
+  width:100%;
+  margin:0;
+}
+</style>
+<frameset cols="33%,34%,33%">
+  <frame id="chat1" src="">
+  <frame id="chat2" src="">
+  <frame id="chat3" src="">
+</frameset>
+
+<script>
+var chatOne = document.getElementById("chat1");
+var chatTwo = document.getElementById("chat2");
+var chatThree = document.getElementById("chat3");
+var srcOne = prompt("Enter Streamer Name");
+var srcTwo = prompt("Enter Streamer Name");
+var srcThree = prompt("Enter Streamer Name");
+chatOne.src=srcOne;
+chatTwo.src=srcTwo;
+chatThree.src=srcThree;
+</script>
+
+<body>
+</html>
