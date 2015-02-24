@@ -1,4 +1,4 @@
-function notifyMe() {
+function notifyMe(day, time, lessonA, lessonB) {
   if (!Notification) {
     alert('Please us a modern version of Chrome, Firefox, Opera or Firefox.');
     return;
@@ -7,9 +7,9 @@ function notifyMe() {
   if (Notification.permission !== "granted")
     Notification.requestPermission();
 
-  var notification = new Notification('Notification title', {
+  var notification = new Notification(day + ', ' + time + ", Next Lesson:", {
     icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-    body: "Hey there! You've been notified!",
+    body: "Week A: " + lessonA + "\nWeek B: " + lessonB,
   });
 
 
