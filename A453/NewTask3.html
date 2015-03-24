@@ -36,7 +36,7 @@
         <button onclick="encounter()">Test</button>
         <script>
             var output = document.getElementById("display");
-            var nm1,nm2,str1,str2,sk1,sk2,strDiff,preStrMod,strMod,skDiff,preSkMod,skMod;
+            /*var nm1,nm2,str1,str2,sk1,sk2,strDiff,preStrMod,strMod,skDiff,preSkMod,skMod;
             
             var d1;
             var d2;
@@ -46,23 +46,19 @@
             var p2Sk;
             var p1Dead = false;
             var p2Dead = false;
+            */
             
+            function character(name,strength,skill) {
+                this.name = name;
+                this.strength = strength;
+                this.skill = skill;
+            }
+            var character1 = new character(nameOne.value,parseInt(strengthOne.value,10),parseInt(skillOne.value,10));
+            var character2 = new character(nameTwo.value,parseInt(strengthTwo.value,10),parseInt(skillTwo.value,10));
+        
             function encounter() {
-                nm1 = nameOne.value;
-                nm2 = nameTwo.value;
-                str1 = parseInt(strengthOne.value,10);
-                str2 = parseInt(strengthTwo.value,10);
-                sk1 = parseInt(skillOne.value,10);
-                sk2 = parseInt(skillTwo.value,10);
-            
-                strDiff = str2 - str1;
-                preStrMod = Math.abs(strDiff)/5;
-                strMod = Math.floor(preStrMod);
-            
-                skDiff = sk2 - sk1;
-                preSkMod = Math.abs(skDiff)/5;
-                skMod = Math.floor(preSkMod);
-            
+                strMod = Math.floor(Math.abs(character2.strength - character1.strength)/5);
+                skMod = Math.floor(Math.abs(character2.skill - character1.skill)/5);
                 d1 = Math.floor((Math.random() * 6) + 1);
                 d2 = Math.floor((Math.random() * 6) + 1);
             
