@@ -6,26 +6,71 @@
     width:100%;
     padding:0;
     margin:0;
+    background-color:rgb(100, 65, 165);;
   }
   iframe {
     display:inline-block;
     margin:0;
+    height:100%;
+    width:330px;
   }
+  #chats {
+    height:100%;
+    width:100%;
+    margin:0;
+    overflow-y:hidden;
+    overflow-x:auto;
+  }
+  .menu {
+    margin:0 auto;
+    border: 3px solid rgb(100, 65, 165);;
+    border-radius:15px;
+  }
+  #streams {
+    width:40%;
+    padding:10px;
+    margin-top:5vh;
+    height:70vh;
+  }
+  
+  .menuButton {
+    width:20%;
+    margin-top:10px;
+    height:7vh;
+  }
+  
 </style>
-
-  <iframe id="chat1" src="" height="100%" width="30%"></iframe>
-  <iframe id="chat2" src="" height="100%" width="30%"></iframe>
-  <iframe id="chat3" src="" height="100%" width="30%"></iframe>
+  <div id="chats">
+      <center>
+          <textarea id="streams" class="menu">
+              Enter streamer names, one per line.
+          </textarea>
+          <br /> 
+          <button onclick="loadChats()" class="menuButton menu"> 
+              Load Chats
+          </button> 
+          <button onclick="help()" class="menuButton menu">Help</button></center></div>
   <script>
-    var chatOne = document.getElementById("chat1");
-    var chatTwo = document.getElementById("chat2");
-    var chatThree = document.getElementById("chat3");
-    var srcOne = prompt("Enter Streamer Name");
-    var srcTwo = prompt("Enter Streamer Name");
-    var srcThree = prompt("Enter Streamer Name");
-    chatOne.src="http://www.twitch.tv/" + srcOne + "/chat";
-    chatTwo.src="http://www.twitch.tv/" + srcTwo + "/chat";
-    chatThree.src="http://www.twitch.tv/" + srcThree + "/chat";
-  </script>
+    function help() {
+      alert("To use this service, simply write the streams you wish to chat in above like this: 'beammultichat.html?streamerName&secondStreamerName' and so on. There is no limit on the number of streams you can use ")
+    }
+    var chatsDiv = document.getElementById("chats");
+    var str = window.location.href;
+    var streamers = str.split("?")[1].split("&");
+    if (streamers !== undefined) {
+      chatsDiv.innerHTML = "";
+    }
+    for (var i = 0; i < streamers.length; i++) {
+      chatsDiv.innerHTML+="<iframe src='http:\/\/www.twitch.tv/" + streamers[i].toLowerCase() + "/chat'></iframe>"
+    }
+    function loadChats() {
+      str = streams.value;
+      streamers = str.split("\n")
+      chatsDiv.innerHTML = "";
+      for (var j = 0; j < streamers.length; j++) {
+        chatsDiv.innerHTML+="<iframe src='http:\/\/www.twitch.tv/" + streamers[j].toLowerCase() + "/chat'></iframe>"
+      }
+    }
+ </script>
 </body>
 </html>
