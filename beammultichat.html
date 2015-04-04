@@ -49,8 +49,11 @@
           <button onclick="loadChats()" class="menuButton menu"> 
               Load Chats
           </button> 
-          <button onclick="alert(\'To use this service, simply write the streams you wish to chat in above like this: 'beammultichat.html?streamerName&secondStreamerName' and so on. There is no limit on the number of streams you can use \')" class="menuButton menu">Help</button></center></div>
+          <button onclick="help()" class="menuButton menu">Help</button></center></div>
   <script>
+    function help() {
+      alert("To use this service, simply write the streams you wish to chat in above like this: 'beammultichat.html?streamerName&secondStreamerName' and so on. There is no limit on the number of streams you can use ")
+    }
     var chatsDiv = document.getElementById("chats");
     var str = window.location.href;
     var streamers = str.split("?")[1].split("&");
