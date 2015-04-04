@@ -23,22 +23,24 @@
   }
   .menu {
     margin:0 auto;
-    width:40%;
     border: 3px solid #11131b;
     border-radius:15px;
   }
   #streams {
+    width:40%;
     padding:10px;
     margin-top:5vh;
     height:70vh;
   }
   
-  #menuButton {
+  .menuButton {
+    width:19%;
     margin-top:10px;
     height:7vh;
   }
+  
 </style>
-  <div id="chats"><center><textarea id="streams" class="menu">Enter streamer names, one per line.</textarea><br /> <button id="menuButton" onclick="loadChats()" class="menu">Load Chats</button></center></div>
+  <div id="chats"><center><textarea id="streams" class="menu">Enter streamer names, one per line.</textarea><br /> <button onclick="loadChats()" class="menuButton menu">Load Chats</button> <button onclick="help()" class="menuButton menu">Help</button></center></div>
   <script>
     alert("To use this service, simply write the streams you wish to chat in above like this: 'beammultichat.html?streamerName&secondStreamerName' and so on. There is no limit on the number of streams you can use ") 
     var chatsDiv = document.getElementById("chats");
