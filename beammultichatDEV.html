@@ -29,7 +29,7 @@
     console.log(streamers)
     var chatsDiv = document.getElementById("chats");
     if (streamers !== undefined) {
-      chats.innerHTML = "";
+      chatsDiv.innerHTML = "";
     }
     for (var i = 0; i < streamers.length; i++) {
       chatsDiv.innerHTML+="<iframe src='http:\/\/www.beam.pro/" + streamers[i].toLowerCase() + "?ex=chat'></iframe>"
@@ -37,7 +37,7 @@
     function loadChats() {
       str = streams.value;
       streamers = str.split("\n")
-      chats.innerHTML = "";
+      chatsDiv.innerHTML = "";
       for (var j = 0; j < streamers.length; j++) {
         chatsDiv.innerHTML+="<iframe src='http:\/\/www.beam.pro/" + streamers[j].toLowerCase() + "?ex=chat'></iframe>"
       }
