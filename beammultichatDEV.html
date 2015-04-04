@@ -24,10 +24,9 @@
   <div id="chats"><textarea id="streams">Enter streamer names, one per line.</textarea><br /> <button onclick="loadChats()">Load Chats</button></div>
   <script>
     alert("To use this service, simply write the streams you wish to chat in above like this: 'beammultichat.html?streamerName&secondStreamerName' and so on. There is no limit on the number of streams you can use ") 
+    var chatsDiv = document.getElementById("chats");
     var str = window.location.href;
     var streamers = str.split("?")[1].split("&");
-    console.log(streamers)
-    var chatsDiv = document.getElementById("chats");
     if (streamers !== undefined) {
       chatsDiv.innerHTML = "";
     }
