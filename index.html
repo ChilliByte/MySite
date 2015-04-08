@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BrhysH's Website (TEST)</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <script src="https://apis.google.com/js/platform.js"></script>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    </head>
+    <body>
+        <style>
+            html, body {
+                height:100%;
+                width:100%;
+                margin: 0;
+                padding: 0;
+                box-sizing:border-box;
+                
+                background-color: #a00;
+                background-image: url('lumberTile.png');
+                background-attachment: fixed;
+                
+                font-family:arial;
+            }
+            .section {
+                position:relative;
+                height:100%;
+                width:100%;
+                margin:0;
+            
+                display:block;
+                overflow:hidden;
+                box-sizing:border-box;
+            
+                text-align:center;
+            }
+            .one {
+                background-color:rgba(0,0,0,0.2);
+                color:white;
+            }
+            
+            .one .cont {
+                height:20%;
+                
+                position: absolute;
+                top: 30%;
+                left:0;
+                right:0;
+            }
+            
+            a {
+                color:white;
+                text-decoration:none;
+            }
+            
+            a:visited {
+                color:#cdcdcd;
+            }
+            
+            .one span h1 {
+                font-size:4.5em;
+                font-weight:bold;
+            }
+            
+            .two {
+                position:relative;
+                height:80%;
+                padding:20px;
+                
+                background-color:#eee;
+                -webkit-box-shadow: 0px 0px 175px 20px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 175px 20px rgba(0,0,0,0.75);
+                box-shadow: 0px 0px 175px 20px rgba(0,0,0,0.75);
+                
+                text-align:left;
+                color: #004;
+                font-size:3em;
+                font-weight:bold;
+            }
+            
+            .two span {
+                display:inline-block;
+                width:50%;
+                font-size:0.4em;
+                font-weight:normal;
+            }
+            
+            .two .img {
+                display:inline-block;
+                height:80%;
+                margin:auto;
+                vertical-align:top;
+                
+                position:absolute;
+                right:5%;
+                top:0;
+                bottom:0;
+            }
+            
+            .three {
+                position:relative;
+                height:10%;
+                padding:25px;
+                
+                font-size:1em;
+                font-weight:normal;
+                color:#888;
+                
+                background-color:#eee;
+                -webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+                box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+            }
+            
+            .spacer {
+                height:10%;
+                background-color:rgba(0,0,0,0.2);
+            }
+            
+            .pure-form {
+                position:absolute;
+                top:10px;
+                right:10px;
+                width:calc(40% - 15px);
+                text-align:left;
+                margin-top:10px;
+            }
+            
+            #contactLeft {
+                position:absolute;
+                left:15px;
+                width:calc(50% - 15px);
+                text-align:left;
+            }
+            
+            #msg {height:85%; font-size:1em; padding-top:10px;}
+            
+            .pure-form .pure-input-1-2 {width:90%;}
+            
+            textarea {height:30vh;)
+            
+        </style>
+    
+        <div class="section one">
+            <span class="cont">
+                <h1>Hi, I'm Deep Sohelia</h1>
+                <h3>
+                An amateur web developer, website designer, graphics desgner and more.
+                <a href="#about">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-question fa-stack-1x"></i>
+                    </span>
+                    About Me
+                </a>
+                <a href="#videos">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-youtube-play fa-stack-1x"></i>
+                    </span>
+                    My Creations
+                </a>
+                <a href="#msg">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x"></i>
+                    </span>
+                    Contact Me
+                </a>
+                </h3>
+            </span>
+        </div>
+        
+    
+        <div class="section spacer" id="about"></div>
+        <div class="section two"> 
+            About Me
+            <br />
+            <span>
+            <hr />
+                Hi, I'm BrhysH, a online video content creator. You can find me on YouTube, Twitch and WatchBeam. I am a member of the SMB Minecraft Server. I like maple syrup, saying sorry and hockey. '
+            </span> 
+            <img src="https://pbs.twimg.com/profile_images/514610596059181056/Ecso1MLM_400x400.png" class="img" />
+        </div>
+        
+        <div class="section one" id="videos">
+            <h1>My Videos</h1><div class="g-ytsubscribe" data-channel="Brhys1"></div>
+        </div>
+        
+        <div class="section spacer"></div>
+        <div class="section two" id="msg"> 
+            <div id="contactLeft">
+                <h1>Contact Me</h1>
+                <hr />
+                For buisness enquiries, please use the form to contact me. I will endevour to reply as soon as is possible.
+            </div>
+                <form class="pure-form">
+                    <fieldset class="pure-group">
+                        <input type="text" class="pure-input-1-2" placeholder="Full Name">
+                        <input type="text" class="pure-input-1-2" placeholder="Organization">
+                        <input type="email" class="pure-input-1-2" placeholder="Email">
+                    </fieldset>
+
+                    <fieldset class="pure-group">
+                        <input type="text" class="pure-input-1-2" placeholder="Title">
+                        <textarea class="pure-input-1-2" placeholder="Message"></textarea>
+                    </fieldset>
+
+                    <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Send</button>
+                </form>
+            </div>
+        <div class="section three"> &copy; BrhysH 2015 | Website designed by <a href="">Deep Sohelia</a></div>
+    </body>
+</html>
