@@ -205,6 +205,19 @@
             collected: false
         });
 
+				level2.mobs = [];
+				level2.mobs.push({
+						x: 90,
+            y: 10,
+            width: 10,
+            height:10,
+            speed: 2,
+            velX: 0,
+            type: "patrol",
+            x1Limit: 50,
+            x2Limit: 130
+        });
+
         canvas.width = width;
         canvas.height = height;
 				
@@ -278,19 +291,26 @@
                     }
                 }
             }
-            
+            ctx.closePath()
             ctx.fill();
-            
+            ctx.beginPath();
+            ctx.fillStyle = "cyan";
+          	for (var k = 0; k < currentLevel.mobs.length; k++) {
+              //ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
+            };
+            ctx.closePath()
+
+            ctx.fill()
             if (player.grounded) {
                 player.velY = 0;
             }
 
             player.x += player.velX;
             player.y += player.velY;
-            
+
             ctx.fillStyle = "red";
             ctx.fillRect(player.x, player.y, player.width, player.height);
-
+              
             requestAnimationFrame(update);
         }
 
