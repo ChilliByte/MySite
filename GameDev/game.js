@@ -307,7 +307,7 @@ function update() {
         currentLevel.mobs[k].velX *= friction;
         currentLevel.mobs[k].velY += gravity;
     	  currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
-        currentLevel.mobs[k].y += currentLevel.mobs[k].vely;
+        currentLevel.mobs[k].y += currentLevel.mobs[k].velX;
     };
     ctx.closePath()
 
