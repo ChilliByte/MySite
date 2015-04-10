@@ -201,8 +201,9 @@ level2.mobs.push({
     y: 10,
     width: 10,
     height: 10,
-    speed: 2,
+    speed: 0.3,
     velX: 0,
+    velY: 0,
     type: "patrol",
     x1Limit: 50,
     x2Limit: 130
@@ -212,6 +213,7 @@ canvas.width = width;
 canvas.height = height;
 
 currentLevel = level1;
+var mobDir = "right";
 
 function update() {
     // check keys
@@ -287,6 +289,25 @@ function update() {
     ctx.fillStyle = "cyan";
     for (var k = 0; k < currentLevel.mobs.length; k++) {
         ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
+        if (mobDir == "right") {
+            // right arrow
+            if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
+                currentLevel.mobs[k].velX++;
+            }
+            if (currentLevel.mobs[k].x > currentLevel.mobs[k].x2Limit) {mobDir = "left"; currentLevel.mobs[k].x -= 5} 
+        }
+        if (mobDir == "left") {
+            // right arrow
+            if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
+                currentLevel.mobs[k].velX--;
+            }
+            if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {mobDir = "right"; currentLevel.mobs[k].x += 5} 
+            
+        } 
+        currentLevel.mobs[k].velX *= friction;
+        currentLevel.mobs[k].velY += gravity;
+    	  currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
+        currentLevel.mobs[k].y == currentLevel.mobs[k].vely;
     };
     ctx.closePath()
 
