@@ -218,9 +218,9 @@
                 }
 
             }
-            
+            ctx.closePath()
             ctx.fill();
-            
+            ctx.beginPath();
             ctx.fillStyle = "orange";
             for (var j = 0; j < collectibles.length; j++) {
                 if (collectibles[j].collected == false) {
@@ -229,7 +229,7 @@
                     if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
                         collectibles[j].collected = true;
                         player.collected++
-
+                        if(player.collected == 2) {window.alert("Well Done!")}
                     }
                 }
             }
