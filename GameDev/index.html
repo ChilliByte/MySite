@@ -150,7 +150,21 @@ boxes.push({
     width: 10,
     height: 150
 });
-
+var collectibles = [];
+collectibles.push({
+    x: 150,
+    y: 150,
+    width: 10,
+    height: 10,
+    collected: false
+});
+collectibles.push({
+    x: width-30,
+    y: height-30,
+    width: 10,
+    height: 10,
+    collected: false
+});
 canvas.width = width;
 canvas.height = height;
 
@@ -201,7 +215,17 @@ function update() {
         }
 
     }
-    
+    for (var j = 0;j < collectibles.length; j++) {
+			if(collectibles[j].collected == false){
+          ctx.rect(collectibles[j].x, collectibles[j].y, collectibles[j].width, collectibles[j].height)
+      		var collectCheck = colCheck(player, collectibles[j]);
+					if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
+            collectibles[j].collected = true;
+            player.collected++
+						
+          }
+      }
+  }
     if(player.grounded){
          player.velY = 0;
     }
