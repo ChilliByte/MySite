@@ -206,15 +206,35 @@ level2.mobs.push({
     velY: 0,
     type: "patrol",
     x1Limit: 50,
-    x2Limit: 130
+    x2Limit: 130,
+    collisionDir : "",
+    grounded: false,
+    hitPlayer: "",
+    dead: false
+});
+
+level2.mobs.push({
+    x: 200,
+    y: 100,
+    width: 20,
+    height: 20,
+    speed: 0.1,
+    velX: 0,
+    velY: 0,
+    type: "patrol",
+    x1Limit: 150,
+    x2Limit: 250,
+    collisionDir : "",
+    grounded: false,
+    hitPlayer: "",
+    dead: false
 });
 
 canvas.width = width;
 canvas.height = height;
 
 currentLevel = level1;
-var mobDir = "right";
-
+mobDir = "right";
 function update() {
     // check keys
     if (keys[38] || keys[32] || keys[87]) {
@@ -250,7 +270,7 @@ function update() {
         ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
 
         var dir = colCheck(player, currentLevel.boxes[i]);
-
+       
         if (dir === "l" || dir === "r") {
             player.velX = 0;
             player.jumping = false;
@@ -260,7 +280,10 @@ function update() {
         } else if (dir === "t") {
             player.velY *= -1;
         }
-
+        for (var l = 0; l < currentLevel.mobs.length; l++) {
+          currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.boxes[i])
+          if (currentLevel.mobs[l].collisionDir == "b") {currentLevel.mobs[l].grounded = true}
+        }
     }
     ctx.closePath()
     ctx.fill();
@@ -288,7 +311,9 @@ function update() {
     ctx.beginPath();
     ctx.fillStyle = "cyan";
     for (var k = 0; k < currentLevel.mobs.length; k++) {
+        if (!currentLevel.mobs[k].dead){
         ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
+        if (currentLevel.mobs[k].type == "patrol") {
         if (mobDir == "right") {
             // right arrow
             if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
@@ -303,12 +328,17 @@ function update() {
             }
             if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {mobDir = "right"; currentLevel.mobs[k].x += 5} 
             
-        } 
+        } };
         currentLevel.mobs[k].velX *= friction;
-        currentLevel.mobs[k].velY += gravity;
+        currentLevel.mobs[k].velY += gravity; 
     	  currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
-        currentLevel.mobs[k].y += currentLevel.mobs[k].velX;
-    };
+        if (currentLevel.mobs[k].grounded) {currentLevel.mobs[k].velY = 0}
+        currentLevel.mobs[k].y += currentLevel.mobs[k].velY;
+      
+        currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player)
+        if (currentLevel.mobs[k].hitPlayer === "b") {currentLevel.mobs[k].dead = true}
+        if (currentLevel.mobs[k].hitPlayer === "l" || currentLevel.mobs[k].hitPlayer === "r") {window.alert("be careful! Hit 'em on the head!"); player.velY -= 5; player.velX += 5}
+    }};
     ctx.closePath()
 
     ctx.fill()
