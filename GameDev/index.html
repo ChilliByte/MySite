@@ -216,6 +216,10 @@ function update() {
         }
 
     }
+    
+    ctx.endPath();
+    ctx.fillStyle = "cream";
+    ctx.beginPath();
     for (var j = 0;j < collectibles.length; j++) {
 			if(collectibles[j].collected == false){
           ctx.rect(collectibles[j].x, collectibles[j].y, collectibles[j].width, collectibles[j].height)
