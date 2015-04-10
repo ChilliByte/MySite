@@ -297,9 +297,11 @@ function update() {
                 currentLevel.collectibles[j].collected = true;
                 player.collected++
                     if (player.collected == 2) {
+                        window.alert("You finished your first level!")
                         currentLevel = level2;
                     }
                 if (player.collected == 5) {
+                    window.alert("You win")
                 }
             }
         }
@@ -329,13 +331,14 @@ function update() {
         } };
         currentLevel.mobs[k].velX *= friction;
         currentLevel.mobs[k].velY += gravity; 
-    	  currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
-        if (currentLevel.mobs[k].grounded) {currentLevel.mobs[k].velY = 0}
+    	  currentLevel.mobs[k].x += currentLevel.mobs[k].velX; 
+        if (currentLevel.mobs[k].grounded) {currentLevel.mobs[k].velY = 0; currentLevel.mobs[k].grounded = false;}
         currentLevel.mobs[k].y += currentLevel.mobs[k].velY;
       
         currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player)
-        if (currentLevel.mobs[k].hitPlayer === "b") {currentLevel.mobs[k].dead = true}
-        if (currentLevel.mobs[k].hitPlayer === "l" || currentLevel.mobs[k].hitPlayer === "r") {player.velY -= 5; player.velX += 5}
+        if (currentLevel.mobs[k].hitPlayer === "t") {currentLevel.mobs[k].dead = true;}
+        if (currentLevel.mobs[k].hitPlayer === "l") {player.velY -= 2; player.velX += 8; currentLevel.mobs[k].y -= 5;}
+        if (currentLevel.mobs[k].hitPlayer === "r" || currentLevel.mobs[k].hitPlayer === "b") { player.velY -= 2; player.velX -= 8; currentLevel.mobs[k].y -= 5;}
     }};
     ctx.closePath()
 
