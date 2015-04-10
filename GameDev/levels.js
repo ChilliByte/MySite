@@ -1,4 +1,4 @@
-level1 = {};
+/*level1 = {};
 level2 = {};
 level3 = {};
 level4 = {};
@@ -111,7 +111,7 @@ level4.boxes.push({
     y: height/2 + 10,
     width: width,
     height: height/2
-});
+});*/ 
 
 
 level4.collectibles = [];
