@@ -32,98 +32,99 @@
             keys = [],
             friction = 0.8,
             gravity = 0.3;
-
-        var boxes = [];
+				level1 = {};
+				level2 = {};
+        level1.boxes = [];
 
         // dimensions
-        boxes.push({
+        level1.boxes.push({
             x: 0,
             y: 0,
             width: 10,
             height: height
         });
-        boxes.push({
+        level1.boxes.push({
             x: 0,
             y: height - 2,
             width: width,
             height: 50
         });
-        boxes.push({
+        level1.boxes.push({
             x: width - 10,
             y: 0,
             width: 50,
             height: height
         });
 
-        boxes.push({
+        level1.boxes.push({
             x: 50,
             y: height - 10,
             width: 10,
             height: 10
         });
-        boxes.push({
+        level1.boxes.push({
             x: 60,
             y: height - 20,
             width: 10,
             height: 10
         });
-        boxes.push({
+        level1.boxes.push({
             x: 70,
             y: height - 30,
             width: 10,
             height: 10
         });
-        boxes.push({
+        level1.boxes.push({
             x: 80,
             y: height - 40,
             width: 40,
             height: 10
         });
-        boxes.push({
+        level1.boxes.push({
             x: 120,
             y: height - 50,
             width: 20,
             height: 10
         });
-        boxes.push({
+        level1.boxes.push({
             x: 140,
             y: height - 70,
             width: 10,
             height: 20
         });
-        boxes.push({
+        level1.boxes.push({
             x: 150,
             y: height - 80,
             width: 10,
             height: 10
         });
-        boxes.push({
+        level1.boxes.push({
             x: 160,
             y: height - 90,
             width: 100,
             height: 10
         });
 
-        boxes.push({
+        level1.boxes.push({
             x: 250,
             y: height - 100,
             width: 10,
             height: 10
         });
-        boxes.push({
+        level1.boxes.push({
             x: 260,
             y: height - 150,
             width: 10,
             height: 130
         });
-        boxes.push({
+        level1.boxes.push({
             x: 310,
             y: height - 150,
             width: 10,
             height: 150
         });
 
-        boxes.push({
+        level1.boxes.push({
             x: 300,
             y: height - 100,
             width: 10,
@@ -131,7 +132,7 @@
         });
 
 
-        boxes.push({
+        level1.boxes.push({
             x: 270,
             y: height - 50,
             width: 10,
@@ -139,7 +140,7 @@
         });
 
 
-        boxes.push({
+        level1.boxes.push({
             x: 310,
             y: height - 150,
             width: 140,
@@ -147,29 +148,67 @@
         });
 
 
-        boxes.push({
+        level1.boxes.push({
             x: 450,
             y: height - 150,
             width: 10,
             height: 150
         });
-        var collectibles = [];
-        collectibles.push({
+        level1.collectibles = [];
+        level1.collectibles.push({
             x: 150,
             y: 150,
             width: 10,
             height: 10,
             collected: false
         });
-        collectibles.push({
+        level1.collectibles.push({
             x: width - 30,
             y: height - 30,
             width: 10,
             height: 10,
             collected: false
         });
+
+				level2.boxes = []
+        
+        level2.boxes.push({
+            x: 0,
+            y: height - 10,
+            width: width,
+            height: 10
+        });
+        
+        level2.collectibles = [];
+
+			  level2.collectibles.push({
+            x: 30,
+            y: height - 30,
+            width: 10,
+            height: 10,
+            collected: false
+        });
+
+				level2.collectibles.push({
+            x: 130,
+            y: height - 30,
+            width: 10,
+            height: 10,
+            collected: false
+        });
+
+				level2.collectibles.push({
+            x: 230,
+            y: height - 30,
+            width: 10,
+            height: 10,
+            collected: false
+        });
+
         canvas.width = width;
         canvas.height = height;
+				
+				currentLevel = level1;
 
         function update() {
             // check keys
@@ -202,10 +241,10 @@
             ctx.beginPath();
 
             player.grounded = false;
-            for (var i = 0; i < boxes.length; i++) {
-                ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
+            for (var i = 0; i < currentLevel.boxes.length; i++) {
+                ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
 
-                var dir = colCheck(player, boxes[i]);
+                var dir = colCheck(player, currentLevel.boxes[i]);
 
                 if (dir === "l" || dir === "r") {
                     player.velX = 0;
@@ -222,14 +261,20 @@
             ctx.fill();
             ctx.beginPath();
             ctx.fillStyle = "orange";
-            for (var j = 0; j < collectibles.length; j++) {
-                if (collectibles[j].collected == false) {
-                    ctx.rect(collectibles[j].x, collectibles[j].y, collectibles[j].width, collectibles[j].height)
-                    var collectCheck = colCheck(player, collectibles[j]);
+            for (var j = 0; j < currentLevel.collectibles.length; j++) {
+                if (currentLevel.collectibles[j].collected == false) {
+                    ctx.rect(currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height)
+                    var collectCheck = colCheck(player, currentLevel.collectibles[j]);
                     if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
-                        collectibles[j].collected = true;
+                        currentLevel.collectibles[j].collected = true;
                         player.collected++
-                        if(player.collected == 2) {window.alert("Well Done!")}
+                        if(player.collected == 2) {
+                          window.alert("You finished your first level!")
+                          currentLevel = level2;
+                        }
+                        if(player.collected == 5) {
+                          window.alert("You win")
+                        }
                     }
                 }
             }
