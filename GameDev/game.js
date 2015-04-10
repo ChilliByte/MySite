@@ -297,11 +297,9 @@ function update() {
                 currentLevel.collectibles[j].collected = true;
                 player.collected++
                     if (player.collected == 2) {
-                        window.alert("You finished your first level!")
                         currentLevel = level2;
                     }
                 if (player.collected == 5) {
-                    window.alert("You win")
                 }
             }
         }
@@ -337,7 +335,7 @@ function update() {
       
         currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player)
         if (currentLevel.mobs[k].hitPlayer === "b") {currentLevel.mobs[k].dead = true}
-        if (currentLevel.mobs[k].hitPlayer === "l" || currentLevel.mobs[k].hitPlayer === "r") {window.alert("be careful! Hit 'em on the head!"); player.velY -= 5; player.velX += 5}
+        if (currentLevel.mobs[k].hitPlayer === "l" || currentLevel.mobs[k].hitPlayer === "r") {player.velY -= 5; player.velX += 5}
     }};
     ctx.closePath()
 
