@@ -218,7 +218,7 @@ function update() {
     }
     
     ctx.closePath();
-    ctx.fillStyle = "cream";
+    ctx.fillStyle = "orange";
     ctx.beginPath();
     for (var j = 0;j < collectibles.length; j++) {
 			if(collectibles[j].collected == false){
@@ -231,6 +231,9 @@ function update() {
           }
       }
   }
+    ctx.closePath();
+    ctx.fillStyle = "black";
+    ctx.beginPath();
     if(player.grounded){
          player.velY = 0;
     }
