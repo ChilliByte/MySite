@@ -3,3 +3,11 @@ body {
     padding:0;
     margin:0;
 }
+
+canvas {
+    position:fixed;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+}
