@@ -363,8 +363,11 @@ function update() {
     player.x += player.velX;
     player.y += player.velY;
 
-    ctx.fillStyle = "red";
-    ctx.fillRect(player.x, player.y, player.width, player.height);
+    ctx.fillStyle = "#933";
+    ctx.fillRect(player.x, player.y, player.width, player.height/2);
+    ctx.fillStyle = "#3f3";
+    ctx.fillRect(player.x + *player.height/2), player.y, player.width, player.height/2);
+    
     
     if (debug) {
         document.getElementById("stats").style.display = "block"
