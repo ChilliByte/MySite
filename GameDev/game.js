@@ -321,7 +321,7 @@ function update() {
     ctx.closePath()
     ctx.fill();
     ctx.beginPath();
-    ctx.fillStyle = "cyan";
+    ctx.fillStyle = "#90f";
     for (var k = 0; k < currentLevel.mobs.length; k++) {
         if (!currentLevel.mobs[k].dead){
         ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
