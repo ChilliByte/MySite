@@ -267,7 +267,7 @@ function update() {
     player.velY += gravity;
 
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "#380";
     ctx.beginPath();
 
     player.grounded = false;
