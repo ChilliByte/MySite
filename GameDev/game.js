@@ -306,7 +306,7 @@ function update() {
         }
     }
     if (player.x < 0) {
-        player.x = 10; 
+        player.x = width - 5; 
         currentLevelInt -= 1;
         currentLevel = levels[currentLevelInt];
         console.log("Previous Level");
