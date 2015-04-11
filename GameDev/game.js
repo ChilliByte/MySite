@@ -22,10 +22,16 @@ var canvas = document.getElementById("canvas"),
     keys = [],
     friction = 0.8,
     gravity = 0.3;
+
+levels = [];
 level1 = {};
+levels.push(level1);
 level2 = {};
+levels.push(level2);
 level3 = {};
+levels.push(level3);
 level4 = {};
+levels.push(level4);
 level1.boxes = [];
 
 level1.boxes = [];
@@ -232,7 +238,7 @@ level4.mobs.push({
 canvas.width = width;
 canvas.height = height;
 
-currentLevel = level1;
+currentLevel = levels[0];
 mobDir = "right";
 function update() {
     // check keys
@@ -295,15 +301,15 @@ function update() {
             if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
                 currentLevel.collectibles[j].collected = true;
                 player.collected++
-                    if (player.collected == 2) {
-                        window.alert("You finished your first level!")
-                        currentLevel = level2;
-                    }
-                if (player.collected == 5) {
-                    window.alert("You win")
-                }
             }
         }
+    }
+    currentLevelInt = 0
+    if (player.x < 0) {
+        currentLevel = levels[currentLevelInt--]
+    }
+    if (player.x > 0) {
+        currentLevel = levels[currentLevelInt++]
     }
     ctx.closePath()
     ctx.fill();
