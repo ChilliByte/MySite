@@ -21,7 +21,7 @@ var canvas = document.getElementById("canvas"),
         grounded: false
     },
     keys = [],
-    friction = 8,
+    friction = 0.08,
     gravity = 0.3;
 
 levels = [];
