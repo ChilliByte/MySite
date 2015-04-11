@@ -45,7 +45,7 @@ level1.boxes.push({
 level1.boxes.push({
     x: 0,
     y: height/2,
-    width: width,
+    width: width*2,
     height: height/2
 });
 
@@ -55,16 +55,16 @@ level1.mobs = [];
 level2.boxes = [];
 
 level2.boxes.push({
-    x: 0,
+    x: -100,
     y: height/2 + 10,
-    width: width/2,
+    width: (width/2) + 100,
     height: height/2
 });
 
 level2.boxes.push({
     x: width/2,
     y: height/2 - 20,
-    width: width/2,
+    width: width,
     height: height/2 + 20
 });
 
@@ -87,24 +87,24 @@ level2.mobs = [];
 level3.boxes = [];
 
 level3.boxes.push({
-    x: 0,
+    x: -100,
     y: height/2 + 10,
-    width: width,
+    width: width+100,
     height: height/2
 });
 
 level3.boxes.push({
-    x: 50,
-    y: height/2 - 40,
+    x: 40,
+    y: height/2 - 30,
     width: width - 40,
     height: height/2 - 40
 });
 
 level3.boxes.push({
-    x: 100,
-    y: height/2 - 90,
-    width: width - 100,
-    height: height/2 - 90
+    x: 80,
+    y: height/2 - 70,
+    width: width,
+    height: height/2
 });
 
 level3.collectibles = [];
@@ -139,9 +139,9 @@ level3.mobs.push({
 level4.boxes = [];
 
 level4.boxes.push({
-    x: 0,
+    x: -100,
     y: height/2 + 10,
-    width: width,
+    width: width + 200,
     height: height/2
 });
 
@@ -307,8 +307,6 @@ function update() {
     }
     if (player.x < 0) {
         player.x = 10; 
-        player.y = 10; 
-        player.velY = 5
         currentLevelInt -= 1;
         currentLevel = levels[currentLevelInt];
         console.log("Previous Level");
@@ -318,8 +316,6 @@ function update() {
         currentLevel = levels[currentLevelInt];
         console.log("Next Level");
         player.x = 10; 
-        player.y = 10; 
-        player.velY = 5
     }
     ctx.closePath()
     ctx.fill();
