@@ -21,7 +21,7 @@ var canvas = document.getElementById("canvas"),
         grounded: false
     },
     keys = [],
-    friction = 0.08,
+    friction = 0.8,
     gravity = 0.3;
 
 levels = [];
@@ -254,13 +254,13 @@ function update() {
     if (keys[39] || keys[68]) {
         // right arrow
         if (player.velX < player.speed) {
-            player.velX+= 10;
+            player.velX++;
         }
     }
     if (keys[37] || keys[65]) {
         // left arrow
         if (player.velX > -player.speed) {
-            player.velX-= 10;
+            player.velX--;
         }
     }
 
@@ -327,16 +327,14 @@ function update() {
         ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
         if (currentLevel.mobs[k].type == "patrol") {
         if (mobDir == "right") {
-            // right arrow
             if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
-                currentLevel.mobs[k].velX+= 10;
+                currentLevel.mobs[k].velX++;
             }
             if (currentLevel.mobs[k].x > currentLevel.mobs[k].x2Limit) {mobDir = "left"; currentLevel.mobs[k].x -= 5} 
         }
         if (mobDir == "left") {
-            // right arrow
             if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
-                currentLevel.mobs[k].velX-= 10;
+                currentLevel.mobs[k].velX--;
             }
             if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {mobDir = "right"; currentLevel.mobs[k].x += 5} 
             
