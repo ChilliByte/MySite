@@ -349,9 +349,9 @@ function update() {
       
         currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player)
         if (currentLevel.mobs[k].hitPlayer === "t") { currentLevel.mobs[k].dead = true; console.log("Hit Mob Top")}
-        if (currentLevel.mobs[k].hitPlayer === "l") { player.velY -= 2; player.velX += 8; currentLevel.mobs[k].y -= 2; console.log("Hit Mob Left");   }
-        if (currentLevel.mobs[k].hitPlayer === "r") { player.velY -= 2; player.velX -= 8; currentLevel.mobs[k].y -= 2; console.log("Hit Mob Right");  }
-        if (currentLevel.mobs[k].hitPlayer === "b") { player.velY -= 2; player.velX -= 8; currentLevel.mobs[k].y -= 2; console.log("Hit Mob Bottom"); }
+        if (currentLevel.mobs[k].hitPlayer === "l") { player.velY -= 2; player.velX += 8; currentLevel.mobs[k].velX += 5; console.log("Hit Mob Left");   }
+        if (currentLevel.mobs[k].hitPlayer === "r") { player.velY -= 2; player.velX -= 8; currentLevel.mobs[k].velX -= 5; console.log("Hit Mob Right");  }
+        if (currentLevel.mobs[k].hitPlayer === "b") { player.velY -= 2; player.velX -= 8; console.log("Hit Mob Bottom"); }
     }};
     ctx.closePath()
 
