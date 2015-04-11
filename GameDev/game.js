@@ -366,8 +366,15 @@ function update() {
     ctx.fillStyle = "#933";
     ctx.fillRect(player.x, player.y, player.width, player.height/2);
     ctx.fillStyle = "#3f3";
-    ctx.fillRect(player.x, (player.y + player.height/2), player.width, player.height/2);
+    ctx.fillRect(player.x, (player.y + player.height/2), player.width, player.height/2);    
+ctx.fillStyle = "#ba0";
     
+if (player.velX > 0) {
+    ctx.fillRect((player.x + player.width/2), (player.y + player.height/4), player.width/2, player.height/4);
+}  
+if (player.velX < 0) {
+    ctx.fillRect(player.x, (player.y + player.height/4), player.width/2, player.height/4);
+}
     
     if (debug) {
         document.getElementById("stats").style.display = "block"
