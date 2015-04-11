@@ -7,6 +7,7 @@ var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     width = window.innerWidth,
     height = window.innerHeight,
+    debug = false,
     player = {
         x: 10,
         y: 0,
@@ -363,7 +364,7 @@ function update() {
 
     ctx.fillStyle = "red";
     ctx.fillRect(player.x, player.y, player.width, player.height);
-
+    if (debug) {document.getElementById("stats").innerHTML = "X: " + player.x +"<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;}
     requestAnimationFrame(update);
 }
 
