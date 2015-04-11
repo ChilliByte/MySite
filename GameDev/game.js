@@ -21,7 +21,7 @@ var canvas = document.getElementById("canvas"),
         grounded: false
     },
     keys = [],
-    friction = 0.8,
+    friction = 8,
     gravity = 0.3;
 
 levels = [];
@@ -254,13 +254,13 @@ function update() {
     if (keys[39] || keys[68]) {
         // right arrow
         if (player.velX < player.speed) {
-            player.velX++;
+            player.velX+= 10;
         }
     }
     if (keys[37] || keys[65]) {
         // left arrow
         if (player.velX > -player.speed) {
-            player.velX--;
+            player.velX-= 10;
         }
     }
 
@@ -329,14 +329,14 @@ function update() {
         if (mobDir == "right") {
             // right arrow
             if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
-                currentLevel.mobs[k].velX++;
+                currentLevel.mobs[k].velX+= 10;
             }
             if (currentLevel.mobs[k].x > currentLevel.mobs[k].x2Limit) {mobDir = "left"; currentLevel.mobs[k].x -= 5} 
         }
         if (mobDir == "left") {
             // right arrow
             if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
-                currentLevel.mobs[k].velX--;
+                currentLevel.mobs[k].velX-= 10;
             }
             if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {mobDir = "right"; currentLevel.mobs[k].x += 5} 
             
