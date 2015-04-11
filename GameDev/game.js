@@ -36,7 +36,7 @@ level1.boxes = [];
 
 level1.boxes = [];
 level1.boxes.push({
-    x: 0,
+    x: -10,
     y: 0,
     width: 10,
     height: height
