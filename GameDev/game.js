@@ -308,7 +308,7 @@ function update() {
     currentLevelInt = 0
     if (player.x < 0) {
         currentLevel = levels[currentLevelInt--]
-        console.log("Previous" Level")
+        console.log("Previous Level")
     }
     if (player.x > width) {
         currentLevel = levels[currentLevelInt++]
