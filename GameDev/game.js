@@ -3,11 +3,31 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
+var canvas = document.getElementById("canvas"),
+    ctx = canvas.getContext("2d"),
+    width = 500,
+    height = 200,
+    player = {
+        x: width / 2,
+        y: height - 15,
+        width: 5,
+        height: 5,
+        speed: 3,
+        velX: 0,
+        velY: 0,
+        collected: 0,
+        jumping: false,
+        grounded: false
+    },
+    keys = [],
+    friction = 0.8,
+    gravity = 0.3;
 level1 = {};
 level2 = {};
 level3 = {};
 level4 = {};
-//======== Level 1 ==========
+level1.boxes = [];
+
 level1.boxes = [];
 level1.boxes.push({
     x: 0,
@@ -25,7 +45,7 @@ level1.boxes.push({
 
 level1.collectibles = [];
 level1.mobs = [];
-//========= Level 2 =====================
+// Level 2
 level2.boxes = [];
 
 level2.boxes.push({
@@ -43,6 +63,8 @@ level2.boxes.push({
 });
 
 
+
+
 level2.collectibles = [];
 
 level2.collectibles.push({
@@ -54,7 +76,8 @@ level2.collectibles.push({
 });
 
 level2.mobs = [];
-//========== Level 3 ==========
+
+//Level 3
 level3.boxes = [];
 
 level3.boxes.push({
@@ -77,7 +100,6 @@ level3.boxes.push({
     width: width - 100,
     height: height/2 - 90
 });
-
 
 level3.collectibles = [];
 
@@ -107,8 +129,7 @@ level3.mobs.push({
     hitPlayer: "",
     dead: false
 });
-
-//====== Level 4=======
+// Level 4
 level4.boxes = [];
 
 level4.boxes.push({
@@ -207,27 +228,7 @@ level4.mobs.push({
     dead: false
 });
 
-var canvas = document.getElementById("canvas"),
-    ctx = canvas.getContext("2d"),
-    width = 500,
-    height = 200,
-    player = {
-        x: width / 2,
-        y: height - 15,
-        width: 5,
-        height: 5,
-        speed: 3,
-        velX: 0,
-        velY: 0,
-        collected: 0,
-        jumping: false,
-        grounded: false
-    },
-    keys = [],
-    friction = 0.8,
-    gravity = 0.3;
-
-
+// End Levels
 canvas.width = width;
 canvas.height = height;
 
@@ -401,3 +402,4 @@ document.body.addEventListener("keyup", function(e) {
 window.addEventListener("load", function() {
     update();
 });
+
