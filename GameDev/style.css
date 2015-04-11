@@ -10,4 +10,14 @@ canvas {
     right:0px;
     top:0px;
     bottom:0px;
+    z-index:-1;
+}
+
+#stats {
+    position:fixed;
+    z-index:1;
+    top:0;
+    right:0;
+    width:400px;
+    height:200px;
 }
