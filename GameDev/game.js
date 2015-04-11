@@ -39,7 +39,7 @@ level1.boxes = [];
 level1.boxes.push({
     x: -10,
     y: 0,
-    width: 10,
+    width: 11,
     height: height
 });
 
