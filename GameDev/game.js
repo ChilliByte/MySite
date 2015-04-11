@@ -301,15 +301,18 @@ function update() {
             if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
                 currentLevel.collectibles[j].collected = true;
                 player.collected++
+                console.log("Collected")
             }
         }
     }
     currentLevelInt = 0
     if (player.x < 0) {
         currentLevel = levels[currentLevelInt--]
+        console.log("Previous" Level")
     }
-    if (player.x > 0) {
+    if (player.x > width) {
         currentLevel = levels[currentLevelInt++]
+        console.log("Next Level")
     }
     ctx.closePath()
     ctx.fill();
