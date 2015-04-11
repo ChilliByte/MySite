@@ -364,7 +364,10 @@ function update() {
 
     ctx.fillStyle = "red";
     ctx.fillRect(player.x, player.y, player.width, player.height);
-    if (debug) {document.getElementById("stats").innerHTML = "X: " + player.x +"<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;}
+    
+    if (debug) {
+        document.getElementById("stats").style.display = "block"
+        document.getElementById("stats").innerHTML = "X: " + player.x +"<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;}
     requestAnimationFrame(update);
 }
 
