@@ -237,8 +237,8 @@ level4.mobs.push({
 // End Levels
 canvas.width = width;
 canvas.height = height;
-
-currentLevel = levels[0];
+currentLevelInt = 0
+currentLevel = levels[currentLevelInt];
 mobDir = "right";
 function update() {
     // check keys
@@ -305,7 +305,6 @@ function update() {
             }
         }
     }
-    currentLevelInt = 0
     if (player.x < 0) {
         currentLevelInt -= 1;
         currentLevel = levels[currentLevelInt];
