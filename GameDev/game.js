@@ -306,20 +306,20 @@ function update() {
         }
     }
     if (player.x < 0) {
+        player.x = 10; 
+        player.y = 10; 
+        player.velY = 5
         currentLevelInt -= 1;
         currentLevel = levels[currentLevelInt];
         console.log("Previous Level");
-        player.x = 10; 
-        player.y = 0; 
-        player.velY = -5
     }
     if (player.x > width) {
         currentLevelInt += 1;
         currentLevel = levels[currentLevelInt];
         console.log("Next Level");
         player.x = 10; 
-        player.y = 0; 
-        player.velY = -5
+        player.y = 10; 
+        player.velY = 5
     }
     ctx.closePath()
     ctx.fill();
