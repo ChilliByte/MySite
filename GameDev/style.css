@@ -47,8 +47,18 @@ canvas {
     margin-left:10px;
     display:inline-block;
     box-sizing:border-box;
-    background-color:rgba(0,0,0,0.3);
-    border:3px solid rgba(0,0,0,0.8);
+    /* Chrome 10+,Safari */
+    background : -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 00%, rgba(0,0,0,0.9) 99%);
+
+    /* Firefox 4+ */ 
+    background : -moz-linear-gradient(top, rgba(0, 0, 0, 0.3) 00%, rgba(0,0,0,0.9) 99%);
+
+    /* Opera */
+    background : -o-linear-gradient(top, rgba(0, 0, 0, 0.3) 00%, rgba(0,0,0,0.9) 99%);
+
+    /* IE 10+ */
+    background : -ms-linear-gradient(top, rgba(0, 0, 0, 0.3) 00%, rgba(0,0,0,0.9) 99%);
+    border:3px rgba(0,0,0,0.8);
     border-radius:5px;
 }
 
