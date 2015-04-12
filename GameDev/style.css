@@ -37,6 +37,8 @@ canvas {
     height:40%;
     width:40%;
     background-color:rgba(0,0,0,0.5);
+    border:3px solid rgba(0,0,0,0.8);
+    border-radius:5px;
 }
 
 .charButton {
@@ -45,6 +47,9 @@ canvas {
     margin-left:10px;
     display:inline-block;
     box-sizing:border-box;
+    background-color:rgba(0,0,0,0.3);
+    border:3px solid rgba(0,0,0,0.8);
+    border-radius:5px;
 }
 
 #charChoose {
@@ -54,4 +59,7 @@ canvas {
     right:0;
     bottom:10px;
     margin:auto;
+    background-color:rgba(30,255,0,0.3);
+    border:3px solid rgba(30,255,0,0.8);
+    border-radius:5px;
 }
