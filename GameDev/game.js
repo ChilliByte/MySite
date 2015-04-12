@@ -51,9 +51,9 @@ level1.boxes.push({
     height: height
 });
 
--level1.boxes.push({
+level1.boxes.push({
     x: -100,
-    y: height / 2,
+    y: (height / 6)*5,
     width: width * 2,
     height: height / 2
 });
