@@ -96,8 +96,6 @@ background : -ms-linear-gradient(top, rgb(11, 222, 11) 00%, rgb(2, 97, 2) 99%, r
     z-index:2;
     height:250px;
     width: 600px;
-    display:none;
     background-color:rgb(0,0,0);
-    display:none;
 }
 
