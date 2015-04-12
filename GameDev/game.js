@@ -135,7 +135,7 @@ function drawChar() {
             ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
             
             //Eye
-            ctx.fillStyle = "#8B4513";
+            ctx.fillStyle = "#90EE90";
             ctx.fillRect((player.x) + 8, (player.y) + 4 , 4, 4);
             
             //Sleeve
@@ -161,7 +161,7 @@ function drawChar() {
                 ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
                 
                 //Eye
-                ctx.fillStyle = "#8B4513";
+                ctx.fillStyle = "#90EE90";
                 ctx.fillRect((player.x) + 8, (player.y) + 4, 4, 4);
                 
                 //Sleeve
@@ -187,7 +187,7 @@ function drawChar() {
                 ctx.fillRect(player.x, (player.y) + 4, 8, 8);
                 
                 //Eye
-                ctx.fillStyle = "#8B4513";
+                ctx.fillStyle = "#90EE90";
                 ctx.fillRect(player.x, (player.y) + 4, 4, 4);
                 
                 //Sleeve
