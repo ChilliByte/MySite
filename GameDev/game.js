@@ -51,7 +51,7 @@ level1.boxes.push({
     height: height
 });
 
-level1.boxes.push({
+-level1.boxes.push({
     x: -100,
     y: height / 2,
     width: width * 2,
@@ -628,7 +628,7 @@ function update() {
     //Hint Triggers
 
     if (!triggers.firstLevel) {
-        if ((currentLevelInt == 0) && (player.x > width - 100)) {
+        if ((currentLevelInt == 0) && (player.x > width - 400)) {
             hint(player.x - 400, 30, "Go to the edge of the screen to go to the next level!");
             triggers.firstLevel = true;
             setTimeout(function() {
