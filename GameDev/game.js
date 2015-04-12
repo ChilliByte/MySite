@@ -30,7 +30,7 @@ function setChar(x) {
 }
 
 function confirmChar() {
-    document.getElementById("charSelect").style.display = "none";
+    fadeOut(document.getElementById("charSelect"))
 }
 
 function drawChar() {
@@ -446,6 +446,9 @@ canvas.height = height;
 currentLevelInt = 0
 currentLevel = levels[currentLevelInt];
 mobDir = "right";
+
+var hintbox = document.getElementById("hintBox")
+var moved = false;
 function update() {
     // check keys
     if (keys[38] || keys[32] || keys[87]) {
@@ -460,12 +463,14 @@ function update() {
         // right arrow
         if (player.velX < player.speed) {
             player.velX++;
+            if (!moved) {hint(player.x,player.y,"Use the arrow keys to move!"); moved = true;}
         }
     }
     if (keys[37] || keys[65]) {
         // left arrow
         if (player.velX > -player.speed) {
             player.velX--;
+            if (!moved) {hint(player.x,player.y,"Use the arrow keys to move!"); moved = true;}
         }
     }
 
@@ -607,6 +612,42 @@ function colCheck(shapeA, shapeB) {
         }
     }
     return colDir;
+}
+
+function hint(x,y,text) {
+    fadeOut(hintbox);
+    hintBox.style.position.left = x;
+    hintBox.style.position.top = y;
+    hintBox.innerHTML = text;
+    fadeIn(hintbox);
+    
+}
+
+function fadeOut(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 50);
+}
+
+function fadeIn(element) {
+    var op = 0.1;  // initial opacity
+    element.style.display = 'block';
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+        alert("here");
+    }, 10);
 }
 
 document.body.addEventListener("keydown", function(e) {
