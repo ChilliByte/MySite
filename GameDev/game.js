@@ -446,8 +446,6 @@ canvas.height = height;
 currentLevelInt = 0
 currentLevel = levels[currentLevelInt];
 mobDir = "right";
-
-var hintbox = document.getElementById("hintBox")
 var moved = false;
 function update() {
     // check keys
@@ -615,11 +613,11 @@ function colCheck(shapeA, shapeB) {
 }
 
 function hint(x,y,text) {
-    $(hintbox).fadeOut();
-    hintBox.style.position.left = x;
-    hintBox.style.position.top = y;
-    hintBox.innerHTML = text;
-    $(hintbox).fadeIn();
+    $("#hintBox").fadeOut();
+    document.getElementById("hintBox").style.left = x;
+    document.getElementById("hintBox").style.top = y;
+    document.getElementById("hintBox").innerHTML = text;
+    $("#hintBox").fadeIn();
     
 }
 
