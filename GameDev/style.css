@@ -41,7 +41,7 @@ canvas {
 .charButton {
     height:80%;
     width:30%;
-    margin:10px;
+    margin-left:10px;
     display:inline-block;
     box-sizing:border-box;
 }
