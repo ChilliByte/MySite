@@ -164,7 +164,7 @@ function drawChar() {
         if (player.velX >= 0) {
             //Hair
             ctx.fillStyle = "#A0522D";
-            ctx.fillRect((player.x) + 4, player.y, 4, 12);
+            ctx.fillRect((player.x) + 4, player.y, 12, 4);
             ctx.fillRect(player.x, (player.y) + 4, 8, 8);
             ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 12);
             ctx.fillRect(player.x, (player.y) + 20, 4, 8);
@@ -197,7 +197,7 @@ function drawChar() {
         if (player.velX < 0) {
             //Hair
             ctx.fillStyle = "#A0522D";
-            ctx.fillRect(player.x, player.y, 4, 12);
+            ctx.fillRect(player.x, player.y, 12, 4);
             ctx.fillRect((player.x + 8), (player.y) + 4, 8, 8);
             ctx.fillRect((player.x) + 8, (player.y) + 12, 4, 12);
             ctx.fillRect((player.x) + 8, (player.y) + 20, 4, 8);
