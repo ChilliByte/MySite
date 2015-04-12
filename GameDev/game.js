@@ -107,7 +107,7 @@ level3.boxes.push({
 level3.collectibles = [];
 
 level3.collectibles.push({
-    x: 140,
+    x: (width/4)*3,
     y: height / 2 - 100,
     type: "coin",
     width: 10,
