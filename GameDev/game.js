@@ -72,7 +72,7 @@ level2.boxes.push({
 
 level2.boxes.push({
     x: width / 2,
-    y: (height / 2) + 100 ,
+    y: (height / 2) + 70 ,
     width: width,
     height: height / 2 + 20
 });
