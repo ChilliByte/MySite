@@ -46,3 +46,12 @@ canvas {
     display:inline-block;
     box-sizing:border-box;
 }
+
+#charChoose {
+    width:90%;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:10px;
+    margin:auto;
+}
