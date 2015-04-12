@@ -165,7 +165,7 @@ function drawChar() {
                 ctx.fillRect((player.x) + 8, (player.y) + 4, 4, 4);
                 
                 //Sleeve
-                ctx.fillStyle = "#EDEDED";
+                ctx.fillStyle = "#d22";
                 ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
                 
                 //Hand
@@ -191,7 +191,7 @@ function drawChar() {
                 ctx.fillRect(player.x, (player.y) + 4, 4, 4);
                 
                 //Sleeve
-                ctx.fillStyle = "#EDEDED";
+                ctx.fillStyle = "#d22";
                 ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
                 
                 //Hand
