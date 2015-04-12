@@ -189,9 +189,9 @@ function drawChar() {
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect((player.x) + 8, (player.y) + 20, 4, 4);
             
-            //Jacket
+            //Pants
             ctx.fillStyle = "#666666";
-            ctx.fillRect((player.x) + 8, (player.y) + 24, 4, 8);
+            ctx.fillRect((player.x) + 8, (player.y) + 24, 4, 12);
         
         }
         if (player.velX < 0) {
@@ -222,9 +222,9 @@ function drawChar() {
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
             
-            //Jacket
+            //Pants
             ctx.fillStyle = "#666666";
-            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 8);
+            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
         }
     }
 }
