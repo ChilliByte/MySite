@@ -33,6 +33,7 @@ canvas {
     bottom:0;
     margin:auto;
     padding:0;
+    padding-top:10px;
     height:40%;
     width:40%;
     background-color:rgba(0,0,0,0.5);
