@@ -85,23 +85,16 @@ level3.boxes = [];
 
 level3.boxes.push({
     x: -100,
-    y: height / 2 + 10,
-    width: width + 100,
-    height: height / 2
+    y: (height / 2) + 70,
+    width: (width/2 + 100),
+    height: height
 });
 
 level3.boxes.push({
-    x: 40,
-    y: height / 2 - 30,
-    width: width - 40,
-    height: height / 2 - 40
-});
-
-level3.boxes.push({
-    x: 80,
-    y: height / 2 - 70,
+    x: (width/2) - 100,
+    y: height / 2 + 100,
     width: width,
-    height: height / 2
+    height: height
 });
 
 level3.collectibles = [];
@@ -109,29 +102,29 @@ level3.collectibles = [];
 level3.collectibles.push({
     x: 140,
     y: height / 2 - 100,
+    type: "coin",
+    width: 10,
+    height: 10,
+    collected: false
+});
+level3.collectibles.push({
+    x: 180,
+    y: height / 2 - 100,
+    type: "coin",
+    width: 10,
+    height: 10,
+    collected: false
+});
+level3.collectibles.push({
+    x: 100,
+    y: height / 2 - 100,
+    type: "coin",
     width: 10,
     height: 10,
     collected: false
 });
 
 level3.mobs = [];
-
-level3.mobs.push({
-    x: 240,
-    y: 10,
-    width: 10,
-    height: 10,
-    speed: 0.3,
-    velX: 0,
-    velY: 0,
-    type: "patrol",
-    x1Limit: 140,
-    x2Limit: 340,
-    collisionDir: "",
-    grounded: false,
-    hitPlayer: "",
-    dead: false
-});
 // Level 4
 level4.boxes = [];
 
@@ -526,7 +519,7 @@ function update() {
             var collectCheck = colCheck(player, currentLevel.collectibles[j]);
             if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
                 currentLevel.collectibles[j].collected = true;
-                player.collected++
+                if(currentLevel.collectibles[j].type === "coin") { player.collected++ };
                     console.log("Collected")
             }
         }
@@ -620,7 +613,7 @@ function update() {
 
     if (!triggers.firstLevel) {
         if ((currentLevelInt == 0) && (player.x > width - 400)) {
-            hint(player.x - 400, 30, "Go to the edge of the screen to go to the next level!");
+            hint(player.x, 30, "Go to the edge of the screen to go to the next level!");
             triggers.firstLevel = true;
             setTimeout(function() {
                 hint(10000, 10000, "")
@@ -629,7 +622,7 @@ function update() {
     }
 
     if (!triggers.firstCoin) {
-        if ((currentLevelInt == 1) && (player.x < 100)) {
+        if ((currentLevelInt == 2) && (player.x < 100)) {
             hint(player.x, 30, "That Orange thing's a coin! Ten coins give you a powerup! Try and collect all 100!");
             triggers.firstCoin = true;
             setTimeout(function() {
