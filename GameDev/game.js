@@ -53,7 +53,7 @@ level1.boxes.push({
 
 level1.boxes.push({
     x: -100,
-    y: (height / 6)*5,
+    y: (height / 2) + 150,
     width: width * 2,
     height: height / 2
 });
@@ -65,28 +65,19 @@ level2.boxes = [];
 
 level2.boxes.push({
     x: -100,
-    y: height / 2 + 10,
-    width: (width / 2) + 100,
+    y: (height / 2) + 150,
+    width: (width / 2) + 120,
     height: height / 2
 });
 
 level2.boxes.push({
     x: width / 2,
-    y: height / 2 - 20,
+    y: (height / 2) + 100 ,
     width: width,
     height: height / 2 + 20
 });
 
 level2.collectibles = [];
-
-level2.collectibles.push({
-    x: width / 2 + 20,
-    y: height / 2 - 30,
-    width: 10,
-    height: 10,
-    collected: false
-});
-
 level2.mobs = [];
 
 //Level 3
