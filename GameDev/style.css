@@ -73,6 +73,5 @@ canvas {
     /* IE 10+ */
     background : -ms-linear-gradient(top, rgb(11, 222, 11) 00%, rgb(2, 97, 2) 99%, rgb(255, 255, 255) 99%);
 
-    border:1px solid rgba(30,255,0,0.8);
     border-radius:5px;
 }
