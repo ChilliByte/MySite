@@ -18,11 +18,20 @@ var canvas = document.getElementById("canvas"),
         velY: 0,
         collected: 0,
         jumping: false,
-        grounded: false
+        grounded: false,
+        char: 1
     },
     keys = [],
     friction = 0.8,
     gravity = 0.3;
+
+function setChar(x) {
+    player.char = x
+}
+
+function confirmChar() {
+    document.getElementById("charChoose").style.display = "none";
+}
 
 levels = [];
 level1 = {};
