@@ -14,7 +14,7 @@ var canvas = document.getElementById("canvas"),
         width: 10,
         height: 20,
         speed: 4,
-        velX: 0,
+        velX: 0.02,
         velY: 0,
         collected: 0,
         jumping: false,
@@ -248,7 +248,7 @@ function drawChar() {
         player.height = 36
         player.width = 12
 
-        if (player.velX >= 0) {
+        if (player.velX > 0) {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -310,7 +310,7 @@ function drawChar() {
         player.height = 36
         player.width = 12
 
-        if (player.velX >= 0) {
+        if (player.velX > 0) {
             //Brown Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -370,7 +370,7 @@ function drawChar() {
         player.height = 36
         player.width = 16
 
-        if (player.velX >= 0) {
+        if (player.velX > 0) {
             //Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect((player.x) + 4, player.y, 12, 4);
