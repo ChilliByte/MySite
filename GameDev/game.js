@@ -77,13 +77,6 @@ level2.boxes.push({
     height: height / 2 + 20
 });
 
-level2.boxes.push({
-    x: width / 4,
-    y: (height / 2) + 220 ,
-    width: width/4,
-    height: height
-});
-
 level2.collectibles = [];
 level2.mobs = [];
 
@@ -101,6 +94,13 @@ level3.boxes.push({
     x: (width/2) - 100,
     y: height / 2 + 100,
     width: width,
+    height: height
+});
+
+level2.boxes.push({
+    x: width / 4,
+    y: (height / 2) - 20 ,
+    width: width/4,
     height: height
 });
 
