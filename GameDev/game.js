@@ -142,95 +142,16 @@ level4.boxes.push({
     height: height / 2
 });
 
+level4.boxes.push({
+    x: height/4,
+    y: (height / 2),
+    width: 10,
+    height: height / 2
+});
+
 
 level4.collectibles = [];
 level4.mobs = [];
-
-level4.mobs.push({
-    x: 20,
-    y: 10,
-    width: 10,
-    height: 10,
-    speed: 0.3,
-    velX: 0,
-    velY: 0,
-    type: "patrol",
-    x1Limit: 140,
-    x2Limit: 340,
-    collisionDir: "",
-    grounded: false,
-    hitPlayer: "",
-    dead: false
-});
-
-level4.mobs.push({
-    x: 60,
-    y: 10,
-    width: 20,
-    height: 20,
-    speed: 0.3,
-    velX: 0,
-    velY: 0,
-    type: "patrol",
-    x1Limit: 140,
-    x2Limit: 340,
-    collisionDir: "",
-    grounded: false,
-    hitPlayer: "",
-    dead: false
-});
-
-level4.mobs.push({
-    x: 120,
-    y: 10,
-    width: 50,
-    height: 50,
-    speed: 0.3,
-    velX: 0,
-    velY: 0,
-    type: "patrol",
-    x1Limit: 140,
-    x2Limit: 340,
-    collisionDir: "",
-    grounded: false,
-    hitPlayer: "",
-    dead: false
-});
-
-level4.mobs.push({
-    x: 170,
-    y: 10,
-    width: 10,
-    height: 10,
-    speed: 0.3,
-    velX: 0,
-    velY: 0,
-    type: "patrol",
-    x1Limit: 140,
-    x2Limit: 340,
-    collisionDir: "",
-    grounded: false,
-    hitPlayer: "",
-    dead: false
-});
-
-level4.mobs.push({
-    x: 240,
-    y: 10,
-    width: 10,
-    height: 10,
-    speed: 0.3,
-    velX: 0,
-    velY: 0,
-    type: "patrol",
-    x1Limit: 140,
-    x2Limit: 340,
-    collisionDir: "",
-    grounded: false,
-    hitPlayer: "",
-    dead: false
-});
-
 // End Levels
 
 //Character Functions
