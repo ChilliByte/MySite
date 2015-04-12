@@ -274,9 +274,6 @@ level2.boxes.push({
     height: height/2 + 20
 });
 
-
-
-
 level2.collectibles = [];
 
 level2.collectibles.push({
@@ -464,14 +461,14 @@ function update() {
         // right arrow
         if (player.velX < player.speed) {
             player.velX++;
-            if (!players.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); moved = true;}
+            if (!triggers.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); moved = true;}
         }
     }
     if (keys[37] || keys[65]) {
         // left arrow
         if (player.velX > -player.speed) {
             player.velX--;
-            if (!players.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); moved = true;}
+            if (!triggers.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); moved = true;}
         }
     }
 
