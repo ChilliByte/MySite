@@ -167,7 +167,7 @@ function drawChar() {
             ctx.fillRect((player.x) + 4, player.y, 12, 4);
             ctx.fillRect(player.x, (player.y) + 4, 8, 8);
             ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 12);
-            ctx.fillRect(player.x, (player.y) + 20, 4, 8);
+            ctx.fillRect(player.x, (player.y) + 20, 8, 4);
             
             //Face
             ctx.fillStyle = "#FFEBCD";
@@ -178,8 +178,8 @@ function drawChar() {
             ctx.fillRect((player.x) + 12, (player.y) + 4, 4, 4);
             
             //Bow Tie
-            ctx.fillStyle = "d22";
-            ctx.fillRect((player.x) + 12, (player.y) + 4, 4, 4);
+            ctx.fillStyle = "#d22";
+            ctx.fillRect((player.x) + 12, (player.y) + 12, 4, 4);
             
             //Jacket
             ctx.fillStyle = "#cccccc";
@@ -200,7 +200,7 @@ function drawChar() {
             ctx.fillRect(player.x, player.y, 12, 4);
             ctx.fillRect((player.x + 8), (player.y) + 4, 8, 8);
             ctx.fillRect((player.x) + 8, (player.y) + 12, 4, 12);
-            ctx.fillRect((player.x) + 8, (player.y) + 20, 4, 8);
+            ctx.fillRect((player.x) + 8, (player.y) + 20, 8, 4);
             
             //Face
             ctx.fillStyle = "#FFEBCD";
@@ -211,7 +211,7 @@ function drawChar() {
             ctx.fillRect(player.x, (player.y) + 4, 4, 4);
             
             //Bow Tie
-            ctx.fillStyle = "d22";
+            ctx.fillStyle = "#d22";
             ctx.fillRect(player.x, (player.y) + 12, 4, 4);
             
             //Jacket
