@@ -614,8 +614,8 @@ function colCheck(shapeA, shapeB) {
 
 function hint(x,y,text) {
     $("#hintBox").fadeOut();
-    document.getElementById("hintBox").style.left = x;
-    document.getElementById("hintBox").style.top = y;
+    document.getElementById("hintBox").style.left = x + "px";
+    document.getElementById("hintBox").style.top = y + "px";
     document.getElementById("hintBox").innerHTML = text;
     $("#hintBox").fadeIn();
     
