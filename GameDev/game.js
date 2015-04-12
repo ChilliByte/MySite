@@ -584,7 +584,7 @@ function update() {
     }
     
     if (!triggers.firstCoin) {
-        if ((currentLevelInt == 0) && (player.x < 100)) {
+        if ((currentLevelInt == 1) && (player.x < 100)) {
             hint(player.x,30,"That Orange thing's a coin! Ten coins give you a powerup! Try and collect all 100!");
             triggers.firstCoin = true;
             setTimeout(function() {hint(10000,10000,"")},3000);
