@@ -27,8 +27,6 @@ var canvas = document.getElementById("canvas"),
 
     canvas.width = width;
     canvas.height = height;
-    currentLevelInt = 0
-    currentLevel = levels[currentLevelInt];
     mobDir = "right";
 
 
@@ -455,6 +453,10 @@ var triggers = {};
 triggers.firstStep = false;
 triggers.firstLevel = false;
 triggers.firstCoin = false;
+
+//Load Level1
+currentLevelInt = 0
+currentLevel = levels[currentLevelInt];
 
 function update() {
     // check keys
