@@ -99,8 +99,10 @@ background : -ms-linear-gradient(top, rgb(11, 222, 11) 00%, rgb(2, 97, 2) 99%, r
     width:  300px;
     background-color:rgba(0,0,0,0.4);
     padding:10px;
-    font-size:3em;
+    font-size:1em;
     color:white;
+    left:10px;
+    top:10px;
     box-sizing: border-box;
 }
 
