@@ -107,7 +107,15 @@ level3.boxes.push({
 level3.collectibles = [];
 
 level3.collectibles.push({
-    x: (width/4)*3,
+    x: (width/8)*3,
+    y: height / 2 - 80,
+    type: "coin",
+    width: 10,
+    height: 10,
+    collected: false
+});
+level3.collectibles.push({
+    x: (width/8)*5,
     y: height / 2 - 100,
     type: "coin",
     width: 10,
@@ -115,15 +123,7 @@ level3.collectibles.push({
     collected: false
 });
 level3.collectibles.push({
-    x: 180,
-    y: height / 2 - 100,
-    type: "coin",
-    width: 10,
-    height: 10,
-    collected: false
-});
-level3.collectibles.push({
-    x: 100,
+    x: (width/8)*7,
     y: height / 2 - 100,
     type: "coin",
     width: 10,
