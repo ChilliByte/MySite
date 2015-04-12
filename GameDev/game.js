@@ -36,86 +36,86 @@ function confirmChar() {
 function drawChar() {
     if (player.char == 1) {
         //Set Size
-        player.height = 18
-        player.width = 6
+        player.height = 36
+        player.width = 12
         
         //Purple Hair
         ctx.fillStyle = "#4B0082";
-        ctx.fillRect(player.x, player.y, player.width, 6);
-        ctx.fillRect(player.x, player.y, 2, 8);
+        ctx.fillRect(player.x, player.y, player.width, 12);
+        ctx.fillRect(player.x, player.y, 4, 16);
         
         //Face
         ctx.fillStyle = "#FFEBCD";
-        ctx.fillRect((player.x) + 2, (player.y) + 2, 4, 4);
+        ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
         
         //Eye
         ctx.fillStyle = "#7FFFD4";
-        ctx.fillRect((player.x) + 4, (player.y) + 2, 2, 2);
+        ctx.fillRect((player.x) + 8, (player.y) + 4 , 4, 4);
         
         //Sleeve
         ctx.fillStyle = "#EDEDED";
-        ctx.fillRect((player.x) + 2, (player.y) + 6, 2, 4);
+        ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
         
         //Hand
         ctx.fillStyle = "#FFEBCD";
-        ctx.fillRect((player.x) + 2, (player.y) + 10, 2, 2);
+        ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
         
         //Trousers
         ctx.fillStyle = "#4682B4";
-        ctx.fillRect((player.x) + 2, (player.y) + 12, 2, 4);
+        ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 8);
         
         if (player.velX > 0) {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
-            ctx.fillRect(player.x, player.y, player.width, 6);
-            ctx.fillRect(player.x, player.y, 2, 8);
+            ctx.fillRect(player.x, player.y, player.width, 12);
+            ctx.fillRect(player.x, player.y, 4, 16);
             
             //Face
             ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect((player.x) + 2, (player.y) + 2, 4, 4);
+            ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
             
             //Eye
             ctx.fillStyle = "#7FFFD4";
-            ctx.fillRect((player.x) + 4, (player.y) + 2, 2, 2);
+            ctx.fillRect((player.x) + 8, (player.y) + 4, 4, 4);
             
             //Sleeve
             ctx.fillStyle = "#EDEDED";
-            ctx.fillRect((player.x) + 2, (player.y) + 6, 2, 4);
+            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
             
             //Hand
             ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect((player.x) + 2, (player.y) + 10, 2, 2);
+            ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
             
             //Trousers
             ctx.fillStyle = "#4682B4";
-            ctx.fillRect((player.x) + 2, (player.y) + 12, 2, 4);
+            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 8);
             
         }
         if (player.velX < 0) {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
-            ctx.fillRect(player.x, player.y, player.width, 6);
-            ctx.fillRect((player.x) + 4, player.y, 2, 8);
+            ctx.fillRect(player.x, player.y, player.width, 12);
+            ctx.fillRect((player.x) + 8, player.y, 4, 16);
             
             //Face
             ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect(player.x, (player.y) + 2, 4, 4);
+            ctx.fillRect(player.x, (player.y) + 4, 8, 8);
             
             //Eye
             ctx.fillStyle = "#7FFFD4";
-            ctx.fillRect(player.x, (player.y) + 2, 2, 2);
+            ctx.fillRect(player.x, (player.y) + 4, 4, 4);
             
             //Sleeve
             ctx.fillStyle = "#EDEDED";
-            ctx.fillRect((player.x) + 2, (player.y) + 6, 2, 4);
+            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
             
             //Hand
             ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect((player.x) + 2, (player.y) + 10, 2, 2);
+            ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
             
             //Trousers
             ctx.fillStyle = "#4682B4";
-            ctx.fillRect((player.x) + 2, (player.y) + 12, 2, 4);
+            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 8);
             
         }
         
