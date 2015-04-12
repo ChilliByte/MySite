@@ -97,7 +97,7 @@ level3.boxes.push({
     height: height
 });
 
-level2.boxes.push({
+level3.boxes.push({
     x: width / 4,
     y: (height / 2) - 20 ,
     width: width/4,
