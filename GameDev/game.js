@@ -446,7 +446,10 @@ canvas.height = height;
 currentLevelInt = 0
 currentLevel = levels[currentLevelInt];
 mobDir = "right";
-var moved = false;
+
+var triggers = {};
+triggers.firstStep = false;
+
 function update() {
     // check keys
     if (keys[38] || keys[32] || keys[87]) {
@@ -461,14 +464,14 @@ function update() {
         // right arrow
         if (player.velX < player.speed) {
             player.velX++;
-            if (!moved) {hint(player.x,player.y,"Use the arrow keys to move!"); moved = true;}
+            if (!players.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); moved = true;}
         }
     }
     if (keys[37] || keys[65]) {
         // left arrow
         if (player.velX > -player.speed) {
             player.velX--;
-            if (!moved) {hint(player.x,player.y,"Use the arrow keys to move!"); moved = true;}
+            if (!players.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); moved = true;}
         }
     }
 
@@ -570,6 +573,10 @@ function update() {
     player.y += player.velY;
 
     drawChar()
+    
+    //Hint Triggers
+    
+    if (currentLevelInt = 0)
     
     if (debug) {
         document.getElementById("stats").style.display = "block"
