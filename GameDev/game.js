@@ -121,7 +121,6 @@ function drawChar() {
         
         
     }
-    
     if (player.char == 2) {
             //Set Size
             player.height = 36
@@ -207,12 +206,9 @@ function drawChar() {
             
             
         }
-          
-    }
     if (player.char == 3) {
         
     }
-    
 }
 
 levels = [];
