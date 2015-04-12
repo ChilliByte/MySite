@@ -461,14 +461,14 @@ function update() {
         // right arrow
         if (player.velX < player.speed) {
             player.velX++;
-            if (!triggers.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); moved = true;}
+            if (!triggers.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); setTimeout(function () {triggers.firstStep = true},5000);}
         }
     }
     if (keys[37] || keys[65]) {
         // left arrow
         if (player.velX > -player.speed) {
             player.velX--;
-            if (!triggers.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); moved = true;}
+            if (!triggers.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); setTimeout(function () {triggers.firstStep = true},5000);}
         }
     }
 
