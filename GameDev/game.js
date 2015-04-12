@@ -85,14 +85,14 @@ level3.boxes = [];
 
 level3.boxes.push({
     x: -100,
-    y: (height / 2) + 70,
+    y: (height / 2) + 60,
     width: (width/2 + 100),
     height: height
 });
 
 level3.boxes.push({
     x: (width/2) - 100,
-    y: height / 2 + 90,
+    y: (height / 2) + 80,
     width: width,
     height: height
 });
