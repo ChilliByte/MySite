@@ -489,19 +489,25 @@ function update() {
         }
     }
 
+    //Factor in Friction and Gravity
     player.velX *= friction;
     player.velY += gravity;
-
+    
+    //Clear The Last Frame
     ctx.clearRect(0, 0, width, height);
+    
+    //Change to green and begins drawing
     ctx.fillStyle = "#380";
     ctx.beginPath();
 
+    //Loop through the array of boxes in this level
     player.grounded = false;
     for (var i = 0; i < currentLevel.boxes.length; i++) {
+        //draw each one
         ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
-
+        //Figure out whether we've touched a box
         var dir = colCheck(player, currentLevel.boxes[i]);
-
+        //Do something depending on the direction the collision happened from.
         if (dir === "l" || dir === "r") {
             player.velX = 0;
             player.jumping = false;
@@ -511,6 +517,7 @@ function update() {
         } else if (dir === "t") {
             player.velY *= -1;
         }
+        //Loop through each of the mobs in this level, and see if any of them have collided with a box.
         for (var l = 0; l < currentLevel.mobs.length; l++) {
             currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.boxes[i])
             if (currentLevel.mobs[l].collisionDir == "b") {
