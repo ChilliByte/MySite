@@ -137,7 +137,7 @@ level4.boxes = [];
 
 level4.boxes.push({
     x: -100,
-    y: height / 2 + 20,
+    y: height / 2 - 20,
     width: width + 200,
     height: height / 2
 });
