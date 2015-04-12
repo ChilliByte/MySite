@@ -32,6 +32,7 @@ canvas {
     top:0;
     bottom:0;
     margin:auto;
+    padding:0;
     height:40%;
     width:40%;
     background-color:rgba(0,0,0,0.5);
@@ -42,4 +43,5 @@ canvas {
     width:30%;
     margin:10px;
     display:inline-block;
+    box-sizing:border-box;
 }
