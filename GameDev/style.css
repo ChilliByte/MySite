@@ -72,13 +72,13 @@ canvas {
     margin:auto;
 
     /* Chrome 10+,Safari */
-    background : -webkit-linear-gradient(top, rgba(31, 242, 31, 0.3) 00%, rgba(42, 137, 42, 0.8) 99%);
+    background : -webkit-linear-gradient(top, rgba(31, 242, 31, 0) 00%, rgba(42, 137, 42, 0) 99%);
 
     /* Firefox 4+ */ 
-    background : -moz-linear-gradient(top, rgba(31, 242, 31, 0.3) 00%, rgba(42, 137, 42, 0.8) 99%);
+    background : -moz-linear-gradient(top, rgba(31, 242, 31, 0) 00%, rgba(42, 137, 42, 0) 99%);
 
     /* Opera */
-    background : -o-linear-gradient(top, rgba(31, 242, 31, 0.3) 00%, rgba(42, 137, 42, 0.8) 99%);
+    background : -o-linear-gradient(top, rgba(31, 242, 31, 0) 00%, rgba(42, 137, 42, 0) 99%);
 
     /* IE 10+ */
     background : -ms-linear-gradient(top, rgba(11, 222, 11, 0.3) 00%, rgba(2, 97, 2, 0.8) 99%);
