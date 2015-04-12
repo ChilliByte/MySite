@@ -38,129 +38,129 @@ function drawChar() {
         //Set Size
         player.height = 36
         player.width = 12
-        
+
         if (player.velX >= 0) {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
             ctx.fillRect(player.x, player.y, player.width, 12);
             ctx.fillRect(player.x, player.y, 4, 16);
-            
+
             //Face
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
-            
+
             //Eye
             ctx.fillStyle = "#7FFFD4";
             ctx.fillRect((player.x) + 8, (player.y) + 4, 4, 4);
-            
+
             //Sleeve
             ctx.fillStyle = "#EDEDED";
             ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-            
+
             //Hand
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-            
+
             //Trousers
             ctx.fillStyle = "#4682B4";
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-            
+
         }
         if (player.velX < 0) {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
             ctx.fillRect(player.x, player.y, player.width, 12);
             ctx.fillRect((player.x) + 8, player.y, 4, 16);
-            
+
             //Face
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect(player.x, (player.y) + 4, 8, 8);
-            
+
             //Eye
             ctx.fillStyle = "#7FFFD4";
             ctx.fillRect(player.x, (player.y) + 4, 4, 4);
-            
+
             //Sleeve
             ctx.fillStyle = "#EDEDED";
             ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-            
+
             //Hand
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-            
+
             //Trousers
             ctx.fillStyle = "#4682B4";
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-            
+
         }
-        
-        
+
+
     }
     if (player.char == 2) {
-            //Set Size
-            player.height = 36
-            player.width = 12
-            
-            if (player.velX >= 0) {
-                //Brown Hair
-                ctx.fillStyle = "#A0522D";
-                ctx.fillRect(player.x, player.y, player.width, 12);
+        //Set Size
+        player.height = 36
+        player.width = 12
 
-                
-                //Face
-                ctx.fillStyle = "#FFEBCD";
-                ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
-                
-                //Eye
-                ctx.fillStyle = "#90EE90";
-                ctx.fillRect((player.x) + 8, (player.y) + 4, 4, 4);
-                
-                //Sleeve
-                ctx.fillStyle = "#d22";
-                ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-                
-                //Hand
-                ctx.fillStyle = "#FFEBCD";
-                ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-                
-                //Trousers
-                ctx.fillStyle = "#4682B4";
-                ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-                
-            }
-            if (player.velX < 0) {
-                //Brown Hair
-                ctx.fillStyle = "#A0522D";
-                ctx.fillRect(player.x, player.y, player.width, 12);
-                
-                //Face
-                ctx.fillStyle = "#FFEBCD";
-                ctx.fillRect(player.x, (player.y) + 4, 8, 8);
-                
-                //Eye
-                ctx.fillStyle = "#90EE90";
-                ctx.fillRect(player.x, (player.y) + 4, 4, 4);
-                
-                //Sleeve
-                ctx.fillStyle = "#d22";
-                ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-                
-                //Hand
-                ctx.fillStyle = "#FFEBCD";
-                ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-                
-                //Trousers
-                ctx.fillStyle = "#4682B4";
-                ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-                
-            }
-            
-            
+        if (player.velX >= 0) {
+            //Brown Hair
+            ctx.fillStyle = "#A0522D";
+            ctx.fillRect(player.x, player.y, player.width, 12);
+
+
+            //Face
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
+
+            //Eye
+            ctx.fillStyle = "#90EE90";
+            ctx.fillRect((player.x) + 8, (player.y) + 4, 4, 4);
+
+            //Sleeve
+            ctx.fillStyle = "#d22";
+            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
+
+            //Hand
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
+
+            //Trousers
+            ctx.fillStyle = "#4682B4";
+            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
+
         }
+        if (player.velX < 0) {
+            //Brown Hair
+            ctx.fillStyle = "#A0522D";
+            ctx.fillRect(player.x, player.y, player.width, 12);
+
+            //Face
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect(player.x, (player.y) + 4, 8, 8);
+
+            //Eye
+            ctx.fillStyle = "#90EE90";
+            ctx.fillRect(player.x, (player.y) + 4, 4, 4);
+
+            //Sleeve
+            ctx.fillStyle = "#d22";
+            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
+
+            //Hand
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
+
+            //Trousers
+            ctx.fillStyle = "#4682B4";
+            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
+
+        }
+
+
+    }
     if (player.char == 3) {
         player.height = 36
         player.width = 16
-        
+
         if (player.velX >= 0) {
             //Hair
             ctx.fillStyle = "#A0522D";
@@ -168,31 +168,31 @@ function drawChar() {
             ctx.fillRect(player.x, (player.y) + 4, 8, 8);
             ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 12);
             ctx.fillRect(player.x, (player.y) + 20, 8, 4);
-            
+
             //Face
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect((player.x) + 8, (player.y) + 4, 8, 8);
-            
+
             //Eye
             ctx.fillStyle = "#CD853F";
             ctx.fillRect((player.x) + 12, (player.y) + 4, 4, 4);
-            
+
             //Bow Tie
             ctx.fillStyle = "#d22";
             ctx.fillRect((player.x) + 12, (player.y) + 12, 4, 4);
-            
+
             //Jacket
             ctx.fillStyle = "#cccccc";
             ctx.fillRect((player.x) + 8, (player.y) + 12, 4, 8);
-            
+
             //Hand
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect((player.x) + 8, (player.y) + 20, 4, 4);
-            
+
             //Pants
             ctx.fillStyle = "#666666";
             ctx.fillRect((player.x) + 8, (player.y) + 24, 4, 12);
-        
+
         }
         if (player.velX < 0) {
             //Hair
@@ -201,27 +201,27 @@ function drawChar() {
             ctx.fillRect((player.x + 8), (player.y) + 4, 8, 8);
             ctx.fillRect((player.x) + 8, (player.y) + 12, 4, 12);
             ctx.fillRect((player.x) + 8, (player.y) + 20, 8, 4);
-            
+
             //Face
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect(player.x, (player.y) + 4, 8, 8);
-            
+
             //Eye
             ctx.fillStyle = "#CD853F";
             ctx.fillRect(player.x, (player.y) + 4, 4, 4);
-            
+
             //Bow Tie
             ctx.fillStyle = "#d22";
             ctx.fillRect(player.x, (player.y) + 12, 4, 4);
-            
+
             //Jacket
             ctx.fillStyle = "#cccccc";
             ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-            
+
             //Hand
             ctx.fillStyle = "#FFEBCD";
             ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-            
+
             //Pants
             ctx.fillStyle = "#666666";
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
@@ -250,9 +250,9 @@ level1.boxes.push({
 
 level1.boxes.push({
     x: -100,
-    y: height/2,
-    width: width*2,
-    height: height/2
+    y: height / 2,
+    width: width * 2,
+    height: height / 2
 });
 
 level1.collectibles = [];
@@ -262,23 +262,23 @@ level2.boxes = [];
 
 level2.boxes.push({
     x: -100,
-    y: height/2 + 10,
-    width: (width/2) + 100,
-    height: height/2
+    y: height / 2 + 10,
+    width: (width / 2) + 100,
+    height: height / 2
 });
 
 level2.boxes.push({
-    x: width/2,
-    y: height/2 - 20,
+    x: width / 2,
+    y: height / 2 - 20,
     width: width,
-    height: height/2 + 20
+    height: height / 2 + 20
 });
 
 level2.collectibles = [];
 
 level2.collectibles.push({
-    x: width/2 + 20,
-    y: height/2 - 30,
+    x: width / 2 + 20,
+    y: height / 2 - 30,
     width: 10,
     height: 10,
     collected: false
@@ -291,30 +291,30 @@ level3.boxes = [];
 
 level3.boxes.push({
     x: -100,
-    y: height/2 + 10,
-    width: width+100,
-    height: height/2
+    y: height / 2 + 10,
+    width: width + 100,
+    height: height / 2
 });
 
 level3.boxes.push({
     x: 40,
-    y: height/2 - 30,
+    y: height / 2 - 30,
     width: width - 40,
-    height: height/2 - 40
+    height: height / 2 - 40
 });
 
 level3.boxes.push({
     x: 80,
-    y: height/2 - 70,
+    y: height / 2 - 70,
     width: width,
-    height: height/2
+    height: height / 2
 });
 
 level3.collectibles = [];
 
 level3.collectibles.push({
     x: 140,
-    y: height/2 - 100,
+    y: height / 2 - 100,
     width: 10,
     height: 10,
     collected: false
@@ -333,7 +333,7 @@ level3.mobs.push({
     type: "patrol",
     x1Limit: 140,
     x2Limit: 340,
-    collisionDir : "",
+    collisionDir: "",
     grounded: false,
     hitPlayer: "",
     dead: false
@@ -343,9 +343,9 @@ level4.boxes = [];
 
 level4.boxes.push({
     x: -100,
-    y: height/2 + 10,
+    y: height / 2 + 10,
     width: width + 200,
-    height: height/2
+    height: height / 2
 });
 
 
@@ -363,7 +363,7 @@ level4.mobs.push({
     type: "patrol",
     x1Limit: 140,
     x2Limit: 340,
-    collisionDir : "",
+    collisionDir: "",
     grounded: false,
     hitPlayer: "",
     dead: false
@@ -380,7 +380,7 @@ level4.mobs.push({
     type: "patrol",
     x1Limit: 140,
     x2Limit: 340,
-    collisionDir : "",
+    collisionDir: "",
     grounded: false,
     hitPlayer: "",
     dead: false
@@ -397,7 +397,7 @@ level4.mobs.push({
     type: "patrol",
     x1Limit: 140,
     x2Limit: 340,
-    collisionDir : "",
+    collisionDir: "",
     grounded: false,
     hitPlayer: "",
     dead: false
@@ -414,7 +414,7 @@ level4.mobs.push({
     type: "patrol",
     x1Limit: 140,
     x2Limit: 340,
-    collisionDir : "",
+    collisionDir: "",
     grounded: false,
     hitPlayer: "",
     dead: false
@@ -431,7 +431,7 @@ level4.mobs.push({
     type: "patrol",
     x1Limit: 140,
     x2Limit: 340,
-    collisionDir : "",
+    collisionDir: "",
     grounded: false,
     hitPlayer: "",
     dead: false
@@ -463,14 +463,20 @@ function update() {
         // right arrow
         if (player.velX < player.speed) {
             player.velX++;
-            if (!triggers.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); triggers.firstStep = true;}
+            if (!triggers.firstStep) {
+                hint(player.x, 30, "Use the arrow keys to move!");
+                triggers.firstStep = true;
+            }
         }
     }
     if (keys[37] || keys[65]) {
         // left arrow
         if (player.velX > -player.speed) {
             player.velX--;
-            if (!triggers.firstStep) {hint(player.x,30,"Use the arrow keys to move!"); triggers.firstStep = true;}
+            if (!triggers.firstStep) {
+                hint(player.x, 30, "Use the arrow keys to move!");
+                triggers.firstStep = true;
+            }
         }
     }
 
@@ -486,7 +492,7 @@ function update() {
         ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
 
         var dir = colCheck(player, currentLevel.boxes[i]);
-       
+
         if (dir === "l" || dir === "r") {
             player.velX = 0;
             player.jumping = false;
@@ -497,8 +503,10 @@ function update() {
             player.velY *= -1;
         }
         for (var l = 0; l < currentLevel.mobs.length; l++) {
-          currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.boxes[i])
-          if (currentLevel.mobs[l].collisionDir == "b") {currentLevel.mobs[l].grounded = true}
+            currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.boxes[i])
+            if (currentLevel.mobs[l].collisionDir == "b") {
+                currentLevel.mobs[l].grounded = true
+            }
         }
     }
     ctx.closePath()
@@ -512,12 +520,12 @@ function update() {
             if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
                 currentLevel.collectibles[j].collected = true;
                 player.collected++
-                console.log("Collected")
+                    console.log("Collected")
             }
         }
     }
     if (player.x < 0) {
-        player.x = width - 5; 
+        player.x = width - 5;
         currentLevelInt -= 1;
         currentLevel = levels[currentLevelInt];
         console.log("Previous Level");
@@ -526,41 +534,69 @@ function update() {
         currentLevelInt += 1;
         currentLevel = levels[currentLevelInt];
         console.log("Next Level");
-        player.x = 10; 
+        player.x = 10;
     }
     ctx.closePath()
     ctx.fill();
     ctx.beginPath();
     ctx.fillStyle = "#90f";
     for (var k = 0; k < currentLevel.mobs.length; k++) {
-        if (!currentLevel.mobs[k].dead){
-        ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
-        if (currentLevel.mobs[k].type == "patrol") {
-        if (mobDir == "right") {
-            if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
-                currentLevel.mobs[k].velX++;
+        if (!currentLevel.mobs[k].dead) {
+            ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
+            if (currentLevel.mobs[k].type == "patrol") {
+                if (mobDir == "right") {
+                    if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
+                        currentLevel.mobs[k].velX++;
+                    }
+                    if (currentLevel.mobs[k].x > currentLevel.mobs[k].x2Limit) {
+                        mobDir = "left";
+                        currentLevel.mobs[k].x -= 5
+                    }
+                }
+                if (mobDir == "left") {
+                    if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
+                        currentLevel.mobs[k].velX--;
+                    }
+                    if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {
+                        mobDir = "right";
+                        currentLevel.mobs[k].x += 5
+                    }
+
+                }
+            };
+            currentLevel.mobs[k].velX *= friction;
+            currentLevel.mobs[k].velY += gravity;
+            currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
+            if (currentLevel.mobs[k].grounded) {
+                currentLevel.mobs[k].velY = 0;
+                currentLevel.mobs[k].grounded = false;
             }
-            if (currentLevel.mobs[k].x > currentLevel.mobs[k].x2Limit) {mobDir = "left"; currentLevel.mobs[k].x -= 5} 
+            currentLevel.mobs[k].y += currentLevel.mobs[k].velY;
+
+            currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player)
+            if (currentLevel.mobs[k].hitPlayer === "t") {
+                currentLevel.mobs[k].dead = true;
+                console.log("Hit Mob Top")
+            }
+            if (currentLevel.mobs[k].hitPlayer === "l") {
+                player.velY -= 2;
+                player.velX += 8;
+                currentLevel.mobs[k].velX += 5;
+                console.log("Hit Mob Left");
+            }
+            if (currentLevel.mobs[k].hitPlayer === "r") {
+                player.velY -= 2;
+                player.velX -= 8;
+                currentLevel.mobs[k].velX -= 5;
+                console.log("Hit Mob Right");
+            }
+            if (currentLevel.mobs[k].hitPlayer === "b") {
+                player.velY -= 2;
+                player.velX -= 8;
+                console.log("Hit Mob Bottom");
+            }
         }
-        if (mobDir == "left") {
-            if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
-                currentLevel.mobs[k].velX--;
-            }
-            if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {mobDir = "right"; currentLevel.mobs[k].x += 5} 
-            
-        } };
-        currentLevel.mobs[k].velX *= friction;
-        currentLevel.mobs[k].velY += gravity; 
-    	  currentLevel.mobs[k].x += currentLevel.mobs[k].velX; 
-        if (currentLevel.mobs[k].grounded) {currentLevel.mobs[k].velY = 0; currentLevel.mobs[k].grounded = false;}
-        currentLevel.mobs[k].y += currentLevel.mobs[k].velY;
-      
-        currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player)
-        if (currentLevel.mobs[k].hitPlayer === "t") { currentLevel.mobs[k].dead = true; console.log("Hit Mob Top")}
-        if (currentLevel.mobs[k].hitPlayer === "l") { player.velY -= 2; player.velX += 8; currentLevel.mobs[k].velX += 5; console.log("Hit Mob Left");   }
-        if (currentLevel.mobs[k].hitPlayer === "r") { player.velY -= 2; player.velX -= 8; currentLevel.mobs[k].velX -= 5; console.log("Hit Mob Right");  }
-        if (currentLevel.mobs[k].hitPlayer === "b") { player.velY -= 2; player.velX -= 8; console.log("Hit Mob Bottom"); }
-    }};
+    };
     ctx.closePath()
 
     ctx.fill()
@@ -572,28 +608,33 @@ function update() {
     player.y += player.velY;
 
     drawChar()
-    
+
     //Hint Triggers
-    
+
     if (!triggers.firstLevel) {
         if ((currentLevelInt == 0) && (player.x > width - 100)) {
-            hint(player.x - 400,30,"Go to the edge of the screen to go to the next level!");
+            hint(player.x - 400, 30, "Go to the edge of the screen to go to the next level!");
             triggers.firstLevel = true;
-            setTimeout(function() {hint(10000,10000,"")},3000);
+            setTimeout(function() {
+                hint(10000, 10000, "")
+            }, 3000);
         }
     }
-    
+
     if (!triggers.firstCoin) {
         if ((currentLevelInt == 1) && (player.x < 100)) {
-            hint(player.x,30,"That Orange thing's a coin! Ten coins give you a powerup! Try and collect all 100!");
+            hint(player.x, 30, "That Orange thing's a coin! Ten coins give you a powerup! Try and collect all 100!");
             triggers.firstCoin = true;
-            setTimeout(function() {hint(10000,10000,"")},3000);
+            setTimeout(function() {
+                hint(10000, 10000, "")
+            }, 3000);
         }
     }
-    
+
     if (debug) {
         document.getElementById("stats").style.display = "block"
-        document.getElementById("stats").innerHTML = "X: " + player.x +"<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;}
+        document.getElementById("stats").innerHTML = "X: " + player.x + "<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
+    }
     requestAnimationFrame(update);
 }
 
@@ -632,13 +673,14 @@ function colCheck(shapeA, shapeB) {
     return colDir;
 }
 
-function hint(x,y,text) {
+function hint(x, y, text) {
     $("#hintBox").fadeOut();
-    document.getElementById("hintBox").style.left = x + "px";
-    document.getElementById("hintBox").style.top = y + "px";
-    document.getElementById("hintBox").innerHTML = text;
-    $("#hintBox").fadeIn();
-    
+    setTimeout(function() {
+        document.getElementById("hintBox").style.left = x + "px";
+        document.getElementById("hintBox").style.top = y + "px";
+        document.getElementById("hintBox").innerHTML = text;
+        $("#hintBox").fadeIn();
+    }, 1000);
 }
 
 
@@ -655,4 +697,3 @@ document.body.addEventListener("keyup", function(e) {
 window.addEventListener("load", function() {
     update();
 });
-
