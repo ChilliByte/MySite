@@ -37,6 +37,9 @@ canvas {
     background-color:rgba(0,0,0,0.5);
 }
 
-#charSelect input[type="radio"] + label{
-    font-weight: bold;
-} 
+.charButton {
+    height:80%;
+    width:30%;
+    margin:10px;
+    display:inline-block;
+}
