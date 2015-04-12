@@ -13,7 +13,7 @@ var canvas = document.getElementById("canvas"),
         y: 0,
         width: 10,
         height: 20,
-        speed: 3,
+        speed: 4,
         velX: 0,
         velY: 0,
         collected: 0,
@@ -39,32 +39,7 @@ function drawChar() {
         player.height = 36
         player.width = 12
         
-        //Purple Hair
-        ctx.fillStyle = "#4B0082";
-        ctx.fillRect(player.x, player.y, player.width, 12);
-        ctx.fillRect(player.x, player.y, 4, 16);
-        
-        //Face
-        ctx.fillStyle = "#FFEBCD";
-        ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
-        
-        //Eye
-        ctx.fillStyle = "#7FFFD4";
-        ctx.fillRect((player.x) + 8, (player.y) + 4 , 4, 4);
-        
-        //Sleeve
-        ctx.fillStyle = "#EDEDED";
-        ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-        
-        //Hand
-        ctx.fillStyle = "#FFEBCD";
-        ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-        
-        //Trousers
-        ctx.fillStyle = "#4682B4";
-        ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-        
-        if (player.velX > 0) {
+        if (player.velX >= 0) {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -126,31 +101,7 @@ function drawChar() {
             player.height = 36
             player.width = 12
             
-            //Brown Hair
-            ctx.fillStyle = "#A0522D";
-            ctx.fillRect(player.x, player.y, player.width, 12);
-            
-            //Face
-            ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
-            
-            //Eye
-            ctx.fillStyle = "#90EE90";
-            ctx.fillRect((player.x) + 8, (player.y) + 4 , 4, 4);
-            
-            //Sleeve
-            ctx.fillStyle = "#d22";
-            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-            
-            //Hand
-            ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-            
-            //Trousers
-            ctx.fillStyle = "#4682B4";
-            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-            
-            if (player.velX > 0) {
+            if (player.velX >= 0) {
                 //Brown Hair
                 ctx.fillStyle = "#A0522D";
                 ctx.fillRect(player.x, player.y, player.width, 12);
@@ -207,7 +158,74 @@ function drawChar() {
             
         }
     if (player.char == 3) {
+        player.height = 36
+        player.width = 16
         
+        if (player.velX >= 0) {
+            //Hair
+            ctx.fillStyle = "#A0522D";
+            ctx.fillRect((player.x) + 4, player.y, 4, 12);
+            ctx.fillRect(player.x, (player.y) + 4, 8, 8);
+            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 12);
+            ctx.fillRect(player.x, (player.y) + 20, 4, 8);
+            
+            //Face
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 8, (player.y) + 4, 8, 8);
+            
+            //Eye
+            ctx.fillStyle = "#CD853F";
+            ctx.fillRect((player.x) + 12, (player.y) + 4, 4, 4);
+            
+            //Bow Tie
+            ctx.fillStyle = "d22";
+            ctx.fillRect((player.x) + 12, (player.y) + 4, 4, 4);
+            
+            //Jacket
+            ctx.fillStyle = "#cccccc";
+            ctx.fillRect((player.x) + 8, (player.y) + 12, 4, 8);
+            
+            //Hand
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 8, (player.y) + 20, 4, 4);
+            
+            //Jacket
+            ctx.fillStyle = "#666666";
+            ctx.fillRect((player.x) + 8, (player.y) + 24, 4, 8);
+        
+        }
+        if (player.velX < 0) {
+            //Hair
+            ctx.fillStyle = "#A0522D";
+            ctx.fillRect(player.x, player.y, 4, 12);
+            ctx.fillRect((player.x + 8), (player.y) + 4, 8, 8);
+            ctx.fillRect((player.x) + 8, (player.y) + 12, 4, 12);
+            ctx.fillRect((player.x) + 8, (player.y) + 20, 4, 8);
+            
+            //Face
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect(player.x, (player.y) + 4, 8, 8);
+            
+            //Eye
+            ctx.fillStyle = "#CD853F";
+            ctx.fillRect(player.x, (player.y) + 4, 4, 4);
+            
+            //Bow Tie
+            ctx.fillStyle = "d22";
+            ctx.fillRect(player.x, (player.y) + 12, 4, 4);
+            
+            //Jacket
+            ctx.fillStyle = "#cccccc";
+            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
+            
+            //Hand
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
+            
+            //Jacket
+            ctx.fillStyle = "#666666";
+            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 8);
+        }
     }
 }
 
