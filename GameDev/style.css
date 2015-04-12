@@ -104,5 +104,6 @@ background : -ms-linear-gradient(top, rgb(11, 222, 11) 00%, rgb(2, 97, 2) 99%, r
     left:10px;
     top:10px;
     box-sizing: border-box;
+    display:none;
 }
 
