@@ -121,10 +121,10 @@ function drawChar() {
         
         
     }
-    if (char == 2) {
+    if (player.char == 2) {
         
     }
-    if (char == 3) {
+    if (player.char == 3) {
         
     }
     
