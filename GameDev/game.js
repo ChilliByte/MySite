@@ -30,7 +30,116 @@ function setChar(x) {
 }
 
 function confirmChar() {
-    document.getElementById("charChoose").style.display = "none";
+    document.getElementById("charSelect").style.display = "none";
+}
+
+function drawChar() {
+    if (player.char == 1) {
+        //Set Size
+        player.height = 18
+        player.width = 6
+        
+        //Purple Hair
+        ctx.fillStyle = "#4B0082";
+        ctx.fillRect(player.x, player.y, player.width, 6);
+        ctx.fillRect(player.x, player.y, 2, 8);
+        
+        //Face
+        ctx.fillStyle = "#FFEBCD";
+        ctx.fillRect((player.x) + 2, (player.y) + 2, 4, 4);
+        
+        //Eye
+        ctx.fillStyle = "#7FFFD4";
+        ctx.fillRect((player.x) + 4, (player.y) + 2, 2, 2);
+        
+        //Sleeve
+        ctx.fillStyle = "#EDEDED";
+        ctx.fillRect((player.x) + 2, (player.y) + 6, 2, 4);
+        
+        //Hand
+        ctx.fillStyle = "#FFEBCD";
+        ctx.fillRect((player.x) + 2, (player.y) + 10, 2, 2);
+        
+        //Trousers
+        ctx.fillStyle = "#4682B4";
+        ctx.fillRect((player.x) + 2, (player.y) + 12, 2, 4);
+        
+        if (player.velX > 0) {
+            //Purple Hair
+            ctx.fillStyle = "#4B0082";
+            ctx.fillRect(player.x, player.y, player.width, 6);
+            ctx.fillRect(player.x, player.y, 2, 8);
+            
+            //Face
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 2, (player.y) + 2, 4, 4);
+            
+            //Eye
+            ctx.fillStyle = "#7FFFD4";
+            ctx.fillRect((player.x) + 4, (player.y) + 2, 2, 2);
+            
+            //Sleeve
+            ctx.fillStyle = "#EDEDED";
+            ctx.fillRect((player.x) + 2, (player.y) + 6, 2, 4);
+            
+            //Hand
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 2, (player.y) + 10, 2, 2);
+            
+            //Trousers
+            ctx.fillStyle = "#4682B4";
+            ctx.fillRect((player.x) + 2, (player.y) + 12, 2, 4);
+            
+        }
+        if (player.velX < 0) {
+            //Purple Hair
+            ctx.fillStyle = "#4B0082";
+            ctx.fillRect(player.x, player.y, player.width, 6);
+            ctx.fillRect((player.x) + 4, player.y, 2, 8);
+            
+            //Face
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect(player.x, (player.y) + 2, 4, 4);
+            
+            //Eye
+            ctx.fillStyle = "#7FFFD4";
+            ctx.fillRect(player.x, (player.y) + 2, 2, 2);
+            
+            //Sleeve
+            ctx.fillStyle = "#EDEDED";
+            ctx.fillRect((player.x) + 2, (player.y) + 6, 2, 4);
+            
+            //Hand
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 2, (player.y) + 10, 2, 2);
+            
+            //Trousers
+            ctx.fillStyle = "#4682B4";
+            ctx.fillRect((player.x) + 2, (player.y) + 12, 2, 4);
+            
+        }
+        
+        
+    }
+    if (char == 2) {
+        
+    }
+    if (char == 3) {
+        
+    }
+    
+    ctx.fillStyle = "#933";
+    ctx.fillRect(player.x, player.y, player.width, player.height/2);
+    ctx.fillStyle = "#3f3";
+    ctx.fillRect(player.x, (player.y + player.height/2), player.width, player.height/2);    
+    ctx.fillStyle = "#ffe6ff";
+    
+    if (player.velX > 0) {
+        ctx.fillRect((player.x + player.width/2), (player.y + player.height/4), player.width/2, player.height/4);
+    }  
+    if (player.velX < 0) {
+        ctx.fillRect(player.x, (player.y + player.height/4), player.width/2, player.height/4);
+    }
 }
 
 levels = [];
@@ -370,18 +479,7 @@ function update() {
     player.x += player.velX;
     player.y += player.velY;
 
-    ctx.fillStyle = "#933";
-    ctx.fillRect(player.x, player.y, player.width, player.height/2);
-    ctx.fillStyle = "#3f3";
-    ctx.fillRect(player.x, (player.y + player.height/2), player.width, player.height/2);    
-ctx.fillStyle = "#ffe6ff";
-    
-if (player.velX > 0) {
-    ctx.fillRect((player.x + player.width/2), (player.y + player.height/4), player.width/2, player.height/4);
-}  
-if (player.velX < 0) {
-    ctx.fillRect(player.x, (player.y + player.height/4), player.width/2, player.height/4);
-}
+    drawChar()
     
     if (debug) {
         document.getElementById("stats").style.display = "block"
