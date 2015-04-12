@@ -25,6 +25,11 @@ canvas {
     display:none;
 }
 
+.charSprite {
+    position:fixed;
+    left:-100%;
+}
+
 #charSelect {
     position:fixed;
     left:0;
