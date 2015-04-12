@@ -53,6 +53,7 @@ canvas {
 }
 
 #charChoose {
+    height:30px;
     width:calc(100% - 20px);
     position:absolute;
     left:0;
