@@ -447,6 +447,8 @@ mobDir = "right";
 var triggers = {};
 triggers.firstStep = false;
 triggers.firstLevel = false;
+triggers.firstCoin = false;
+
 function update() {
     // check keys
     if (keys[38] || keys[32] || keys[87]) {
@@ -577,6 +579,15 @@ function update() {
         if ((currentLevelInt == 0) && (player.x > width - 100)) {
             hint(player.x - 400,30,"Go to the edge of the screen to go to the next level!");
             triggers.firstLevel = true;
+            setTimeout(function() {hint(10000,10000,"")},3000);
+        }
+    }
+    
+    if (!triggers.firstCoin) {
+        if ((currentLevelInt == 0) && (player.x < 100)) {
+            hint(player.x,30,"That Orange thing's a coin! Ten coins give you a powerup! Try and collect all 100!");
+            triggers.firstCoin = true;
+            setTimeout(function() {hint(10000,10000,""))},3000);
         }
     }
     
