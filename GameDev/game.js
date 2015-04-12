@@ -62,7 +62,7 @@ function drawChar() {
         
         //Trousers
         ctx.fillStyle = "#4682B4";
-        ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 8);
+        ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
         
         if (player.velX > 0) {
             //Purple Hair
@@ -88,7 +88,7 @@ function drawChar() {
             
             //Trousers
             ctx.fillStyle = "#4682B4";
-            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 8);
+            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
             
         }
         if (player.velX < 0) {
@@ -115,14 +115,99 @@ function drawChar() {
             
             //Trousers
             ctx.fillStyle = "#4682B4";
-            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 8);
+            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
             
         }
         
         
     }
+    
     if (player.char == 2) {
-        
+            //Set Size
+            player.height = 36
+            player.width = 12
+            
+            //Brown Hair
+            ctx.fillStyle = "#A0522D";
+            ctx.fillRect(player.x, player.y, player.width, 12);
+            
+            //Face
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
+            
+            //Eye
+            ctx.fillStyle = "#8B4513";
+            ctx.fillRect((player.x) + 8, (player.y) + 4 , 4, 4);
+            
+            //Sleeve
+            ctx.fillStyle = "#d22";
+            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
+            
+            //Hand
+            ctx.fillStyle = "#FFEBCD";
+            ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
+            
+            //Trousers
+            ctx.fillStyle = "#4682B4";
+            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
+            
+            if (player.velX > 0) {
+                //Brown Hair
+                ctx.fillStyle = "#A0522D";
+                ctx.fillRect(player.x, player.y, player.width, 12);
+
+                
+                //Face
+                ctx.fillStyle = "#FFEBCD";
+                ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
+                
+                //Eye
+                ctx.fillStyle = "#8B4513";
+                ctx.fillRect((player.x) + 8, (player.y) + 4, 4, 4);
+                
+                //Sleeve
+                ctx.fillStyle = "#EDEDED";
+                ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
+                
+                //Hand
+                ctx.fillStyle = "#FFEBCD";
+                ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
+                
+                //Trousers
+                ctx.fillStyle = "#4682B4";
+                ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
+                
+            }
+            if (player.velX < 0) {
+                //Brown Hair
+                ctx.fillStyle = "#A0522D";
+                ctx.fillRect(player.x, player.y, player.width, 12);
+                
+                //Face
+                ctx.fillStyle = "#FFEBCD";
+                ctx.fillRect(player.x, (player.y) + 4, 8, 8);
+                
+                //Eye
+                ctx.fillStyle = "#8B4513";
+                ctx.fillRect(player.x, (player.y) + 4, 4, 4);
+                
+                //Sleeve
+                ctx.fillStyle = "#EDEDED";
+                ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
+                
+                //Hand
+                ctx.fillStyle = "#FFEBCD";
+                ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
+                
+                //Trousers
+                ctx.fillStyle = "#4682B4";
+                ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
+                
+            }
+            
+            
+        }
+          
     }
     if (player.char == 3) {
         
