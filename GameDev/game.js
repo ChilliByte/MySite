@@ -574,7 +574,7 @@ function update() {
     //Hint Triggers
     
     if (!triggers.firstLevel) {
-        if ((currentLevelInt == 0) && (player.x > width - 100)) {hint(player.x,30,"Go to the edge of the screen to go to the next level!");}
+        if ((currentLevelInt == 0) && (player.x > width - 100)) {hint(player.x - 400,30,"Go to the edge of the screen to go to the next level!");}
     }
     
     if (debug) {
