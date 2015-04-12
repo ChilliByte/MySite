@@ -42,7 +42,7 @@ function drawChar() {
         //Purple Hair
         ctx.fillStyle = "#4B0082";
         ctx.fillRect(player.x, player.y, player.width, 12);
-        //ctx.fillRect(player.x, player.y, 4, 16);
+        ctx.fillRect(player.x, player.y, 4, 16);
         
         //Face
         ctx.fillStyle = "#FFEBCD";
@@ -68,7 +68,7 @@ function drawChar() {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
             ctx.fillRect(player.x, player.y, player.width, 12);
-           // ctx.fillRect(player.x, player.y, 4, 16);
+            ctx.fillRect(player.x, player.y, 4, 16);
             
             //Face
             ctx.fillStyle = "#FFEBCD";
