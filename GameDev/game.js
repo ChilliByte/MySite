@@ -19,7 +19,8 @@ var canvas = document.getElementById("canvas"),
         collected: 0,
         jumping: false,
         grounded: false,
-        char: 1
+        char: 1,
+        lastDir: "r"
     },
     keys = [],
     friction = 0.8,
@@ -169,7 +170,7 @@ function drawChar() {
         player.height = 36
         player.width = 12
 
-        if (player.velX >= 0) {
+        if ((player.velX > 1) || (player.lastDir == "l")) {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -195,8 +196,7 @@ function drawChar() {
             ctx.fillStyle = "#4682B4";
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
 
-        }
-        if (player.velX < -0.8) {
+        } else if ((player.velX < -1) || (player.lastDir == "r")){
             //Purple Hair
             ctx.fillStyle = "#4B0082";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -223,15 +223,14 @@ function drawChar() {
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
 
         }
-
-
+        
     }
     if (player.char == 2) {
         //Set Size
         player.height = 36
         player.width = 12
 
-        if (player.velX >= 0) {
+        if (player.velX > 1) {
             //Brown Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -258,7 +257,7 @@ function drawChar() {
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
 
         }
-        if (player.velX < -0.8) {
+        if (player.velX < -1) {
             //Brown Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -291,7 +290,7 @@ function drawChar() {
         player.height = 36
         player.width = 16
 
-        if (player.velX >= 0) {
+        if (player.velX > 1) {
             //Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect((player.x) + 4, player.y, 12, 4);
@@ -324,7 +323,7 @@ function drawChar() {
             ctx.fillRect((player.x) + 8, (player.y) + 24, 4, 12);
 
         }
-        if (player.velX < -0.8) {
+        if (player.velX < -1) {
             //Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect(player.x, player.y, 12, 4);
@@ -384,6 +383,7 @@ function update() {
         // right arrow
         if (player.velX < player.speed) {
             player.velX++;
+            player.lastDir = "l"
             if (!triggers.firstStep) {
                 hint(player.x, 30, "Use the arrow keys to move!");
                 triggers.firstStep = true;
@@ -392,6 +392,7 @@ function update() {
     }
     if (keys[37] || keys[65]) {
         // left arrow
+        player.lastDir = "r"
         if (player.velX > -player.speed) {
             player.velX--;
             if (!triggers.firstStep) {
