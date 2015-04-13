@@ -20,7 +20,7 @@ var canvas = document.getElementById("canvas"),
         jumping: false,
         grounded: false,
         char: 1,
-        lastDir: "r"
+        lastDir: "l"
     },
     keys = [],
     friction = 0.8,
