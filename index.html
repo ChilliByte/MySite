@@ -196,16 +196,16 @@
                 <hr />
                 For buisness enquiries, please use the form to contact me. I will endevour to reply as soon as is possible.
             </div>
-                <form class="pure-form">
+                <form class="pure-form" action="http://formspree.io/soheliadeep@gmail.com">
                     <fieldset class="pure-group">
-                        <input type="text" class="pure-input-1-2" placeholder="Full Name">
-                        <input type="text" class="pure-input-1-2" placeholder="Organization">
-                        <input type="email" class="pure-input-1-2" placeholder="Email">
+                        <input type="text" name="name" class="pure-input-1-2" placeholder="Full Name">
+                        <input type="text" name="organisation" class="pure-input-1-2" placeholder="Organization">
+                        <input type="email" name="_replyto" class="pure-input-1-2" placeholder="Email">
                     </fieldset>
 
                     <fieldset class="pure-group">
-                        <input type="text" class="pure-input-1-2" placeholder="Title">
-                        <textarea class="pure-input-1-2" placeholder="Message"></textarea>
+                        <input type="text" name="_subject" class="pure-input-1-2" placeholder="Title">
+                        <textarea class="pure-input-1-2" name="message" placeholder="Message"></textarea>
                     </fieldset>
 
                     <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Send</button>
