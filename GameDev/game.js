@@ -31,10 +31,12 @@ var canvas = document.getElementById("canvas"),
     canvas.width = Math.floor(width/tilesX)*tilesX;
     canvas.height = Math.floor(width/tilesY)*tilesY;
     console.log("Dimensions:");
-    console.log("Screen Height" + height);
+    console.log("Screen Height:" + height);
     console.log("Screen Width:" + width );
-    console.log("Tile Width" + canvas.width/tilesX);
-    console.log("Tile Height" + canvas.height/tilesY);
+    console.log("Canvas Height:" + canvas.height);
+    console.log("Canvas Width:" + canvas.width );
+    console.log("Tile Width:" + canvas.width/tilesX);
+    console.log("Tile Height:" + canvas.height/tilesY);
     mobDir = "right";
 
 
