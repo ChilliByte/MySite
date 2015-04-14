@@ -81,6 +81,11 @@ canvas {
     margin:auto;
 }
 
+#charScroll {
+    height:100%;
+    width:auto;
+}
+
 #charChoose {
     height:30px;
     width:calc(100% - 20px);
