@@ -3,8 +3,11 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
+window.onload = function () {
+    var char1Sheet = document.getElementById("char1SpriteSheet");
+}
+
 var canvas = document.getElementById("canvas"),
-    char1Sheet = document.getElementById("char1SpriteSheet"),
     ctx = canvas.getContext("2d"),
     width = window.innerWidth,
     height = window.innerHeight,
