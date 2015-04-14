@@ -8,8 +8,8 @@ var canvas = document.getElementById("canvas"),
     width = window.innerWidth,
     height = window.innerHeight,
     tilesX = 85;
-    tilesY = 45;
-    debug = false,
+tilesY = 45;
+debug = false,
     player = {
         x: 10,
         y: 0,
@@ -28,18 +28,19 @@ var canvas = document.getElementById("canvas"),
     friction = 0.8,
     gravity = 0.3;
 
-    canvas.width = Math.floor(width/tilesX)*tilesX;
-    canvas.height = Math.floor(width/tilesX)*tilesY;
-    console.log("Dimensions:");
-    console.log("Screen Height:" + height);
-    console.log("Screen Width:" + width );
-    console.log("Canvas Height:" + canvas.height);
-    console.log("Canvas Width:" + canvas.width );
-    console.log("Tile Width:" + canvas.width/tilesX);
-    console.log("Tile Height:" + canvas.height/tilesY);
-    mobDir = "right";
+canvas.width = Math.floor(width / tilesX) * tilesX;
+canvas.height = Math.floor(width / tilesX) * tilesY;
 
+console.log("Dimensions:");
+console.log("Screen Height:" + height);
+console.log("Screen Width:" + width);
+console.log("Canvas Height:" + canvas.height);
+console.log("Canvas Width:" + canvas.width);
+console.log("Tile Width:" + canvas.width / tilesX);
+console.log("Tile Height:" + canvas.height / tilesY);
+mobDir = "right";
 
+var units = Math.floor(width / tilesX);
 //Begin Levels
 levels = [];
 level1 = {};
@@ -82,7 +83,7 @@ level2.boxes.push({
 
 level2.boxes.push({
     x: width / 2,
-    y: (height / 2) + 70 ,
+    y: (height / 2) + 70,
     width: width,
     height: height / 2 + 20
 });
@@ -96,12 +97,12 @@ level3.boxes = [];
 level3.boxes.push({
     x: -100,
     y: (height / 2) + 60,
-    width: (width/2 + 100),
+    width: (width / 2 + 100),
     height: height
 });
 
 level3.boxes.push({
-    x: (width/2) - 100,
+    x: (width / 2) - 100,
     y: (height / 2) + 80,
     width: width,
     height: height
@@ -109,15 +110,15 @@ level3.boxes.push({
 
 level3.boxes.push({
     x: width / 4,
-    y: (height / 2) - 20 ,
-    width: width/4,
+    y: (height / 2) - 20,
+    width: width / 4,
     height: height
 });
 
 level3.collectibles = [];
 
 level3.collectibles.push({
-    x: (width/8)*3,
+    x: (width / 8) * 3,
     y: height / 2 - 80,
     type: "coin",
     width: 10,
@@ -125,15 +126,15 @@ level3.collectibles.push({
     collected: false
 });
 level3.collectibles.push({
-    x: (width/8)*5,
-    y: (height / 2) + 20 ,
+    x: (width / 8) * 5,
+    y: (height / 2) + 20,
     type: "coin",
     width: 10,
     height: 10,
     collected: false
 });
 level3.collectibles.push({
-    x: (width/8)*7,
+    x: (width / 8) * 7,
     y: (height / 2) - 20,
     type: "coin",
     width: 10,
@@ -153,7 +154,7 @@ level4.boxes.push({
 });
 
 level4.boxes.push({
-    x: height/4,
+    x: height / 4,
     y: (height / 2),
     width: 10,
     height: height / 2
@@ -205,7 +206,7 @@ function drawChar() {
             ctx.fillStyle = "#4682B4";
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
 
-        } else if ((player.velX < -1) || (player.lastDir == "r")){
+        } else if ((player.velX < -1) || (player.lastDir == "r")) {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -232,7 +233,7 @@ function drawChar() {
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
 
         }
-        
+
     }
     if (player.char == 2) {
         //Set Size
@@ -414,10 +415,10 @@ function update() {
     //Factor in Friction and Gravity
     player.velX *= friction;
     player.velY += gravity;
-    
+
     //Clear The Last Frame
     ctx.clearRect(0, 0, width, height);
-    
+
     //Change to green and begins drawing
     ctx.fillStyle = "#380";
     ctx.beginPath();
@@ -457,8 +458,10 @@ function update() {
             var collectCheck = colCheck(player, currentLevel.collectibles[j]);
             if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
                 currentLevel.collectibles[j].collected = true;
-                if(currentLevel.collectibles[j].type === "coin") { player.collected++ };
-                    console.log("Collected")
+                if (currentLevel.collectibles[j].type === "coin") {
+                    player.collected++
+                };
+                console.log("Collected")
             }
         }
     }
