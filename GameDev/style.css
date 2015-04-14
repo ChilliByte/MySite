@@ -51,7 +51,7 @@ canvas {
 
 .charButton {
     height:100%;
-    width:calc(40vw / 3);
+    width:calc(34vw / 3);
     margin-left:0.2vw;
     display:inline-block;
     box-sizing:border-box;
