@@ -8,7 +8,7 @@ var canvas = document.getElementById("canvas"),
     width = window.innerWidth,
     height = window.innerHeight,
     tilesX = 85;
-    tilesY = 47;
+    tilesY = 45;
     debug = false,
     player = {
         x: 10,
@@ -28,8 +28,13 @@ var canvas = document.getElementById("canvas"),
     friction = 0.8,
     gravity = 0.3;
 
-    canvas.width = tilesX*16;
-    canvas.height = tilesY*16;
+    canvas.width = Math.floor(width/tilesX)*tilesX;
+    canvas.height = Math.floor(width/tilesY)*tilesY;
+    console.log("Dimensions:");
+    console.log("Screen Height" + height);
+    console.log("Screen Width:" + width );
+    console.log("Tile Width" + canvas.width/tilesX);
+    console.log("Tile Height" + canvas.height/tilesY);
     mobDir = "right";
 
 
