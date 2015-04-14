@@ -3,7 +3,7 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
-document.getElementById("char1SpriteSheet").onload = function () {
+function loadSprite() {
     console.log("Loaded");
     var char1Sheet = document.getElementById("char1SpriteSheet");
     console.log("Stored Image");
