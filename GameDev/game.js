@@ -7,6 +7,8 @@ var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     width = window.innerWidth,
     height = window.innerHeight,
+    tilesX = 85;
+    tilesY = 47;
     debug = false,
     player = {
         x: 10,
@@ -26,8 +28,8 @@ var canvas = document.getElementById("canvas"),
     friction = 0.8,
     gravity = 0.3;
 
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = tilesX*16;
+    canvas.height = tilesY*16;
     mobDir = "right";
 
 
