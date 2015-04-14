@@ -51,7 +51,7 @@ canvas {
 
 .charButton {
     height:100%;
-    width:33vw;
+    width:calc(40vw * 0.3);
     margin-left:1%;
     display:inline-block;
     box-sizing:border-box;
@@ -83,7 +83,7 @@ canvas {
 
 #charScroll {
     height:100%;
-    width:auto;
+    width:1000vh;
 }
 
 #charChoose {
