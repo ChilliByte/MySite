@@ -71,8 +71,8 @@ canvas {
 }
 
 #charContainer {
-    overflow-x:hidden;
-    overflow-y:auto;
+    overflow-y:hidden;
+    overflow-x:auto;
     height:80%;
     width: 90%;
     position:absolute;
