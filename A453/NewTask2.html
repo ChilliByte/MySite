@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<HTML>
+    <head>
+        <title>Character Creator</title>
+        <link rel="stylesheet" href="layout.css" type="text/css" media="all" />
+        <script src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <div class="header">
+            Deep Sohelia
+            <div id="hr" style="border-top: 1px solid white">
+                Candidate Number: 0137 <br />
+                Centre Number: 20153 <br />
+                Centre Name: King Edward VI Five Ways <br />
+                Date: 30/01/2015
+            </div>
+        </div>
+        <div class="text">
+        
+        <h1>Character Attribute Generator</h1>
+        <hr />
+        
+        <div id="display"><h2>Character Creator!</h2></div>
+        <button onclick="genChar()" >Create Character</button>
+        <script>
+        var output = document.getElementById("display");
+        var names;
+        var whichName;
+        var chosenName; 
+        var initialStrength;
+        var initialSkill;
+        var sk12s1;
+        var st4s1;
+        var strengthModifier;
+        var sk12s2;
+        var sk4s2;
+        var skillModifier;
+        var calcStrength;
+        var calcSkill;
+        var characterObject;
+        var characterProfile;
+        
+            function genChar() {
+                names = ["Emro","Soxus","Kiss","Mysra","Thanda","Thunze","Thustimult","Dersmaug","Korren","Bustan","Idu","Mardaz","Racop","Tanrhae","Cesin","Ajen","Mafy","Travi","Narni","Rocharr"];
+                whichName = Math.floor((Math.random() * names.length) + 0);
+                chosenName = names[whichName];
+                initialStrength = 10;
+                initialSkill = 10;
+            
+                st12s1 = Math.floor((Math.random() * 12) + 1);
+                st4s1  = Math.floor((Math.random() * 4) + 1);
+                strengthModifier = Math.floor(st12s1 / st4s1);
+            
+                sk12s2 = Math.floor((Math.random() * 12) + 1);
+                sk4s2  = Math.floor((Math.random() * 4) + 1);
+                skillModifier = Math.floor(sk12s2 / sk4s2);
+            
+                calcStrength = initialStrength + strengthModifier;
+                calcSkill = initialSkill + skillModifier;
+            
+                characterObject = {
+                    name: chosenName,
+                    strength: calcStrength,
+                    skill: calcSkill
+                }
+            
+                characterProfile = "<h1>"+chosenName+"</h1><br /><p>Strength: " + calcStrength + ", <br /> Skill: " + calcSkill +",";
+                output.innerHTML = characterProfile;
+                notifyMe()
+                saveChar()
+            }
+                    
+            function saveChar() {
+                var blob = new Blob(["Character: \n Name:" + chosenName + "\n Strength: " + calcStrength + "\n Skill: " + calcSkill + "\n\n\n ---"], {type: "text/plain;charset=utf-8"});
+                var Fn = chosenName + "St" + calcStrength + "Sk" + calcSkill + ".txt";
+                if(confirm("Save your character data for future use?")) {
+                    saveAs(blob, Fn);
+                }
+            }
+            
+            function notifyMe() {
+            if (!Notification) {
+                alert('Please us a modern version of Chrome, Firefox, Opera or Firefox.');
+                return;
+            }
+
+            if (Notification.permission !== "granted")
+                Notification.requestPermission();
+
+                var notification = new Notification('New Character: ' + chosenName, {
+                    icon: "http:\/\/www.theunitytoolbox.com\/wp-site\/wp-content\/uploads\/2012\/11\/Action_RPG_Characters_Icon.png",
+                    body: "Strength: " + calcStrength + "\n Skill: " + calcSkill,
+                });
+
+
+                notification.onclick = function () {
+                    window.self.focus()
+                }
+            }
+        </script>
+            
+        </div>
+        
+    </body>
+</HTML>

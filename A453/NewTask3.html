@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<HTML>
+    <head>
+        <title>Template</title>
+        <link rel="stylesheet" href="layout.css" type="text/css" media="all" />
+    </head>
+    <body>
+        <div class="header">
+            Deep Sohelia
+            <div id="hr" style="border-top: 1px solid white">
+                Candidate Number: 0137 <br />
+                Centre Number: 20153 <br />
+                Centre Name: King Edward VI Five Ways <br />
+                Date: 30/01/2015
+            </div>
+        </div>
+        <div class="text">
+            <h1>Outcome Calculator</h1>
+        <hr />
+        <h2>Enter two character's details</h2>
+        <table>
+            <tr>
+                <td>Enter the name of the first character  <input type="text" id="nameOne" /></td>
+                <td>Enter the name of the second character <input type="text" id="nameTwo" /></td>
+            </tr>
+            <tr>
+                <td>Enter the strength of the first character  <input type="number" id="strengthOne" /></td>
+                <td>Enter the strength of the second character <input type="number" id="strengthTwo" /></td>
+            </tr>
+            <tr>
+                <td>Enter the skill of the first character  <input type="number" id="skillOne" /></td>
+                <td>Enter the skill of the second character <input type="number" id="skillTwo" /></td>
+            </tr>
+        </table>
+        <div id="display">Enter two characters!</div>
+        <button onclick="encounter()">Test</button>
+        <script>
+            var output = document.getElementById("display");
+            /*var nm1,nm2,str1,str2,sk1,sk2,strDiff,preStrMod,strMod,skDiff,preSkMod,skMod;
+            
+            var d1;
+            var d2;
+            var p1Str;
+            var p2Str;
+            var p1Sk;
+            var p2Sk;
+            var p1Dead = false;
+            var p2Dead = false;
+            */
+            
+            function character(name,strength,skill) {
+                this.name = name;
+                this.strength = strength;
+                this.skill = skill;
+            }
+            var character1 = new character(nameOne.value,parseInt(strengthOne.value,10),parseInt(skillOne.value,10));
+            var character2 = new character(nameTwo.value,parseInt(strengthTwo.value,10),parseInt(skillTwo.value,10));
+        
+            function encounter() {
+                strMod = Math.floor(Math.abs(character2.strength - character1.strength)/5);
+                skMod = Math.floor(Math.abs(character2.skill - character1.skill)/5);
+                d1 = Math.floor((Math.random() * 6) + 1);
+                d2 = Math.floor((Math.random() * 6) + 1);
+            
+                if (d1 !== d2) {
+                    if (d1 > d2) {
+                        p1Str = str1+strMod;
+                        p1Sk = sk1+skMod;
+                        p2Str = str2-strMod;
+                        p2Sk = sk2-skMod;
+                    }
+                    if (d1 < d2) {
+                        p2Str = str2+strMod;
+                        p2Sk = sk2+skMod;
+                        p1Str = str1-strMod;
+                        p1Sk = sk1-skMod;
+                    }
+                    if (p1Sk < 0) {
+                        p1Sk = 0;
+                    }
+                    
+                    if (p2Sk < 0) {
+                        p2Sk = 0;
+                    }
+                    
+                    if (p1Str < 0) {
+                        p1Dead = true;
+                    }
+                    
+                    if (p2Str < 0) {
+                        p2Dead = true;
+                    }
+                }
+                
+                outputText = "<hr />" + nm1 + ": Dead: " + p1Dead + ". Strength: " + p1Str + ". Skill: " + p1Sk + ". <br />" + nm2 + ": Dead: " + p2Dead + ". Strength: " + p2Str + ". Skill: " + p2Sk + ". <hr />";
+                output.innerHTML = outputText;
+                notifyMe()
+            }
+            
+            function notifyMe() {
+            if (!Notification) {
+                alert('Please us a modern version of Chrome, Firefox, Opera or Firefox.');
+                return;
+            }
+
+            if (Notification.permission !== "granted")
+                Notification.requestPermission();
+
+                var notification = new Notification('New Character: ' + nm1, {
+                    icon: "http:\/\/icons.iconarchive.com\/icons\/archigraphs\/assassins-creed\/128\/Swords-icon.png",
+                    body: "Player " + nm1 + ": " +  " Strength: " + p1Str + " Skill: " + p1Sk + "\n\nPlayer " + nm2 + ": " + " Strength: " + p2Str + " Skill: " + p2Sk,
+                });
+
+
+                notification.onclick = function () {
+                    window.self.focus()
+                }
+            }
+            </script>
+        </div>
+            
+    </body>
+</HTML>
