@@ -230,7 +230,7 @@ function drawChar() {
         player.height = 36
         player.width = 12
 
-        if (player.velX > 1) {
+        if ((player.velX > 1) || (player.lastDir == "l")) {
             //Brown Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -257,7 +257,7 @@ function drawChar() {
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
 
         }
-        if (player.velX < -1) {
+        if ((player.velX < -1) || (player.lastDir == "r")) {
             //Brown Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -290,7 +290,7 @@ function drawChar() {
         player.height = 36
         player.width = 16
 
-        if (player.velX > 1) {
+        if ((player.velX > 1) || (player.lastDir == "l")) {
             //Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect((player.x) + 4, player.y, 12, 4);
@@ -323,7 +323,7 @@ function drawChar() {
             ctx.fillRect((player.x) + 8, (player.y) + 24, 4, 12);
 
         }
-        if (player.velX < -1) {
+        if ((player.velX < -1) || (player.lastDir == "r")) {
             //Hair
             ctx.fillStyle = "#A0522D";
             ctx.fillRect(player.x, player.y, 12, 4);
