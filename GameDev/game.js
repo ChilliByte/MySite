@@ -2,7 +2,9 @@
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
 })();
-
+window.onload = function () {
+    var char1Sheet = document.getElementById("char1SpriteSheet");
+}
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     width = window.innerWidth,
