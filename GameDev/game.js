@@ -9,7 +9,7 @@ var frame = false;
 window.onload = function() {
     console.log("Loaded");
     char1Sheet = document.getElementById("char1SpriteSheet");
-    setInterval(function () {frame = !frame;console.log("flipped")},750)
+    setInterval(function () {frame = !frame;console.log("flipped")},250)
 }
 
 var canvas = document.getElementById("canvas"),
