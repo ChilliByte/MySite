@@ -36,22 +36,15 @@
         <button onclick="encounter()">Test</button>
         <script>
             var output = document.getElementById("display");
-            /*var nm1,nm2,str1,str2,sk1,sk2,strDiff,preStrMod,strMod,skDiff,preSkMod,skMod;
+            //var nm1,nm2,character1.strength,character2.strength,character1.skill,character2.skill,strDiff,preStrMod,strMod,skDiff,preSkMod,skMod;
             
             var d1;
             var d2;
-            var p1Str;
-            var p2Str;
-            var p1Sk;
-            var p2Sk;
-            var p1Dead = false;
-            var p2Dead = false;
-            */
-            
             function character(name,strength,skill) {
                 this.name = name;
                 this.strength = strength;
                 this.skill = skill;
+                this.dead = false
             }
             var character1 = new character(nameOne.value,parseInt(strengthOne.value,10),parseInt(skillOne.value,10));
             var character2 = new character(nameTwo.value,parseInt(strengthTwo.value,10),parseInt(skillTwo.value,10));
@@ -64,35 +57,35 @@
             
                 if (d1 !== d2) {
                     if (d1 > d2) {
-                        p1Str = str1+strMod;
-                        p1Sk = sk1+skMod;
-                        p2Str = str2-strMod;
-                        p2Sk = sk2-skMod;
+                        character1.strength += strMod;
+                        character1.skill += skMod;
+                        character2.strength -= strMod;
+                        character2.skill -= skMod;
                     }
                     if (d1 < d2) {
-                        p2Str = str2+strMod;
-                        p2Sk = sk2+skMod;
-                        p1Str = str1-strMod;
-                        p1Sk = sk1-skMod;
+                        character2.strength += strMod;
+                        character2.skill += skMod;
+                        character1.strength -= strMod;
+                        character1.skill -= skMod;
                     }
-                    if (p1Sk < 0) {
-                        p1Sk = 0;
-                    }
-                    
-                    if (p2Sk < 0) {
-                        p2Sk = 0;
+                    if (character1.skill < 0) {
+                        character1.skill = 0;
                     }
                     
-                    if (p1Str < 0) {
-                        p1Dead = true;
+                    if (character2.skill < 0) {
+                        character2.skill = 0;
                     }
                     
-                    if (p2Str < 0) {
-                        p2Dead = true;
+                    if (character1.strength < 0) {
+                        character1.strength = true;
+                    }
+                    
+                    if (character2.strength < 0) {
+                        character.strength = true;
                     }
                 }
                 
-                outputText = "<hr />" + nm1 + ": Dead: " + p1Dead + ". Strength: " + p1Str + ". Skill: " + p1Sk + ". <br />" + nm2 + ": Dead: " + p2Dead + ". Strength: " + p2Str + ". Skill: " + p2Sk + ". <hr />";
+                outputText = "<hr />" + character1.name + ": Dead: " + character1.dead + ". Strength: " + character1.strength + ". Skill: " + character1.skill + ". <br />" + character2.strength + ": Dead: " + character2.dead + ". Strength: " + character2.strength + ". Skill: " + character2.skill + ". <hr />";
                 output.innerHTML = outputText;
                 notifyMe()
             }
