@@ -5,10 +5,11 @@
 
 
 var char1Sheet;
+var frame = false;
 window.onload = function() {
     console.log("Loaded");
     char1Sheet = document.getElementById("char1SpriteSheet");
-    console.log("Stored Image");
+    setInterval(function () {frame = !frame},750)
 }
 
 var canvas = document.getElementById("canvas"),
@@ -21,8 +22,8 @@ debug = false,
     player = {
         x: 10,
         y: 0,
-        width: 10,
-        height: 20,
+        width: 16,
+        height: 32,
         speed: 4,
         velX: 0.02,
         velY: 0,
@@ -184,11 +185,29 @@ function confirmChar() {
 
 function drawChar() {
     if (player.char == 1) {
-        //Set Size
-        player.height = 36
-        player.width = 12
-
-        if ((player.velX > 1) || (player.lastDir == "l")) {
+        if (player.velX > 1) {
+            if (frame) {
+                //Facing Right, Left Leg Forward
+                ctx.drawImage(char1Sheet,0,0,units,2*units,player.x,player.y)
+            } else {
+                ctx.drawImage(char1Sheet,16,0,units,2*units,player.x,player.y)
+            }
+        }
+        if ((player.velX > 0) && (player.velX < 1)) {
+            ctx.drawImage(char1Sheet,32,0,units,2*units,player.x,player.y)
+        }
+        if (player.velX < -1) {
+            if (frame) {
+                ctx.drawImage(char1Sheet,64,0,units,2*units,player.x,player.y)
+            } else {
+                ctx.drawImage(char1Sheet,80,0,units,2*units,player.x,player.y)
+            }
+        }
+        if ((player.velX < 0) && (player.velX > -1)) {
+            ctx.drawImage(char1Sheet,48,0,units,2*units,player.x,player.y)
+        }
+        
+        /*if ((player.velX > 1) || (player.lastDir == "l")) {
             //Purple Hair
             ctx.fillStyle = "#4B0082";
             ctx.fillRect(player.x, player.y, player.width, 12);
@@ -240,7 +259,7 @@ function drawChar() {
             ctx.fillStyle = "#4682B4";
             ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
 
-        }
+        }*/
 
     }
     if (player.char == 2) {
