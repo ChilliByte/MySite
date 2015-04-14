@@ -50,7 +50,7 @@ canvas {
 }
 
 .charButton {
-    height:80%;
+    height:100%;
     width:30%;
     margin-left:1%;
     display:inline-block;
@@ -73,6 +73,7 @@ canvas {
 #charContainer {
     overflow-x:hidden;
     overflow-y:auto;
+    height:80%;
     width: 90%;
     position:absolute;
     left:0;
