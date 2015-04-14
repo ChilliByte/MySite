@@ -3,9 +3,11 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
-function loadSprite() {
+
+var char1Sheet;
+window.onload = function() {
     console.log("Loaded");
-    var char1Sheet = document.getElementById("char1SpriteSheet");
+    char1Sheet = document.getElementById("char1SpriteSheet");
     console.log("Stored Image");
 }
 
