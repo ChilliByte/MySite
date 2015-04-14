@@ -190,7 +190,7 @@ function drawChar() {
                 //Facing Right, Left Leg Forward
                 ctx.drawImage(char1Sheet,0,0,units,2*units,player.x,player.y,units,2*units)
             } else {
-                ctx.drawImage(char1Sheet,16,0,units,2*units,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet,32,0,units,2*units,player.x,player.y,units,2*units)
             }
         }
         if ((player.velX < 0) && (player.velX > -1)) {
@@ -200,7 +200,7 @@ function drawChar() {
             if (frame) {
                 ctx.drawImage(char1Sheet,64,0,units,2*units,player.x,player.y,units,2*units)
             } else {
-                ctx.drawImage(char1Sheet,80,0,units,2*units,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet,48,0,units,2*units,player.x,player.y,units,2*units)
             }
         }
         if ((player.velX > 0) && (player.velX < 1)) {
