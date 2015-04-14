@@ -29,7 +29,7 @@ var canvas = document.getElementById("canvas"),
     gravity = 0.3;
 
     canvas.width = Math.floor(width/tilesX)*tilesX;
-    canvas.height = Math.floor(width/tilesY)*tilesY;
+    canvas.height = Math.floor(width/tilesX)*tilesY;
     console.log("Dimensions:");
     console.log("Screen Height:" + height);
     console.log("Screen Width:" + width );
