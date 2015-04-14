@@ -11,6 +11,7 @@ canvas {
     right:0px;
     top:0px;
     bottom:0px;
+    margin:auto;
     z-index:-1;
 }
 
