@@ -4,7 +4,9 @@
 })();
 
 window.onload = function () {
+    console.log("Loaded");
     var char1Sheet = document.getElementById("char1SpriteSheet");
+    console.log("Stored Image");
 }
 
 var canvas = document.getElementById("canvas"),
