@@ -9,7 +9,7 @@ var frame = false;
 window.onload = function() {
     console.log("Loaded");
     char1Sheet = document.getElementById("char1SpriteSheet");
-    setInterval(function () {frame = !frame},750)
+    setInterval(function () {frame = !frame;console.log("flipped")},750)
 }
 
 var canvas = document.getElementById("canvas"),
@@ -185,7 +185,7 @@ function confirmChar() {
 
 function drawChar() {
     if (player.char == 1) {
-        if (player.velX > 1) {
+        if (player.velX < -1) {
             if (frame) {
                 //Facing Right, Left Leg Forward
                 ctx.drawImage(char1Sheet,0,0,units,2*units,player.x,player.y,units,2*units)
@@ -193,17 +193,17 @@ function drawChar() {
                 ctx.drawImage(char1Sheet,16,0,units,2*units,player.x,player.y,units,2*units)
             }
         }
-        if ((player.velX > 0) && (player.velX < 1)) {
+        if ((player.velX < 0) && (player.velX > -1)) {
             ctx.drawImage(char1Sheet,32,0,units,2*units,player.x,player.y,units,2*units)
         }
-        if (player.velX < -1) {
+        if (player.velX > 1) {
             if (frame) {
                 ctx.drawImage(char1Sheet,64,0,units,2*units,player.x,player.y,units,2*units)
             } else {
                 ctx.drawImage(char1Sheet,80,0,units,2*units,player.x,player.y,units,2*units)
             }
         }
-        if ((player.velX < 0) && (player.velX > -1)) {
+        if ((player.velX > 0) && (player.velX < 1)) {
             ctx.drawImage(char1Sheet,48,0,units,2*units,player.x,player.y,units,2*units)
         }
         
