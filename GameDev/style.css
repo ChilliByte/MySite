@@ -70,6 +70,16 @@ canvas {
     border-radius:5px;
 }
 
+#charContainer {
+    overflow-x:hidden;
+    overflow-y:auto;
+    width: 90%;
+    position:absolute;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
 #charChoose {
     height:30px;
     width:calc(100% - 20px);
