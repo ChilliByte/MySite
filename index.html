@@ -10,131 +10,21 @@
             html, body {
                 height:100%;
                 width:100%;
-                margin: 0;
-                padding: 0;
-                box-sizing:border-box;
-                
-                background-color: #fff;
-                background-attachment: fixed;
-                font-family:arial;
+                margin:0;
+                padding:0;
+                color:#FF6D0D;
+                background-color:#FF6D0D;
             }
+            
             .section {
-                position:relative;
                 height:100%;
                 width:100%;
-                margin:0;
-            
-                display:block;
-                overflow:hidden;
-                box-sizing:border-box;
-            
-                text-align:center;
-            }
-            .one {
-                background-color:rgba(0,0,0,0);
-                color:#FF6D0D;
+                padding:10px;
             }
             
-            .one .cont {
-                height:20%;
-                
-                position: absolute;
-                top: 30%;
-                left:0;
-                right:0;
+            .cont h1 {
+                font-size: 4vmin;
             }
-            
-            a {
-                color:#FF6D0D;
-                text-decoration:none;
-            }
-            
-            a:visited {
-                color:#FF6D0D;
-            }
-            
-            .one span h1 {
-                font-size:4.5em;
-                font-weight:bold;
-            }
-            
-            .two {
-                position:relative;
-                height:80%;
-                padding:20px;
-                
-                background-color:#eee;
-                -webkit-box-shadow: 0px 0px 175px 20px rgba(0,0,0,0.75);
-                -moz-box-shadow: 0px 0px 175px 20px rgba(0,0,0,0.75);
-                box-shadow: 0px 0px 175px 20px rgba(0,0,0,0.75);
-                
-                text-align:left;
-                color: #444;
-                font-size:3em;
-                font-weight:bold;
-            }
-            
-            .two span {
-                display:inline-block;
-                width:50%;
-                font-size:0.4em;
-                font-weight:normal;
-            }
-            
-            .two .img {
-                display:inline-block;
-                height:80%;
-                margin:auto;
-                vertical-align:top;
-                
-                position:absolute;
-                right:5%;
-                top:0;
-                bottom:0;
-            }
-            
-            .three {
-                position:relative;
-                height:10%;
-                padding:25px;
-                
-                font-size:1em;
-                font-weight:normal;
-                color:#FF6D0D;
-                
-                background-color:#eee;
-                -webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
-                -moz-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
-                box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
-            }
-            
-            .spacer {
-                height:10%;
-                background-color:rgba(0,0,0,0.2);
-            }
-            
-            .pure-form {
-                position:absolute;
-                top:10px;
-                right:10px;
-                width:calc(40% - 15px);
-                text-align:left;
-                margin-top:10px;
-            }
-            
-            #contactLeft {
-                position:absolute;
-                left:15px;
-                width:calc(50% - 15px);
-                text-align:left;
-            }
-            
-            #msg {height:85%; font-size:1em; padding-top:10px;}
-            
-            .pure-form .pure-input-1-2 {width:90%;}
-            
-            textarea {height:30vh;)
-            
         </style>
     
         <div class="section one">
@@ -168,47 +58,6 @@
             </span>
         </div>
         
-    
-        <div class="section spacer" id="about"></div>
-        <div class="section two"> 
-            About Me
-            <br />
-            <span>
-            <hr />
-                Hi, my name is Deep Sohelia, and I am an amateur Web Designer. I work mainly with HTML and CSS, but I am well rehearsed in Javascript and PHP, among others. I have worked on many projects, listed below, covering a range of topics. For many of these I have worked with <a href="//isaacrg.me">Isaac Reid-Guest</a>, another amatuer Web Developer. Feel free to browse my creations, and, if you like what you see, feel free to contact me. 
-            </span> 
-            <!--<img src="https://pbs.twimg.com/profile_images/514610596059181056/Ecso1MLM_400x400.png" class="img" />-->
-        </div>
-        
-        <div class="section one" id="creations">
-            <h1>My Creations</h1>
-            <div class="column third"></div>
-            <div class="column third"></div>
-            <div class="column third"></div>
-        </div>
-        
-        <div class="section spacer"></div>
-        <div class="section two" id="msg"> 
-            <div id="contactLeft">
-                <h1>Contact Me</h1>
-                <hr />
-                For buisness enquiries, please use the form to contact me. I will endevour to reply as soon as is possible.
-            </div>
-                <form class="pure-form" method="post" action="http://formspree.io/soheliadeep@gmail.com">
-                    <fieldset class="pure-group">
-                        <input type="text" name="name" class="pure-input-1-2" placeholder="Full Name">
-                        <input type="text" name="organisation" class="pure-input-1-2" placeholder="Organization">
-                        <input type="email" name="_replyto" class="pure-input-1-2" placeholder="Email">
-                    </fieldset>
-
-                    <fieldset class="pure-group">
-                        <input type="text" name="_subject" class="pure-input-1-2" placeholder="Title">
-                        <textarea class="pure-input-1-2" name="message" placeholder="Message"></textarea>
-                    </fieldset>
-
-                    <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Send</button>
-                </form>
-            </div>
         <div class="section three"> &copy; Deep Sohelia 2015 | Website design by <a href="">Deep Sohelia</a></div>
     </body>
 </html>
