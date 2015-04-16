@@ -359,7 +359,7 @@ function update() {
         if (!player.jumping && player.grounded) {
             player.jumping = true;
             player.grounded = false;
-            player.velY = -player.speed * (units / 2);
+            player.velY = -player.speed * 2;
         }
     }
     if (keys[39] || keys[68]) {
