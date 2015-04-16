@@ -86,13 +86,13 @@ level2.boxes = [];
 level2.boxes.push({
     x: -10 * units,
     y: height - (10*units),
-    width: 22*units,
+    width: 32*units,
     height: height
 });
 
 level2.boxes.push({
     x: 22*units,
-    y: height-(5*units),
+    y: height-(15*units),
     width: width,
     height: height
 });
