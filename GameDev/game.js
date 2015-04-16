@@ -73,7 +73,7 @@ level1.boxes.push({
 
 level1.boxes.push({
     x: -10*units,
-    y: 15*units,
+    y: 16*units,
     width: 80 * units,
     height: 20 * units
 });
@@ -85,16 +85,16 @@ level2.boxes = [];
 
 level2.boxes.push({
     x: -10 * units,
-    y: height - (10*units),
+    y: 16*units,
     width: 32*units,
-    height: height
+    height: 20*
 });
 
 level2.boxes.push({
     x: 22*units,
-    y: height-(15*units),
-    width: width,
-    height: height
+    y: 10*units,
+    width: 30*units,
+    height: 40*units
 });
 
 level2.collectibles = [];
