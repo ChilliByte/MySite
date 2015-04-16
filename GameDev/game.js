@@ -16,14 +16,15 @@ var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     width = window.innerWidth,
     height = window.innerHeight,
-    tilesX = 85;
-tilesY = 45;
+    tilesX = 80,
+    tilesY = 45;
+    var units = Math.floor(width / tilesX);
 debug = false,
     player = {
         x: 10,
         y: 0,
-        width: 16,
-        height: 32,
+        width: units,
+        height: 2*units,
         speed: 4,
         velX: 0.02,
         velY: 0,
@@ -37,8 +38,8 @@ debug = false,
     friction = 0.8,
     gravity = 0.3;
 
-canvas.width = Math.floor(width / tilesX) * tilesX;
-canvas.height = Math.floor(width / tilesX) * tilesY;
+canvas.width = units * tilesX;
+canvas.height = units * tilesY;
 
 console.log("Dimensions:");
 console.log("Screen Height:" + height);
@@ -49,7 +50,6 @@ console.log("Tile Width:" + canvas.width / tilesX);
 console.log("Tile Height:" + canvas.height / tilesY);
 mobDir = "right";
 
-var units = Math.floor(width / tilesX);
 //Begin Levels
 levels = [];
 level1 = {};
@@ -207,60 +207,6 @@ function drawChar() {
             ctx.drawImage(char1Sheet,48,0,units,2*units,player.x,player.y,units,2*units)
         }
         
-        /*if ((player.velX > 1) || (player.lastDir == "l")) {
-            //Purple Hair
-            ctx.fillStyle = "#4B0082";
-            ctx.fillRect(player.x, player.y, player.width, 12);
-            ctx.fillRect(player.x, player.y, 4, 16);
-
-            //Face
-            ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
-
-            //Eye
-            ctx.fillStyle = "#7FFFD4";
-            ctx.fillRect((player.x) + 8, (player.y) + 4, 4, 4);
-
-            //Sleeve
-            ctx.fillStyle = "#EDEDED";
-            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-
-            //Hand
-            ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-
-            //Trousers
-            ctx.fillStyle = "#4682B4";
-            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-
-        } else if ((player.velX < -1) || (player.lastDir == "r")) {
-            //Purple Hair
-            ctx.fillStyle = "#4B0082";
-            ctx.fillRect(player.x, player.y, player.width, 12);
-            ctx.fillRect((player.x) + 8, player.y, 4, 16);
-
-            //Face
-            ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect(player.x, (player.y) + 4, 8, 8);
-
-            //Eye
-            ctx.fillStyle = "#7FFFD4";
-            ctx.fillRect(player.x, (player.y) + 4, 4, 4);
-
-            //Sleeve
-            ctx.fillStyle = "#EDEDED";
-            ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-
-            //Hand
-            ctx.fillStyle = "#FFEBCD";
-            ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-
-            //Trousers
-            ctx.fillStyle = "#4682B4";
-            ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-
-        }*/
-
     }
     if (player.char == 2) {
         //Set Size
