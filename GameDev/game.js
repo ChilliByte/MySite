@@ -390,7 +390,7 @@ function update() {
     player.velY += gravity;
 
     //Clear The Last Frame
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(0, 0, 40*units, 20*units);
 
     //Change to green and begins drawing
     ctx.fillStyle = "#380";
