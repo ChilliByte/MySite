@@ -87,7 +87,7 @@ level2.boxes.push({
     x: -10 * units,
     y: 16*units,
     width: 32*units,
-    height: 20*
+    height: 20*units
 });
 
 level2.boxes.push({
