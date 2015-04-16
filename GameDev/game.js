@@ -188,23 +188,23 @@ function drawChar() {
         if (player.velX < -1) {
             if (frame) {
                 //Facing Right, Left Leg Forward
-                ctx.drawImage(char1Sheet,0,0,units,2*units,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet,0,0,16,32,player.x,player.y,units,2*units)
             } else {
-                ctx.drawImage(char1Sheet,32,0,units,2*units,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet,32,0,16,32,player.x,player.y,units,2*units)
             }
         }
         if ((player.velX < 0) && (player.velX > -1)) {
-            ctx.drawImage(char1Sheet,32,0,units,2*units,player.x,player.y,units,2*units)
+            ctx.drawImage(char1Sheet,32,0,16,32,player.x,player.y,units,2*units)
         }
         if (player.velX > 1) {
             if (frame) {
-                ctx.drawImage(char1Sheet,64,0,units,2*units,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet,64,0,16,32,player.x,player.y,units,2*units)
             } else {
-                ctx.drawImage(char1Sheet,48,0,units,2*units,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
             }
         }
         if ((player.velX > 0) && (player.velX < 1)) {
-            ctx.drawImage(char1Sheet,48,0,units,2*units,player.x,player.y,units,2*units)
+            ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
         }
         
     }
