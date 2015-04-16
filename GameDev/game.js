@@ -25,7 +25,7 @@ debug = false,
         y: 0,
         width: units,
         height: 2*units,
-        speed: Math.floor(units/4),
+        speed: Math.floor(units/8),
         velX: 0.02,
         velY: 0,
         collected: 0,
@@ -359,13 +359,13 @@ function update() {
         if (!player.jumping && player.grounded) {
             player.jumping = true;
             player.grounded = false;
-            player.velY = -player.speed * 2;
+            player.velY = -player.speed * (units / 2);
         }
     }
     if (keys[39] || keys[68]) {
         // right arrow
         if (player.velX < player.speed) {
-            player.velX++;
+            player.velX+= units/8;
             player.lastDir = "l"
             if (!triggers.firstStep) {
                 hint(player.x, 30, "Use the arrow keys to move!");
@@ -377,7 +377,7 @@ function update() {
         // left arrow
         player.lastDir = "r"
         if (player.velX > -player.speed) {
-            player.velX--;
+            player.velX-= units/8;
             if (!triggers.firstStep) {
                 hint(player.x, 30, "Use the arrow keys to move!");
                 triggers.firstStep = true;
