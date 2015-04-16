@@ -73,7 +73,7 @@ level1.boxes.push({
 
 level1.boxes.push({
     x: -10*units,
-    y: height-(10*units),
+    y: height-(30*units),
     width: width * 2 * units,
     height: height / 2
 });
