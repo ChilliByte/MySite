@@ -68,14 +68,14 @@ level1.boxes.push({
     x: -10,
     y: 0,
     width: 10,
-    height: height
+    height: 40*units
 });
 
 level1.boxes.push({
     x: -10*units,
-    y: height-(30*units),
-    width: width * 2 * units,
-    height: height / 2
+    y: 30*units,
+    width: 80 * units,
+    height: 20 * units
 });
 
 level1.collectibles = [];
