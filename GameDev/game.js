@@ -67,14 +67,14 @@ level1.boxes = [];
 level1.boxes.push({
     x: -10,
     y: 0,
-    width: 11,
+    width: 10,
     height: height
 });
 
 level1.boxes.push({
-    x: -100,
-    y: (height / 2) + 150,
-    width: width * 2,
+    x: -10*units,
+    y: height-(10*units),
+    width: width * 2 * units,
     height: height / 2
 });
 
