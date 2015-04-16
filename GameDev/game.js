@@ -84,17 +84,17 @@ level1.mobs = [];
 level2.boxes = [];
 
 level2.boxes.push({
-    x: -100,
-    y: (height / 2) + 150,
-    width: (width / 2) + 120,
-    height: height / 2
+    x: -10 * units,
+    y: height - (10*units),
+    width: 22*units,
+    height: height
 });
 
 level2.boxes.push({
-    x: width / 2,
-    y: (height / 2) + 70,
+    x: 22*units,
+    y: height-(5*units),
     width: width,
-    height: height / 2 + 20
+    height: height
 });
 
 level2.collectibles = [];
