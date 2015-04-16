@@ -25,7 +25,7 @@ debug = false,
         y: 0,
         width: units,
         height: 2*units,
-        speed: 4,
+        speed: Math.floor(units/4),
         velX: 0.02,
         velY: 0,
         collected: 0,
@@ -92,7 +92,7 @@ level2.boxes.push({
 
 level2.boxes.push({
     x: 22*units,
-    y: 10*units,
+    y: 14*units,
     width: 30*units,
     height: 40*units
 });
