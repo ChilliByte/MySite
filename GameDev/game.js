@@ -17,9 +17,9 @@ var canvas = document.getElementById("canvas"),
     width = window.innerWidth,
     height = window.innerHeight,
     tilesX = 40,
-    tilesY = 20;
-    var units = Math.floor(width / tilesX);
-debug = false,
+    tilesY = 20,
+    debug = false,
+    units = Math.floor(width / tilesX),
     player = {
         x: 10,
         y: 0,
@@ -160,21 +160,21 @@ level4.boxes = [];
 level4.boxes.push({
     x: -10 * units,
     y: 14*units,
-    width: 30*units,
+    width: 28*units,
     height: 20*units
 });
 
 level4.boxes.push({
-    x: 20 * units,
+    x: 19 * units,
     y: 11*units,
     width: 3*units,
     height: units
 });
 
 level4.boxes.push({
-    x: 20 * units,
+    x: 8 * units,
     y: 15*units,
-    width: 5*units,
+    width: 7*units,
     height: 20*units
 });
 
@@ -321,6 +321,16 @@ level5.boxes.push({
 });
 
 level5.collectibles = [];
+
+level5.collectibles.push({
+    x: 12 * units,
+    y: 13 * units,
+    type: "coin",
+    width: (units/5)*2,
+    height: (units/5)*2,
+    collected: false
+});
+
 level5.mobs = [];
 // End Levels
 
