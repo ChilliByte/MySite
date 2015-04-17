@@ -156,19 +156,11 @@ level3.mobs = [];
 level4.boxes = [];
 
 level4.boxes.push({
-    x: -100,
-    y: (height / 2) + 80,
-    width: width + 200,
-    height: height / 2
+    x: -10 * units,
+    y: 14*units,
+    width: 10*units,
+    height: 20*units
 });
-
-level4.boxes.push({
-    x: height / 4,
-    y: (height / 2),
-    width: 10,
-    height: height / 2
-});
-
 
 level4.collectibles = [];
 level4.mobs = [];
