@@ -164,7 +164,7 @@ level4.boxes.push({
 
 level4.boxes.push({
     x: 20 * units,
-    y: 12*units,
+    y: 9*units,
     width: 3*units,
     height: units
 });
