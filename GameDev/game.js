@@ -207,6 +207,9 @@ function drawChar() {
             ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
         }
         
+        if ((player.velX == 0) && (player.lastDir == "l")) {console.log("Vel 0, lastDir l")}
+        if ((player.velX == 0) && (player.lastDir == "r")) {console.log("Vel 0, lastDir r")}
+        
     }
     if (player.char == 2) {
         //Set Size
