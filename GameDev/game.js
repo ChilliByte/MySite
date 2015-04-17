@@ -323,8 +323,17 @@ level5.boxes.push({
 level5.collectibles = [];
 
 level5.collectibles.push({
-    x: 12 * units,
-    y: 13 * units,
+    x: 8 * units,
+    y: 6 * units,
+    type: "coin",
+    width: (units/5)*2,
+    height: (units/5)*2,
+    collected: false
+});
+
+level5.collectibles.push({
+    x: 5 * units,
+    y: 16 * units,
     type: "coin",
     width: (units/5)*2,
     height: (units/5)*2,
