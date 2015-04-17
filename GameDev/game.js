@@ -341,6 +341,23 @@ level5.collectibles.push({
 });
 
 level5.mobs = [];
+
+level5.mobs.push({
+    x: 28*units,
+    y: 6*units,
+    width: (units/8)*7,
+    height: (units/8)*7,
+    speed: 0.3,
+    velX: 0,
+    velY: 0,
+    type: "patrol",
+    x1Limit: 22*units,
+    x2Limit: 34*units,
+    collisionDir: "",
+    grounded: false,
+    hitPlayer: "",
+    dead: false
+});
 // End Levels
 
 //Character Functions
