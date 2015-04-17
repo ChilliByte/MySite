@@ -206,6 +206,64 @@ level4.boxes.push({
 
 
 level4.collectibles = [];
+
+level4.collectibles.push({
+    x: 12 * units,
+    y: 13 * units,
+    type: "coin",
+    width: (units/5)*2,
+    height: (units/5)*2,
+    collected: false
+});
+
+level4.collectibles.push({
+    x: 21.5 * units,
+    y: 10 * units,
+    type: "coin",
+    width: (units/5)*2,
+    height: (units/5)*2,
+    collected: false
+});
+level4.collectibles.push({
+    x: 29 * units,
+    y: 7 * units,
+    type: "coin",
+    width: (units/5)*2,
+    height: (units/5)*2,
+    collected: false
+});
+level4.collectibles.push({
+    x: 30 * units,
+    y: 7 * units,
+    type: "coin",
+    width: (units/5)*2,
+    height: (units/5)*2,
+    collected: false
+});
+level4.collectibles.push({
+    x: 37.5 * units,
+    y: 6 * units,
+    type: "coin",
+    width: (units/5)*2,
+    height: (units/5)*2,
+    collected: false
+});
+level4.collectibles.push({
+    x: 38.5 * units,
+    y: 6 * units,
+    type: "coin",
+    width: (units/5)*2,
+    height: (units/5)*2,
+    collected: false
+});
+level4.collectibles.push({
+    x: 39.5 * units,
+    y: 6 * units,
+    type: "coin",
+    width: (units/5)*2,
+    height: (units/5)*2,
+    collected: false
+});
 level4.mobs = [];
 // End Levels
 
