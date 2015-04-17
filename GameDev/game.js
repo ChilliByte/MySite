@@ -172,7 +172,7 @@ level4.boxes.push({
 });
 
 level4.boxes.push({
-    x: 8 * units,
+    x: 18 * units,
     y: 15*units,
     width: 7*units,
     height: 20*units
