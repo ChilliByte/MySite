@@ -210,7 +210,7 @@ level4.boxes.push({
 level4.collectibles = [];
 
 level4.collectibles.push({
-    x: 12 * units,
+    x: 11 * units,
     y: 13 * units,
     type: "coin",
     width: (units/5)*2,
@@ -219,7 +219,7 @@ level4.collectibles.push({
 });
 
 level4.collectibles.push({
-    x: 21.5 * units,
+    x: 20.5 * units,
     y: 10 * units,
     type: "coin",
     width: (units/5)*2,
@@ -228,7 +228,7 @@ level4.collectibles.push({
 });
 level4.collectibles.push({
     x: 29 * units,
-    y: 7 * units,
+    y: 8 * units,
     type: "coin",
     width: (units/5)*2,
     height: (units/5)*2,
@@ -236,7 +236,7 @@ level4.collectibles.push({
 });
 level4.collectibles.push({
     x: 30 * units,
-    y: 7 * units,
+    y: 8 * units,
     type: "coin",
     width: (units/5)*2,
     height: (units/5)*2,
@@ -332,7 +332,7 @@ level5.collectibles.push({
 });
 
 level5.collectibles.push({
-    x: 5 * units,
+    x: 2 * units,
     y: 16 * units,
     type: "coin",
     width: (units/5)*2,
