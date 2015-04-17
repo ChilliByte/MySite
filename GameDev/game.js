@@ -23,7 +23,7 @@ debug = false,
     player = {
         x: 10,
         y: 0,
-        width: units,
+        width: (units/3*2),
         height: 2*units,
         speed: Math.floor(units/8),
         velX: 0.02,
