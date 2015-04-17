@@ -112,7 +112,7 @@ level3.boxes.push({
 
 level3.boxes.push({
     x: 15*units,
-    y: 12*units,
+    y: 13*units,
     width: 10*units,
     height: 20 * units
 });
@@ -128,26 +128,26 @@ level3.collectibles = [];
 
 level3.collectibles.push({
     x: 26*units,
-    y: 14 * units,
+    y: 15 * units,
     type: "coin",
-    width: (units/3)*2,
-    height: (units/3)*2,
+    width: units/3,
+    height: units/3,
     collected: false
 });
 level3.collectibles.push({
     x: 30*units,
-    y: 14*units,
+    y: 15*units,
     type: "coin",
-    width: (units/3)*2,
-    height: (units/3)*2,
+    width: units/3,
+    height: units/3,
     collected: false
 });
 level3.collectibles.push({
     x: 34 * units,
-    y: 14 * units,
+    y: 15 * units,
     type: "coin",
-    width: (units/3)*2,
-    height: (units/3)*2,
+    width: units/3,
+    height: units/3,
     collected: false
 });
 
