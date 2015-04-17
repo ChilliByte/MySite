@@ -130,24 +130,24 @@ level3.collectibles.push({
     x: 26*units,
     y: 13 * units,
     type: "coin",
-    width: units/3,
-    height: units/3,
+    width: (units/5)*2,
+    height: (units/5)*2,
     collected: false
 });
 level3.collectibles.push({
     x: 30*units,
     y: 13*units,
     type: "coin",
-    width: units/3,
-    height: units/3,
+    width: (units/5)*2,
+    height: (units/5)*2,
     collected: false
 });
 level3.collectibles.push({
     x: 34 * units,
     y: 13 * units,
     type: "coin",
-    width: units/3,
-    height: units/3,
+    width: (units/5)*2,
+    height: (units/5)*2,
     collected: false
 });
 
