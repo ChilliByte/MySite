@@ -60,6 +60,8 @@ level3 = {};
 levels.push(level3);
 level4 = {};
 levels.push(level4);
+level5 = {};
+levels.push(level5);
 
 //Level1
 level1.boxes = [];
@@ -265,6 +267,54 @@ level4.collectibles.push({
     collected: false
 });
 level4.mobs = [];
+
+//Level5
+level5.boxes = [];
+
+level5.boxes.push({
+    x: -10 * units,
+    y: 17*units,
+    width: 14*units,
+    height: 20*units
+});
+
+level5.boxes.push({
+    x: 4*units,
+    y: 15*units,
+    width: 4 * units,
+    height: 20 * units
+});
+
+level5.boxes.push({
+    x: 8*units,
+    y: 13*units,
+    width: 4 * units,
+    height: 20 * units
+});
+
+level5.boxes.push({
+    x: 12*units,
+    y: 11*units,
+    width: 4 * units,
+    height: 20 * units
+});
+
+level5.boxes.push({
+    x: 16*units,
+    y: 9*units,
+    width: 4 * units,
+    height: 20 * units
+});
+
+level5.boxes.push({
+    x: 20*units,
+    y: 7*units,
+    width: 20 * units,
+    height: 20 * units
+});
+
+level5.collectibles = [];
+level5.mobs = [];
 // End Levels
 
 //Character Functions
