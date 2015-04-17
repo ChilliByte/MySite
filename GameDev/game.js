@@ -313,6 +313,13 @@ level5.boxes.push({
     height: 20 * units
 });
 
+level5.boxes.push({
+    x: -10*units,
+    y: 7*units,
+    width: 20 * units,
+    height: units
+});
+
 level5.collectibles = [];
 level5.mobs = [];
 // End Levels
