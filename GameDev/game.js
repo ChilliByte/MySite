@@ -40,7 +40,7 @@ var canvas = document.getElementById("canvas"),
 
 canvas.width = units * tilesX;
 canvas.height = units * tilesY;
-
+ctx.imageSmoothingEnabled = false;
 console.log("Dimensions:");
 console.log("Screen Height:" + height);
 console.log("Screen Width:" + width);
