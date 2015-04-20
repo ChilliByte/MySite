@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Page Title</title>
+    </head>
+    <body>
+    <button onclick="genCharacter()">Yes</button>
+    <button>No</button>
+    <div id="Name">
+        <input type="text" id="fname" />
+        <button onclick="formValidation()">Submit</button>
+    </div>
+    <button onclick="change()">Change</button>
+
+    <script>
+    (function () {
+        document.getElementById("Name").style.display = "none";
+    })()
+    
+    function genCharacter() {
+        document.getElementById("Name").style.display = "block";
+    }
+    
+    function formValidation() {
+        if (name.value != "") {
+            document.getElementById("test").innerHTML = "Hi Mike";
+        }
+    }
+
+    </script>
+    </body>
+</html>
