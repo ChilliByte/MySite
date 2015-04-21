@@ -1,4 +1,4 @@
-(function() {
+"Use the arrow keys to move!(function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
 })();
@@ -561,7 +561,7 @@ function update() {
             player.velX+= units/8;
             player.lastDir = "l"
             if (!triggers.firstStep) {
-                hint(player.x, 30, "Ellie Smells!");
+                hint(player.x, 30, "Use the arrow keys to move!");
                 triggers.firstStep = true;
             }
         }
@@ -572,7 +572,7 @@ function update() {
         if (player.velX > -player.speed) {
             player.velX-= units/8;
             if (!triggers.firstStep) {
-                hint(player.x, 30, "Ellie Smells!");
+                hint(player.x, 30, "Use the arrow keys to move!");
                 triggers.firstStep = true;
             }
         }
