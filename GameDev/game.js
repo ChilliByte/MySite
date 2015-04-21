@@ -561,7 +561,7 @@ function update() {
             player.velX+= units/8;
             player.lastDir = "l"
             if (!triggers.firstStep) {
-                hint(player.x, 30, "Use the arrow keys to move!");
+                hint(player.x, 30, "Ellie Smells!");
                 triggers.firstStep = true;
             }
         }
@@ -572,7 +572,7 @@ function update() {
         if (player.velX > -player.speed) {
             player.velX-= units/8;
             if (!triggers.firstStep) {
-                hint(player.x, 30, "Use the arrow keys to move!");
+                hint(player.x, 30, "Ellie Smells!");
                 triggers.firstStep = true;
             }
         }
