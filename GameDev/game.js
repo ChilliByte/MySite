@@ -37,6 +37,7 @@ var canvas = document.getElementById("canvas"),
     keys = [],
     friction = 0.8,
     gravity = 0.3;
+    gravityDown = true;
 
 canvas.width = units * tilesX;
 canvas.height = units * tilesY;
@@ -601,10 +602,19 @@ function update() {
             player.velX = 0;
             player.jumping = false;
         } else if (dir === "b") {
-            player.grounded = true;
-            player.jumping = false;
+            if (gravityDown) {
+                player.grounded = true;
+                player.jumping = false;
+            } else {
+                player.velY *= -1;
+            }
         } else if (dir === "t") {
-            player.velY *= -1;
+            if (gravityDown) {
+                player.velY *= -1;
+            } else {
+                player.grounded = true;
+                player.jumping = false;
+            }
         }
         //Loop through each of the mobs in this level, and see if any of them have collided with a box.
         for (var l = 0; l < currentLevel.mobs.length; l++) {
@@ -790,7 +800,10 @@ function hint(x, y, text) {
     }, 500);
 }
 
-
+function flipGravity() {
+    gravity = gravity * -1;
+    gravityDown = !gravityDown;
+}
 
 document.body.addEventListener("keydown", function(e) {
     keys[e.keyCode] = true;
