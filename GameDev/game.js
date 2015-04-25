@@ -726,11 +726,12 @@ function update() {
         player.velY = 0;
     }
     if (projectiles.length > 0) {
-    //Animate projectiles
-    for(var m = 0; m < projectiles.length; m++) {
-        ctx.fill();
-    	ctx.fillStyle = "brown";
-    	ctx.fillRect(projectiles[m].x, projectiles[m].x, player.width, player.height);
+        //Animate projectiles
+        for(var m = 0; m < projectiles.length; m++) {
+            ctx.fill();
+        	ctx.fillStyle = "brown";
+        	ctx.fillRect(projectiles[m].x, projectiles[m].x, player.width, player.height);
+        }
     }
     player.x += player.velX;
     player.y += player.velY;
