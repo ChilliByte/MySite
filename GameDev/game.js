@@ -824,11 +824,13 @@ function projectile(x,y,targetX,targetY,speed) {
     this.y = y;
     this.targetX = targetX;
     this.targetY = targetY;
+    this.deltaX = targetX - x;
+    this.deltaY = targetY - y
   	this.speed = speed;
   	this.height = units/3;
   	this.width = units/3;
-  	this.xIncrement = targetX / x;
-    this.yIncrement = targetY / y;
+  	this.xIncrement = deltaX / deltaX;
+    this.yIncrement = deltaY / deltaX;
   	this.fire = function() {
       projectiles.push(this);
       console.log(this) 
