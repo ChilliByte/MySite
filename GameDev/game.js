@@ -731,8 +731,8 @@ function update() {
         ctx.fillStyle = "brown";
         for(var m = 0; m < projectiles.length; m++) {
             ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
-            projectiles[m].x += projectiles[m].xIncrement*projectiles[m].speed;
-            projectiles[m].y += projectiles[m].yIncrement*projectiles[m].speed;
+            projectiles[m].x += projectiles[m].xIncrement;
+            projectiles[m].y += projectiles[m].yIncrement;
         }
     }
     player.x += player.velX;
