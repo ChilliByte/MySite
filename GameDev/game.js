@@ -731,8 +731,8 @@ function update() {
         ctx.fillStyle = "brown";
         for(var m = 0; m < projectiles.length; m++) {
             ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
-            projectiles[m].x += projectiles[m].xIncrement;
-            projectiles[m].y += projectiles[m].yIncrement;
+            projectiles[m].x += projectiles[m].xIncrement*projectiles[m].speed;
+            projectiles[m].y += projectiles[m].yIncrement*projectiles[m].speed;
         }
     }
     player.x += player.velX;
@@ -859,5 +859,5 @@ function getPosition(event)
   x -= canvas.offsetLeft;
   y -= canvas.offsetTop;
 
-  new projectile(player.x,player.y,x,y,1).fire()
+  new projectile(player.x,player.y,x,y,0.1).fire()
 }
