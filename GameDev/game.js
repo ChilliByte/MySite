@@ -728,9 +728,9 @@ function update() {
     if (projectiles.length > 0) {
     //Animate projectiles
     for(var m = 0; m < projectiles.length; m++) {
-          ctx.fill();
-    			ctx.fillStyle = "brown";
-    			ctx.fillRect(projectiles[m].x, projectiles[m].x, player.width, player.height);
+        ctx.fill();
+    	ctx.fillStyle = "brown";
+    	ctx.fillRect(projectiles[m].x, projectiles[m].x, player.width, player.height);
     }
     player.x += player.velX;
     player.y += player.velY;
@@ -850,8 +850,6 @@ function getPosition(event)
 {
   var x = event.x;
   var y = event.y;
-
-  var canvas = document.getElementById("canvas");
 
   x -= canvas.offsetLeft;
   y -= canvas.offsetTop;
