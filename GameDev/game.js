@@ -830,8 +830,8 @@ function projectile(x,y,targetX,targetY,speed) {
   	this.height = units/3;
   	this.width = units/3;
   	this.angle = Math.atan(this.deltaY / this.deltaX)
-  	this.xIncrement = Math.cos(angle) * speed;
-    this.yIncrement = Math.sin(angle) * speed;
+  	this.xIncrement = Math.cos(this.angle) * speed;
+    this.yIncrement = Math.sin(this.angle) * speed;
   	this.fire = function() {
       projectiles.push(this);
       console.log(this) 
