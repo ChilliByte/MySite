@@ -36,7 +36,8 @@ var canvas = document.getElementById("canvas"),
     },
     keys = [],
     friction = 0.8,
-    gravity = 0.3;
+    projectiles = [],
+    gravity = 0.3,
     gravityDown = true;
 
 canvas.width = units * tilesX;
@@ -724,7 +725,13 @@ function update() {
     if (player.grounded) {
         player.velY = 0;
     }
-
+    if (projectiles.length > 0) {
+    //Animate projectiles
+    for(var m = 0; m < projectiles.length; m++) {
+          ctx.fill();
+    			ctx.fillStyle = "brown";
+    			ctx.fillRect(projectiles[m].x, projectiles[m].x, player.width, player.height);
+    }
     player.x += player.velX;
     player.y += player.velY;
 
@@ -809,6 +816,21 @@ function flipGravity() {
     gravityDown = !gravityDown;
 }
 
+function projectile(x,y,targetX,targetY,speed) {
+  	this.x = x;
+    this.y = y;
+    this.targetX = targetX;
+    this.targetY = targetY;
+  	this.speed = speed;
+  	this.xIncrement = targetX / x;
+    this.yIncrement = targetY / y;
+  	this.fire = function() {
+      projectiles.push(this);
+      console.log(this) 
+    };
+}
+
+
 document.body.addEventListener("keydown", function(e) {
     keys[e.keyCode] = true;
 });
@@ -821,3 +843,18 @@ document.body.addEventListener("keyup", function(e) {
 window.addEventListener("load", function() {
     update();
 });
+
+canvas.addEventListener("mousedown", getPosition, false);
+
+function getPosition(event)
+{
+  var x = event.x;
+  var y = event.y;
+
+  var canvas = document.getElementById("canvas");
+
+  x -= canvas.offsetLeft;
+  y -= canvas.offsetTop;
+
+  new projectile(player.x,player.y,x,y,1).fire()
+}
