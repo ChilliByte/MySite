@@ -727,11 +727,11 @@ function update() {
     }
     if (projectiles.length > 0) {
         //Animate projectiles
+        ctx.fill();
+        ctx.fillStyle = "brown";
         for(var m = 0; m < projectiles.length; m++) {
-            ctx.fill();
-        	ctx.fillStyle = "brown";
-        	ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
-        	projectiles[m].x += projectiles[m].xInterval;
+            ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
+            projectiles[m].x += projectiles[m].xInterval;
             projectiles[m].y += projectiles[m].yInterval;
         }
     }
