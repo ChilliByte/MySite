@@ -9,7 +9,7 @@ var frame = false;
 window.onload = function() {
     console.log("Loaded");
     char1Sheet = document.getElementById("char1SpriteSheet");
-    setInterval(function () {frame = !frame;console.log("flipped")},250)
+    setInterval(function () {frame = !frame;},250)
 }
 
 var canvas = document.getElementById("canvas"),
@@ -730,7 +730,9 @@ function update() {
         for(var m = 0; m < projectiles.length; m++) {
             ctx.fill();
         	ctx.fillStyle = "brown";
-        	ctx.fillRect(projectiles[m].x, projectiles[m].x, player.width, player.height);
+        	ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
+        	projectiles[m].x += projectiles[m].xInterval;
+            projectiles[m].y += projectiles[m].yInterval;
         }
     }
     player.x += player.velX;
@@ -823,6 +825,8 @@ function projectile(x,y,targetX,targetY,speed) {
     this.targetX = targetX;
     this.targetY = targetY;
   	this.speed = speed;
+  	this.height = units/3;
+  	this.width = units/3;
   	this.xIncrement = targetX / x;
     this.yIncrement = targetY / y;
   	this.fire = function() {
