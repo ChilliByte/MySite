@@ -49,15 +49,18 @@ refreshLevel()
 
 canvas.width = width;
 canvas.height = height;
-
+var moving = false;
 function update() {
   // check keys
+  if (!moving) {
   if (keys[38] || keys[32] || keys[87]) {
     // up arrow or space
     if (player.y > 0) {
 	refreshLevel()
-    	currentLevel[player.y - 1][player.x] = 2
-    	player.y-- 
+    	currentLevel[player.y - 1][player.x] = 2;
+    	player.y--;
+    	moving = true;
+    	setTimeout(function () {moving = false},500)
     }
   }
     if (keys[40] || keys[83]) {
@@ -66,6 +69,8 @@ function update() {
     	refreshLevel()
     	currentLevel[player.y + 1][player.x] = 2
     	player.y++
+    	    	moving = true;
+    	setTimeout(function () {moving = false},500)
     }
     }
   if (keys[39] || keys[68]) {
@@ -74,6 +79,8 @@ function update() {
     	refreshLevel()
     	currentLevel[player.y][player.x + 1] = 2
     	player.x++ 
+    	    	moving = true;
+    	setTimeout(function () {moving = false},500)
   	}
   }
   if (keys[37] || keys[65]) {// left arrow
@@ -81,9 +88,11 @@ function update() {
 	refreshLevel()
     	currentLevel[player.y][player.x - 1] = 2
     	player.x--
+    	    	moving = true;
+    	setTimeout(function () {moving = false},500)
     }
   }
-
+  }
   ctx.clearRect(0, 0, width, height);
 
   for (var i = 0; i < currentLevel.length; i++) {
