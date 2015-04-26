@@ -1,6 +1,11 @@
 <html>
   <head>
     <title>2D Array Movement</title>
+    <style>
+      body {
+        font-family: Consolas;
+      }
+    </style>
   </head>
   <body>
     <p id="output"></p>
@@ -24,5 +29,36 @@
       </td>
       </tr>
     </table>
+    <script>
+      var level = [
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0]
+      ];
+      
+      var player = {
+        x: 2,
+        y: 2
+      }
+      
+      var outputTag = document.getElementById("output")
+      
+      function display() {
+        outputTag.innerHTML = ""
+        for(var i = 0; i < levels.length; i++) {
+          for (var j = 0; j < levels[i].length; j++) {
+            outputTag.innerHTML += levels[i][j] + ", ";
+          }
+          outputTag.innerHTML += "<br />"
+        }
+      }
+      
+      display()
+      
+    </script>
   </body>
 </html>
