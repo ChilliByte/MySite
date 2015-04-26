@@ -33,7 +33,7 @@ var level = [
   [0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 3, 3],
   [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 3, 3],
   [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 3],
-  [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 3],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3],
   [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 3]
 ];
 
@@ -57,39 +57,47 @@ function update() {
     // up arrow or space
     if (player.y > 0) {
 	refreshLevel()
-    	currentLevel[player.y - 1][player.x] = 2;
-    	player.y--;
-    	moving = true;
-    	setTimeout(function () {moving = false},300)
+    	if (currentLevel[player.y - 1][player.x] == 0) {
+		currentLevel[player.y - 1][player.x] = 2;
+    		player.y--;
+    		moving = true;
+    		setTimeout(function () {moving = false},300)
+    	}
     }
   }
     if (keys[40] || keys[83]) {
     // down arrow or s 
     if (player.y < currentLevel.length - 1) {
     	refreshLevel()
-    	currentLevel[player.y + 1][player.x] = 2
-    	player.y++
-    	    	moving = true;
-    	setTimeout(function () {moving = false},300)
+    	if (currentLevel[player.y + 1][player.x] == 0) {
+	    	currentLevel[player.y + 1][player.x] = 2
+    		player.y++
+    		moving = true;
+    		setTimeout(function () {moving = false},300)
+    	}
     }
     }
   if (keys[39] || keys[68]) {
     // right arrow
     if (player.x < currentLevel[player.y].length - 1) {
     	refreshLevel()
-    	currentLevel[player.y][player.x + 1] = 2
-    	player.x++ 
+    	if(currentLevel[player.y][player.x + 1] == 0) {
+	    	currentLevel[player.y][player.x + 1] = 2
+	    	player.x++ 
     	    	moving = true;
-    	setTimeout(function () {moving = false},300)
+    		setTimeout(function () {moving = false},300)
   	}
+    }
   }
   if (keys[37] || keys[65]) {// left arrow
     if (player.x > 0) {
 	refreshLevel()
-    	currentLevel[player.y][player.x - 1] = 2
-    	player.x--
-    	moving = true;
-    	setTimeout(function () {moving = false},300)
+	if(currentLevel[player.y][player.x - 1] == 0) {
+    		currentLevel[player.y][player.x - 1] = 2
+    		player.x--
+    		moving = true;
+    		setTimeout(function () {moving = false},300)
+	}
     }
   }
   }
