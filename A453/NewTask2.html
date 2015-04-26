@@ -57,13 +57,7 @@
             
                 calcStrength = initialStrength + strengthModifier;
                 calcSkill = initialSkill + skillModifier;
-            
-                characterObject = {
-                    name: chosenName,
-                    strength: calcStrength,
-                    skill: calcSkill
-                }
-            
+
                 characterProfile = "<h1>"+chosenName+"</h1><br /><p>Strength: " + calcStrength + ", <br /> Skill: " + calcSkill +",";
                 output.innerHTML = characterProfile;
                 notifyMe()
