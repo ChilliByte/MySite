@@ -26,14 +26,15 @@ var canvas = document.getElementById("canvas"),
   keys = [];
 
 var level = [
-  [0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 1, 1, 1, 1, 0, 0],
-  [0, 0, 0, 0, 0, 1, 0, 0],
-  [0, 0, 0, 0, 0, 1, 0, 0],
-  [0, 0, 1, 1, 1, 1, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 3],
+  [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 3],
+  [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 3, 3],
+  [0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 3, 3],
+  [0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 3, 3],
+  [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 3, 3],
+  [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 3],
+  [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 3],
+  [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 3]
 ];
 
 var currentLevel = [];
@@ -61,7 +62,7 @@ function update() {
   }
     if (keys[40] || keys[83]) {
     // down arrow or s 
-    if (player.y < 8) {
+    if (player.y < currentLevel.length - 1) {
     	refreshLevel()
     	currentLevel[player.y + 1][player.x] = 2
     	player.y++
@@ -69,14 +70,14 @@ function update() {
     }
   if (keys[39] || keys[68]) {
     // right arrow
-    if (player.x < 8) {
+    if (player.x < currentLevel[player.y].length - 1) {
     	refreshLevel()
     	level[player.y][player.x + 1] = 2
     	player.x++ 
   	}
   }
   if (keys[37] || keys[65]) {// left arrow
-    if (player.x < 0) {
+    if (player.x > 0) {
 	refreshLevel()
     	level[player.y][player.x - 1] = 2
     	player.x--
