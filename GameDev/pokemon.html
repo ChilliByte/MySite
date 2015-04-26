@@ -60,7 +60,7 @@ function update() {
     	currentLevel[player.y - 1][player.x] = 2;
     	player.y--;
     	moving = true;
-    	setTimeout(function () {moving = false},500)
+    	setTimeout(function () {moving = false},300)
     }
   }
     if (keys[40] || keys[83]) {
@@ -70,7 +70,7 @@ function update() {
     	currentLevel[player.y + 1][player.x] = 2
     	player.y++
     	    	moving = true;
-    	setTimeout(function () {moving = false},500)
+    	setTimeout(function () {moving = false},300)
     }
     }
   if (keys[39] || keys[68]) {
@@ -80,7 +80,7 @@ function update() {
     	currentLevel[player.y][player.x + 1] = 2
     	player.x++ 
     	    	moving = true;
-    	setTimeout(function () {moving = false},500)
+    	setTimeout(function () {moving = false},300)
   	}
   }
   if (keys[37] || keys[65]) {// left arrow
@@ -88,8 +88,8 @@ function update() {
 	refreshLevel()
     	currentLevel[player.y][player.x - 1] = 2
     	player.x--
-    	    	moving = true;
-    	setTimeout(function () {moving = false},500)
+    	moving = true;
+    	setTimeout(function () {moving = false},300)
     }
   }
   }
