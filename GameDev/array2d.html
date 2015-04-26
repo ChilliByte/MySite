@@ -39,8 +39,14 @@
         [0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0]
       ];
+      var currentLevel = [];
+      function refreshLevel () {
+        for (var lvlLoop = 0; lvlLoop < level.length; lvlLoop++) {
+          currentLevel[lvlLoop] = level[lvlLoop].slice()
+        }
+      }
       
-      currentLevel = level.slice()
+      refreshLevel()
       
       var player = {
         x: 2,
@@ -62,7 +68,7 @@
       display()
       
       function move(x) {
-        currentLevel = level.slice()
+        refreshLevel()
         if(x == "up")    {player.y--}
         if(x == "down")  {player.y++}
         if(x == "left")  {player.x--}
