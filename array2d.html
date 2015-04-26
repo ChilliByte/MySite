@@ -59,6 +59,16 @@
       
       display()
       
+      function move(x) {
+        level[player.y][player.x] = 0
+        if(x == "up")    {player.y--}
+        if(x == "down")  {player.y++}
+        if(x == "left")  {player.x--}
+        if(x == "right") {player.x++}
+        level[player.y][player.x] = 1
+        display()
+      }
+      
     </script>
   </body>
 </html>
