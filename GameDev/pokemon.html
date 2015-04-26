@@ -24,7 +24,15 @@ var level = [
   [0, 0, 0, 0, 0, 0, 0, 0],
 ];
 
-currentLevel = level.slice()
+var currentLevel = [];
+function refreshLevel () {
+    for (var lvlLoop = 0; lvlLoop < level.length; lvlLoop++) {
+        currentLevel[lvlLoop] = level[lvlLoop].slice()
+    }
+}
+      
+refreshLevel()
+      
 
 canvas.width = width;
 canvas.height = height;
@@ -34,7 +42,7 @@ function update() {
   if (keys[38] || keys[32] || keys[87]) {
     // up arrow or space
     if (player.y > 0) {
-			currentLevel = level.slice()
+	refreshLevel()
     	currentLevel[player.y - 1][player.x] = 2
     	player.y-- 
     }
@@ -42,7 +50,7 @@ function update() {
     if (keys[40] || keys[83]) {
     // down arrow or s 
     if (player.y < 8) {
-    	currentLevel = level.slice()
+    	refreshLevel()
     	currentLevel[player.y + 1][player.x] = 2
     	player.y++
     }
@@ -50,14 +58,14 @@ function update() {
   if (keys[39] || keys[68]) {
     // right arrow
     if (player.x < 8) {
-    	currentLevel = level.slice()
+    	refreshLevel()
     	level[player.y][player.x + 1] = 2
     	player.x++ 
   	}
   }
   if (keys[37] || keys[65]) {// left arrow
     if (player.x < 0) {
-			currentLevel = level.slice()
+	refreshLevel()
     	level[player.y][player.x - 1] = 2
     	player.x--
     }
