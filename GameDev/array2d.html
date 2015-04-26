@@ -40,6 +40,8 @@
         [0,0,0,0,0,0,0]
       ];
       
+      currentLevel = level.slice()
+      
       var player = {
         x: 2,
         y: 2
@@ -60,12 +62,12 @@
       display()
       
       function move(x) {
-        level[player.y][player.x] = 0
+        currentLevel = level.slice()
         if(x == "up")    {player.y--}
         if(x == "down")  {player.y++}
         if(x == "left")  {player.x--}
         if(x == "right") {player.x++}
-        level[player.y][player.x] = 1
+        currentLevel[player.y][player.x] = 2
         display()
       }
       
