@@ -1,0 +1,110 @@
+(function() {
+  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  window.requestAnimationFrame = requestAnimationFrame;
+})();
+
+var canvas = document.getElementById("canvas"),
+  ctx = canvas.getContext("2d"),
+  width = 500,
+  height = 200,
+  player = {
+    x: 2,
+    y: 1,
+  },
+  keys = [];
+
+var level = [
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 1, 1, 1, 1, 0, 0],
+  [0, 0, 0, 0, 0, 1, 0, 0],
+  [0, 0, 0, 0, 0, 1, 0, 0],
+  [0, 0, 1, 1, 1, 1, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+];
+
+currentLevel = level.slice()
+
+canvas.width = width;
+canvas.height = height;
+
+function update() {
+  // check keys
+  if (keys[38] || keys[32] || keys[87]) {
+    // up arrow or space
+    if (player.y > 0) {
+			currentLevel = level.slice()
+    	currentLevel[player.y - 1][player.x] = 2
+    	player.y-- 
+    }
+  }
+    if (keys[40] || keys[83]) {
+    // down arrow or s 
+    if (player.y < 8) {
+    	currentLevel = level.slice()
+    	currentLevel[player.y + 1][player.x] = 2
+    	player.y++
+    }
+    }
+  if (keys[39] || keys[68]) {
+    // right arrow
+    if (player.x < 8) {
+    	currentLevel = level.slice()
+    	level[player.y][player.x + 1] = 2
+    	player.x++ 
+  	}
+  }
+  if (keys[37] || keys[65]) {// left arrow
+    if (player.x < 0) {
+			currentLevel = level.slice()
+    	level[player.y][player.x - 1] = 2
+    	player.x--
+    }
+  }
+
+  ctx.clearRect(0, 0, width, height);
+
+  for (var i = 0; i < currentLevel.length; i++) {
+    for (var j = 0; j < currentLevel[i].length; j++) {
+      if (currentLevel[i][j] == 1) {
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.rect(j * 20, i * 20, 20, 20);
+        ctx.fill();
+        ctx.closePath();
+      } else if (currentLevel[i][j] == 0) {
+        ctx.beginPath();
+        ctx.fillStyle = "green";
+        ctx.rect(j * 20, i * 20, 20, 20);
+        ctx.fill();
+        ctx.closePath();
+      } else if (currentLevel[i][j] == 2) {
+        ctx.beginPath();
+        ctx.fillStyle = "red";
+        ctx.rect(j * 20, i * 20, 20, 20);
+        ctx.fill();
+        ctx.closePath();
+      } else {
+        ctx.beginPath();
+        ctx.fillStyle = "blue";
+        ctx.rect(j * 20, i * 20, 20, 20);
+        ctx.fill();
+        ctx.closePath();
+      }
+    }
+  }
+  requestAnimationFrame(update);
+}
+
+document.body.addEventListener("keydown", function(e) {
+  keys[e.keyCode] = true;
+});
+
+document.body.addEventListener("keyup", function(e) {
+  keys[e.keyCode] = false;
+});
+
+window.addEventListener("load", function() {
+  update();
+});
