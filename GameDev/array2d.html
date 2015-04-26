@@ -51,9 +51,9 @@
       
       function display() {
         outputTag.innerHTML = ""
-        for(var i = 0; i < level.length; i++) {
-          for (var j = 0; j < level[i].length; j++) {
-            outputTag.innerHTML += level[i][j] + ", ";
+        for(var i = 0; i < currentLevel.length; i++) {
+          for (var j = 0; j < currentLevel[i].length; j++) {
+            outputTag.innerHTML += currentLevel[i][j] + ", ";
           }
           outputTag.innerHTML += "<br />"
         }
