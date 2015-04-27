@@ -3,6 +3,18 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
+function update() {
+    
+    
+    requestAnimationFrame(update);
+}
+
+
+/*(function() {
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    window.requestAnimationFrame = requestAnimationFrame;
+})();
+
 
 var char1Sheet;
 var frame = false;
