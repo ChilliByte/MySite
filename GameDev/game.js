@@ -3,6 +3,13 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
+window.onload = function() {
+    console.log("Loaded");
+    char1Sheet = document.getElementById("char1SpriteSheet");
+    var frame = false;
+    setInterval(function () {frame = !frame;},250)
+}
+
 function update() {
     
     
