@@ -11,11 +11,21 @@ window.onload = function() {
 }
 
 function update() {
-    if (keys[38] || keys[32]) {}
-    if (keys[39] || keys[32]) {}
-    if (keys[40] || keys[32]) {}
-    if (keys[38] || keys[32]) {}
-    if (keys[38] || keys[32]) {}
+    if (keys[37] || keys[65]) {
+        //Left/A
+    }
+    if (keys[38] || keys[87]) {
+        //Up/W
+    }
+    if (keys[39] || keys[68]) {
+        //Right/D
+    }
+    if (keys[40] || keys[83]) {
+        //Down/S
+    }
+    if (keys[32] || keys[13]) {
+        //Space/Enter
+    }
     
     requestAnimationFrame(update);
 }
