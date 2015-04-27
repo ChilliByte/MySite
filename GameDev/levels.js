@@ -110,13 +110,34 @@ var town2 = {
   ]
 }
 
+function box(x,y,h,w) {
+  this.x = x;
+  this.y = y;
+  this.width = w;
+  this.height = h;
+}
+
+function collectible(x,y,h,w,t) {
+  this.x = x;
+  this.y = y;
+  this.height = h;
+  this.width = w;
+  this.type = t;
+}
+
 var path1to2 = {
   type: "path",
-  width: 80,
+  width: 80*units,
   boxes = [],
   collectibles = [],
   mobs = []
 }
+
+path1to2.boxes.push(new box(-1*units,0,20*units,units))
+path1to2.boxes.push(new box(0,15*units,5*units,41*units))
+path1to2.boxes.push(new box(40*units,13*units,7*units,40*units))
+
+path1to2.collectibles.push(new collectible(3*units,14*units,(units/5)*2,(units/5)*2))
 
 var path1to3 = {
   type: "path",
@@ -125,6 +146,12 @@ var path1to3 = {
   collectibles = [],
   mobs = []
 }
+
+path1to3.boxes.push(new box(-1*units,0,20*units,units))
+path1to3.boxes.push(new box(0,15*units,5*units,41*units))
+path1to3.boxes.push(new box(40*units,13*units,7*units,40*units))
+
+path1to3.collectibles.push(new collectible(3*units,14*units,(units/5)*2,(units/5)*2))
 
 var path2to5 = {
   type: "path",
