@@ -153,13 +153,19 @@ path1to3.boxes.push(new box(40*units,13*units,7*units,40*units))
 
 path1to3.collectibles.push(new collectible(3*units,14*units,(units/5)*2,(units/5)*2))
 
-var path2to5 = {
+var path2to4 = {
   type: "path",
   width: 80,
   boxes = [],
   collectibles = [],
   mobs = []
 }
+
+path2to4.boxes.push(new box(-1*units,0,20*units,units))
+path2to4.boxes.push(new box(0,15*units,5*units,41*units))
+path2to4.boxes.push(new box(40*units,13*units,7*units,40*units))
+
+path2to4.collectibles.push(new collectible(3*units,14*units,(units/5)*2,(units/5)*2))
 
 var path3to4 = {
   type: "path",
@@ -168,6 +174,13 @@ var path3to4 = {
   collectibles = [],
   mobs = []
 }
+
+path3to4.boxes.push(new box(-1*units,0,20*units,units))
+path3to4.boxes.push(new box(0,15*units,5*units,41*units))
+path3to4.boxes.push(new box(40*units,13*units,7*units,40*units))
+
+path3to4.collectibles.push(new collectible(3*units,14*units,(units/5)*2,(units/5)*2))
+
 
 var worldMap = [
   [town1   , path1to2,town2    ],
