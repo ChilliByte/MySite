@@ -11,11 +11,123 @@ window.onload = function() {
 }
 
 function update() {
-    
+    if (keys[38] || keys[32]) {}
+    if (keys[39] || keys[32]) {}
+    if (keys[40] || keys[32]) {}
+    if (keys[38] || keys[32]) {}
+    if (keys[38] || keys[32]) {}
     
     requestAnimationFrame(update);
 }
 
+document.body.addEventListener("keydown", function(e) {
+    keys[e.keyCode] = true;
+});
+
+document.body.addEventListener("keyup", function(e) {
+    keys[e.keyCode] = false;
+});
+
+window.addEventListener("load", function() {
+    update();
+});
+
+function drawChar() {
+    if(currentLevel.type == "path") {
+        
+    } else if(currentLevel.type == "town"){ 
+        
+    } else {
+        
+    }
+}
+
+function colCheck(shapeA, shapeB) {
+    // get the vectors to check against
+    var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
+        vY = (shapeA.y + (shapeA.height / 2)) - (shapeB.y + (shapeB.height / 2)),
+        // add the half widths and half heights of the objects
+        hWidths = (shapeA.width / 2) + (shapeB.width / 2),
+        hHeights = (shapeA.height / 2) + (shapeB.height / 2),
+        colDir = null;
+
+    // if the x and y vector are less than the half width or half height, they we must be inside the object, causing a collision
+    if (Math.abs(vX) < hWidths && Math.abs(vY) < hHeights) {
+        // figures out on which side we are colliding (top, bottom, left, or right)
+        var oX = hWidths - Math.abs(vX),
+            oY = hHeights - Math.abs(vY);
+        if (oX >= oY) {
+            if (vY > 0) {
+                colDir = "t";
+                shapeA.y += oY;
+            } else {
+                colDir = "b";
+                shapeA.y -= oY;
+            }
+        } else {
+            if (vX > 0) {
+                colDir = "l";
+                shapeA.x += oX;
+            } else {
+                colDir = "r";
+                shapeA.x -= oX;
+            }
+        }
+    }
+    return colDir;
+}
+
+function hint(x, y, text) {
+    $("#hintBox").fadeOut();
+    setTimeout(function() {
+        document.getElementById("hintBox").style.left = x + "px";
+        document.getElementById("hintBox").style.top = y + "px";
+        document.getElementById("hintBox").innerHTML = text;
+        $("#hintBox").fadeIn();
+    }, 500);
+}
+
+function flipGravity() {
+    gravity = gravity * -1;
+    gravityDown = !gravityDown;
+}
+
+function projectile(x,y,targetX,targetY,speed) {
+  	this.x = x;
+    this.y = y;
+    this.targetX = targetX;
+    this.targetY = targetY;
+    this.deltaX = targetX - x;
+    this.deltaY = targetY - y
+  	this.speed = speed;
+  	this.height = units/3;
+  	this.width = units/3;
+  	this.angle = Math.atan(this.deltaY / this.deltaX)
+  	this.xIncrement = Math.cos(this.angle) * speed;
+    this.yIncrement = Math.sin(this.angle) * speed;
+  	this.fire = function() {
+      projectiles.push(this);
+      console.log(this) 
+    };
+}
+
+canvas.addEventListener("mousedown", getPosition, false);
+function getPosition(event)
+{
+  var x = event.x;
+  var y = event.y;
+  x -= canvas.offsetLeft;
+  y -= canvas.offsetTop;
+  //new projectile(player.x,player.y,x,y,6).fire()
+}
+
+function setChar(x) {
+    player.char = x
+}
+
+function confirmChar() {
+    $("#charSelect").fadeOut()
+}
 
 /*(function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -70,7 +182,7 @@ console.log("Canvas Width:" + canvas.width);
 console.log("Tile Width:" + canvas.width / tilesX);
 console.log("Tile Height:" + canvas.height / tilesY);
 mobDir = "right";
-
+[
 //Begin Levels
 levels = [];
 level1 = {};
@@ -380,7 +492,7 @@ level5.mobs.push({
     dead: false
 });
 // End Levels
-
+]
 //Character Functions
 function setChar(x) {
     player.char = x
