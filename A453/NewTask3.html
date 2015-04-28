@@ -152,11 +152,14 @@
                         }
 
                         if (character1.strength < 0) {
-                            character1.strength = true;
+                            character1.strength  =  0;
+                            character1.dead = true;
                         }
 
                         if (character2.strength < 0) {
-                            character.strength = true;
+                            character2.strength = 0;
+                            character2.dead = true;
+                            
                         }
                     }
 
@@ -180,7 +183,7 @@
 
                 var notification = new Notification('New Character: ' + nm1, {
                     icon: "http:\/\/icons.iconarchive.com\/icons\/archigraphs\/assassins-creed\/128\/Swords-icon.png",
-                    body: "Player " + nm1 + ": " + " Strength: " + p1Str + " Skill: " + p1Sk + "\n\nPlayer " + nm2 + ": " + " Strength: " + p2Str + " Skill: " + p2Sk,
+                    body: "Player " + character1.name + ": " + " Strength: " + character1.strength + " Skill: " + character1.skill + "\n\nPlayer " + charater2.name + ": " + " Strength: " + character2.strength + " Skill: " + character2.skill,
                 });
 
 
