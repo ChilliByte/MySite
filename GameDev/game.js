@@ -17,17 +17,40 @@ function update() {
     if (keys[37] || keys[65]) {
         //Left/A
         if (currentLevel.type === "town") {console.log("Left, Town")}
-        if (currentLevel.type === "path") {console.log("Left, Path")}
+        if (currentLevel.type === "path") {
+            console.log("Left, Path")
+            if (player.velX > -player.speed) {
+                player.velX-= units/8;
+                player.lastDir = "r"
+            }
+        }
     }
     if (keys[38] || keys[87]) {
         //Up/W
         if (currentLevel.type === "town") {console.log("Up, Town")}
-        if (currentLevel.type === "path") {console.log("Up,Path")}
+        if (currentLevel.type === "path") {
+            console.log("Up,Path")
+            if (!player.jumping && player.grounded) {
+                player.jumping = true;
+                player.grounded = false;
+                if (gravityDown) {
+                    player.velY = -player.speed * 2;
+                } else {
+                    player.velY = player.speed * 2;
+                }
+            }
+        }
     }
     if (keys[39] || keys[68]) {
         //Right/D
         if (currentLevel.type === "town") {console.log("Right, Town")}
-        if (currentLevel.type === "path") {console.log("Right, Path")}
+        if (currentLevel.type === "path") {
+            console.log("Right, Path")
+            if (player.velX < player.speed) {
+                player.velX += units/8;
+                player.lastDir = "l"
+            }
+        }
     }
     if (keys[40] || keys[83]) {
         //Down/S
@@ -39,8 +62,154 @@ function update() {
         if (currentLevel.type === "town") {console.log("Enter, Town")}
         if (currentLevel.type === "path") {console.log("Enter, Path")}
     }
+    //Clear The Last Frame
+    ctx.clearRect(0, 0, 40*units, 20*units);
     if (currentLevel.type === "town") {}
-    if (currentLevel.type === "path") {}
+    if (currentLevel.type === "path") {
+        player.velX *= friction;
+        player.velY += gravity;
+        
+        //Change to green and begins drawing
+        ctx.fillStyle = "#380";
+        ctx.beginPath();
+        
+        player.grounded = false;
+        for (var i = 0; i < currentLevel.boxes.length; i++) {
+            //draw each one
+            ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
+            
+            //Figure out whether we've touched a box
+            var dir = colCheck(player, currentLevel.boxes[i]);
+        
+            //Do something depending on the direction the collision happened from.
+            if (dir === "l" || dir === "r") {
+                player.velX = 0;
+                player.jumping = false;
+            } else if (dir === "b") {
+                if (gravityDown) {
+                    player.grounded = true;
+                    player.jumping = false;
+                } else {
+                    player.velY *= -1;
+                }
+            } else if (dir === "t") {
+                if (gravityDown) {
+                    player.velY *= -1;
+                } else {
+                    player.grounded = true;
+                    player.jumping = false;
+                }
+            }
+            //Loop through each of the mobs in this level, and see if any of them have collided with a box.
+            for (var l = 0; l < currentLevel.mobs.length; l++) {
+                currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.boxes[i])
+                if (currentLevel.mobs[l].collisionDir == "b") {
+                    currentLevel.mobs[l].grounded = true
+                }
+            }
+        }
+        ctx.closePath()
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.fillStyle = "orange";
+        for (var j = 0; j < currentLevel.collectibles.length; j++) {
+            if (currentLevel.collectibles[j].collected == false) {
+                ctx.rect(currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height)
+                var collectCheck = colCheck(player, currentLevel.collectibles[j]);
+                if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
+                    currentLevel.collectibles[j].collected = true;
+                    if (currentLevel.collectibles[j].type === "coin") {
+                        player.collected++
+                    };
+                    console.log("Collected")
+                }
+            }
+        }
+        
+        ctx.closePath()
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#90f";
+        for (var k = 0; k < currentLevel.mobs.length; k++) {
+            if (!currentLevel.mobs[k].dead) {
+                ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
+                if (currentLevel.mobs[k].type == "patrol") {
+                    if (mobDir == "right") {
+                        if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
+                            currentLevel.mobs[k].velX++;
+                        }
+                        if (currentLevel.mobs[k].x > currentLevel.mobs[k].x2Limit) {
+                            mobDir = "left";
+                            currentLevel.mobs[k].x -= 5
+                        }
+                    }
+                    if (mobDir == "left") {
+                        if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
+                            currentLevel.mobs[k].velX--;
+                        }
+                        if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {
+                            mobDir = "right";
+                            currentLevel.mobs[k].x += 5
+                        }           
+    
+                    }
+                };
+                currentLevel.mobs[k].velX *= friction;
+                currentLevel.mobs[k].velY += gravity;
+                currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
+                if (currentLevel.mobs[k].grounded) {
+                    currentLevel.mobs[k].velY = 0;
+                    currentLevel.mobs[k].grounded = false;
+                }
+                currentLevel.mobs[k].y += currentLevel.mobs[k].velY;
+
+                currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player)
+                if (currentLevel.mobs[k].hitPlayer === "t") {
+                    currentLevel.mobs[k].dead = true;
+                    console.log("Hit Mob Top")
+                }
+                if (currentLevel.mobs[k].hitPlayer === "l") {
+                    player.velY -= 2;
+                    player.velX += 8;
+                    currentLevel.mobs[k].velX += 5;
+                    console.log("Hit Mob Left");
+                }
+                if (currentLevel.mobs[k].hitPlayer === "r") {
+                    player.velY -= 2;
+                    player.velX -= 8;
+                    currentLevel.mobs[k].velX -= 5;
+                    console.log("Hit Mob Right");
+                }
+                if (currentLevel.mobs[k].hitPlayer === "b") {
+                    player.velY -= 2;
+                    player.velX -= 8;
+                    console.log("Hit Mob Bottom");
+                }
+            }
+        };
+        ctx.closePath()
+
+        ctx.fill()
+        if (player.grounded) {
+            player.velY = 0;
+        }
+        if (projectiles.length > 0) {
+            //Animate projectiles
+            ctx.fill();
+            ctx.fillStyle = "brown";
+            for(var m = 0; m < projectiles.length; m++) {
+                ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
+                projectiles[m].x += projectiles[m].xIncrement;
+                projectiles[m].y += projectiles[m].yIncrement;
+            }
+        }
+        player.x += player.velX;
+        player.y += player.velY;
+
+        drawChar()
+        
+    }
     requestAnimationFrame(update);
 }
 
@@ -136,8 +305,7 @@ function projectile(x,y,targetX,targetY,speed) {
 }
 
 canvas.addEventListener("mousedown", getPosition, false);
-function getPosition(event)
-{
+function getPosition(event) {
   var x = event.x;
   var y = event.y;
   x -= canvas.offsetLeft;
@@ -153,7 +321,8 @@ function confirmChar() {
     $("#charSelect").fadeOut()
 }
 
-/*(function() {
+/*
+(function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
 })();
