@@ -1,5 +1,5 @@
 var town1 = {
-  type:town,
+  type:"town",
   height: 20,
   width: 20,
   tileMap: [
@@ -27,7 +27,7 @@ var town1 = {
 }
 
 var town2 = {
-  type:town,
+  type:"town",
   height: 20,
   width: 20,
   tileMap: [
@@ -55,7 +55,7 @@ var town2 = {
 }
 
 var town3 = {
-  type:town,
+  type:"town",
   height: 20,
   width: 20,
   tileMap: [
@@ -82,8 +82,8 @@ var town3 = {
   ]
 }
 
-var town2 = {
-  type:town,
+var town4 = {
+  type:"town",
   height: 20,
   width: 20,
   tileMap: [
