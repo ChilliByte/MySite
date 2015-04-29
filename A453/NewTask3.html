@@ -120,11 +120,14 @@
 
                 return validForm
             }
+            
+            var character1;
+            var character2;
 
             function encounter() {
                 if (validateForm()) {
-                    var character1 = new character(nameOne.value, parseInt(strengthOne.value, 10), parseInt(skillOne.value, 10));
-                    var character2 = new character(nameTwo.value, parseInt(strengthTwo.value, 10), parseInt(skillTwo.value, 10));
+                    character1 = new character(nameOne.value, parseInt(strengthOne.value, 10), parseInt(skillOne.value, 10));
+                    character2 = new character(nameTwo.value, parseInt(strengthTwo.value, 10), parseInt(skillTwo.value, 10));
                     strMod = Math.floor(Math.abs(character2.strength - character1.strength) / 5);
                     skMod = Math.floor(Math.abs(character2.skill - character1.skill) / 5);
                     d1 = Math.floor((Math.random() * 6) + 1);
