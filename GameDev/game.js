@@ -10,31 +10,40 @@ window.onload = function() {
     setInterval(function () {frame = !frame;},250)
 }
 
+function clone(obj)
+ { var clone = {};
+   clone.prototype = obj.prototype;
+   for (property in obj) clone[property] = obj[property];
+   return clone;
+ }
+
+currentLevel = clone(worldMap[player.worldY][player.worldX])
+
 function update() {
     if (keys[37] || keys[65]) {
         //Left/A
-        if () {}
-        if () {}
+        if (currentLevel.type === "town") {console.log("Left, Town")}
+        if (currentLevel.type === "path") {console.log("Left, Path")}
     }
     if (keys[38] || keys[87]) {
         //Up/W
-        if () {}
-        if () {}
+        if (currentLevel.type === "town") {console.log("Up, Town")}
+        if (currentLevel.type === "path") {console.log("Up,Path")}
     }
     if (keys[39] || keys[68]) {
         //Right/D
-        if () {}
-        if () {}
+        if (currentLevel.type === "town") {console.log("Right, Town")}
+        if (currentLevel.type === "path") {console.log("Right, Path")}
     }
     if (keys[40] || keys[83]) {
         //Down/S
-        if () {}
-        if () {}
+        if (currentLevel.type === "town") {console.log("Down, Town")}
+        if (currentLevel.type === "path") {console.log("Down, Path")}
     }
     if (keys[32] || keys[13]) {
         //Space/Enter
-        if () {}
-        if () {}
+        if (currentLevel.type === "town") {console.log("Enter, Town")}
+        if (currentLevel.type === "path") {console.log("Enter, Path")}
     }
     
     requestAnimationFrame(update);
