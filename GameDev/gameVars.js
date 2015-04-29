@@ -30,6 +30,7 @@ var canvas = document.getElementById("canvas"),
     projectiles = [],
     gravity = 0.3,
     char1Sheet,
+    currentLevel,
     gravityDown = true;
 
 canvas.width = units * tilesX;
