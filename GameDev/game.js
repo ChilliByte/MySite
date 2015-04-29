@@ -10,14 +10,7 @@ window.onload = function() {
     setInterval(function () {frame = !frame;},250)
 }
 
-function clone(obj)
- { var clone = {};
-   clone.prototype = obj.prototype;
-   for (property in obj) clone[property] = obj[property];
-   return clone;
- }
-
-currentLevel = clone(worldMap[player.worldY][player.worldX])
+currentLevel = worldMap[player.worldY][player.worldX]
 
 function update() {
     if (keys[37] || keys[65]) {
