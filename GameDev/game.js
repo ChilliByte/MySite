@@ -13,18 +13,28 @@ window.onload = function() {
 function update() {
     if (keys[37] || keys[65]) {
         //Left/A
+        if () {}
+        if () {}
     }
     if (keys[38] || keys[87]) {
         //Up/W
+        if () {}
+        if () {}
     }
     if (keys[39] || keys[68]) {
         //Right/D
+        if () {}
+        if () {}
     }
     if (keys[40] || keys[83]) {
         //Down/S
+        if () {}
+        if () {}
     }
     if (keys[32] || keys[13]) {
         //Space/Enter
+        if () {}
+        if () {}
     }
     
     requestAnimationFrame(update);
