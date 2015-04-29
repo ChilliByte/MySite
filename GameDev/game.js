@@ -1016,4 +1016,4 @@ function getPosition(event)
   y -= canvas.offsetTop;
 
   new projectile(player.x,player.y,x,y,6).fire()
-}
+}*/
