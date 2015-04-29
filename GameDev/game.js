@@ -13,6 +13,7 @@ window.onload = function() {
 currentLevel = worldMap[player.worldY][player.worldX]
 
 function update() {
+    currentLevel = worldMap[player.worldY][player.worldX];
     if (keys[37] || keys[65]) {
         //Left/A
         if (currentLevel.type === "town") {console.log("Left, Town")}
@@ -38,7 +39,8 @@ function update() {
         if (currentLevel.type === "town") {console.log("Enter, Town")}
         if (currentLevel.type === "path") {console.log("Enter, Path")}
     }
-    
+    if (currentLevel.type === "town") {}
+    if (currentLevel.type === "path") {}
     requestAnimationFrame(update);
 }
 
