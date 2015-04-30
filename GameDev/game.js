@@ -22,7 +22,7 @@ function update() {
             if (player.velX < player.speed) {
                 if ((player.x > 3*units) && (player.x < 8*units)) {
                     for (var boxMovementLoop = 0; boxMovementLoop < currentLevel.boxes.length; boxMovementLoop++) {
-                        currentLevel.boxes[boxMovementLoop].x++
+                        currentLevel.boxes[boxMovementLoop].x+= 2
                     } 
                 } else {
                     player.velX -= units/8;
@@ -55,7 +55,7 @@ function update() {
             if (player.velX < player.speed) {
                 if ((player.x > 12*units) && (player.x < 17*units)) {
                     for (var boxMovementLoop = 0; boxMovementLoop < currentLevel.boxes.length; boxMovementLoop++) {
-                        currentLevel.boxes[boxMovementLoop].x--
+                        currentLevel.boxes[boxMovementLoop].x-= 2
                     } 
                 } else {
                     player.velX += units/8;
