@@ -19,7 +19,7 @@ function update() {
         //Left/A
         if (currentLevel.type === "town") {console.log("Left, Town")}
         if (currentLevel.type === "path") {
-            if (player.velX < player.speed) {
+            if (player.velX > -player.speed) {
                 if ((player.x > 3*units) && (player.x < 8*units)) {
                     for (var boxMovementLoop = 0; boxMovementLoop < currentLevel.boxes.length; boxMovementLoop++) {
                         currentLevel.boxes[boxMovementLoop].x+= 2
