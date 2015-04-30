@@ -11,8 +11,8 @@ window.onload = function() {
     setInterval(function () {frame = !frame;},250)
 }
 
-currentLevel = worldMap[player.worldY][player.worldX]
-
+var currentLevel = worldMap[player.worldY][player.worldX]
+var pathIncrement = 0;
 function update() {
     currentLevel = worldMap[player.worldY][player.worldX];
     if (keys[37] || keys[65]) {
@@ -20,7 +20,7 @@ function update() {
         if (currentLevel.type === "town") {console.log("Left, Town")}
         if (currentLevel.type === "path") {
             if (player.velX > -player.speed) {
-                if ((player.x > 3*units) && (player.x < 8*units)) {
+                if ((player.x > 3*units) && (player.x < 8*units) && (pathIncrement > 0)) {
                     for (var boxMovementLoop = 0; boxMovementLoop < currentLevel.boxes.length; boxMovementLoop++) {
                         currentLevel.boxes[boxMovementLoop].x+= 2
                     } 
@@ -53,7 +53,7 @@ function update() {
         if (currentLevel.type === "path") {
             console.log("Right, Path")
             if (player.velX < player.speed) {
-                if ((player.x > 12*units) && (player.x < 17*units)) {
+                if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width - (40*units- player.x))) {
                     for (var boxMovementLoop = 0; boxMovementLoop < currentLevel.boxes.length; boxMovementLoop++) {
                         currentLevel.boxes[boxMovementLoop].x-= 2
                     } 
