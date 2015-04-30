@@ -19,10 +19,15 @@ function update() {
         //Left/A
         if (currentLevel.type === "town") {console.log("Left, Town")}
         if (currentLevel.type === "path") {
-            console.log("Left, Path")
-            if (player.velX > -player.speed) {
-                player.velX-= units/8;
-                player.lastDir = "r"
+            if (player.velX < player.speed) {
+                if ((player.x < width/2) && (player.x > width/2 - 25)) {
+                    for (var boxMovementLoop = 0; boxMovementLoop < currentLevel.boxes.length; boxMovementLoop++) {
+                        currentLevel.boxes[boxMovementLoop].x++
+                    } 
+                } else {
+                    player.velX -= units/8;
+                    player.lastDir = "r"
+                }
             }
         }
     }
@@ -49,8 +54,9 @@ function update() {
             console.log("Right, Path")
             if (player.velX < player.speed) {
                 if ((player.x < width/2) && (player.x > width/2 - 25)) {
-                for (var boxMovementLoop = 0; boxMovementLoop < currentLevel.boxes.length; boxMovementLoop++) {
-                  currentLevel.boxes[boxMovementLoop].x--
+                    for (var boxMovementLoop = 0; boxMovementLoop < currentLevel.boxes.length; boxMovementLoop++) {
+                        currentLevel.boxes[boxMovementLoop].x--
+                    } 
                 } else {
                     player.velX += units/8;
                     player.lastDir = "l"
