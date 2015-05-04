@@ -21,7 +21,8 @@ function update() {
         if (currentLevel.type === "path") {
             if (player.velX > -player.speed) {
                 if ((player.x > 3*units) && (player.x < 8*units) && (pathIncrement > 0)) {
-                    for (var boxMovementLoop = 0, boxArrLen = currentLevel.boxes.length; boxMovementLoop < boxArrLen; boxMovementLoop++) {
+                    var boxArrLen = currentLevel.boxes.length;
+                    while(boxArrLen--) {
                         currentLevel.boxes[boxMovementLoop].x+= 2
                     } 
                     pathIncrement -= 2
@@ -55,7 +56,8 @@ function update() {
             console.log("Right, Path")
             if (player.velX < player.speed) {
                 if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width*units - 40*units)) {
-                    for (var boxMovementLoop = 0, boxArrLen = currentLevel.boxes.length; boxMovementLoop < boxArrLen; boxMovementLoop++) {
+                    var boxArrLen = currentLevel.boxes.length;
+                    while(boxArrLen--) {
                         currentLevel.boxes[boxMovementLoop].x-= 2
                     } 
                     pathIncrement+=2
