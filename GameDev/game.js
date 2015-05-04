@@ -54,7 +54,7 @@ function update() {
         if (currentLevel.type === "path") {
             console.log("Right, Path")
             if (player.velX < player.speed) {
-                if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width*units - (40*units- player.x))) {
+                if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width*units - 40*units)) {
                     for (var boxMovementLoop = 0; boxMovementLoop < currentLevel.boxes.length; boxMovementLoop++) {
                         currentLevel.boxes[boxMovementLoop].x-= 2
                     } 
