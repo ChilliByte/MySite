@@ -63,7 +63,7 @@ function update() {
                     } 
                     pathIncrement += oneEighth;
                 } else {
-                    player.velX += uoneEighth;
+                    player.velX += oneEighth;
                     player.lastDir = "l"
                 }
             }
