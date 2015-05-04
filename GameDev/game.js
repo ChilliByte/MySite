@@ -480,6 +480,20 @@ function projectile(x,y,targetX,targetY,speed) {
     };
 }
 
+function setLevel(level) {
+    player.worldY = indexOfRowContainingLevel(level,worldMap)[0]
+    player.worldX = indexOfRowContainingLevel(level,worldMap)[1]
+}
+
+function indexOfRowContainingLevel(id, matrix) {
+  for (var i=0, len=matrix.length; i<len; i++) {
+    for (var j=0, len2=matrix[i].length; j<len2; j++) {
+      if (matrix[i][j] === id) { return [i,j]; }
+    }
+  }
+  return -1;
+}
+
 canvas.addEventListener("mousedown", getPosition, false);
 function getPosition(event) {
   var x = event.x;
