@@ -23,9 +23,9 @@ function update() {
                 if ((player.x > 3*units) && (player.x < 8*units) && (pathIncrement > 0)) {
                     var boxArrLen = currentLevel.boxes.length;
                     while(boxArrLen--) {
-                        currentLevel.boxes[boxArrLen].x+= 2
+                        currentLevel.boxes[boxArrLen].x+= units/8
                     } 
-                    pathIncrement -= 2
+                    pathIncrement -= units/8
                 } else {
                     player.velX -= units/8;
                     player.lastDir = "r"
@@ -58,9 +58,9 @@ function update() {
                 if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width*units - 40*units)) {
                     var boxArrLen = currentLevel.boxes.length;
                     while(boxArrLen--) {
-                        currentLevel.boxes[boxArrLen].x-= 2
+                        currentLevel.boxes[boxArrLen].x-= units/8
                     } 
-                    pathIncrement+=2
+                    pathIncrement+=units/8
                 } else {
                     player.velX += units/8;
                     player.lastDir = "l"
