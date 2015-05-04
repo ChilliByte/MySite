@@ -38,7 +38,6 @@ function update() {
         //Up/W
         if (currentLevel.type === "town") {console.log("Up, Town")}
         if (currentLevel.type === "path") {
-            console.log("Up,Path")
             if (!player.jumping && player.grounded) {
                 player.jumping = true;
                 player.grounded = false;
@@ -54,7 +53,6 @@ function update() {
         //Right/D
         if (currentLevel.type === "town") {console.log("Right, Town")}
         if (currentLevel.type === "path") {
-            console.log("Right, Path")
             if (player.velX < player.speed) {
                 if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width*units - 40*units)) {
                     var boxArrLen = currentLevel.boxes.length;
@@ -71,13 +69,13 @@ function update() {
     }
     if (keys[40] || keys[83]) {
         //Down/S
-        if (currentLevel.type === "town") {console.log("Down, Town")}
-        if (currentLevel.type === "path") {console.log("Down, Path")}
+        if (currentLevel.type === "town") {}
+        if (currentLevel.type === "path") {}
     }
     if (keys[32] || keys[13]) {
         //Space/Enter
-        if (currentLevel.type === "town") {console.log("Enter, Town")}
-        if (currentLevel.type === "path") {console.log("Enter, Path")}
+        if (currentLevel.type === "town") {}
+        if (currentLevel.type === "path") {}
     }
     //Clear The Last Frame
     ctx.clearRect(0, 0, 40*units, 20*units);
