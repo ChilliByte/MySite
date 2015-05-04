@@ -58,7 +58,7 @@ function update() {
                 if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width*units - 40*units)) {
                     var boxArrLen = currentLevel.boxes.length;
                     while(boxArrLen--) {
-                        currentLevel.boxes[boxArrLem].x-= 2
+                        currentLevel.boxes[boxArrLen].x-= 2
                     } 
                     pathIncrement+=2
                 } else {
