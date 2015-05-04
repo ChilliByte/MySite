@@ -13,6 +13,7 @@ window.onload = function() {
 
 var currentLevel = worldMap[player.worldY][player.worldX]
 var pathIncrement = 0;
+var oneEighth = units/8
 function update() {
     currentLevel = worldMap[player.worldY][player.worldX];
     if (keys[37] || keys[65]) {
@@ -23,12 +24,12 @@ function update() {
                 if ((player.x > 3*units) && (player.x < 8*units) && (pathIncrement > 0)) {
                     var boxArrLen = currentLevel.boxes.length;
                     while(boxArrLen--) {
-                        currentLevel.boxes[boxArrLen].x+= units/8
+                        currentLevel.boxes[boxArrLen].x+= oneEighth;
                     } 
-                    pathIncrement -= units/8
+                    pathIncrement -= oneEighth;
                 } else {
-                    player.velX -= units/8;
-                    player.lastDir = "r"
+                    player.velX -= oneEighth;
+                    player.lastDir = "r";
                 }
             }
         }
@@ -58,11 +59,11 @@ function update() {
                 if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width*units - 40*units)) {
                     var boxArrLen = currentLevel.boxes.length;
                     while(boxArrLen--) {
-                        currentLevel.boxes[boxArrLen].x-= units/8
+                        currentLevel.boxes[boxArrLen].x-= oneEighth;
                     } 
-                    pathIncrement+=units/8
+                    pathIncrement += oneEighth;
                 } else {
-                    player.velX += units/8;
+                    player.velX += uoneEighth;
                     player.lastDir = "l"
                 }
             }
