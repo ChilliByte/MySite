@@ -128,6 +128,8 @@ function collectible(x,y,h,w,t) {
 var path1to2 = {
   type: "path",
   width: 80*units,
+  start: town1,
+  end: town2,
   boxes: [],
   collectibles: [],
   mobs: []
@@ -141,7 +143,9 @@ path1to2.collectibles.push(new collectible(3*units,14*units,(units/5)*2,(units/5
 
 var path1to3 = {
   type: "path",
-  width: 80,
+  width: 80*units,
+  start: town1,
+  end: town3,
   boxes: [],
   collectibles: [],
   mobs: []
@@ -155,7 +159,9 @@ path1to3.collectibles.push(new collectible(3*units,14*units,(units/5)*2,(units/5
 
 var path2to4 = {
   type: "path",
-  width: 80,
+  width: 80*units,
+  start: town2,
+  end: town4,
   boxes: [],
   collectibles: [],
   mobs: []
@@ -169,7 +175,9 @@ path2to4.collectibles.push(new collectible(3*units,14*units,(units/5)*2,(units/5
 
 var path3to4 = {
   type: "path",
-  width: 80,
+  width: 80*units,
+  start: town2,
+  end: town4,
   boxes: [],
   collectibles: [],
   mobs: []
