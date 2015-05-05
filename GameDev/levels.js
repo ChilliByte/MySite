@@ -194,5 +194,5 @@ path3to4.collectibles.push(new collectible(3*units,14*units,(units/5)*2,(units/5
 var worldMap = [
   [town1   , path1to2,town2    ],
   [path1to3,         ,path2to4 ],
-  [town2   , path3to4,town4    ]
+  [town3   , path3to4,town4    ]
 ]
