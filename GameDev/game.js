@@ -565,7 +565,7 @@ function clone(obj) {
         return copy;
     }
 
-    Handle Object
+    //Handle Object
     if (obj instanceof Object) {
         copy = {};
         for (var attr in obj) {
