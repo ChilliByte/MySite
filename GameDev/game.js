@@ -84,7 +84,7 @@ function update() {
         if (player.x < units) {
             console.log("Going Back");
         }
-        if (player.x > currentLevel.width - units) {
+        if (player.x + pathIncrement < currentLevel.width) {
             console.log("Advancing");
         }
         player.velX *= friction;
