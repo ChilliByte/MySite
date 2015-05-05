@@ -19,12 +19,9 @@ function update() {
     if (keys[37] || keys[65]) {
         //Left/A
         if (currentLevel.type === "town") {
-            if (player.x > 0) {
-                if(currentLevel.tileMap[player.y][player.x - 1] == 0) {
-                    currentLevel.tileMap[player.y][player.x - 1] = 2;
-                    player.x--;
-                }  else {
-                    currentLevel.tileMap[player.y][player.x] = 2;
+            if (player.townX > 0) {
+                if(currentLevel.tileMap[player.townY][player.townX - 1] == 0) {
+                    player.townX--;
                 }
             }
         }
@@ -48,11 +45,8 @@ function update() {
         if (currentLevel.type === "town") {
             if (player.townY > 0) {
                 if (currentLevel.tileMap[player.townY - 1][player.townX] == 0) {
-                    currentLevel.tileMap[player.townY - 1][player.townX] = 2;
                     player.townY--;
-                } else {
-                    currentLevel.tileMap[player.townY][player.townX] = 2;
-                }
+                } 
             }
         }
         if (currentLevel.type === "path") {
@@ -72,10 +66,7 @@ function update() {
         if (currentLevel.type === "town") {
             if (player.townX < currentLevel.width - 1) {
                 if(currentLevel.tileMap[player.townY][player.townX + 1] == 0) {
-                    currentLevel.tileMap[player.townY][player.townX + 1] = 2;
                     player.townX++;
-                }  else {
-                    currentLevel.tileMap[player.townY][player.townX] = 2;
                 }
             }
         }
@@ -99,10 +90,7 @@ function update() {
         if (currentLevel.type === "town") {
             if (player.townY < currentLevel.height - 1) {
                 if (currentLevel.tileMap[player.townY + 1][player.townX] == 0) {
-                    currentLevel.tileMap[player.townY + 1][player.townX] = 2;
                     player.townY++;
-                } else {
-                    currentLevel.tileMap[player.townY][player.townX] = 2;
                 }
             }
         }
@@ -116,6 +104,7 @@ function update() {
     //Clear The Last Frame
     ctx.clearRect(0, 0, 40*units, 20*units);
     if (currentLevel.type === "town") {
+        currentLevel.tileMap[player.townY][player.townX] = 2;
         i = currentLevel.tileMap.length;
         while (i--) {
             j = currentLevel.tileMap[i].length;
