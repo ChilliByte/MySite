@@ -82,10 +82,10 @@ function update() {
     if (currentLevel.type === "town") {}
     if (currentLevel.type === "path") {
         if (player.x < units) {
-            alert("Going Back");
+            console.log("Going Back");
         }
         if (player.x > currentLevel.width - units) {
-            alert("Advancing");
+            console.log("Advancing");
         }
         player.velX *= friction;
         player.velY += gravity;
