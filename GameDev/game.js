@@ -8,14 +8,20 @@ window.onload = function() {
     console.log("Loaded");
     char1Sheet = document.getElementById("char1SpriteSheet");
     frame = false;
-    setInterval(function () {frame = !frame;},250)
+    setInterval(function() {
+        frame = !frame;
+    }, 250)
 }
 
 var currentLevel = worldMap[player.worldY][player.worldX]
 var pathIncrement = 0;
-var oneEighth = units/8;
+var oneEighth = units / 8;
+
 function update() {
     currentLevel = clone(worldMap[player.worldY][player.worldX]);
+    if(currentLevel.type == "path") {
+        currentLevel = worldMap[player.worldY][player.worldX];
+    }
     if (keys[37] || keys[65]) {
         //Left/A
         if (currentLevel.type === "town") {
@@ -29,11 +35,11 @@ function update() {
         }
         if (currentLevel.type === "path") {
             if (player.velX > -player.speed) {
-                if ((player.x > 3*units) && (player.x < 8*units) && (pathIncrement > 0)) {
+                if ((player.x > 3 * units) && (player.x < 8 * units) && (pathIncrement > 0)) {
                     var boxArrLen = currentLevel.boxes.length;
-                    while(boxArrLen--) {
-                        currentLevel.boxes[boxArrLen].x+= oneEighth;
-                    } 
+                    while (boxArrLen--) {
+                        currentLevel.boxes[boxArrLen].x += oneEighth;
+                    }
                     pathIncrement -= oneEighth;
                 } else {
                     player.velX -= oneEighth;
@@ -50,7 +56,7 @@ function update() {
                     player.townY--;
                 } else if (player.townY === 0) {
                     player.worldY--
-                } 
+                }
             }
         }
         if (currentLevel.type === "path") {
@@ -78,11 +84,11 @@ function update() {
         }
         if (currentLevel.type === "path") {
             if (player.velX < player.speed) {
-                if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width - 40*units)) {
+                if ((player.x > 12 * units) && (player.x < 17 * units) && (pathIncrement < currentLevel.width - 40 * units)) {
                     var boxArrLen = currentLevel.boxes.length;
-                    while(boxArrLen--) {
-                        currentLevel.boxes[boxArrLen].x-= oneEighth;
-                    } 
+                    while (boxArrLen--) {
+                        currentLevel.boxes[boxArrLen].x -= oneEighth;
+                    }
                     pathIncrement += oneEighth;
                 } else {
                     player.velX += oneEighth;
@@ -98,7 +104,7 @@ function update() {
                 if (currentLevel.tileMap[player.townY + 1][player.townX] == 0) {
                     player.townY++;
                 }
-            } else if (player.townY === currentLevel.height-1) {
+            } else if (player.townY === currentLevel.height - 1) {
                 player.worldY++
             }
         }
@@ -110,7 +116,7 @@ function update() {
         if (currentLevel.type === "path") {}
     }
     //Clear The Last Frame
-    ctx.clearRect(0, 0, 40*units, 20*units);
+    ctx.clearRect(0, 0, 40 * units, 20 * units);
     if (currentLevel.type === "town") {
         currentLevel.tileMap[player.townY][player.townX] = 2;
         i = currentLevel.tileMap.length;
@@ -156,19 +162,19 @@ function update() {
         }
         player.velX *= friction;
         player.velY += gravity;
-        
+
         //Change to green and begins drawing
         ctx.fillStyle = "#380";
         ctx.beginPath();
-        
+
         player.grounded = false;
         for (var i = 0; i < currentLevel.boxes.length; i++) {
             //draw each one
             ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
-            
+
             //Figure out whether we've touched a box
             var dir = colCheck(player, currentLevel.boxes[i]);
-        
+
             //Do something depending on the direction the collision happened from.
             if (dir === "l" || dir === "r") {
                 player.velX = 0;
@@ -198,7 +204,7 @@ function update() {
         }
         ctx.closePath()
         ctx.fill();
-        
+
         ctx.beginPath();
         ctx.fillStyle = "orange";
         for (var j = 0; j < currentLevel.collectibles.length; j++) {
@@ -214,7 +220,7 @@ function update() {
                 }
             }
         }
-        
+
         ctx.closePath()
         ctx.fill();
         ctx.beginPath();
@@ -239,8 +245,8 @@ function update() {
                         if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {
                             mobDir = "right";
                             currentLevel.mobs[k].x += 5
-                        }           
-    
+                        }
+
                     }
                 };
                 currentLevel.mobs[k].velX *= friction;
@@ -286,7 +292,7 @@ function update() {
             //Animate projectiles
             ctx.fill();
             ctx.fillStyle = "brown";
-            for(var m = 0; m < projectiles.length; m++) {
+            for (var m = 0; m < projectiles.length; m++) {
                 ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
                 projectiles[m].x += projectiles[m].xIncrement;
                 projectiles[m].y += projectiles[m].yIncrement;
@@ -296,7 +302,7 @@ function update() {
         player.y += player.velY;
 
         drawChar()
-        
+
     }
     requestAnimationFrame(update);
 }
@@ -313,103 +319,103 @@ window.addEventListener("load", function() {
 });
 
 function drawChar() {
-    if(currentLevel.type == "path") {
+    if (currentLevel.type == "path") {
         if (player.char == 1) {
             if (player.velX < -1) {
                 if (frame) {
                     //Facing Right, Left Leg Forward
-                    ctx.drawImage(char1Sheet,0,0,16,32,player.x,player.y,units,2*units)
+                    ctx.drawImage(char1Sheet, 0, 0, 16, 32, player.x, player.y, units, 2 * units)
                 } else {
-                    ctx.drawImage(char1Sheet,32,0,16,32,player.x,player.y,units,2*units)
+                    ctx.drawImage(char1Sheet, 32, 0, 16, 32, player.x, player.y, units, 2 * units)
                 }
             }
             if ((player.velX < 0) && (player.velX > -1)) {
-                ctx.drawImage(char1Sheet,32,0,16,32,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet, 32, 0, 16, 32, player.x, player.y, units, 2 * units)
             }
             if (player.velX > 1) {
                 if (frame) {
-                    ctx.drawImage(char1Sheet,64,0,16,32,player.x,player.y,units,2*units)
+                    ctx.drawImage(char1Sheet, 64, 0, 16, 32, player.x, player.y, units, 2 * units)
                 } else {
-                    ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
+                    ctx.drawImage(char1Sheet, 48, 0, 16, 32, player.x, player.y, units, 2 * units)
                 }
             }
             if ((player.velX > 0) && (player.velX < 1)) {
-                ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet, 48, 0, 16, 32, player.x, player.y, units, 2 * units)
             }
-            
+
             if ((player.velX == 0) && (player.lastDir == "l")) {
-                ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet, 48, 0, 16, 32, player.x, player.y, units, 2 * units)
             }
             if ((player.velX == 0) && (player.lastDir == "r")) {
-                ctx.drawImage(char1Sheet,32,0,16,32,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet, 32, 0, 16, 32, player.x, player.y, units, 2 * units)
             }
-            
+
         }
         if (player.char == 2) {
             //Set Size
             player.height = 36
             player.width = 12
-    
+
             if ((player.velX > 1) || (player.lastDir == "l")) {
                 //Brown Hair
                 ctx.fillStyle = "#A0522D";
                 ctx.fillRect(player.x, player.y, player.width, 12);
-    
-    
+
+
                 //Face
                 ctx.fillStyle = "#FFEBCD";
                 ctx.fillRect((player.x) + 4, (player.y) + 4, 8, 8);
-    
+
                 //Eye
                 ctx.fillStyle = "#90EE90";
                 ctx.fillRect((player.x) + 8, (player.y) + 4, 4, 4);
-    
+
                 //Sleeve
                 ctx.fillStyle = "#d22";
                 ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-    
+
                 //Hand
                 ctx.fillStyle = "#FFEBCD";
                 ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-    
+
                 //Trousers
                 ctx.fillStyle = "#4682B4";
                 ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-    
+
             }
             if ((player.velX < -1) || (player.lastDir == "r")) {
                 //Brown Hair
                 ctx.fillStyle = "#A0522D";
                 ctx.fillRect(player.x, player.y, player.width, 12);
-    
+
                 //Face
                 ctx.fillStyle = "#FFEBCD";
                 ctx.fillRect(player.x, (player.y) + 4, 8, 8);
-    
+
                 //Eye
                 ctx.fillStyle = "#90EE90";
                 ctx.fillRect(player.x, (player.y) + 4, 4, 4);
-    
+
                 //Sleeve
                 ctx.fillStyle = "#d22";
                 ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-    
+
                 //Hand
                 ctx.fillStyle = "#FFEBCD";
                 ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-    
+
                 //Trousers
                 ctx.fillStyle = "#4682B4";
                 ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
-    
+
             }
-    
-    
+
+
         }
         if (player.char == 3) {
             player.height = 36
             player.width = 16
-    
+
             if ((player.velX > 1) || (player.lastDir == "l")) {
                 //Hair
                 ctx.fillStyle = "#A0522D";
@@ -417,31 +423,31 @@ function drawChar() {
                 ctx.fillRect(player.x, (player.y) + 4, 8, 8);
                 ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 12);
                 ctx.fillRect(player.x, (player.y) + 20, 8, 4);
-    
+
                 //Face
                 ctx.fillStyle = "#FFEBCD";
                 ctx.fillRect((player.x) + 8, (player.y) + 4, 8, 8);
-    
+
                 //Eye
                 ctx.fillStyle = "#CD853F";
                 ctx.fillRect((player.x) + 12, (player.y) + 4, 4, 4);
-    
+
                 //Bow Tie
                 ctx.fillStyle = "#d22";
                 ctx.fillRect((player.x) + 12, (player.y) + 12, 4, 4);
-    
+
                 //Jacket
                 ctx.fillStyle = "#cccccc";
                 ctx.fillRect((player.x) + 8, (player.y) + 12, 4, 8);
-    
+
                 //Hand
                 ctx.fillStyle = "#FFEBCD";
                 ctx.fillRect((player.x) + 8, (player.y) + 20, 4, 4);
-    
+
                 //Pants
                 ctx.fillStyle = "#666666";
                 ctx.fillRect((player.x) + 8, (player.y) + 24, 4, 12);
-    
+
             }
             if ((player.velX < -1) || (player.lastDir == "r")) {
                 //Hair
@@ -450,38 +456,39 @@ function drawChar() {
                 ctx.fillRect((player.x + 8), (player.y) + 4, 8, 8);
                 ctx.fillRect((player.x) + 8, (player.y) + 12, 4, 12);
                 ctx.fillRect((player.x) + 8, (player.y) + 20, 8, 4);
-    
+
                 //Face
                 ctx.fillStyle = "#FFEBCD";
                 ctx.fillRect(player.x, (player.y) + 4, 8, 8);
-    
+
                 //Eye
                 ctx.fillStyle = "#CD853F";
                 ctx.fillRect(player.x, (player.y) + 4, 4, 4);
-    
+
                 //Bow Tie
                 ctx.fillStyle = "#d22";
                 ctx.fillRect(player.x, (player.y) + 12, 4, 4);
-    
+
                 //Jacket
                 ctx.fillStyle = "#cccccc";
                 ctx.fillRect((player.x) + 4, (player.y) + 12, 4, 8);
-    
+
                 //Hand
                 ctx.fillStyle = "#FFEBCD";
                 ctx.fillRect((player.x) + 4, (player.y) + 20, 4, 4);
-    
+
                 //Pants
                 ctx.fillStyle = "#666666";
                 ctx.fillRect((player.x) + 4, (player.y) + 24, 4, 12);
             }
         }
-    } else if(currentLevel.type == "town"){ 
-        
+    } else if (currentLevel.type == "town") {
+
     } else {
-        
+
     }
 }
+
 function colCheck(shapeA, shapeB) {
     // get the vectors to check against
     var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
@@ -516,6 +523,7 @@ function colCheck(shapeA, shapeB) {
     }
     return colDir;
 }
+
 function hint(x, y, text) {
     $("#hintBox").fadeOut();
     setTimeout(function() {
@@ -525,40 +533,47 @@ function hint(x, y, text) {
         $("#hintBox").fadeIn();
     }, 500);
 }
+
 function flipGravity() {
     gravity = gravity * -1;
     gravityDown = !gravityDown;
 }
-function projectile(x,y,targetX,targetY,speed) {
-  	this.x = x;
+
+function projectile(x, y, targetX, targetY, speed) {
+    this.x = x;
     this.y = y;
     this.targetX = targetX;
     this.targetY = targetY;
     this.deltaX = targetX - x;
     this.deltaY = targetY - y
-  	this.speed = speed;
-  	this.height = units/3;
-  	this.width = units/3;
-  	this.angle = Math.atan(this.deltaY / this.deltaX)
-  	this.xIncrement = Math.cos(this.angle) * speed;
+    this.speed = speed;
+    this.height = units / 3;
+    this.width = units / 3;
+    this.angle = Math.atan(this.deltaY / this.deltaX)
+    this.xIncrement = Math.cos(this.angle) * speed;
     this.yIncrement = Math.sin(this.angle) * speed;
-  	this.fire = function() {
-      projectiles.push(this);
-      console.log(this) 
+    this.fire = function() {
+        projectiles.push(this);
+        console.log(this)
     };
 }
+
 function setLevel(level) {
-    player.worldY = indexOfRowContainingLevel(level,worldMap)[0]
-    player.worldX = indexOfRowContainingLevel(level,worldMap)[1]
+    player.worldY = indexOfRowContainingLevel(level, worldMap)[0]
+    player.worldX = indexOfRowContainingLevel(level, worldMap)[1]
 }
+
 function indexOfRowContainingLevel(id, matrix) {
-  for (var i=0, len=matrix.length; i<len; i++) {
-    for (var j=0, len2=matrix[i].length; j<len2; j++) {
-      if (matrix[i][j] === id) { return [i,j]; }
+    for (var i = 0, len = matrix.length; i < len; i++) {
+        for (var j = 0, len2 = matrix[i].length; j < len2; j++) {
+            if (matrix[i][j] === id) {
+                return [i, j];
+            }
+        }
     }
-  }
-  return -1;
+    return -1;
 }
+
 function clone(obj) {
     var copy;
 
@@ -586,17 +601,19 @@ function clone(obj) {
 }
 
 canvas.addEventListener("mousedown", getPosition, false);
+
 function getPosition(event) {
-  var x = event.x;
-  var y = event.y;
-  x -= canvas.offsetLeft;
-  y -= canvas.offsetTop;
-  //new projectile(player.x,player.y,x,y,6).fire()
+    var x = event.x;
+    var y = event.y;
+    x -= canvas.offsetLeft;
+    y -= canvas.offsetTop;
+    //new projectile(player.x,player.y,x,y,6).fire()
 }
 
 function setChar(x) {
     player.char = x
 }
+
 function confirmChar() {
     $("#charSelect").fadeOut()
 }
