@@ -54,7 +54,7 @@ function update() {
         if (currentLevel.type === "town") {console.log("Right, Town")}
         if (currentLevel.type === "path") {
             if (player.velX < player.speed) {
-                if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width*units - 40*units)) {
+                if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width - 40*units)) {
                     var boxArrLen = currentLevel.boxes.length;
                     while(boxArrLen--) {
                         currentLevel.boxes[boxArrLen].x-= oneEighth;
