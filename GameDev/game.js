@@ -81,6 +81,12 @@ function update() {
     ctx.clearRect(0, 0, 40*units, 20*units);
     if (currentLevel.type === "town") {}
     if (currentLevel.type === "path") {
+        if (player.x < units) {
+            alert("Going Back");
+        }
+        if (player.x > currentLevel.width - units) {
+            alert("Advancing");
+        }
         player.velX *= friction;
         player.velY += gravity;
         
