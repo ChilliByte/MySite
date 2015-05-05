@@ -138,6 +138,8 @@ function update() {
         }
     }
     if (currentLevel.type === "path") {
+        currentLevel.start = worldMap[player.worldY][player.worldX].start;
+        currentLevel.end = worldMap[player.worldY][player.worldX].end;
         if (player.x < units) {
             setLevel(currentLevel.start);
         }
@@ -552,15 +554,7 @@ function indexOfRowContainingLevel(id, matrix) {
 function clone(obj) {
     var copy;
 
-    // Handle the 3 simple types, and null or undefined
     if (null == obj || "object" != typeof obj) return obj;
-
-    // Handle Date
-    if (obj instanceof Date) {
-        copy = new Date();
-        copy.setTime(obj.getTime());
-        return copy;
-    }
 
     // Handle Array
     if (obj instanceof Array) {
@@ -571,14 +565,14 @@ function clone(obj) {
         return copy;
     }
 
-    /* Handle Object
+    Handle Object
     if (obj instanceof Object) {
         copy = {};
         for (var attr in obj) {
             if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
         }
         return copy;
-    }*/
+    }
 
     throw new Error("Unable to copy obj! Its type isn't supported.");
 }
