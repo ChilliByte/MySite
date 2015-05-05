@@ -15,10 +15,19 @@ var currentLevel = worldMap[player.worldY][player.worldX]
 var pathIncrement = 0;
 var oneEighth = units/8
 function update() {
-    currentLevel = worldMap[player.worldY][player.worldX];
+    currentLevel = clone(worldMap[player.worldY][player.worldX]);
     if (keys[37] || keys[65]) {
         //Left/A
-        if (currentLevel.type === "town") {console.log("Left, Town")}
+        if (currentLevel.type === "town") {
+            if (player.x > 0) {
+                if(currentLevel[player.y][player.x - 1] == 0) {
+                    currentLevel[player.y][player.x - 1] = 2;
+                    player.x--;
+                }  else {
+                    currentLevel[player.y][player.x] = 2;
+                }
+            }
+        }
         if (currentLevel.type === "path") {
             if (player.velX > -player.speed) {
                 if ((player.x > 3*units) && (player.x < 8*units) && (pathIncrement > 0)) {
@@ -36,7 +45,16 @@ function update() {
     }
     if (keys[38] || keys[87]) {
         //Up/W
-        if (currentLevel.type === "town") {console.log("Up, Town")}
+        if (currentLevel.type === "town") {
+            if (player.townY > 0) {
+                if (currentLevel.tileMap[player.townY - 1][player.townX] == 0) {
+                    currentLevel[player.townY - 1][player.townX] = 2;
+                    player.townY--;
+                } else {
+                    currentLevel[player.townY][player.townX] = 2;
+                }
+            }
+        }
         if (currentLevel.type === "path") {
             if (!player.jumping && player.grounded) {
                 player.jumping = true;
@@ -51,7 +69,16 @@ function update() {
     }
     if (keys[39] || keys[68]) {
         //Right/D
-        if (currentLevel.type === "town") {console.log("Right, Town")}
+        if (currentLevel.type === "town") {
+            if (player.townX < currentLevel.width - 1) {
+                if(currentLevel[player.townY][player.townX + 1] == 0) {
+                    currentLevel[player.townY][player.townX + 1] = 2;
+                    player.townX++;
+                }  else {
+                    currentLevel[player.townY][player.townX] = 2;
+                }
+            }
+        }
         if (currentLevel.type === "path") {
             if (player.velX < player.speed) {
                 if ((player.x > 12*units) && (player.x < 17*units) && (pathIncrement < currentLevel.width - 40*units)) {
@@ -69,7 +96,16 @@ function update() {
     }
     if (keys[40] || keys[83]) {
         //Down/S
-        if (currentLevel.type === "town") {}
+        if (currentLevel.type === "town") {
+            if (player.townY < currentLevel.height - 1) {
+                if (currentLevel[player.townY + 1][player.townX] == 0) {
+                    currentLevel[player.townY + 1][player.townX] = 2;
+                    player.townY++;
+                } else {
+                    currentLevel[player.townY][player.townX] = 2;
+                }
+            }
+        }
         if (currentLevel.type === "path") {}
     }
     if (keys[32] || keys[13]) {
@@ -79,13 +115,45 @@ function update() {
     }
     //Clear The Last Frame
     ctx.clearRect(0, 0, 40*units, 20*units);
-    if (currentLevel.type === "town") {}
+    if (currentLevel.type === "town") {
+        i = currentLevel.tileMap.length;
+        while (i--) {
+            j = currentLevel.tileMap[i].length;
+            while (j--) {
+                if (currentLevel[i][j] == 1) {
+                    ctx.beginPath();
+                    ctx.fillStyle = "black";
+                    ctx.rect(j * units, i * units, units, units);
+                    ctx.fill();
+                    ctx.closePath();
+                } else if (currentLevel[i][j] == 0) {
+                    ctx.beginPath();
+                    ctx.fillStyle = "green";
+                    ctx.rect(j * units, i * units, units, units);
+                    ctx.fill();
+                    ctx.closePath();
+                } else if (currentLevel[i][j] == 2) {
+                    ctx.beginPath();
+                    ctx.fillStyle = "red";
+                    ctx.rect(j * units, i * units, units, units);
+                    ctx.fill();
+                    ctx.closePath();
+                } else {
+                    ctx.beginPath();
+                    ctx.fillStyle = "blue";
+                    ctx.rect(j * units, i * units, units, units);
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
+        }
+    }
     if (currentLevel.type === "path") {
         if (player.x < units) {
-            console.log("Going Back");
+            setLevel(currentLevel.start);
         }
         if (player.x + pathIncrement > currentLevel.width - units) {
-            console.log("Advancing");
+            setLevel(currentLevel.end);
         }
         player.velX *= friction;
         player.velY += gravity;
@@ -237,7 +305,6 @@ function update() {
 document.body.addEventListener("keydown", function(e) {
     keys[e.keyCode] = true;
 });
-
 document.body.addEventListener("keyup", function(e) {
     keys[e.keyCode] = false;
 });
@@ -416,7 +483,6 @@ function drawChar() {
         
     }
 }
-
 function colCheck(shapeA, shapeB) {
     // get the vectors to check against
     var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
@@ -451,7 +517,6 @@ function colCheck(shapeA, shapeB) {
     }
     return colDir;
 }
-
 function hint(x, y, text) {
     $("#hintBox").fadeOut();
     setTimeout(function() {
@@ -461,12 +526,10 @@ function hint(x, y, text) {
         $("#hintBox").fadeIn();
     }, 500);
 }
-
 function flipGravity() {
     gravity = gravity * -1;
     gravityDown = !gravityDown;
 }
-
 function projectile(x,y,targetX,targetY,speed) {
   	this.x = x;
     this.y = y;
@@ -485,12 +548,10 @@ function projectile(x,y,targetX,targetY,speed) {
       console.log(this) 
     };
 }
-
 function setLevel(level) {
     player.worldY = indexOfRowContainingLevel(level,worldMap)[0]
     player.worldX = indexOfRowContainingLevel(level,worldMap)[1]
 }
-
 function indexOfRowContainingLevel(id, matrix) {
   for (var i=0, len=matrix.length; i<len; i++) {
     for (var j=0, len2=matrix[i].length; j<len2; j++) {
@@ -498,6 +559,39 @@ function indexOfRowContainingLevel(id, matrix) {
     }
   }
   return -1;
+}
+function clone(obj) {
+    var copy;
+
+    // Handle the 3 simple types, and null or undefined
+    if (null == obj || "object" != typeof obj) return obj;
+
+    // Handle Date
+    if (obj instanceof Date) {
+        copy = new Date();
+        copy.setTime(obj.getTime());
+        return copy;
+    }
+
+    // Handle Array
+    if (obj instanceof Array) {
+        copy = [];
+        for (var i = 0, len = obj.length; i < len; i++) {
+            copy[i] = clone(obj[i]);
+        }
+        return copy;
+    }
+
+    // Handle Object
+    if (obj instanceof Object) {
+        copy = {};
+        for (var attr in obj) {
+            if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
+        }
+        return copy;
+    }
+
+    throw new Error("Unable to copy obj! Its type isn't supported.");
 }
 
 canvas.addEventListener("mousedown", getPosition, false);
@@ -512,7 +606,6 @@ function getPosition(event) {
 function setChar(x) {
     player.char = x
 }
-
 function confirmChar() {
     $("#charSelect").fadeOut()
 }
