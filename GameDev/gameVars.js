@@ -8,7 +8,7 @@ var canvas = document.getElementById("canvas"),
     debug = false,
     units = Math.floor(width / tilesX),
     player = {
-        x: 10,
+        x: units + 10,
         y: 0,
         townX: 1,
         townY: 1,
