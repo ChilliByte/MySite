@@ -20,11 +20,11 @@ function update() {
         //Left/A
         if (currentLevel.type === "town") {
             if (player.x > 0) {
-                if(currentLevel[player.y][player.x - 1] == 0) {
-                    currentLevel[player.y][player.x - 1] = 2;
+                if(currentLevel.tileMap[player.y][player.x - 1] == 0) {
+                    currentLevel.tileMap[player.y][player.x - 1] = 2;
                     player.x--;
                 }  else {
-                    currentLevel[player.y][player.x] = 2;
+                    currentLevel.tileMap[player.y][player.x] = 2;
                 }
             }
         }
@@ -48,10 +48,10 @@ function update() {
         if (currentLevel.type === "town") {
             if (player.townY > 0) {
                 if (currentLevel.tileMap[player.townY - 1][player.townX] == 0) {
-                    currentLevel[player.townY - 1][player.townX] = 2;
+                    currentLevel.tileMap[player.townY - 1][player.townX] = 2;
                     player.townY--;
                 } else {
-                    currentLevel[player.townY][player.townX] = 2;
+                    currentLevel.tileMap[player.townY][player.townX] = 2;
                 }
             }
         }
@@ -71,11 +71,11 @@ function update() {
         //Right/D
         if (currentLevel.type === "town") {
             if (player.townX < currentLevel.width - 1) {
-                if(currentLevel[player.townY][player.townX + 1] == 0) {
-                    currentLevel[player.townY][player.townX + 1] = 2;
+                if(currentLevel.tileMap[player.townY][player.townX + 1] == 0) {
+                    currentLevel.tileMap[player.townY][player.townX + 1] = 2;
                     player.townX++;
                 }  else {
-                    currentLevel[player.townY][player.townX] = 2;
+                    currentLevel.tileMap[player.townY][player.townX] = 2;
                 }
             }
         }
@@ -98,11 +98,11 @@ function update() {
         //Down/S
         if (currentLevel.type === "town") {
             if (player.townY < currentLevel.height - 1) {
-                if (currentLevel[player.townY + 1][player.townX] == 0) {
-                    currentLevel[player.townY + 1][player.townX] = 2;
+                if (currentLevel.tileMap[player.townY + 1][player.townX] == 0) {
+                    currentLevel.tileMap[player.townY + 1][player.townX] = 2;
                     player.townY++;
                 } else {
-                    currentLevel[player.townY][player.townX] = 2;
+                    currentLevel.tileMap[player.townY][player.townX] = 2;
                 }
             }
         }
@@ -120,19 +120,19 @@ function update() {
         while (i--) {
             j = currentLevel.tileMap[i].length;
             while (j--) {
-                if (currentLevel[i][j] == 1) {
+                if (currentLevel.tileMap[i][j] == 1) {
                     ctx.beginPath();
                     ctx.fillStyle = "black";
                     ctx.rect(j * units, i * units, units, units);
                     ctx.fill();
                     ctx.closePath();
-                } else if (currentLevel[i][j] == 0) {
+                } else if (currentLevel.tileMap[i][j] == 0) {
                     ctx.beginPath();
                     ctx.fillStyle = "green";
                     ctx.rect(j * units, i * units, units, units);
                     ctx.fill();
                     ctx.closePath();
-                } else if (currentLevel[i][j] == 2) {
+                } else if (currentLevel.tileMap[i][j] == 2) {
                     ctx.beginPath();
                     ctx.fillStyle = "red";
                     ctx.rect(j * units, i * units, units, units);
