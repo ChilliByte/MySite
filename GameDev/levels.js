@@ -136,6 +136,7 @@ var path1to2 = {
 }
 
 path1to2.boxes.push(new box(-1*units,0,20*units,units));
+path1to2.boxes.push(new box(80*units,0,20*units,units));
 path1to2.boxes.push(new box(0,15*units,5*units,41*units));
 path1to2.boxes.push(new box(40*units,13*units,7*units,40*units));
 
