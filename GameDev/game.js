@@ -13,16 +13,18 @@ window.onload = function() {
 
 var currentLevel = worldMap[player.worldY][player.worldX]
 var pathIncrement = 0;
-var oneEighth = units/8
+var oneEighth = units/8;
 function update() {
     currentLevel = clone(worldMap[player.worldY][player.worldX]);
     if (keys[37] || keys[65]) {
         //Left/A
         if (currentLevel.type === "town") {
             if (player.townX > 0) {
-                if(currentLevel.tileMap[player.townY][player.townX - 1] == 0) {
+                if (currentLevel.tileMap[player.townY][player.townX - 1] == 0) {
                     player.townX--;
                 }
+            } else if (player.townX === 0) {
+                player.worldX--
             }
         }
         if (currentLevel.type === "path") {
@@ -46,6 +48,8 @@ function update() {
             if (player.townY > 0) {
                 if (currentLevel.tileMap[player.townY - 1][player.townX] == 0) {
                     player.townY--;
+                } else if (player.townY === 0) {
+                    player.worldY--
                 } 
             }
         }
@@ -65,8 +69,10 @@ function update() {
         //Right/D
         if (currentLevel.type === "town") {
             if (player.townX < currentLevel.width - 1) {
-                if(currentLevel.tileMap[player.townY][player.townX + 1] == 0) {
+                if (currentLevel.tileMap[player.townY][player.townX + 1] == 0) {
                     player.townX++;
+                } else if (player.townX == currentLevel.width - 1) {
+                    player.worldX++
                 }
             }
         }
@@ -92,6 +98,8 @@ function update() {
                 if (currentLevel.tileMap[player.townY + 1][player.townX] == 0) {
                     player.townY++;
                 }
+            } else if (player.townY === currentLevel.height-1) {
+                player.worldY++
             }
         }
         if (currentLevel.type === "path") {}
