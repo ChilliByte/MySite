@@ -102,6 +102,7 @@ function testKeys() {
                 }
             } else if (player.townX === 0) {
                 player.worldX--
+                player.x = 38*units
             }
         }
         if (currentLevel.type === "path") {
@@ -127,6 +128,7 @@ function testKeys() {
                     player.townY--;
                 } else if (player.townY === 0) {
                     player.worldY--
+                    player.x = 38*units
                 }
             }
         }
@@ -150,7 +152,8 @@ function testKeys() {
                     player.townX++;
                 } 
             } else if (player.townX == currentLevel.width - 1) {
-                    player.worldX++
+                player.worldX++
+                player.x = 2*units
             }
         }
         if (currentLevel.type === "path") {
@@ -177,6 +180,7 @@ function testKeys() {
                 }
             } else if (player.townY === currentLevel.height - 1) {
                 player.worldY++
+                player.x = 2*units;
             }
         }
         if (currentLevel.type === "path") {}
@@ -590,10 +594,21 @@ function projectile(x, y, targetX, targetY, speed) {
 }
 
 function setLevel(level) {
-    player.worldY = indexOfRowContainingLevel(level, worldMap)[0]
-    player.worldX = indexOfRowContainingLevel(level, worldMap)[1]
+    newWorldY = indexOfRowContainingLevel(level, worldMap)[0];
+    newWorldX = indexOfRowContainingLevel(level, worldMap)[1];
+    if (newWorldX > player.worldX) {
+        player.townY = 1
+    }
+    if (newWorldX < player.worldX) {
+        player.townX = worldMap[newWorldY][newWorldX].width - 1
+    }
+    if (newWorldY > player.worldY) {
+        player.townY = 0
+    }
+    if (newWorldY > player.worldY) {
+        player.townX = worldMap[newWorldY][newWorldX].height - 1
+    }
 }
-
 function indexOfRowContainingLevel(id, matrix) {
     for (var i = 0, len = matrix.length; i < len; i++) {
         for (var j = 0, len2 = matrix[i].length; j < len2; j++) {
@@ -604,7 +619,6 @@ function indexOfRowContainingLevel(id, matrix) {
     }
     return -1;
 }
-
 function clone(obj) {
     var copy;
 
@@ -632,7 +646,6 @@ function clone(obj) {
 }
 
 canvas.addEventListener("mousedown", getPosition, false);
-
 function getPosition(event) {
     var x = event.x;
     var y = event.y;
@@ -644,10 +657,12 @@ function getPosition(event) {
 function setChar(x) {
     player.char = x
 }
-
 function confirmChar() {
     $("#charSelect").fadeOut()
 }
+
+
+
 
 /*
 (function() {
