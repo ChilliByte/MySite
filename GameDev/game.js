@@ -597,7 +597,7 @@ function setLevel(level) {
     newWorldY = indexOfRowContainingLevel(level, worldMap)[0];
     newWorldX = indexOfRowContainingLevel(level, worldMap)[1];
     if (newWorldX > player.worldX) {
-        player.townY = 1
+        player.townX = 1
     }
     if (newWorldX < player.worldX) {
         player.townX = worldMap[newWorldY][newWorldX].width - 1
@@ -605,8 +605,8 @@ function setLevel(level) {
     if (newWorldY > player.worldY) {
         player.townY = 0
     }
-    if (newWorldY > player.worldY) {
-        player.townX = worldMap[newWorldY][newWorldX].height - 1
+    if (newWorldY < player.worldY) {
+        player.townY = worldMap[newWorldY][newWorldX].height - 1
     }
     
     player.worldX = newWorldX;
