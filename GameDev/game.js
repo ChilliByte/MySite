@@ -151,7 +151,6 @@ function testKeys() {
                 } 
             } else if (player.townX == currentLevel.width - 1) {
                     player.worldX++
-                }
             }
         }
         if (currentLevel.type === "path") {
