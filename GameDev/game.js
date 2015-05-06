@@ -608,6 +608,9 @@ function setLevel(level) {
     if (newWorldY > player.worldY) {
         player.townX = worldMap[newWorldY][newWorldX].height - 1
     }
+    
+    player.worldX = newWorldX;
+    player.worldY = newWorldY;
 }
 function indexOfRowContainingLevel(id, matrix) {
     for (var i = 0, len = matrix.length; i < len; i++) {
