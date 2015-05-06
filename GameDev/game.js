@@ -148,7 +148,8 @@ function testKeys() {
             if (player.townX < currentLevel.width - 1) {
                 if (currentLevel.tileMap[player.townY][player.townX + 1] == 0) {
                     player.townX++;
-                } else if (player.townX == currentLevel.width - 1) {
+                } 
+            } else if (player.townX == currentLevel.width - 1) {
                     player.worldX++
                 }
             }
