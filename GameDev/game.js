@@ -102,6 +102,7 @@ function testKeys() {
             } else if (player.townX === 0) {
                 player.worldX--
                 player.x = 38*units
+                setBoxes()
             }
         }
         if (currentLevel.type === "path") {
@@ -125,10 +126,11 @@ function testKeys() {
             if (player.townY > 0) {
                 if (currentLevel.tileMap[player.townY - 1][player.townX] == 0) {
                     player.townY--;
-                } else if (player.townY === 0) {
+                } 
+            } else if (player.townY === 0) {
                     player.worldY--
                     player.x = 38*units
-                }
+                    setBoxes()
             }
         }
         if (currentLevel.type === "path") {
@@ -645,6 +647,16 @@ function clone(obj) {
     }
 
     throw new Error("Unable to copy obj! Its type isn't supported.");
+}
+function setBoxes() {
+    var nextLevel = worldMap[player.worldY][player.worldX];
+    if (nextLevel.pathIncrement != 0 ) {
+        nextLevel.pathIncrement = nextLevel.width - 40*units
+        boxArrLen = currentLevel.boxes.length;
+        while (boxArrLen--) {
+            nextLevel.boxes[boxArrLen].x -= nextLevel.pathIncrement;
+        }
+    }
 }
 
 canvas.addEventListener("mousedown", getPosition, false);
