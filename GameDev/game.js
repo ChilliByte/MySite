@@ -100,7 +100,9 @@ function testKeys() {
                     player.townX--;
                 }
             } else if (player.townX === 0) {
+                console.log("World Co-ords: X:" + player.worldX + " Y:" + player.worldY)
                 player.worldX--
+                console.log("World Co-ords: X:" + player.worldX + " Y:" + player.worldY)
                 player.x = 38*units
                 setBoxes()
             }
@@ -128,7 +130,9 @@ function testKeys() {
                     player.townY--;
                 } 
             } else if (player.townY === 0) {
+                    console.log("World Co-ords: X:" + player.worldX + " Y:" + player.worldY)            
                     player.worldY--
+                    console.log("World Co-ords: X:" + player.worldX + " Y:" + player.worldY)
                     player.x = 38*units
                     setBoxes()
             }
@@ -153,7 +157,9 @@ function testKeys() {
                     player.townX++;
                 } 
             } else if (player.townX == currentLevel.width - 1) {
+                console.log("World Co-ords: X:" + player.worldX + " Y:" + player.worldY)
                 player.worldX++
+                console.log("World Co-ords: X:" + player.worldX + " Y:" + player.worldY)
                 player.x = 2*units
             }
         }
@@ -180,7 +186,9 @@ function testKeys() {
                     player.townY++;
                 }
             } else if (player.townY === currentLevel.height - 1) {
+                console.log("World Co-ords: X:" + player.worldX + " Y:" + player.worldY)
                 player.worldY++
+                console.log("World Co-ords: X:" + player.worldX + " Y:" + player.worldY)
                 player.x = 2*units;
             }
         }
