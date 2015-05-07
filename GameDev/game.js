@@ -652,7 +652,7 @@ function setBoxes() {
     var nextLevel = worldMap[player.worldY][player.worldX];
     if (nextLevel.pathIncrement != 0 ) {
         nextLevel.pathIncrement = nextLevel.width - 40*units
-        boxArrLen = currentLevel.boxes.length;
+        boxArrLen = nextLevel.boxes.length;
         while (boxArrLen--) {
             nextLevel.boxes[boxArrLen].x -= nextLevel.pathIncrement;
         }
