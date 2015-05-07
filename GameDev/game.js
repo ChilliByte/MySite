@@ -14,7 +14,6 @@ window.onload = function() {
 }
 
 var currentLevel = worldMap[player.worldY][player.worldX]
-var pathIncrement = 0;
 var oneEighth = units / 8;
 
 function update() {
@@ -35,7 +34,7 @@ function update() {
         if (player.x < units) {
             setLevel(currentLevel.start);
         }
-        if (player.x + pathIncrement > currentLevel.width - units) {
+        if (player.x + currentLevel.pathIncrement > currentLevel.width - units) {
             setLevel(currentLevel.end);
         }
         player.velX *= friction;
@@ -107,12 +106,12 @@ function testKeys() {
         }
         if (currentLevel.type === "path") {
             if (player.velX > -player.speed) {
-                if ((player.x > 3 * units) && (player.x < 8 * units) && (pathIncrement > 0)) {
+                if ((player.x > 3 * units) && (player.x < 8 * units) && (currentLevel.pathIncrement > 0)) {
                     var boxArrLen = currentLevel.boxes.length;
                     while (boxArrLen--) {
                         currentLevel.boxes[boxArrLen].x += oneEighth;
                     }
-                    pathIncrement -= oneEighth;
+                    currentLevel.pathIncrement -= oneEighth;
                 } else {
                     player.velX -= oneEighth;
                     player.lastDir = "r";
@@ -158,12 +157,12 @@ function testKeys() {
         }
         if (currentLevel.type === "path") {
             if (player.velX < player.speed) {
-                if ((player.x > 12 * units) && (player.x < 17 * units) && (pathIncrement < currentLevel.width - 40 * units)) {
+                if ((player.x > 12 * units) && (player.x < 17 * units) && (currentLevel.pathIncrement < currentLevel.width - 40 * units)) {
                     var boxArrLen = currentLevel.boxes.length;
                     while (boxArrLen--) {
                         currentLevel.boxes[boxArrLen].x -= oneEighth;
                     }
-                    pathIncrement += oneEighth;
+                    currentLevel.pathIncrement += oneEighth;
                 } else {
                     player.velX += oneEighth;
                     player.lastDir = "l"
