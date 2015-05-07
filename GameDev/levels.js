@@ -181,7 +181,7 @@ var path3to4 = {
   type: "path",
   pathIncrement: 0,
   width: 80*units,
-  start: town2,
+  start: town3,
   end: town4,
   boxes: [],
   collectibles: [],
