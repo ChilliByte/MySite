@@ -650,7 +650,7 @@ function clone(obj) {
 }
 function setBoxes() {
     var nextLevel = worldMap[player.worldY][player.worldX];
-    if (nextLevel.pathIncrement != 0 ) {
+    if (nextLevel.pathIncrement === 0 ) {
         nextLevel.pathIncrement = nextLevel.width - 40*units
         boxArrLen = nextLevel.boxes.length;
         while (boxArrLen--) {
