@@ -104,6 +104,8 @@ function testKeys() {
                 player.worldX--
                 console.log("World Co-ords: X:" + player.worldX + " Y:" + player.worldY)
                 player.x = 38*units
+                player.y = 0;
+                player.velY = 3
                 setBoxes()
             }
         }
