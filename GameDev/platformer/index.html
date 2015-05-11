@@ -1,1 +1,29 @@
-.
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>A simple Canvas Platformer</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    </head>
+
+    <body>
+        <canvas id="canvas"></canvas>
+        <script src="gameVars.js"></script>
+        <script src="levels.js"></script>
+        <script src="game.js"></script>
+        <div id="stats"></div>
+        <div id="charSelect">
+            <div id="charContainer">
+                <div id="charScroll">
+                    <button class="charButton" onclick="setChar(1)">Select Char 1</button>
+                    <button class="charButton" onclick="setChar(2)">Select Char 2</button>
+                    <button class="charButton" onclick="setChar(3)">Select Char 3</button>
+                </div>
+            </div>
+            <br />
+            <button id="charChoose" onclick="confirmChar()">Select</button>
+        </div>
+        <div id="hintBox"></div>
+        <img src="https://cloud.githubusercontent.com/assets/4252954/7145997/3ea4a728-e2e8-11e4-83cd-82a504b02397.png" class="charSprite" id="char1SpriteSheet"/> 
+    </body>
+</html>
