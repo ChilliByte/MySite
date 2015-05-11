@@ -7,7 +7,7 @@ var canvas = document.getElementById("canvas"),
     debug = false,
     units = Math.floor(width / tilesX),
     player = {
-        x: 10,
+        x: units,
         y: 0,
         width: (units/3*2),
         height: 2*units,
@@ -21,9 +21,9 @@ var canvas = document.getElementById("canvas"),
         lastDir: "l"
     },
     keys = [],
-    friction = 0.8,
+    friction = units/42.5,
     projectiles = [],
-    gravity = 0.3,
+    gravity = units/114,  //go with it. It works.
     gravityDown = true,
     char1Sheet,
     mobDir = "right",
@@ -39,5 +39,4 @@ console.log("Screen Height:" + height);
 console.log("Screen Width:" + width);
 console.log("Canvas Height:" + canvas.height);
 console.log("Canvas Width:" + canvas.width);
-console.log("Tile Width:" + canvas.width / tilesX);
 console.log("Tile Height:" + canvas.height / tilesY);
