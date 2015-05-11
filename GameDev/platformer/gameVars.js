@@ -23,7 +23,7 @@ var canvas = document.getElementById("canvas"),
     keys = [],
     friction = units/42.5,
     projectiles = [],
-    gravity = player.speed/13.4//units/144,//(units/150) + (units/2000),  //go with it. It works.
+    gravity = player.speed/13.4, //units/144,//(units/150) + (units/2000),  //go with it. It works.
     gravityDown = true,
     char1Sheet,
     mobDir = "right",
