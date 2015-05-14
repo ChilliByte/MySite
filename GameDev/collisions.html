@@ -101,7 +101,7 @@ function colCheck(shapeA, shapeB) {
 
 canvas.addEventListener("mousemove", function (event) {
     player.x = (event.pageX - 10);
-    player.y = (event.pageY - 10
+    player.y = (event.pageY - 10);
     deltaX = (boxes[0].x + (boxes[0].width/2)) - (player.x + (player.width/2))
     deltaY = (boxes[0].y + (boxes[0].height/2)) - (player.y + (player.height/2))
     angleInDegrees = Math.atan(deltaY / deltaX) * 180 / Math.PI
