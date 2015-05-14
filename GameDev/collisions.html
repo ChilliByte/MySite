@@ -57,7 +57,7 @@ function update() {
 
 function newColCheck(shapeA, shapeB) {
   colDir = ""// get the vectors to check against
-    if ((shapeB.x < shapeA.x + shapeA.width) && (shapeB.y < shapeA.y + shapeA.height) && (shapeA.x < shapeB.x + shapeB.width)) {colDir = "t"}
+    if ((shapeB.x < shapeA.x + shapeA.width) && (shapeB.y < shapeA.y + shapeA.height) && (shapeA.y < shapeB.y + shapeB.height)) {colDir = "t"}
     /*if ((shapeA.x < shapeB.x)) {colDir = "b"}
     if ((shapeA.x < shapeB.x)) {colDir = "l"}
     if ((shapeA.x < shapeB.x)) {colDir = "r"}*/
@@ -98,14 +98,6 @@ function colCheck(shapeA, shapeB) {
     }
     return colDir;
 }
-
-document.body.addEventListener("keydown", function (e) {
-    keys[e.keyCode] = true;
-});
-
-document.body.addEventListener("keyup", function (e) {
-    keys[e.keyCode] = false;
-});
 
 canvas.addEventListener("mousemove", function (event) {
     player.x = (event.pageX - 10);
