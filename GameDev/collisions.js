@@ -1,4 +1,6 @@
-(function () {
+(<canvas id="canvas"></canvas>
+<script>
+function () {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
 })();
@@ -120,3 +122,4 @@ canvas.addEventListener("mousemove", function (event) {
 window.addEventListener("load", function () {
     update();
 });
+</script>
