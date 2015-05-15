@@ -208,7 +208,7 @@ function update() {
         //draw each one
         ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
         //Figure out whether we've touched a box
-        var dir = colCheck(player, currentLevel.boxes[i]);
+        var dir = newColCheck(player, currentLevel.boxes[i]);
         //Do something depending on the direction the collision happened from.
         if (dir === "l" || dir === "r") {
             player.velX = 0;
