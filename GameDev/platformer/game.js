@@ -369,7 +369,10 @@ function update() {
 }
 
 function newColCheck(shapeA, shapeB) {
-  colDir = ""// get the vectors to check against
+    deltaX = (shapeB.x + (shapeB.width/2)) - (shapeA.x + (shapeA.width/2))
+    deltaY = (shapeB.y + (shapeB.height/2)) - (shapeA.y + (shapeA.height/2))
+    angleInDegrees = Math.atan2(deltaY, deltaX) * 180 / Math.PI
+    colDir = "";
     if ((angleInDegrees < 45) && (angleInDegrees > -45) && (shapeB.x < shapeA.x + shapeA.width) && (shapeB.y < shapeA.y + shapeA.height) && (shapeA.y < shapeB.y + shapeB.height)) {colDir = "r"}
     if ((angleInDegrees < -45) && (angleInDegrees > -135) && (shapeA.y < shapeB.y + shapeB.height) && (shapeA.x < shapeB.x + shapeB.width) && (shapeA.x + shapeA.width > shapeB.x)) {colDir = "t"}
     if (((angleInDegrees > 135) || (angleInDegrees < -135)) && (shapeA.x < shapeB.x + shapeB.width) && (shapeB.y < shapeA.y + shapeA.height) && (shapeB.y + shapeB.height > shapeA.y)) {colDir = "l"}
