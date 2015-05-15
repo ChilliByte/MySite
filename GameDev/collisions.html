@@ -39,7 +39,7 @@ function update() {
     ctx.rect(boxes[0].x, boxes[0].y, boxes[0].width, boxes[0].height);
     ctx.fill();    
     
-    var dir = newColCheck(player, boxes[0]);
+    var dir = colCheck(player, boxes[0]);
     if (dir === "l") {
       ctx.fillStyle = "green";
     } else if (dir === "r") {
