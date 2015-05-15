@@ -367,6 +367,17 @@ function update() {
     }
     requestAnimationFrame(update);
 }
+
+function newColCheck(shapeA, shapeB) {
+  colDir = ""// get the vectors to check against
+    if ((angleInDegrees < 45) && (angleInDegrees > -45) && (shapeB.x < shapeA.x + shapeA.width) && (shapeB.y < shapeA.y + shapeA.height) && (shapeA.y < shapeB.y + shapeB.height)) {colDir = "r"}
+    if ((angleInDegrees < -45) && (angleInDegrees > -135) && (shapeA.y < shapeB.y + shapeB.height) && (shapeA.x < shapeB.x + shapeB.width) && (shapeA.x + shapeA.width > shapeB.x)) {colDir = "t"}
+    if (((angleInDegrees > 135) || (angleInDegrees < -135)) && (shapeA.x < shapeB.x + shapeB.width) && (shapeB.y < shapeA.y + shapeA.height) && (shapeB.y + shapeB.height > shapeA.y)) {colDir = "l"}
+    if ((angleInDegrees > 45) && (angleInDegrees < 135) && (shapeB.y < shapeA.y + shapeA.height) && (shapeA.x < shapeB.x + shapeB.width) && (shapeA.x + shapeA.width > shapeB.x)) {colDir = "b"}
+    
+    return colDir;
+}
+
 function colCheck(shapeA, shapeB) {
     // get the vectors to check against
     var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
