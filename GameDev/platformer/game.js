@@ -9,7 +9,94 @@ window.onload = function() {
     setInterval(function () {frame = !frame;},250)
 }
 
-//Character Functions
+//Notification Triggers
+var triggers = {};
+triggers.firstStep = false;
+triggers.firstLevel = false;
+triggers.firstCoin = false;
+//Load Level1
+currentLevelInt = 0
+currentLevel = levels[currentLevelInt];
+animating = false
+function update() {
+    if(animating) {
+        animate()
+    } else {
+    // check keys
+    checkKeys()
+    //Factor in Friction and Gravity
+    player.velX *= friction;
+    player.velY += gravity;
+    //Clear The Last Frame
+    ctx.clearRect(0, 0, 40*units, 20*units);
+    //Change to green and begins drawing
+    ctx.fillStyle = "#380";
+    ctx.beginPath();
+    //Loop through the array of boxes in this level
+    player.grounded = false;
+    
+    drawBoxes();
+    
+    ctx.closePath()
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "orange";
+    
+    drawCollectibles()
+    
+    if (player.x < 0) {
+        player.x = width - 5;
+        currentLevelInt -= 1;
+        currentLevel = levels[currentLevelInt];
+        console.log("Previous Level");
+    }
+    if (player.x > width) {
+        currentLevelInt += 1;
+        currentLevel = levels[currentLevelInt];
+        console.log("Next Level");
+        player.x = 10;
+    }
+    ctx.closePath()
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "#90f";
+    
+    drawMobs()
+    
+    ctx.closePath()
+    ctx.fill()
+    if (player.grounded) {
+        player.velY = 0;
+    }
+    if (projectiles.length > 0) {
+        //Animate projectiles
+        ctx.fill();
+        ctx.fillStyle = "brown";
+        for(var m = 0; m < projectiles.length; m++) {
+            ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
+            projectiles[m].x += projectiles[m].xIncrement;
+            projectiles[m].y += projectiles[m].yIncrement;
+        }
+    }
+    player.x += player.velX;
+    player.y += player.velY;
+    drawChar()
+    //Hint Triggers
+    displayHints()
+    
+    if (debug) {
+        document.getElementById("stats").style.display = "block"
+        document.getElementById("stats").innerHTML = "X: " + player.x + "<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
+    }
+    }
+    requestAnimationFrame(update);
+}
+
+function animate() {
+    frame = 0
+    setInterval(function() {frame++},20)
+    frames = []
+}
 function setChar(x) {
     player.char = x
 }
@@ -316,85 +403,6 @@ function displayHints() {
     }
     
 }
-//Notification Triggers
-var triggers = {};
-triggers.firstStep = false;
-triggers.firstLevel = false;
-triggers.firstCoin = false;
-//Load Level1
-currentLevelInt = 0
-currentLevel = levels[currentLevelInt];
-function update() {
-    // check keys
-    checkKeys()
-    //Factor in Friction and Gravity
-    player.velX *= friction;
-    player.velY += gravity;
-    //Clear The Last Frame
-    ctx.clearRect(0, 0, 40*units, 20*units);
-    //Change to green and begins drawing
-    ctx.fillStyle = "#380";
-    ctx.beginPath();
-    //Loop through the array of boxes in this level
-    player.grounded = false;
-    
-    drawBoxes();
-    
-    ctx.closePath()
-    ctx.fill();
-    ctx.beginPath();
-    ctx.fillStyle = "orange";
-    
-    drawCollectibles()
-    
-    if (player.x < 0) {
-        player.x = width - 5;
-        currentLevelInt -= 1;
-        currentLevel = levels[currentLevelInt];
-        console.log("Previous Level");
-    }
-    if (player.x > width) {
-        currentLevelInt += 1;
-        currentLevel = levels[currentLevelInt];
-        console.log("Next Level");
-        player.x = 10;
-    }
-    ctx.closePath()
-    ctx.fill();
-    ctx.beginPath();
-    ctx.fillStyle = "#90f";
-    
-    drawMobs()
-    
-    ctx.closePath()
-    ctx.fill()
-    if (player.grounded) {
-        player.velY = 0;
-    }
-    if (projectiles.length > 0) {
-        //Animate projectiles
-        ctx.fill();
-        ctx.fillStyle = "brown";
-        for(var m = 0; m < projectiles.length; m++) {
-            ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
-            projectiles[m].x += projectiles[m].xIncrement;
-            projectiles[m].y += projectiles[m].yIncrement;
-        }
-    }
-    player.x += player.velX;
-    player.y += player.velY;
-    drawChar()
-    //Hint Triggers
-    displayHints()
-    
-    if (debug) {
-        document.getElementById("stats").style.display = "block"
-        document.getElementById("stats").innerHTML = "X: " + player.x + "<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
-    }
-    requestAnimationFrame(update);
-}
-
-
 function colCheck(shapeA, shapeB) {
     // get the vectors to check against
     var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
