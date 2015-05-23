@@ -150,16 +150,7 @@ function drawChar() {
         }
     }
 }
-//Notification Triggers
-var triggers = {};
-triggers.firstStep = false;
-triggers.firstLevel = false;
-triggers.firstCoin = false;
-//Load Level1
-currentLevelInt = 0
-currentLevel = levels[currentLevelInt];
-function update() {
-    // check keys
+function checkKeys() {
     if (keys[38] || keys[32] || keys[87]) {
         // up arrow or space
         if (!player.jumping && player.grounded) {
@@ -194,16 +185,8 @@ function update() {
             }
         }
     }
-    //Factor in Friction and Gravity
-    player.velX *= friction;
-    player.velY += gravity;
-    //Clear The Last Frame
-    ctx.clearRect(0, 0, 40*units, 20*units);
-    //Change to green and begins drawing
-    ctx.fillStyle = "#380";
-    ctx.beginPath();
-    //Loop through the array of boxes in this level
-    player.grounded = false;
+}
+function drawBoxes() {
     for (var i = 0; i < currentLevel.boxes.length; i++) {
         //draw each one
         ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
@@ -236,10 +219,9 @@ function update() {
             }
         }
     }
-    ctx.closePath()
-    ctx.fill();
-    ctx.beginPath();
-    ctx.fillStyle = "orange";
+    
+}
+function drawCollectibles() {
     for (var j = 0; j < currentLevel.collectibles.length; j++) {
         if (currentLevel.collectibles[j].collected == false) {
             ctx.rect(currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height)
@@ -253,22 +235,9 @@ function update() {
             }
         }
     }
-    if (player.x < 0) {
-        player.x = width - 5;
-        currentLevelInt -= 1;
-        currentLevel = levels[currentLevelInt];
-        console.log("Previous Level");
-    }
-    if (player.x > width) {
-        currentLevelInt += 1;
-        currentLevel = levels[currentLevelInt];
-        console.log("Next Level");
-        player.x = 10;
-    }
-    ctx.closePath()
-    ctx.fill();
-    ctx.beginPath();
-    ctx.fillStyle = "#90f";
+    
+}
+function drawMobs() {
     for (var k = 0; k < currentLevel.mobs.length; k++) {
         if (!currentLevel.mobs[k].dead) {
             ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
@@ -324,6 +293,79 @@ function update() {
             }
         }
     };
+    
+}
+function displayHints() {
+    if (!triggers.firstLevel) {
+        if ((currentLevelInt == 0) && (player.x > width - 400)) {
+            hint(player.x, 30, "Go to the edge of the screen to go to the next level!");
+            triggers.firstLevel = true;
+            setTimeout(function() {
+                hint(10000, 10000, "")
+            }, 3000);
+        }
+    }
+    if (!triggers.firstCoin) {
+        if ((currentLevelInt == 2) && (player.x < 100)) {
+            hint(player.x, 30, "That Orange thing's a coin! Ten coins give you a powerup! Try and collect all 100!");
+            triggers.firstCoin = true;
+            setTimeout(function() {
+                hint(10000, 10000, "")
+            }, 3000);
+        }
+    }
+    
+}
+//Notification Triggers
+var triggers = {};
+triggers.firstStep = false;
+triggers.firstLevel = false;
+triggers.firstCoin = false;
+//Load Level1
+currentLevelInt = 0
+currentLevel = levels[currentLevelInt];
+function update() {
+    // check keys
+    checkKeys()
+    //Factor in Friction and Gravity
+    player.velX *= friction;
+    player.velY += gravity;
+    //Clear The Last Frame
+    ctx.clearRect(0, 0, 40*units, 20*units);
+    //Change to green and begins drawing
+    ctx.fillStyle = "#380";
+    ctx.beginPath();
+    //Loop through the array of boxes in this level
+    player.grounded = false;
+    
+    drawBoxes();
+    
+    ctx.closePath()
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "orange";
+    
+    drawCollectibles()
+    
+    if (player.x < 0) {
+        player.x = width - 5;
+        currentLevelInt -= 1;
+        currentLevel = levels[currentLevelInt];
+        console.log("Previous Level");
+    }
+    if (player.x > width) {
+        currentLevelInt += 1;
+        currentLevel = levels[currentLevelInt];
+        console.log("Next Level");
+        player.x = 10;
+    }
+    ctx.closePath()
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "#90f";
+    
+    drawMobs()
+    
     ctx.closePath()
     ctx.fill()
     if (player.grounded) {
@@ -343,24 +385,8 @@ function update() {
     player.y += player.velY;
     drawChar()
     //Hint Triggers
-    if (!triggers.firstLevel) {
-        if ((currentLevelInt == 0) && (player.x > width - 400)) {
-            hint(player.x, 30, "Go to the edge of the screen to go to the next level!");
-            triggers.firstLevel = true;
-            setTimeout(function() {
-                hint(10000, 10000, "")
-            }, 3000);
-        }
-    }
-    if (!triggers.firstCoin) {
-        if ((currentLevelInt == 2) && (player.x < 100)) {
-            hint(player.x, 30, "That Orange thing's a coin! Ten coins give you a powerup! Try and collect all 100!");
-            triggers.firstCoin = true;
-            setTimeout(function() {
-                hint(10000, 10000, "")
-            }, 3000);
-        }
-    }
+    displayHints()
+    
     if (debug) {
         document.getElementById("stats").style.display = "block"
         document.getElementById("stats").innerHTML = "X: " + player.x + "<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
@@ -425,7 +451,7 @@ function projectile(x,y,targetX,targetY,speed) {
   	this.speed = speed;
   	this.height = units/3;
   	this.width = units/3;
-  	this.angle = Math.atan(this.deltaY / this.deltaX)
+  	this.angle = Math.atan2(this.deltaY, this.deltaX)
   	this.xIncrement = Math.cos(this.angle) * speed;
     this.yIncrement = Math.sin(this.angle) * speed;
   	this.fire = function() {
