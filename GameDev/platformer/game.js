@@ -18,11 +18,12 @@ triggers.firstCoin = false;
 currentLevelInt = 0
 currentLevel = levels[currentLevelInt];
 animating = false
+var chosenAnimation = 0
 function update() {
     //Clear The Last Frame
     ctx.clearRect(0, 0, 40*units, 20*units);
     if(animating) {
-        animate(0)
+        animate(chosenAnimation)
     } else {
     // check keys
     checkKeys()
@@ -104,7 +105,25 @@ animations = [
             ctx.closePath();
             ctx.globalAlpha = 1;
         },
-        onComplete: function() {console.log("Faded!")}
+        onComplete: function() {
+            console.log("Faded Out!!")
+            setTimeout(function(){chosenAnimation = 1}, 3000)
+        }
+    },
+    {
+        frames: [1,0.95,0.9,0.85,0.8,0.7,0.5,0.3,0.2,0.15,0.1,0.05,0],
+        draw: function (y) {
+            ctx.fillStyle = "#000"
+            ctx.globalAlpha = animations[y].frames[animFrame];
+            ctx.beginPath();
+            ctx.fillRect(0,0,40*units,40*units);
+            ctx.closePath();
+            ctx.globalAlpha = 1;
+        },
+        onComplete: function() {
+            console.log("Faded in!")
+            animating = false;
+        }
     }
 ]
 
