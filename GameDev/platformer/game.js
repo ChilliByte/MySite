@@ -133,19 +133,34 @@ animations = [
 ]
 
 function animate(x) {
+    console.log("Frame At Start Of Animate Function: " + animFrame)
     animations[x].draw(x);
+    console.log("Frame After Calling .draw(): " + animFrame)    
     if (animFrame < animations[x].frames.length) {
+            console.log("Frame at start of if: " + animFrame)
         incrementFrame = true
+            console.log("Frame after defining incrementFrame: " + animFrame)
+                console.log("IncrementFrame: " + incrementFrame)
         if(incrementFrame) {
+                console.log("Frame at start of incrementFrame if: " + animFrame)
+            console.log("IncrementFrame: " + incrementFrame)
             setTimeout(function(){
                 animFrame++
                 incrementFrame = true;
+                console.log("Frame in setTimeout after ++: " + animFrame)
+                console.log("IncrementFrame: " + incrementFrame)
             },500)
+                console.log("Frame ofter setTimeout: " + animFrame)
+                console.log("IncrementFrame: " + incrementFrame)
             incrementFrame = false
+            console.log("IncrementFrame: " + incrementFrame)
+            
         }
     } else {
         if (typeof(animations[x].onComplete) == typeof(Function)) {
+                console.log("Frame before onComplete: " + animFrame)
             animations[x].onComplete()
+                console.log("Frame after onComplete: " + animFrame)
         }
     }
 }
