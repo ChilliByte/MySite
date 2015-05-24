@@ -46,12 +46,14 @@ function update() {
     drawCollectibles()
     
     if (player.x < 0) {
+        animating = true;
         player.x = width - 5;
         currentLevelInt -= 1;
         currentLevel = levels[currentLevelInt];
         console.log("Previous Level");
     }
     if (player.x > width) {
+        animating = true;
         currentLevelInt += 1;
         currentLevel = levels[currentLevelInt];
         console.log("Next Level");
