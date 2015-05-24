@@ -361,7 +361,7 @@ function drawBoxes() {
         }
         //Loop through each of the mobs in this level, and see if any of them have collided with a box.
         l = currentLevel.mobs.length
-        while (li) {
+        while (l--) {
             currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.boxes[i])
             if (currentLevel.mobs[l].collisionDir === "b") {
                 currentLevel.mobs[l].grounded = true
