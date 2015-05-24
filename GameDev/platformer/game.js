@@ -92,8 +92,7 @@ function update() {
     requestAnimationFrame(update);
 }
 
-function animate(x) {
-    frame = 0
+frame = 0
     animations = [
         {
             frames: [0,0.05,0.1,0.15,0.2,0.3,0.5,0.7,0.8,0.85,0.9,0.95,1],
@@ -107,8 +106,17 @@ function animate(x) {
             }
         }
     ]
-    frame++
+
+function animate(x) {
+    animations[x].draw();
+    if (frame < animations[x].frames.length) {
+        frame++
+    } else {
+        frames = 0;
+        animating = false;
+    }
 }
+
 function setChar(x) {
     player.char = x
 }
