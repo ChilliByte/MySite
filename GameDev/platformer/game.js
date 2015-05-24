@@ -107,7 +107,10 @@ animations = [
         },
         onComplete: function() {
             console.log("Faded Out!!")
-            setTimeout(function(){chosenAnimation = 1}, 3000)
+            setTimeout(function(){
+                chosenAnimation = 1;
+                animFrame = 0;
+            }, 3000)
         }
     },
     {
