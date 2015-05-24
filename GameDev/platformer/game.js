@@ -96,7 +96,7 @@ function update() {
 animFrame = 0
 animations = [
     {
-        frames: [0,0.05,0.1,0.15,0.2,0.3,0.5,0.7,0.8,0.85,0.9,0.95,1],
+        frames: [0,0.025,0.05,0.075,0.1,0.15,0.2,0.25,0.3,0.4,0.5,0.6,0.7,0.75,0.8,0.85,0.9,0.925,0.95,0.975,1],
         draw: function (y) {
             ctx.fillStyle = "#000"
             ctx.globalAlpha = animations[y].frames[animFrame];
@@ -114,7 +114,7 @@ animations = [
         }
     },
     {
-        frames: [1,0.95,0.9,0.85,0.8,0.7,0.5,0.3,0.2,0.15,0.1,0.05,0],
+        frames: [1,0.975,0.95,0.925,0.9,0.85,0.8,0.75,0.7,0.6,0.5,0.4,0.3,0.25,0.2,0.15,0.1,0.05,0.025,0],
         draw: function (y) {
             ctx.fillStyle = "#000"
             ctx.globalAlpha = animations[y].frames[animFrame];
@@ -141,7 +141,7 @@ function animate(x) {
             setTimeout(function(){
                 animFrame++
                 incrementFrame = true;
-            },500)
+            },200)
             incrementFrame = false
         }
     } else {
