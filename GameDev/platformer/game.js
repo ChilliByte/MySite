@@ -92,13 +92,13 @@ function update() {
     requestAnimationFrame(update);
 }
 
-frame = 0
+animFrame = 0
 animations = [
     {
         frames: [0,0.05,0.1,0.15,0.2,0.3,0.5,0.7,0.8,0.85,0.9,0.95,1],
         draw: function (y) {
             ctx.fillStyle = "#000"
-            ctx.globalAlpha = animations[y].frames[frame];
+            ctx.globalAlpha = animations[y].frames[animFrame];
             ctx.beginPath();
             ctx.fillRect(0,0,40*units,40*units);
             ctx.closePath();
@@ -110,10 +110,10 @@ animations = [
 
 function animate(x) {
     animations[x].draw(x);
-    if (frame < animations[x].frames.length) {
-        setTimeout(function(){frame++},200)
+    if (animFrame < animations[x].frames.length) {
+        setTimeout(function(){animFrame++},200)
     } else {
-        frame = 0;
+        animFrame = 0;
         animating = false;
         if (typeof(animations[x].onComplete) == typeof(Function)) {
             animations[x].onComplete()
