@@ -130,7 +130,7 @@ animations = [
 function animate(x) {
     animations[x].draw(x);
     if (animFrame < animations[x].frames.length) {
-        setTimeout(function(){animFrame++},200)
+        setTimeout(function(){animFrame++},500)
     } else {
         if (typeof(animations[x].onComplete) == typeof(Function)) {
             animations[x].onComplete()
