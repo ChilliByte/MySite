@@ -103,7 +103,8 @@ frame = 0
                 ctx.fillRect(0,0,40*units,40*units);
                 ctx.closePath();
                 ctx.globalAlpha = 1;
-            }
+            },
+            onComplete: function() {console.log("Faded!")}
         }
     ]
 
@@ -114,6 +115,9 @@ function animate(x) {
     } else {
         frames = 0;
         animating = false;
+        if (typeof(animations[x].onComplete) == typeof(Function)) {
+            animations[x].onComplete()
+        }
     }
 }
 
