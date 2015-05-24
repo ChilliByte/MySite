@@ -114,7 +114,7 @@ animations = [
         completed: false,
         onComplete: function(y) {
             console.log("Faded Out!!")
-            if (!completed) {
+            if (!animations[y].completed) {
                 setTimeout(function(){
                     chosenAnimation = 1;
                     animFrame = 0;
