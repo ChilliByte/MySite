@@ -19,6 +19,8 @@ currentLevelInt = 0
 currentLevel = levels[currentLevelInt];
 animating = false
 function update() {
+    //Clear The Last Frame
+    ctx.clearRect(0, 0, 40*units, 20*units);
     if(animating) {
         animate(0)
     } else {
@@ -27,14 +29,12 @@ function update() {
     //Factor in Friction and Gravity
     player.velX *= friction;
     player.velY += gravity;
-    //Clear The Last Frame
-    ctx.clearRect(0, 0, 40*units, 20*units);
+    player.grounded = false;
+    
     //Change to green and begins drawing
     ctx.fillStyle = "#380";
     ctx.beginPath();
     //Loop through the array of boxes in this level
-    player.grounded = false;
-    
     drawBoxes();
     
     ctx.closePath()
