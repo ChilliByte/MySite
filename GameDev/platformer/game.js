@@ -113,8 +113,6 @@ function animate(x) {
     if (animFrame < animations[x].frames.length) {
         setTimeout(function(){animFrame++},200)
     } else {
-        animFrame = 0;
-        animating = false;
         if (typeof(animations[x].onComplete) == typeof(Function)) {
             animations[x].onComplete()
         }
