@@ -111,12 +111,16 @@ animations = [
             ctx.closePath();
             ctx.globalAlpha = 1;
         },
-        onComplete: function() {
+        completed: false,
+        onComplete: function(y) {
             console.log("Faded Out!!")
-            setTimeout(function(){
-                chosenAnimation = 1;
-                animFrame = 0;
-            }, 3000)
+            if (!completed) {
+                setTimeout(function(){
+                    chosenAnimation = 1;
+                    animFrame = 0;
+                }, 3000)
+            }
+            animations[y].completed = true;
         }
     },
     {
@@ -129,6 +133,7 @@ animations = [
             ctx.closePath();
             ctx.globalAlpha = 1;
         },
+        completed: false,
         onComplete: function() {
             console.log("Faded in!")
             chosenAnimation = 0;
@@ -152,7 +157,7 @@ function animate(x) {
         }
     } else {
         if (typeof(animations[x].onComplete) == typeof(Function)) {
-            animations[x].onComplete()
+            animations[x].onComplete(x)
         }
     }
 }
