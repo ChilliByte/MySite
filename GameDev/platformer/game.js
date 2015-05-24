@@ -119,7 +119,8 @@ animations = [
                     chosenAnimation = 1;
                     animFrame = 0;
                     animations[y].completed = false;
-                    
+                    animating = false;
+                    setTimeout(function(){animating = true},25)
                 }, 3000)
             }
             animations[y].completed = true;
