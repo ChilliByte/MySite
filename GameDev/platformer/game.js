@@ -20,13 +20,15 @@ currentLevel = levels[currentLevelInt];
 animating = false
 var chosenAnimation = 0
 function update() {
-    //Clear The Last Frame
-    ctx.clearRect(0, 0, 40*units, 20*units);
     if(animating) {
         animate(chosenAnimation)
     } else {
-    // check keys
+    //Clear The Last Frame
+    ctx.clearRect(0, 0, 40*units, 20*units);
+
+    //Check keys
     checkKeys()
+    
     //Factor in Friction and Gravity
     player.velX *= friction;
     player.velY += gravity;
@@ -35,6 +37,7 @@ function update() {
     //Change to green and begins drawing
     ctx.fillStyle = "#380";
     ctx.beginPath();
+    
     //Loop through the array of boxes in this level
     drawBoxes();
     
@@ -75,7 +78,8 @@ function update() {
         //Animate projectiles
         ctx.fill();
         ctx.fillStyle = "brown";
-        for(var m = 0; m < projectiles.length; m++) {
+        m = projectiles.length
+        while(m--) {
             ctx.fillRect(projectiles[m].x, projectiles[m].y, projectiles[m].height, projectiles[m].width);
             projectiles[m].x += projectiles[m].xIncrement;
             projectiles[m].y += projectiles[m].yIncrement;
@@ -87,10 +91,10 @@ function update() {
     //Hint Triggers
     displayHints()
     
-    if (debug) {
-        document.getElementById("stats").style.display = "block"
-        document.getElementById("stats").innerHTML = "X: " + player.x + "<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
-    }
+        if (debug) {
+            document.getElementById("stats").style.display = "block"
+            document.getElementById("stats").innerHTML = "X: " + player.x + "<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
+        }
     }
     requestAnimationFrame(update);
 }
@@ -143,7 +147,7 @@ function animate(x) {
             setTimeout(function(){
                 animFrame++
                 incrementFrame = true;
-            },80)
+            },50)
             incrementFrame = false
         }
     } else {
@@ -330,7 +334,8 @@ function checkKeys() {
     }
 }
 function drawBoxes() {
-    for (var i = 0; i < currentLevel.boxes.length; i++) {
+    i = currentLevel.boxes.length;
+    while (i--) {
         //draw each one
         ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
         //Figure out whether we've touched a box
@@ -355,9 +360,10 @@ function drawBoxes() {
             }
         }
         //Loop through each of the mobs in this level, and see if any of them have collided with a box.
-        for (var l = 0; l < currentLevel.mobs.length; l++) {
+        l = currentLevel.mobs.length
+        while (li) {
             currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.boxes[i])
-            if (currentLevel.mobs[l].collisionDir == "b") {
+            if (currentLevel.mobs[l].collisionDir === "b") {
                 currentLevel.mobs[l].grounded = true
             }
         }
@@ -365,7 +371,8 @@ function drawBoxes() {
     
 }
 function drawCollectibles() {
-    for (var j = 0; j < currentLevel.collectibles.length; j++) {
+    j = currentLevel.collectibles.length;
+    while (j--) {
         if (currentLevel.collectibles[j].collected == false) {
             ctx.rect(currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height)
             var collectCheck = colCheck(player, currentLevel.collectibles[j]);
@@ -381,7 +388,8 @@ function drawCollectibles() {
     
 }
 function drawMobs() {
-    for (var k = 0; k < currentLevel.mobs.length; k++) {
+    k = currentLevel.mobs.length;
+    while (k--) {
         if (!currentLevel.mobs[k].dead) {
             ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
             if (currentLevel.mobs[k].type == "patrol") {
