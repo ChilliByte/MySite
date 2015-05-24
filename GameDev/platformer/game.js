@@ -135,7 +135,14 @@ animations = [
 function animate(x) {
     animations[x].draw(x);
     if (animFrame < animations[x].frames.length) {
-        setTimeout(function(){animFrame++},500)
+        incrementFrame = true
+        if(incrementFrame) {
+            setTimeout(function(){
+                animFrame++
+                incrementFrame = true;
+            },500)
+            incrementFrame = false
+        }
     } else {
         if (typeof(animations[x].onComplete) == typeof(Function)) {
             animations[x].onComplete()
