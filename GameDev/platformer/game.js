@@ -125,6 +125,8 @@ animations = [
         },
         onComplete: function() {
             console.log("Faded in!")
+            chosenAnimation = 0;
+            animFrame = 0;
             animating = false;
         }
     }
