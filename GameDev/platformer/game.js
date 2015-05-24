@@ -119,8 +119,6 @@ animations = [
                     chosenAnimation = 1;
                     animFrame = 0;
                     animations[y].completed = false;
-                    animating = false;
-                    setTimeout(function(){animating = true},25)
                 }, 3000)
             }
             animations[y].completed = true;
@@ -129,8 +127,10 @@ animations = [
     {
         frames: [1,0.975,0.95,0.925,0.9,0.85,0.8,0.75,0.7,0.6,0.5,0.4,0.3,0.25,0.2,0.15,0.1,0.05,0.025,0],
         draw: function (y) {
-            //Clear The Last Frame
-            ctx.clearRect(0, 0, 40*units, 20*units);
+            if(frame > 1) {
+                //Clear The Last Frame
+                ctx.clearRect(0, 0, 40*units, 20*units);
+            }
             ctx.fillStyle = "#000"
             ctx.globalAlpha = animations[y].frames[animFrame];
             ctx.beginPath();
