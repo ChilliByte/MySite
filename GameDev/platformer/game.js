@@ -141,7 +141,7 @@ function animate(x) {
             setTimeout(function(){
                 animFrame++
                 incrementFrame = true;
-            },200)
+            },80)
             incrementFrame = false
         }
     } else {
