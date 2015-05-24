@@ -111,7 +111,7 @@ animations = [
 function animate(x) {
     animations[x].draw(x);
     if (frame < animations[x].frames.length) {
-        frame++
+        setTimeout(function(){frame++},200)
     } else {
         frames = 0;
         animating = false;
