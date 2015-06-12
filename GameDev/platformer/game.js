@@ -25,26 +25,12 @@ function update() {
     player.velY += gravity;
     player.grounded = false;
     
-    //Loop through the array of boxes in this level
     drawBoxes();
-    
-    //Start drawing
-    ctx.beginPath();
-    ctx.fillStyle = "orange";
-    
+    drawWater();
     drawCollectibles()
-    
-    ctx.closePath()
-    ctx.fill();
-    ctx.beginPath();
-    ctx.fillStyle = "#90f";
-    
     drawMobs()
     
-    ctx.closePath()
-    ctx.fill()
-    
-    
+   
     if (player.grounded) {
         player.velY = 0;
     }
@@ -100,6 +86,42 @@ function setChar(x) {
 }
 function confirmChar() {
     $("#charSelect").fadeOut()
+}
+function checkKeys() {
+    if (keys[38] || keys[32] || keys[87]) {
+        // up arrow or space
+        if (!player.jumping && player.grounded) {
+            player.jumping = true;
+            player.grounded = false;
+            if (gravityDown) {
+                player.velY = -player.speed * 2;
+            } else {
+                player.velY = player.speed * 2;
+            }
+        }
+    }
+    if (keys[39] || keys[68]) {
+        // right arrow
+        if (player.velX < player.speed) {
+            player.velX+= units/8;
+            player.lastDir = "l"
+            if (!triggers.firstStep) {
+                hint(player.x, 30, "Use the arrow keys to move!");
+                triggers.firstStep = true;
+            }
+        }
+    }
+    if (keys[37] || keys[65]) {
+        // left arrow
+        player.lastDir = "r"
+        if (player.velX > -player.speed) {
+            player.velX-= units/8;
+            if (!triggers.firstStep) {
+                hint(player.x, 30, "Use the arrow keys to move!");
+                triggers.firstStep = true;
+            }
+        }
+    }
 }
 function drawChar() {
     if (player.char == 1) {
@@ -235,42 +257,8 @@ function drawChar() {
         }
     }
 }
-function checkKeys() {
-    if (keys[38] || keys[32] || keys[87]) {
-        // up arrow or space
-        if (!player.jumping && player.grounded) {
-            player.jumping = true;
-            player.grounded = false;
-            if (gravityDown) {
-                player.velY = -player.speed * 2;
-            } else {
-                player.velY = player.speed * 2;
-            }
-        }
-    }
-    if (keys[39] || keys[68]) {
-        // right arrow
-        if (player.velX < player.speed) {
-            player.velX+= units/8;
-            player.lastDir = "l"
-            if (!triggers.firstStep) {
-                hint(player.x, 30, "Use the arrow keys to move!");
-                triggers.firstStep = true;
-            }
-        }
-    }
-    if (keys[37] || keys[65]) {
-        // left arrow
-        player.lastDir = "r"
-        if (player.velX > -player.speed) {
-            player.velX-= units/8;
-            if (!triggers.firstStep) {
-                hint(player.x, 30, "Use the arrow keys to move!");
-                triggers.firstStep = true;
-            }
-        }
-    }
-}
+function drawWater() {}
+function drawDoors() {}
 function drawBoxes() {
     //Change to green and begins drawing
     ctx.fillStyle = "#380";
@@ -316,6 +304,8 @@ function drawBoxes() {
     ctx.fill();
 }
 function drawCollectibles() {
+    ctx.beginPath();
+    ctx.fillStyle = "orange";
     j = currentLevel.collectibles.length;
     while (j--) {
         if (currentLevel.collectibles[j].collected == false) {
@@ -330,9 +320,12 @@ function drawCollectibles() {
             }
         }
     }
-    
+    ctx.closePath()
+    ctx.fill();
 }
 function drawMobs() {
+    ctx.beginPath();
+    ctx.fillStyle = "#90f";
     k = currentLevel.mobs.length;
     while (k--) {
         if (!currentLevel.mobs[k].dead) {
@@ -389,7 +382,8 @@ function drawMobs() {
             }
         }
     };
-    
+    ctx.closePath();
+    ctx.fill();
 }
 function displayHints() {
     if (!triggers.firstLevel) {
