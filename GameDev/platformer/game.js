@@ -102,7 +102,7 @@ function checkKeys() {
     }
     if (keys[39] || keys[68]) {
         // right arrow
-        if (player.velX < player.speed) {
+        if (player.velX < player.horizSpeed) {
             player.velX+= units/8;
             player.lastDir = "l"
             if (!triggers.firstStep) {
@@ -114,7 +114,7 @@ function checkKeys() {
     if (keys[37] || keys[65]) {
         // left arrow
         player.lastDir = "r"
-        if (player.velX > -player.speed) {
+        if (player.velX > -player.horizSpeed) {
             player.velX-= units/8;
             if (!triggers.firstStep) {
                 hint(player.x, 30, "Use the arrow keys to move!");
@@ -762,15 +762,15 @@ function checkKeys() {
             player.jumping = true;
             player.grounded = false;
             if (gravityDown) {
-                player.velY = -player.speed * 2;
+                player.velY = -player.horizSpeed * 2;
             } else {
-                player.velY = player.speed * 2;
+                player.velY = player.horizSpeed * 2;
             }
         }
     }
     if (keys[39] || keys[68]) {
         // right arrow
-        if (player.velX < player.speed) {
+        if (player.velX < player.horizSpeed) {
             player.velX+= units/8;
             player.lastDir = "l"
             if (!triggers.firstStep) {
@@ -782,7 +782,7 @@ function checkKeys() {
     if (keys[37] || keys[65]) {
         // left arrow
         player.lastDir = "r"
-        if (player.velX > -player.speed) {
+        if (player.velX > -player.horizSpeed) {
             player.velX-= units/8;
             if (!triggers.firstStep) {
                 hint(player.x, 30, "Use the arrow keys to move!");
