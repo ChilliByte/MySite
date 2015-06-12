@@ -94,9 +94,9 @@ function checkKeys() {
             player.jumping = true;
             player.grounded = false;
             if (gravityDown) {
-                player.velY = -player.speed * 2;
+                player.velY = -player.vertiSpeed;
             } else {
-                player.velY = player.speed * 2;
+                player.velY = player.vertiSpeed;
             }
         }
     }
