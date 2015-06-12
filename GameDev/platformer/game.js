@@ -329,6 +329,50 @@ function drawCollectibles() {
     ctx.closePath()
     ctx.fill();
 }
+function checkPlayerMobCollision() {
+    currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player)
+    if (currentLevel.mobs[k].hitPlayer === "t") {
+        currentLevel.mobs[k].dead = true;
+        console.log("Hit Mob Top")
+    }
+    if (currentLevel.mobs[k].hitPlayer === "l") {
+        player.velY -= 2;
+        player.velX += 8;
+        currentLevel.mobs[k].velX += 5;
+        console.log("Hit Mob Left");
+    }
+    if (currentLevel.mobs[k].hitPlayer === "r") {
+        player.velY -= 2;
+        player.velX -= 8;
+        currentLevel.mobs[k].velX -= 5;
+        console.log("Hit Mob Right");
+    }
+    if (currentLevel.mobs[k].hitPlayer === "b") {
+        player.velY -= 2;
+        player.velX -= 8;
+        console.log("Hit Mob Bottom");
+    }
+}
+function patrolMobAI() {
+    if (mobDir == "right") {
+        if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
+            currentLevel.mobs[k].velX++;
+        }
+        if (currentLevel.mobs[k].x > currentLevel.mobs[k].x2Limit) {
+            mobDir = "left";
+            currentLevel.mobs[k].x -= 5
+        }
+    }
+    if (mobDir == "left") {
+        if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
+            currentLevel.mobs[k].velX--;
+        }
+        if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {
+            mobDir = "right";
+            currentLevel.mobs[k].x += 5
+        }
+    }
+}
 function drawMobs() {
     ctx.beginPath();
     ctx.fillStyle = "#90f";
@@ -336,26 +380,11 @@ function drawMobs() {
     while (k--) {
         if (!currentLevel.mobs[k].dead) {
             ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
+            
             if (currentLevel.mobs[k].type == "patrol") {
-                if (mobDir == "right") {
-                    if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
-                        currentLevel.mobs[k].velX++;
-                    }
-                    if (currentLevel.mobs[k].x > currentLevel.mobs[k].x2Limit) {
-                        mobDir = "left";
-                        currentLevel.mobs[k].x -= 5
-                    }
-                }
-                if (mobDir == "left") {
-                    if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
-                        currentLevel.mobs[k].velX--;
-                    }
-                    if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {
-                        mobDir = "right";
-                        currentLevel.mobs[k].x += 5
-                    }
-                }
+                patrolMobAI()
             };
+            
             currentLevel.mobs[k].velX *= friction;
             currentLevel.mobs[k].velY += gravity;
             currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
@@ -364,28 +393,8 @@ function drawMobs() {
                 currentLevel.mobs[k].grounded = false;
             }
             currentLevel.mobs[k].y += currentLevel.mobs[k].velY;
-            currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player)
-            if (currentLevel.mobs[k].hitPlayer === "t") {
-                currentLevel.mobs[k].dead = true;
-                console.log("Hit Mob Top")
-            }
-            if (currentLevel.mobs[k].hitPlayer === "l") {
-                player.velY -= 2;
-                player.velX += 8;
-                currentLevel.mobs[k].velX += 5;
-                console.log("Hit Mob Left");
-            }
-            if (currentLevel.mobs[k].hitPlayer === "r") {
-                player.velY -= 2;
-                player.velX -= 8;
-                currentLevel.mobs[k].velX -= 5;
-                console.log("Hit Mob Right");
-            }
-            if (currentLevel.mobs[k].hitPlayer === "b") {
-                player.velY -= 2;
-                player.velX -= 8;
-                console.log("Hit Mob Bottom");
-            }
+            
+            checkPlayerMobCollision()
         }
     };
     ctx.closePath();
