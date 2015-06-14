@@ -222,7 +222,7 @@ level4.collectibles.push({
     collected: false
 });
 level4.mobs = [];
-level5.water = [];
+level4.water = [];
 //Level5
 level5.boxes = [];
 level5.boxes.push({
