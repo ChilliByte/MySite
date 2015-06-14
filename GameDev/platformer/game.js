@@ -118,13 +118,7 @@ function checkKeys() {
                     player.velY = player.vertiSpeed;
                 }
             }
-            player.vertiSpeed = normalVertiSpeed;
-            gravity = normalGravity;
-            friction = normalFriction;
         } else {
-            player.vertiSpeed = waterVertiSpeed;
-            gravity = waterGravity;
-            friction = waterFriction;
             if(gravityDown) {
                 player.velY = -player.vertiSpeed;
             } else {
@@ -135,7 +129,7 @@ function checkKeys() {
     if (keys[39] || keys[68]) {
         // right arrow
         if (player.velX < player.horizSpeed) {
-            player.velX+= units/8;
+            player.velX += player.horizSpeed;
             player.lastDir = "l"
         }
     }
@@ -143,8 +137,17 @@ function checkKeys() {
         // left arrow
         player.lastDir = "r"
         if (player.velX > -player.horizSpeed) {
-            player.velX-= units/8;
+            player.velX-= player.horizSpeed;
         }
+    }
+    if (!inwater) {
+        player.vertiSpeed = normalVertiSpeed;
+        gravity = normalGravity;
+        friction = normalFriction;
+    } else {
+        player.vertiSpeed = waterVertiSpeed;
+        gravity = waterGravity;
+        friction = waterFriction;
     }
 }
 
