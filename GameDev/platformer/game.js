@@ -262,7 +262,30 @@ function drawChar() {
         }
     }
 }
-function drawWater() {}
+function checkPlayerWaterCollision() {
+    var dir = colCheck(player, currentLevel.water[i],false);
+    //Do something depending on the direction the collision happened from.
+    if (dir === "l" || dir === "r") {
+ 
+    }
+}
+function drawWater() {
+    //Change to blue and begin drawing
+    ctx.fillStyle = "#66F";
+    ctx.beginPath();
+    
+    i = currentLevel.water.length;
+    while (i--) {
+        //Draw each box
+        ctx.rect(currentLevel.water[i].x, currentLevel.water[i].y, currentLevel.water[i].width, currentLevel.water[i].height);
+        //Figure out whether we've touched a box
+        checkPlayerWaterCollision()
+    }
+    
+    //End drawing and fill
+    ctx.closePath()
+    ctx.fill();
+}
 function drawDoors() {}
 function checkPlayerBoxCollision() {
     var dir = colCheck(player, currentLevel.boxes[i],true);
