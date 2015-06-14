@@ -270,6 +270,7 @@ function drawChar() {
     }
 }
 function checkPlayerWaterCollision() {
+    inWater = false;
     var dir = colCheck(player, currentLevel.water[i],false);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r" || dir === "t" || dir == "b") {
