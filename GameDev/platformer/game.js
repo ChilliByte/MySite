@@ -37,19 +37,9 @@ function update() {
     player.x += player.velX;
     player.y += player.velY;
     
-    if (player.x < 0) {
-        player.x = width - 5;
-        currentLevelInt -= 1;
-        currentLevel = levels[currentLevelInt];
-        console.log("Previous Level");
-    }
-    if (player.x > width) {
-        currentLevelInt += 1;
-        currentLevel = levels[currentLevelInt];
-        console.log("Next Level");
-        player.x = 10;
-    }
     
+    checkLevelChange()
+    checkTriggers()
     drawChar();
     requestAnimationFrame(update);
 }
@@ -81,11 +71,34 @@ function getPosition(event) {
   y -= canvas.offsetTop;
   
 }
+
+function checkTriggers() {
+    if (!triggers.firstStep) {
+        hint(player.x, 30, "Use the arrow keys to move!");
+        triggers.firstStep = true;
+    }
+}
+
+function checkLevelChange() {
+    if (player.x < 0) {
+        player.x = width - 5;
+        currentLevelInt -= 1;
+        currentLevel = levels[currentLevelInt];
+        console.log("Previous Level");
+    }
+    if (player.x > width) {
+        currentLevelInt += 1;
+        currentLevel = levels[currentLevelInt];
+        console.log("Next Level");
+        player.x = 10;
+    }
+}
+
 function setChar(x) {
-    player.char = x
+    player.char = x;
 }
 function confirmChar() {
-    $("#charSelect").fadeOut()
+    $("#charSelect").fadeOut();
 }
 function checkKeys() {
     if (keys[38] || keys[32] || keys[87]) {
@@ -105,10 +118,6 @@ function checkKeys() {
         if (player.velX < player.horizSpeed) {
             player.velX+= units/8;
             player.lastDir = "l"
-            if (!triggers.firstStep) {
-                hint(player.x, 30, "Use the arrow keys to move!");
-                triggers.firstStep = true;
-            }
         }
     }
     if (keys[37] || keys[65]) {
@@ -116,17 +125,13 @@ function checkKeys() {
         player.lastDir = "r"
         if (player.velX > -player.horizSpeed) {
             player.velX-= units/8;
-            if (!triggers.firstStep) {
-                hint(player.x, 30, "Use the arrow keys to move!");
-                triggers.firstStep = true;
-            }
         }
     }
 }
 function drawChar() {
     if (player.char == 1) {
         if (player.velX < -1) {
-            if (frame) {
+            if (frame > 3) {
                 //Facing Right, Left Leg Forward
                 ctx.drawImage(char1Sheet,0,0,16,32,player.x,player.y,units,2*units)
             } else {
@@ -137,7 +142,7 @@ function drawChar() {
             ctx.drawImage(char1Sheet,32,0,16,32,player.x,player.y,units,2*units)
         }
         if (player.velX > 1) {
-            if (frame) {
+            if (frame > 3) {
                 ctx.drawImage(char1Sheet,64,0,16,32,player.x,player.y,units,2*units)
             } else {
                 ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
