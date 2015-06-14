@@ -296,6 +296,12 @@ function checkPlayerWaterCollision() {
         if (player.velY > 7) {
             player.velY--
         }
+        if (player.velY > 4) {
+            player.velY--
+        }
+        if (player.velY > 1) {
+            player.velY--
+        }
     }
 }
 function drawWater() {
