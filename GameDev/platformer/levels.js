@@ -24,6 +24,12 @@ level1.boxes.push({
     width: 80 * units,
     height: 20 * units
 });
+level1.boxes.push({
+    x: 3*units,
+    y: 13*units,
+    width: units,
+    height: units
+});
 level1.collectibles = [];
 level1.mobs = [];
 // Level 2
