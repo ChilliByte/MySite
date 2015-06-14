@@ -145,9 +145,15 @@ function checkKeys() {
         }
     }
 }
+
+var playerHeight = 0;
 function drawChar() {
     if (player.char == 1) {
-        player.height = 2*units;
+        if(playerHeight = 0) {
+            player.height = 2*units;
+        } else {
+            player.height = playerHeight;
+        }
         player.width = 1*units;
         if (player.velX < -1) {
             if (frame > 3) {
@@ -283,10 +289,12 @@ function drawChar() {
 }
 function checkPlayerWaterCollision() {
     inWater = false;
+    playerHeight = 0
     var dir = colCheck(player, currentLevel.water[i],false);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r" || dir === "t" || dir == "b") {
         inWater = true;
+        playerHeight = Math.floor(units/4)
         if (player.velY > 13) {
             player.velY--
         }
