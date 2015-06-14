@@ -22,7 +22,7 @@ var canvas = document.getElementById("canvas"),
         lastDir: "l"
     },
     keys = [],
-    friction = units/42.5,
+    friction = player.horizSpeed / 5,
     projectiles = [],
     gravity = units/100, 
     gravityDown = true,
