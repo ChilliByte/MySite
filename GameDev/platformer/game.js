@@ -143,6 +143,8 @@ function checkKeys() {
 }
 function drawChar() {
     if (player.char == 1) {
+        player.height = 2*units;
+        player.width = 1*units;
         if (player.velX < -1) {
             if (frame > 3) {
                 //Facing Right, Left Leg Forward
