@@ -15,7 +15,7 @@ level1.boxes = [];
 level1.boxes.push({
     x: -10,
     y: 0,
-    width: 10,
+    width: 10*units,
     height: 40*units
 });
 level1.boxes.push({
@@ -25,13 +25,37 @@ level1.boxes.push({
     height: 20 * units
 });
 level1.boxes.push({
-    x: 3*units,
-    y: 12*units,
-    width: units,
-    height: units
+    x: 12*units,
+    y: 13*units,
+    width: 2*units,
+    height: 4*units
 });
+
+level1.boxes.push({
+    x: 13*units,
+    y: 10*units,
+    width: units,
+    height: 8*units
+});
+
+
+level1.boxes.push({
+    x: 27*units,
+    y: 10*units,
+    width: units,
+    height: 8*units
+});
+
+level1.water = [];
+level1.water.push({
+    x: 14*units,
+    y: 10*units,
+    width: 13*units,
+    height: 6*units
+}}
 level1.collectibles = [];
 level1.mobs = [];
+
 // Level 2
 level2.boxes = [];
 level2.boxes.push({
