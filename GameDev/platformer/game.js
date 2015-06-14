@@ -117,7 +117,7 @@ function checkKeys() {
             player.vertiSpeed = normalVertiSpeed;
             gravity = normalGravity;
         } else {
-            player.vertiSped = waterVertiSpeed;
+            player.vertiSpeed = waterVertiSpeed;
             gravity = waterGravity;
             if(gravityDown) {
                 player.velY = -player.vertiSpeed;
