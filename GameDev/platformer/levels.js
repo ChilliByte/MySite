@@ -26,7 +26,7 @@ level1.boxes.push({
 });
 level1.boxes.push({
     x: 3*units,
-    y: 13*units,
+    y: 12*units,
     width: units,
     height: units
 });
