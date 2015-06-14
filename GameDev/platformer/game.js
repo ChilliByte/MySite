@@ -103,7 +103,7 @@ function confirmChar() {
 function checkKeys() {
     if (keys[38] || keys[32] || keys[87]) {
         // up arrow or space
-        if(true){
+        if(!inWater){
             if (!player.jumping && player.grounded) {
                 player.jumping = true;
                 player.grounded = false;
@@ -113,6 +113,10 @@ function checkKeys() {
                     player.velY = player.vertiSpeed;
                 }
             }
+        } else {
+            if(gravityDown) {
+                //do stuff in water
+            } 
         }
     }
     if (keys[39] || keys[68]) {
