@@ -107,16 +107,17 @@ function checkKeys() {
             if (!player.jumping && player.grounded) {
                 player.jumping = true;
                 player.grounded = false;
-                if (gravityDown) {
-                    player.velY = -player.vertiSpeed;
-                } else {
-                    player.velY = player.vertiSpeed;
-                }
+                player.vertiSpeed = normalVertiSpeed;
+                gravity = normalGravity;
             }
         } else {
-            if(gravityDown) {
-                //do stuff in water
-            } 
+            player.vertiSped = waterVertiSpeed;
+            gravity = waterGravity;
+        }    
+        if(gravityDown) {
+            player.velY = -player.vertiSpeed;
+        } else {
+            player.velY = player.vertiSpeed;
         }
     }
     if (keys[39] || keys[68]) {
@@ -271,8 +272,8 @@ function drawChar() {
 function checkPlayerWaterCollision() {
     var dir = colCheck(player, currentLevel.water[i],false);
     //Do something depending on the direction the collision happened from.
-    if (dir === "l" || dir === "r") {
- 
+    if (dir === "l" || dir === "r" || dir === "t" || dir == "b") {
+        inWater = true;
     }
 }
 function drawWater() {
