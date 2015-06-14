@@ -9,7 +9,7 @@ var canvas = document.getElementById("canvas"),
     player = {
         x: units,
         y: 0,
-        width: (units/3*2),
+        width: Math.floor((units/3)*2),
         height: 2*units,
         horizSpeed: units/8,
         vertiSpeed: 1.5*units/5,
