@@ -149,7 +149,7 @@ function checkKeys() {
 var playerHeight = 0;
 function drawChar() {
     if (player.char == 1) {
-        if(playerHeight = 0) {
+        if(playerHeight == 0) {
             player.height = 2*units;
         } else {
             player.height = playerHeight;
