@@ -30,6 +30,7 @@ var canvas = document.getElementById("canvas"),
     waterGravity = units/1000,
     gravity = units/100, 
     gravityDown = true,
+    inWater = false,
     char1Sheet,
     mobDir = "right",
     frame = false;
