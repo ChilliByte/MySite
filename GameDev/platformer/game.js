@@ -140,7 +140,7 @@ function checkKeys() {
             player.velX-= player.horizSpeed;
         }
     }
-    if (!inwater) {
+    if (!inWater) {
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
         friction = normalFriction;
