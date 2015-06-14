@@ -15,7 +15,7 @@ level1.boxes = [];
 level1.boxes.push({
     x: -1*units,
     y: 0,
-    width: 1*units,
+    width: 1*units + 1,
     height: 40*units
 });
 level1.boxes.push({
