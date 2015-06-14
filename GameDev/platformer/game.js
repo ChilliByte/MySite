@@ -287,7 +287,13 @@ function checkPlayerWaterCollision() {
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r" || dir === "t" || dir == "b") {
         inWater = true;
-        if(player.velY > 7) {
+        if (player.velY > 13) {
+            player.velY--
+        }
+        if (player.velY > 10) {
+            player.velY--
+        }
+        if (player.velY > 7) {
             player.velY--
         }
     }
