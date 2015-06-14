@@ -107,17 +107,23 @@ function checkKeys() {
             if (!player.jumping && player.grounded) {
                 player.jumping = true;
                 player.grounded = false;
-                player.vertiSpeed = normalVertiSpeed;
-                gravity = normalGravity;
+                
+                if(gravityDown) {
+                    player.velY = -player.vertiSpeed;
+                } else {
+                    player.velY = player.vertiSpeed;
+                }
             }
+            player.vertiSpeed = normalVertiSpeed;
+            gravity = normalGravity;
         } else {
             player.vertiSped = waterVertiSpeed;
             gravity = waterGravity;
-        }    
-        if(gravityDown) {
-            player.velY = -player.vertiSpeed;
-        } else {
-            player.velY = player.vertiSpeed;
+            if(gravityDown) {
+                player.velY = -player.vertiSpeed;
+            } else {
+                player.velY = player.vertiSpeed;
+            }
         }
     }
     if (keys[39] || keys[68]) {
