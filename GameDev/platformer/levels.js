@@ -13,9 +13,9 @@ levels.push(level5);
 //Level1
 level1.boxes = [];
 level1.boxes.push({
-    x: -10,
+    x: -1*units,
     y: 0,
-    width: 10*units,
+    width: 1*units,
     height: 40*units
 });
 level1.boxes.push({
