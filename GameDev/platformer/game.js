@@ -103,13 +103,15 @@ function confirmChar() {
 function checkKeys() {
     if (keys[38] || keys[32] || keys[87]) {
         // up arrow or space
-        if (!player.jumping && player.grounded) {
-            player.jumping = true;
-            player.grounded = false;
-            if (gravityDown) {
-                player.velY = -player.vertiSpeed;
-            } else {
-                player.velY = player.vertiSpeed;
+        if(true){
+            if (!player.jumping && player.grounded) {
+                player.jumping = true;
+                player.grounded = false;
+                if (gravityDown) {
+                    player.velY = -player.vertiSpeed;
+                } else {
+                    player.velY = player.vertiSpeed;
+                }
             }
         }
     }
