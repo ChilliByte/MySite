@@ -120,9 +120,11 @@ function checkKeys() {
             }
             player.vertiSpeed = normalVertiSpeed;
             gravity = normalGravity;
+            friction = normalFriction;
         } else {
             player.vertiSpeed = waterVertiSpeed;
             gravity = waterGravity;
+            friction = waterFriction;
             if(gravityDown) {
                 player.velY = -player.vertiSpeed;
             } else {
