@@ -26,7 +26,7 @@ level1.boxes.push({
 });
 level1.boxes.push({
     x: 12*units,
-    y: 13*units,
+    y: 12*units,
     width: 2*units,
     height: 4*units
 });
@@ -52,7 +52,7 @@ level1.water.push({
     y: 10*units,
     width: 13*units,
     height: 6*units
-}}
+})
 level1.collectibles = [];
 level1.mobs = [];
 
