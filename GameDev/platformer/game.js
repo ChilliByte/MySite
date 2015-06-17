@@ -349,6 +349,8 @@ function checkPlayerBoxCollision() {
             player.jumping = false;
         }
         if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
+    } else {
+        touchingEdge = false;
     }
 }
 function checkMobBoxCollision() {
