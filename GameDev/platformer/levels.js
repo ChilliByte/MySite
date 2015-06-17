@@ -33,7 +33,7 @@ level1.boxes.push({
 
 level1.boxes.push({
     x: 13*units,
-    y: 10*units,
+    y: 11*units,
     width: units,
     height: 8*units
 });
@@ -41,10 +41,26 @@ level1.boxes.push({
 
 level1.boxes.push({
     x: 27*units,
-    y: 10*units,
+    y: 11*units,
     width: units,
     height: 8*units
 });
+
+level1.boxes.push({
+    x: 13*units,
+    y: 10*units,
+    width: units,
+    height: units
+});
+
+level1.boxes.push({
+    x: 27*units,
+    y: 10*units,
+    width: units,
+    height: units
+});
+
+
 
 level1.water = [];
 level1.water.push({
