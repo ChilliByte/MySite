@@ -328,6 +328,7 @@ function checkPlayerBoxCollision() {
     if (dir === "l" || dir === "r") {
         player.velX = 0;
         player.jumping = false;
+        console.log(i)
     } else if (dir === "b") {
         if (gravityDown) {
             player.grounded = true;
@@ -335,6 +336,7 @@ function checkPlayerBoxCollision() {
         } else {
             player.velY *= -1;
         }
+        console.log(i)
     } else if (dir === "t") {
         if (gravityDown) {
             player.velY *= -1;
@@ -342,6 +344,7 @@ function checkPlayerBoxCollision() {
             player.grounded = true;
             player.jumping = false;
         }
+        console.log(i)
     }
 }
 function checkMobBoxCollision() {
