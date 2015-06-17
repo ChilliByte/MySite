@@ -140,7 +140,7 @@ function checkKeys() {
             player.velX-= player.horizSpeed;
         }
     }
-    if (!inWater) {
+    if (!inWater || touchingEdge) {
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
         friction = normalFriction;
@@ -302,6 +302,10 @@ function checkPlayerWaterCollision() {
         if (player.velY > 1) {
             player.velY--
         }
+        
+        if ((player.velY > 1) && (player.velY < 2)) {
+            player.velY -= 0.1
+        }
     }
 }
 function drawWater() {
@@ -328,7 +332,7 @@ function checkPlayerBoxCollision() {
     if (dir === "l" || dir === "r") {
         player.velX = 0;
         player.jumping = false;
-        console.log(i)
+        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "b") {
         if (gravityDown) {
             player.grounded = true;
@@ -336,7 +340,7 @@ function checkPlayerBoxCollision() {
         } else {
             player.velY *= -1;
         }
-        console.log(i)
+        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "t") {
         if (gravityDown) {
             player.velY *= -1;
@@ -344,7 +348,7 @@ function checkPlayerBoxCollision() {
             player.grounded = true;
             player.jumping = false;
         }
-        console.log(i)
+        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     }
 }
 function checkMobBoxCollision() {
