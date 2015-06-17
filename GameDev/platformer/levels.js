@@ -50,14 +50,16 @@ level1.boxes.push({
     x: 13*units,
     y: 10*units,
     width: units,
-    height: units
+    height: units,
+    waterEdge: true
 });
 
 level1.boxes.push({
     x: 27*units,
     y: 10*units,
     width: units,
-    height: units
+    height: units,
+    waterEdge: true
 });
 
 
