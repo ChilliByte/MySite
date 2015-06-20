@@ -369,7 +369,7 @@ function checkPlayerBoxCollision() {
     } else {
         touchingEdge = false;
     }
-    if(debug){console.log("Touching Edge? " + touchingEdge);
+    if(debug){console.log("Touching Edge? " + touchingEdge)};
 }
 function checkMobBoxCollision() {
     //Loop through each of the mobs in this level, and see if any of them have collided with a box.
