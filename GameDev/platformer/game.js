@@ -515,6 +515,7 @@ function colCheck(shapeA, shapeB, solid) {
             }
         }
     }
+    if(debug) {console.log(colDir)};
     return colDir;
 }
 function hint(x, y, text) {
