@@ -13,9 +13,6 @@ triggers.firstCoin = false;
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
-var tempVelX;
-var tempVelY;
-
 function update() {
     //Clear The Last Frame
     ctx.clearRect(0, 0, 40*units, 20*units);
@@ -37,23 +34,9 @@ function update() {
     if (player.grounded) {
         player.velY = 0;
     }
-    
-    /*tempVelX = player.velX;
-    while(tempVelX--) {
-        player.x++;
-        i = currentLevel.boxes.length
-        while(i--) {
-            checkPlayerBoxCollision()
-        }
-    }
-    tempVelY = player.velY;
-    while(tempVelY--) {
-        player.y++;
-        i = currentLevel.boxes.length
-        while(i--) {
-            checkPlayerBoxCollision()
-        }
-    }*/
+    player.x += player.velX;
+    player.y += player.velY;
+
     if (debug) {
         document.getElementById("stats").style.display = "block"
         document.getElementById("stats").innerHTML = "X: " + player.x + "<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
@@ -369,7 +352,7 @@ function checkPlayerBoxCollision() {
     } else {
         touchingEdge = false;
     }
-    if(debug){console.log("Touching Edge? " + touchingEdge)};
+    console.log(touchingEdge);
 }
 function checkMobBoxCollision() {
     //Loop through each of the mobs in this level, and see if any of them have collided with a box.
@@ -391,7 +374,7 @@ function drawBoxes() {
         //Draw each box
         ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
         //Figure out whether we've touched a box
-        //checkPlayerBoxCollision()
+        checkPlayerBoxCollision()
         checkMobBoxCollision()
     }
     
