@@ -38,7 +38,7 @@ function update() {
         player.velY = 0;
     }
     
-    tempVelX = player.velX;
+    /*tempVelX = player.velX;
     while(tempVelX--) {
         player.x++;
         i = currentLevel.boxes.length
@@ -53,7 +53,7 @@ function update() {
         while(i--) {
             checkPlayerBoxCollision()
         }
-    }
+    }*/
     if (debug) {
         document.getElementById("stats").style.display = "block"
         document.getElementById("stats").innerHTML = "X: " + player.x + "<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
