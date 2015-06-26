@@ -101,7 +101,7 @@ function render() {
   ctx.fillStyle = "#333355";
   ctx.beginPath();
   ctx.moveTo(0, bgTerPoints[0]);
-  for (var t = pos; t < bgTerPoints.length; t++) {
+  for (var t = bgPos; t < bgTerPoints.length; t++) {
       ctx.lineTo(t, bgTerPoints[t]*2);
   }
   ctx.lineTo(canvas.width, canvas.height);
@@ -112,7 +112,7 @@ function render() {
   ctx.fillStyle = "black";
   ctx.beginPath();
   ctx.moveTo(0, foreTerPoints[0]);
-  for (var t = pos; t < foreTerPoints.length; t++) {
+  for (var t = forePos; t < foreTerPoints.length; t++) {
       ctx.lineTo(t, foreTerPoints[t]*2);
   }
   ctx.lineTo(canvas.width, canvas.height);
