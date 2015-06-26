@@ -1,24 +1,24 @@
+/* OLD NIGHT IDEA
 body {
   height:100vh;
   width:100%;
   background-color: #010723;
   /*CSS Background Gradient
    *Generated using CSS Grady
-   */
    
-  /* Chrome 10+,Safari */
+  Chrome 10+,Safari
   background : -webkit-linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%);
   
-  /* Firefox 4+ */ 
+  /* Firefox 4+  
   background : -moz-linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%);
   
-  /* Opera */
+  /* Opera 
   background : -o-linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%);
   
-  /* IE 10+ */
+  /* IE 10+ 
   background : -ms-linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%); 
   
-  /* W3C */
+  /* W3C 
   background : -linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%);
 }
 canvas {
@@ -29,3 +29,4 @@ canvas {
   bottom:0;
   box-sizing:border-box;
 }
+*/
