@@ -60,7 +60,7 @@ function render() {
   i = stars.length;
   while(i--) {
     currentStar = stars[i];
-      ctx.fillRect(currentStar[0],currentStar[1],currentStar[2]/10,currentStar[2]/10);
+      ctx.fillRect(currentStar[0]-(currentStar[2]/2),currentStar[1]-(currentStar[2]/2),currentStar[2]/10,currentStar[2]/10);
       currentStar[2]++;
       if(currentStar[2] == 40) {
         currentStar[2] = 0;
