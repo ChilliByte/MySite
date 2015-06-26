@@ -3,6 +3,8 @@ var ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
+
+/* OLD NIGHT IDEA
 //STARS
 var stars = [];
 var times = Math.floor((Math.random() * 30) + 10);
@@ -101,4 +103,4 @@ function render() {
   requestAnimFrame(animloop);
   render();
 })();
-
+*/
