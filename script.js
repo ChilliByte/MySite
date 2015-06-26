@@ -39,18 +39,7 @@ function terrain(width, height, displace, roughness) {
     return points;
 }
 
-  var terPoints = terrain(canvas.width, canvas.height, canvas.height / 4, 0.4);
-  // draw the points
-  ctx.beginPath();
-  ctx.moveTo(0, terPoints[0]);
-  for (var t = 1; t < terPoints.length; t++) {
-      ctx.lineTo(t, terPoints[t]);
-  }
-  // finish creating the rect so we can fill it
-  ctx.lineTo(canvas.width, canvas.height);
-  ctx.lineTo(0, canvas.height);
-  ctx.closePath();
-  ctx.fill();
+var terPoints = terrain(canvas.width, canvas.height, canvas.height / 4, 0.4);
 
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
@@ -77,6 +66,18 @@ function render() {
         currentStar[2] = 0;
       }
   }
+    // draw the points
+  ctx.beginPath();
+  ctx.moveTo(0, terPoints[0]);
+  for (var t = 1; t < terPoints.length; t++) {
+      ctx.lineTo(t, terPoints[t]);
+  }
+  // finish creating the rect so we can fill it
+  ctx.lineTo(canvas.width, canvas.height);
+  ctx.lineTo(0, canvas.height);
+  ctx.closePath();
+  ctx.fill();
+
 }
 
 (function animloop(){
