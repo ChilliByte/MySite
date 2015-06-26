@@ -79,9 +79,9 @@ function render() {
   ctx.fillStyle="#e9e9f9"
   ctx.fillRect(moonX,moonY,100,100)
   ctx.fillStyle="#bababa"
-  ctx.fillRect(moonX     , moonY + 20 ,10,30) //Strip on left
+  ctx.fillRect(moonX     , moonY + 20 ,20,30) //Strip on left
   ctx.fillRect(moonX + 10, moonY + 30 ,30,30) //Big Square at center left
-  ctx.fillRect(moonX + 30, moonY + 50 ,30,30) //Medium Square at lower left
+  ctx.fillRect(moonX + 20, moonY + 50 ,30,30) //Medium Square at lower left
   //ctx.fillRect(moonX + 30,moonY + 15,25,25)
   //ctx.fillRect(moonX + 40,moonY + 50,20,10)
   //ctx.fillRect(moonX + 50,moonY + 40,20,10)
