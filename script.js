@@ -61,6 +61,8 @@ window.requestAnimFrame = (function(){
 
 var i;
 var currentStar;
+var forePos = 1;
+var bgPos = 1;
 function render() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
   
@@ -96,8 +98,6 @@ function render() {
   //TERRAIN
   //FROM somethinghitme 
   //URL: http://www.somethinghitme.com/2013/11/11/simple-2d-terrain-with-midpoint-displacement/
-  forePos = 1;
-  bgPos = 1
   ctx.fillStyle = "#333355";
   ctx.beginPath();
   ctx.moveTo(0, bgTerPoints[0]);
