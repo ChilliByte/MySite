@@ -39,12 +39,16 @@ function render() {
   while(i--) {
     currentStar = stars[i];
       ctx.fillRect(currentStar[0],currentStar[1],3,3);
-  
-      ctx.fillRect(currentStar[0],currentStar[1] - 15,3,9);
-      ctx.fillRect(currentStar[0],currentStar[1] + 9,3,9);
-      ctx.fillRect(currentStar[0] - 15,currentStar[1],9,3);
-      ctx.fillRect(currentStar[0] + 9,currentStar[1],9,3);
       
+      ctx.fillRect(currentStar[0],currentStar[1] - 15,3,currentStar[2]);
+      ctx.fillRect(currentStar[0],currentStar[1] + 9,3,currentStar[2]);
+      ctx.fillRect(currentStar[0] - 15,currentStar[1],currentStar[2],3);
+      ctx.fillRect(currentStar[0] + 9,currentStar[1],currentStar[2],3);
+      
+      currentStar[2]++;
+      if(currentStar[2] == 12) {
+        currentStar[2] = 0;
+      }
   }
 }
 
