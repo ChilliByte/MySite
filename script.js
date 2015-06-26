@@ -70,7 +70,7 @@ function render() {
   ctx.beginPath();
   ctx.moveTo(0, terPoints[0]);
   for (var t = 1; t < terPoints.length; t++) {
-      ctx.lineTo(t, terPoints[t]);
+      ctx.lineTo(t, terPoints[t] - 100);
   }
   // finish creating the rect so we can fill it
   ctx.lineTo(canvas.width, canvas.height);
