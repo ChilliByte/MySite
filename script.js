@@ -9,9 +9,9 @@ while(times--) {
   starY = Math.floor((Math.random() * 1000) + 1);
   ctx.fillRect(starX,starY,3,3);
   
-  ctx.fillRect(starX,starY - 12,3,9);
-  ctx.fillRect(starX,starY + 12,3,9);
-  ctx.fillRect(starX - 12,starY,9,3);
-  ctx.fillRect(starX + 12,starY,9,3);
+  ctx.fillRect(starX,starY - 15,3,9);
+  ctx.fillRect(starX,starY + 9,3,9);
+  ctx.fillRect(starX - 15,starY,9,3);
+  ctx.fillRect(starX + 19,starY,9,3);
   
 }
