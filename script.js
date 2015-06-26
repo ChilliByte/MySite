@@ -39,7 +39,7 @@ function terrain(width, height, displace, roughness) {
     return points;
 }
 
-var terPoints = terrain(canvas.width, canvas.height / 4, canvas.height / 4, 0.4);
+var terPoints = terrain(canvas.width, canvas.height * 1.2, canvas.height / 4, 0.4);
 
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
