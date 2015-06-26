@@ -4,7 +4,7 @@ canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
 var stars = [];
-var times = Math.floor((Math.random() * 40) + 10);
+var times = Math.floor((Math.random() * 30) + 10);
 while(times--) {
   ctx.fillStyle = "white";
   starX = Math.floor((Math.random() * window.innerWidth - 33) + 33);
@@ -44,6 +44,7 @@ function render() {
       ctx.fillRect(currentStar[0],currentStar[1] + 9,3,9);
       ctx.fillRect(currentStar[0] - 15,currentStar[1],9,3);
       ctx.fillRect(currentStar[0] + 9,currentStar[1],9,3);
+      
   }
 }
 
