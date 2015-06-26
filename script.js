@@ -58,6 +58,7 @@ var currentStar;
 function render() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
   i = stars.length;
+  ctx.fillStyle = "white";
   while(i--) {
     currentStar = stars[i];
       ctx.fillRect(currentStar[0]-(currentStar[2]/50),currentStar[1]-(currentStar[2]/50),currentStar[2]/25,currentStar[2]/25);
