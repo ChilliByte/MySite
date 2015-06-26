@@ -42,7 +42,8 @@ function terrain(width, height, displace, roughness) {
     return points;
 }
 
-var terPoints = terrain(canvas.width, canvas.height, canvas.height / 3, 0.5);
+var foreTerPoints = terrain(canvas.width, canvas.height, canvas.height / 3, 0.5);
+var bgTerPoints = terrain(canvas.width, canvas.height, canvas.height / 3, 0.5);
 
 //MOON
 var moonX = Math.floor((Math.random() * window.innerWidth - 250) + 250);
@@ -95,11 +96,23 @@ function render() {
   //TERRAIN
   //FROM somethinghitme 
   //URL: http://www.somethinghitme.com/2013/11/11/simple-2d-terrain-with-midpoint-displacement/
-  ctx.fillStyle = "black";
+  //Background
+  ctx.fillStyle = "#333366";
   ctx.beginPath();
   ctx.moveTo(0, terPoints[0]);
-  for (var t = 1; t < terPoints.length; t++) {
-      ctx.lineTo(t, terPoints[t] + 100);
+  for (var t = 1; t < bgTerPoints.length; t++) {
+      ctx.lineTo(t, bgTerPoints[t] + 100);
+  }
+  ctx.lineTo(canvas.width, canvas.height);
+  ctx.lineTo(0, canvas.height);
+  ctx.closePath();
+  ctx.fill();
+  //Foreground
+  ctx.fillStyle = "black";
+  ctx.beginPath();
+  ctx.moveTo(0, foreTerPoints[0]);
+  for (var t = 1; t < foreTerPoints.length; t++) {
+      ctx.lineTo(t, foreTerPoints[t] + 100);
   }
   ctx.lineTo(canvas.width, canvas.height);
   ctx.lineTo(0, canvas.height);
