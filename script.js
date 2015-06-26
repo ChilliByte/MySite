@@ -76,7 +76,7 @@ function render() {
   }
   
   //MOON
-  ctx.fillStyle="#bbbbdd"
+  ctx.fillStyle="#e2e2f1"
   ctx.fillRect(moonX,moonY,100,100)
   
   //TERRAIN
