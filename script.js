@@ -45,8 +45,8 @@ function terrain(width, height, displace, roughness) {
 var terPoints = terrain(canvas.width, canvas.height, canvas.height / 3, 0.5);
 
 //MOON
-var moonX = Math.floor((Math.random() * window.innerWidth - 150) + 150);
-var moonY = Math.floor((Math.random() * window.innerHeight/2) + 150);
+var moonX = Math.floor((Math.random() * window.innerWidth - 250) + 250);
+var moonY = Math.floor((Math.random() * window.innerHeight/2) + 250);
 
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
@@ -79,7 +79,8 @@ function render() {
   ctx.fillStyle="#e9e9f9"
   ctx.fillRect(moonX,moonY,100,100)
   ctx.fillStyle="#bababa"
-  ctx.fillRect(moonX,moonY + 30,10,50)
+  ctx.fillRect(moonX,moonY + 20,10,50)
+  ctx.fillRect(moonX + 10,moonY + 30,40,40)
   
   
   //TERRAIN
