@@ -46,7 +46,7 @@ var terPoints = terrain(canvas.width, canvas.height, canvas.height / 3, 0.5);
 
 //MOON
 var moonX = Math.floor((Math.random() * window.innerWidth - 250) + 250);
-var moonY = Math.floor((Math.random() * window.innerHeight/2) + 250);
+var moonY = Math.floor((Math.random() * window.innerHeight/2) + 50);
 
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
