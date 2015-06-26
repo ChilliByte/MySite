@@ -3,6 +3,13 @@ var ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
+for(var i=0;i<70;i++){
+	ctx.fillStyle ="rgba(" + Math.floor((Math.random()*255) + 30) + "," +  Math.floor((Math.random()*255) + 30) + "," +  Math.floor(Math.random()*100) + ",0.25)";
+	ctx.beginPath();      
+	ctx.arc(Math.floor(Math.random()*(window.innerWidth)+1) ,Math.floor(Math.random()*(window.innerHeight)+1),Math.floor(Math.random()*(50)+1),0,2*Math.PI); 
+	ctx.fill();
+}
+
 
 /* OLD NIGHT IDEA
 //STARS
