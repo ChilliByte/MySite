@@ -79,10 +79,10 @@ function render() {
   ctx.fillStyle="#e9e9f9"
   ctx.fillRect(moonX,moonY,100,100)
   ctx.fillStyle="#bababa"
-  ctx.fillRect(moonX,moonY + 20,10,40)
-  ctx.fillRect(moonX,moonY + 30,30,30)
-  ctx.fillRect(moonX + 20,moonY + 50,30,30)
-  ctx.fillRect(moonX + 40,moonY + 40,20,20)
+  ctx.fillRect(moonX,moonY + 10,10,40)
+  ctx.fillRect(moonX,moonY + 20,25,25)
+  ctx.fillRect(moonX + 15,moonY + 35,25,25)
+  ctx.fillRect(moonX + 35,moonY + 25,20,20)
   
   //TERRAIN
   //FROM somethinghitme 
