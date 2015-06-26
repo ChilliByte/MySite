@@ -79,31 +79,15 @@ function render() {
   ctx.fillRect(moonX + 40, moonY + 70 ,20,20); //Lower large on moon
   
   //TERRAIN
-  //FROM somethinghitme 
-  //URL: http://www.somethinghitme.com/2013/11/11/simple-2d-terrain-with-midpoint-displacement/
   ctx.fillStyle = "#333355";
-  ctx.beginPath();
-  ctx.moveTo(0, bgTerPoints[0]);
   for (var t = 1; t < bgTerPoints.length; t++) {
-      ctx.lineTo(t, bgTerPoints[t]*2);
+      ctx.fillRect(t,bgTerPoints[t],1,1000)
   }
-  ctx.lineTo(canvas.width, canvas.height);
-  ctx.lineTo(0, canvas.height);
-  ctx.closePath();
-  ctx.fill();
-  
+
   ctx.fillStyle = "black";
-  ctx.beginPath();
   ctx.moveTo(0, foreTerPoints[0]);
   for (var t = 1; t < foreTerPoints.length; t++) {
-      ctx.lineTo(t, foreTerPoints[t]*2);
   }
-  ctx.lineTo(canvas.width, canvas.height);
-  ctx.lineTo(0, canvas.height);
-  ctx.closePath();
-  ctx.fill();
-  //forePos++;
-  //bgPos+= 2;
 }
 
 //START Animation
