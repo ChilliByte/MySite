@@ -16,17 +16,17 @@ while(times--) {
   
 }
 
-function terrain() {
+function terrain(x) {
     var points = [],
     i = canvas.width;
     while(i--) {
-      points.push(canvas.height / 2);
+      points.push(x + Math.floor((Math.random() * 10) - 10));
     }
     return points;
 }
 
-var foreTerPoints = terrain();
-var bgTerPoints = terrain();
+var foreTerPoints = terrain(window.innerHeight/2);
+var bgTerPoints = terrain(2*window.innerHeight/3);
 
 //MOON
 var moonX = Math.floor((Math.random() * window.innerWidth - 250) + 250);
@@ -87,6 +87,7 @@ function render() {
   ctx.fillStyle = "black";
   ctx.moveTo(0, foreTerPoints[0]);
   for (var t = 1; t < foreTerPoints.length; t++) {
+          ctx.fillRect(t,foreTerPoints[t],1,1000)
   }
 }
 
