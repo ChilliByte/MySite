@@ -81,8 +81,8 @@ function render() {
   ctx.fillStyle="#bababa"
   ctx.fillRect(moonX,moonY + 20,10,40)
   ctx.fillRect(moonX,moonY + 30,30,30)
-  ctx.fillRect(moonX + 30,moonY + 50,30,30)
-  ctx.fillRect(moonX + 50,moonY + 40,20,20)
+  ctx.fillRect(moonX + 20,moonY + 50,30,30)
+  ctx.fillRect(moonX + 40,moonY + 40,20,20)
   
   //TERRAIN
   //FROM somethinghitme 
