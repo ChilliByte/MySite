@@ -39,7 +39,7 @@ function terrain(width, height, displace, roughness) {
     return points;
 }
 
-var terPoints = terrain(canvas.width, canvas.height * 1.2, canvas.height / 4, 0.4);
+var terPoints = terrain(canvas.width, canvas.height * 1.2, canvas.height / 2, 0.4);
 
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
@@ -62,7 +62,7 @@ function render() {
     currentStar = stars[i];
       ctx.fillRect(currentStar[0]-(currentStar[2]/50),currentStar[1]-(currentStar[2]/50),currentStar[2]/25,currentStar[2]/25);
       currentStar[2]++;
-      if(currentStar[2] == 100) {
+      if(currentStar[2] >= 100) {
         currentStar[2] = 0;
       }
   }
