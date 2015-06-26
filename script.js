@@ -83,7 +83,7 @@ function render() {
   ctx.fillRect(moonX,moonY + 30,30,30)
   ctx.fillRect(moonX + 15,moonY + 45,25,25)
   ctx.fillRect(moonX + 35,moonY + 25,20,20)
-  ctx.fillRect(moonX + 55,moonY + 35,20,10)
+  ctx.fillRect(moonX + 55,moonY + 55,20,10)
   
   //TERRAIN
   //FROM somethinghitme 
