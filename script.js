@@ -64,7 +64,7 @@ function render() {
         currentStar[2] = 0;
       }
   }
-  var terPoints = terrain(width, height, height / 4, 0.6);
+  var terPoints = terrain(canvas.width, canvas.height, canvas.height / 4, 0.45);
 
   // draw the points
   ctx.beginPath();
