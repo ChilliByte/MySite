@@ -56,7 +56,7 @@ window.requestAnimFrame = (function(){
 var i;
 var currentStar;
 function render() {
-  ctx.clearRect(0,0,1000,1000);
+  ctx.clearRect(0,0,canvas.height,canvas.width);
   i = stars.length;
   while(i--) {
     currentStar = stars[i];
