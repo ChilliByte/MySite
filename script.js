@@ -76,7 +76,7 @@ function render() {
   }
 
   //MOON
-  ctx.fillStyle="#e9e9f9";
+  ctx.fillStyle="#d5d5e9";
   ctx.fillRect(moonX,moonY,100,100);
   ctx.fillStyle="#999999";
   ctx.fillRect(moonX     , moonY + 20 ,10,30); //Strip on left
@@ -88,7 +88,7 @@ function render() {
   ctx.fillRect(moonX + 55, moonY + 25 ,15,15); //center top square
   ctx.fillRect(moonX + 70, moonY + 40 ,20,10); //Right side of moon
   ctx.fillRect(moonX + 80, moonY + 50 ,10,20); //Lower right side of moon
-  ctx.fillStyle = "#EEEEEE";
+  ctx.fillStyle = "#ffffff";
   ctx.fillRect(moonX + 30, moonY + 40 ,10,10); //Small central crater
   ctx.fillRect(moonX + 40, moonY + 70 ,20,20); //Lower large on moon
   
