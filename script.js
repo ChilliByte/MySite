@@ -19,7 +19,7 @@ while(times--) {
 function terrain(x,type) {
     var points = [],
     i = canvas.width;
-    offset = window.innerHeight/4 + Math.floor((Math.random() * 30) + 10);
+    offset = window.innerHeight/4 + Math.floor((Math.random() * 60) + 30);
     while(i--) {
       if (type == "sin") {
           points.push(4*x/5 + (Math.sin(i/150) * offset));
@@ -86,13 +86,13 @@ function render() {
   //TERRAIN
   ctx.fillStyle = "#333355";
   for (var t = 1; t < bgTerPoints.length; t++) {
-      ctx.fillRect(t,bgTerPoints[t],1,1000)
+      ctx.fillRect(t,bgTerPoints[t] + 50,1,1000)
   }
 
   ctx.fillStyle = "black";
   ctx.moveTo(0, foreTerPoints[0]);
   for (var t = 1; t < foreTerPoints.length; t++) {
-          ctx.fillRect(t,foreTerPoints[t],1,1000)
+          ctx.fillRect(t,foreTerPoints[t] + 50,1,1000)
   }
 }
 
