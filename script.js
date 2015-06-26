@@ -22,9 +22,9 @@ function terrain(x,type) {
     offset = window.innerHeight/4 + Math.floor((Math.random() * 50) + 10);
     while(i--) {
       if (type == "sin") {
-          points.push(4*x/5 + (Math.sin(i/175) * offset));
+          points.push(4*x/5 + (Math.sin(i/200) * offset));
       } else {
-          points.push(4*x/5 + (Math.cos(i/175) * offset));
+          points.push(4*x/5 + (Math.cos(i/200) * offset));
       }
     }
     return points;
