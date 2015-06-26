@@ -42,7 +42,7 @@ function terrain(width, height, displace, roughness) {
     return points;
 }
 
-var terPoints = terrain(canvas.width, canvas.height, canvas.height / 8, 0.3);
+var terPoints = terrain(canvas.width, canvas.height, canvas.height / 3, 0.5);
 
 //MOON
 var moonX = Math.floor((Math.random() * window.innerWidth - 150) + 150);
