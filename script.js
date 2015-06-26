@@ -20,7 +20,7 @@ function terrain(x) {
     var points = [],
     i = canvas.width;
     while(i--) {
-      points.push(x + Math.floor((Math.random() * 10) - 10));
+      points.push(Math.sin(i) * Math.floor((Math.random() * x) - 0));
     }
     return points;
 }
