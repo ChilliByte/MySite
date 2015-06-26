@@ -34,3 +34,11 @@ body.scrolled nav {
   border-bottom:5px solid rgba(20,20,20,1);
   transition: background-color 2s, border-bottom 2s;
 }
+
+section {
+  height:100%;
+  width:100%;
+  margin:0;
+  border:5px solid white;
+  box-sizing:border-box;
+}
