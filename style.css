@@ -1,5 +1,23 @@
 body {
-  background-color: #010723;
+  /*background-color: #010723;*/
+  /*CSS Background Gradient
+   *Generated using CSS Grady
+   */
+   
+  /* Chrome 10+,Safari */
+  background : -webkit-linear-gradient(top, rgb(20, 0, 20) 00%, rgb(0, 0, 0) 100%);
+  
+  /* Firefox 4+ */ 
+  background : -moz-linear-gradient(top, rgb(20, 0, 20) 00%, rgb(0, 0, 0) 100%);
+  
+  /* Opera */
+  background : -o-linear-gradient(top, rgb(20, 0, 20) 00%, rgb(0, 0, 0) 100%);
+  
+  /* IE 10+ */
+  background : -ms-linear-gradient(top, rgb(20, 0, 20) 00%, rgb(0, 0, 0) 100%); 
+  
+  /* W3C */
+  background : -linear-gradient(top, rgb(20, 0, 20) 00%, rgb(0, 0, 0) 100%);
 }
 canvas {
   position:fixed;
