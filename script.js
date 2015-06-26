@@ -16,22 +16,25 @@ while(times--) {
   
 }
 
-function terrain(x) {
+function terrain(x,type) {
     var points = [],
     i = canvas.width;
-    offset = Math.floor((Math.random() * x/5) - 0)
     while(i--) {
-      points.push(x + (Math.sin(i / 75) * offset));
+      if (type == "sin") {
+          points.push(x + (Math.sin(i / 75));
+      } else {
+          points.push(x + (Math.cos(i / 75));
+      }
     }
     return points;
 }
 
-var foreTerPoints = terrain(2*window.innerHeight/3);
-var bgTerPoints = terrain(window.innerHeight/2);
+var foreTerPoints = terrain(2*window.innerHeight/3,"sin");
+var bgTerPoints = terrain(window.innerHeight/2,"cos");
 
 //MOON
-var moonX = Math.floor((Math.random() * window.innerWidth - 250) + 250);
-var moonY = Math.floor((Math.random() * window.innerHeight/2) + 50);
+var moonX = window.innerWidth - 250;
+var moonY = window.innerHeight/2;
 
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
