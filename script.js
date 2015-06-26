@@ -30,8 +30,8 @@ function terrain(x,type) {
     return points;
 }
 
-var foreTerPoints = terrain(3*window.innerHeight/4,"sin");
-var bgTerPoints = terrain(window.innerHeight/1.5,"cos");
+var foreTerPoints = terrain(3.99*window.innerHeight/4 - 100,"sin");
+var bgTerPoints = terrain(window.innerHeight/1,"cos");
 
 //MOON
 var moonX = window.innerWidth - 250;
