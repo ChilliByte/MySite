@@ -21,16 +21,16 @@ function terrain(x,type) {
     i = canvas.width;
     while(i--) {
       if (type == "sin") {
-          points.push(x + (Math.sin(i / 75)));
+          points.push(4*x/5 + (Math.sin(i/150) * window.innerHeight/4));
       } else {
-          points.push(x + (Math.cos(i / 75)));
+          points.push(4*x/5 + (Math.cos(i/150) * window.innerHeight/4));
       }
     }
     return points;
 }
 
-var foreTerPoints = terrain(2*window.innerHeight/3,"sin");
-var bgTerPoints = terrain(window.innerHeight/2,"cos");
+var foreTerPoints = terrain(3*window.innerHeight/4,"sin");
+var bgTerPoints = terrain(window.innerHeight/4,"cos");
 
 //MOON
 var moonX = window.innerWidth - 250;
