@@ -74,17 +74,23 @@ function render() {
         currentStar[2] = 0;
       }
   }
-  
+
   //MOON
-  ctx.fillStyle="#e9e9f9"
-  ctx.fillRect(moonX,moonY,100,100)
-  ctx.fillStyle="#bababa"
-  ctx.fillRect(moonX     , moonY + 20 ,20,30) //Strip on left
-  ctx.fillRect(moonX + 10, moonY + 30 ,30,40) //Big Square at center left
-  ctx.fillRect(moonX + 20, moonY + 50 ,30,30) //Medium Square at lower left
-  //ctx.fillRect(moonX + 30,moonY + 15,25,25)
-  //ctx.fillRect(moonX + 40,moonY + 50,20,10)
-  //ctx.fillRect(moonX + 50,moonY + 40,20,10)
+  ctx.fillStyle="#e9e9f9";
+  ctx.fillRect(moonX,moonY,100,100);
+  ctx.fillStyle="#999999";
+  ctx.fillRect(moonX     , moonY + 20 ,10,30); //Strip on left
+  ctx.fillRect(moonX + 10, moonY + 30 ,20,40); //Big Square at center left
+  ctx.fillRect(moonX + 20, moonY + 50 ,20,30); //Medium Square at lower left
+  ctx.fillRect(moonX + 20, moonY + 20 ,20,20); //Medium Square, upper center
+  ctx.fillRect(moonX + 30, moonY + 50 ,20,10); 
+  ctx.fillRect(moonX + 40, moonY + 40 ,20,10);
+  ctx.fillRect(moonX + 55, moonY + 25 ,15,15); //center top square
+  ctx.fillRect(moonX + 70, moonY + 40 ,20,10); //Right side of moon
+  ctx.fillRect(moonX + 80, moonY + 50 ,10,20); //Lower right side of moon
+  ctx.fillStyle = "#EEEEEE";
+  ctx.fillRect(moonX + 30, moonY + 40 ,10,10); //Small central crater
+  ctx.fillRect(moonX + 40, moonY + 70 ,20,20); //Lower large on moon
   
   //TERRAIN
   //FROM somethinghitme 
