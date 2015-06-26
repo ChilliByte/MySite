@@ -99,7 +99,7 @@ function render() {
   //Background
   ctx.fillStyle = "#333366";
   ctx.beginPath();
-  ctx.moveTo(0, terPoints[0]);
+  ctx.moveTo(0, bgTerPoints[0]);
   for (var t = 1; t < bgTerPoints.length; t++) {
       ctx.lineTo(t, bgTerPoints[t] + 100);
   }
