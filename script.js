@@ -19,18 +19,19 @@ while(times--) {
 function terrain(x,type) {
     var points = [],
     i = canvas.width;
+    offset = window.innerHeight/4 + Math.floor((Math.random() * 30) + 10);
     while(i--) {
       if (type == "sin") {
-          points.push(4*x/5 + (Math.sin(i/150) * window.innerHeight/4));
+          points.push(4*x/5 + (Math.sin(i/150) * offset));
       } else {
-          points.push(4*x/5 + (Math.cos(i/150) * window.innerHeight/4));
+          points.push(4*x/5 + (Math.cos(i/150) * offset));
       }
     }
     return points;
 }
 
 var foreTerPoints = terrain(3*window.innerHeight/4,"sin");
-var bgTerPoints = terrain(window.innerHeight/4,"cos");
+var bgTerPoints = terrain(window.innerHeight/1.5,"cos");
 
 //MOON
 var moonX = window.innerWidth - 250;
