@@ -76,7 +76,7 @@ function render() {
   }
 
   //MOON
-  ctx.fillStyle="#d5d5e9";
+  ctx.fillStyle="#d5d5d9";
   ctx.fillRect(moonX,moonY,100,100);
   ctx.fillStyle="#999999";
   ctx.fillRect(moonX     , moonY + 20 ,10,30); //Strip on left
