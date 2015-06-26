@@ -19,7 +19,7 @@ while(times--) {
 function terrain(x) {
     var points = [],
     i = canvas.width;
-    offset = Math.floor((Math.random() * x/50) - 0)
+    offset = Math.floor((Math.random() * x/5) - 0)
     while(i--) {
       points.push(x + (Math.sin(i / 75) * offset));
     }
