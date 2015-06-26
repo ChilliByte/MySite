@@ -101,7 +101,7 @@ function render() {
   ctx.beginPath();
   ctx.moveTo(0, bgTerPoints[0]);
   for (var t = 1; t < bgTerPoints.length; t++) {
-      ctx.lineTo(t, bgTerPoints[t]);
+      ctx.lineTo(t, bgTerPoints[t]/2);
   }
   ctx.lineTo(canvas.width, canvas.height);
   ctx.lineTo(0, canvas.height);
@@ -112,7 +112,7 @@ function render() {
   ctx.beginPath();
   ctx.moveTo(0, foreTerPoints[0]);
   for (var t = 1; t < foreTerPoints.length; t++) {
-      ctx.lineTo(t, foreTerPoints[t] + 100);
+      ctx.lineTo(t, foreTerPoints[t]/2);
   }
   ctx.lineTo(canvas.width, canvas.height);
   ctx.lineTo(0, canvas.height);
