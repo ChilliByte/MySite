@@ -35,10 +35,13 @@ body.scrolled nav {
   transition: background-color 2s, border-bottom 2s;
 }
 
+main{
+  height: calc(100% - 60px);
+
 section {
   height:100%;
   width:100%;
-  margin:0;
+  margin:60px 0 0;
   border:5px solid white;
   box-sizing:border-box;
 }
