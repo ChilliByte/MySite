@@ -83,7 +83,7 @@ function render() {
   //URL: http://www.somethinghitme.com/2013/11/11/simple-2d-terrain-with-midpoint-displacement/
   ctx.fillStyle = "#333355";
   ctx.beginPath();
-  ctx.moveTo(-bgPos, bgTerPoints[0]);
+  ctx.moveTo(0, bgTerPoints[0]);
   for (var t = 1; t < bgTerPoints.length; t++) {
       ctx.lineTo(t, bgTerPoints[t]*2);
   }
@@ -94,7 +94,7 @@ function render() {
   
   ctx.fillStyle = "black";
   ctx.beginPath();
-  ctx.moveTo(-forePos, foreTerPoints[0]);
+  ctx.moveTo(0, foreTerPoints[0]);
   for (var t = 1; t < foreTerPoints.length; t++) {
       ctx.lineTo(t, foreTerPoints[t]*2);
   }
@@ -102,8 +102,8 @@ function render() {
   ctx.lineTo(0, canvas.height);
   ctx.closePath();
   ctx.fill();
-  forePos++;
-  bgPos+= 2;
+  //forePos++;
+  //bgPos+= 2;
 }
 
 //START Animation
