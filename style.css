@@ -13,35 +13,15 @@ body {
   background-repeat:no-repeat;
 }
 
-/* OLD NIGHT IDEA
-body {
-  height:100vh;
-  width:100%;
-  background-color: #010723;
-  /*CSS Background Gradient
-   *Generated using CSS Grady
-   
-  Chrome 10+,Safari
-  background : -webkit-linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%);
-  
-  /* Firefox 4+  
-  background : -moz-linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%);
-  
-  /* Opera 
-  background : -o-linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%);
-  
-  /* IE 10+ 
-  background : -ms-linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%); 
-  
-  /* W3C 
-  background : -linear-gradient(top, rgb(40, 20, 60) 0%, rgb(30, 10, 40) 100%);
-}
-canvas {
+nav {
   position:fixed;
+  top:0;
   left:0;
   right:0;
-  top:0;
-  bottom:0;
-  box-sizing:border-box;
+  
+  height:60px;
+  width:100%;
+  background-color:rgba(50,50,50,0);
+  border-bottom:5px solid rgba(50,50,50,0);
+  transition: background-color 5s, border-bottom 5s;
 }
-*/
