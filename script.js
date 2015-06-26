@@ -11,7 +11,7 @@ while(times--) {
   starY = Math.floor((Math.random() * window.innerHeight/2 - 33) + 33);
   ctx.fillRect(starX,starY,3,3);
   
-  stars.push([starX,starY,Math.floor((Math.random() * 10) + 1)]);
+  stars.push([starX,starY,Math.floor((Math.random() * 100) + 1)]);
   
 }
 
@@ -62,7 +62,7 @@ function render() {
     currentStar = stars[i];
       ctx.fillRect(currentStar[0]-(currentStar[2]/20),currentStar[1]-(currentStar[2]/20),currentStar[2]/10,currentStar[2]/10);
       currentStar[2]++;
-      if(currentStar[2] == 40) {
+      if(currentStar[2] == 100) {
         currentStar[2] = 0;
       }
   }
