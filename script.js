@@ -25,8 +25,8 @@ function terrain(x) {
     return points;
 }
 
-var foreTerPoints = terrain(window.innerHeight/2);
-var bgTerPoints = terrain(2*window.innerHeight/3);
+var foreTerPoints = terrain(2*window.innerHeight/3);
+var bgTerPoints = terrain(window.innerHeight/2);
 
 //MOON
 var moonX = Math.floor((Math.random() * window.innerWidth - 250) + 250);
