@@ -21,9 +21,9 @@ function terrain(x,type) {
     i = canvas.width;
     while(i--) {
       if (type == "sin") {
-          points.push(x + (Math.sin(i / 75));
+          points.push(x + (Math.sin(i / 75)));
       } else {
-          points.push(x + (Math.cos(i / 75));
+          points.push(x + (Math.cos(i / 75)));
       }
     }
     return points;
