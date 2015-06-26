@@ -3,18 +3,21 @@ var ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
+//STARS
 var stars = [];
 var times = Math.floor((Math.random() * 30) + 10);
 while(times--) {
   ctx.fillStyle = "white";
   starX = Math.floor((Math.random() * window.innerWidth - 33) + 33);
-  starY = Math.floor((Math.random() * window.innerHeight/2 - 33) + 33);
+  starY = Math.floor((Math.random() * 2*(window.innerHeight/3) - 33) + 33);
   ctx.fillRect(starX,starY,3,3);
   
   stars.push([starX,starY,Math.floor((Math.random() * 100) + 1)]);
   
 }
-
+//TERAIN GENERATION FUNCTION
+//FROM somethinghitme
+//URL: http://www.somethinghitme.com/2013/11/11/simple-2d-terrain-with-midpoint-displacement/
 function terrain(width, height, displace, roughness) {
     var points = [],
         // Gives us a power of 2 based on our width
@@ -41,6 +44,10 @@ function terrain(width, height, displace, roughness) {
 
 var terPoints = terrain(canvas.width, canvas.height, canvas.height / 8, 0.3);
 
+//MOON
+var moonX = Math.floor((Math.random() * window.innerWidth - 150) + 150);
+var moonY = Math.floor((Math.random() * window.innerHeight/2) + 150);
+
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
           window.webkitRequestAnimationFrame ||
@@ -51,12 +58,12 @@ window.requestAnimFrame = (function(){
 })();
 
 
-// usage:
-// instead of setInterval(render, 16) ....
 var i;
 var currentStar;
 function render() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
+  
+  //STARS
   i = stars.length;
   ctx.fillStyle = "white";
   while(i--) {
@@ -67,14 +74,19 @@ function render() {
         currentStar[2] = 0;
       }
   }
-    // draw the points
+  
+  //MOON
+  ctx.fillRect(moonX,moonY,100,100)
+  
+  //TERRAIN
+  //FROM somethinghitme 
+  //URL: http://www.somethinghitme.com/2013/11/11/simple-2d-terrain-with-midpoint-displacement/
   ctx.fillStyle = "black";
   ctx.beginPath();
   ctx.moveTo(0, terPoints[0]);
   for (var t = 1; t < terPoints.length; t++) {
       ctx.lineTo(t, terPoints[t] + 100);
   }
-  // finish creating the rect so we can fill it
   ctx.lineTo(canvas.width, canvas.height);
   ctx.lineTo(0, canvas.height);
   ctx.closePath();
@@ -82,6 +94,7 @@ function render() {
 
 }
 
+//START Animation
 (function animloop(){
   requestAnimFrame(animloop);
   render();
