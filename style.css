@@ -21,7 +21,13 @@ nav {
   
   height:60px;
   width:100%;
-  background-color:rgba(50,50,50,0);
-  border-bottom:5px solid rgba(50,50,50,0);
-  transition: background-color 5s, border-bottom 5s;
+  background-color:rgba(0,0,0,0);
+  border-bottom:5px solid rgba(0,0,0,0);
+  transition: background-color 2s, border-bottom 2s;
+}
+
+body.scrolled nav {
+  background-color:rgba(40,40,40,1);
+  border-bottom:5px solid rgba(20,20,20,1);
+  transition: background-color 2s, border-bottom 2s;
 }
