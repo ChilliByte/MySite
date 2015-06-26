@@ -9,7 +9,7 @@ var times = Math.floor((Math.random() * 30) + 10);
 while(times--) {
   ctx.fillStyle = "white";
   starX = Math.floor((Math.random() * window.innerWidth - 33) + 33);
-  starY = Math.floor((Math.random() * 2*(window.innerHeight/3) - 33) + 33);
+  starY = Math.floor((Math.random() * 4*(window.innerHeight/5) - 33) + 33);
   ctx.fillRect(starX,starY,3,3);
   
   stars.push([starX,starY,Math.floor((Math.random() * 100) + 1)]);
@@ -43,7 +43,6 @@ function terrain(width, height, displace, roughness) {
 }
 
 var foreTerPoints = terrain(canvas.width, canvas.height, canvas.height / 3, 0.5);
-var bgTerPoints = terrain(canvas.width, canvas.height, canvas.height / 3, 0.5);
 
 //MOON
 var moonX = Math.floor((Math.random() * window.innerWidth - 250) + 250);
@@ -96,18 +95,6 @@ function render() {
   //TERRAIN
   //FROM somethinghitme 
   //URL: http://www.somethinghitme.com/2013/11/11/simple-2d-terrain-with-midpoint-displacement/
-  //Background
-  ctx.fillStyle = "#333366";
-  ctx.beginPath();
-  ctx.moveTo(0, bgTerPoints[0]);
-  for (var t = 1; t < bgTerPoints.length; t++) {
-      ctx.lineTo(t, bgTerPoints[t]*2);
-  }
-  ctx.lineTo(canvas.width, canvas.height);
-  ctx.lineTo(0, canvas.height);
-  ctx.closePath();
-  ctx.fill();
-  //Foreground
   ctx.fillStyle = "black";
   ctx.beginPath();
   ctx.moveTo(0, foreTerPoints[0]);
