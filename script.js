@@ -1,6 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var times = Math.floor((Math.random() * 100) + 1);
+var times = Math.floor((Math.random() * 100) + 20);
 canvas.width = 1000;
 canvas.width = 1000;
 while(times--) {
