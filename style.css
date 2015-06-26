@@ -28,6 +28,8 @@ body {
   padding:0;
   box-sizing:border-box;
   background-color:rgba(0,0,0,0.5);
+  color:white;
+  font-family:Raleway;
 }
 
 nav {
