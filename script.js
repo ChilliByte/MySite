@@ -76,8 +76,11 @@ function render() {
   }
   
   //MOON
-  ctx.fillStyle="#e2e2f1"
+  ctx.fillStyle="#e9e9f9"
   ctx.fillRect(moonX,moonY,100,100)
+  ctx.fillStyle="#bababa"
+  ctx.fillRect(moonX,moonY + 30,10,50)
+  
   
   //TERRAIN
   //FROM somethinghitme 
