@@ -20,7 +20,7 @@ function terrain() {
     var points = [],
     i = canvas.width;
     while(i--) {
-      points.push(i);
+      points.push(canvas.width -i);
     }
     return points;
 }
