@@ -93,15 +93,9 @@ section {
 section:nth-child(3) {
   margin-top:60px;
   text-align:center;
+  height: 63vh;
 }
 
-section:nth-child(4) {
-  background-color:#EEEEEE;
-}
-
-section:nth-child(4) div:first-child {
-  background-color:rgb(40,40,40);
-}
 
 section:nth-child(3) h1 {
   font-size:5em;
@@ -118,3 +112,13 @@ section:nth-child(3) h3 {
   margin:5px;
 }
 
+
+
+section:nth-child(4) {
+  background-color:#EEEEEE;
+}
+
+section:nth-child(4) article {
+  background-color:rgb(40,40,40);
+  height:40vh;
+}
