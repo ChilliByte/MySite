@@ -48,6 +48,8 @@ nav {
 }
 
 nav a {
+  position:relative;
+  top: -15px;
   color:white;
   text-decoration:none;
   border-left:1px solid white;
