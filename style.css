@@ -118,6 +118,20 @@ section:nth-child(4) {
   color:#333;
 }
 
+section:nth-child(4) h1 {
+  font-size:2em;
+}
+
+section:nth-child(4) figure {
+  display:inline-block;
+  height:50%;
+  width:30%;
+  margin:auto;
+  border:3px solid #333;
+  border-radius:5px;
+  background-color:rgb(50,40,40);
+}
+
 section:nth-child(4) article {
   background-color:rgb(40,40,40);
   height:40vh;
