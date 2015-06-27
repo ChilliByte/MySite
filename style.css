@@ -54,6 +54,8 @@ nav a {
   height:60px;
   width:60px;
   border-bottom:3px solid white;
+  margin:0;
+  font-size:1em;
 }
 
 nav a:last-child {
