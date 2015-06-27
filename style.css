@@ -72,5 +72,16 @@ section {
 section:nth-child(3) {
   margin-top:60px;
   text-align:center;
-  font-size:300%;
 }
+
+section:nth-child(3) h1 {
+  font-size:4em;
+}
+
+section:nth-child(3) h2 {
+  font-size:3em;
+}
+section:nth-child(3) h3 {
+  font-size:2em;
+}
+
