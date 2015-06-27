@@ -121,4 +121,24 @@ section:nth-child(4) {
 section:nth-child(4) article {
   background-color:rgb(40,40,40);
   height:40vh;
+  color:#EEEEEE;
+  text-align:left;
+  padding:20px;
+}
+
+section:nth-child(4) article h1 {
+  font-size:2em;
+}
+
+section:nth-child(4) article p {
+  margin-left:0;
+  margin-right:50%;
+  text-align:justified;
+}
+
+section:nth-child(4) article img {
+  height:80%;
+  width:auto;
+  border-radius:50%;
+  margin-right:20px;
 }
