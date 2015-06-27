@@ -40,7 +40,7 @@ nav {
   
   height:60px;
   width:100%;
-  background-color:rgba(0,0,0,0);
+  background-color:rgba(0,0,0,0.5);
   border-bottom:0px solid rgba(10,10,10,0);
   transition: background-color 0.5s, border-bottom 0.5s;
 }
@@ -49,17 +49,6 @@ body.scrolled nav {
   background-color:rgba(40,40,40,1);
   border-bottom:1px solid rgba(150,150,150,1);
   transition: background-color 0.5s, border-bottom 0.5s;
-}
-
-#nav {
-  position:absolute;
-  top:-60px;
-  right:0;
-  left:0;
-  height:60px;
-  width:100%;
-  z-index:-999;
-  background-color:rgba(0,0,0,0.5);
 }
 
 section {
