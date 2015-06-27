@@ -78,7 +78,7 @@ nav a:hover {
 }
 
 body.scrolled nav {
-  background-color:rgba(40,40,40,1);
+  background-color:rgba(50,40,50,1);
   border-bottom:1px solid rgba(150,150,150,1);
   transition: background-color 0.5s, border-bottom 0.5s;
 }
@@ -129,11 +129,11 @@ section:nth-child(4) figure {
   margin:auto;
   border:3px solid #333;
   border-radius:5px;
-  background-color:rgb(50,40,40);
+  background-color:rgb(40,40,40);
 }
 
 section:nth-child(4) article {
-  background-color:rgb(40,40,40);
+  background-color:rgb(50,40,50);
   height:40vh;
   color:#EEEEEE;
   text-align:left;
@@ -146,8 +146,7 @@ section:nth-child(4) article h1 {
 }
 
 section:nth-child(4) article p {
-  margin-left:0;
-  margin-right:50%;
+  width:450px;
   text-align:justified;
 }
 
@@ -156,6 +155,6 @@ section:nth-child(4) article img {
   width:234px; /*CHANGE TO AUTO LATER*/
   border-radius:50%;
   position:absolute;
-  right:25px;
+  right:15%;
   top:10%;
 }
