@@ -43,10 +43,25 @@ nav {
   background-color:rgba(0,0,0,0);
   border-bottom:0px solid rgba(10,10,10,0);
   transition: background-color 0.5s, border-bottom 0.5s;
+  font-size:2em;
+  padding-left:10px;
+}
+
+nav a {
+  color:white;
+  text-decoration:none;
+  border-left:1px solid white;
+  height:60px;
+  width:60px;
+  border-bottom:3px solid white;
+}
+
+nav a:last-child {
+  border-right:1px solid white;
 }
 
 #nav {
-  height:80px;
+  height:27vh;
 }
 
 body.scrolled nav {
