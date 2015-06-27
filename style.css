@@ -51,7 +51,7 @@ nav {
 nav a {
   position:relative;
   top:0;
-  display:inline-flex;
+  display:inline-block;
   height:60px;
   width:120px;
   margin:0;
