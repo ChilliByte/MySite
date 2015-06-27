@@ -146,18 +146,14 @@ section:nth-child(4) article h1 {
 }
 
 section:nth-child(4) article p {
-  width:450px;
-  text-align:justified;
 }
 
 section:nth-child(4) article img {
   height:80%;
   width:234px; /*CHANGE TO AUTO LATER*/
   border-radius:50%;
-  position:absolute;
-  top:10%;
 }
 
 section:nth-child(4) article #container {
-  width:750px;
+  width:600px;
 }
