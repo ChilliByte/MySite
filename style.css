@@ -146,6 +146,7 @@ section:nth-child(4) article h1 {
 }
 
 section:nth-child(4) article p {
+  width:300px;
 }
 
 section:nth-child(4) article img {
@@ -157,5 +158,4 @@ section:nth-child(4) article img {
 section:nth-child(4) article #container {
   height:80%;
   width:600px;
-  margin-top:10%;
 }
