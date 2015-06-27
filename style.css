@@ -138,10 +138,10 @@ section:nth-child(4) article p {
 }
 
 section:nth-child(4) article img {
-  height:32vh;
-  width:32vh;
+  height:80%;
+  width:234px; /*CHANGE TO AUTO LATER*/
   border-radius:50%;
   position:absolute;
-  right:24px;
-  top:48px;
+  right:20%;
+  top:10%;
 }
