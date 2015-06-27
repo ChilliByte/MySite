@@ -22,7 +22,6 @@ body {
   bottom:0;
   left:0;
   right:0;
-  height:100%;
   width:100%;
   margin:0;
   padding:0;
@@ -40,15 +39,25 @@ nav {
   
   height:60px;
   width:100%;
-  background-color:rgba(0,0,0,0.5);
+  background-color:rgba(0,0,0,0);
   border-bottom:3px solid rgba(10,10,10,0);
   transition: background-color 0.5s, border-bottom 0.5s;
 }
 
-body.scrolled .nav {
+body.scrolled nav {
   background-color:rgba(40,40,40,1);
   border-bottom:5px solid rgba(20,20,20,1);
   transition: background-color 0.5s, border-bottom 0.5s;
+}
+
+.nav {
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  height:60px;
+  width:100%;
+  background-color:rgba(0,0,0,0.5);
 }
 
 section {
