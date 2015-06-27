@@ -10,7 +10,7 @@ html {
   padding:0;
   box-sizing:border-box;
   
-  background-image: url("http://i.imgur.com/HN0uGnK.jpg");
+  background-image: url("http://i.imgur.com/HN0uGnK.jpg"), url('https://download.unsplash.com/photo-1426523038054-a260f3ef5bc9');
   background-size:cover;
   background-attachment:fixed;
   background-repeat:no-repeat;
@@ -75,7 +75,7 @@ section:nth-child(3) {
 }
 
 section:nth-child(3) h1 {
-  font-size:4em;
+  font-size:5em;
 }
 
 section:nth-child(3) h2 {
