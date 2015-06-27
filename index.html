@@ -4,13 +4,11 @@
         <title> Deep Sohelia </title>
         <link rel="stylesheet" href="style.css" />
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-        <!--<script src="script.js"></script>-->
     </head>
     <body>
         <nav>
             Deep Sohelia
         </nav>
-        <div id="nav"></div>
         <section>
             Welcome
         </section>
@@ -24,16 +22,5 @@
             deep med dis
         </footer>
     </body>
-    <script>
-        window.onload = function() {
-            console.log("Loaded");
-            window.addEventlistener('scroll',function () {
-                console.log("scrolling");
-                document.body.classList[
-                    document.body.scrollTop > 100 ? 'add': 'remove'
-                ]('scrolled');
-            });
-        }
-
-    </script>
+    <script src="script.js"></script>
 </html>
