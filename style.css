@@ -57,6 +57,7 @@ nav a {
   margin:0;
   font-size:1em;
   display:inline-flex;
+  box-sizing:border-box;
 }
 
 nav a:last-child {
