@@ -6,7 +6,7 @@
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
         <!--<script src="script.js"></script>-->
     </head>
-    <body onscroll="function() {console.log('srs?')}">
+    <body>
         <nav>
             Deep Sohelia
         </nav>
@@ -28,12 +28,12 @@
     <script>
         window.onload = function() {
             console.log("Loaded");
-            document.body.addEventListener('scroll', function () {
+            document.body.onscroll = function () {
                 console.log("scrolling");
                 document.body.classList[
                     document.body.scrollTop > 100 ? 'add': 'remove'
                 ]('scrolled');
-            });
+            };
         }
 
     </script>
