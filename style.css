@@ -136,7 +136,7 @@ section:nth-child(4) article {
   background-color:rgb(50,40,50);
   height:40vh;
   color:#EEEEEE;
-  text-align:center;
+  text-align:left;
   padding:20px;
   position:relative;
 }
@@ -148,15 +148,19 @@ section:nth-child(4) article h1 {
 
 section:nth-child(4) article p {
   width:300px;
+  margin:0;
+  display:inline-block;
 }
 
 section:nth-child(4) article img {
   height:80%;
   width:234px; /*CHANGE TO AUTO LATER*/
   border-radius:50%;
+  display:inline-block;
 }
 
 section:nth-child(4) article #container {
   height:80%;
   width:600px;
+  margin:0 auto;
 }
