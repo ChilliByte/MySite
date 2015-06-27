@@ -46,14 +46,7 @@ nav {
 }
 
 #nav {
-  position:absolute;
-  top:-60px;
-  left:0;
-  right:0;
-  height:60px;
-  width:100%;
-  background-color:rgba(0,0,0,0.5);
-  z-index:-999;
+  height:80px;
 }
 
 body.scrolled nav {
@@ -76,12 +69,15 @@ section:nth-child(3) {
 
 section:nth-child(3) h1 {
   font-size:5em;
+  margin:5px;
 }
 
 section:nth-child(3) h2 {
   font-size:3em;
+  margin:5px;
 }
 section:nth-child(3) h3 {
   font-size:2em;
+  margin:5px;
 }
 
