@@ -65,7 +65,10 @@ body.scrolled nav {
 section {
   height:calc(100vh - 60px);
   width:100%;
-  margin:60px 0 0;
-  border:5px solid white;
+  margin:0;
   box-sizing:border-box;
+}
+
+body:nth-child(3) {
+  background-color:red;
 }
