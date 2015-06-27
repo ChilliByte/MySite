@@ -32,7 +32,7 @@ body {
   font-family:Raleway;
 }
 
-nav {
+.nav {
   position:fixed;
   top:0;
   left:0;
@@ -45,19 +45,13 @@ nav {
   transition: background-color 0.5s, border-bottom 0.5s;
 }
 
-body.scrolled nav {
+body.scrolled .nav {
   background-color:rgba(40,40,40,1);
   border-bottom:5px solid rgba(20,20,20,1);
   transition: background-color 0.5s, border-bottom 0.5s;
 }
 
-main {
-  height: calc(100% - 60px);
-  width:  100%;
-  padding:0;
-  margin:0;
-}
-section {
+.section {
   height:100%;
   width:100%;
   margin:60px 0 0;
