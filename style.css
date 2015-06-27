@@ -52,7 +52,7 @@ nav a {
   position:relative;
   top:0;
   display:inline-block;
-  height:60px;
+  height:61px;
   width:120px;
   margin:0;
   box-sizing:border-box;
@@ -70,11 +70,7 @@ nav a:first-child {
 }
 
 nav a:hover {
-  border-bottom-color:red;
-}
-
-nav a:active {
-  border-bottom-color:purple;
+  border-bottom-color:#0a0;
 }
 
 #nav {
@@ -99,6 +95,14 @@ section:nth-child(3) {
   text-align:center;
 }
 
+section:nth-child(4) {
+  background-color:#EEEEEE;
+}
+
+section:nth-child(4) div {
+  background-color:rgb(40,40,40);
+}
+}
 section:nth-child(3) h1 {
   font-size:5em;
   margin:5px;
