@@ -27,12 +27,12 @@
     <script>
         window.onload = function() {
             console.log("Loaded");
-            document.body.onscroll = function () {
+            window.addEventlistener('scroll',function () {
                 console.log("scrolling");
                 document.body.classList[
                     document.body.scrollTop > 100 ? 'add': 'remove'
                 ]('scrolled');
-            };
+            });
         }
 
     </script>
