@@ -52,11 +52,12 @@ body.scrolled nav {
 
 #nav {
   position:absolute;
-  top:0;
+  top:-60px;
   right:0;
   left:0;
   height:60px;
   width:100%;
+  z-index:-999;
   background-color:rgba(0,0,0,0.5);
 }
 
