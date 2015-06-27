@@ -69,6 +69,14 @@ nav a:first-child {
   border-right:1px solid white;
 }
 
+nav a:hover {
+  border-bottom-color:red;
+}
+
+nav a:active {
+  border-bottom-color:purple;
+}
+
 #nav {
   height:27vh;
 }
