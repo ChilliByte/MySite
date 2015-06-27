@@ -124,6 +124,7 @@ section:nth-child(4) article {
   color:#EEEEEE;
   text-align:left;
   padding:20px;
+  position:relative;
 }
 
 section:nth-child(4) article h1 {
@@ -137,8 +138,10 @@ section:nth-child(4) article p {
 }
 
 section:nth-child(4) article img {
-  height:80%;
-  width:auto;
+  height:32vh;
+  width:32vh;
   border-radius:50%;
-  margin-right:20px;
+  position:absolute;
+  right:24px;
+  top:48px;
 }
