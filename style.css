@@ -212,6 +212,19 @@ section:nth-child(5) input {
   padding-left:10px;
   padding-top:3px;
   font-size:105%;
+  box-sizing:border-box;
+}
+
+section:nth-child(5) textarea {
+  height:150px;
+  width:90%;
+  background-color:#FFF;
+  color:#333;
+  border:1px solid #333;
+  border-radius:5px;
+  margin-bottom:5px;
+  font-size:105%;
+  box-sizing:border-box;
 }
 
 #formContainer {
