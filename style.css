@@ -74,10 +74,6 @@ nav a {
   text-decoration:none;
 }
 
-nav a:last-child {
-  border-left:1px solid white;
-}
-
 nav a:hover {
   border-color:#80ff00;
   color:#80ff00;
