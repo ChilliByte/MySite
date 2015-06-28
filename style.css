@@ -75,8 +75,8 @@ nav a {
 }
 
 nav a:hover {
-  border-color:#80ff00;
-  color:#80ff00;
+  border-color:#f30000;
+  color:#f30000;
 }
 
 #nav {
@@ -221,8 +221,8 @@ section:nth-child(5) input[type="submit"]:hover {
 
 section:nth-child(5) input[type="submit"]:active {
   background-color:#333;
-  color:#80ff00;
-  border:3px solid #80ff00;
+  color:#f30000;
+  border:3px solid #f30000;
 }
 
 
