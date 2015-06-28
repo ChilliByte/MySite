@@ -6,6 +6,7 @@ function addClasses() {
 
 window.onload = function() {
     console.log("Loaded");
+    addClasses();
     window.addEventListener('scroll', function () {
         console.log("scrolling");
         addClasses();
