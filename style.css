@@ -66,15 +66,16 @@ nav a {
   box-sizing:border-box;
   float:right;
   text-align:center;
-  border-left:1px solid #FFFFFF;
+  border-left:0.5px solid #FFFFFF;
+  border-right:0.5px solid white;
   border-bottom:3px solid #FFFFFF;
   font-size:0.5em;
   color:white;
   text-decoration:none;
 }
 
-nav a:first-child {
-  border-right:1px solid white;
+nav a:last-child {
+  border-left:1px solid white;
 }
 
 nav a:hover {
@@ -199,7 +200,7 @@ section:nth-child(4) article #container {
 
 section:nth-child(5) {
   position:relative;
-  height:81vh;
+  height:83vh;
 }
 
 section:nth-child(5) input {
@@ -252,11 +253,11 @@ section:nth-child(5) textarea {
 }
 
 footer {
-  height:10vh;
+  height:8vh;
   background-color:#eee;
   text-align:center;
   color:#333;
-  padding-top:20px;
+  padding-top:15px;
   box-sizing:border-box;
   border-top:3px solid #ccc;
 }
