@@ -144,11 +144,11 @@ section:nth-child(4) article {
 section:nth-child(4) article h1 {
   font-size:2em;
   margin:0 0 5px;
-  width:300px;
+  width:400px;
 }
 
 section:nth-child(4) article p {
-  width:300px;
+  width:400px;
   margin:0;
   display:inline-block;
 }
@@ -168,7 +168,7 @@ section:nth-child(4) article img {
 
 section:nth-child(4) article #container {
   height:80%;
-  width:600px;  
+  width:650px;  
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
