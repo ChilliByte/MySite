@@ -200,12 +200,23 @@ section:nth-child(5) {
   position:relative;
   height:80vh;
 }
+
+section:nth-child(5) input {
+  height:20px;
+  width:90%;
+  background-color:#FFF
+  color:#333;
+  border:1px solid #333;
+  border-radius:5px;
+}
+
 #formContainer {
   position:absolute;
   right:0;
   height:100%;
   width:40%;
 }
+
 footer {
   height:10vh;
 }
