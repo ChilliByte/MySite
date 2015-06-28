@@ -204,11 +204,13 @@ section:nth-child(5) {
 section:nth-child(5) input {
   height:35px;
   width:90%;
-  background-color:#FFF
+  background-color:#FFF;
   color:#333;
   border:1px solid #333;
   border-radius:5px;
   margin-bottom:5px;
+  padding-left:5px;
+  font-size:105%;
 }
 
 #formContainer {
