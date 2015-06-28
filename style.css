@@ -163,7 +163,7 @@ section:nth-child(4) article img {
   top:0;
   right:0;
   border-bottom:3px solid #131313;
-  border-bottom:3px solid #131313;
+  border-right:3px solid #131313;
 }
 
 section:nth-child(4) article #container {
