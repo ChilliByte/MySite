@@ -199,6 +199,12 @@ section:nth-child(4) article #container {
 section:nth-child(5) {
   height:80vh;
 }
+#formContainer {
+  position:absolute;
+  right:0;
+  height:100%;
+  width:40%;
+}
 footer {
   height:10vh;
 }
