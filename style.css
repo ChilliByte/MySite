@@ -253,7 +253,10 @@ section:nth-child(5) textarea {
 
 footer {
   height:10vh;
-  background-color:#262626;
+  background-color:#eee;
   text-align:center;
   color:#333;
+  padding-top:40%;
+  box-sizing:border-box;
+  border-top:3px solid #ccc;
 }
