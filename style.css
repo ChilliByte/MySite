@@ -78,8 +78,8 @@ nav a:first-child {
 }
 
 nav a:hover {
-  border-bottom-color:#af9;
-  color:#af9;
+  border-bottom-color:#6cd800;
+  color:#6cd800;
 }
 
 #nav {
@@ -224,8 +224,8 @@ section:nth-child(5) input[type="submit"]:hover {
 
 section:nth-child(5) input[type="submit"]:active {
   background-color:#333;
-  color:#af9;
-  border:1px solid #af9;
+  color:#6cd800;
+  border:3px solid #6cd800;
 }
 
 
