@@ -209,7 +209,8 @@ section:nth-child(5) input {
   border:1px solid #333;
   border-radius:5px;
   margin-bottom:5px;
-  padding-left:5px;
+  padding-left:10px;
+  padding-top:3px;
   font-size:105%;
 }
 
