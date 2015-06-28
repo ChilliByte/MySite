@@ -78,8 +78,8 @@ nav a:first-child {
 }
 
 nav a:hover {
-  border-bottom-color:#6cd800;
-  color:#6cd800;
+  border-color:#80ff00;
+  color:#80ff00;
 }
 
 #nav {
@@ -199,7 +199,7 @@ section:nth-child(4) article #container {
 
 section:nth-child(5) {
   position:relative;
-  height:80vh;
+  height:81vh;
 }
 
 section:nth-child(5) input {
@@ -224,8 +224,8 @@ section:nth-child(5) input[type="submit"]:hover {
 
 section:nth-child(5) input[type="submit"]:active {
   background-color:#333;
-  color:#6cd800;
-  border:3px solid #6cd800;
+  color:#80ff00;
+  border:3px solid #80ff00;
 }
 
 
