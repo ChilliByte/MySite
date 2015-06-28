@@ -159,6 +159,11 @@ section:nth-child(4) article img {
   border-radius:50%;
   display:inline-block;
   vertical-align:top;
+  position:absolute;
+  top:0;
+  right:0;
+  border-bottom:3px solid #131313;
+  border-bottom:3px solid #131313;
 }
 
 section:nth-child(4) article #container {
