@@ -78,7 +78,8 @@ nav a:first-child {
 }
 
 nav a:hover {
-  border-bottom-color:#0a0;
+  border-bottom-color:#af9;
+  color:#af9;
 }
 
 #nav {
@@ -215,6 +216,20 @@ section:nth-child(5) input {
   box-sizing:border-box;
 }
 
+section:nth-child(5) input[type="submit"]:hover {
+  background-color:#333;
+  color:#eee;
+  border:1px solid #eee;
+}
+
+section:nth-child(5) input[type="submit"]:active {
+  background-color:#333;
+  color:#af9;
+  border:1px solid #af9;
+}
+
+
+
 section:nth-child(5) textarea {
   height:150px;
   width:90%;
@@ -226,6 +241,8 @@ section:nth-child(5) textarea {
   font-size:105%;
   box-sizing:border-box;
 }
+
+
 
 #formContainer {
   position:absolute;
