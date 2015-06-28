@@ -17,6 +17,14 @@ html {
   background-position: center;
 }
 
+html.scrolled {
+  background-image: url('https://download.unsplash.com/photo-1426523038054-a260f3ef5bc9');
+  background-size:cover;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
 body {
   position:relative;
   top:0;
@@ -121,9 +129,11 @@ section:nth-child(4) {
 
 section:nth-child(4) h1 {
   font-size:2em;
+  margin-bottom:30px;
 }
 
 section:nth-child(4) figure {
+  position:relative;
   display:inline-block;
   height:40%;
   width:20%;
