@@ -127,10 +127,11 @@ section:nth-child(4) figure {
   display:inline-block;
   height:40%;
   width:20%;
-  margin:auto;
+  margin:auto 10px auto;
   border:3px solid #333;
-  border-radius:5px;
+  border-radius:25px;
   background-color:rgb(50,40,50);
+  color:white;
 }
 
 section:nth-child(4) article {
