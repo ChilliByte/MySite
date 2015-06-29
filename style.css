@@ -258,9 +258,15 @@ footer {
   border-top:3px solid #ccc;
 }
 
-/* Tablets & Large Phones */
-@media screen and (max-width: 300px) {
+/* Tablets */
+/*DELETE THIS COMMENT - This one should change the portfolio tiles */
+@media screen and (max-width: 855px) {
+}
+/* Large Phones */
+/*DELETE THIS COMMENT - This one should change the about section */
+@media screen and (max-width: 675px) {
 }
 /* Small Phones */
-@media screen and (max-width: 300px) {
+/*DELETE THIS COMMENT - This one should change the contact form and remove the <a>  's in <nav>*/
+@media screen and (max-width: 600px) {
 }
