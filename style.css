@@ -261,6 +261,8 @@ footer {
 /* Tablets */
 /*DELETE THIS COMMENT - This one should change the portfolio tiles */
 @media screen and (max-width: 855px) {
+  height:100px;
+  width:90%;
 }
 /* Large Phones */
 /*DELETE THIS COMMENT - This one should change the about section */
