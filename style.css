@@ -257,3 +257,10 @@ footer {
   box-sizing:border-box;
   border-top:3px solid #ccc;
 }
+
+/* Tablets & Large Phones */
+@media screen and (max-width: 300px) {
+}
+/* Small Phones */
+@media screen and (max-width: 300px) {
+}
