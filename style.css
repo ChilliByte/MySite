@@ -319,5 +319,7 @@ footer {
   section:nth-child(5) textarea {
     width:100%;
   }
-  
+}
+@media screen and (max-width: 400px) {
+  nav a {display:none;}
 }
