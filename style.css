@@ -297,6 +297,9 @@ footer {
     width:80%;
     margin:280px 10% 10px;
   }
+  section:nth-child(4) article #container p {
+    width:80%;
+  }
 }
 /* Small Phones */
 /*DELETE THIS COMMENT - This one should change the contact form and remove the <a>  's in <nav>*/
@@ -321,5 +324,6 @@ footer {
   }
 }
 @media screen and (max-width: 400px) {
+  nav   {text-align:center;}
   nav a {display:none;}
 }
