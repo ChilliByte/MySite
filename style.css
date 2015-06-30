@@ -275,7 +275,29 @@ footer {
 /* Large Phones */
 /*DELETE THIS COMMENT - This one should change the about section */
 @media screen and (max-width: 675px) {
+  section:nth-child(4) article {
+    height:500px;
+  }
+  section:nth-child(4) article #container {
+    height:100%;
+    width:100%;
+    margin:0;
+    text-align:center;
+  }
+  section:nth-child(4) article #container img {
+    height:220px;
+    width:220px;
+    top:20px;
+    left:0;
+    right:0;
+    margin:0 auto;
+  }
   
+  section:nth-child(4) article #container h1 {
+    margin-top:280px;
+    width:80%;
+    margin:0 10%;
+  }
 }
 /* Small Phones */
 /*DELETE THIS COMMENT - This one should change the contact form and remove the <a>  's in <nav>*/
