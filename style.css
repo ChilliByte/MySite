@@ -262,13 +262,20 @@ footer {
 /*DELETE THIS COMMENT - This one should change the portfolio tiles */
 @media screen and (max-width: 855px) {
   section:nth-child(4)  figure {
-    height:100px;
+    height:140px;
     width:90%;
+    margin-bottom: 10px;
   }
+  section:nth-child(4)  figcaption {
+    height:90%;
+    width:60%;
+  }
+  
 }
 /* Large Phones */
 /*DELETE THIS COMMENT - This one should change the about section */
 @media screen and (max-width: 675px) {
+  
 }
 /* Small Phones */
 /*DELETE THIS COMMENT - This one should change the contact form and remove the <a>  's in <nav>*/
