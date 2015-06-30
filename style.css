@@ -295,7 +295,7 @@ footer {
   
   section:nth-child(4) article #container h1 {
     width:80%;
-    margin:280px 10% 0;
+    margin:280px 10% 10px;
   }
 }
 /* Small Phones */
