@@ -302,4 +302,23 @@ footer {
 /* Small Phones */
 /*DELETE THIS COMMENT - This one should change the contact form and remove the <a>  's in <nav>*/
 @media screen and (max-width: 600px) {
+  section:nth-child(4)  {
+    height:192vh;
+  }
+  nav a {
+    width:60px;
+  }
+  section:nth-child(5) #formContainer {
+    width:95%;
+    left:0;
+    right:0;
+    margin:0 auto;
+  }
+  section:nth-child(5) input {
+    width:100%;
+  }
+  section:nth-child(5) textarea {
+    width:100%;
+  }
+  
 }
