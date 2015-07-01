@@ -24,5 +24,4 @@ for (var x = 0; x < 100; x++) {
     rect.setAttributeNS(null, 'width', '50');
     rect.setAttributeNS(null, 'fill', getRandomRed());
     document.getElementById('svgOne').appendChild(rect);
-    }
 }
