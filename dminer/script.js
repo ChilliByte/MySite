@@ -17,7 +17,7 @@ var x = 1;
 ctx.fillStyle = "#00ff00";
 function render() {
   ctx.clearRect(0,0,1000,1000);
-  ctx.drawRect(x/100,0,10,10);
+  ctx.fillRect(x/100,0,10,10);
   x++;
 }
 
