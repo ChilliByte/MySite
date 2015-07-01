@@ -1,7 +1,7 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var tilesX = 8;
-var tilesY = 5;
+var tilesX = 12;
+var tilesY = 8;
 var tileWidth = Math.ceil(window.innerWidth/tilesX)
 canvas.height = tileWidth*tilesY;
 canvas.width = tileWidth*tilesX;
@@ -28,7 +28,7 @@ function getRandomRed() {
 }
 var squares = [];
 (function initGrid() {
-  for(var i = 0; i < 40; i++) {
+  for(var i = 0; i < 100; i++) {
     squares.push({color:getRandomRed(),light:isTint})
   }
 })()
