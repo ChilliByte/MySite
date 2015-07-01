@@ -6,7 +6,7 @@ function addClasses() {
         document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop ? 'add': 'remove'
     ]('scrolled');
     document.getElementsByTagName("nav")[0].classList[
-        document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop ? 'add': 'remove'
+        document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop - 60 ? 'add': 'remove'
     ]('section1');
     document.getElementsByTagName("nav")[0].classList[
         document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop + 250 ? 'add': 'remove'
