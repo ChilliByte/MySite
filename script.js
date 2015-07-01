@@ -11,7 +11,7 @@ function addClasses() {
     document.getElementsByTagName("nav")[0].classList[
         document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop + 250 ? 'add': 'remove'
     ]('section2');
-    document.getElementsByTagName("html")[0].classList[
+    document.getElementsByTagName("nav")[0].classList[
         document.body.scrollTop > document.getElementsByTagName("section")[2].offsetTop - 100 ? 'add': 'remove'
     ]('section3');
 }
