@@ -29,17 +29,30 @@ function getRandomRed() {
 var squares = [];
 (function initGrid() {
   for(var i = 0; i < 40; i++) {
-    squares.push(getRandomRed())
+    squares.push({color:getRandomRed(),light:isTint})
   }
 })()
 // usage:
 // instead of setInterval(render, 16) ....
-var x = 1;
+var x;
 ctx.fillStyle = "#00ff00";
 function render() {
   ctx.clearRect(0,0,1000,1000);
-  ctx.fillRect(x/10,0,10,10);
-  x++;
+  x = squares.length;
+  counter = 0;
+  xPos = 0;
+  yPos = 0;
+  while(x--) {
+    ctx.fillStyle = squares[x].color;
+    ctx.fillRect(xPos,yPos,tileWidth,tileWidth);
+    xPos+= tileWidth;
+    counter++
+    if (counter == tilesX + 1) {
+      counter = 0;
+      xPos = 0;
+      yPos += tileWidth;
+    }
+  }
 }
 
 (function animloop(){
