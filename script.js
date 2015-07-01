@@ -12,7 +12,7 @@ function addClasses() {
         document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop + 250 ? 'add': 'remove'
     ]('section2');
     document.getElementsByTagName("html")[0].classList[
-        document.body.scrollTop > document.getElementsByTagName("section")[2].offsetTop ? 'add': 'remove'
+        document.body.scrollTop > document.getElementsByTagName("section")[2].offsetTop - 100 ? 'add': 'remove'
     ]('section3');
 }
 
