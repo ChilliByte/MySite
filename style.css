@@ -79,12 +79,12 @@ nav a:hover {
   color:#f30000;
 }
 
-nav.section1 a:first-child {
+nav.section1 a:last-child {
     border-color:#f30000;
     color:#f30000;
 }
 
-nav.section2 a:first-child {
+nav.section2 a:last-child {
     border-color:#FFFFFF;
     color:white;
 }
@@ -94,7 +94,7 @@ nav.section2 a:nth-child(2) {
     color:#f30000;
 }
 
-nav.section3 a:first-child {
+nav.section3 a:last-child {
     border-color:#FFFFFF;
     color:white;
 }
@@ -104,7 +104,7 @@ nav.section3 a:nth-child(2) {
     color:white;
 }
 
-nav.section3 a:nth-child(3) {
+nav.section3 a:first-child {
     border-color:#f30000;
     color:#f30000;
 }
@@ -133,17 +133,17 @@ section:nth-child(3) {
 
 
 section:nth-child(3) h1 {
-  font-size:5em;
+  font-size:6em;
   margin:5px;
 }
 
 section:nth-child(3) h2 {
-  font-size:3em;
+  font-size:2.5em;
   margin:5px;
 }
 
 section:nth-child(3) h3 {
-  font-size:2em;
+  font-size:1.75em;
   margin:5px;
 }
 
