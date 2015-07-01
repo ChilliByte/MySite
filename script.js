@@ -5,6 +5,15 @@ function addClasses() {
     document.getElementsByTagName("html")[0].classList[
         document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop ? 'add': 'remove'
     ]('scrolled');
+    document.getElementsByTagName("nav")[0].classList[
+        document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop ? 'add': 'remove'
+    ]('section1');
+    document.getElementsByTagName("nav")[0].classList[
+        document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop + 250 ? 'add': 'remove'
+    ]('section2');
+    document.getElementsByTagName("html")[0].classList[
+        document.body.scrollTop > document.getElementsByTagName("section")[2].offsetTop ? 'add': 'remove'
+    ]('section3');
 }
 
 function vh(x) {
