@@ -79,6 +79,35 @@ nav a:hover {
   color:#f30000;
 }
 
+nav.section1 a:first-child {
+    border-color:#f30000;
+    color:#f30000;
+}
+
+nav.section2 a:first-child {
+    border-color:#FFFFFF;
+    color:white;
+}
+
+nav.section2 a:nth-child(2) {
+    border-color:#f30000;
+    color:#f30000;
+}
+
+nav.section3 a:first-child {
+    border-color:#FFFFFF;
+    color:white;
+}
+
+nav.section3 a:nth-child(2) {
+    border-color:#FFFFFF;
+    color:white;
+}
+
+nav.section3 a:nth-child(3) {
+    border-color:#f30000;
+    color:#f30000;
+}
 #nav {
   height:27vh;
 }
