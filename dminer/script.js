@@ -22,15 +22,16 @@ function getRandomRed() {
   if(isTint) {
     return "rgb(255," + shadeEditor + "," + shadeEditor + ")"
   } else {
-    return "rgb(" + 255 - shadeEditor + ",0,0)"    
+    shadeEditor = 255 - shadeEditor
+    return "rgb(" + shadeEditor + ",0,0)"    
   }
 }
 var squares = [];
-function initGrid() {
+(function initGrid() {
   for(var i = 0; i < 40; i++) {
     squares.push(getRandomRed())
   }
-}
+})()
 // usage:
 // instead of setInterval(render, 16) ....
 var x = 1;
