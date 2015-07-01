@@ -30,7 +30,7 @@ for (var x = 0; x < 120; x++) {
     rect.setAttributeNS(null, 'id', "rectangle"+x)
     rect.setAttributeNS(null, 'class', "rect")
     document.getElementById('svgOne').appendChild(rect);
-    if (Math.random>0.9) {
+    if (Math.random()>0.9) {
       css+="@keyframes rectAnimNum" + x + "{0% {fill:" + getRandomRed() + ";} 100% {fill:" + getRandomRed() + ";}} #rectangle"+x +" {animation: rectAnimNum" + x + " 5s linear 2s infinite alternate;}"
     }
     xPos += tileWidth;
