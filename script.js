@@ -7,9 +7,22 @@ function addClasses() {
     ]('scrolled');
 }
 
+function vh(x) {
+    return Math.round((x/100) * window.innerHeight) + "px";
+}
+function setSizes() {
+    document.querySelector("#nav").height = vh(27);
+    document.querySelector("section:nth-child(3)").height = vh(63);
+    document.querySelector("section:nth-child(4)").height = vh(140);
+    document.querySelector("section:nth-child(5)").height = vh(83);
+    document.querySelector("footer").height = vh(8);
+}
+
+
 window.onload = function() {
     console.log("Loaded");
     addClasses();
+    setSizes();
     window.addEventListener('scroll', function () {
         console.log("scrolling");
         addClasses();
