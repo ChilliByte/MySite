@@ -1,19 +1,3 @@
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-var tilesX = 12;
-var tilesY = 8;
-var tileWidth = Math.ceil(window.innerWidth/tilesX)
-canvas.height = tileWidth*tilesY;
-canvas.width = tileWidth*tilesX;
-// shim layer with setTimeout fallback
-window.requestAnimFrame = (function(){
-  return  window.requestAnimationFrame       ||
-          window.webkitRequestAnimationFrame ||
-          window.mozRequestAnimationFrame    ||
-          function( callback ){
-            window.setTimeout(callback, 1000 / 60);
-          };
-})();
 var shadeEditor;
 var isTint;
 function getRandomRed() {
@@ -26,38 +10,19 @@ function getRandomRed() {
     return "rgb(" + shadeEditor + ",0,0)"    
   }
 }
-var squares = [];
-(function initGrid() {
-  for(var i = 0; i < 100; i++) {
-    squares.push({color:getRandomRed(),light:isTint})
-  }
-})()
-// usage:
-// instead of setInterval(render, 16) ....
-var x;
-ctx.fillStyle = "#00ff00";
-function render() {
-  ctx.clearRect(0,0,1000,1000);
-  x = squares.length;
-  counter = 0;
-  xPos = 0;
-  yPos = 0;
-  while(x--) {
-    ctx.fillStyle = squares[x].color;
-    ctx.fillRect(xPos,yPos,tileWidth,tileWidth);
-    xPos+= tileWidth;
-    counter++
-    if (counter == tilesX + 1) {
-      counter = 0;
-      xPos = 0;
-      yPos += tileWidth;
+var tilesX = 12;
+var tilesY = 8;
+var tileWidth = Math.ceil(window.innerWidth/tilesX)
+document.getElementsByTagName("svg")[0].height = tileWidth * tilesY;
+document.getElementsByTagName("svg")[0].width  = tileWidth * tilesX;
+var svgns = "http://www.w3.org/2000/svg";
+for (var x = 0; x < 100; x++) {
+    var rect = document.createElementNS(svgns, 'rect');
+    rect.setAttributeNS(null, 'x', xPos);
+    rect.setAttributeNS(null, 'y', yPos);     
+    rect.setAttributeNS(null, 'height', '50');
+    rect.setAttributeNS(null, 'width', '50');
+    rect.setAttributeNS(null, 'fill', getRandomRed();
+    document.getElementById('svgOne').appendChild(rect);
     }
-  }
 }
-
-(function animloop(){
-  requestAnimFrame(animloop);
-  render();
-})();
-// place the rAF *before* the render() to assure as close to
-// 60fps with the setTimeout fallback.
