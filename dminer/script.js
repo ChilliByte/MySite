@@ -19,14 +19,20 @@ var xPos = 0;
 var yPos = 0;
 var counter = 0;
 var svgns = "http://www.w3.org/2000/svg";
-for (var x = 0; x < 100; x++) {
+var css = "";
+for (var x = 0; x < 120; x++) {
     var rect = document.createElementNS(svgns, 'rect');
     rect.setAttributeNS(null, 'x', xPos);
     rect.setAttributeNS(null, 'y', yPos);     
     rect.setAttributeNS(null, 'height', ''+tileWidth);
     rect.setAttributeNS(null, 'width', ''+tileWidth);
     rect.setAttributeNS(null, 'fill', getRandomRed());
+    rect.setAttributeNS(null, 'id', "rectangle"+x)
+    rect.setAttributeNS(null, 'class', "rect")
     document.getElementById('svgOne').appendChild(rect);
+    if (Math.random>0.9) {
+      css+="@keyframes rectAnimNum" + x + "{0% {fill:" + getRandomRed() + ";} 100% {fill:" + getRandomRed() + ";}} #rectangle"+x" {animation: rectAnimNum" + x + " 5s linear 2s infinite alternate;}"
+    }
     xPos += tileWidth;
     counter++
     if (counter > tilesX) {
