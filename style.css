@@ -276,7 +276,7 @@ section:nth-child(5) textarea {
   bottom: 0;
   top: 0;
   height: 100%;
-  width: 40%;
+  width: 50%;
   line-height:100%;
 }
 
@@ -293,12 +293,6 @@ section:nth-child(5) textarea {
   transition: opacity 0.5s;
 }
 
-a #iCont {
-  position:absolute;
-  top: 60%
-  left:0;
-  right:0;
-}
 #formContainer {
   position:absolute;
   right:0;
