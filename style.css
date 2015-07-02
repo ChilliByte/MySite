@@ -268,13 +268,42 @@ section:nth-child(5) textarea {
   box-sizing:border-box;
 }
 
+#socialContainer {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  line-height:100%;
+}
 
+a {
+  font-size:4em;
+  color:white;
+  text-decoration:none;
+  opacity:0.5;
+  transition: opacity 0.5s;
+}
 
+a:hover {
+  opacity:1;
+  transition: opacity 0.5s;
+}
+
+a #iCont {
+  position:absolute;
+  top: 60%
+  left:0;
+  right:0;
+}
 #formContainer {
   position:absolute;
   right:0;
   height:100%;
-  width:40%;
+  width:45%;
 }
 
 footer {
