@@ -109,7 +109,7 @@ nav.section3 a:first-child {
     color:#f30000;
 }
 #nav {
-  height:27vh;
+  height:22vh;
 }
 
 body.scrolled nav {
@@ -128,22 +128,22 @@ section {
 section:nth-child(3) {
   margin-top:60px;
   text-align:center;
-  height: 63vh;
+  height: 69vh;
 }
 
 
 section:nth-child(3) h1 {
-  font-size:6em;
+  font-size:9vw;
   margin:5px;
 }
 
 section:nth-child(3) h2 {
-  font-size:2.5em;
+  font-size:4vw;
   margin:5px;
 }
 
 section:nth-child(3) h3 {
-  font-size:1.75em;
+  font-size:2.5vw;
   margin:5px;
 }
 
@@ -362,6 +362,9 @@ footer {
   }
   section:nth-child(4) article #container p {
     width:80%;
+  }
+  footer {
+    font-size: 2.5vw;
   }
 }
 /* Small Phones */
