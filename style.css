@@ -372,6 +372,10 @@ footer {
     line-height:22px;
     padding-top:6px;
   }
+  
+  section:nth-child(4) {
+    height:118vh;
+  }
   section:nth-child(5) #socialContainer {
       width:95%;
       left:0;
