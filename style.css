@@ -279,6 +279,7 @@ section:nth-child(5) textarea {
   width: 50%;
   padding-top:20%;
   text-align:center;
+  box-sizing:border-box;
 }
 
 #socialContainer a {
