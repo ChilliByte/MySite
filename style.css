@@ -379,6 +379,9 @@ footer {
   section:nth-child(4) {
     height:192vh;
   }
+  section:nth-child(5) {
+    height:116vh;
+  }
   section:nth-child(5) #socialContainer {
       width:95%;
       left:0;
