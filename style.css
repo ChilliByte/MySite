@@ -296,7 +296,7 @@ section:nth-child(5) textarea {
   transition: opacity 0.5s;
 }
 
-#socialContainer a:after {
+#socialContainer:after {
   content: "<br/> Or, alternatively, you can contact me using to form on the right!";
 }
 
@@ -381,7 +381,7 @@ footer {
   section:nth-child(5) textarea {
     width:100%;
   }
-  #socialContainer a:after {
+  #socialContainer:after {
   content: "<br/> Or, alternatively, you can contact me using to form below!";
 }
 }
