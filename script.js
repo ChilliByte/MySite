@@ -25,7 +25,6 @@ function setSizes() {
     document.querySelector("section:nth-child(4)").height = vh(140);
     document.querySelector("section:nth-child(5)").height = vh(83);
     document.querySelector("footer").height = vh(8);
-    document.getElementById("socialContainer").style.lineHeight = window.getComputedStyle(document.getElementById("socialContainer")).height
 }
 
 
