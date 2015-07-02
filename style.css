@@ -369,6 +369,8 @@ footer {
 @media screen and (max-width: 600px) {
   nav a {
     width:60px;
+    line-height:22px;
+    padding-top:6px;
   }
   section:nth-child(5) #socialContainer {
       width:95%;
