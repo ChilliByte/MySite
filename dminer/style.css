@@ -68,4 +68,6 @@ footer {
   left:0;
   right:0;
   border-top:3px solid #BBB;
+  height:40px;
+  line-height:40px;
 }
