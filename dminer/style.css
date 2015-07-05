@@ -4,6 +4,7 @@ html, body {
   margin:0;
   padding:0;
   overflow-x:hidden;
+  font-family:Raleway;
 }
 svg {
   position:fixed;
@@ -20,12 +21,12 @@ section {
   height:100%;
   width:100%;
 }
-section:first-child {
+section:nth-child(2) {
   background-color:rgb(50,50,50,0.7);
   text-align:center;
   color:white;
 }
-section:first-child h1 {
+section:nth-child(2) h1 {
   font-size:4vw;
   margin-top:30%;
 }
