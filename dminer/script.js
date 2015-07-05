@@ -18,9 +18,10 @@ document.getElementsByTagName("svg")[0].width  = tileWidth * tilesX;
 var xPos = 0;
 var yPos = 0;
 var counter = 0;
+loopVar = Math.ceil(window.innerWidth/tileWidth) * Math.ceil(window.innerHeight/tileWidth)
 var svgns = "http://www.w3.org/2000/svg";
 var css = "";
-for (var x = 0; x < 120; x++) {
+for (var x = 0; x < loopVar; x++) {
     var rect = document.createElementNS(svgns, 'rect');
     rect.setAttributeNS(null, 'x', xPos);
     rect.setAttributeNS(null, 'y', yPos);     
