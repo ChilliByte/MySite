@@ -23,7 +23,7 @@ section {
   width:100%;
 }
 section:nth-child(3) {
-
+  height:70%;
   text-align:center;
   color:white;
 }
