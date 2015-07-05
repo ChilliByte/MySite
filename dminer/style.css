@@ -43,7 +43,7 @@ article {
   color:#eee;
   height:400px;
   padding-top:50px;
-  box-sizing::border-box;
+  box-sizing:border-box;
 }
 
 article a {
