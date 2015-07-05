@@ -20,3 +20,12 @@ section {
   height:100%;
   width:100%;
 }
+section:first-child {
+  background-color:rgb(50,50,50,0.7);
+  text-align:center;
+  color:white;
+}
+section:first-child h1 {
+  font-size:4vw;
+  margin-top:30%;
+}
