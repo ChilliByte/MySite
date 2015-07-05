@@ -5,6 +5,7 @@ html, body {
   padding:0;
   overflow-x:hidden;
   font-family:Raleway;
+  background-color:rgb(50,50,50,0.7);
 }
 svg {
   position:fixed;
@@ -22,7 +23,7 @@ section {
   width:100%;
 }
 section:nth-child(3) {
-  background-color:rgb(50,50,50,0.7);
+
   text-align:center;
   color:white;
 }
