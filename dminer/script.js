@@ -13,8 +13,8 @@ function getRandomRed() {
 var tilesX = 12;
 var tileWidth = Math.ceil(window.innerWidth/tilesX);
 var tilesY = Math.ceil(window.innerHeight/tileWidth);
-document.getElementsByTagName("svg")[0].height = tileWidth * tilesY;
-document.getElementsByTagName("svg")[0].width  = tileWidth * tilesX;
+document.getElementsByTagName("svg")[0].style.height = tileWidth * tilesY;
+document.getElementsByTagName("svg")[0].style.width  = tileWidth * tilesX;
 var xPos = 0;
 var yPos = 0;
 var counter = 0;
