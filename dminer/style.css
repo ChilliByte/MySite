@@ -34,7 +34,8 @@ section:nth-child(3) h1 {
 section:nth-child(4) {
   background-color:#eee;
   color:#333;
-  padding:5px;
+  padding-top:5px;
+  text-align:center;
 }
 
 article {
@@ -51,6 +52,8 @@ article a {
   text-decoration:none;
   opacity:0.5;
   transition: opacity 2s;
+  display:inline-block;
+  margin-left:5px;
 }
 
 article a:hover {
