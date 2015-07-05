@@ -21,12 +21,12 @@ section {
   height:100%;
   width:100%;
 }
-section:nth-child(2) {
+section:nth-child(3) {
   background-color:rgb(50,50,50,0.7);
   text-align:center;
   color:white;
 }
-section:nth-child(2) h1 {
+section:nth-child(3) h1 {
   font-size:4vw;
   margin-top:30%;
 }
