@@ -37,8 +37,12 @@ ul {
 }
 li {
   display:block;
-  height:25px;
+  height:45px;
   background-color:#43a27a;
   color:white;
   border-bottom:4px solid #33926a;
+  margin-left:-8px;
+  width:110%;
+  margin-top:0;
+  margin-bottom:0;
 }
