@@ -50,9 +50,11 @@ li {
 li a {
   display:inline-block;
   height:100%;
-  width:120px;
+  width:90px;
   border-left:1px solid white;
+  border-right:1px solid white;
   color:white;
+  text-align:center;
 }
 li a:first-child {
   margin-left:20%;
