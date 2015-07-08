@@ -45,4 +45,13 @@ li {
   width:110%;
   margin-top:0;
   margin-bottom:0;
+  line-height:45px;
+}
+li a {
+  display:inline-block;
+  height:100%;
+  border-left:1px solid white;
+}
+li a:first-child {
+  margin-left:20%;
 }
