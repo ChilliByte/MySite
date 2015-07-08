@@ -1,0 +1,15 @@
+html {
+  background-color:#eee;
+  color: #222;
+  font-family:Calibri;
+}
+
+
+ul {
+  list-style-type: square;
+}
+
+li {
+  color: blue;
+}
+
