@@ -32,7 +32,17 @@
      		var stage =  1;
      		var animating = false;
      		var up  = true;
-     		var left = false;
+     		var walkSpeed = 0.05;
+     		var upSpeed = 0.04;
+     		var downSpeed = 0.07;
+     		function reset() {
+     			animating = false;
+     			cube.position.x = 0;
+     			cube.position.y = 0;
+     			stage = 1;
+     			camera.position.z = 3
+     			up = true;
+     		}
 		var render = function () {
 			requestAnimationFrame( render );
 			if(animating) {
@@ -43,14 +53,14 @@
 					}
 				}
 				if(stage == 2) {
-					cube.position.x += 0.05;
+					cube.position.x += walkSpeed;
 					if(up) {
-						cube.position.y += 0.04 
+						cube.position.y += upSpeed; 
 						if (cube.position.y > 0.4) {
 							up = false;
 						}
 					} else {
-						cube.position.y -= 0.07;
+						cube.position.y -= downSpeed;
 						if (cube.position.y < 0.1) {
 							up = true;
 						}
