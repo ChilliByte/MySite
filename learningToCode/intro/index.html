@@ -30,10 +30,10 @@
 		scene.add( light );
 
      		var stage =  1;
-     		var animate = false;
+     		var animating = false;
 		var render = function () {
 			requestAnimationFrame( render );
-			if(animation) {
+			if(animating) {
 				if(stage == 1) {
 					camera.position.z += 0.1;
 					if(camera.position.z > 11) {
