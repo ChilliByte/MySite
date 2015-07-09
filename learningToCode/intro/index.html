@@ -25,24 +25,25 @@
 		var cube = new THREE.Mesh( geometry, material );
 		scene.add( cube );
 
-		camera.position.z = 5;
+		camera.position.z = 3;
 		var light = new THREE.AmbientLight( 0xb0b0b0 ); // soft white light
 		scene.add( light );
 
      		var stage =  1;
+     		var animate = false;
 		var render = function () {
 			requestAnimationFrame( render );
-
-			if(stage == 1) {
-				camera.position.z += 0.1;
-				if(camera.position.z > 11) {
-					stage = 2;
+			if(animation) {
+				if(stage == 1) {
+					camera.position.z += 0.1;
+					if(camera.position.z > 11) {
+						stage = 2;
+					}
+				}
+				if(stage == 2) {
+					cube.position.x += 0.1;
 				}
 			}
-			if(stage == 2) {
-				cube.position.x += 0.1;
-			}
-
 			renderer.render(scene, camera);
 		};
 
