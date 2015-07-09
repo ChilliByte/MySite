@@ -26,22 +26,35 @@
 		scene.add( cube );
 
 		camera.position.z = 3;
-		var light = new THREE.AmbientLight( 0xb0b0b0 ); // soft white light
+		var light = new THREE.AmbientLight( 0xd0d0d0 ); // soft white light
 		scene.add( light );
 
      		var stage =  1;
      		var animating = false;
+     		var up  = true;
+     		var left = false;
 		var render = function () {
 			requestAnimationFrame( render );
 			if(animating) {
 				if(stage == 1) {
 					camera.position.z += 0.1;
-					if(camera.position.z > 11) {
+					if(camera.position.z > 8) {
 						stage = 2;
 					}
 				}
 				if(stage == 2) {
 					cube.position.x += 0.1;
+					if(up) {
+						cube.position.y += 0.1 
+						if (cube.position.y > 0.4) {
+							up = false;
+						}
+					} else {
+						cube.position.y -= 0.1;
+						if (cube.position.y < 0.1) {
+							up = true;
+						}
+					}	
 				}
 			}
 			renderer.render(scene, camera);
