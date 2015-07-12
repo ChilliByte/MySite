@@ -90,4 +90,17 @@ nav a {
   height:60px;
   width:120px;
   box-sizing:border-box;
+  color:white;
+  font-size:18px;
+  text-decoration:none;
+  border-bottom:3px solid black;
+  border-color:rgba(50,50,50,0);
+  transition: border-color 0.8s;
+}
+nav a:hover {
+  border-color:rgba(200,20,20,0);
+  transition: border-color 0.8s;
+}
+nav a i {
+  color:red;
 }
