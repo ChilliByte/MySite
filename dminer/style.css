@@ -117,3 +117,12 @@ nav a i {
 nav a:first-child {
   margin-right:15px;
 }
+div.social div {
+  display:inline-block;
+}
+#social1 {
+  width:25%;
+}
+#social2 {
+  width:75%;
+}
