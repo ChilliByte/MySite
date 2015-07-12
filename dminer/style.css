@@ -84,3 +84,10 @@ nav {
   transition: background-color 0.8s;
   border-bottom: 1px solid white;
 }
+nav a {
+  float:right;
+  display:inline-block;
+  height:60px;
+  width:120px;
+  box-sizing:border-box;
+}
