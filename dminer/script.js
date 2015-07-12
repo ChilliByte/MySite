@@ -42,9 +42,11 @@ for (var x = 0; x < loopVar; x++) {
       yPos+=tileWidth;
     }
 }
+window.onload = function() {
     window.addEventListener('scroll', function () {
         console.log("scrolling");
         document.body.classList[
             document.body.scrollTop > document.querySelector("section:nth-child(4)").offsetTop + 60 ? 'add': 'remove'
         ]('scrolled');
     });
+}
