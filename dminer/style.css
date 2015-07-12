@@ -45,6 +45,9 @@ article {
   height:300px;
   padding-top:50px;
   box-sizing:border-box;
+  position:absolute;
+  width:100%;
+  bottom:40px;
 }
 
 article a {
