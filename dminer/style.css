@@ -98,9 +98,10 @@ nav a {
   transition: border-color 0.8s;
 }
 nav a:hover {
-  border-color:rgba(200,20,20,0);
+  border-color:rgba(200,20,20,1);
   transition: border-color 0.8s;
 }
 nav a i {
-  color:red;
+  font-size:24px;
+  margin-right:3px;
 }
