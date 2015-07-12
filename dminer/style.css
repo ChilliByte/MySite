@@ -83,6 +83,7 @@ nav {
   background-color:rgba(50,50,50,0);
   transition: background-color 0.8s;
   border-bottom: 1px solid white;
+  text-align:center;
 }
 nav a {
   float:right;
