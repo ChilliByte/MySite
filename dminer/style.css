@@ -126,3 +126,11 @@ nav a:first-child {
   width:70%;
   display:inline-block;
 }
+
+@media screen and (max-width: 900px) {
+  #social1,
+  #social2 {
+    width:95%;
+    margin:0 auto;
+    display:block;
+  }
