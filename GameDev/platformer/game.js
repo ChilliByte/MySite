@@ -388,6 +388,7 @@ function drawBoxes() {
 }
 var touchingIce;
 function checkPlayerIceCollision() {
+    touchingIce = false;
     var dir = colCheck(player, currentLevel.ice[i],true);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r") {
