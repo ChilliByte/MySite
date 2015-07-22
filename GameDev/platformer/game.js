@@ -145,7 +145,7 @@ function checkKeys() {
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
         friction = normalFriction;
-    } else if (onIce) {
+    } else if (touchingIce) {
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
         friction = iceFriction;
