@@ -299,7 +299,7 @@ function checkPlayerWaterCollision() {
         if (player.velY > 10) {
             player.velY--
         }
-        if (player.velY > 1) {
+        if (player.velY > 2) {
             player.velY--
         }
         
