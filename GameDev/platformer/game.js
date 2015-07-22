@@ -386,7 +386,8 @@ function drawBoxes() {
     ctx.closePath()
     ctx.fill();
 }
-var touchingIce;
+var touchingIce = false;
+var iceToggle = false;
 function checkPlayerIceCollision() {
     console.log("checking ice collision" )
     touchingIce = false;
@@ -396,7 +397,6 @@ function checkPlayerIceCollision() {
         player.velX = 0;
         player.jumping = false;
         touchingIce = true;
-        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "b") {
         touchingIce = true;
         if (gravityDown) {
@@ -405,7 +405,6 @@ function checkPlayerIceCollision() {
         } else {
             player.velY *= -1;
         }
-        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "t") {
         touchingIce = true;
         if (gravityDown) {
@@ -414,10 +413,8 @@ function checkPlayerIceCollision() {
             player.grounded = true;
             player.jumping = false;
         }
-        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
-    } else {
-        touchingEdge = false;
     }
+    if(touchingIce == true) {iceToggle = true;}
 }
 function checkMobIceCollision() {
     //Loop through each of the mobs in this level, and see if any of them have collided with a box.
@@ -442,7 +439,8 @@ function drawIce() {
         checkPlayerIceCollision()
         checkMobIceCollision()
     }
-    console.log(touchingIce)
+    console.log("Touching? " + touchingIce)
+    console.log("Toggle: " + iceToggle)
     //End drawing and fill
     ctx.closePath()
     ctx.fill();
