@@ -73,7 +73,7 @@ level1.water.push({
 })
 level1.collectibles = [];
 level1.mobs = [];
-
+level1.ice = [];
 // Level 2
 level2.boxes = [];
 level2.boxes.push({
@@ -89,6 +89,20 @@ level2.boxes.push({
     height: 40*units
 });
 level2.water = [];
+level2.ice = [];
+level2.ice.push({
+    x: 5 * units,
+    y: 10 * units,
+    width: 10*units,
+    height: 1*units
+});
+
+level2.ice.push({
+    x: 20 * units,
+    y: 10 * units,
+    width: 10*units,
+    height: 1*units
+});
 level2.collectibles = [];
 level2.mobs = [];
 //Level 3
@@ -112,6 +126,7 @@ level3.boxes.push({
     height: 20*units
 });
 level3.water = [];
+level3.ice = [];
 level3.collectibles = [];
 level3.collectibles.push({
     x: 26*units,
@@ -182,6 +197,7 @@ level4.boxes.push({
     width: 10*units,
     height: 20*units
 });
+level4.ice = [];
 level4.collectibles = [];
 level4.collectibles.push({
     x: 11 * units,
@@ -285,6 +301,7 @@ level5.boxes.push({
     width: 20 * units,
     height: units
 });
+level4.ice = [];
 level5.water = [];
 level5.collectibles = [];
 level5.collectibles.push({
