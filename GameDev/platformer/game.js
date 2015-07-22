@@ -141,14 +141,14 @@ function checkKeys() {
             player.velX-= player.horizSpeed;
         }
     }
-    if (!inWater || touchingEdge) {
-        player.vertiSpeed = normalVertiSpeed;
-        gravity = normalGravity;
-        friction = normalFriction;
-    } else if (touchingIce) {
+    if (touchingIce){
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
         friction = iceFriction;
+    } else if (!inWater || touchingEdge)  {
+        player.vertiSpeed = normalVertiSpeed;
+        gravity = normalGravity;
+        friction = normalFriction;
     } else {
         player.vertiSpeed = waterVertiSpeed;
         gravity = waterGravity;
