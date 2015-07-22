@@ -422,7 +422,7 @@ function checkMobIceCollision() {
 }
 function drawIce() {
     //Change to green and begin drawing
-    ctx.fillStyle = "#AFF";
+    ctx.fillStyle = "#AAF";
     ctx.beginPath();
     
     i = currentLevel.ice.length;
