@@ -98,7 +98,7 @@ level2.ice.push({
 });
 
 level2.ice.push({
-    x: 20 * units,
+    x: 25 * units,
     y: 10 * units,
     width: 10*units,
     height: 1*units
