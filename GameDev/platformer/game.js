@@ -145,6 +145,10 @@ function checkKeys() {
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
         friction = normalFriction;
+    } else if (onIce) {
+        player.vertiSpeed = normalVertiSpeed;
+        gravity = normalGravity;
+        friction = iceFriction;
     } else {
         player.vertiSpeed = waterVertiSpeed;
         gravity = waterGravity;
@@ -382,15 +386,17 @@ function drawBoxes() {
     ctx.closePath()
     ctx.fill();
 }
-
+var touchingIce;
 function checkPlayerIceCollision() {
     var dir = colCheck(player, currentLevel.ice[i],true);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r") {
         player.velX = 0;
         player.jumping = false;
+        touchingIce = true;
         if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "b") {
+        touchingIce = true;
         if (gravityDown) {
             player.grounded = true;
             player.jumping = false;
@@ -399,6 +405,7 @@ function checkPlayerIceCollision() {
         }
         if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "t") {
+        touchingIce = true
         if (gravityDown) {
             player.velY *= -1;
         } else {
