@@ -430,8 +430,8 @@ function drawIce() {
         //Draw each box
         ctx.rect(currentLevel.ice[i].x, currentLevel.ice[i].y, currentLevel.ice[i].width, currentLevel.ice[i].height);
         //Figure out whether we've touched a box
-        checkPlayerBoxCollision()
-        checkMobBoxCollision()
+        checkPlayerIceCollision()
+        checkMobIceCollision()
     }
     
     //End drawing and fill
