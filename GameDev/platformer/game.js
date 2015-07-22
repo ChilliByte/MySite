@@ -335,10 +335,12 @@ function checkPlayerBoxCollision() {
     var dir = colCheck(player, currentLevel.boxes[i],true);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r") {
+        touchingIce = false;
         player.velX = 0;
         player.jumping = false;
         if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "b") {
+        touchingIce = false;
         if (gravityDown) {
             player.grounded = true;
             player.jumping = false;
@@ -347,6 +349,7 @@ function checkPlayerBoxCollision() {
         }
         if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "t") {
+        touchingIce = false;
         if (gravityDown) {
             player.velY *= -1;
         } else {
@@ -426,7 +429,6 @@ function drawIce() {
     //Change to green and begin drawing
     ctx.fillStyle = "#AAF";
     ctx.beginPath();
-    touchingIce = false;    
     i = currentLevel.ice.length;
     while (i--) {
         //Draw each box
@@ -436,7 +438,6 @@ function drawIce() {
         checkPlayerIceCollision()
         checkMobIceCollision()
     }
-    console.log("Touching? " + touchingIce)
     //End drawing and fill
     ctx.closePath()
     ctx.fill();
