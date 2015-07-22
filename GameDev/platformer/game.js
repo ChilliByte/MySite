@@ -388,6 +388,7 @@ function drawBoxes() {
 }
 var touchingIce;
 function checkPlayerIceCollision() {
+    console.log("checking ice collision" )
     touchingIce = false;
     var dir = colCheck(player, currentLevel.ice[i],true);
     //Do something depending on the direction the collision happened from.
@@ -406,7 +407,7 @@ function checkPlayerIceCollision() {
         }
         if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "t") {
-        touchingIce = true
+        touchingIce = true;
         if (gravityDown) {
             player.velY *= -1;
         } else {
@@ -441,7 +442,7 @@ function drawIce() {
         checkPlayerIceCollision()
         checkMobIceCollision()
     }
-    
+    console.log(touchingIce)
     //End drawing and fill
     ctx.closePath()
     ctx.fill();
