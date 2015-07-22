@@ -387,10 +387,7 @@ function drawBoxes() {
     ctx.fill();
 }
 var touchingIce = false;
-var iceToggle = false;
 function checkPlayerIceCollision() {
-    console.log("checking ice collision" )
-    touchingIce = false;
     var dir = colCheck(player, currentLevel.ice[i],true);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r") {
@@ -414,7 +411,6 @@ function checkPlayerIceCollision() {
             player.jumping = false;
         }
     }
-    if(touchingIce == true) {iceToggle = true;}
 }
 function checkMobIceCollision() {
     //Loop through each of the mobs in this level, and see if any of them have collided with a box.
@@ -430,7 +426,7 @@ function drawIce() {
     //Change to green and begin drawing
     ctx.fillStyle = "#AAF";
     ctx.beginPath();
-    iceToggle = false;    
+    touchingIce = false;    
     i = currentLevel.ice.length;
     while (i--) {
         //Draw each box
@@ -441,7 +437,6 @@ function drawIce() {
         checkMobIceCollision()
     }
     console.log("Touching? " + touchingIce)
-    console.log("Toggle: " + iceToggle)
     //End drawing and fill
     ctx.closePath()
     ctx.fill();
