@@ -430,13 +430,13 @@ function drawIce() {
     //Change to green and begin drawing
     ctx.fillStyle = "#AAF";
     ctx.beginPath();
-    
+    iceToggle = false;    
     i = currentLevel.ice.length;
     while (i--) {
         //Draw each box
         ctx.rect(currentLevel.ice[i].x, currentLevel.ice[i].y, currentLevel.ice[i].width, currentLevel.ice[i].height);
         //Figure out whether we've touched a box
-        iceToggle = false;
+
         checkPlayerIceCollision()
         checkMobIceCollision()
     }
