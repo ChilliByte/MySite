@@ -27,6 +27,7 @@ function update() {
     
     drawBoxes();
     drawWater();
+    drawIce();
     drawCollectibles();
     drawMobs();
     
@@ -381,6 +382,64 @@ function drawBoxes() {
     ctx.closePath()
     ctx.fill();
 }
+
+function checkPlayerIceCollision() {
+    var dir = colCheck(player, currentLevel.ice[i],true);
+    //Do something depending on the direction the collision happened from.
+    if (dir === "l" || dir === "r") {
+        player.velX = 0;
+        player.jumping = false;
+        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
+    } else if (dir === "b") {
+        if (gravityDown) {
+            player.grounded = true;
+            player.jumping = false;
+        } else {
+            player.velY *= -1;
+        }
+        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
+    } else if (dir === "t") {
+        if (gravityDown) {
+            player.velY *= -1;
+        } else {
+            player.grounded = true;
+            player.jumping = false;
+        }
+        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
+    } else {
+        touchingEdge = false;
+    }
+}
+function checkMobIceCollision() {
+    //Loop through each of the mobs in this level, and see if any of them have collided with a box.
+    l = currentLevel.mobs.length
+    while (l--) {
+        currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.ice[i], true)
+        if (currentLevel.mobs[l].collisionDir === "b") {
+            currentLevel.mobs[l].grounded = true
+        }
+    }
+}
+function drawIce() {
+    //Change to green and begin drawing
+    ctx.fillStyle = "#AFF";
+    ctx.beginPath();
+    
+    i = currentLevel.ice.length;
+    while (i--) {
+        //Draw each box
+        ctx.rect(currentLevel.ice[i].x, currentLevel.ice[i].y, currentLevel.ice[i].width, currentLevel.ice[i].height);
+        //Figure out whether we've touched a box
+        checkPlayerBoxCollision()
+        checkMobBoxCollision()
+    }
+    
+    //End drawing and fill
+    ctx.closePath()
+    ctx.fill();
+}
+
+
 function drawCollectibles() {
     ctx.beginPath();
     ctx.fillStyle = "orange";
