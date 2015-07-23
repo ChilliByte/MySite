@@ -12,7 +12,7 @@ function level() {
     levels.push(this)
 }
 
-function box(x,y,h,w,e) {
+function Box(x,y,h,w,e) {
     this.x = x;
     this.y = y;
     this.height = h;
@@ -22,7 +22,7 @@ function box(x,y,h,w,e) {
     }
 }
 
-function collectible(x,y,w,h,t) {
+function Collectible(x,y,w,h,t) {
     this.x = x;
     this.y = y;
     this.height = h;
@@ -31,7 +31,7 @@ function collectible(x,y,w,h,t) {
     this.collected = false;
 }
 
-function mob(x,y,w,h,s,t,xl,yl) {
+function Mob(x,y,w,h,s,t,xl,yl) {
     this.x = x;
     this.y = y;
     this.width = w;
@@ -56,57 +56,8 @@ level5 = new level();
 
 //Level1
 level1.boxes = [];
-level1.boxes.push({
-    x: -1*units,
-    y: 0,
-    width: 1*units + 1,
-    height: 40*units
-});
-level1.boxes.push({
-    x: -10*units,
-    y: 16*units,
-    width: 80 * units,
-    height: 20 * units
-});
-level1.boxes.push({
-    x: 12*units,
-    y: 12*units,
-    width: 2*units,
-    height: 4*units
-});
-
-level1.boxes.push({
-    x: 13*units,
-    y: 11*units,
-    width: units,
-    height: 8*units
-});
-
-
-level1.boxes.push({
-    x: 27*units,
-    y: 11*units,
-    width: units,
-    height: 8*units
-});
-
-level1.boxes.push({
-    x: 13*units,
-    y: 10*units,
-    width: units,
-    height: units,
-    waterEdge: true
-});
-
-level1.boxes.push({
-    x: 27*units,
-    y: 10*units,
-    width: units,
-    height: units,
-    waterEdge: true
-});
-
-
+level1.boxes.push(new Box(-1*units, 0, 1*units + 1, 20*units));
+level1.boxes.push(new Box(-10*units,16*units,60 * units, 16 * units));
 
 level1.water = [];
 level1.water.push({
