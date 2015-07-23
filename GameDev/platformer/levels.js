@@ -1,15 +1,59 @@
 //Begin Levels
 levels = [];
-level1 = {};
-levels.push(level1);
-level2 = {};
-levels.push(level2);
-level3 = {};
-levels.push(level3);
-level4 = {};
-levels.push(level4);
-level5 = {};
-levels.push(level5);
+
+function level() {
+    this.boxes = [];
+    this.water = [];
+    this.ice = [];
+    this.switches = [];
+    this.doors = [];
+    this.mobs = [];
+    this.collectibles = [];
+    levels.push(this)
+}
+
+function box(x,y,h,w,e) {
+    this.x = x;
+    this.y = y;
+    this.height = h;
+    this.width = w;
+    if(e != undefined) {
+        this.waterEdge = true
+    }
+}
+
+function collectible(x,y,w,h,t) {
+    this.x = x;
+    this.y = y;
+    this.height = h;
+    this.width = w;
+    this.type = t;
+    this.collected = false;
+}
+
+function mob(x,y,w,h,s,t,xl,yl) {
+    this.x = x;
+    this.y = y;
+    this.width = w;
+    this.height = h;
+    this.speed = s;
+    this.type = t;
+    this.x1Limit = x1;
+    this.x2Limit = x2;
+    this.velX: 0,
+    this.velY: 0,
+    this.collisionDir: "",
+    this.grounded: false,
+    this.hitPlayer: "",
+    this.dead: false
+}
+
+level1 = new level();
+level2 = new level();
+level3 = new level();
+level4 = new level();
+level5 = new level();
+
 //Level1
 level1.boxes = [];
 level1.boxes.push({
