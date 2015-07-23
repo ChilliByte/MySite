@@ -28,6 +28,8 @@ function update() {
     drawBoxes();
     drawWater();
     drawIce();
+    drawSwitches();
+    drawDoors();
     drawCollectibles();
     drawMobs();
     
@@ -330,6 +332,7 @@ function drawWater() {
     ctx.closePath()
     ctx.fill();
 }
+function drawSwitches() {}
 function drawDoors() {}
 function checkPlayerBoxCollision() {
     var dir = colCheck(player, currentLevel.boxes[i],true);
