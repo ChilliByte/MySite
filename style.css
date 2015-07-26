@@ -318,8 +318,13 @@ footer {
   border-top:3px solid #ccc;
 }
 
+@media screen and (min-width: 1200px) {
+  section:nth-child(3) h1 {
+    font-size: 120px;
+  }
+}
 /* Tablets */
-/*DELETE THIS COMMENT - This one should change the portfolio tiles */
+/*This one should change the portfolio tiles */
 @media screen and (max-width: 855px) {
   section:nth-child(4)  {
     height:192vh;
@@ -336,7 +341,7 @@ footer {
   
 }
 /* Large Phones */
-/*DELETE THIS COMMENT - This one should change the about section */
+/*This one should change the about section */
 @media screen and (max-width: 675px) {
   section:nth-child(4) article {
     height:500px;
@@ -368,7 +373,7 @@ footer {
   }
 }
 /* Small Phones */
-/*DELETE THIS COMMENT - This one should change the contact form and remove the <a>  's in <nav>*/
+/*This one should change the contact form and remove the <a>  's in <nav>*/
 @media screen and (max-width: 600px) {
   nav a {
     width:60px;
