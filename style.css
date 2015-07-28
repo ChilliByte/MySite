@@ -298,7 +298,7 @@ section:nth-child(5) textarea {
 }
 
 #socialContainer:after {
-  content: "Or, alternatively, you can contact me using to form on the right!";
+  content: "Or, alternatively, you can contact me using the form on the right!";
 }
 
 #formContainer {
@@ -406,7 +406,7 @@ footer {
     width:100%;
   }
   #socialContainer:after {
-    content: "Or, alternatively, you can contact me using to form below!";
+    content: "Or, alternatively, you can contact me using the form below!";
   }
 }
 @media screen and (max-width: 400px) {
