@@ -54,6 +54,7 @@ nav {
   font-size:2em;
   padding-left:10px;
   line-height:60px;
+  box-sizing:border-box;
 }
 
 nav a {
