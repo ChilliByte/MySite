@@ -11,6 +11,13 @@ html {
 	background-position: center;
 }
 
+body {
+	position:absolute;
+	right:0;
+	top:0;
+	width:70%;
+}
+
 aside {
 	position:fixed;
 	left:0;
@@ -19,6 +26,7 @@ aside {
 	height:100%;
 	width:30%;
 	background-color:#333;
+	opacity:0.7;
 	color:white;
 	text-align:center;
 	border-right:3px solid #222;
