@@ -6,6 +6,9 @@ html {
 	font-family:Raleway;
 	background-image: url('https://download.unsplash.com/photo-1434394673726-e8232a5903b4');
 	background-size:cover;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position: center;
 }
 
 aside {
