@@ -20,3 +20,7 @@ aside {
 	box-sizing:border-box;
 	padding-top:35%;
 }
+
+aside hr {
+	width:90%;
+}
