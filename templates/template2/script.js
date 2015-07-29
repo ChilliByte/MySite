@@ -3,7 +3,7 @@ window.onload = function() {
         console.log(evt.target.parentNode);
         console.log(evt.target.innerText);
         console.log(evt.target.tagName)
-        if((evt.target.tagName == "a") && (evt.target.innerText == "Read more")) {
+        if((evt.target.tagName == "A") && (evt.target.innerText == "Read more")) {
             alert("YAY!")
         }
         alert("Read console")
