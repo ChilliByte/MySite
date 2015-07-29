@@ -64,11 +64,18 @@ aside footer {
 	position:absolute;
 	bottom:0px;
 	left:0;
-	width:30%;
-	font-size:1.7vw;
+	width:100%;
+	font-size:18px;
 	border-top:2px solid white;
 }
 
 aside footer a {
 	color:white;
+}
+
+article {
+	display:block;
+	margin-bottom:15px;
+	background-color:white;
+	opacity:0.6;
 }
