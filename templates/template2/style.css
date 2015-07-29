@@ -67,6 +67,9 @@ aside footer {
 	width:100%;
 	font-size:18px;
 	border-top:2px solid white;
+	height:54px;
+	line-height:25px;
+	padding-top:4px;
 }
 
 aside footer a {
@@ -76,6 +79,7 @@ aside footer a {
 article {
 	display:block;
 	margin-bottom:15px;
+	margin-right:50px;
 	background-color:white;
-	opacity:0.6;
+	opacity:0.8;
 }
