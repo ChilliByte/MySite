@@ -21,6 +21,12 @@ aside {
 	padding-top:35%;
 }
 
+aside #content {	
+	position: relative;
+ 	top: 50%;
+	transform: translateY(-50%);
+}
+
 aside hr {
 	width:90%;
 }
