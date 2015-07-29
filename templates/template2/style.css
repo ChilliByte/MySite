@@ -79,7 +79,8 @@ aside footer a {
 article {
 	display:block;
 	margin-bottom:15px;
-	margin-right:50px;
+	margin-right:20px;
 	background-color:white;
 	opacity:0.8;
+	height:400px;
 }
