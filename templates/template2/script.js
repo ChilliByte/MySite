@@ -4,8 +4,8 @@ window.onload = function() {
         console.log(evt.target.innerText);
         console.log(evt.target.tagName)
         if((evt.target.tagName == "A") && (evt.target.innerText == "Read more")) {
-            alert("YAY!")
+            evt.preventDefault();
+            evt.target.parentElement.style.backgroundColor = "#OOFFOO";
         }
-        alert("Read console")
     }, false);
 }
