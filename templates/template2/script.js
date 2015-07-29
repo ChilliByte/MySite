@@ -5,7 +5,7 @@ window.onload = function() {
         console.log(evt.target.tagName)
         if((evt.target.tagName == "A") && (evt.target.innerText == "Read more")) {
             evt.preventDefault();
-            evt.target.parentNode.style.background = "#OOFFOO";
+            evt.target.parentNode.setAttribute("style","#OOFFOO");
         }
     }, false);
 }
