@@ -78,11 +78,15 @@ aside footer a {
 
 article {
 	display:block;
-	margin-bottom:15px;
+	margin-bottom:25px;
 	margin-right:20px;
 	background-color:white;
 	opacity:0.9;
 	height:400px;
 	padding:15px;
 	box-sizing:border-box;
+}
+
+article h1 {
+	margin:0;
 }
