@@ -128,12 +128,25 @@ article.fs a {
 
 @media screen and (max-width: 880px) {
 	aside footer {
-		height:108px;
+		height:85px;
 		padding-top:8px;	
 	}
 }
 
 @media screen and (max-width: 720px) {
-	
-	
+	aside {
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		height:60%;
+		width:100%;
+		border-right:none;
+		border-bottom:3px solid #222;
+	}
+	body {
+		width:100%;
+		left:0;
+		right:0;
+	}
 }
