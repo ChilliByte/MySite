@@ -159,10 +159,14 @@ article.fs a {
 		padding-top:4px;
 	}
 	article {
-		margin: 0 auto;
+		margin: 10px auto;
 		text-align: center;
 	}
 	article:first-of-type {
 		margin-top:470px;
+	}
+	
+	article.fs {
+		height:100%;
 	}
 }
