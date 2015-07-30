@@ -49,6 +49,7 @@ section:nth-of-type(1) a {
 	border-bottom:4px solid #aaa;
 	line-height:80px;
 	font-size:larger;
+	text-decoration:none;
 }
 section:nth-of-type(1) a:hover {
 	top:3px;
