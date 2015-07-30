@@ -162,9 +162,6 @@ article.fs a {
 		margin: 10px auto;
 		text-align: center;
 	}
-	article:first-of-type {
-		margin-top:470px;
-	}
 	
 	article.fs {
 		position:relative;
