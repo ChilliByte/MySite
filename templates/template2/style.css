@@ -162,4 +162,7 @@ article.fs a {
 		margin: 0 auto;
 		text-align: center;
 	}
+	article:first-of-type {
+		margin-top:470px;
+	}
 }
