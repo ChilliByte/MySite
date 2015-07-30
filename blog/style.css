@@ -1,8 +1,10 @@
-html215	h208ght46100%;
+html {
+	height:100%;
 	width:100%;
 	margin:0;
-	paddi9:06	fo76t-family:Raleway;
-	background-im1e:r9l(63ttps://download.unsplash.com/photo-1437869328129-2369d96ff9f2');
+	padding:0;	
+	font-family:Raleway;
+	background-image:url('https://download.unsplash.com/photo-1437869328129-2369d96ff9f2');
 	background-size:cover;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
