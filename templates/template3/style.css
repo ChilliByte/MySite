@@ -27,7 +27,6 @@ nav {
 	line-height:60px;
 	box-sizing:border-box;
 	background-color:rgba(0,0,0,0);
-	border-bottom:1px solid rgb(240,240,240);
 	transition: background-color 0.5s, border-bottom 0.5s;
 	font-size:2em;
 }
@@ -82,12 +81,16 @@ nav a {
 	box-sizing:border-box;
 	float:right;
 	text-align:center;
-	border-left:0.5px solid #FFFFFF;
-	border-right:0.5px solid #FFFFFF;
-	border-bottom:3px solid #FFFFFF;
+	border-bottom:3px solid rgba(255,255,255,0);
 	font-size:0.5em;
 	color:white;
 	text-decoration:none;
+	transition:border-bottom 1s;
+}
+
+nav a:hover {
+	border-bottom:3px solid rgba(255,255,255,1);
+	transition:border-bottom 1s;
 }
 
 footer {
