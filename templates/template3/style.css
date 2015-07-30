@@ -89,3 +89,19 @@ nav a {
 	color:white;
 	text-decoration:none;
 }
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	height: 25px;
+	line-height: 25px;
+	font-size: smaller;
+}
+
+footer a {
+	color:white;
+}
