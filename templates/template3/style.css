@@ -1,0 +1,29 @@
+html {	
+  height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	font-family:Raleway;
+	background-image: url('https://download.unsplash.com/photo-1438155047396-adbf4a7252ec');
+	background-size:cover;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+body {
+  
+}
+
+section:first-of-type {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height:100%
+    width:100%
+    background-color:rgba(40,40,40,0.7);
+    color:white;
+    text-align:center
+}
