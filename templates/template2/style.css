@@ -139,7 +139,7 @@ article.fs a {
 		top:0;
 		left:0;
 		right:0;
-		height:400vh;
+		height:450px;
 		width:100%;
 		border-right:none;
 		border-bottom:3px solid #222;
@@ -149,6 +149,9 @@ article.fs a {
 		left:0;
 		right:0;
 		margin:0;
+	}
+	aside #content {
+		top:42%;
 	}
 	aside footer {
 		height:54px;
