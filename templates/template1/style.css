@@ -10,7 +10,7 @@ html {
   padding:0;
   box-sizing:border-box;
   
-  background-image: url("https://download.unsplash.com/photo-1430165558479-de3cf8cf1478"), url('https://download.unsplash.com/photo-1420330454265-b682d57d0592');
+  background-image: url("https://download.unsplash.com/photo-1433733071959-30cd185d14a8"), url('https://download.unsplash.com/photo-1438164249452-3220997b62e7');
   background-size:cover;
   background-attachment:fixed;
   background-repeat:no-repeat;
@@ -18,7 +18,7 @@ html {
 }
 
 html.scrolled {
-  background-image: url('https://download.unsplash.com/photo-1420330454265-b682d57d0592');
+  background-image: url('https://download.unsplash.com/photo-1438164249452-3220997b62e7');
   background-size:cover;
   background-attachment:fixed;
   background-repeat:no-repeat;
