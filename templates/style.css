@@ -58,7 +58,7 @@ aside hr {
 	
 	/* W3C */
 	background : -linear-gradient(left, rgb(35, 38, 32) 00%, rgba(35,38,32,1) 25%, rgb(73, 71, 48) 25%, rgba(73,71,48,1) 50%, rgb(113, 113, 108) 50%, rgba(113,113,108,1) 75%, rgb(99, 121, 172) 75%);
-	
+}	
 
 aside footer {
 	position:absolute;
