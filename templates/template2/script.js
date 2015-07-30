@@ -6,6 +6,7 @@ window.onload = function() {
         if((evt.target.tagName == "A") && (evt.target.innerText == "Read more")) {
             evt.preventDefault();
             evt.target.parentNode.className = "fs";
+            evt.target.innerText = "Go back"
         }
         if((evt.target.tagName == "A") && (evt.target.innerText == "Go back")) {
             evt.preventDefault();
