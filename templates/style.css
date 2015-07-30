@@ -120,8 +120,8 @@ article a.button {
 	top:0;
 	height:40px;
 	width:100px;
-	color:#DDDDDD;
-	background-color:white;
+	color:gray;
+	background-color:#DDDDDD;
 	border-bottom:4px solid #aaa;
 	line-height:40px;
 	font-size:larger;
