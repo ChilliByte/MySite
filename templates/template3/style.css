@@ -72,3 +72,20 @@ nav {
 	transition: background-color 0.5s, border-bottom 0.5s;
 	font-size:2em;
 }
+
+nav a {
+	position:relative;
+	display:inline-block;
+	height:61px;
+	width:120px;
+	margin:0;
+	box-sizing:border-box;
+	float:right;
+	text-align:center;
+	border-left:0.5px solid #FFFFFF;
+	border-right:0.5px solid #FFFFFF;
+	border-bottom:3px solid #FFFFFF;
+	font-size:0.5em;
+	color:white;
+	text-decoration:none;
+}
