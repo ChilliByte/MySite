@@ -126,6 +126,7 @@ article a.button {
 	line-height:40px;
 	font-size:larger;
 	text-decoration:none;
+	text-align:center;
 }
 
 article a.button:hover {
