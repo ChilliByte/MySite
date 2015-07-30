@@ -167,6 +167,9 @@ article.fs a {
 	}
 	
 	article.fs {
-		height:100%;
+		position:relative;
+		height:700px;
+		width:auto;
+		margin:10px auto;
 	}
 }
