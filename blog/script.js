@@ -1,4 +1,30 @@
 var posts = ["helloWorld"]
+
+function ahah(url) {
+	var targetElement = document.body;
+       
+	var request = window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttprequestuest();
+	request.onreadystatechange = function() {
+		if (request.readyState != 4) { //not "OK" status
+			return;
+		}
+		if (request.status != 200 && request.status != 304) {
+			console.log = "ahah error:\n" + request.statusText;
+			return;
+		}
+		targetElement.innerHTML += request.responseText;
+	}
+	request.open("GET", url, true);
+	request.send();
+}
+var numOfPosts;
+function loadPosts() {
+	numOfPosts = posts.length;
+	while(numOfPosts--) {
+		ahah("posts/" + posts[numOfPosts] + ".html");
+	}
+}
+
 window.onload = function() {
     document.addEventListener('click', function(evt) {
         console.log(evt.target.parentNode);
@@ -14,23 +40,5 @@ window.onload = function() {
             evt.target.innerText = "Read more";
         }
     }, false);
-}
-
-function ahah(url, targetId, onDone) {
-	var targetElement = document.getElementById(targetId);
-       
-	var request = window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttprequestuest();
-	request.onreadystatechange = function() {
-		if (request.readyState != 4) { //not "OK" status
-			return;
-		}
-		if (request.status != 200 && request.status != 304) {
-			console.log = "ahah error:\n" + request.statusText;
-			return;
-		}
-		targetElement.innerHTML += request.responseText;
-		onDone && onDone(); //exists? then trigger
-	}
-	request.open("GET", url, true);
-	request.send();
+    loadPosts()
 }
