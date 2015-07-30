@@ -103,8 +103,12 @@ article h2 {
 	font-size:100%;
 	margin:2px;
 }
-article a#readMore {
+
+article a {
 	color:grey;
+}
+
+article a#readMore {
 	position:absolute;
 	bottom:10px;
 	right:20px;
