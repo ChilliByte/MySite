@@ -90,7 +90,7 @@ article {
 	font-size:medium;
 	top:0;
 	right:0;
-	transition: height 1s, width 1s, text-align 1s, font-size 1s;
+	transition: height 1s, width 1s, text-align 1s, font-size 1s, margin-right 0.5s;
 }
 
 article h1 {
@@ -115,5 +115,11 @@ article.fs {
 	width:70%;
 	text-align:center;
 	font-size:larger;
-	transition: height 1s, width 1s, text-align 1s, font-size 1s;
+	margin-right:0;
+	transition: height 1s, width 1s, text-align 1s, font-size 1s, margin-right 0.5s;
+}
+
+article.fs a {
+	top:10px;
+	bottom:initial;
 }
