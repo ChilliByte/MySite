@@ -45,19 +45,19 @@ aside hr {
 	border:none;
 	border-radius:1px;
 	/* Chrome 10+,Safari */
-	background : -webkit-linear-gradient(left, rgb(191, 10, 10) 00%, rgb(191, 10, 10) 25%, rgb(217, 217, 0) 25%, rgb(217, 217, 0) 49%, rgb(22, 204, 22) 50%, rgb(22, 204, 22) 74%, rgb(25, 25, 236) 75%);
+	background : -webkit-linear-gradient(left, rgb(201, 188, 147) 00%, rgb(201, 188, 147) 25%, rgb(81, 103, 62) 25%, rgb(81, 103, 62) 50%, rgb(112, 140, 167) 50%, rgb(112, 140, 167) 75%, rgb(237,224,222) 75%);
 
 	/* Firefox 4+ */ 
-	background : -moz-linear-gradient(left, rgb(191, 10, 10) 00%, rgb(191, 10, 10) 25%, rgb(217, 217, 0) 25%, rgb(217, 217, 0) 49%, rgb(22, 204, 22) 50%, rgb(22, 204, 22) 74%, rgb(25, 25, 236) 75%);
+	background : -moz-linear-gradient(left, rgb(201, 188, 147) 00%, rgb(201, 188, 147) 25%, rgb(81, 103, 62) 25%, rgb(81, 103, 62) 50%, rgb(112, 140, 167) 50%, rgb(112, 140, 167) 75%, rgb(237,224,222) 75%);
 
 	/* Opera */
-	background : -o-linear-gradient(left, rgb(191, 10, 10) 00%, rgb(191, 10, 10) 25%, rgb(217, 217, 0) 25%, rgb(217, 217, 0) 49%, rgb(22, 204, 22) 50%, rgb(22, 204, 22) 74%, rgb(25, 25, 236) 75%);
+	background : -o-linear-gradient(left, rgb(201, 188, 147) 00%, rgb(201, 188, 147) 25%, rgb(81, 103, 62) 25%, rgb(81, 103, 62) 50%, rgb(112, 140, 167) 50%, rgb(112, 140, 167) 75%, rgb(237,224,222) 75%);
 
 	/* IE 10+ */
-	background : -ms-linear-gradient(left, rgb(191, 10, 10) 00%, rgb(191, 10, 10) 25%, rgb(217, 217, 0) 25%, rgb(217, 217, 0) 49%, rgb(22, 204, 22) 50%, rgb(22, 204, 22) 74%, rgb(25, 25, 236) 75%); 
+	background : -ms-linear-gradient(left, rgb(201, 188, 147) 00%, rgb(201, 188, 147) 25%, rgb(81, 103, 62) 25%, rgb(81, 103, 62) 50%, rgb(112, 140, 167) 50%, rgb(112, 140, 167) 75%, rgb(237,224,222) 75%); 
 
 	/* W3C */
-	background : -linear-gradient(left, rgb(191, 10, 10) 00%, rgb(191, 10, 10) 25%, rgb(217, 217, 0) 25%, rgb(217, 217, 0) 49%, rgb(22, 204, 22) 50%, rgb(22, 204, 22) 74%, rgb(25, 25, 236) 75%);
+	background : -linear-gradient(left, rgb(201, 188, 147) 00%, rgb(201, 188, 147) 25%, rgb(81, 103, 62) 25%, rgb(81, 103, 62) 50%, rgb(112, 140, 167) 50%, rgb(112, 140, 167) 75%, rgb(237,224,222) 75%);
 }
 
 aside footer {
