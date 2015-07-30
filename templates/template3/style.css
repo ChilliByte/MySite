@@ -24,19 +24,37 @@ section:nth-of-type(1) {
 	width:100%;
 	background-color:rgba(40,40,40,0.7);
 	text-align:center;
-	padding-top:40vh;
+	padding-top:32vh;
 }
 
 
 section:nth-of-type(1) h1 {
-  font-size:9vw;
-  margin:5px;
+	font-size:9vw;
+	margin:5px;
 }
 
 section:nth-of-type(1) h2 {
-  font-size:4vw;
-  margin:5px;
+	font-size:4vw;
+	margin:5px;
 }
+
+section:nth-of-type(1) a {
+	display:block;
+	position:relative;
+	top:0;
+	height:80px;
+	width:160px;
+	color:gray;
+	background-color:white;
+	border-bottom:4px solid #aaa;
+}
+section:nth-of-type(1) a:hover {
+	top:3px;
+	color:gray;
+	background-color:white;
+	border-bottom:1px solid #aaa;
+}
+
 
 nav {
 	position:fixed;
