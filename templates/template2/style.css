@@ -129,7 +129,6 @@ article.fs a {
 @media screen and (max-width: 880px) {
 	aside footer {
 		height:108px;
-		line-height:50px;
 		padding-top:8px;	
 	}
 }
