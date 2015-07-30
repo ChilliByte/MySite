@@ -103,7 +103,7 @@ article h2 {
 	font-size:100%;
 	margin:2px;
 }
-article a {
+article a#readMore {
 	color:grey;
 	position:absolute;
 	bottom:10px;
@@ -121,7 +121,7 @@ article.fs {
 	z-index: 111;
 }
 
-article.fs a {
+article.fs a#readMore {
 	top:10px;
 	bottom:initial;
 }
