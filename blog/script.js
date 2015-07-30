@@ -3,7 +3,7 @@ var posts = ["helloWorld"]
 function ahah(url) {
 	var targetElement = document.body;
        
-	var request = window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttprequestuest();
+	var request = window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttpRequest();
 	request.onreadystatechange = function() {
 		if (request.readyState != 4) { //not "OK" status
 			return;
