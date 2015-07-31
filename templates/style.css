@@ -136,6 +136,12 @@ article a.button:hover {
 	background-color:#DDDDDD;
 	border-bottom:1px solid #aaa;
 }
+
+article p{
+	overflow:hidden;
+	height:74px;
+}
+
 article.fs {
 	position:fixed;
 	height:100%;
@@ -151,7 +157,9 @@ article.fs {
 article.fs a {
 	font-size:inherit;
 }
-
+article.fs p {
+	overflow:visible;
+}
 article.fs a.readMore {
 	top:10px;
 	bottom:initial;
