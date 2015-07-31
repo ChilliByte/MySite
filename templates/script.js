@@ -1,4 +1,4 @@
-var posts = ["personalWebsite","blog"]
+var posts = ["personalWebsite","blog","splash"]
 
 function ahah(url) {
 	var targetElement = document.body;
