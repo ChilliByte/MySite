@@ -90,6 +90,7 @@ article {
 	font-size:medium;
 	top:0;
 	right:0;
+	overflow-y:hidden;
 	transition: height 1s, width 1s, text-align 1s, font-size 1s, margin-right 0.5s, opacity 1s;
 }
 
@@ -145,6 +146,10 @@ article.fs {
 	opacity:1;
 	transition: height 1s, width 1s, text-align 1s, font-size 1s, margin-right 0.5s, opacity 1s;
 	z-index: 111;
+}
+
+article.fs a {
+	font-size:inherit;
 }
 
 article.fs a.readMore {
