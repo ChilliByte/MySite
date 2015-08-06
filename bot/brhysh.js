@@ -9,10 +9,12 @@ inputBox.addEventListener("keydown", function(e){
     listening = true;
   }
   if(e.keyCode == 13) {
-    console.log("Input: " + inputBox.innerText)
-    console.log("Hidden: " + hiddenInput.value)
+    console.log("Input: " + inputBox.innerText);
+    console.log("Hidden: " + hiddenInput.value);
     if(hiddenInput.value == "`tweet") {
+      console.log("Command Registered");
       hiddenInput.value = "Follow @Brhysh on twitter! <3";
+      console.log("Hidden: " + hiddenInput.value);
     }
     console.log("Message sent")
     listening = false;
