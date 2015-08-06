@@ -1,22 +1,16 @@
 console.log("Lumberbot loaded");
-console.log("Running Bot code");
-var listening = false;
+
+var commandList = ["!tweet`","!twitter`","!yt`","!caps`","!adv`"];
+var messages = ["Tweet out the stream, tell your friends! <3","Follow @Brhysh on twitter to know when our beloved lumberjack goes live!","If you like what your seeing, leave a like, and if you really love it, then make sure to subscribe! B uploads everyday!","Hey! Easy on the caps! I will time your butt out, ","Please don't advertise here, especially without permission. You have been timed out, do it again and you will be banned, "]
+
 var inputBox = document.getElementById("live-comments-input-field");
-var hiddenInput = document.getElementById("live-comments-input-field-hid");
 inputBox.addEventListener("keydown", function(e){
   if(e.keyCode == 223) {
-    console.log("command started");
-    listening = true;
-  }
-  if(e.keyCode == 13) {
-    console.log("Input: " + inputBox.innerText);
-    console.log("Hidden: " + hiddenInput.value);
-    if(hiddenInput.value == "`tweet") {
-      console.log("Command Registered");
-      hiddenInput.value = "Follow @Brhysh on twitter! <3";
-      console.log("Hidden: " + hiddenInput.value);
+    console.log("Searching for command");
+    if(commandList.indexOf(inputBox.innerText) !== -1) {
+      inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)]
+    } else {
+      inputBox.innerText = "No such command found";
     }
-    console.log("Message sent")
-    listening = false;
   }
 });
