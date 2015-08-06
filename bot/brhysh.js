@@ -9,6 +9,7 @@ document.getElementById("live-comments-input-field").addEventListener("keydown",
     listening = true;
   }
   if(e.keyCode == 13) {
+    alert();
     console.log("Message sent")
     listening = false;
   }
