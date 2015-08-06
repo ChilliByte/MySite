@@ -1,6 +1,6 @@
 console.log("Lumberbot loaded");
 
-var commandList = ["!tweet`","!twitter`","!yt`","!caps`","!adv`"];
+var commandList = ["!tweet","!twitter","!yt","!caps","!adv"];
 var messages = ["Tweet out the stream, tell your friends! <3","Follow @Brhysh on twitter to know when our beloved lumberjack goes live!","If you like what your seeing, leave a like, and if you really love it, then make sure to subscribe! B uploads everyday!","Hey! Easy on the caps! I will time your butt out, ","Please don't advertise here, especially without permission. You have been timed out, do it again and you will be banned, "]
 
 var inputBox = document.getElementById("live-comments-input-field");
