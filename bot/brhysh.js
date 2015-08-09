@@ -9,13 +9,21 @@ var messages = [
   "Please don't advertise here, especially without permission. You have been timed out, do it again and you will be banned, ",
   "Please don't spam the chat. You have been timed out."
 ]
-
+var quotes = [
+  "Dummy Quote 001",
+  "Dummy Quote 002",
+  "Dummy Quote 003"
+]
 var inputBox = document.getElementById("live-comments-input-field");
 inputBox.addEventListener("keydown", function(e){
   if(e.keyCode == 223) {
     console.log("Searching for command");
     if(commandList.indexOf(inputBox.innerText) !== -1) {
-      inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)]
+      if(inputBox.innerText == "!quote") {
+        inputBox.innerText = "Quote: " + quotes[Math.floor(Math.random()*quotes.length-1)];
+      } else {
+        inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)];
+      }
     } else {
       inputBox.innerText = "No such command found";
     }
