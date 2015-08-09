@@ -139,9 +139,11 @@ function checkKeys() {
     if (keys[37] || keys[65]) {
         // left arrow
         player.lastDir = "r"
-        if (player.velX > -player.horizSpeed) {
-            player.velX-= player.horizSpeed;
-        }
+        //if(player.x > 5*units) {
+            if (player.velX > -player.horizSpeed) {
+                player.velX-= player.horizSpeed;
+            }
+        //}
     }
     if (touchingIce){
         player.vertiSpeed = normalVertiSpeed;
@@ -445,8 +447,6 @@ function drawIce() {
     ctx.closePath()
     ctx.fill();
 }
-
-
 function drawCollectibles() {
     ctx.beginPath();
     ctx.fillStyle = "orange";
