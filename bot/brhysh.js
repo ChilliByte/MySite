@@ -24,7 +24,7 @@ inputBox.addEventListener("keydown", function(e){
     console.log("Searching for command");
     if(commandList.indexOf(inputBox.innerText) !== -1) {
       if(inputBox.innerText == "!quote") {
-        inputBox.innerText = "Quote: " + quotes[Math.floor(Math.random()*quotes.length-1)];
+        inputBox.innerText = "Quote: " + quotes[Math.floor(Math.random()*quotes.length)];
       } else {
         inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)];
       }
