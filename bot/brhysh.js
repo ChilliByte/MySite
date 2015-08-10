@@ -47,8 +47,8 @@ var quotes = [
   "\"Let's do it! Let's blow those cave spiders right outta Minecraft!\" -B, about squids Kappa",
   "\"Listen here, I'm lazy! I'm too lazy to go to a grinding farm!\" -B... self explanatory :P",
   "\"its not that great\" -Mrs. Brhysh regarding B's Trunk",
-  "\"Until something happens like- SHE DROPS HER PHONE! :D\" \"That wasn't my phone.\" \"Oh. :/\" -B and Ms. B, IRL"
-  "\"can I have a kiss Ms. B?\", \"Eww No\" -B trying to get a kiss from Ms. B
+  "\"Until something happens like- SHE DROPS HER PHONE! :D\" \"That wasn't my phone.\" \"Oh. :/\" -B and Ms. B, IRL",
+  "\"can I have a kiss Ms. B?\", \"Eww No\" -B trying to get a kiss from Ms. B",
   "\"B now has cuties\" -I_lofty :P",
   "\"Don't put it in your mouth\" - B on strange things",
   "\"Last time on B's stream... Drunk stories, bar crawls and life lessons... 'Dont put it in your mouth'\" -Mechanicalmartian 2015",
