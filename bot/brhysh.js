@@ -10,6 +10,7 @@ var messages = [
   "Please don't spam the chat. You have been timed out.",
   "English only please! Don't do it again or you will be timed out!",
   "Bai bai troll! THWACK! (>^.^)> --{}",
+  "Placeholder",
   "Hey! No back seat gaming! I WILL turn this car around!",
   "We're hopping over to Beam to raid our good friend ...! Go! Go! Go! beam .pro/...",
   "We're going to Twitch to raid the awesome ...! Go naow! DO EET! twitch .tv/...",
