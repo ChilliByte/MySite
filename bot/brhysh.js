@@ -1,6 +1,6 @@
 console.log("Lumberbot loaded");
 
-var commandList = ["!tweet","!twitter","!yt","!caps","!adv","!spam","!eng","!thwack"];
+var commandList = ["!tweet","!twitter","!yt","!caps","!adv","!spam","!eng","!thwack","!quote"];
 var messages = [
   "Tweet out the stream, tell your friends! <3",
   "Follow @Brhysh on twitter to know when our beloved lumberjack goes live!",
