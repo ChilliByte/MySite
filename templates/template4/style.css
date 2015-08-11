@@ -6,6 +6,9 @@ html {
 }
 
 body {
+  height:100%;
+  width:100%;
+  margin:0;
   background-image:url('https://images.unsplash.com/photo-1433838552652-f9a46b332c40?q=80&fm=jpg&s=97cb7cd5e219e932365f3bcff3950eda');
   background-size: cover;
   background-attachment: fixed;
