@@ -25,7 +25,7 @@ section:nth-of-type(1){
 section:nth-of-type(1) h1 {
 	color:white;
 	font-size:3em;
-	margin:45px;
+	margin:450px;
 }
 
 input[type=checkbox].css-checkbox {
