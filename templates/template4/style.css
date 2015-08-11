@@ -22,6 +22,11 @@ section:nth-of-type(1){
   margin:0;
 }
 
+section:nth-of-type(1) h1 {
+	color:white;
+	font-size:3em;
+}
+
 input[type=checkbox].css-checkbox {
 	position:absolute;
 	z-index:-1000; 
