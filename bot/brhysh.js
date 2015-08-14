@@ -1,6 +1,6 @@
 console.log("Lumberbot loaded");
 
-var commandList = ["!tweet","!twitter","!yt","!caps","!adv","!spam","!eng","!thwack","!quote","!bsg","!beamraid","!twitchraid","!ytraid","!hype","!ip"];
+var commandList = ["!tweet","!twitter","!yt","!caps","!adv","!spam","!eng","!thwack","!quote","!bsg","!beamraid","!twitchraid","!ytraid","!hype","!ip","!shoutout","!whyyt"];
 var messages = [
   "Tweet out the stream, tell your friends! <3",
   "Follow @Brhysh on twitter to know when our beloved lumberjack goes live!",
@@ -16,8 +16,9 @@ var messages = [
   "We're going to Twitch to raid the awesome ...! Go naow! DO EET! twitch .tv/...",
   "Time for a YT raid! We're raiding our good friend ...! Go Show them the luffs! youtube.com/c/.../live",
   "Hype hype hype! The hype is real! ALL teh hype! \\o/ \\o/ \\o/ :D :D :D",
-  "B is most likely on Hypixel, as per usual! Check it out at mc.hypixel.net!"
-  
+  "B is most likely on Hypixel, as per usual! Check it out at mc.hypixel.net!",
+  "B doesn't do shoutouts. Please don't ask for them.",
+  "B prefers to stream to YouTube over Beam or Twitch. He likes to have all his viewers (fangirls :3) in one place."
 ]
 var quotes = [
   "\"I need to pay in beans. Or kidneys.\" - Brhysh, about currency",
@@ -58,7 +59,8 @@ var quotes = [
   "\"I have freedom! I have right! I have the freedom not to have peanut butter!\" -B, donations",
   "\"This is a beautiful milk bag\" - Brhysh",
   "\"Amber...You don't want none of this.\" - B, Skywars threats",
-  "\"If you throw my flag away, I'm reporting you to the government\" - B, to Mrs B, on throwing his Canadian Flag away"
+  "\"If you throw my flag away, I'm reporting you to the government\" - B, to Mrs B, on throwing his Canadian Flag away",
+  "\"Wife might kill me\" - B, on streaming."
 ]
 
 
