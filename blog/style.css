@@ -142,6 +142,10 @@ article p {
 	height:74%;
 }
 
+article.h3 {
+	font-size:150%;
+}
+
 article.fs {
 	position:fixed;
 	height:100%;
