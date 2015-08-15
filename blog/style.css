@@ -162,7 +162,8 @@ article.fs a {
 	font-size:inherit;
 }
 article.fs p {
-	overflow:visible;
+	overflow:auto;
+	height:90%;
 }
 article.fs a.readMore {
 	top:10px;
