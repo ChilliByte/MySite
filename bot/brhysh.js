@@ -61,7 +61,8 @@ var quotes = [
   "\"Amber...You don't want none of this.\" - B, Skywars threats",
   "\"If you throw my flag away, I'm reporting you to the government\" - B, to Mrs B, on throwing his Canadian Flag away",
   "\"Wife might kill me\" - B, on streaming.",
-  "\"He was like the uncle I never had\" - B, on Mario."
+  "\"He was like the uncle I never had\" - B, on Mario.",
+  "\"You can suck my banhammer, you dirty little potato man\"-B, on a troll"
 ]
 
 
