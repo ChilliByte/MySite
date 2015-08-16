@@ -62,7 +62,8 @@ var quotes = [
   "\"If you throw my flag away, I'm reporting you to the government\" - B, to Mrs B, on throwing his Canadian Flag away",
   "\"Wife might kill me\" - B, on streaming.",
   "\"He was like the uncle I never had\" - B, on Mario.",
-  "\"You can suck my banhammer, you dirty little potato man\"-B, on a troll"
+  "\"You can suck my banhammer, you dirty little potato man\"-B, on a troll",
+  "\"You guys are making my sunday..make me a sunday!\" - Brhys, on discovering the locations of chat."
 ]
 
 
