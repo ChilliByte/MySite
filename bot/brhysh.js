@@ -72,6 +72,7 @@ var quotes = [
 
 var inputBox = document.getElementById("live-comments-input-field");
 inputBox.addEventListener("keydown", function(e){
+  console.log(e.keyCode);
   if(e.keyCode == 223) {
     console.log("Searching for command");
     if(commandList.indexOf(inputBox.innerText) !== -1) {
