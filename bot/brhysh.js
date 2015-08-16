@@ -1,5 +1,5 @@
 console.log("Lumberbot loaded");
-
+//LAST UPDATED: 16th August 2015, 22:39 BST
 var commandList = ["!tweet","!twitter","!yt","!caps","!adv","!spam","!eng","!thwack","!quote","!bsg","!beamraid","!twitchraid","!ytraid","!hype","!ip","!shoutout","!whyyt"];
 var messages = [
   "Tweet out the stream, tell your friends! <3",
