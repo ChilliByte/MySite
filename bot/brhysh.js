@@ -60,7 +60,8 @@ var quotes = [
   "\"This is a beautiful milk bag\" - Brhysh",
   "\"Amber...You don't want none of this.\" - B, Skywars threats",
   "\"If you throw my flag away, I'm reporting you to the government\" - B, to Mrs B, on throwing his Canadian Flag away",
-  "\"Wife might kill me\" - B, on streaming."
+  "\"Wife might kill me\" - B, on streaming.",
+  "\"He was like the uncle I never had\" - B, on Mario."
 ]
 
 
