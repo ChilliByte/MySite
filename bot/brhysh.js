@@ -81,5 +81,4 @@ inputBox.addEventListener("keydown", function(e){
     } else {
       console.log("No such command found");
     }
-  }
-});
+  });
