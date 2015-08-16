@@ -1,7 +1,8 @@
 console.log("Lumberbot loaded");
 //LAST UPDATED: 16th August 2015, 22:39 BST
-var commandList = ["!tweet","!twitter","!yt","!caps","!adv","!spam","!eng","!thwack","!quote","!bsg","!beamraid","!twitchraid","!ytraid","!hype","!ip","!shoutout","!whyyt"];
+var commandList = ["!commandlist","!tweet","!twitter","!yt","!caps","!adv","!spam","!eng","!thwack","!quote","!bsg","!beamraid","!twitchraid","!ytraid","!hype","!ip","!shoutout","!whyyt"];
 var messages = [
+  "The command list has been insterted into the console. Press Ctrl + Shift + J to view."
   "Tweet out the stream, tell your friends! <3",
   "Follow @Brhysh on twitter to know when our beloved lumberjack goes live!",
   "If you like what your seeing, leave a like, and if you really love it, then make sure to subscribe! B uploads everyday!",
@@ -75,6 +76,9 @@ inputBox.addEventListener("keydown", function(e){
     if(commandList.indexOf(inputBox.innerText) !== -1) {
       if(inputBox.innerText == "!quote") {
         inputBox.innerText = "Quote: " + quotes[Math.floor(Math.random()*quotes.length)];
+      } else if (inputBox.innerText == "!commandlist") {
+        console.log(commandList);
+        inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)];
       } else {
         inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)];
       }
