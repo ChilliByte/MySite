@@ -105,8 +105,9 @@ figure {
 	bottom:60px;
 	left:60px;
 	width:400px;
-	height:300px;
+	height:250px;
 	color:white;
+	margin:0;
 }
 figure h1 {
 	width:100%;
