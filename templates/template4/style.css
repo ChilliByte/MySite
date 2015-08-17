@@ -100,12 +100,13 @@ nav {
 }
 nav a {
 	height:30px;
-	width:300px;
+	width:350px;
 	border-top: 1px solid white;	
 	border-bottom: 1px solid white;
 	padding-left:30px;
 	display:block;
 	color:white;
+	box-sizing:border-box;
 }
 nav h1 a {
 	display:inline;
