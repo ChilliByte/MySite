@@ -148,4 +148,9 @@ aside {
     	right: 0;
     	top: 100%;
     	width: 350px;
+    	box-sizing:border-box;
+    	padding-left:15px;
+}
+aside a {
+	color:orange;
 }
