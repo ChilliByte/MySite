@@ -1,5 +1,5 @@
 html {
-  	height:90%;
+  	height:100%;
   	width:100%;
   	margin:0;
   	padding:0;
@@ -129,6 +129,11 @@ figure h1 {
 	width:100%;
 	border-bottom: 3px solid white;
 }
+main {
+	position:absolute;
+	top:100%;
+}
+
 article {
 	background-color:#eee;
 	height:275px;
@@ -146,7 +151,7 @@ aside {
 	height: 830px;
     	position: absolute;
     	right: 0;
-    	top: 100%;
+    	top: 0;
     	width: 350px;
     	box-sizing:border-box;
     	padding-left:15px;
