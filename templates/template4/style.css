@@ -105,10 +105,11 @@ nav a {
 	border-bottom: 1px solid white;
 	display:block;
 	color:white;
-	vertical-align:middle;
+	line-height:50px;
+	font-size:larger;
 	box-sizing:border-box;
 }
-nav h1 a {
+nav h4 a {
 	display:inline;
 	border:none;
 }
