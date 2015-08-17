@@ -99,17 +99,18 @@ nav {
 	padding:0;
 }
 nav a {
-	height:30px;
+	height:50px;
 	width:350px;
 	border-top: 1px solid white;	
 	border-bottom: 1px solid white;
-	padding-left:30px;
 	display:block;
 	color:white;
+	vertical-align:middle;
 	box-sizing:border-box;
 }
 nav h1 a {
 	display:inline;
+	border:none;
 }
 .css-checkbox:checked ~ nav {
 	right:0;
