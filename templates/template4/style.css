@@ -112,8 +112,8 @@ figure h1 {
 	border-bottom: 3px solid white;
 }
 article {
-	background-color:white;
-	height:350px;
+	background-color:#ddd;
+	height:275px;
 	width:75%;
 	margin:0;
 	padding-left:40px;
