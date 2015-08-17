@@ -54,7 +54,7 @@ input[type=checkbox].css-checkbox + label.css-label {
 	font-size:50px;
 	vertical-align:middle;
 	cursor:pointer;
-
+	transition:right 1s;
 }
 
 input[type=checkbox].css-checkbox:checked + label.css-label {
@@ -83,7 +83,7 @@ label.css-label {
 nav {
 	display:block;
 	position:absolute;
-	right:0;
+	right:20%;
 	top:0;
 	bottom:0;
 	background-color:rgb(40,40,40);
@@ -93,6 +93,10 @@ nav {
 	transition: right 1s;
 }
 .css-checkbox:checked ~ nav {
-	right:20%;
+	right:0;
 	transition:right 1s;
+}
+.css-checkbox:checked + label.css-label {
+	right: calc(20% + 60px);
+	transition: right 1s;
 }
