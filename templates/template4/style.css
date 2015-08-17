@@ -112,13 +112,14 @@ figure h1 {
 	border-bottom: 3px solid white;
 }
 article {
-	background-color:#ddd;
+	background-color:#eee;
 	height:275px;
-	width:75%;
+	width:65%;
 	margin:0;
 	padding-left:40px;
 	padding-top:10px;
 	padding-bottom:10px;
 	padding-right:10px;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #ccc;
+	box-sizing:border-box;
 }
