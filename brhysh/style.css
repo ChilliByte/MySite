@@ -59,10 +59,9 @@ nav a {
   display:inline-block;
   text-decoration:none;
   box-sizing:border-box;
-  transition:border 1s;
+  transition:border 0.3s;
 }
 nav a:hover {
   border-bottom:3px solid white;
-  border-top:3px solid white;
   transition:border 0.3s;
 }
