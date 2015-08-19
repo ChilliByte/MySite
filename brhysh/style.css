@@ -48,3 +48,11 @@ nav {
   height:60px;
   border-bottom:1px solid white;
 }
+nav a {
+  height:60px;
+  width:120px;
+  color:white;
+  line-height:60px;
+  text-align:center;
+  margin:0;
+}
