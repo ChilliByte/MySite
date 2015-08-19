@@ -47,7 +47,7 @@
             
             		setTimeout(function(){
                 		for(i = 1; i < 10; i++) {
-					document.getElementById("vids").innerHTML = "<a href='https://www.youtube.com/watch?v=" + (videoObject[i])[1] +  " ' target='_blank'>" + "<img class='thumbnail' src='https://i.ytimg.com/vi/"+ (videoObject[i])[1] + "/mqdefault.jpg' />"  + "</a>";
+					document.getElementById("vids").innerHTML += "<a href='https://www.youtube.com/watch?v=" + (videoObject[i])[1] +  " ' target='_blank'>" + "<img class='thumbnail' src='https://i.ytimg.com/vi/"+ (videoObject[i])[1] + "/mqdefault.jpg' />"  + "</a>";
                 		}
             		}, 1000);
             	</script>
