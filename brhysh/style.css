@@ -29,6 +29,7 @@ section:nth-of-type(1) {
   top:0;
   bottom:0;
   box-sizing:border-box;
+  z-index:-10;
 }
 
 section:nth-of-type(1) h1 {
@@ -67,7 +68,7 @@ nav a:hover {
   transition:border 0.3s;
 }
 section:nth-of-type(2) {
-  margin-top:100%;
+  margin-top:100vh;
   background-color:#ddd;
   color:#333;
 }
