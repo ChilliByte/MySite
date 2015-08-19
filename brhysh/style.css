@@ -57,8 +57,6 @@ nav a {
   text-align:center;
   margin:0 1px;
   display:inline-block;
-  margin-left:solid 1px white;
-  margin-right:solid 1px white;
   text-decoration:none;
   box-sizing:border-box;
   transition:border 1s;
@@ -66,5 +64,5 @@ nav a {
 nav a:hover {
   border-bottom:3px solid white;
   border-top:3px solid white;
-  transition:border 1s;
+  transition:border 0.3s;
 }
