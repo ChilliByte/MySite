@@ -37,6 +37,10 @@
 			<h1>Contact Me</h1>
 		</section>
 		 <script>
+		 	document.getElementsByTagName("nav")[0].classList[
+        			window.innerHeight - document.body.scrollTop > document.querySelector("section:first-of-type h2").offsetTop + 100 ? 'add': 'remove'
+    			]('section1');
+		 
       			videoObject = {};
         	 	$.getJSON("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UU0Q6CMDkaY2ES29n2vKzqTA&key=AIzaSyB6wccXxgBeO6VJ5EHV-zTrBvWTKZE8H0k", function(data) {
             			$.each(data.items, function(i,val) {
