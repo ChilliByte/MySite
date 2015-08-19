@@ -58,10 +58,16 @@ nav a {
   margin:0;
   display:inline-block;
   text-decoration:none;
+  border-bottom:0px solid white;
   box-sizing:border-box;
   transition:border 0.3s;
 }
 nav a:hover {
   border-bottom:3px solid white;
   transition:border 0.3s;
+}
+section:nth-of-type(2) {
+  margin-top:100%;
+  background-color:#ddd;
+  color:#333;
 }
