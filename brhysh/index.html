@@ -38,7 +38,7 @@
 		</section>
 		 <script>
       			videoObject = {};
-        	 	$.getJSON("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UU5FioLwX2ZgjPbpB84FCf-Q&key=AIzaSyB6wccXxgBeO6VJ5EHV-zTrBvWTKZE8H0k", function(data) {
+        	 	$.getJSON("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UU0Q6CMDkaY2ES29n2vKzqTA&key=AIzaSyB6wccXxgBeO6VJ5EHV-zTrBvWTKZE8H0k", function(data) {
             			$.each(data.items, function(i,val) {
              				videoObject[i] = [val.snippet.title, val.snippet.resourceId.videoId]
              				console.log(videoObject[i])
