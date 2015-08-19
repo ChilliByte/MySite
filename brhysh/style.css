@@ -12,4 +12,8 @@ body {
   font-family:Raleway;
   color:white;
 }
+section {
+  height:100%;
+  width:100%;
+}
 
