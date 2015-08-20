@@ -20,7 +20,7 @@ var messages = [
   "B is most likely on Hypixel, as per usual! Check it out at mc.hypixel.net!",
   "B doesn't do shoutouts. Please don't ask for them.",
   "B prefers to stream to YouTube over Beam or Twitch. He likes to have all his viewers (fangirls :3) in one place.",
-  "Placeholder for Popout Command. please leave in."
+  "The chat has been popped out. It might look weird, but resizing to a mobile-like size should fix it."
 ]
 var quotes = [
   "\"I need to pay in beans. Or kidneys.\" - Brhysh, about currency",
