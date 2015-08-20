@@ -78,7 +78,7 @@ function popout() {
   document.querySelector(".live-chat-widget.yt-uix-expander-body.hide-until-delayloaded.has-padded-container").style.height="90vh";
   document.getElementsByClassName("player-api")[1].style.display = "none"
   document.getElementById("footer-container").style.display = "none";
-  
+  document.getElementById("body-container").style.padding = "0";
 }
 
 var inputBox = document.getElementById("live-comments-input-field");
