@@ -70,14 +70,13 @@ var quotes = [
 ]
 
 function popout() {
-  alert("Popping out");
   document.getElementById("masthead-positioner").style.display = "none";
   document.getElementById("masthead-positioner-height-offset").style.display = "none";
   document.getElementById("watch7-content").style.display = "none";
   document.getElementById("watch7-sidebar-contents").style.display = "none";
   document.getElementById("player").style.display = "none";
   document.querySelector("live-chat-widget.yt-uix-expander-body.hide-until-delayloaded.has-padded-container").height="100%";
-  alert("Done!");
+  document.getElementsByClassName("player-api")[1].style.display = "none"
 }
 
 var inputBox = document.getElementById("live-comments-input-field");
