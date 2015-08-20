@@ -77,6 +77,7 @@ function popout() {
   document.getElementById("watch7-sidebar-contents").style.display = "none";
   document.getElementById("player").style.display = "none";
   document.querySelector("live-chat-widget.yt-uix-expander-body.hide-until-delayloaded.has-padded-container").height="100%";
+  alert("Done!");
 }
 
 var inputBox = document.getElementById("live-comments-input-field");
