@@ -75,8 +75,10 @@ function popout() {
   document.getElementById("watch7-content").style.display = "none";
   document.getElementById("watch7-sidebar-contents").style.display = "none";
   document.getElementById("player").style.display = "none";
-  document.querySelector("live-chat-widget.yt-uix-expander-body.hide-until-delayloaded.has-padded-container").height="100%";
+  document.querySelector(".live-chat-widget.yt-uix-expander-body.hide-until-delayloaded.has-padded-container").style.height="90vh";
   document.getElementsByClassName("player-api")[1].style.display = "none"
+  document.getElementById("footer-container").style.display = "none";
+  
 }
 
 var inputBox = document.getElementById("live-comments-input-field");
