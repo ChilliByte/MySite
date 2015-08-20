@@ -1,6 +1,6 @@
 console.log("Lumberbot loaded");
 //LAST UPDATED: 16th August 2015, 22:39 BST
-var commandList = ["!commandlist","!tweet","!twitter","!yt","!caps","!adv","!spam","!eng","!thwack","!quote","!bsg","!beamraid","!twitchraid","!ytraid","!hype","!ip","!shoutout","!whyyt"];
+var commandList = ["!commandlist","!tweet","!twitter","!yt","!caps","!adv","!spam","!eng","!thwack","!quote","!bsg","!beamraid","!twitchraid","!ytraid","!hype","!ip","!shoutout","!whyyt","!popout"];
 var messages = [
   "The command list has been insterted into the console. Press Ctrl + Shift + J to view.",
   "Tweet out the stream, tell your friends! <3",
@@ -11,7 +11,7 @@ var messages = [
   "Please don't spam the chat. You have been timed out.",
   "English only please! Don't do it again or you will be timed out!",
   "Bai bai troll! THWACK! (>^.^)> --{}",
-  "Placeholder",
+  "Placeholder for Quote command. Please leave in.",
   "Hey! No back seat gaming! I WILL turn this car around!",
   "We're hopping over to Beam to raid our good friend ...! Go! Go! Go! beam .pro/...",
   "We're going to Twitch to raid the awesome ...! Go naow! DO EET! twitch .tv/...",
@@ -19,7 +19,8 @@ var messages = [
   "Hype hype hype! The hype is real! ALL teh hype! \\o/ \\o/ \\o/ :D :D :D",
   "B is most likely on Hypixel, as per usual! Check it out at mc.hypixel.net!",
   "B doesn't do shoutouts. Please don't ask for them.",
-  "B prefers to stream to YouTube over Beam or Twitch. He likes to have all his viewers (fangirls :3) in one place."
+  "B prefers to stream to YouTube over Beam or Twitch. He likes to have all his viewers (fangirls :3) in one place.",
+  "Placeholder for Popout Command. please leave in."
 ]
 var quotes = [
   "\"I need to pay in beans. Or kidneys.\" - Brhysh, about currency",
@@ -68,8 +69,9 @@ var quotes = [
   "\"I promise, if I'm 98, I'll stream.\" - B, making promises."
 ]
 
-
-
+function popout() {
+  alert("Popping out");
+}
 
 var inputBox = document.getElementById("live-comments-input-field");
 inputBox.addEventListener("keydown", function(e){
@@ -79,6 +81,8 @@ inputBox.addEventListener("keydown", function(e){
       } else if (inputBox.innerText == "!commandlist") {
         console.log(commandList);
         inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)];
+      } else if(inputBox.innerText = "!popout") {
+        popout();
       } else {
         inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)];
       }
@@ -86,3 +90,4 @@ inputBox.addEventListener("keydown", function(e){
       console.log("No such command found");
     }
   });
+
