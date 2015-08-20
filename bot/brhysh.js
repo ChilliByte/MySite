@@ -89,7 +89,7 @@ inputBox.addEventListener("keydown", function(e){
       } else if (inputBox.innerText == "!commandlist") {
         console.log(commandList);
         inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)];
-      } else if(inputBox.innerText = "!popout") {
+      } else if(inputBox.innerText == "!popout") {
         popout();
       } else {
         inputBox.innerText = messages[commandList.indexOf(inputBox.innerText)];
