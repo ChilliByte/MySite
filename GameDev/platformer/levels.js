@@ -40,12 +40,12 @@ function Mob(x,y,w,h,s,t,xl,yl) {
     this.type = t;
     this.x1Limit = x1;
     this.x2Limit = x2;
-    this.velX: 0,
-    this.velY: 0,
-    this.collisionDir: "",
-    this.grounded: false,
-    this.hitPlayer: "",
-    this.dead: false
+    this.velX = 0;
+    this.velY = 0;
+    this.collisionDir = "";
+    this.grounded = false;
+    this.hitPlayer = "";
+    this.dead = false;
 }
 
 level1 = new level();
