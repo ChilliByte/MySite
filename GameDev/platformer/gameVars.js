@@ -5,7 +5,7 @@ var canvas = document.getElementById("canvas"),
     tilesX = 40,
     tilesY = 20,
     debug = false,
-    units = Math.floor(width / tilesX),
+    units = 34;
     player = {
         x: units,
         y: 0,
