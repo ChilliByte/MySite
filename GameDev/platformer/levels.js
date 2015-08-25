@@ -55,20 +55,8 @@ level4 = new level();
 level5 = new level();
 
 //Level1
-level1.boxes = [];
-level1.boxes.push(new Box(-1*units, 0, 1*units + 1, 20*units));
-level1.boxes.push(new Box(-10*units,16*units,60 * units, 16 * units));
-
-level1.water = [];
-level1.water.push({
-    x: 14*units,
-    y: 10*units,
-    width: 13*units,
-    height: 6*units
-})
-level1.collectibles = [];
-level1.mobs = [];
-level1.ice = [];
+level1.boxes.push(new Box(-1*units,0,20*units,1*units+1));
+level1.boxes.push(new Box(-1*units,15*units,5*units,50*units));
 // Level 2
 level2.boxes = [];
 level2.boxes.push({
