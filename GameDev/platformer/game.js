@@ -88,12 +88,12 @@ function checkTriggers() {
 
 function checkLevelChange() {
     if (player.x < 0) {
-        player.x = width - 5;
+        player.x = canvas.width - 5;
         currentLevelInt -= 1;
         currentLevel = levels[currentLevelInt];
         console.log("Previous Level");
     }
-    if (player.x > width) {
+    if (player.x > canvas.width) {
         currentLevelInt += 1;
         currentLevel = levels[currentLevelInt];
         console.log("Next Level");
@@ -540,7 +540,7 @@ function drawMobs() {
 }
 function displayHints() {
     if (!triggers.firstLevel) {
-        if ((currentLevelInt == 0) && (player.x > width - 400)) {
+        if ((currentLevelInt == 0) && (player.x > canvas.width - 400)) {
             hint(player.x, 30, "Go to the edge of the screen to go to the next level!");
             triggers.firstLevel = true;
             setTimeout(function() {
