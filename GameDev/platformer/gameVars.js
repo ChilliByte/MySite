@@ -42,7 +42,7 @@ var canvas = document.getElementById("canvas"),
 
 canvas.width = units * tilesX;
 canvas.height = units * tilesY;
-var tileDisplayWidth = Math.floor(Math.min(window.innerWidth/tilesX,window.innerHeight/tilesY));
+var tileDisplayWidth = Math.floor(Math.min(width/tilesX,height/tilesY));
 canvas.style.width = tileDisplayWidth * tilesX  + "px";
 canvas.style.height = tileDisplayWidth * tilesY + "px";
 
