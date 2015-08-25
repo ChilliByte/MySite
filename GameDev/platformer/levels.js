@@ -1,7 +1,7 @@
 //Begin Levels
 levels = [];
 
-function level() {
+function level(w) {
     this.boxes = [];
     this.water = [];
     this.ice = [];
@@ -9,6 +9,7 @@ function level() {
     this.doors = [];
     this.mobs = [];
     this.collectibles = [];
+    this.width = w*units;
     levels.push(this)
 }
 
@@ -48,11 +49,11 @@ function Mob(x,y,w,h,s,t,xl,yl) {
     this.dead = false;
 }
 
-level1 = new level();
-level2 = new level();
-level3 = new level();
-level4 = new level();
-level5 = new level();
+level1 = new level(200);
+level2 = new level(200);
+level3 = new level(200);
+level4 = new level(200);
+level5 = new level(200);
 
 //Level1
 level1.boxes.push(new Box(-1*units,0,20*units,1*units+1));
