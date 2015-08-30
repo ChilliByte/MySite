@@ -60,6 +60,11 @@ function update() {
         while(i--) {
             currentLevel.ice[i].x -= player.velX;
         }
+        i = currentLevel.switches.length
+        while(i--) {
+            currentLevel.switches[i].x -= player.velX;
+            currentLevel.doors[i].x -= player.velX;
+        }
         currentLevel.offset += player.velX;
     }   
     player.y += player.velY;
