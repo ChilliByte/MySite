@@ -53,6 +53,9 @@ function update() {
             currentLevel.ice[i].x -= player.velX;
         }
         currentLevel.offset += player.velX;
+        if ((player.lastDir == "r") && (currentLevel.offset < 0)) {
+            scrolling = false;
+        }
         if ((player.lastDir == "l") && (currentLevel.offset > currentLevel.width - (tilesX*units))) {
             scrolling = false;
         }
@@ -152,7 +155,9 @@ function checkKeys() {
         player.lastDir = "l"
         if (player.velX < player.horizSpeed) {
             player.velX += player.horizSpeed;
-            
+        }
+        if ((player.x > 5*units) && (player.x < 10*units)) {
+            scrolling = true;
         }
     }
     if (keys[37] || keys[65]) {
@@ -160,6 +165,9 @@ function checkKeys() {
         player.lastDir = "r"
         if (player.velX > -player.horizSpeed) {
             player.velX-= player.horizSpeed;
+        }
+        if ((player.x > 5*units) && (player.x < 10*units)) {
+            scrolling = true;
         }
     }
     if (touchingIce){
