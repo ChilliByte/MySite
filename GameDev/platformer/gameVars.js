@@ -7,6 +7,7 @@ var canvas = document.getElementById("canvas"),
     debug = false,
     units = 34,
     scrolling = false,
+    logCols = false,
     player = {
         x: units,
         y: 0,
