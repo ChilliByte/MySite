@@ -47,6 +47,14 @@ function update() {
     
     if (!scrolling) {
         player.x += player.velX;
+        if ((player.x > 8.75*units) && (player.x < 9*units)) {
+            player.x++
+            console.log("Pushing Forward")
+        }
+        if ((player.x > 10*units) && (player.x < 10.25*units)) {
+            player.x--
+            console.log("Pushing Backward")
+        }
     } else {
         if(Math.abs(player.velX) > 3) {
             i = currentLevel.boxes.length
