@@ -6,6 +6,7 @@ var canvas = document.getElementById("canvas"),
     tilesY = 20,
     debug = false,
     units = 34,
+    scrolling = false,
     player = {
         x: units,
         y: 0,
