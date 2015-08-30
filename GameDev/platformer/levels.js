@@ -57,8 +57,12 @@ level4 = new level(200);
 level5 = new level(200);
 
 //Level1
-level1.boxes.push(new Box(-1*units,0,20*units,1*units+1));
-level1.boxes.push(new Box(-1*units,15*units,5*units,50*units));
+level1.boxes.push(new Box(-1*units,0,20*units,1*units+3));
+level1.boxes.push(new Box(-1*units,15*units,5*units,41*units));
+level1.boxes.push(new Box(40*units,16*units,4*units,40*units));
+level1.boxes.push(new Box(80*units,17*units,3*units,40*units));
+level1.boxes.push(new Box(120*units,18*units,2*units,40*units));
+level1.boxes.push(new Box(160*units,19*units,1*units,40*units));
 // Level 2
 level2.boxes = [];
 level2.boxes.push({
