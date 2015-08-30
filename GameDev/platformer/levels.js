@@ -10,6 +10,7 @@ function level(w) {
     this.mobs = [];
     this.collectibles = [];
     this.width = w*units;
+    this.offset = 0;
     levels.push(this)
 }
 
