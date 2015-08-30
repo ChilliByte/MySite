@@ -52,6 +52,7 @@ function update() {
         while(i--) {
             currentLevel.ice[i].x -= player.velX;
         }
+        currentLevel.offset += player.velX;
     }   
     player.y += player.velY;
     if (debug) {
