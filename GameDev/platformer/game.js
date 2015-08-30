@@ -1,7 +1,7 @@
 //Set Level to 1
 currentLevelInt = 0
 currentLevel = levels[currentLevelInt];
-
+alert();
 //Game Event Handler
 var triggers = {};
 triggers.firstStep = false;
