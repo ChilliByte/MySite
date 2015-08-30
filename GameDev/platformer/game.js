@@ -48,25 +48,27 @@ function update() {
     if (!scrolling) {
         player.x += player.velX;
     } else {
-        i = currentLevel.boxes.length
-        while(i--) {
-            currentLevel.boxes[i].x -= player.velX;
-        }
-        i = currentLevel.water.length
-        while(i--) {
-            currentLevel.water[i].x -= player.velX;
-        }
-        i = currentLevel.ice.length
-        while(i--) {
-            currentLevel.ice[i].x -= player.velX;
-        }
-        i = currentLevel.switches.length
-        while(i--) {
-            currentLevel.switches[i].x -= player.velX;
-            currentLevel.doors[i].x -= player.velX;
-        }
-        currentLevel.offset += player.velX;
-    }   
+        if(Math.abs(player.velX) > 0.4) {
+            i = currentLevel.boxes.length
+            while(i--) {
+                currentLevel.boxes[i].x -= player.velX;
+            }
+            i = currentLevel.water.length
+            while(i--) {
+                currentLevel.water[i].x -= player.velX;
+            }
+            i = currentLevel.ice.length
+            while(i--) {
+                currentLevel.ice[i].x -= player.velX;
+            }
+            i = currentLevel.switches.length
+            while(i--) {
+                currentLevel.switches[i].x -= player.velX;
+                currentLevel.doors[i].x -= player.velX;
+            }
+            currentLevel.offset += player.velX;
+        }    
+    }    
     player.y += player.velY;
     if (debug) {
         document.getElementById("stats").style.display = "block"
