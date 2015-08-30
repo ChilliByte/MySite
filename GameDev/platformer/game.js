@@ -145,19 +145,18 @@ function checkKeys() {
     }
     if (keys[39] || keys[68]) {
         // right arrow
+        player.lastDir = "l"
         if (player.velX < player.horizSpeed) {
             player.velX += player.horizSpeed;
-            player.lastDir = "l"
+            
         }
     }
     if (keys[37] || keys[65]) {
         // left arrow
         player.lastDir = "r"
-        //if(player.x > 5*units) {
-            if (player.velX > -player.horizSpeed) {
-                player.velX-= player.horizSpeed;
-            }
-        //}
+        if (player.velX > -player.horizSpeed) {
+            player.velX-= player.horizSpeed;
+        }
     }
     if (touchingIce){
         player.vertiSpeed = normalVertiSpeed;
