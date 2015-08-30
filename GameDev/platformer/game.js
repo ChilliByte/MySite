@@ -48,7 +48,7 @@ function update() {
     if (!scrolling) {
         player.x += player.velX;
     } else {
-        if(Math.abs(player.velX) > 5) {
+        if(Math.abs(player.velX) > 3) {
             i = currentLevel.boxes.length
             while(i--) {
                 currentLevel.boxes[i].x -= player.velX;
