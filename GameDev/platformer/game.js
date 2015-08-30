@@ -393,6 +393,7 @@ function checkPlayerDoorCollision() {
             touchingIce = false;
             player.velX = 0;
             player.jumping = false;
+            scrolling = false;
         } else if (dir === "b") {
             touchingIce = false;
             if (gravityDown) {
@@ -450,6 +451,7 @@ function checkPlayerBoxCollision() {
         touchingIce = false;
         player.velX = 0;
         player.jumping = false;
+        scrolling = false;
         if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "b") {
         touchingIce = false;
