@@ -50,6 +50,22 @@ function Mob(x,y,w,h,s,t,xl,yl) {
     this.dead = false;
 }
 
+function Switch(x,y) {
+    this.x = x;
+    this.y = y;
+    this.height = 2*units;
+    this.width = units;
+    this.isOn = false;
+}
+
+function Door(x,y,w,h) {
+    this.x = x;
+    this.y = y;
+    this.height = h;
+    this.width = w;
+    this.isOpen = false;
+}
+
 level1 = new level(200);
 level2 = new level(200);
 level3 = new level(200);
@@ -63,6 +79,9 @@ level1.boxes.push(new Box(40*units,16*units,4*units,40*units));
 level1.boxes.push(new Box(80*units,17*units,3*units,40*units));
 level1.boxes.push(new Box(120*units,18*units,2*units,40*units));
 level1.boxes.push(new Box(160*units,19*units,1*units,40*units));
+
+level1.switches.push(new Switch(60*units,14*units));
+level1.doors.push(new Door(80*units,14*units,units,2*units));
 // Level 2
 level2.boxes = [];
 level2.boxes.push({
