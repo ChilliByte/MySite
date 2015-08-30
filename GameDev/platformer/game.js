@@ -165,7 +165,7 @@ function checkKeys() {
         if (player.velX < player.horizSpeed) {
             player.velX += player.horizSpeed;
         }
-        if ((player.x > 5*units) && (player.x < 10*units)) {
+        if ((player.x > 9*units) && (player.x < 10*units)) {
             scrolling = true;
         }
     }
