@@ -53,7 +53,7 @@ function update() {
             currentLevel.ice[i].x -= player.velX;
         }
         currentLevel.offset += player.velX;
-        if (player.lastDir == "l") && (currentLevel.offset > currentLevel.width - tilesX) {
+        if ((player.lastDir == "l") && (currentLevel.offset > currentLevel.width - tilesX)) {
             scrolling = false;
         }
     }   
