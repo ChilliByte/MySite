@@ -37,6 +37,14 @@ function update() {
     if (player.grounded) {
         player.velY = 0;
     }
+    
+    if ((player.lastDir == "r") && (currentLevel.offset < 0)) {
+        scrolling = false;
+    }
+    if ((player.lastDir == "l") && (currentLevel.offset > currentLevel.width - (tilesX*units))) {
+        scrolling = false;
+    }
+    
     if (!scrolling) {
         player.x += player.velX;
     } else {
@@ -53,12 +61,6 @@ function update() {
             currentLevel.ice[i].x -= player.velX;
         }
         currentLevel.offset += player.velX;
-        if ((player.lastDir == "r") && (currentLevel.offset < 0)) {
-            scrolling = false;
-        }
-        if ((player.lastDir == "l") && (currentLevel.offset > currentLevel.width - (tilesX*units))) {
-            scrolling = false;
-        }
     }   
     player.y += player.velY;
     if (debug) {
