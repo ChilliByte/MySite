@@ -47,12 +47,12 @@ function update() {
     
     if (!scrolling) {
         player.x += player.velX;
-        if ((player.x > 8.75*units) && (player.x < 9*units)) {
-            player.x++
+        if ((player.x > 8.85*units) && (player.x < 9*units)) {
+            player.x+=0.5
             console.log("Pushing Forward")
         }
-        if ((player.x > 10*units) && (player.x < 10.25*units)) {
-            player.x--
+        if ((player.x > 10*units) && (player.x < 10.15*units)) {
+            player.x-=0.5
             console.log("Pushing Backward")
         }
     } else {
