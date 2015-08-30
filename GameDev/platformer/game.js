@@ -1,7 +1,6 @@
 //Set Level to 1
 currentLevelInt = 0
 currentLevel = levels[currentLevelInt];
-alert();
 //Game Event Handler
 var triggers = {};
 triggers.firstStep = false;
@@ -23,6 +22,7 @@ function update() {
     //Factor in Friction and Gravity
     player.velX *= friction;
     player.velY += gravity;
+    
     player.grounded = false;
     
     drawBoxes();
@@ -37,9 +37,23 @@ function update() {
     if (player.grounded) {
         player.velY = 0;
     }
-    player.x += player.velX;
+    if (!scrolling) {
+        player.x += player.velX;
+    } else {
+        i = currentLevel.boxes.length
+        while(i--) {
+            currentLevel.boxes[i].x -= player.velX;
+        }
+        i = currentLevel.water.length
+        while(i--) {
+            currentLevel.water[i].x -= player.velX;
+        }
+        i = currentLevel.ice.length
+        while(i--) {
+            currentLevel.ice[i].x -= player.velX;
+        }
+    }   
     player.y += player.velY;
-
     if (debug) {
         document.getElementById("stats").style.display = "block"
         document.getElementById("stats").innerHTML = "X: " + player.x + "<br>Y: " + player.y + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
