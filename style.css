@@ -10,7 +10,7 @@ html {
   padding:0;
   box-sizing:border-box;
   
-  background-image: url("http://i.imgur.com/HN0uGnK.jpg"), url('https://download.unsplash.com/photo-1426523038054-a260f3ef5bc9');
+  background-image: url("https://cloud.githubusercontent.com/assets/4252954/9660780/5565acce-524f-11e5-86f1-cf141a3ce2c3.png"), url('https://download.unsplash.com/photo-1426523038054-a260f3ef5bc9');
   background-size:cover;
   background-attachment:fixed;
   background-repeat:no-repeat;
