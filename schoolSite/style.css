@@ -24,7 +24,7 @@ header h1 {
 }
 nav {
 	display:block;
-	height:50px;
+	height:40px;
 	width:100%;
 	overflow:hidden;
 }
@@ -33,20 +33,22 @@ nav ul {
 	height:40px;
 	width:100px;
 	overflow:hidden;
-	margin:none;
+	margin:0;
+	padding:0;
 	box-sizing:border-box;
 	border: 1px solid black;
+	display:inline-block;
 }
 nav ul li:first-child {
 	background-color:#4A4;
 	color:#ffffff;
-	height:50px;
+	height:40px;
 	width:100px;
 }
 nav ul li {
 	background-color:#444;
 	color:#ffffff;
-	height:50px;
+	height:40px;
 	width:100px;
 	list-style:none;
 }
