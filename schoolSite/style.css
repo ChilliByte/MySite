@@ -54,6 +54,9 @@ nav ul li:first-child {
 	color:#ffffff;
 	height:60px;
 	width:120px;
+	position:relative;
+	top:0;
+	right:0;
 }
 nav ul li {
 	background-color:#444;
@@ -69,5 +72,5 @@ nav ul li a {
 	color:white;
 }
 nav ul:hover {
-    width:initial;
+    OVerflow:visible;
 }
