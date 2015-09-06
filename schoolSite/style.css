@@ -36,6 +36,9 @@ nav {
 	height:100%;
 	width:120px;
 	overflow:visible;
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
 }
 nav ul {
 	display:block;
