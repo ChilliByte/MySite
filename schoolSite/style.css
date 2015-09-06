@@ -1,6 +1,44 @@
-html {
+html, body {
 	height:100%;
 	width:100%;
 	margin:0;
 	padding:0;
+}
+
+body {
+	background-color:#AAAAAA;
+	color:#222222;
+}
+
+header {
+	display:block;
+	height:300px;
+	width:100%;
+	background-color:#222222;
+	color:#AAAAAA;
+}
+nav {
+	display:block;
+	height:50px;
+	width:100%;
+	overflow:hidden;
+}
+nav ul {
+	display:block;
+	height:50px;
+	width:100px;
+	overflow:hidden;
+}
+nav ul li:first-child {
+	background-color:#4A4;
+	color:#ffffff;
+	height:50px;
+	width:100px;
+}
+nav ul li {
+	background-color:#444;
+	color:#ffffff;
+	height:50px;
+	width:100px;
+
 }
