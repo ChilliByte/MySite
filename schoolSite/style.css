@@ -13,7 +13,7 @@ body {
 
 header {
 	display:block;
-	height:300px;
+	height:200px;
 	width:100%;
 	background-color:#222222;
 	color:#AAAAAA;
@@ -26,7 +26,8 @@ nav {
 	display:block;
 	height:40px;
 	width:100%;
-	overflow:hidden;
+	overflow:visible;
+	text-align:center;
 }
 nav ul {
 	display:block;
@@ -51,4 +52,7 @@ nav ul li {
 	height:40px;
 	width:100px;
 	list-style:none;
+}
+nav ul:hover {
+    height:initial;
 }
