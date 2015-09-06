@@ -46,8 +46,6 @@ nav ul {
 	padding:0;
 	box-sizing:border-box;
 	border: 1px solid black;
-	display:inline-block;
-	vertical-align:top;
 }
 nav ul li:first-child {
 	background-color:#4A4;
@@ -65,8 +63,8 @@ nav ul li {
 	width:180px;
 	list-style:none;
 	position:relative;
-	right:120px;
-	top:60px;
+	right:-120px;
+	top:-60px;
 }
 nav ul li a {
 	color:white;
