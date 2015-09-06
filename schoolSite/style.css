@@ -30,9 +30,12 @@ nav {
 }
 nav ul {
 	display:block;
-	height:50px;
+	height:40px;
 	width:100px;
 	overflow:hidden;
+	margin:none;
+	box-sizing:border-box;
+	border: 1px solid black;
 }
 nav ul li:first-child {
 	background-color:#4A4;
@@ -45,5 +48,5 @@ nav ul li {
 	color:#ffffff;
 	height:50px;
 	width:100px;
-
+	list-style:none;
 }
