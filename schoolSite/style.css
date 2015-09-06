@@ -39,6 +39,7 @@ nav ul {
 	box-sizing:border-box;
 	border: 1px solid black;
 	display:inline-block;
+	vertical-align:top;
 }
 nav ul li:first-child {
 	background-color:#4A4;
@@ -52,6 +53,9 @@ nav ul li {
 	height:40px;
 	width:100px;
 	list-style:none;
+}
+nav ul li a {
+	color:white;
 }
 nav ul:hover {
     height:initial;
