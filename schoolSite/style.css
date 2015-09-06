@@ -7,10 +7,10 @@ html, body {
 }
 
 body {
-	background-color:#AAAAAA;
+	background-color:#EEEEEE;
 	color:#222222;
 }
-
+/*
 header {
 	display:block;
 	height:200px;
@@ -60,3 +60,4 @@ nav ul li a {
 nav ul:hover {
     height:initial;
 }
+8?
