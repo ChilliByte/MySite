@@ -22,8 +22,7 @@ header {
 	width:auto;
 	margin:0;	
 	padding-top:25px;
-	background-color:#222222;
-	color:#AAAAAA;
+	border-left:1px solid slategrey;
 }
 header h1 {
 	margin-top:0;
@@ -33,7 +32,6 @@ header hr {
 }
 nav {
 	display:block;
-	height:100%;
 	width:120px;
 	overflow:visible;
 	position: relative;
