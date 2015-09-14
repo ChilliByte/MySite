@@ -11,15 +11,16 @@
         </style>
     </head>
     <body>
-        <h1>Painting a room</h1>
+         <h1>Painting a room</h1>
+
         <hr />
-        <h2>Code:</h2>
-        <code>alert("Hello, World!")</code>
+         <h2>Code:</h2>
+ <code>alert("Hello, World!")</code>
+
         <hr />
-        <p>Result: <span id="result"></span></p>
+        <p>Result: <span id="result"></span>
+        </p>
         <script>
-            
-        
             var width = prompt("Enter the maximum width of the room");
             var height = prompt("Enter the maximum height of the room");
             var length = prompt("Enter the maximum length of the room");
@@ -53,7 +54,7 @@
             //Now we have the surface area, time to find how much paint we need
             var metersPerTin = tinSize * metersPerLitre;
             var tinsNeededPerCoat = surfaceArea / metersPerTin;
-            document.getElementById("result").innerHTML = "You need " + Math.ceil(tinsNeededPerCoat) + " tins to paint this room with one coat";
+            document.getElementById("result").innerHTML = "You need " + Math.ceil(tinsNeededPerCoat) + " tins to paint this room with one coat. <br />";
             var totalTinsNeeded = tinsNeededPerCoat * numberOfCoats;
             document.getElementById("result").innerHTML += "You need " + Math.ceil(totalTinsNeeded) + " tins to paint this room with " + numberOfCoats + " coats of paint";
         </script>
