@@ -53,9 +53,9 @@
             //Now we have the surface area, time to find how much paint we need
             var metersPerTin = tinSize * metersPerLitre;
             var tinsNeededPerCoat = surfaceArea / metersPerTin;
-            document.getElementById("result").innerHTML = "You need " + tinsNeededPerCoat + " tins to paint this room with one coat";
+            document.getElementById("result").innerHTML = "You need " + Math.ceil(tinsNeededPerCoat) + " tins to paint this room with one coat";
             var totalTinsNeeded = tinsNeededPerCoat * numberOfCoats;
-            document.getElementById("result").innerHTML += "You need " + totalTinsNeeded + " tins to paint this room with"+ numberOfCoats +" coat";
+            document.getElementById("result").innerHTML += "You need " + Math.ceil(totalTinsNeeded) + " tins to paint this room with " + numberOfCoats + " coats of paint";
         </script>
     </body>
 </html>
