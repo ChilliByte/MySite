@@ -18,7 +18,40 @@
         <hr />
         <p>Result: <span id="result"></span></p>
         <script>
-            
+            var WIDTH = prompt("Enter the maximum width of the room");
+            var HEIGHT = prompt("Enter the maximum height of the room");
+            var LENGTH = prompt("Enter the maximum length of the room");
+            var TIN_SIZE = prompt("Enter the size of a tin of paint, in litres");
+            var METERS_LITRE = prompt("Enter the average area covered per litre of paint");
+            var COATS = prompt("Enter the number of coats of paint you would like to apply");
+            //End user input
+            //Calculate surface area
+            var SURFACE_AREA = 0;
+            var SHORT_WALL_AREA = WIDTH * HEIGHT;
+            var LONG_WALL_AREA = LENGTH * HEIGHT;
+            SURFACE_AREA = 2*SHORT_WALL_AREA + 2*LONG_WALL_AREA;
+            var PAINT_CEILING = prompt("Would you like to paint the ceiling? Enter  Y or N");
+            if (PAINT_CEILING.toUpperCase() == "Y") {
+                    var CEILING_AREA = WIDTH*LENGTH;
+                    SURFACE_AREA = SURFACE_AREA + CEILING_AREA;
+            }
+            //We now have the total maximum surface area stored in SURFACE_AREA
+            //Now remove the surface area of unpaintable areas
+            var COMPLETE = false;
+            while (!COMPLETE) {
+                    var CONTINUE = prompt("Would you like to remove an area?");
+                    if (CONTINUE) { 
+                        var UNPAINTABLE_WIDTH = prompt("Enter the maximum width of the unpaintable area");
+                        var UNPAINTABLE_HEIGHT = prompt("Enter the maximum height of the unpaintable area");
+                        SURFACE_AREA = SURFACE_AREA - (UNPAINTABLE_WIDTH * UNPAINTABLE_HEIGHT);
+                    } else { 
+                        COMPLETE = true;
+                    }
+            //Now we have the surface area, time to find how much paint we need
+            var METERS_PER_TIN = TIN_SIZE * METERS_LITRE;
+            var TINS_REQUIRED_PER_COAT = SURFACE_AREA / METERS_PER_TIN;
+            document.getElementById("result").innerHTML = "You need " + TINS_REQUIRED_PER_COAT + " tins to paint this room with one coat";
+            var TOTAL_TINS_REQUIRED = TINS_REQUIRED_PER_COAT * COATS;
         </script>
     </body>
 </html>
