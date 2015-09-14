@@ -39,14 +39,15 @@
             //Now remove the surface area of unpaintable areas
             var COMPLETE = false;
             while (!COMPLETE) {
-                    var CONTINUE = prompt("Would you like to remove an area?");
-                    if (CONTINUE) { 
-                        var UNPAINTABLE_WIDTH = prompt("Enter the maximum width of the unpaintable area");
-                        var UNPAINTABLE_HEIGHT = prompt("Enter the maximum height of the unpaintable area");
-                        SURFACE_AREA = SURFACE_AREA - (UNPAINTABLE_WIDTH * UNPAINTABLE_HEIGHT);
-                    } else { 
-                        COMPLETE = true;
-                    }
+                var CONTINUE = prompt("Would you like to remove an area?");
+                if (CONTINUE) { 
+                    var UNPAINTABLE_WIDTH = prompt("Enter the maximum width of the unpaintable area");
+                    var UNPAINTABLE_HEIGHT = prompt("Enter the maximum height of the unpaintable area");
+                    SURFACE_AREA = SURFACE_AREA - (UNPAINTABLE_WIDTH * UNPAINTABLE_HEIGHT);
+                } else { 
+                    COMPLETE = true;
+                }
+            }
             //Now we have the surface area, time to find how much paint we need
             var METERS_PER_TIN = TIN_SIZE * METERS_LITRE;
             var TINS_REQUIRED_PER_COAT = SURFACE_AREA / METERS_PER_TIN;
