@@ -8,9 +8,9 @@
     </head>
     <body>
         <textarea id="toRun"></textarea>
-        <button id="runBut">Run!</button>
+        <button onclick="runCode()">Run!</button>
         <script>
-            document.getElementById("runBut").onclick = function() {
+            function runCode() {
                 eval(toRun.innerText);
             };
         </script>
