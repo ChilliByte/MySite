@@ -24,4 +24,5 @@ button {
     height:15%;
     display:block;
     box-sizing:border-box;
+    margin-left:5px;
 }
