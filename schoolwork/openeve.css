@@ -1,0 +1,21 @@
+html, body {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:50px;
+    box-sizing:border-box;
+}
+
+textarea {
+    width:80%;
+    height:70%;
+    margin:5px;
+    box-sizing:border-box;
+    display: block;
+}
+
+button {
+    width:80%;
+    height:10%;
+    display:block;
+}
