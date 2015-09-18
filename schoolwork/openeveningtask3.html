@@ -14,26 +14,13 @@
             };
             var myString;
         </script>
-        <style>
-            #toRun {
-                height:75%;
-            }
-            #output {
-                height:10%;
-                width:100%;
-                margin:0;
-                margin-left:5px;
-                background-color:white;
-                color:black;
-            }
-        </style>
         <textarea id="toRun">
             
             
             
-function printFiveTime(x) {
+function printFiveTimes(x) {
     for(var i =; i <; i++) {  //Change this line
-        document.getElementById("output").innerText += x;
+        document.getElementById("toRun").value += x + "\n";
     }
 }
 
@@ -44,7 +31,6 @@ printFiveTimes(myString);
 //Run this code. There appears to be a problem with it. 
 //Can you fix it so that it prints five times?
         </textarea>
-        <div id="output"></div>
         <button onclick="runCode()">Run!</button>
     </body>
 </html>
