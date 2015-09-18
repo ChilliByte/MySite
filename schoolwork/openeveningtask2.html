@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Programming Challenge 1!</title>
+        <link rel="stylesheet" href="openeve.css" />
+    </head>
+    <body>
+        <script>
+            function runCode() {
+                eval(toRun.value);
+                if(newNumber == number * 2) {
+                    alert("You did it! Nice job!")
+                }
+                var number, newNumber, myNumber;
+            };
+        </script>
+        <textarea id="toRun">
+            
+            
+            
+function double(x) {
+    number = parseInt(x,10); 
+    /* newNumber =  Your code here */ 
+    alert(newNumber);
+}
+
+myNumber = prompt("Enter a number","Enter your number here");
+
+double(myNumber);
+
+//So you're going for the harder task? Nice!
+//For this task, you need to write your own code to double the value of number (times it by 2) and store it in newNumber. 
+//Its not easy, but give it a go! 
+//Remember to delete the /* and */ characters, these will break your code!
+        </textarea>
+        <button onclick="runCode()">Run!</button>
+    </body>
+</html>
