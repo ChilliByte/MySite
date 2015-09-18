@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Programming Challenge 1!</title>
+        <link rel="stylesheet" href="openeve.css" />
+    </head>
+    <body>
+        <script>
+            function runCode() {
+                eval(toRun.value);
+                if(toRun.value.split(myString).length == 6) {
+                    alert("You fixed it! Well done! :) ");
+                }
+            };
+            var myString;
+        </script>
+        <textarea id="toRun">
+            
+            
+            
+function printFiveTime(x) {
+    for(var i =; i <; i++) {  //Change this line
+        document.getElementById("toRun").innerText += x;
+    }
+}
+
+myString = prompt("Enter some text","Enter your text here");
+
+printFiveTimes(myString);
+
+//Run this code. There appears to be a problem with it. 
+//Can you fix it so that it prints five times?
+        </textarea>
+        <button onclick="runCode()">Run!</button>
+    </body>
+</html>
