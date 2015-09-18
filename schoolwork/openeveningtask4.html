@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Programming Challenge 1!</title>
+        <link rel="stylesheet" href="openeve.css" />
+    </head>
+    <body>
+        <script>
+            function runCode() {
+                eval(toRun.value);
+                if(toRun.split(myName) != -1) {
+                    alert("Hello! You did it! :) ");
+                }
+            };
+            var myName;
+        </script>
+        <textarea id="toRun">
+            
+    //Hardest
+            
+function greet(x) {
+    //Your code here
+}
+
+myName = prompt("Enter Your name","Enter your name here");
+
+greet(myName);
+
+//Run this code. There appears to be a problem with it. 
+//Can you find out what it is? For bonus points, can you fix it?
+        </textarea>
+        <button onclick="runCode()">Run!</button>
+    </body>
+</html>
