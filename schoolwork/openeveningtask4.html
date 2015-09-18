@@ -8,12 +8,8 @@
         <script>
             function runCode() {
                 eval(toRun.value);
-                if(toRun.value.split(myName) != -1) {
-                    alert("Hello! You did it! :) ");
-                }
             };
-            var myName = "bob",
-                message = "";
+            var myName,message;
         </script>
         <textarea id="toRun">
             
