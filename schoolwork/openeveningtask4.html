@@ -8,11 +8,11 @@
         <script>
             function runCode() {
                 eval(toRun.value);
-                if(toRun.split(myName) != -1) {
+                if(toRun.value.split(myName) != -1) {
                     alert("Hello! You did it! :) ");
                 }
             };
-            var myName;
+            var myName,message;
         </script>
         <textarea id="toRun">
             
@@ -20,6 +20,8 @@
             
 function greet(x) {
     //Your code here
+    //You should end up with a variable named message
+    document.getElementById("toRun").value += message; //Don't change this line
 }
 
 myName = prompt("Enter Your name","Enter your name here");
