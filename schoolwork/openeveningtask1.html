@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Programming Challenge 1!</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <textarea id="toRun"></textarea>
+        <button id="runBut">Run!</button>
+        <script>
+            document.getElementById("runBut").onclick = function() {
+                eval(toRun.innerText);
+            };
+        </script>
+    </body>
+</html>
