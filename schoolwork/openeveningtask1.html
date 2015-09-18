@@ -7,12 +7,12 @@
         </style>
     </head>
     <body>
-        <textarea id="toRun"></textarea>
-        <button onclick="runCode()">Run!</button>
         <script>
             function runCode() {
                 eval(toRun.innerText);
             };
         </script>
+        <textarea id="toRun"></textarea>
+        <button onclick="runCode()">Run!</button>
     </body>
 </html>
