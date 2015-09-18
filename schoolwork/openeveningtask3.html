@@ -7,6 +7,7 @@
     <body>
         <script>
             function runCode() {
+                
                 eval(toRun.value);
                 if(toRun.value.split(myString).length == 6) {
                     alert("You fixed it! Well done! :) ");
@@ -20,7 +21,7 @@
             
 function printFiveTimes(x) {
     for(var i =; i <; i++) {  //Change this line
-        document.getElementById("toRun").value += x + "\n";
+        document.getElementById("toRun").value += "//" x + "\n";
     }
 }
 
