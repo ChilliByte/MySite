@@ -1,4 +1,5 @@
 var posts = ["hello-world","which-streaming-platform"]
+var postHTML = [];
 function ahah(url,pos) {
 	var targetElement = document.body;
        
@@ -11,8 +12,10 @@ function ahah(url,pos) {
 			console.log = "ahah error:\n" + request.statusText;
 			return;
 		}
-		targetElement.innerHTML += request.responseText;
-
+		//targetElement.innerHTML += request.responseText;
+		postHTML[pos] = request.responseText;
+		console.log(pos)
+		
 	}
 	request.open("GET", url, true);
 	request.send();
