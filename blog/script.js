@@ -27,6 +27,13 @@ function loadPosts() {
 		ahah("posts/" + posts[numOfPosts] + ".html");
 	}
 }
+var url;
+function checkURL() {
+	url = window.location.href.split("?")[1]
+	if (url != undefined) {
+		console.log(url);
+	}
+}
 
 window.onload = function() {
     document.addEventListener('click', function(evt) {
@@ -38,7 +45,7 @@ window.onload = function() {
             evt.preventDefault();
             evt.target.parentNode.className = "fs";
             evt.target.innerText = "Go back"
-            history.pushState({}, evt.target.parentNode.id + ".html", window.location.href + "/" + evt.target.parentNode.id + ".html");
+            history.pushState({}, evt.target.parentNode.id + ".html", window.location.href + "/?" + evt.target.parentNode.id);
         } else if((evt.target.tagName == "A") && (evt.target.innerText == "Go back")) {
             evt.preventDefault();
             evt.target.parentNode.className = "";
@@ -46,5 +53,6 @@ window.onload = function() {
             history.pushState({}, "Blog", "http://chillibyte.github.io/blog");
         }
     }, false);
+    checkURL()
     loadPosts()
 }
