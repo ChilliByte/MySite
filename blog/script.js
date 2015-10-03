@@ -35,10 +35,12 @@ window.onload = function() {
             evt.preventDefault();
             evt.target.parentNode.className = "fs";
             evt.target.innerText = "Go back"
+            history.pushState({}, evt.target.parentNode.id + ".html", window.location.href + "/" + evt.target.parentNode.id + ".html");
         } else if((evt.target.tagName == "A") && (evt.target.innerText == "Go back")) {
             evt.preventDefault();
             evt.target.parentNode.className = "";
             evt.target.innerText = "Read more";
+            history.pushState({}, evt.target.parentNode.id + ".html", "http://chillibyte.github.io/blog");
         }
     }, false);
     loadPosts()
