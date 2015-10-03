@@ -1,5 +1,4 @@
 var posts = ["hello-world","which-streaming-platform"]
-var postHTML = [];
 function ahah(url,pos) {
 	var targetElement = document.body;
        
@@ -12,30 +11,25 @@ function ahah(url,pos) {
 			console.log = "ahah error:\n" + request.statusText;
 			return;
 		}
-		postHTML[pos] = request.responseText;
-		console.log("Fetched article, pos: " + pos)
-		if(postHTML.length == posts.length) { 
-			console.log("Loop satisfied. pos:" + pos)
-			console.log("postHTML.length " + postHTML.length)
-			console.log("posts.length " + posts.length)
-			i = postHTML.length
-			while(i--) {
-				console.log("looping pos:" + pos)
-				targetElement.innerHTML += request.responseText;
-			}
-		}
+		targetElement.innerHTML += request.responseText;
+
 	}
 	request.open("GET", url, true);
 	request.send();
+	numOfPosts--
+	if(numOfPosts > -1) {
+		ahah("posts/" + posts[numOfPosts-1] + ".html",numOfPosts-1)
+	} else {
+		console.log("Done");
+	}
 }
 var numOfPosts;
 function loadPosts() {
 	numOfPosts = posts.length;
-	i = 0
-	while(i < numOfPosts) {
-		ahah("posts/" + posts[i] + ".html",i);
-		i++
-	}
+	ahah("posts/" + posts[numOfPosts-1] + ".html",numOfPosts-1)
+	/*while(numOfPosts--) {
+		ahah("posts/" + posts[numOfPosts] + ".html",numOfPosts);
+	}*/
 }
 
 window.onload = function() {
