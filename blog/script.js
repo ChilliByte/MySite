@@ -1,6 +1,6 @@
 var posts = ["hello-world","which-streaming-platform"]
-
-function ahah(url) {
+var postHTML = []
+function ahah(url,pos) {
 	var targetElement = document.body;
        
 	var request = window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttpRequest();
@@ -12,7 +12,8 @@ function ahah(url) {
 			console.log = "ahah error:\n" + request.statusText;
 			return;
 		}
-		targetElement.innerHTML += request.responseText;
+		postHTML[pos] = request.responseText;
+		//targetElement.innerHTML += request.responseText;
 	}
 	request.open("GET", url, true);
 	request.send();
@@ -21,8 +22,9 @@ var numOfPosts;
 function loadPosts() {
 	numOfPosts = posts.length;
 	while(numOfPosts--) {
-		ahah("posts/" + posts[numOfPosts] + ".html");
+		ahah("posts/" + posts[numOfPosts] + ".html",numOfPosts);
 	}
+	console.log(postHTML);
 }
 
 window.onload = function() {
