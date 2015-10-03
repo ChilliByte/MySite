@@ -13,9 +13,12 @@ function ahah(url,pos) {
 			return;
 		}
 		postHTML[pos] = request.responseText;
+		console.log("Fetched article, pos: " + pos)
 		if(postHTML.length == posts.length) { 
+			console.log("Loop satisfied. pos:" + pos)
 			i = postHTML.length
 			while(i--) {
+				console.log("looping pos:" + pos)
 				targetElement.innerHTML += request.responseText;
 			}
 		}
