@@ -12,7 +12,9 @@ function ahah(url) {
 			console.log = "ahah error:\n" + request.statusText;
 			return;
 		}
-		targetElement.innerHTML += request.responseText;
+		//targetElement.innerHTML += request.responseText;
+		console.log(request.responseText)
+		console.log(request.split("<article id="))
 	}
 	request.open("GET", url, true);
 	request.send();
@@ -21,6 +23,7 @@ var numOfPosts;
 function loadPosts() {
 	numOfPosts = posts.length;
 	while(numOfPosts--) {
+		document.body.innerHTML+="<article id=\"" + posts[numOfPosts] + "\"></article>"
 		ahah("posts/" + posts[numOfPosts] + ".html");
 	}
 }
