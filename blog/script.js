@@ -16,6 +16,8 @@ function ahah(url,pos) {
 		console.log("Fetched article, pos: " + pos)
 		if(postHTML.length == posts.length) { 
 			console.log("Loop satisfied. pos:" + pos)
+			console.log("postHTML.length " + postHTML.length)
+			console.log("posts.length " + posts.length)
 			i = postHTML.length
 			while(i--) {
 				console.log("looping pos:" + pos)
