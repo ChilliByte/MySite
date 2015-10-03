@@ -32,7 +32,6 @@ function loadPosts() {
 	while(numOfPosts--) {
 		ahah("posts/" + posts[numOfPosts] + ".html",numOfPosts);
 	}
-	console.log(postHTML);
 }
 
 window.onload = function() {
