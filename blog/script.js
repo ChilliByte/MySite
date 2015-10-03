@@ -16,20 +16,13 @@ function ahah(url,pos) {
 	}
 	request.open("GET", url, true);
 	request.send();
-	numOfPosts--
-	if(numOfPosts > -1) {
-		ahah("posts/" + posts[numOfPosts-1] + ".html",numOfPosts-1)
-	} else {
-		console.log("Done");
-	}
 }
 var numOfPosts;
 function loadPosts() {
 	numOfPosts = posts.length;
-	ahah("posts/" + posts[numOfPosts-1] + ".html",numOfPosts-1)
-	/*while(numOfPosts--) {
+	while(numOfPosts--) {
 		ahah("posts/" + posts[numOfPosts] + ".html",numOfPosts);
-	}*/
+	}
 }
 
 window.onload = function() {
