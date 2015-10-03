@@ -34,6 +34,7 @@ function checkURL() {
 		console.log(url);
 		document.querySelector("article#" + url).className = "fs";
 		document.querySelector("article#" + url + " a.readMore").innerText = "Go Back";
+		console.log("Expanded Article")
 	}
 }
 
