@@ -15,7 +15,7 @@ function ahah(url) {
 		//targetElement.innerHTML += request.responseText;
 		console.log(request.responseText)
 		console.log(request.responseText.split("<article id=\""))
-		console.log(request.responseText.split("<article id=\"").split("\">"))
+		console.log(request.responseText.split("<article id=\"")[1].split("\">"))
 		
 	}
 	request.open("GET", url, true);
