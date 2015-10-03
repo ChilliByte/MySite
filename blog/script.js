@@ -1,5 +1,5 @@
 var posts = ["hello-world","which-streaming-platform"]
-var postHTML = []
+var postHTML = [];
 function ahah(url,pos) {
 	var targetElement = document.body;
        
@@ -13,7 +13,12 @@ function ahah(url,pos) {
 			return;
 		}
 		postHTML[pos] = request.responseText;
-		//targetElement.innerHTML += request.responseText;
+		if(postHTML.length == posts.length) { 
+			i = postHTML.length
+			while(i--) {
+				targetElement.innerHTML += request.responseText;
+			}
+		}
 	}
 	request.open("GET", url, true);
 	request.send();
