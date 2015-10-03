@@ -40,7 +40,7 @@ window.onload = function() {
             evt.preventDefault();
             evt.target.parentNode.className = "";
             evt.target.innerText = "Read more";
-            history.pushState({}, evt.target.parentNode.id + ".html", "http://chillibyte.github.io/blog");
+            history.pushState({}, "Blog", "http://chillibyte.github.io/blog");
         }
     }, false);
     loadPosts()
