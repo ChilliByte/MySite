@@ -23,7 +23,7 @@ var numOfPosts;
 function loadPosts() {
 	numOfPosts = posts.length;
 	while(numOfPosts--) {
-		document.body.innerHTML+="<article id=\"" + posts[numOfPosts] + "\"></article>"
+		document.body.innerHTML+="<div id=\"" + posts[numOfPosts] + "\"></div>"
 		ahah("posts/" + posts[numOfPosts] + ".html");
 	}
 }
