@@ -31,8 +31,9 @@ function ahah(url,pos) {
 var numOfPosts;
 function loadPosts() {
 	numOfPosts = posts.length;
-	while(numOfPosts--) {
-		ahah("posts/" + posts[numOfPosts] + ".html",numOfPosts);
+	i = 0
+	while(i < numOfPosts) {
+		ahah("posts/" + posts[i] + ".html",i);
 	}
 }
 
