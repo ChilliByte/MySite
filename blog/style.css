@@ -76,6 +76,10 @@ aside a {
 	color:white;
 }
 
+aside p {
+	margin:10px;
+}
+
 article {
 	display:block;
 	margin-bottom:25px;
