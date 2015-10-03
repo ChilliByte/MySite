@@ -34,6 +34,7 @@ function loadPosts() {
 	i = 0
 	while(i < numOfPosts) {
 		ahah("posts/" + posts[i] + ".html",i);
+		i++
 	}
 }
 
