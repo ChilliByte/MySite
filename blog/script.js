@@ -56,6 +56,6 @@ window.onload = function() {
             history.pushState({}, "Blog", "http://chillibyte.github.io/blog");
         }
     }, false);
-    checkURL()
-    loadPosts()
+    loadPosts();
+    setTimeout(checkURL,500);
 }
