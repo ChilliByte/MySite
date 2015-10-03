@@ -1,4 +1,4 @@
-var posts = ["helloWorld","yttwitchorbeam"]
+var posts = ["hello-world","which-streaming-platform"]
 
 function ahah(url) {
 	var targetElement = document.body;
