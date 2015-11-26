@@ -61,7 +61,7 @@ input[type=checkbox].css-checkbox {
 input[type=checkbox].css-checkbox + label.css-label {
     	padding-left:55px;
     	position:absolute;
-    	top:65px;
+    	top:67px;
     	right:60px;
 	height:50px; 
 	display:block;
@@ -184,7 +184,7 @@ aside a {
 		width:100%;
 	}
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 500px) {
 	body {
 		text-align:center;
 	}
