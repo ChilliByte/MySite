@@ -64,7 +64,7 @@ input[type=checkbox].css-checkbox + label.css-label {
     	top:67px;
     	right:60px;
 	height:50px; 
-	display:block;
+	/*display:block;*/
 	line-height:50px;
 	background-repeat:no-repeat;
 	background-position: 0 0;
@@ -93,7 +93,7 @@ label.css-label {
 .css-label {
     	position:absolute;
     	right:2px;
-    	display:none;
+    	/*display:none;*/
 }
 
 .css-checkbox {
