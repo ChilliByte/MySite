@@ -17,19 +17,19 @@ body {
   	font-family:Raleway;
   	padding-top:65px;
   	/* Chrome 10+,Safari */
-	background : -webkit-linear-gradient(top, rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.25) 75%);
+	background : -webkit-linear-gradient(top, rgba(50, 50, 50, 0) 00%,rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.5) 75%);
 	
 	/* Firefox 4+ */ 
-	background : -moz-linear-gradient(top, rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.25) 75%);
+	background : -moz-linear-gradient(top, rgba(50, 50, 50, 0) 00%,rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.5) 75%);
 	
 	/* Opera */
-	background : -o-linear-gradient(top, rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.25) 75%);
+	background : -o-linear-gradient(top, rgba(50, 50, 50, 0) 00%,rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.5) 75%);
 	
 	/* IE 10+ */
-	background : -ms-linear-gradient(top, rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.25) 75%); 
+	background : -ms-linear-gradient(top, rgba(50, 50, 50, 0) 00%,rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.5) 75%); 
 	
 	/* W3C */
-	background : -linear-gradient(top, rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.25) 75%);
+	background : -linear-gradient(top, rgba(50, 50, 50, 0) 00%,rgba(50, 50, 50, 0) 00%, rgba(50, 50, 50, 0.5) 75%);
 }
 
 section:nth-of-type(1){
@@ -185,6 +185,9 @@ aside a {
 	}
 }
 @media screen and (max-width: 1000px) {
+	body {
+		text-align:center;
+	}
 	nav {
 		display:none;
 	} 
