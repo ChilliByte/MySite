@@ -203,8 +203,9 @@ aside a {
 	article {
 		width:100%;
 	}
-}
+/*}
 @media screen and (max-width: 500px) {
+*/
 	body {
 		text-align:center;
 	}
