@@ -187,8 +187,13 @@ aside a {
 		width:200px;
 		right:-200px;
 	} 
-	label.css-label {
-		display:none;
+	nav a {
+		width:200px;
+	}
+	input[type=checkbox].css-checkbox:checked + label.css-label {
+		background-position: 0 -50px;
+		margin-right:200px;
+		transition: margin-right 0.5s
 	}
 }
 @media screen and (max-width: 800px) {
