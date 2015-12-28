@@ -388,27 +388,10 @@ function checkPlayerSwitchCollision() {
     if(openKeyPressed) {
         var dir = colCheck(player, currentLevel.switches[i],true);
         //Do something depending on the direction the collision happened from.
-        if (dir === "l" || dir === "r") {
-            touchingIce = false;
-            player.velX = 0;
-            player.jumping = false;
-            scrolling = false;
-        } else if (dir === "b") {
-            touchingIce = false;
-            if (gravityDown) {
-                player.grounded = true;
-                player.jumping = false;
-            } else {    
-                player.velY *= -1;
-            }
-        } else if (dir === "t") {
-            touchingIce = false;
-            if (gravityDown) {
-                player.velY *= -1;
-            } else {
-                player.grounded = true;
-                player.jumping = false;
-            }
+        if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
+            currentLevel.switches[i].isOn = !currentLevel.switches[i].isOn;
+            console.log("Switch Number " + i + " toggled. Is on? " + currentLevel.switches[i].isOn)
+            currentLevel.doors[i].isOpen = currentLevel.switches[i].isOn;
         } else {
             touchingEdge = false;
         }
