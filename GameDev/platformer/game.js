@@ -49,12 +49,12 @@ function update() {
     }
     if (!scrolling) {
         player.x += player.velX;
-        if ((player.x > 8.85*units) && (player.x < 9*units) && (player.lastDir == "r")) {
-            //player.x = 9.01*units;
+        if ((player.x > 8.85*units) && (player.x < 9*units) && (player.lastDir == "r") && (currentLevel.offset > 0)) {
+            player.x = 9.01*units;
             console.log("Pushing Forward");
         }
-        if ((player.x > 10*units) && (player.x < 10.15*units) && (player.lastDir == "l")) {
-            //player.x = 9.99*units;
+        if ((player.x > 10*units) && (player.x < 10.15*units) && (player.lastDir == "l") && (currentLevel.offset > currentLevel.width - (tilesX*units))) {
+            player.x = 9.99*units;
             console.log("Pushing Backward");
         }
     } else if(!collided) {
