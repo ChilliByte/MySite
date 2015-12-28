@@ -8,6 +8,7 @@ var canvas = document.getElementById("canvas"),
     units = 34,
     scrolling = false,
     logCols = false,
+    collided = false,
     player = {
         x: units,
         y: 0,
