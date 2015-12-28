@@ -48,11 +48,11 @@ function update() {
     if (!scrolling) {
         player.x += player.velX;
         if ((player.x > 8.85*units) && (player.x < 9*units) && (player.lastDir == "r")) {
-            player.x = 9.01*units;
+            //player.x = 9.01*units;
             console.log("Pushing Forward");
         }
         if ((player.x > 10*units) && (player.x < 10.15*units) && (player.lastDir == "l")) {
-            player.x = 9.99*units;
+            //player.x = 9.99*units;
             console.log("Pushing Backward");
         }
     } else if(!collided) {
@@ -80,7 +80,7 @@ function update() {
     player.y += player.velY;
     if (debug) {
         document.getElementById("stats").style.display = "block"
-        document.getElementById("stats").innerHTML = "X: " + player.x + ", Units: " + player.x/units + "<br>Y: " + player.y + ", Units: " + player.y/units + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
+        document.getElementById("stats").innerHTML = "X: " + player.x + ", <br>Units: " + player.x/units + "<br>Y: " + player.y + ",<br> Units: " + player.y/units + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
     }
     
     checkLevelChange()
