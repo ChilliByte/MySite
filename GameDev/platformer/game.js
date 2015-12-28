@@ -44,7 +44,9 @@ function update() {
     if ((player.lastDir == "l") && (currentLevel.offset > currentLevel.width - (tilesX*units))) {
         scrolling = false;
     }
-    
+    if(collided) {
+        console.log("Collided");
+    }
     if (!scrolling) {
         player.x += player.velX;
         if ((player.x > 8.85*units) && (player.x < 9*units) && (player.lastDir == "r")) {
@@ -56,7 +58,6 @@ function update() {
             console.log("Pushing Backward");
         }
     } else if(!collided) {
-        console.log("Not Collided");
         if(Math.abs(player.velX) > 3) {
             i = currentLevel.boxes.length
             while(i--) {
