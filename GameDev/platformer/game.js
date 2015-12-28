@@ -6,7 +6,6 @@ var triggers = {};
 triggers.firstStep = false;
 triggers.firstLevel = false;
 triggers.firstCoin = false;
-var testVar=2; //temp
 (function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
@@ -15,7 +14,7 @@ var testVar=2; //temp
 function update() {
     //Clear The Last Frame
     ctx.clearRect(0, 0, 40*units, 20*units);
-    collided = false;
+
     //Check keys
     checkKeys()
     
@@ -48,13 +47,13 @@ function update() {
     if ((player.x < 9*units) && (currentLevel.offset > 0)) {
         player.x = 9.0000001*units;
         scrolling = true;
-        player.velX = -1 * testVar;
+        player.velX = -4;
         console.log("Pushing Forward");
     }
     if ((player.x > 10*units) && (currentLevel.offset < currentLevel.width - (tilesX*units))) {
         player.x = 9.999999999*units;
         scrolling = true;
-        player.velX = testVar;
+        player.velX = 4;
         console.log("Pushing Backward");
     }    
     
@@ -407,7 +406,6 @@ function checkPlayerDoorCollision() {
             player.velX = 0;
             player.jumping = false;
             scrolling = false;
-            collided = true;
         } else if (dir === "b") {
             touchingIce = false;
             if (gravityDown) {
@@ -466,7 +464,6 @@ function checkPlayerBoxCollision() {
         player.velX = 0;
         player.jumping = false;
         scrolling = false;
-        collided = true;
         if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "b") {
         touchingIce = false;
@@ -526,7 +523,6 @@ function checkPlayerIceCollision() {
         player.velX = 0;
         player.jumping = false;
         touchingIce = true;
-        collided = true;
     } else if (dir === "b") {
         touchingIce = true;
         if (gravityDown) {
