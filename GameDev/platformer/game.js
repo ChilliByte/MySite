@@ -44,18 +44,19 @@ function update() {
     if ((player.lastDir == "l") && (currentLevel.offset > currentLevel.width - (tilesX*units))) {
         scrolling = false;
     }
-
+    
+    if ((player.x < 9*units) && (currentLevel.offset > 0)) {
+        player.x = 9.0000001*units;
+        console.log("Pushing Forward");
+    }
+    if ((player.x > 10*units) && (currentLevel.offset < currentLevel.width - (tilesX*units))) {
+        player.x = 9.999999999*units;
+        console.log("Pushing Backward");
+    }    
+    
     if (!scrolling) {
         player.x += player.velX;
-        if ((player.x < 9*units) && (currentLevel.offset > 0)) {
-            player.x = 9.0000001*units;
-            console.log("Pushing Forward");
-        }
-        if ((player.x > 10*units) && (currentLevel.offset < currentLevel.width - (tilesX*units))) {
-            player.x = 9.999999999*units;
-            console.log("Pushing Backward");
-        }
-    } else if(!collided) {
+    } else {
         if(Math.abs(player.velX) > 3) {
             i = currentLevel.boxes.length
             while(i--) {
