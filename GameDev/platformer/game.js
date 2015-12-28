@@ -57,7 +57,7 @@ function update() {
             player.x--
             console.log("Pushing Backward")
         }
-    } else {
+    } else if(!collided) {
         if(Math.abs(player.velX) > 3) {
             i = currentLevel.boxes.length
             while(i--) {
@@ -404,6 +404,7 @@ function checkPlayerDoorCollision() {
             player.velX = 0;
             player.jumping = false;
             scrolling = false;
+            collided = true;
         } else if (dir === "b") {
             touchingIce = false;
             if (gravityDown) {
@@ -462,6 +463,7 @@ function checkPlayerBoxCollision() {
         player.velX = 0;
         player.jumping = false;
         scrolling = false;
+        collided = true;
         if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
     } else if (dir === "b") {
         touchingIce = false;
@@ -521,6 +523,7 @@ function checkPlayerIceCollision() {
         player.velX = 0;
         player.jumping = false;
         touchingIce = true;
+        collided = true;
     } else if (dir === "b") {
         touchingIce = true;
         if (gravityDown) {
