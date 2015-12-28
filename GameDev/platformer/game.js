@@ -4,8 +4,6 @@ currentLevel = levels[currentLevelInt];
 //Game Event Handler
 var triggers = {};
 triggers.firstStep = false;
-triggers.firstLevel = false;
-triggers.firstCoin = false;
 (function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
@@ -206,7 +204,10 @@ function checkKeys() {
             scrolling = true;
         }
     }
-    
+    openKeyPressed = false;
+    if (keys[83] || keys[40]) {
+        openKeyPressed = true;
+    }
 }
 
 function drawChar() {
@@ -383,6 +384,36 @@ function drawWater() {
     ctx.closePath()
     ctx.fill();
 }
+function checkPlayerSwitchCollision() {
+    if(openKeyPressed) {
+        var dir = colCheck(player, currentLevel.switches[i],true);
+        //Do something depending on the direction the collision happened from.
+        if (dir === "l" || dir === "r") {
+            touchingIce = false;
+            player.velX = 0;
+            player.jumping = false;
+            scrolling = false;
+        } else if (dir === "b") {
+            touchingIce = false;
+            if (gravityDown) {
+                player.grounded = true;
+                player.jumping = false;
+            } else {    
+                player.velY *= -1;
+            }
+        } else if (dir === "t") {
+            touchingIce = false;
+            if (gravityDown) {
+                player.velY *= -1;
+            } else {
+                player.grounded = true;
+                player.jumping = false;
+            }
+        } else {
+            touchingEdge = false;
+        }
+    }
+}
 function drawSwitches() {
     //Change to pink and begin drawing
     ctx.fillStyle = "#f99";
@@ -399,35 +430,31 @@ function drawSwitches() {
     ctx.fill();
 }
 function checkPlayerDoorCollision() {
-    if(currentLevel.doors[i].isOpen) {
-        return;
-    } else {
-        var dir = colCheck(player, currentLevel.doors[i],true);
-        //Do something depending on the direction the collision happened from.
-        if (dir === "l" || dir === "r") {
-            touchingIce = false;
-            player.velX = 0;
+    var dir = colCheck(player, currentLevel.doors[i],true);
+    //Do something depending on the direction the collision happened from.
+    if (dir === "l" || dir === "r") {
+        touchingIce = false;
+        player.velX = 0;
+        player.jumping = false;
+        scrolling = false;
+    } else if (dir === "b") {
+        touchingIce = false;
+        if (gravityDown) {
+            player.grounded = true;
             player.jumping = false;
-            scrolling = false;
-        } else if (dir === "b") {
-            touchingIce = false;
-            if (gravityDown) {
-                player.grounded = true;
-                player.jumping = false;
-            } else {
-                player.velY *= -1;
-            }
-        } else if (dir === "t") {
-            touchingIce = false;
-            if (gravityDown) {
-                player.velY *= -1;
-            } else {
-                player.grounded = true;
-                player.jumping = false;
-            }
-        } else {
-            touchingEdge = false;
+        } else {    
+            player.velY *= -1;
         }
+    } else if (dir === "t") {
+        touchingIce = false;
+        if (gravityDown) {
+            player.velY *= -1;
+        } else {
+            player.grounded = true;
+            player.jumping = false;
+        }
+    } else {
+        touchingEdge = false;
     }
 }
 function checkMobDoorCollision() {
@@ -440,7 +467,6 @@ function checkMobDoorCollision() {
         }
     }
 }
-
 function drawDoors() {
     //Change to green and begin drawing
     ctx.fillStyle = "#555";
@@ -448,11 +474,13 @@ function drawDoors() {
     
     i = currentLevel.doors.length;
     while (i--) {
-        //Draw each box
-        ctx.rect(currentLevel.doors[i].x, currentLevel.doors[i].y, currentLevel.doors[i].width, currentLevel.doors[i].height);
-        //Figure out whether we've touched a box
-        checkPlayerDoorCollision()
-        checkMobDoorCollision()
+        if(!currentLevel.doors[i].isOpen) {
+            //Draw each box
+            ctx.rect(currentLevel.doors[i].x, currentLevel.doors[i].y, currentLevel.doors[i].width, currentLevel.doors[i].height);
+            //Figure out whether we've touched a box
+            checkPlayerDoorCollision()
+            checkMobDoorCollision()
+        }
     }
     
     //End drawing and fill
@@ -518,7 +546,6 @@ function drawBoxes() {
     ctx.closePath()
     ctx.fill();
 }
-var touchingIce = false;
 function checkPlayerIceCollision() {
     var dir = colCheck(player, currentLevel.ice[i],true);
     //Do something depending on the direction the collision happened from.
@@ -664,8 +691,8 @@ function drawMobs() {
 }
 function displayHints() {
     if (!triggers.firstLevel) {
-        if ((currentLevelInt == 0) && (player.x > canvas.width - 400)) {
-            hint(player.x, 30, "Go to the edge of the screen to go to the next level!");
+        if ((currentLevelInt == 0) && (currentLevel.offset > 1)) {
+            hint(player.x, 30, "Go to the right ot get to the end of the level!");
             triggers.firstLevel = true;
             setTimeout(function() {
                 hint(10000, 10000, "")
