@@ -18,6 +18,21 @@ function update() {
     //Check keys
     checkKeys()
     
+    //Choose the right frictional and grvitational coefficients
+    if (touchingIce){
+        player.vertiSpeed = normalVertiSpeed;
+        gravity = normalGravity;
+        friction = iceFriction;
+    } else if (!inWater || touchingEdge)  {
+        player.vertiSpeed = normalVertiSpeed;
+        gravity = normalGravity;
+        friction = normalFriction;
+    } else {
+        player.vertiSpeed = waterVertiSpeed;
+        gravity = waterGravity;
+        friction = waterFriction;
+    }
+    
     //Factor in Friction and Gravity
     player.velX *= friction;
     player.velY += gravity;
@@ -191,19 +206,7 @@ function checkKeys() {
             scrolling = true;
         }
     }
-    if (touchingIce){
-        player.vertiSpeed = normalVertiSpeed;
-        gravity = normalGravity;
-        friction = iceFriction;
-    } else if (!inWater || touchingEdge)  {
-        player.vertiSpeed = normalVertiSpeed;
-        gravity = normalGravity;
-        friction = normalFriction;
-    } else {
-        player.vertiSpeed = waterVertiSpeed;
-        gravity = waterGravity;
-        friction = waterFriction;
-    }
+    
 }
 
 function drawChar() {
