@@ -48,14 +48,12 @@ function update() {
     if (!scrolling) {
         player.x += player.velX;
         if ((player.x > 8.85*units) && (player.x < 9*units) && (player.lastDir == "r")) {
-            //player.velX+=0.5
-            //player.x+= 5;
-            console.log("Pushing Forward")
+            player.x = 9.01*units;
+            console.log("Pushing Forward");
         }
         if ((player.x > 10*units) && (player.x < 10.15*units) && (player.lastDir == "l")) {
-            //player.velX-=0.5
-            //player.x-= 5
-            console.log("Pushing Backward")
+            player.x = 10.01*units;
+            console.log("Pushing Backward");
         }
     } else if(!collided) {
         if(Math.abs(player.velX) > 3) {
