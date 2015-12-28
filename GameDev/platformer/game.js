@@ -52,7 +52,7 @@ function update() {
             console.log("Pushing Forward");
         }
         if ((player.x > 10*units) && (player.x < 10.15*units) && (player.lastDir == "l")) {
-            player.x = 10.01*units;
+            player.x = 9.99*units;
             console.log("Pushing Backward");
         }
     } else if(!collided) {
