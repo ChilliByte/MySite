@@ -405,6 +405,7 @@ function drawSwitches() {
     i = currentLevel.switches.length;
     while (i--) {
         //Draw each box
+        checkPlayerSwitchCollision();
         ctx.rect(currentLevel.switches[i].x, currentLevel.switches[i].y, currentLevel.switches[i].width, currentLevel.switches[i].height);
     }
     
