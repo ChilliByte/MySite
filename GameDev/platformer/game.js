@@ -6,7 +6,7 @@ var triggers = {};
 triggers.firstStep = false;
 triggers.firstLevel = false;
 triggers.firstCoin = false;
-var testVar=2 //temp
+var testVar=2; //temp
 (function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
