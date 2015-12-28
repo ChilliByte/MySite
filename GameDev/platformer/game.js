@@ -15,7 +15,7 @@ triggers.firstCoin = false;
 function update() {
     //Clear The Last Frame
     ctx.clearRect(0, 0, 40*units, 20*units);
-
+    collided = false;
     //Check keys
     checkKeys()
     
