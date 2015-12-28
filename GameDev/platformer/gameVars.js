@@ -8,7 +8,7 @@ var canvas = document.getElementById("canvas"),
     units = 34,
     scrolling = false,
     logCols = false,
-    collided = false,
+    touchingIce = false,
     player = {
         x: units,
         y: 0,
