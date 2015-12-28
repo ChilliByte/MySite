@@ -6,7 +6,7 @@ var triggers = {};
 triggers.firstStep = false;
 triggers.firstLevel = false;
 triggers.firstCoin = false;
-
+var testVar=2 //temp
 (function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
@@ -44,17 +44,17 @@ function update() {
     if ((player.lastDir == "l") && (currentLevel.offset > currentLevel.width - (tilesX*units))) {
         scrolling = false;
     }
-    
+
     if ((player.x < 9*units) && (currentLevel.offset > 0)) {
         player.x = 9.0000001*units;
         scrolling = true;
-        player.velX = -1;
+        player.velX = -1 * testVar;
         console.log("Pushing Forward");
     }
     if ((player.x > 10*units) && (currentLevel.offset < currentLevel.width - (tilesX*units))) {
         player.x = 9.999999999*units;
         scrolling = true;
-        player.velX = 1;
+        player.velX = testVar;
         console.log("Pushing Backward");
     }    
     
