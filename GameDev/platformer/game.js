@@ -97,7 +97,7 @@ function update() {
     player.y += player.velY;
     if (debug) {
         document.getElementById("stats").style.display = "block"
-        document.getElementById("stats").innerHTML = "X: " + player.x + ", <br>Units: " + player.x/units + "<br>Y: " + player.y + ",<br> Units: " + player.y/units + "<br>velX: " + player.velX + "<br>velY: " + player.velY;
+        document.getElementById("stats").innerHTML = "X: " + player.x + ", <br>Units: " + player.x/units + "<br>Y: " + player.y + ",<br> Units: " + player.y/units + "<br>velX: " + player.velX + "<br>velY: " + player.velY + "<br>Scrolling? " + scrolling + "<br>Open key: " + openKeyPressed;
     }
     
     checkLevelChange()
