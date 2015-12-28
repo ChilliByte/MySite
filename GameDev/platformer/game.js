@@ -48,13 +48,13 @@ function update() {
     if (!scrolling) {
         player.x += player.velX;
         if ((player.x > 8.85*units) && (player.x < 9*units)) {
-            player.velX+=0.5
-            player.x+= 5;
+            //player.velX+=0.5
+            //player.x+= 5;
             console.log("Pushing Forward")
         }
         if ((player.x > 10*units) && (player.x < 10.15*units)) {
-            player.velX-=0.5
-            player.x-= 5
+            //player.velX-=0.5
+            //player.x-= 5
             console.log("Pushing Backward")
         }
     } else if(!collided) {
