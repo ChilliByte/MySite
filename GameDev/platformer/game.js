@@ -48,11 +48,11 @@ function update() {
     if (!scrolling) {
         player.x += player.velX;
         if ((player.x < 9*units) && (currentLevel.offset > 0)) {
-            player.x = 9.5*units;
+            player.x = 9*units;
             console.log("Pushing Forward");
         }
         if ((player.x > 10*units) && (currentLevel.offset < currentLevel.width - (tilesX*units))) {
-            player.x = 9.5*units;
+            player.x = 10*units;
             console.log("Pushing Backward");
         }
     } else if(!collided) {
