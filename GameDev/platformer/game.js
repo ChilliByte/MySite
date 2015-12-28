@@ -53,7 +53,7 @@ function update() {
             player.x = 9.01*units;
             console.log("Pushing Forward");
         }
-        if ((player.x > 10*units) && (currentLevel.offset > currentLevel.width - (tilesX*units))) {
+        if ((player.x > 10*units) && (currentLevel.offset < currentLevel.width - (tilesX*units))) {
             player.x = 9.99*units;
             console.log("Pushing Backward");
         }
