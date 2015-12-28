@@ -47,10 +47,12 @@ function update() {
     
     if ((player.x < 9*units) && (currentLevel.offset > 0)) {
         player.x = 9.0000001*units;
+        scrolling = true;
         console.log("Pushing Forward");
     }
     if ((player.x > 10*units) && (currentLevel.offset < currentLevel.width - (tilesX*units))) {
         player.x = 9.999999999*units;
+        scrolling = true;
         console.log("Pushing Backward");
     }    
     
