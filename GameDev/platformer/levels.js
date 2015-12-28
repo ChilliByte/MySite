@@ -15,29 +15,29 @@ function level(w) {
 }
 
 function Box(x,y,h,w,e) {
-    this.x = x;
-    this.y = y;
-    this.height = h;
-    this.width = w;
+    this.x = x*units;
+    this.y = y*units;
+    this.height = h*units;
+    this.width = w*units;
     if(e != undefined) {
-        this.waterEdge = true
+        this.waterEdge = true;
     }
 }
 
 function Collectible(x,y,w,h,t) {
-    this.x = x;
-    this.y = y;
-    this.height = h;
-    this.width = w;
+    this.x = x*units;
+    this.y = y*units;
+    this.height = h*units;
+    this.width = w*units;
     this.type = t;
     this.collected = false;
 }
 
 function Mob(x,y,w,h,s,t,xl,yl) {
-    this.x = x;
-    this.y = y;
-    this.width = w;
-    this.height = h;
+    this.x = x*units;
+    this.y = y*units;
+    this.width = w*units;
+    this.height = h*units;
     this.speed = s;
     this.type = t;
     this.x1Limit = x1;
@@ -51,16 +51,16 @@ function Mob(x,y,w,h,s,t,xl,yl) {
 }
 
 function Switch(x,y) {
-    this.x = x;
-    this.y = y;
+    this.x = x*units;
+    this.y = y*units;
     this.height = 2*units;
     this.width = units;
     this.isOn = false;
 }
 
 function Door(x,y,w,h) {
-    this.x = x;
-    this.y = y;
+    this.x = x*units;
+    this.y = y*units;
     this.height = h;
     this.width = w;
     this.isOpen = false;
@@ -73,15 +73,15 @@ level4 = new level(200);
 level5 = new level(200);
 
 //Level1
-level1.boxes.push(new Box(-1*units,0,20*units,1*units+3));
-level1.boxes.push(new Box(-1*units,15*units,5*units,41*units));
-level1.boxes.push(new Box(40*units,16*units,4*units,40*units));
-level1.boxes.push(new Box(80*units,17*units,3*units,40*units));
-level1.boxes.push(new Box(120*units,18*units,2*units,40*units));
-level1.boxes.push(new Box(160*units,19*units,1*units,40*units));
+level1.boxes.push(new Box(-1,0,20,1.1));
+level1.boxes.push(new Box(-1,15,5,41));
+level1.boxes.push(new Box(40,16,4,40));
+level1.boxes.push(new Box(80,17,3,40));
+level1.boxes.push(new Box(120,18,2,40));
+level1.boxes.push(new Box(160,19,1,40));
 
-level1.switches.push(new Switch(60*units,14*units));
-level1.doors.push(new Door(80*units,14*units,units,2*units));
+level1.switches.push(new Switch(60,14));
+level1.doors.push(new Door(80,14,1,2));
 // Level 2
 level2.boxes = [];
 level2.boxes.push({
