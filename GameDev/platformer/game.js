@@ -56,6 +56,7 @@ function update() {
             console.log("Pushing Backward");
         }
     } else if(!collided) {
+        console.log.("Not Collided");
         if(Math.abs(player.velX) > 3) {
             i = currentLevel.boxes.length
             while(i--) {
