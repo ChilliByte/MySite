@@ -9,6 +9,7 @@ var canvas = document.getElementById("canvas"),
     scrolling = false,
     logCols = false,
     touchingIce = false,
+    openKeyPressed = false,
     player = {
         x: units,
         y: 0,
