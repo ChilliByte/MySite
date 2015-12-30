@@ -755,7 +755,7 @@ function checkPlayerCrateCollision() {
     }
 }
 
-function checkPlayerCrateCollision() {
+function checkCrateBoxCollision() {
     j = currentLevel.boxes.length;
     while(j--) {
         var dir = colCheck(currentLevel.crates[i],currentLevel.boxes[j],true);
@@ -774,7 +774,7 @@ function checkPlayerCrateCollision() {
             if (gravityDown) {
                 currentLevel.crates[i].broken = true;
             } else {
-                currentLEvel.crates[i].grounded = true;
+                currentLevel.crates[i].grounded = true;
             }
         }
     }
