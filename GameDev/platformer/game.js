@@ -613,6 +613,11 @@ function drawIce() {
     ctx.fill();
 }
 
+function moveProjectiles() {
+    currentLevel.projectiles[i].x += currentLevel.velX;
+    currentLevel.projectiles[i].y += currentLevel.velY;
+}
+
 function drawProjectiles() {
     //Change to green and begin drawing
     ctx.fillStyle = "#F00";
@@ -622,6 +627,7 @@ function drawProjectiles() {
         //Draw each box
         ctx.rect(currentLevel.projectiles[i].x, currentLevel.projectiles[i].y, units/8, units/8);
         //Figure out whether we've touched a box
+        moveProjectiles();
     }
     //End drawing and fill
     ctx.closePath()
