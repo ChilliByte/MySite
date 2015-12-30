@@ -139,6 +139,8 @@ function getPosition(event) {
   evY -= canvas.offsetTop;
   console.log("Click Co-ords: (" + evX + "," + evY + ")");
   console.log("Player Co-ords: (" + player.x + "," + player.y + ")");
+  evX = exX * (units/tileDisplayWidth);
+  evY = exY * (units/tileDisplayWidth);
   dx = evX - player.x;
   dy = player.y - evY
   length = Math.sqrt((dx*dx)+(dy*dy));
