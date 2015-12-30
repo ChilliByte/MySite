@@ -150,7 +150,11 @@ function getPosition(event) {
   theta = toDegrees(Math.acos(cosTheta));
   
   currentLevel.projectiles.push(new Projectile(player.x,player.y,theta))
-  console.log("Theta: " + theta);
+  console.log("Theta unmodded: " + theta);
+  
+  if(dy < 0) {
+      theta = 360 - theta;
+  }
 }
 
 function checkTriggers() {
