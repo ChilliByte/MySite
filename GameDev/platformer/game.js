@@ -615,7 +615,7 @@ function moveProjectiles() {
     currentLevel.projectiles[i].velY -= gravity/4;
     currentLevel.projectiles[i].velX = Math.sqrt((currentLevel.projectiles[i].speed * currentLevel.projectiles[i].speed) - (currentLevel.projectiles[i].velY * currentLevel.projectiles[i].velY));
     if ((currentLevel.projectiles[i].theta > 90) && (currentLevel.projectiles[i].theta < 270)) {
-        currentLevel.projectiles[i].velX = -1 * Math.abs(currentLevel.projectiles[i].velX);
+        //currentLevel.projectiles[i].velX = -1 * Math.abs(currentLevel.projectiles[i].velX);
     }
 }
 
