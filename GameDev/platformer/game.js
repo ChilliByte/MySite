@@ -155,6 +155,8 @@ function getPosition(event) {
   if(dy < 0) {
       theta = 360 - theta;
   }
+  
+  console.log("Theta modded: " + theta);
 }
 
 function checkTriggers() {
