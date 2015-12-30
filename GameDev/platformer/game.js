@@ -397,7 +397,7 @@ function checkPlayerSwitchCollision() {
             } else {
                 touchingEdge = false;
             }
-            triggered = false;
+            triggered = true;
         }
     } else {
         triggered = false;
