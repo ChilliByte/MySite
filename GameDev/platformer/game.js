@@ -91,6 +91,10 @@ function update() {
                 currentLevel.switches[i].x -= player.velX;
                 currentLevel.doors[i].x -= player.velX;
             }
+            i = currentLevel.projectiles.length
+            while(i--) {
+                currentLevel.projectiles[i].x -= player.velX;
+            }
             currentLevel.offset += player.velX;
         }    
     }    
@@ -617,6 +621,24 @@ function drawIce() {
     ctx.closePath()
     ctx.fill();
 }
+
+function drawProjectiles() {
+    //Change to green and begin drawing
+    ctx.fillStyle = "#F00";
+    ctx.beginPath();
+    i = currentLevel.projectiles.length;
+    while (i--) {
+        //Draw each box
+        ctx.rect(currentLevel.projectiles[i].x, currentLevel.projectiles[i].y, units/8, units/8);
+        //Figure out whether we've touched a box
+
+        checkMobProjectileCollision()
+    }
+    //End drawing and fill
+    ctx.closePath()
+    ctx.fill();
+}
+
 function drawCollectibles() {
     ctx.beginPath();
     ctx.fillStyle = "orange";
