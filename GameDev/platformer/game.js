@@ -141,7 +141,7 @@ function getPosition(event) {
   console.log("Player Co-ords: (" + player.x + "," + player.y + ")");
   evX = evX * (units/tileDisplayWidth);
   evY = evY * (units/tileDisplayWidth);
-  dx = evX - player.x;
+  dx = evX - (player.x + units/4);
   dy = (player.y+units) - evY;
   length = Math.sqrt((dx*dx)+(dy*dy));
   console.log("dx: " + dx);
