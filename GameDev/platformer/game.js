@@ -146,7 +146,7 @@ function getPosition(event) {
   if(dy < 0) {      
       theta = 360 - theta;
   }
-  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/6))
+  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/5))
 }
 
 function checkTriggers() {
