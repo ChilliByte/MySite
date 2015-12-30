@@ -10,6 +10,7 @@ function level(w) {
     this.mobs = [];
     this.collectibles = [];
     this.projectiles = [];
+    this.crates = [];
     this.width = w*units;
     this.offset = 0;
     levels.push(this)
@@ -83,21 +84,14 @@ function Projectile(x,y,theta, speed) {
     this.velY = speed * Math.sin(toRadians(theta));
 }
 
-/*
-this.targetX = targetX;
-    this.targetY = targetY;
-    this.deltaX = targetX - x;
-    this.deltaY = targetY - y
-  	this.speed = speed;
-  	this.height = units/3;
-  	this.width = units/3;
-  	this.angle = Math.atan2(this.deltaY, this.deltaX)
-  	this.xIncrement = Math.cos(this.angle) * speed;
-    this.yIncrement = Math.sin(this.angle) * speed;
-  	this.fire = function() {
-      projectiles.push(this);
-
-*/
+function Crate(x,y,height,width,contents) {
+    this.x = x*units;
+    this.y = y*units;
+    this.height = height*units;
+    this.width = width*units;
+    this.broken = false;
+    this.contents = contents;
+}
 
 level1 = new level(200);
 level2 = new level(200);
@@ -116,246 +110,17 @@ level1.boxes.push(new Box(160,19,1,40));
 level1.switches.push(new Switch(60,14));
 level1.doors.push(new Door(80,14,1,2));
 // Level 2
-level2.boxes = [];
-level2.boxes.push({
-    x: -10 * units,
-    y: 16*units,
-    width: 32*units,
-    height: 20*units
-});
-level2.boxes.push({
-    x: 22*units,
-    y: 13*units,
-    width: 30*units,
-    height: 40*units
-});
-level2.water = [];
-level2.ice = [];
-level2.ice.push({
-    x: 5 * units,
-    y: 10 * units,
-    width: 10*units,
-    height: 1*units
-});
+level2.boxes.push(new Box(-10,16,32,20));
+level2.boxes.push(new Box(22,13,20,180));
 
-level2.ice.push({
-    x: 25 * units,
-    y: 10 * units,
-    width: 10*units,
-    height: 1*units
-});
-level2.collectibles = [];
-level2.mobs = [];
+level2.ice.push(new Box(5,10,10,1));
+level2.ice.push(new Box(25,10,50,1));
+
+level2.crates.push(new Crate(30,8,2,2,null))
 //Level 3
-level3.boxes = [];
-level3.boxes.push({
-    x: -10 * units,
-    y: 13 * units,
-    width: 30*units,
-    height: 20*units
-});
-level3.boxes.push({
-    x: 15*units,
-    y: 10*units,
-    width: 10*units,
-    height: 20 * units
-});
-level3.boxes.push({
-    x: 25*units,
-    y: 14*units,
-    width:15*units,
-    height: 20*units
-});
-level3.water = [];
-level3.ice = [];
-level3.collectibles = [];
 level3.collectibles.push({
     x: 26*units,
     y: 13 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level3.collectibles.push({
-    x: 30*units,
-    y: 13*units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level3.collectibles.push({
-    x: 34 * units,
-    y: 13 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level3.mobs = [];
-// Level 4
-level4.boxes = [];
-level4.boxes.push({
-    x: -10 * units,
-    y: 14*units,
-    width: 28*units,
-    height: 20*units
-});
-level4.boxes.push({
-    x: 19 * units,
-    y: 11*units,
-    width: 3*units,
-    height: units
-});
-level4.boxes.push({
-    x: 18 * units,
-    y: 15*units,
-    width: 7*units,
-    height: 20*units
-});
-level4.boxes.push({
-    x: 28 * units,
-    y: 9*units,
-    width: 3*units,
-    height: units
-});
-level4.boxes.push({
-    x: 25 * units,
-    y: 16*units,
-    width: 5*units,
-    height: 20*units
-});
-level4.boxes.push({
-    x: 37 * units,
-    y: 7*units,
-    width: 13*units,
-    height: units
-});
-level4.boxes.push({
-    x: 30 * units,
-    y: 17*units,
-    width: 10*units,
-    height: 20*units
-});
-level4.ice = [];
-level4.collectibles = [];
-level4.collectibles.push({
-    x: 11 * units,
-    y: 13 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level4.collectibles.push({
-    x: 20.5 * units,
-    y: 10 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level4.collectibles.push({
-    x: 29 * units,
-    y: 8 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level4.collectibles.push({
-    x: 30 * units,
-    y: 8 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level4.collectibles.push({
-    x: 37.5 * units,
-    y: 6 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level4.collectibles.push({
-    x: 38.5 * units,
-    y: 6 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level4.collectibles.push({
-    x: 39.5 * units,
-    y: 6 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level4.mobs = [];
-level4.water = [];
-//Level5
-level5.boxes = [];
-level5.boxes.push({
-    x: -10 * units,
-    y: 17*units,
-    width: 14*units,
-    height: 20*units
-});
-level5.boxes.push({
-    x: 4*units,
-    y: 15*units,
-    width: 4 * units,
-    height: 20 * units
-});
-level5.boxes.push({
-    x: 8*units,
-    y: 13*units,
-    width: 4 * units,
-    height: 20 * units
-});
-level5.boxes.push({
-    x: 12*units,
-    y: 11*units,
-    width: 4 * units,
-    height: 20 * units
-});
-level5.boxes.push({
-    x: 16*units,
-    y: 9*units,
-    width: 4 * units,
-    height: 20 * units
-});
-level5.boxes.push({
-    x: 20*units,
-    y: 7*units,
-    width: 20 * units,
-    height: 20 * units
-});
-level5.boxes.push({
-    x: -10*units,
-    y: 7*units,
-    width: 20 * units,
-    height: units
-});
-level4.ice = [];
-level5.water = [];
-level5.collectibles = [];
-level5.collectibles.push({
-    x: 8 * units,
-    y: 6 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level5.collectibles.push({
-    x: 2 * units,
-    y: 16 * units,
     type: "coin",
     width: (units/5)*2,
     height: (units/5)*2,
