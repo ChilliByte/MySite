@@ -136,25 +136,17 @@ function getPosition(event) {
   evY = event.y;
   evX -= canvas.offsetLeft;
   evY -= canvas.offsetTop;
-  console.log("Click Co-ords: (" + evX + "," + evY + ")");
-  console.log("Player Co-ords: (" + player.x + "," + player.y + ")");
   evX = evX * (units/tileDisplayWidth);
   evY = evY * (units/tileDisplayWidth);
   dx = evX - (player.x + units/4);
   dy = (player.y+units) - evY;
   length = Math.sqrt((dx*dx)+(dy*dy));
-  console.log("dx: " + dx);
-  console.log("dy: " + dy);
-  console.log("length: " + length);
   cosTheta = ((length*length)+(dx*dx)-(dy*dy))/(2*length*dx)
-  console.log("Cos(Theta) = " + cosTheta);
   theta = toDegrees(Math.acos(cosTheta));
-  console.log("Theta unmodded: " + theta);
   if(dy < 0) {      
       theta = 360 - theta;
   }
-  console.log("Theta modded: " + theta);
-  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/4))
+  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/8))
 }
 
 function checkTriggers() {
