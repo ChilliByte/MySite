@@ -112,11 +112,11 @@ level1.boxes.push(new Box(160,19,1,40));
 level1.switches.push(new Switch(60,14));
 level1.doors.push(new Door(80,14,1,2));
 // Level 2
-level2.boxes.push(new Box(-10,16,32,20));
-level2.boxes.push(new Box(22,13,20,180));
+level2.boxes.push(new Box(-10,16,20,32));
+level2.boxes.push(new Box(22,13,180,20));
 
-level2.ice.push(new Box(5,10,10,1));
-level2.ice.push(new Box(25,10,50,1));
+level2.ice.push(new Box(5,10,1,10));
+level2.ice.push(new Box(25,10,1,50));
 
 level2.crates.push(new Crate(30,8,2,2,null))
 //Level 3
