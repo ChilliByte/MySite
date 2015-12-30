@@ -614,8 +614,8 @@ function drawIce() {
 }
 
 function moveProjectiles() {
-    currentLevel.projectiles[i].x += currentLevel.velX;
-    currentLevel.projectiles[i].y += currentLevel.velY;
+    currentLevel.projectiles[i].x += currentLevel.projectiles[i].velX;
+    currentLevel.projectiles[i].y += currentLevel.projectiles[i].velY;
 }
 
 function drawProjectiles() {
