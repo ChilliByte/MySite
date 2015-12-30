@@ -45,7 +45,7 @@ function update() {
     drawDoors();
     drawCollectibles();
     drawMobs();
-    
+    drawCrates();
    
     if (player.grounded) {
         player.velY = 0;
