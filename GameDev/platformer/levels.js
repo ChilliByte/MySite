@@ -61,8 +61,8 @@ function Switch(x,y) {
 function Door(x,y,w,h) {
     this.x = x*units;
     this.y = y*units;
-    this.height = h;
-    this.width = w;
+    this.height = h*units;
+    this.width = w*units;
     this.isOpen = false;
 }
 
