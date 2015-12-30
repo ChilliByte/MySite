@@ -15,7 +15,7 @@ var canvas = document.getElementById("canvas"),
     dx = 0,
     dy = 0,
     theta = 0,
-    cosTheta = 0;
+    cosTheta = 0,
     player = {
         x: units,
         y: 0,
