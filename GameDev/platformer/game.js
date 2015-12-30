@@ -159,6 +159,7 @@ function getPosition(event) {
   }
   
   console.log("Theta modded: " + theta);
+  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/8))
 }
 
 function checkTriggers() {
