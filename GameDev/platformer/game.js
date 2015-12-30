@@ -780,6 +780,31 @@ function checkCrateBoxCollision() {
     }
 }
 
+function checkCrateIceCollision() {
+    j = currentLevel.ice.length;
+    while(j--) {
+        var dir = colCheck(currentLevel.crates[i],currentLevel.ice[j],true);
+        //Do something depending on the direction the collision happened from.
+        if (dir === "l" || dir === "r") {
+            currentLevel.crates[i].velX = 0;
+            player.velX *= 0;
+            currentLevel.crates[i].grounded = true;
+        } else if (dir === "b") {
+            if (gravityDown) {
+                currentLevel.crates[i].grounded = true;
+            } else {    
+                currentLevel.crates[i].broken = true;
+            }
+        } else if (dir === "t") {
+            if (gravityDown) {
+                currentLevel.crates[i].broken = true;
+            } else {
+                currentLevel.crates[i].grounded = true;
+            }
+        }
+    }
+}
+
 
 function drawCrates() {
     ctx.beginPath();
@@ -800,6 +825,7 @@ function drawCrates() {
             
             checkPlayerCrateCollision();
             checkCrateBoxCollision();
+            checkCrateIceCollision();
         }
     };
     ctx.closePath();
