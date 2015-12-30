@@ -9,6 +9,7 @@ function level(w) {
     this.doors = [];
     this.mobs = [];
     this.collectibles = [];
+    this.projectiles = [];
     this.width = w*units;
     this.offset = 0;
     levels.push(this)
@@ -64,6 +65,12 @@ function Door(x,y,w,h) {
     this.height = h*units;
     this.width = w*units;
     this.isOpen = false;
+}
+
+function Projectile(x,y,theta) {
+    this.x = x;
+    this.y = y;
+    this.theta = theta;
 }
 
 level1 = new level(200);
