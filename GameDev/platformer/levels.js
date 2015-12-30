@@ -73,6 +73,22 @@ function Projectile(x,y,theta) {
     this.theta = theta;
 }
 
+/*
+this.targetX = targetX;
+    this.targetY = targetY;
+    this.deltaX = targetX - x;
+    this.deltaY = targetY - y
+  	this.speed = speed;
+  	this.height = units/3;
+  	this.width = units/3;
+  	this.angle = Math.atan2(this.deltaY, this.deltaX)
+  	this.xIncrement = Math.cos(this.angle) * speed;
+    this.yIncrement = Math.sin(this.angle) * speed;
+  	this.fire = function() {
+      projectiles.push(this);
+
+*/
+
 level1 = new level(200);
 level2 = new level(200);
 level3 = new level(200);
