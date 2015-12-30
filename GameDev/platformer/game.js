@@ -385,17 +385,21 @@ function drawWater() {
 }
 function checkPlayerSwitchCollision() {
     if(openKeyPressed) {
-        var dir = colCheck(player, currentLevel.switches[i],true);
-        //Do something depending on the direction the collision happened from.
-        if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
-            currentLevel.switches[i].isOn = !currentLevel.switches[i].isOn;
-            console.log("Switch Number " + i + " toggled. Is on? " + currentLevel.switches[i].isOn)
-            currentLevel.doors[i].isOpen = currentLevel.switches[i].isOn;
-        } else {
-            touchingEdge = false;
+        if(!triggered) {
+            var dir = colCheck(player, currentLevel.switches[i],false);
+            //Do something depending on the direction the collision happened from.
+            if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
+                currentLevel.switches[i].isOn = !currentLevel.switches[i].isOn;
+                console.log("Switch Number " + i + " toggled. Is on? " + currentLevel.switches[i].isOn)
+                currentLevel.doors[i].isOpen = currentLevel.switches[i].isOn;
+            } else {
+                touchingEdge = false;
+            }
+            triggered = false;
         }
+    } else {
+        triggered = false;
     }
-    openKeyPressed = false;
 }
 function drawSwitches() {
     //Change to pink and begin drawing
