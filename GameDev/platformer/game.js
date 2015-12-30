@@ -40,6 +40,7 @@ function update() {
     drawBoxes();
     drawWater();
     drawIce();
+    drawProjectiles();
     drawSwitches();
     drawDoors();
     drawCollectibles();
@@ -148,14 +149,10 @@ function getPosition(event) {
   cosTheta = ((length*length)+(dx*dx)-(dy*dy))/(2*length*dx)
   console.log("Cos(Theta) = " + cosTheta);
   theta = toDegrees(Math.acos(cosTheta));
-  
-  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta))
   console.log("Theta unmodded: " + theta);
-  
-  if(dy < 0) {
+  if(dy < 0) {      
       theta = 360 - theta;
   }
-  
   console.log("Theta modded: " + theta);
   currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/8))
 }
@@ -625,8 +622,6 @@ function drawProjectiles() {
         //Draw each box
         ctx.rect(currentLevel.projectiles[i].x, currentLevel.projectiles[i].y, units/8, units/8);
         //Figure out whether we've touched a box
-
-        checkMobProjectileCollision()
     }
     //End drawing and fill
     ctx.closePath()
