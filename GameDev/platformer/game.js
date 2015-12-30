@@ -96,6 +96,10 @@ function update() {
             while(i--) {
                 currentLevel.projectiles[i].x -= player.velX;
             }
+            i = currentLevel.crates.length
+            while(i--) {
+                currentLevel.crates[i].x -= player.velX;
+            }
             currentLevel.offset += player.velX;
         }    
     }    
@@ -722,6 +726,32 @@ function drawMobs() {
     ctx.closePath();
     ctx.fill();
 }
+
+function drawCrates() {
+    ctx.beginPath();
+    ctx.fillStyle = "#FF6";
+    i = currentLevel.crates.length;
+    while (i--) {
+        if (!currentLevel.crates[i].broken) {
+            ctx.rect(currentLevel.crates[i].x, currentLevel.crates[i].y, currentLevel.crates[i].width, currentLevel.crates[i].height)
+
+            currentLevel.crates[i].velX *= friction;
+            currentLevel.crates[i].velY += gravity;
+            currentLevel.crates[i].x += currentLevel.crates[i].velX;
+            if (currentLevel.crates[i].grounded) {
+                currentLevel.crates[i].velY = 0;
+                currentLevel.crates[i].grounded = false;
+            }
+            currentLevel.crates[i].y += currentLevel.crates[i].velY;
+            
+            checkPlayerCrateCollision();
+            checkCrateBoxCollision();
+        }
+    };
+    ctx.closePath();
+    ctx.fill();
+}
+
 function displayHints() {
     if (!triggers.firstLevel) {
         if ((currentLevelInt == 0) && (currentLevel.offset > 1)) {
