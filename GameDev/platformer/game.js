@@ -124,9 +124,6 @@ window.addEventListener("load", function() {
     },250)
     update();
 });
-window.addEventListener("keydown",function(){
-    openKeyPressed = true;
-})
 canvas.addEventListener("mousedown", getPosition, false);
 function getPosition(event) {
   var x = event.x;
@@ -205,6 +202,10 @@ function checkKeys() {
         if ((player.x > 9*units) && (player.x < 10*units)) {
             scrolling = true;
         }
+    }
+    
+    if(keys[83] || keys[40]) {
+        openKeyPressed = true;
     }
 }
 
