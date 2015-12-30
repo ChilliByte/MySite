@@ -126,10 +126,16 @@ window.addEventListener("load", function() {
 });
 canvas.addEventListener("mousedown", getPosition, false);
 function getPosition(event) {
-  var x = event.x;
-  var y = event.y;
-  x -= canvas.offsetLeft;
-  y -= canvas.offsetTop;
+  evX = event.x;
+  evY = event.y;
+  evX -= canvas.offsetLeft;
+  evY -= canvas.offsetTop;
+  
+  dx = evX - player.x;
+  dy = (canvas.height - evY) - (canvas.height - player.y)
+  length = Math.sqrt((dx*dx)+(dy*dy));
+  
+  cosTheta = ((length*length)+(dx*dx)-(dy*dy))/(2*length*dx)
   
 }
 
