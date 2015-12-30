@@ -10,6 +10,12 @@ var canvas = document.getElementById("canvas"),
     logCols = false,
     touchingIce = false,
     openKeyPressed = false,
+    evX = 0,
+    evY = 0,
+    dx = 0,
+    dy = 0,
+    theta = 0,
+    cosTheta = 0;
     player = {
         x: units,
         y: 0,
