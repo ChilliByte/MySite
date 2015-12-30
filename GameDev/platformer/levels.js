@@ -67,11 +67,20 @@ function Door(x,y,w,h) {
     this.isOpen = false;
 }
 
+function toDegrees (angle) {
+  return angle * (180 / Math.PI);
+}
+function toRadians (angle) {
+  return angle * (Math.PI / 180);
+}
+
 function Projectile(x,y,theta, speed) {
     this.x = x;
     this.y = y;
     this.theta = theta;
     this.speed = speed;
+    this.velX = speed * Math.cos(toRadians(theta));
+    this.velY = speed * Math.sin(toRadians(theta));
 }
 
 /*
