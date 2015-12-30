@@ -124,19 +124,31 @@ window.addEventListener("load", function() {
     },250)
     update();
 });
+
+function toDegrees (angle) {
+  return angle * (180 / Math.PI);
+}
+function toRadians (angle) {
+  return angle * (Math.PI / 180);
+}
 canvas.addEventListener("mousedown", getPosition, false);
 function getPosition(event) {
   evX = event.x;
   evY = event.y;
   evX -= canvas.offsetLeft;
   evY -= canvas.offsetTop;
-  
+  console.log("Click Co-ords: (" + evX + "," + evY + ")");
   dx = evX - player.x;
   dy = (canvas.height - evY) - (canvas.height - player.y)
   length = Math.sqrt((dx*dx)+(dy*dy));
-  
+  console.log("dx: " + dx);
+  console.log("dy: " + dy);
+  console.log("length: " + length);
   cosTheta = ((length*length)+(dx*dx)-(dy*dy))/(2*length*dx)
+  theta = toDegrees(Math.acos(cosTheta));
   
+  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta))
+  console.log("Theta: " + theta);
 }
 
 function checkTriggers() {
