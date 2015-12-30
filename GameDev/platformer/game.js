@@ -154,7 +154,7 @@ function getPosition(event) {
       theta = 360 - theta;
   }
   console.log("Theta modded: " + theta);
-  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/8))
+  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/4))
 }
 
 function checkTriggers() {
@@ -616,7 +616,7 @@ function drawIce() {
 function moveProjectiles() {
     currentLevel.projectiles[i].x += currentLevel.projectiles[i].velX;
     currentLevel.projectiles[i].y -= currentLevel.projectiles[i].velY;
-    currentLevel.projectiles[i].velY -= gravity/5;
+    currentLevel.projectiles[i].velY -= gravity/4;
     currentLevel.projectiles[i].velX = Math.sqrt((currentLevel.projectiles[i].speed * currentLevel.projectiles[i].speed) - (currentLevel.projectiles[i].velY * currentLevel.projectiles[i].velY))
 }
 
