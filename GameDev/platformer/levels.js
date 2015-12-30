@@ -87,6 +87,8 @@ function Projectile(x,y,theta, speed) {
 function Crate(x,y,height,width,contents) {
     this.x = x*units;
     this.y = y*units;
+    this.velX = 0;
+    this.velY = 0;
     this.height = height*units;
     this.width = width*units;
     this.broken = false;
