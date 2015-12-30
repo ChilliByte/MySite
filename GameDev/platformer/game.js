@@ -129,12 +129,6 @@ window.addEventListener("load", function() {
     update();
 });
 
-function toDegrees (angle) {
-  return angle * (180 / Math.PI);
-}
-function toRadians (angle) {
-  return angle * (Math.PI / 180);
-}
 canvas.addEventListener("mousedown", getPosition, false);
 function getPosition(event) {
   evX = event.x;
