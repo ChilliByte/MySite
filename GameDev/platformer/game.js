@@ -142,7 +142,7 @@ function getPosition(event) {
   evX = evX * (units/tileDisplayWidth);
   evY = evY * (units/tileDisplayWidth);
   dx = evX - player.x;
-  dy = player.y - evY
+  dy = player.y - evY;
   length = Math.sqrt((dx*dx)+(dy*dy));
   console.log("dx: " + dx);
   console.log("dy: " + dy);
