@@ -619,6 +619,29 @@ function moveProjectiles() {
     }
 }
 
+function checkProjectileBoxCollision() {
+    j = currentLevel.boxes.length;
+    while(j--) {
+        var dir = colCheck(currentLevel.projectiles[i], currentLevel.boxes[j],false);
+        //Do something depending on the direction the collision happened from.
+        if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
+            currentLevel.projectiles[i].x = canvas.height+10;    
+        }
+    }
+}
+
+function checkProjectileCrateCollision() {
+    j = currentLevel.crates.length;
+    while(j--) {
+        var dir = colCheck(currentLevel.projectiles[i], currentLevel.crates[j],false);
+        //Do something depending on the direction the collision happened from.
+        if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
+            currentLevel.projectiles[i].x = canvas.height+10;
+            currentLevels.crates[j].broken = true;
+        }
+    }
+}
+
 function drawProjectiles() {
     //Change to green and begin drawing
     ctx.fillStyle = "#F00";
@@ -629,6 +652,11 @@ function drawProjectiles() {
         ctx.rect(currentLevel.projectiles[i].x, currentLevel.projectiles[i].y, units/8, units/8);
         //Figure out whether we've touched a box
         moveProjectiles();
+        checkProjectileBoxCollision();
+        checkProjectileCrateCollision();
+        if ((currentLevel.projectiles[i].y > canvas.height) || (currentLevel.projectiles[i].x > canvas.width)) {
+            currentLevel.projectiles.splice(i,1)
+        }
     }
     //End drawing and fill
     ctx.closePath()
