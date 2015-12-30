@@ -140,7 +140,7 @@ function getPosition(event) {
   console.log("Click Co-ords: (" + evX + "," + evY + ")");
   console.log("Player Co-ords: (" + player.x + "," + player.y + ")");
   dx = evX - player.x;
-  dy = (canvas.height - evY) - (canvas.height - player.y)
+  dy = player.y - evY
   length = Math.sqrt((dx*dx)+(dy*dy));
   console.log("dx: " + dx);
   console.log("dy: " + dy);
