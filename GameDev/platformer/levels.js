@@ -67,10 +67,11 @@ function Door(x,y,w,h) {
     this.isOpen = false;
 }
 
-function Projectile(x,y,theta) {
+function Projectile(x,y,theta, speed) {
     this.x = x;
     this.y = y;
     this.theta = theta;
+    this.speed = speed;
 }
 
 /*
