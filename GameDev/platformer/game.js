@@ -759,7 +759,7 @@ function checkPlayerCrateCollision() {
     var dir = colCheck(player, currentLevel.crates[i],true);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r") {
-        currentLevel.crates[i].velX = player.velX*0.75;
+        currentLevel.crates[i].velX = player.velX;
         player.velX *=0.75;
         player.jumping = false;
     } else if (dir === "b") {
