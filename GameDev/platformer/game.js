@@ -28,7 +28,7 @@ function update() {
     } else {
         player.vertiSpeed = waterVertiSpeed;
         gravity = waterGravity;
-        friction = waterFriction;
+        //friction = waterFriction;
     }
     
     //Factor in Friction and Gravity
@@ -373,7 +373,7 @@ function checkPlayerWaterCollision() {
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r" || dir === "t" || dir == "b") {
         inWater = true;
-        if (player.velY > 13) {
+        /*if (player.velY > 13) {
             player.velY--
         }
         if (player.velY > 10) {
@@ -385,7 +385,7 @@ function checkPlayerWaterCollision() {
         
         if ((player.velY > 1) && (player.velY < 2)) {
             player.velY -= 0.1
-        }
+        }*/
     }
 }
 function drawWater() {
