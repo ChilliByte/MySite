@@ -75,13 +75,14 @@ function toRadians (angle) {
   return angle * (Math.PI / 180);
 }
 
-function Projectile(x,y,theta, speed) {
+function Projectile(x,y,theta, speed,pvY) {
     this.x = x;
     this.y = y;
     this.theta = theta;
     this.speed = speed;
     this.velX = speed * Math.cos(toRadians(theta));
     this.velY = speed * Math.sin(toRadians(theta));
+    this.velX += pvY;
 }
 
 function Crate(x,y,height,width,contents) {
