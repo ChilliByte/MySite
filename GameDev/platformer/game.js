@@ -150,7 +150,7 @@ function getPosition(event) {
   if(dy < 0) {      
       theta = 360 - theta;
   }
-  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/5,player.velX))
+  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/5,0.125,0.125,player.velX))
 }
 
 function checkTriggers() {
@@ -652,7 +652,7 @@ function drawProjectiles() {
     i = currentLevel.projectiles.length;
     while (i--) {
         //Draw each box
-        ctx.rect(currentLevel.projectiles[i].x, currentLevel.projectiles[i].y, units/8, units/8);
+        ctx.rect(currentLevel.projectiles[i].x, currentLevel.projectiles[i].y, currentLevel.projectiles[i].height, currentLevel.projectiles[i].width);
         //Figure out whether we've touched a box
         moveProjectiles();
         checkProjectileBoxCollision();
