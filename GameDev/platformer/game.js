@@ -103,6 +103,7 @@ function update() {
             scrollLevel(currentLevel.offset*-1);
         }
         currentLevel = levels[0];
+        player.health = 100;
     }
 
     checkLevelChange()
