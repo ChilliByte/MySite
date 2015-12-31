@@ -214,7 +214,7 @@ function drawHUD() {
     ctx.fillStyle = "#FFF";
     ctx.beginPath();
     ctx.font = "24px Arial";
-    ctx.fillText(player.health,units*1.5,units*1.60);
+    ctx.fillText(player.health,units*1.5,units*1.75);
     ctx.closePath();
     ctx.fill();
 }
