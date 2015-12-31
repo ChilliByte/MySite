@@ -32,12 +32,12 @@ var canvas = document.getElementById("canvas"),
         lastDir: "l",
         health:1000,
         powerups: {
-            swim:false;
-            glide:false;
-            invincible:false;
-            antigrav:false;
-            shoot:false;
-            shrink:false;
+            swim:false,
+            glide:false,
+            invincible:false,
+            antigrav:false,
+            shoot:false,
+            shrink:false
         }
     },
     keys = [],
