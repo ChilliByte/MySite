@@ -109,7 +109,11 @@ function update() {
         document.getElementById("stats").style.display = "block"
         document.getElementById("stats").innerHTML = "X: " + player.x + ", <br>Units: " + player.x / units + "<br>Y: " + player.y + ",<br> Units: " + player.y / units + "<br>velX: " + player.velX + "<br>velY: " + player.velY + "<br>Scrolling? " + scrolling + "<br>Open key: " + openKeyPressed;
     }
-
+    
+    if (player.y > canvas.height) {
+        player.health = 0;
+    }
+    
     if (player.health < 1) {
         alert("You died");
         currentLevelInt = 0;
@@ -209,8 +213,8 @@ function drawHUD() {
     ctx.fill();
     ctx.fillStyle = "#FFF";
     ctx.beginPath();
-    ctx.font = "30px Arial";
-    ctx.fillText(player.health,units+5,50);
+    ctx.font = "20px Arial";
+    ctx.fillText(player.health,units*1.35,50);
     ctx.closePath();
     ctx.fill();
 }
