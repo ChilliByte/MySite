@@ -100,9 +100,6 @@ function Crate(x,y,height,width,contents) {
 
 level1 = new level(200);
 level2 = new level(200);
-level3 = new level(200);
-level4 = new level(200);
-level5 = new level(200);
 
 //Level1
 level1.boxes.push(new Box(-1,0,20,1.1));
@@ -123,6 +120,7 @@ level2.ice.push(new Box(25,10,1,50));
 
 level2.crates.push(new Crate(30,8,2,2,null))
 //Level 3
+/*
 level3.collectibles.push({
     x: 26*units,
     y: 13 * units,
@@ -149,3 +147,4 @@ level5.mobs.push({
     dead: false
 });
 // End Levels
+*/
