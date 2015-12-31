@@ -640,7 +640,7 @@ function checkProjectileCrateCollision() {
         //Do something depending on the direction the collision happened from.
         if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
             currentLevel.projectiles[i].y = canvas.height+10;
-            currentLevels.crates[j].broken = true;
+            currentLevel.crates[j].broken = true;
         }
     }
 }
