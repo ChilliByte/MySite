@@ -28,7 +28,7 @@ function update() {
     } else {
         player.vertiSpeed = waterVertiSpeed;
         gravity = waterGravity;
-        //friction = waterFriction;
+        friction = waterFriction;
     }
     
     //Factor in Friction and Gravity
