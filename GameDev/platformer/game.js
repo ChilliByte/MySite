@@ -76,31 +76,7 @@ function update() {
         player.x += player.velX;
     } else {
         if (Math.abs(player.velX) > 3) {
-            i = currentLevel.boxes.length
-            while (i--) {
-                currentLevel.boxes[i].x -= player.velX;
-            }
-            i = currentLevel.water.length
-            while (i--) {
-                currentLevel.water[i].x -= player.velX;
-            }
-            i = currentLevel.ice.length
-            while (i--) {
-                currentLevel.ice[i].x -= player.velX;
-            }
-            i = currentLevel.switches.length
-            while (i--) {
-                currentLevel.switches[i].x -= player.velX;
-                currentLevel.doors[i].x -= player.velX;
-            }
-            i = currentLevel.projectiles.length
-            while (i--) {
-                currentLevel.projectiles[i].x -= player.velX;
-            }
-            i = currentLevel.crates.length
-            while (i--) {
-                currentLevel.crates[i].x -= player.velX;
-            }
+            scrollLevel(player.velX);
             currentLevel.offset += player.velX;
         }
     }
@@ -117,15 +93,16 @@ function update() {
     if (player.health < 1) {
         alert("You died");
         currentLevelInt = 0;
-        currentLevel = levels[0];
         player.x = units;
         player.y = units;
         player.velX = 0;
         player.velY = 0;
         i = levels.length;
         while (i--) {
-            
+            currentLevel = levels[i];
+            scrollLevel(currentLevel.offset*-1);
         }
+        currentLevel = levels[0];
     }
 
     checkLevelChange()
@@ -172,6 +149,34 @@ function getPosition(event) {
             theta = 360 - theta;
         }
         currentLevel.projectiles.push(new Projectile(player.x, player.y, theta, units / 5, 0.125, 0.125, player.velX))
+    }
+}
+
+function scrollLevel(scrollX) {
+    i = currentLevel.boxes.length
+    while (i--) {
+        currentLevel.boxes[i].x -= scrollX;
+    }
+    i = currentLevel.water.length
+    while (i--) {
+        currentLevel.water[i].x -= scrollX;
+    }
+    i = currentLevel.ice.length
+    while (i--) {
+        currentLevel.ice[i].x -= scrollX;
+    }
+    i = currentLevel.switches.length
+    while (i--) {
+        currentLevel.switches[i].x -= scrollX;
+        currentLevel.doors[i].x -= scrollX;
+    }
+    i = currentLevel.projectiles.length
+    while (i--) {
+        currentLevel.projectiles[i].x -= scrollX;
+    }
+    i = currentLevel.crates.length
+    while (i--) {
+        currentLevel.crates[i].x -= scrollX;
     }
 }
 
