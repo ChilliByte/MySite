@@ -75,9 +75,11 @@ function toRadians (angle) {
   return angle * (Math.PI / 180);
 }
 
-function Projectile(x,y,theta, speed,pvY) {
+function Projectile(x,y,theta, speed,height,width,pvY) {
     this.x = x;
     this.y = y;
+    this.height = height*units;
+    this.width = width*units;
     this.theta = theta;
     this.speed = speed;
     this.velX = speed * Math.cos(toRadians(theta));
