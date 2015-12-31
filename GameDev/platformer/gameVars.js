@@ -29,7 +29,15 @@ var canvas = document.getElementById("canvas"),
         jumping: false,
         grounded: false,
         char: 1,
-        lastDir: "l"
+        lastDir: "l",
+        powerups: {
+            swim:false;
+            glide:false;
+            invincible:false;
+            antigrav:false;
+            shoot:false;
+            shrink:false;
+        }
     },
     keys = [],
     friction = units/50,
