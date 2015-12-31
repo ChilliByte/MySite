@@ -109,6 +109,16 @@ function update() {
         document.getElementById("stats").innerHTML = "X: " + player.x + ", <br>Units: " + player.x / units + "<br>Y: " + player.y + ",<br> Units: " + player.y / units + "<br>velX: " + player.velX + "<br>velY: " + player.velY + "<br>Scrolling? " + scrolling + "<br>Open key: " + openKeyPressed;
     }
 
+    if (player.health < 1) {
+        alert("You died");
+        currentLevelInt = 0;
+        currentLevel = levels[0];
+        player.x = units;
+        player.y = units;
+        player.velX = 0;
+        player.velY = 0;
+    }
+
     checkLevelChange()
     checkTriggers()
     drawChar();
