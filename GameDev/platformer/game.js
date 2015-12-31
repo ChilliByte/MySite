@@ -46,6 +46,7 @@ function update() {
     drawCollectibles();
     drawMobs();
     drawCrates();
+    drawHUD();
 
     if (player.grounded) {
         player.velY = 0;
@@ -194,6 +195,20 @@ function setChar(x) {
 
 function confirmChar() {
     $("#charSelect").fadeOut();
+}
+
+function drawHUD() {
+    ctx.fillStyle = "#F00";
+    ctx.beginPath();
+    ctx.rect(units,units, player.health,units);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = "#FFF";
+    ctx.beginPath();
+    ctx.font = "30px Arial";
+    ctx.fillText(player.health,units+5,50);
+    ctx.closePath();
+    ctx.fill();
 }
 
 function checkKeys() {
