@@ -628,7 +628,7 @@ function checkProjectileBoxCollision() {
         var dir = colCheck(currentLevel.projectiles[i], currentLevel.boxes[j],false);
         //Do something depending on the direction the collision happened from.
         if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
-            currentLevel.projectiles[i].x = canvas.height+10;    
+            currentLevel.projectiles[i].y = canvas.height+10;    
         }
     }
 }
@@ -639,7 +639,7 @@ function checkProjectileCrateCollision() {
         var dir = colCheck(currentLevel.projectiles[i], currentLevel.crates[j],false);
         //Do something depending on the direction the collision happened from.
         if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
-            currentLevel.projectiles[i].x = canvas.height+10;
+            currentLevel.projectiles[i].y = canvas.height+10;
             currentLevels.crates[j].broken = true;
         }
     }
