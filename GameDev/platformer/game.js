@@ -11,17 +11,17 @@ triggers.firstStep = false;
 
 function update() {
     //Clear The Last Frame
-    ctx.clearRect(0, 0, 40*units, 20*units);
+    ctx.clearRect(0, 0, 40 * units, 20 * units);
 
     //Check keys
     checkKeys()
-    
+
     //Choose the right frictional and grvitational coefficients
-    if (touchingIce){
+    if (touchingIce) {
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
         friction = iceFriction;
-    } else if (!inWater || touchingEdge)  {
+    } else if (!inWater || touchingEdge) {
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
         friction = normalFriction;
@@ -30,13 +30,13 @@ function update() {
         gravity = waterGravity;
         friction = waterFriction;
     }
-    
+
     //Factor in Friction and Gravity
     player.velX *= friction;
     player.velY += gravity;
-    
+
     player.grounded = false;
-    
+
     drawProjectiles();
     drawBoxes();
     drawWater();
@@ -46,69 +46,69 @@ function update() {
     drawCollectibles();
     drawMobs();
     drawCrates();
-   
+
     if (player.grounded) {
         player.velY = 0;
     }
-    
+
     if ((player.lastDir == "r") && (currentLevel.offset < 0)) {
         scrolling = false;
     }
-    if ((player.lastDir == "l") && (currentLevel.offset > currentLevel.width - (tilesX*units))) {
+    if ((player.lastDir == "l") && (currentLevel.offset > currentLevel.width - (tilesX * units))) {
         scrolling = false;
     }
 
-    if ((player.x < 9*units) && (currentLevel.offset > 0)) {
-        player.x = 9.0000001*units;
+    if ((player.x < 9 * units) && (currentLevel.offset > 0)) {
+        player.x = 9.0000001 * units;
         scrolling = true;
         player.velX = -4;
         console.log("Pushing Forward");
     }
-    if ((player.x > 10*units) && (currentLevel.offset < currentLevel.width - (tilesX*units))) {
-        player.x = 9.999999999*units;
+    if ((player.x > 10 * units) && (currentLevel.offset < currentLevel.width - (tilesX * units))) {
+        player.x = 9.999999999 * units;
         scrolling = true;
         player.velX = 4;
         console.log("Pushing Backward");
-    }    
-    
+    }
+
     if (!scrolling) {
         player.x += player.velX;
     } else {
-        if(Math.abs(player.velX) > 3) {
+        if (Math.abs(player.velX) > 3) {
             i = currentLevel.boxes.length
-            while(i--) {
+            while (i--) {
                 currentLevel.boxes[i].x -= player.velX;
             }
             i = currentLevel.water.length
-            while(i--) {
+            while (i--) {
                 currentLevel.water[i].x -= player.velX;
             }
             i = currentLevel.ice.length
-            while(i--) {
+            while (i--) {
                 currentLevel.ice[i].x -= player.velX;
             }
             i = currentLevel.switches.length
-            while(i--) {
+            while (i--) {
                 currentLevel.switches[i].x -= player.velX;
                 currentLevel.doors[i].x -= player.velX;
             }
             i = currentLevel.projectiles.length
-            while(i--) {
+            while (i--) {
                 currentLevel.projectiles[i].x -= player.velX;
             }
             i = currentLevel.crates.length
-            while(i--) {
+            while (i--) {
                 currentLevel.crates[i].x -= player.velX;
             }
             currentLevel.offset += player.velX;
-        }    
-    }    
+        }
+    }
     player.y += player.velY;
     if (debug) {
         document.getElementById("stats").style.display = "block"
-        document.getElementById("stats").innerHTML = "X: " + player.x + ", <br>Units: " + player.x/units + "<br>Y: " + player.y + ",<br> Units: " + player.y/units + "<br>velX: " + player.velX + "<br>velY: " + player.velY + "<br>Scrolling? " + scrolling + "<br>Open key: " + openKeyPressed;
+        document.getElementById("stats").innerHTML = "X: " + player.x + ", <br>Units: " + player.x / units + "<br>Y: " + player.y + ",<br> Units: " + player.y / units + "<br>velX: " + player.velX + "<br>velY: " + player.velY + "<br>Scrolling? " + scrolling + "<br>Open key: " + openKeyPressed;
     }
-    
+
     checkLevelChange()
     checkTriggers()
     drawChar();
@@ -125,32 +125,35 @@ document.body.addEventListener("keyup", function(e) {
 window.addEventListener("load", function() {
     console.log("Loaded");
     char1Sheet = document.getElementById("char1SpriteSheet");
-    setInterval(function () {
+    setInterval(function() {
         frame++;
         if (frame == 5) {
             frame = 0;
         }
-    },250)
+    }, 250)
     update();
 });
 
 canvas.addEventListener("mousedown", getPosition, false);
+
 function getPosition(event) {
-  evX = event.x;
-  evY = event.y;
-  evX -= canvas.offsetLeft;
-  evY -= canvas.offsetTop;
-  evX = evX * (units/tileDisplayWidth);
-  evY = evY * (units/tileDisplayWidth);
-  dx = evX - (player.x + units/4);
-  dy = (player.y+units) - evY;
-  length = Math.sqrt((dx*dx)+(dy*dy));
-  cosTheta = ((length*length)+(dx*dx)-(dy*dy))/(2*length*dx)
-  theta = toDegrees(Math.acos(cosTheta));
-  if(dy < 0) {      
-      theta = 360 - theta;
-  }
-  currentLevel.projectiles.push(new Projectile(player.x,player.y,theta,units/5,0.125,0.125,player.velX))
+    if (player.powerups.shoot) {
+        evX = event.x;
+        evY = event.y;
+        evX -= canvas.offsetLeft;
+        evY -= canvas.offsetTop;
+        evX = evX * (units / tileDisplayWidth);
+        evY = evY * (units / tileDisplayWidth);
+        dx = evX - (player.x + units / 4);
+        dy = (player.y + units) - evY;
+        length = Math.sqrt((dx * dx) + (dy * dy));
+        cosTheta = ((length * length) + (dx * dx) - (dy * dy)) / (2 * length * dx)
+        theta = toDegrees(Math.acos(cosTheta));
+        if (dy < 0) {
+            theta = 360 - theta;
+        }
+        currentLevel.projectiles.push(new Projectile(player.x, player.y, theta, units / 5, 0.125, 0.125, player.velX))
+    }
 }
 
 function checkTriggers() {
@@ -178,25 +181,27 @@ function checkLevelChange() {
 function setChar(x) {
     player.char = x;
 }
+
 function confirmChar() {
     $("#charSelect").fadeOut();
 }
+
 function checkKeys() {
     if (keys[38] || keys[32] || keys[87]) {
         // up arrow or space
-        if(!inWater){
+        if (!inWater) {
             if (!player.jumping && player.grounded) {
                 player.jumping = true;
                 player.grounded = false;
-                
-                if(gravityDown) {
+
+                if (gravityDown) {
                     player.velY = -player.vertiSpeed;
                 } else {
                     player.velY = player.vertiSpeed;
                 }
             }
         } else {
-            if(gravityDown) {
+            if (gravityDown) {
                 player.velY = -player.vertiSpeed;
             } else {
                 player.velY = player.vertiSpeed;
@@ -209,7 +214,7 @@ function checkKeys() {
         if (player.velX < player.horizSpeed) {
             player.velX += player.horizSpeed;
         }
-        if ((player.x > 9*units) && (player.x < 10*units)) {
+        if ((player.x > 9 * units) && (player.x < 10 * units)) {
             scrolling = true;
         }
     }
@@ -217,14 +222,14 @@ function checkKeys() {
         // left arrow
         player.lastDir = "r"
         if (player.velX > -player.horizSpeed) {
-            player.velX-= player.horizSpeed;
+            player.velX -= player.horizSpeed;
         }
-        if ((player.x > 9*units) && (player.x < 10*units)) {
+        if ((player.x > 9 * units) && (player.x < 10 * units)) {
             scrolling = true;
         }
     }
-    
-    if(keys[83] || keys[40]) {
+
+    if (keys[83] || keys[40]) {
         openKeyPressed = true;
     } else {
         openKeyPressed = false;
@@ -233,37 +238,37 @@ function checkKeys() {
 
 function drawChar() {
     if (player.char == 1) {
-        player.height = 2*units;
-        player.width = 1*units;
+        player.height = 2 * units;
+        player.width = 1 * units;
         if (player.velX < -1) {
             if (frame > 3) {
                 //Facing Right, Left Leg Forward
-                ctx.drawImage(char1Sheet,0,0,16,32,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet, 0, 0, 16, 32, player.x, player.y, units, 2 * units)
             } else {
-                ctx.drawImage(char1Sheet,32,0,16,32,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet, 32, 0, 16, 32, player.x, player.y, units, 2 * units)
             }
         }
         if ((player.velX < 0) && (player.velX > -1)) {
-            ctx.drawImage(char1Sheet,32,0,16,32,player.x,player.y,units,2*units)
+            ctx.drawImage(char1Sheet, 32, 0, 16, 32, player.x, player.y, units, 2 * units)
         }
         if (player.velX > 1) {
             if (frame > 3) {
-                ctx.drawImage(char1Sheet,64,0,16,32,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet, 64, 0, 16, 32, player.x, player.y, units, 2 * units)
             } else {
-                ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
+                ctx.drawImage(char1Sheet, 48, 0, 16, 32, player.x, player.y, units, 2 * units)
             }
         }
         if ((player.velX > 0) && (player.velX < 1)) {
-            ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
+            ctx.drawImage(char1Sheet, 48, 0, 16, 32, player.x, player.y, units, 2 * units)
         }
-        
+
         if ((player.velX == 0) && (player.lastDir == "l")) {
-            ctx.drawImage(char1Sheet,48,0,16,32,player.x,player.y,units,2*units)
+            ctx.drawImage(char1Sheet, 48, 0, 16, 32, player.x, player.y, units, 2 * units)
         }
         if ((player.velX == 0) && (player.lastDir == "r")) {
-            ctx.drawImage(char1Sheet,32,0,16,32,player.x,player.y,units,2*units)
+            ctx.drawImage(char1Sheet, 32, 0, 16, 32, player.x, player.y, units, 2 * units)
         }
-        
+
     }
     if (player.char == 2) {
         //Set Size
@@ -367,13 +372,14 @@ function drawChar() {
         }
     }
 }
+
 function checkPlayerWaterCollision() {
     inWater = false;
-    var dir = colCheck(player, currentLevel.water[i],false);
+    var dir = colCheck(player, currentLevel.water[i], false);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r" || dir === "t" || dir == "b") {
         inWater = true;
-        /*if (player.velY > 13) {
+        if (player.velY > 13) {
             player.velY--
         }
         if (player.velY > 10) {
@@ -385,14 +391,18 @@ function checkPlayerWaterCollision() {
         
         if ((player.velY > 1) && (player.velY < 2)) {
             player.velY -= 0.1
-        }*/
+        }
+        if (!player.powerups.swim) {
+            player.health--
+        }
     }
 }
+
 function drawWater() {
     //Change to blue and begin drawing
     ctx.fillStyle = "#66F";
     ctx.beginPath();
-    
+
     i = currentLevel.water.length;
     while (i--) {
         //Draw each box
@@ -400,15 +410,16 @@ function drawWater() {
         //Figure out whether we've touched a box
         checkPlayerWaterCollision()
     }
-    
+
     //End drawing and fill
     ctx.closePath()
     ctx.fill();
 }
+
 function checkPlayerSwitchCollision() {
-    if(openKeyPressed) {
-        if(!triggered) {
-            var dir = colCheck(player, currentLevel.switches[i],false);
+    if (openKeyPressed) {
+        if (!triggered) {
+            var dir = colCheck(player, currentLevel.switches[i], false);
             //Do something depending on the direction the collision happened from.
             if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
                 currentLevel.switches[i].isOn = !currentLevel.switches[i].isOn;
@@ -423,24 +434,26 @@ function checkPlayerSwitchCollision() {
         triggered = false;
     }
 }
+
 function drawSwitches() {
     //Change to pink and begin drawing
     ctx.fillStyle = "#f99";
     ctx.beginPath();
-    
+
     i = currentLevel.switches.length;
     while (i--) {
         //Draw each box
         checkPlayerSwitchCollision();
         ctx.rect(currentLevel.switches[i].x, currentLevel.switches[i].y, currentLevel.switches[i].width, currentLevel.switches[i].height);
     }
-    
+
     //End drawing and fill
     ctx.closePath()
     ctx.fill();
 }
+
 function checkPlayerDoorCollision() {
-    var dir = colCheck(player, currentLevel.doors[i],true);
+    var dir = colCheck(player, currentLevel.doors[i], true);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r") {
         touchingIce = false;
@@ -452,7 +465,7 @@ function checkPlayerDoorCollision() {
         if (gravityDown) {
             player.grounded = true;
             player.jumping = false;
-        } else {    
+        } else {
             player.velY *= -1;
         }
     } else if (dir === "t") {
@@ -467,6 +480,7 @@ function checkPlayerDoorCollision() {
         touchingEdge = false;
     }
 }
+
 function checkMobDoorCollision() {
     //Loop through each of the mobs in this level, and see if any of them have collided with a box.
     l = currentLevel.mobs.length
@@ -477,14 +491,15 @@ function checkMobDoorCollision() {
         }
     }
 }
+
 function drawDoors() {
     //Change to green and begin drawing
     ctx.fillStyle = "#555";
     ctx.beginPath();
-    
+
     i = currentLevel.doors.length;
     while (i--) {
-        if(!currentLevel.doors[i].isOpen) {
+        if (!currentLevel.doors[i].isOpen) {
             //Draw each box
             ctx.rect(currentLevel.doors[i].x, currentLevel.doors[i].y, currentLevel.doors[i].width, currentLevel.doors[i].height);
             //Figure out whether we've touched a box
@@ -492,20 +507,23 @@ function drawDoors() {
             checkMobDoorCollision()
         }
     }
-    
+
     //End drawing and fill
     ctx.closePath()
     ctx.fill();
 }
+
 function checkPlayerBoxCollision() {
-    var dir = colCheck(player, currentLevel.boxes[i],true);
+    var dir = colCheck(player, currentLevel.boxes[i], true);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r") {
         touchingIce = false;
         player.velX = 0;
         player.jumping = false;
         scrolling = false;
-        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
+        if (currentLevel.boxes[i].waterEdge) {
+            touchingEdge = true
+        }
     } else if (dir === "b") {
         touchingIce = false;
         if (gravityDown) {
@@ -514,7 +532,9 @@ function checkPlayerBoxCollision() {
         } else {
             player.velY *= -1;
         }
-        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
+        if (currentLevel.boxes[i].waterEdge) {
+            touchingEdge = true
+        }
     } else if (dir === "t") {
         touchingIce = false;
         if (gravityDown) {
@@ -523,11 +543,14 @@ function checkPlayerBoxCollision() {
             player.grounded = true;
             player.jumping = false;
         }
-        if(currentLevel.boxes[i].waterEdge) {touchingEdge = true}
+        if (currentLevel.boxes[i].waterEdge) {
+            touchingEdge = true
+        }
     } else {
         touchingEdge = false;
     }
 }
+
 function checkMobBoxCollision() {
     //Loop through each of the mobs in this level, and see if any of them have collided with a box.
     l = currentLevel.mobs.length
@@ -538,11 +561,12 @@ function checkMobBoxCollision() {
         }
     }
 }
+
 function drawBoxes() {
     //Change to green and begin drawing
     ctx.fillStyle = "#380";
     ctx.beginPath();
-    
+
     i = currentLevel.boxes.length;
     while (i--) {
         //Draw each box
@@ -551,13 +575,14 @@ function drawBoxes() {
         checkPlayerBoxCollision()
         checkMobBoxCollision()
     }
-    
+
     //End drawing and fill
     ctx.closePath()
     ctx.fill();
 }
+
 function checkPlayerIceCollision() {
-    var dir = colCheck(player, currentLevel.ice[i],true);
+    var dir = colCheck(player, currentLevel.ice[i], true);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r") {
         player.velX = 0;
@@ -581,6 +606,7 @@ function checkPlayerIceCollision() {
         }
     }
 }
+
 function checkMobIceCollision() {
     //Loop through each of the mobs in this level, and see if any of them have collided with a box.
     l = currentLevel.mobs.length
@@ -591,6 +617,7 @@ function checkMobIceCollision() {
         }
     }
 }
+
 function drawIce() {
     //Change to green and begin drawing
     ctx.fillStyle = "#AAF";
@@ -612,34 +639,34 @@ function drawIce() {
 function moveProjectiles() {
     currentLevel.projectiles[i].x += currentLevel.projectiles[i].velX;
     currentLevel.projectiles[i].y -= currentLevel.projectiles[i].velY;
-    currentLevel.projectiles[i].velY -= gravity/4;
+    currentLevel.projectiles[i].velY -= gravity / 4;
     /*
     currentLevel.projectiles[i].velX = Math.sqrt((currentLevel.projectiles[i].speed * currentLevel.projectiles[i].speed) - (currentLevel.projectiles[i].velY * currentLevel.projectiles[i].velY));
     if ((currentLevel.projectiles[i].theta > 90) && (currentLevel.projectiles[i].theta < 270)) {
         currentLevel.projectiles[i].velX = -1 * Math.abs(currentLevel.projectiles[i].velX);
     }
     */
-    
+
 }
 
 function checkProjectileBoxCollision() {
     j = currentLevel.boxes.length;
-    while(j--) {
-        var dir = colCheck(currentLevel.projectiles[i], currentLevel.boxes[j],false);
+    while (j--) {
+        var dir = colCheck(currentLevel.projectiles[i], currentLevel.boxes[j], false);
         //Do something depending on the direction the collision happened from.
         if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
-            currentLevel.projectiles[i].y = canvas.height+10;    
+            currentLevel.projectiles[i].y = canvas.height + 10;
         }
     }
 }
 
 function checkProjectileCrateCollision() {
     j = currentLevel.crates.length;
-    while(j--) {
-        var dir = colCheck(currentLevel.projectiles[i], currentLevel.crates[j],false);
+    while (j--) {
+        var dir = colCheck(currentLevel.projectiles[i], currentLevel.crates[j], false);
         //Do something depending on the direction the collision happened from.
         if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
-            currentLevel.projectiles[i].y = canvas.height+10;
+            currentLevel.projectiles[i].y = canvas.height + 10;
             currentLevel.crates[j].broken = true;
         }
     }
@@ -658,7 +685,7 @@ function drawProjectiles() {
         checkProjectileBoxCollision();
         checkProjectileCrateCollision();
         if ((currentLevel.projectiles[i].y > canvas.height) || (currentLevel.projectiles[i].x > canvas.width)) {
-            currentLevel.projectiles.splice(i,1)
+            currentLevel.projectiles.splice(i, 1)
         }
     }
     //End drawing and fill
@@ -686,6 +713,7 @@ function drawCollectibles() {
     ctx.closePath()
     ctx.fill();
 }
+
 function checkPlayerMobCollision() {
     currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player, false)
     if (currentLevel.mobs[k].hitPlayer === "t") {
@@ -710,6 +738,7 @@ function checkPlayerMobCollision() {
         console.log("Hit Mob Bottom");
     }
 }
+
 function patrolMobAI() {
     if (mobDir == "right") {
         if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
@@ -730,6 +759,7 @@ function patrolMobAI() {
         }
     }
 }
+
 function drawMobs() {
     ctx.beginPath();
     ctx.fillStyle = "#90f";
@@ -737,11 +767,11 @@ function drawMobs() {
     while (k--) {
         if (!currentLevel.mobs[k].dead) {
             ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
-            
+
             if (currentLevel.mobs[k].type == "patrol") {
                 patrolMobAI()
             };
-            
+
             currentLevel.mobs[k].velX *= friction;
             currentLevel.mobs[k].velY += gravity;
             currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
@@ -750,7 +780,7 @@ function drawMobs() {
                 currentLevel.mobs[k].grounded = false;
             }
             currentLevel.mobs[k].y += currentLevel.mobs[k].velY;
-            
+
             checkPlayerMobCollision()
         }
     };
@@ -759,18 +789,18 @@ function drawMobs() {
 }
 
 function checkPlayerCrateCollision() {
-    var dir = colCheck(player, currentLevel.crates[i],true);
+    var dir = colCheck(player, currentLevel.crates[i], true);
     //Do something depending on the direction the collision happened from.
     if (dir === "l" || dir === "r") {
         currentLevel.crates[i].velX = player.velX;
-        player.velX *=0.75;
+        player.velX *= 0.75;
         player.jumping = false;
     } else if (dir === "b") {
         touchingIce = false;
         if (gravityDown) {
             player.grounded = true;
             player.jumping = false;
-        } else {    
+        } else {
             currentLevel.crates[i].broken = true;
         }
     } else if (dir === "t") {
@@ -788,8 +818,8 @@ function checkPlayerCrateCollision() {
 
 function checkCrateBoxCollision() {
     j = currentLevel.boxes.length;
-    while(j--) {
-        var dir = colCheck(currentLevel.crates[i],currentLevel.boxes[j],true);
+    while (j--) {
+        var dir = colCheck(currentLevel.crates[i], currentLevel.boxes[j], true);
         //Do something depending on the direction the collision happened from.
         if (dir === "l" || dir === "r") {
             currentLevel.crates[i].velX = 0;
@@ -798,7 +828,7 @@ function checkCrateBoxCollision() {
         } else if (dir === "b") {
             if (gravityDown) {
                 currentLevel.crates[i].grounded = true;
-            } else {    
+            } else {
                 currentLevel.crates[i].broken = true;
             }
         } else if (dir === "t") {
@@ -813,8 +843,8 @@ function checkCrateBoxCollision() {
 
 function checkCrateIceCollision() {
     j = currentLevel.ice.length;
-    while(j--) {
-        var dir = colCheck(currentLevel.crates[i],currentLevel.ice[j],true);
+    while (j--) {
+        var dir = colCheck(currentLevel.crates[i], currentLevel.ice[j], true);
         //Do something depending on the direction the collision happened from.
         if (dir === "l" || dir === "r") {
             currentLevel.crates[i].velX = 0;
@@ -823,7 +853,7 @@ function checkCrateIceCollision() {
         } else if (dir === "b") {
             if (gravityDown) {
                 currentLevel.crates[i].grounded = true;
-            } else {    
+            } else {
                 currentLevel.crates[i].broken = true;
             }
         } else if (dir === "t") {
@@ -853,7 +883,7 @@ function drawCrates() {
                 currentLevel.crates[i].grounded = false;
             }
             currentLevel.crates[i].y += currentLevel.crates[i].velY;
-            
+
             checkPlayerCrateCollision();
             checkCrateBoxCollision();
             checkCrateIceCollision();
@@ -875,6 +905,7 @@ function displayHints() {
     }
     //if (trigger) { if (location parameters) {hint(); set trigger to true; setTimeout to close}}
 }
+
 function colCheck(shapeA, shapeB, solid) {
     // get the vectors to check against
     var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
@@ -891,24 +922,35 @@ function colCheck(shapeA, shapeB, solid) {
         if (oX >= oY) {
             if (vY > 0) {
                 colDir = "t";
-                if (solid) {shapeA.y += oY;}
+                if (solid) {
+                    shapeA.y += oY;
+                }
             } else {
                 colDir = "b";
-                if (solid) {shapeA.y -= oY;}
+                if (solid) {
+                    shapeA.y -= oY;
+                }
             }
         } else {
             if (vX > 0) {
                 colDir = "l";
-                if (solid) {shapeA.x += oX;}
+                if (solid) {
+                    shapeA.x += oX;
+                }
             } else {
                 colDir = "r";
-                if (solid) {shapeA.x -= oX;}
+                if (solid) {
+                    shapeA.x -= oX;
+                }
             }
         }
     }
-    if(debug && logCols && (colDir != null)) {console.log(colDir)};
+    if (debug && logCols && (colDir != null)) {
+        console.log(colDir)
+    };
     return colDir;
 }
+
 function hint(x, y, text) {
     $("#hintBox").fadeOut();
     setTimeout(function() {
@@ -918,6 +960,7 @@ function hint(x, y, text) {
         $("#hintBox").fadeIn();
     }, 500);
 }
+
 function flipGravity() {
     gravity = gravity * -1;
     gravityDown = !gravityDown;
