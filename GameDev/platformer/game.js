@@ -213,8 +213,8 @@ function drawHUD() {
     ctx.fill();
     ctx.fillStyle = "#FFF";
     ctx.beginPath();
-    ctx.font = "20px Arial";
-    ctx.fillText(player.health,units*1.35,50);
+    ctx.font = "24px Arial";
+    ctx.fillText(player.health,units*1.5,units*1.60);
     ctx.closePath();
     ctx.fill();
 }
