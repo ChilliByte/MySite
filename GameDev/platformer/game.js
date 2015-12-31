@@ -101,6 +101,7 @@ function update() {
         while (resetCount--){
             currentLevel = levels[resetCount];
             scrollLevel(currentLevel.offset*-1);
+            currentLevel.offset = 0;
         }
         currentLevel = levels[0];
         player.health = 100;
