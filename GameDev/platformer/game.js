@@ -97,7 +97,7 @@ function update() {
         player.y = units;
         player.velX = 0;
         player.velY = 0;
-        i = levels.length;
+        i = levels.length -1;
         while (i){
             currentLevel = levels[i];
             scrollLevel(currentLevel.offset*-1);
