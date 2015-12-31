@@ -118,6 +118,10 @@ function update() {
         player.y = units;
         player.velX = 0;
         player.velY = 0;
+        i = levels.length;
+        while (i--) {
+            
+        }
     }
 
     checkLevelChange()
