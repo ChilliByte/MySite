@@ -30,6 +30,7 @@ var canvas = document.getElementById("canvas"),
         grounded: false,
         char: 1,
         lastDir: "l",
+        health:1000,
         powerups: {
             swim:false;
             glide:false;
