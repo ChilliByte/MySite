@@ -103,14 +103,57 @@ level2 = new level(200);
 
 //Level1
 level1.boxes.push(new Box(-1,0,20,1.1));
-level1.boxes.push(new Box(-1,15,5,41));
-level1.boxes.push(new Box(40,16,4,40));
-level1.boxes.push(new Box(80,17,3,40));
-level1.boxes.push(new Box(120,18,2,40));
-level1.boxes.push(new Box(160,19,1,40));
+level1.boxes.push(new Box(-1,16,4,41));
+level1.boxes.push(new Box(19,15,1,6));
+level1.boxes.push(new Box(20,14,1,6));
+level1.boxes.push(new Box(21,13,1,4));
+level1.boxes.push(new Box(22,12,1,4));
+level1.boxes.push(new Box(23,11,1,2));
+level1.boxes.push(new Box(24,10,6,16));
 
-level1.switches.push(new Switch(60,14));
-level1.doors.push(new Door(80,14,1,2));
+level1.boxes.push(new Box(46,19,1,38));
+level1.boxes.push(new Box(46,15,5,4));
+level1.boxes.push(new Box(76,4,15,8));
+
+level1.boxes.push(new Box(54,6,1,2));
+level1.boxes.push(new Box(56,2,1,2));
+level1.boxes.push(new Box(60,6,1,2));
+level1.boxes.push(new Box(60,14,1,2));
+level1.boxes.push(new Box(62,10,1,2));
+level1.boxes.push(new Box(68,2,1,2));
+level1.boxes.push(new Box(68,14,1,2));
+level1.boxes.push(new Box(74,8,1,2));
+level1.boxes.push(new Box(74,12,1,2));
+level1.boxes.push(new Box(74,16,1,2));
+
+level1.boxes.push(new Box(88,16,4,64));
+level1.boxes.push(new Box(103,14,6,36));
+
+level1.boxes.push(new Box(102,15,1,38));
+level1.boxes.push(new Box(104,13,1,8));
+level1.boxes.push(new Box(105,12,1,7));
+level1.boxes.push(new Box(106,11,1,6));
+level1.boxes.push(new Box(107,10,1,5));
+
+level1.boxes.push(new Box(130,13,1,8));
+level1.boxes.push(new Box(130,12,1,7));
+level1.boxes.push(new Box(130,11,1,6));
+level1.boxes.push(new Box(130,10,1,5));
+
+level1.boxes.push(new Box(94,4,1,8));
+level1.boxes.push(new Box(112,4,1,4));
+level1.boxes.push(new Box(126,4,1,4));
+level1.boxes.push(new Box(120,10,2,2));
+
+level1.boxes.push(new Box(156,19,1,16));
+level1.boxes.push(new Box(156,16,3,6));
+level1.boxes.push(new Box(164,17,2,8));
+level1.boxes.push(new Box(164,14,3,2));
+level1.boxes.push(new Box(168,12,5,4));
+
+
+
+
 // Level 2
 level2.boxes.push(new Box(-10,16,32,20));
 level2.boxes.push(new Box(22,13,20,180));
