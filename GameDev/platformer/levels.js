@@ -151,8 +151,17 @@ level1.boxes.push(new Box(164,17,2,8));
 level1.boxes.push(new Box(164,14,3,2));
 level1.boxes.push(new Box(168,12,5,4));
 
+//Ending Sequence
+level1.boxes.push(new Box(176,17,3,24));
+level1.boxes.push(new Box(176,16,1,10));
+level1.boxes.push(new Box(176,15,1,8));
+level1.boxes.push(new Box(176,14,1,6));
+level1.boxes.push(new Box(176,13,1,4));
+level1.boxes.push(new Box(176,12,1,2));
 
-
+level1.boxes.push(new Box(191,10,2,2));
+level1.boxes.push(new Box(196,0,8,4));
+level1.boxes.push(new Box(196,17,3,4));
 
 // Level 2
 level2.boxes.push(new Box(-10,16,32,20));
