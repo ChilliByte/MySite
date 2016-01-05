@@ -161,7 +161,7 @@ level1.boxes.push(new Box(176,12,1,2));
 
 level1.boxes.push(new Box(191,10,2,2));
 level1.boxes.push(new Box(196,0,8,4));
-level1.boxes.push(new Box(196,17,3,4));
+level1.boxes.push(new Box(196,14,3,4));
 
 // Level 2
 level2.boxes.push(new Box(-10,16,32,20));
