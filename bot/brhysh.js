@@ -66,7 +66,8 @@ var quotes = [
   "\"He was like the uncle I never had\" - B, on Mario.",
   "\"You can suck my banhammer, you dirty little potato man\"-B, on a troll",
   "\"You guys are making my sunday..make me a sunday!\" - Brhys, on discovering the locations of chat.",
-  "\"I promise, if I'm 98, I'll stream.\" - B, making promises."
+  "\"I promise, if I'm 98, I'll stream.\" - B, making promises.",
+  "\"I don't lift, I'm a gamer!\" - Brhys 2k16"
 ]
 
 function popout() {
