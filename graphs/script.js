@@ -11,7 +11,7 @@ function checkFigurate(n) {
 	if(Math.sqrt((8*n)+1) % 1 == 0) {
 		return "Triagular";
 	}
-	if (((1 + Math.sqrt(24*P + 1))/6) % 1 == 0) {
+	if (((1 + Math.sqrt(24*n + 1))/6) % 1 == 0) {
 		return "Pentagonal";
 	}
 }
