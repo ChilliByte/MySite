@@ -156,6 +156,7 @@ for (var i = 0; i < numNodes; i++) {
 	hoverDiv.setAttribute("class","hoverdiv");
 	hoverDiv.setAttribute("left",nodes[i].x+"px")
 	hoverDiv.setAttribute("top",nodes[i].y+"px");
+	document.body.appendChild(hoverDiv);
 }
 function render() {
 	ctx.clearRect(0,0,w,h)
