@@ -156,9 +156,9 @@ window.onload = function() {
 		hoverDiv.setAttribute("class","hoverdiv");
 		hoverDiv.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
 		document.body.appendChild(hoverDiv);
-		document.getElementById(nodes[i].name).addEventListener("onmouseover",function() {
+		document.getElementById(nodes[i].name).onmouseover = function() {
 			console.log("HOVERED");
-		},false);
+		};
 		
 	}
 	
