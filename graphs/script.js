@@ -60,7 +60,7 @@ ctx.font = "30px Arial";
 ctx.fillText("Graphs",50,3*h/4);
 
 switch(graphShape) {
-	case("Square") {
+	case "Square" :
 		var gridSize = Math.sqrt(numNodes);
 		ctx.beginPath();
 		ctx.fillStyle="#0055ff";
@@ -72,7 +72,7 @@ switch(graphShape) {
 			}
 		}
 		ctx.fill();
-	}
+		break;
 }
 
 
