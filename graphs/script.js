@@ -159,7 +159,7 @@ for(var i = 0; i < numNodes; i++) {
 	rC = (to.y/2) - (rM*(to.x/2))
 	*/
 
-	
+	ctx.strokeStyle = blue;
 	ctx.beginPath();
 	ctx.moveTo(nodes[i].x, nodes[i].y);
 	ctx.lineTo(to.x,to.y);
