@@ -67,7 +67,7 @@ switch(graphShape) {
 			for(var j = 0; j < gridSize; j++) {
 				ctx.beginPath();
 				ctx.fillStyle="#0055ff";
-				ctx.arc((i+1)*(w/(gridSize+1)),(j+1)*(w/(gridSize+1)),10,0,2*Math.PI);
+				ctx.arc((i+1)*(w/(gridSize+1)),(j+1)*(h/(gridSize+1)),10,0,2*Math.PI);
 				ctx.fill();
 			}
 		}
