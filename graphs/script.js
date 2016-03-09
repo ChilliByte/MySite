@@ -12,7 +12,7 @@ function checkFigurate(n) {
 		return "Pentagonal";
 	}
 	if(Math.sqrt((8*n)+1) % 1 == 0) {
-		return "Triagular";
+		return "Triangular";
 	}
 	if(Math.sqrt(n) % 1 == 0) {
 		return "Square";
@@ -32,8 +32,8 @@ nodes.push(new Person("Sam W","Sophie",true));
 nodes.push(new Person("Steven","Vani",true));
 nodes.push(new Person("Vani","Mandeep",false));
 nodes.push(new Person("Mandeep","Daisy",false));
-/*nodes.push(new Person("Daisy","Hannah",false));
-nodes.push(new Person("Hannah","Mahesh",false));
+nodes.push(new Person("Daisy","Hannah",false));
+/*nodes.push(new Person("Hannah","Mahesh",false));
 nodes.push(new Person("Mahesh","Aba",true));
 nodes.push(new Person("Aba","Dom",false));
 nodes.push(new Person("Dom","Benji",true));
