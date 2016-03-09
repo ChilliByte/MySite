@@ -31,8 +31,8 @@ nodes.push(new Person("Sam W","Sophie",true));
 
 nodes.push(new Person("Steven","Vani",true));
 nodes.push(new Person("Vani","Mandeep",false));
-/*nodes.push(new Person("Mandeep","Daisy",false));
-nodes.push(new Person("Daisy","Hannah",false));
+nodes.push(new Person("Mandeep","Daisy",false));
+/*nodes.push(new Person("Daisy","Hannah",false));
 nodes.push(new Person("Hannah","Mahesh",false));
 nodes.push(new Person("Mahesh","Aba",true));
 nodes.push(new Person("Aba","Dom",false));
@@ -73,8 +73,31 @@ switch(graphShape) {
 				ctx.arc(x,y,10,0,2*Math.PI);
 				ctx.fill();
 				ctx.font = "12px Calibri";
-				ctx.fillText(nodes[c].name,x - 5,y + 20);
+				ctx.fillText(nodes[c].name,x - 4,y + 22);
 				c++;
+			}
+		}
+		break;
+	case "Random"
+		var gridSize = Math.ceil(Math.sqrt(numNodes));
+		c = 0;
+		for(var i = 0; i < gridSize; i++) {
+			for(var j = 0; j < gridSize; j++) {
+				if (nodes[c] !== undefined) {
+					ctx.beginPath();
+					if(nodes[c].isMale) {
+						ctx.fillStyle="#0055ff";
+					} else {
+						ctx.fillStyle="#ff0055"
+					}
+					x = (0.75+(0.5*Math.random()))*(i+1)*(w/(gridSize+1));
+					y = (0.75+(0.5*Math.random()))*(j+1)*(h/(gridSize+1))
+					ctx.arc(x,y,10,0,2*Math.PI);
+					ctx.fill();
+					ctx.font = "12px Calibri";
+					ctx.fillText(nodes[c].name,x - 4,y + 22);
+					c++;
+				}
 			}
 		}
 		break;
