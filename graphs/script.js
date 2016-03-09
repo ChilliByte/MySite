@@ -148,6 +148,7 @@ switch(graphShape) {
 		break;
 }
 function render() {
+	ctx.clearRect(0,0,w,h)
 	for(var i = 0; i < numNodes; i++) {
 		if(nodes[i].isMale) {
 			ctx.strokeStyle = blue;
