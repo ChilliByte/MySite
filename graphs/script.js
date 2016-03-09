@@ -102,8 +102,8 @@ switch(graphShape) {
 		}
 		break;
 	case "Triangular" :
-		x1=-1/2+Math.pow(1 + (-4*(2*numNodes)),0.5)/2;
-		x2=-1/2-Math.pow(1 + (-4*(2*numNodes)),0.5)/2;
+		x1=-1/2+Math.pow(1 + (-4*(-2*numNodes)),0.5)/2;
+		x2=-1/2-Math.pow(1 + (-4*(-2*numNodes)),0.5)/2;
 		var rows = Math.max(x1,x2);
 		console.log(rows);
 		break;
