@@ -155,10 +155,11 @@ window.onload = function() {
 		hoverDiv.setAttribute("id",nodes[i].name);
 		hoverDiv.setAttribute("class","hoverdiv");
 		hoverDiv.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
-		hoverDiv.addEventListener("onmouseover",(function() {
-			console.log("HOVERED");
-		})(),false);
 		document.body.appendChild(hoverDiv);
+		document.getElementById(nodes[i].name).addEventListener("onmouseover",function() {
+			console.log("HOVERED");
+		},false);
+		
 	}
 	
 	function render() {
