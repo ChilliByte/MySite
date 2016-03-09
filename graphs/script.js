@@ -4,6 +4,18 @@ function Person(name,to,male) {
 	this.isMale = male;
 }
 
+function checkFigurate(n) {
+	if(Math.sqrt(n) % 1 == 0) {
+		return "Square";
+	}
+	if(Math.sqrt((8*n)+1) % 1 == 0) {
+		return "Triagular";
+	}
+	if ((1 + Math.sqrt(24*P + 1))/6) % 1 == 0) {
+		return "Pentagonal";
+	}
+}
+
 var nodes = [];
 nodes.push(new Person("Sophie","Sam N",false));
 nodes.push(new Person("Sam N","Chichi",true));
@@ -28,6 +40,11 @@ nodes.push(new Person("Kevin","Steven",true));
 nodes.push(new Person("Deep","Lottie",true));
 nodes.push(new Person("Lottie","Matt",false));
 nodes.push(new Person("Matt","Deep",true));
+
+var numNodes = nodes.length;
+var graphShape = checkFigurate(numNodes);
+
+
 
 var canvas = document.getElementById("graph");
 var ctx = canvas.getContext("2d");
