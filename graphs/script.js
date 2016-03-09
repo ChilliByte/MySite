@@ -183,7 +183,7 @@ window.onload = function() {
 				to = nodes[returnIndex(nodes[i].to[j])];
 				ctx.beginPath();
 				ctx.moveTo(nodes[i].x, nodes[i].y);
-				ctx.lineTo(to[j].x,to[j].y);
+				ctx.lineTo(to.x,to.y);
 				ctx.stroke();
 			}
 			if((nodes[i].x > w) || (nodes[i].x < 0)) {
