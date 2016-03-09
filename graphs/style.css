@@ -22,3 +22,10 @@ header {
 	left:0;
 	padding-left:50px;
 }
+.hoverdiv {
+	height:15px;
+	width:15px;
+	border:1px solid red;
+	background:transparent;
+	position:absolute;
+}
