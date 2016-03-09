@@ -156,10 +156,9 @@ window.onload = function() {
 		hoverDiv.setAttribute("class","hoverdiv");
 		hoverDiv.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
 		document.body.appendChild(hoverDiv);
-		document.getElementById(nodes[i].name).onmouseover = function() {
-			console.log("HOVERED");
-		};
-		
+		var nav = document.createElement("nav");
+		nav.appendChild(document.createTextNode(nodes[i].name + " sent " + nodes[i].to + "a gift!"));
+		document.body.appendChild(nav); 
 	}
 	
 	function render() {
