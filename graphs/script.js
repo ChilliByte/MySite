@@ -62,21 +62,15 @@ ctx.fillText("Graphs",50,3*h/4);
 switch(graphShape) {
 	case "Square" :
 		var gridSize = Math.sqrt(numNodes);
-		ctx.beginPath();
-		ctx.fillStyle="#0055ff";
 		j = 1;
-		for(var i = 0; i < numNodes; i++) {
-			console.log("I: " + i);
-			console.log("J: " + j);
-			console.log("X: " + ((i+1)%j)*(w/(gridSize+1)));
-			console.log("Y: " + j*(w/(gridSize+1)));
-			
-			ctx.arc(((i+1)%j)*(w/(gridSize+1)),j*(w/(gridSize+1)),10,0,2*Math.PI);
-			if (i == gridSize-1) {
-				j++;
+		for(var i = 0; i < gridSize; i++) {
+			for(var j = 0; j < gridSize; j++) {
+				ctx.beginPath();
+				ctx.fillStyle="#0055ff";
+				ctx.arc((i+1)*(w/(gridSize+1)),(j+1)*(w/(gridSize+1)),10,0,2*Math.PI);
+				ctx.fill();
 			}
 		}
-		ctx.fill();
 		break;
 }
 
