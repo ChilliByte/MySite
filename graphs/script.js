@@ -78,7 +78,7 @@ switch(graphShape) {
 			}
 		}
 		break;
-	case "Random"
+	case "Random" :
 		var gridSize = Math.ceil(Math.sqrt(numNodes));
 		c = 0;
 		for(var i = 0; i < gridSize; i++) {
