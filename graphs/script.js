@@ -158,6 +158,7 @@ window.onload = function() {
 		document.body.appendChild(hoverDiv);
 		var nav = document.createElement("nav");
 		nav.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
+		nav.setAttrbute("class",nodes[i].name)
 		nav.appendChild(document.createTextNode(nodes[i].name + " sent " + nodes[i].to + " a gift!"));
 		document.body.appendChild(nav); 
 	}
@@ -196,7 +197,7 @@ window.onload = function() {
 				nodes[i].x += nodes[i].velX;	
 				nodes[i].y += nodes[i].velY;
 				document.getElementById(nodes[i].name).style = "left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;";
-				document.querySelector("#"+nodes[i].name + " + nav").style = "left: " + nodes[i].x + "px; top: " + nodes[i].y + "px;";
+				document.getElementsByClassName(nodes[i].name)[0].style = "left: " + nodes[i].x + "px; top: " + nodes[i].y + "px;";
 			}
 		}
 	}
