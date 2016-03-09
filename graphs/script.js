@@ -178,14 +178,9 @@ window.onload = function() {
 			ctx.font = "12px Calibri";
 			ctx.fillText(nodes[i].name,nodes[i].x - 4,nodes[i].y + 22);
 			
-			to = nodes[returnIndex(nodes[i].to)];
-			/*
-			m = (to.y - nodes[i].y)/(to.x - nodes[i].x)
-			c = to.y - (m*to.x)
-			rM = -1/m;
-			rC = (to.y/2) - (rM*(to.x/2))
-			*/
-			for(var j = 0; j < to.length; j++) {
+			nodesToLen = nodes[i].to.length;
+			for(var j = 0; j < nodesToLen; j++) {
+				to = nodes[returnIndex(nodes[i].to[j])];
 				ctx.beginPath();
 				ctx.moveTo(nodes[i].x, nodes[i].y);
 				ctx.lineTo(to[j].x,to[j].y);
