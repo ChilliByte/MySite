@@ -25,7 +25,6 @@ header {
 .hoverdiv {
 	height:15px;
 	width:15px;
-	border:1px solid red;
 	background:transparent;
 	position:absolute;
 }
