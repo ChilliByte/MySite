@@ -56,19 +56,21 @@ var w = window.innerWidth
 canvas.height = h;
 canvas.width = w;
 
-ctx.font = "30px Arial";
-ctx.fillText("Graphs",50,3*h/4);
-
 switch(graphShape) {
 	case "Square" :
 		var gridSize = Math.sqrt(numNodes);
-		j = 1;
+		c = 0;
 		for(var i = 0; i < gridSize; i++) {
 			for(var j = 0; j < gridSize; j++) {
 				ctx.beginPath();
-				ctx.fillStyle="#0055ff";
+				if(nodes[c].male) {
+					ctx.fillStyle="#0055ff";
+				} else {
+					ctx.fillStyle="#ff0055"
+				}
 				ctx.arc((i+1)*(w/(gridSize+1)),(j+1)*(h/(gridSize+1)),10,0,2*Math.PI);
 				ctx.fill();
+				c++;
 			}
 		}
 		break;
