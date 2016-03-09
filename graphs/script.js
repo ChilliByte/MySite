@@ -29,7 +29,10 @@ function returnIndex(person) {
 		}
 	}
 }
-
+var play = true;
+window.onclick = function() {
+	play = !play
+}
 var nodes = [];
 nodes.push(new Person("Sophie","Sam N",false));
 nodes.push(new Person("Sam N","Chichi",true));
@@ -181,8 +184,10 @@ function render() {
 		if((nodes[i].y > h) || (nodes[i].y < 0)) {
 			nodes[i].velY*=-1;
 		}
-		nodes[i].x += nodes[i].velX;	
-		nodes[i].y += nodes[i].velY;
+		if (play) {
+			nodes[i].x += nodes[i].velX;	
+			nodes[i].y += nodes[i].velY;
+		}
 	}
 }
 window.requestAnimFrame = (function(){
