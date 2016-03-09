@@ -154,8 +154,7 @@ for (var i = 0; i < numNodes; i++) {
 	var hoverDiv = document.createElement("div");
 	hoverDiv.setAttribute("id",nodes[i].name);
 	hoverDiv.setAttribute("class","hoverdiv");
-	hoverDiv.setAttribute("left",nodes[i].x+"px")
-	hoverDiv.setAttribute("top",nodes[i].y+"px");
+	hoverDiv.setAttribute("style","left: " + nodes[i].x + "px; top: " + nodes[i].y + "px;");
 	document.body.appendChild(hoverDiv);
 }
 function render() {
