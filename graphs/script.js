@@ -112,6 +112,7 @@ switch(graphShape) {
 			for(var j = 0; j < cols; j++) {
 				count++;
 			}
+			cols++
 		}
 		console.log("COUNT: " + count);
 		break;
