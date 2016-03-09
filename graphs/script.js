@@ -1,7 +1,7 @@
 window.onload = function() {
 	function Person(name,to,male) {
 		this.name = name;
-		this.to = to;
+		this.to = [to];
 		this.isMale = male;
 		this.x = 0;
 		this.y = 0;
@@ -156,8 +156,10 @@ window.onload = function() {
 		hoverDiv.setAttribute("id",nodes[i].name);
 		hoverDiv.setAttribute("class","hoverdiv");
 		hoverDiv.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
+		hoverDiv.setAttribute("onhover",function() {
+			this.style.borderColor="red";	
+		});
 		document.body.appendChild(hoverDiv);
-
 	}
 	
 	function render() {
@@ -183,11 +185,12 @@ window.onload = function() {
 			rM = -1/m;
 			rC = (to.y/2) - (rM*(to.x/2))
 			*/
-			ctx.beginPath();
-			ctx.moveTo(nodes[i].x, nodes[i].y);
-			ctx.lineTo(to.x,to.y);
-			ctx.stroke();
-			
+			for(var j = 0; j < to.length; j++) {
+				ctx.beginPath();
+				ctx.moveTo(nodes[i].x, nodes[i].y);
+				ctx.lineTo(to.x,to.y);
+				ctx.stroke();
+			}
 			if((nodes[i].x > w) || (nodes[i].x < 0)) {
 				nodes[i].velX*=-1;
 			}
