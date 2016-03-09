@@ -40,7 +40,7 @@ nodes.push(new Person("Sam W","Sophie",true));
 nodes.push(new Person("Steven","Vani",true));
 nodes.push(new Person("Vani","Mandeep",false));
 nodes.push(new Person("Mandeep","Daisy",false));
-/*nodes.push(new Person("Daisy","Hannah",false));
+nodes.push(new Person("Daisy","Hannah",false));
 nodes.push(new Person("Hannah","Mahesh",false));
 nodes.push(new Person("Mahesh","Aba",true));
 nodes.push(new Person("Aba","Dom",false));
@@ -53,7 +53,7 @@ nodes.push(new Person("Kevin","Steven",true));
 nodes.push(new Person("Deep","Lottie",true));
 nodes.push(new Person("Lottie","Matt",false));
 nodes.push(new Person("Matt","Deep",true));
-*/
+
 var numNodes = nodes.length;
 var graphShape = checkFigurate(numNodes);
 
@@ -152,11 +152,12 @@ for(var i = 0; i < numNodes; i++) {
 		ctx.fillStyle = pink;
 	}
 	to = nodes[returnIndex(nodes[i].to)];
+	/*
 	m = (to.y - nodes[i].y)/(to.x - nodes[i].x)
 	c = to.y - (m*to.x)
 	rM = -1/m;
 	rC = (to.y/2) - (rM*(to.x/2))
-	
+	*/
 
 	
 	ctx.beginPath();
