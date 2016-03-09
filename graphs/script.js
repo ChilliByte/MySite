@@ -1,4 +1,4 @@
-function person(name,to,male) {
+function Person(name,to,male) {
 	this.name = name;
 	this.to = to;
 	this.isMale = male;
