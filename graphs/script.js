@@ -163,7 +163,7 @@ for(var i = 0; i < numNodes; i++) {
 	ctx.beginPath();
 	ctx.moveTo(nodes[i].x, nodes[i].y);
 	ctx.lineTo(to.x,to.y);
-	ctx.fill();
+	ctx.stroke();
 }
 
 
