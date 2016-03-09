@@ -150,6 +150,13 @@ switch(graphShape) {
 		}
 		break;
 }
+for (var i = 0; i < numNodes; i++) {
+	var hoverDiv = document.createElement("div");
+	hoverDiv.setAttribute("id",nodes[i].name);
+	hoverDiv.setAttribute("class","hoverdiv");
+	hoverDiv.setAttribute("left",nodes[i].x+"px")
+	hoverDiv.setAttribute("top",nodes[i].y+"px");
+}
 function render() {
 	ctx.clearRect(0,0,w,h)
 	for(var i = 0; i < numNodes; i++) {
