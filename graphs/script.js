@@ -4,8 +4,8 @@ function Person(name,to,male) {
 	this.isMale = male;
 	this.x = 0;
 	this.y = 0;
-	this.velX = Math.random();
-	this.velY = Math.random();
+	this.velX = 0.5 - Math.random();
+	this.velY = 0.5 - Math.random();
 }
 function checkFigurate(n) {
 	/*if (0.25*(1+ Math.sqrt((8*n)+1)) % 1 == 0) {
@@ -149,16 +149,19 @@ switch(graphShape) {
 }
 function render() {
 	for(var i = 0; i < numNodes; i++) {
+		if(nodes[i].isMale) {
+			ctx.strokeStyle = blue;
+			ctx.fillStyle = blue;
+		} else {
+			ctx.strokeStyle = pink;
+			ctx.fillStyle = pink;
+		}
 		ctx.beginPath();	
 		ctx.arc(nodes[i].x,nodes[i].y,radius,0,2*Math.PI);
 		ctx.fill();
 		ctx.font = "12px Calibri";
 		ctx.fillText(nodes[i].name,nodes[i].x - 4,nodes[i].y + 22);
-		if(nodes[i].isMale) {
-			ctx.strokeStyle = blue;
-		} else {
-			ctx.strokeStyle = pink;
-		}
+		
 		to = nodes[returnIndex(nodes[i].to)];
 		/*
 		m = (to.y - nodes[i].y)/(to.x - nodes[i].x)
@@ -170,6 +173,9 @@ function render() {
 		ctx.moveTo(nodes[i].x, nodes[i].y);
 		ctx.lineTo(to.x,to.y);
 		ctx.stroke();
+		
+		node[i].x += node[i].velX;	
+		node[i].y += node[i].velY;
 	}
 }
 window.requestAnimFrame = (function(){
