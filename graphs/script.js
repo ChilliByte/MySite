@@ -175,10 +175,10 @@ function render() {
 		ctx.lineTo(to.x,to.y);
 		ctx.stroke();
 		
-		if((nodes[i].x > h) || (nodes[i].x < 0)) {
+		if((nodes[i].x > w) || (nodes[i].x < 0)) {
 			nodes[i].velX*=-1;
 		}
-		if((nodes[i].y > w) || (nodes[i].y < 0)) {
+		if((nodes[i].y > h) || (nodes[i].y < 0)) {
 			nodes[i].velY*=-1;
 		}
 		nodes[i].x += nodes[i].velX;	
