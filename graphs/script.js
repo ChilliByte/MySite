@@ -154,7 +154,7 @@ for (var i = 0; i < numNodes; i++) {
 	var hoverDiv = document.createElement("div");
 	hoverDiv.setAttribute("id",nodes[i].name);
 	hoverDiv.setAttribute("class","hoverdiv");
-	hoverDiv.setAttribute("style","left: " + nodes[i].x-20 + "px; top: " + nodes[i].y-20 + "px;");
+	hoverDiv.setAttribute("style","left: " + (nodes[i].x-20) + "px; top: " + (nodes[i].y-20) + "px;");
 	document.body.appendChild(hoverDiv);
 }
 function render() {
@@ -194,7 +194,7 @@ function render() {
 		if (play) {
 			nodes[i].x += nodes[i].velX;	
 			nodes[i].y += nodes[i].velY;
-			document.getElementById(nodes[i].name).style = "left: " + nodes[i].x-20 + "px; top: " + nodes[i].y-20 + "px;";
+			document.getElementById(nodes[i].name).style = "left: " + (nodes[i].x-20) + "px; top: " + (nodes[i].y-20) + "px;";
 		}
 	}
 }
