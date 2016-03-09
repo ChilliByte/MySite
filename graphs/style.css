@@ -29,3 +29,16 @@ header {
 	background:transparent;
 	position:absolute;
 }
+nav {
+	position:fixed;
+	display:none;
+	height:100;
+	width:150;
+}
+.hoverdiv:hover + nav {
+	display:block;
+	background-color:#333;
+	border:5px solid black;
+	border-radius:10px;
+	color:white;
+}
