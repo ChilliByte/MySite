@@ -63,7 +63,7 @@ switch(graphShape) {
 		for(var i = 0; i < gridSize; i++) {
 			for(var j = 0; j < gridSize; j++) {
 				ctx.beginPath();
-				if(nodes[c].male) {
+				if(nodes[c].isMale) {
 					ctx.fillStyle="#0055ff";
 				} else {
 					ctx.fillStyle="#ff0055"
