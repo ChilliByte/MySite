@@ -5,7 +5,7 @@ function Person(name,to,male) {
 }
 
 function checkFigurate(n) {
-	if (0.25*(1+ Math.sqrt((8*n)+1))) % 1 == 0) {
+	if (0.25*(1+ Math.sqrt((8*n)+1)) % 1 == 0) {
 		return "Hexagonal";
 	}
 	if (((1 + Math.sqrt(24*n + 1))/6) % 1 == 0) {
