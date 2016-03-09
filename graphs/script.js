@@ -156,19 +156,11 @@ for(var i = 0; i < numNodes; i++) {
 	c = to.y - (m*to.x)
 	rM = -1/m;
 	rC = (to.y/2) - (rM*(to.x/2))
-	triCorner1x = (to.x/2) + 5;
-	triCorner1y = (rM * triCorner1x) + rC
-	triCorner2x = (to.x/2) - 5;
-	triCorner2y = (rM * triCorner2x) + rC
-	triCorner3x = (to.x/2) + 10;
-	triCorner3y = m*triCorner3x + c
+	
+
+	
 	ctx.beginPath();
 	ctx.moveTo(nodes[i].x, nodes[i].y);
-	ctx.lineTo(to.x/2,to.y/2);
-	ctx.lineTo(triCorner1x,triCorner1y);
-	ctx.lineTo(triCorner3x,triCorner3y);
-	ctx.lineTo(triCorner2x,triCorner2y);
-	ctx.lineTo(to.x/2,to.y/2);
 	ctx.lineTo(to.x,to.y);
 	ctx.fill();
 }
