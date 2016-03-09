@@ -194,6 +194,7 @@ function render() {
 		if (play) {
 			nodes[i].x += nodes[i].velX;	
 			nodes[i].y += nodes[i].velY;
+			document.getElementById(nodes[i].name).style = "left: " + nodes[i].x + "px; top: " + nodes[i].y + "px;";
 		}
 	}
 }
