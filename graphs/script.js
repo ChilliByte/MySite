@@ -150,20 +150,23 @@ switch(graphShape) {
 		}
 		break;
 }
-for (var i = 0; i < numNodes; i++) {
-	var hoverDiv = document.createElement("div");
-	hoverDiv.setAttribute("id",nodes[i].name);
-	hoverDiv.setAttribute("class","hoverdiv");
-	hoverDiv.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
-	document.body.appendChild(hoverDiv);
-	$(hoverDiv).draggable({
-		distance:20,
-		drag: function {
-			nodes[returnIndex(this.id)].x = parseInt(hoverDiv.style.left);
-			nodes[returnIndex(this.id)].y = parseInt(hoverDiv.style.top);
-		}
-	});
-}
+$(document).ready(function () {
+	for (var i = 0; i < numNodes; i++) {
+		var hoverDiv = document.createElement("div");
+		hoverDiv.setAttribute("id",nodes[i].name);
+		hoverDiv.setAttribute("class","hoverdiv");
+		hoverDiv.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
+		document.body.appendChild(hoverDiv);
+		$(hoverDiv).draggable({
+			distance:20,
+			drag: function {
+				nodes[returnIndex(this.id)].x = parseInt(hoverDiv.style.left);
+				nodes[returnIndex(this.id)].y = parseInt(hoverDiv.style.top);
+			}
+		});
+	}
+});
+
 function render() {
 	ctx.clearRect(0,0,w,h)
 	for(var i = 0; i < numNodes; i++) {
