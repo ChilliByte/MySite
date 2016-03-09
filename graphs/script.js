@@ -157,7 +157,8 @@ window.onload = function() {
 		hoverDiv.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
 		document.body.appendChild(hoverDiv);
 		var nav = document.createElement("nav");
-		nav.appendChild(document.createTextNode(nodes[i].name + " sent " + nodes[i].to + "a gift!"));
+		nav.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
+		nav.appendChild(document.createTextNode(nodes[i].name + " sent " + nodes[i].to + " a gift!"));
 		document.body.appendChild(nav); 
 	}
 	
@@ -195,6 +196,7 @@ window.onload = function() {
 				nodes[i].x += nodes[i].velX;	
 				nodes[i].y += nodes[i].velY;
 				document.getElementById(nodes[i].name).style = "left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;";
+				document.querySelector("#"+nodes[i].name + nav).style = "left: " + nodes[i].x + "px; top: " + nodes[i].y + "px;";
 			}
 		}
 	}
