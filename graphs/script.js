@@ -5,9 +5,9 @@ function Person(name,to,male) {
 }
 
 function checkFigurate(n) {
-/*	if (0.25*(1+ Math.sqrt((8*n)+1)) % 1 == 0) {
+	if (0.25*(1+ Math.sqrt((8*n)+1)) % 1 == 0) {
 		return "Hexagonal";
-	}*/
+	}
 	if (((1 + Math.sqrt(24*n + 1))/6) % 1 == 0) {
 		return "Pentagonal";
 	}
@@ -32,12 +32,12 @@ nodes.push(new Person("Sam W","Sophie",true));
 nodes.push(new Person("Steven","Vani",true));
 nodes.push(new Person("Vani","Mandeep",false));
 nodes.push(new Person("Mandeep","Daisy",false));
-nodes.push(new Person("Daisy","Hannah",false));
+/*nodes.push(new Person("Daisy","Hannah",false));
 nodes.push(new Person("Hannah","Mahesh",false));
 nodes.push(new Person("Mahesh","Aba",true));
 nodes.push(new Person("Aba","Dom",false));
 nodes.push(new Person("Dom","Benji",true));
-/*nodes.push(new Person("Benji","Aurora",true));
+nodes.push(new Person("Benji","Aurora",true));
 nodes.push(new Person("Aurora","Priya",false));
 nodes.push(new Person("Priya","George",false));
 nodes.push(new Person("George","Kevin",true));
@@ -105,7 +105,15 @@ switch(graphShape) {
 		x1=-1/2+Math.pow(1 + (-4*(-2*numNodes)),0.5)/2;
 		x2=-1/2-Math.pow(1 + (-4*(-2*numNodes)),0.5)/2;
 		var rows = Math.max(x1,x2);
-		console.log(rows);
+		console.log("ROWS: " + rows);
+		cols = 1;
+		count = 0
+		for(var i = 0; i < rows; i++) {
+			for(var j = 0; j < cols; j++) {
+				count++;
+			}
+		}
+		console.log("COUNT: " + count);
 		break;
 }
 
