@@ -115,7 +115,7 @@ switch(graphShape) {
 				} else {
 					ctx.fillStyle="#ff0055"
 				}
-				x = 0.9*(j+1)*(w/(cols+1));
+				x = 0.9*(j+1)*(w/(cols+1))+30;
 				y = (i+1)*(h/(rows+1))-30
 				ctx.arc(x,y,10,0,2*Math.PI);
 				ctx.fill();
