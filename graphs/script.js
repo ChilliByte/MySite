@@ -4,6 +4,8 @@ function Person(name,to,male) {
 	this.isMale = male;
 	this.x = 0;
 	this.y = 0;
+	this.velX = Math.random();
+	this.velY = Math.random();
 }
 function checkFigurate(n) {
 	/*if (0.25*(1+ Math.sqrt((8*n)+1)) % 1 == 0) {
@@ -62,6 +64,7 @@ var ctx = canvas.getContext("2d");
 var x,y,to;
 var h = window.innerHeight;
 var w = window.innerWidth
+var radius = 10;
 var blue = "#0055ff";
 var pink = "#ff0055";
 canvas.height = h;
@@ -83,7 +86,7 @@ switch(graphShape) {
 				y = (j+1)*(h/(gridSize+1))
 				nodes[c].x = x;
 				nodes[c].y = y;
-				ctx.arc(x,y,10,0,2*Math.PI);
+				ctx.arc(x,y,radius,0,2*Math.PI);
 				ctx.fill();
 				ctx.font = "12px Calibri";
 				ctx.fillText(nodes[c].name,x - 4,y + 22);
@@ -107,7 +110,7 @@ switch(graphShape) {
 					y = 0.9*(0.75+(0.5*Math.random()))*(j+1)*(h/(gridSize+1))
 					nodes[c].x = x;
 					nodes[c].y = y;
-					ctx.arc(x,y,10,0,2*Math.PI);
+					ctx.arc(x,y,radius,0,2*Math.PI);
 					ctx.fill();
 					ctx.font = "12px Calibri";
 					ctx.fillText(nodes[c].name,x - 4,y + 22);
@@ -134,7 +137,7 @@ switch(graphShape) {
 				y = (i+1)*(h/(rows+1))-30
 				nodes[c].x = x;
 				nodes[c].y = y;
-				ctx.arc(x,y,10,0,2*Math.PI);
+				ctx.arc(x,y,radius,0,2*Math.PI);
 				ctx.fill();
 				ctx.font = "12px Calibri";
 				ctx.fillText(nodes[c].name,x - 4,y + 22);
@@ -144,26 +147,41 @@ switch(graphShape) {
 		}
 		break;
 }
-
-for(var i = 0; i < numNodes; i++) {
-	if(nodes[i].isMale) {
-		ctx.fillStyle = blue;
-	} else {
-		ctx.fillStyle = pink;
+function render() {
+	for(var i = 0; i < numNodes; i++) {
+		ctx.beginPath();	
+		ctx.arc(nodes[i].x,nodes[i].y,radius,0,2*Math.PI);
+		ctx.fill();
+		ctx.font = "12px Calibri";
+		ctx.fillText(nodes[i].name,nodes[i].x - 4,nodes[i].y + 22);
+		if(nodes[i].isMale) {
+			ctx.strokeStyle = blue;
+		} else {
+			ctx.strokeStyle = pink;
+		}
+		to = nodes[returnIndex(nodes[i].to)];
+		/*
+		m = (to.y - nodes[i].y)/(to.x - nodes[i].x)
+		c = to.y - (m*to.x)
+		rM = -1/m;
+		rC = (to.y/2) - (rM*(to.x/2))
+		*/
+		ctx.beginPath();
+		ctx.moveTo(nodes[i].x, nodes[i].y);
+		ctx.lineTo(to.x,to.y);
+		ctx.stroke();
 	}
-	to = nodes[returnIndex(nodes[i].to)];
-	/*
-	m = (to.y - nodes[i].y)/(to.x - nodes[i].x)
-	c = to.y - (m*to.x)
-	rM = -1/m;
-	rC = (to.y/2) - (rM*(to.x/2))
-	*/
-
-	ctx.strokeStyle = blue;
-	ctx.beginPath();
-	ctx.moveTo(nodes[i].x, nodes[i].y);
-	ctx.lineTo(to.x,to.y);
-	ctx.stroke();
 }
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
 
-
+(function animloop(){
+  requestAnimFrame(animloop);
+  render();
+})();
