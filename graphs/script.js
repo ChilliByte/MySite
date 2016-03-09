@@ -37,6 +37,6 @@ canvas.height = h;
 canvas.width = w;
 
 ctx.font = "30px Arial";
-ctx.fillText("Graphs",50,w/2);
+ctx.fillText("Graphs",50,3*h/4);
 
 
