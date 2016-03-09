@@ -105,16 +105,26 @@ switch(graphShape) {
 		x1=-1/2+Math.pow(1 + (-4*(-2*numNodes)),0.5)/2;
 		x2=-1/2-Math.pow(1 + (-4*(-2*numNodes)),0.5)/2;
 		var rows = Math.max(x1,x2);
-		console.log("ROWS: " + rows);
 		cols = 1;
-		count = 0
+		c = 0
 		for(var i = 0; i < rows; i++) {
 			for(var j = 0; j < cols; j++) {
-				count++;
+				ctx.beginPath();
+				if(nodes[c].isMale) {
+					ctx.fillStyle="#0055ff";
+				} else {
+					ctx.fillStyle="#ff0055"
+				}
+				x = (j+1)*(w/(cols+1));
+				y = (i+1)*(h/(rows+1))
+				ctx.arc(x,y,10,0,2*Math.PI);
+				ctx.fill();
+				ctx.font = "12px Calibri";
+				ctx.fillText(nodes[c].name,x - 4,y + 22);
+				c++;
 			}
 			cols++
 		}
-		console.log("COUNT: " + count);
 		break;
 }
 
