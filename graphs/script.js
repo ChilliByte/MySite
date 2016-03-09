@@ -196,7 +196,7 @@ window.onload = function() {
 				nodes[i].x += nodes[i].velX;	
 				nodes[i].y += nodes[i].velY;
 				document.getElementById(nodes[i].name).style = "left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;";
-				document.querySelector("#"+nodes[i].name + nav).style = "left: " + nodes[i].x + "px; top: " + nodes[i].y + "px;";
+				document.querySelector("#"+nodes[i].name + " + nav").style = "left: " + nodes[i].x + "px; top: " + nodes[i].y + "px;";
 			}
 		}
 	}
