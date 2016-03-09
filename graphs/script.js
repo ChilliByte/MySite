@@ -55,7 +55,7 @@ var h = window.innerHeight;
 var w = window.innerWidth
 canvas.height = h;
 canvas.width = w;
-
+var x,y;
 switch(graphShape) {
 	case "Square" :
 		var gridSize = Math.sqrt(numNodes);
@@ -68,8 +68,12 @@ switch(graphShape) {
 				} else {
 					ctx.fillStyle="#ff0055"
 				}
-				ctx.arc((i+1)*(w/(gridSize+1)),(j+1)*(h/(gridSize+1)),10,0,2*Math.PI);
+				x = (i+1)*(w/(gridSize+1));
+				y = (j+1)*(h/(gridSize+1))
+				ctx.arc(x,y,10,0,2*Math.PI);
 				ctx.fill();
+				ctx.font = "12px Calibri";
+				ctx.fillText(nodes[c].name,x - 5,y + 20);
 				c++;
 			}
 		}
