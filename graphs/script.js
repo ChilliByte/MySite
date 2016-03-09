@@ -68,7 +68,7 @@ switch(graphShape) {
 		for(var i = 0; i < numNodes; i++) {
 			console.log("I: " + i);
 			console.log("J: " + j);
-			console.log("X: " + (i%j)*(w/(gridSize+1));
+			console.log("X: " + (i%j)*(w/(gridSize+1)));
 			console.log("Y: " + j*(w/(gridSize+1)));
 			
 			ctx.arc((i%j)*(w/(gridSize+1)),j*(w/(gridSize+1)),20,0,2*Math.PI);
