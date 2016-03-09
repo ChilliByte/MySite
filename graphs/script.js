@@ -158,7 +158,7 @@ window.onload = function() {
 		document.body.appendChild(hoverDiv);
 		var nav = document.createElement("nav");
 		nav.setAttribute("style","left: " + (nodes[i].x - 25) + "px; top: " + (nodes[i].y - 25) + "px;");
-		nav.setAttrbute("class",nodes[i].name)
+		nav.setAttribute("class",nodes[i].name)
 		nav.appendChild(document.createTextNode(nodes[i].name + " sent " + nodes[i].to + " a gift!"));
 		document.body.appendChild(nav); 
 	}
