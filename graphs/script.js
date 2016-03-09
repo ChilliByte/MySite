@@ -188,7 +188,7 @@ window.onload = function() {
 			for(var j = 0; j < to.length; j++) {
 				ctx.beginPath();
 				ctx.moveTo(nodes[i].x, nodes[i].y);
-				ctx.lineTo(to.x,to.y);
+				ctx.lineTo(to[j].x,to[j].y);
 				ctx.stroke();
 			}
 			if((nodes[i].x > w) || (nodes[i].x < 0)) {
