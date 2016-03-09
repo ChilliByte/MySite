@@ -2,15 +2,16 @@ function Person(name,to,male) {
 	this.name = name;
 	this.to = to;
 	this.isMale = male;
+	this.x = 0;
+	this.y = 0;
 }
-
 function checkFigurate(n) {
-	if (0.25*(1+ Math.sqrt((8*n)+1)) % 1 == 0) {
+	/*if (0.25*(1+ Math.sqrt((8*n)+1)) % 1 == 0) {
 		return "Hexagonal";
 	}
 	if (((1 + Math.sqrt(24*n + 1))/6) % 1 == 0) {
 		return "Pentagonal";
-	}
+	}*/
 	if(Math.sqrt((8*n)+1) % 1 == 0) {
 		return "Triangular";
 	}
@@ -18,6 +19,13 @@ function checkFigurate(n) {
 		return "Square";
 	} 
 	return "Random";
+}
+function returnIndex(person) {
+	for(var rICount = 0; rICount < numNodes; rICount++) {
+		if(nodes[rICount].name == person) {
+			return rICount;
+		}
+	}
 }
 
 var nodes = [];
@@ -51,11 +59,14 @@ var graphShape = checkFigurate(numNodes);
 
 var canvas = document.getElementById("graph");
 var ctx = canvas.getContext("2d");
+var x,y,to;
 var h = window.innerHeight;
 var w = window.innerWidth
+var blue = "#0055ff";
+var pink = "#ff0055";
 canvas.height = h;
 canvas.width = w;
-var x,y;
+
 switch(graphShape) {
 	case "Square" :
 		var gridSize = Math.sqrt(numNodes);
@@ -64,12 +75,14 @@ switch(graphShape) {
 			for(var j = 0; j < gridSize; j++) {
 				ctx.beginPath();
 				if(nodes[c].isMale) {
-					ctx.fillStyle="#0055ff";
+					ctx.fillStyle=blue;
 				} else {
-					ctx.fillStyle="#ff0055"
+					ctx.fillStyle=pink;
 				}
 				x = (i+1)*(w/(gridSize+1));
 				y = (j+1)*(h/(gridSize+1))
+				nodes[c].x = x;
+				nodes[c].y = y;
 				ctx.arc(x,y,10,0,2*Math.PI);
 				ctx.fill();
 				ctx.font = "12px Calibri";
@@ -86,12 +99,14 @@ switch(graphShape) {
 				if (nodes[c] !== undefined) {
 					ctx.beginPath();
 					if(nodes[c].isMale) {
-						ctx.fillStyle="#0055ff";
+						ctx.fillStyle=blue;
 					} else {
-						ctx.fillStyle="#ff0055"
+						ctx.fillStyle=pink;
 					}
 					x = 0.9*(0.75+(0.5*Math.random()))*(i+1)*(w/(gridSize+1));
 					y = 0.9*(0.75+(0.5*Math.random()))*(j+1)*(h/(gridSize+1))
+					nodes[c].x = x;
+					nodes[c].y = y;
 					ctx.arc(x,y,10,0,2*Math.PI);
 					ctx.fill();
 					ctx.font = "12px Calibri";
@@ -111,12 +126,14 @@ switch(graphShape) {
 			for(var j = 0; j < cols; j++) {
 				ctx.beginPath();
 				if(nodes[c].isMale) {
-					ctx.fillStyle="#0055ff";
+					ctx.fillStyle=blue;
 				} else {
-					ctx.fillStyle="#ff0055"
+					ctx.fillStyle=pink;
 				}
 				x = 0.9*(j+1)*(w/(cols+1))+30;
 				y = (i+1)*(h/(rows+1))-30
+				nodes[c].x = x;
+				nodes[c].y = y;
 				ctx.arc(x,y,10,0,2*Math.PI);
 				ctx.fill();
 				ctx.font = "12px Calibri";
@@ -126,6 +143,34 @@ switch(graphShape) {
 			cols++
 		}
 		break;
+}
+
+for(var i = 0; i < numNodes; i++) {
+	if(nodes[i].isMale) {
+		ctx.fillStyle = blue;
+	} else {
+		ctx.fillStyle = pink;
+	}
+	to = nodes[returnIndex(nodes[i].to)];
+	m = (to.y - nodes[i].y)/(to.x - nodes[i].x)
+	c = to.y - (m*to.x)
+	rM = -1/m;
+	rC = (to.y/2) - (rM*(to.x/2))
+	triCorner1x = (to.x/2) + 5;
+	triCorner1y = (rM * triCorner1x) + rC
+	triCorner2x = (to.x/2) - 5;
+	triCorner2y = (rM * triCorner2x) + rC
+	triCorner3x = (to.x/2) + 10;
+	triCorner3y = m*triCorner3x + c
+	ctx.beginPath();
+	ctx.moveTo(nodes[i].x, nodes[i].y);
+	ctx.lineTo(to.x/2,to.y/2);
+	ctx.lineTo(triCorner1x,triCorner1y);
+	ctx.lineTo(triCorner3x,triCorner3y);
+	ctx.lineTo(triCorner2x,triCorner2y);
+	ctx.lineTo(to.x/2,to.y/2);
+	ctx.lineTo(to.x,to.y);
+	ctx.fill();
 }
 
 
