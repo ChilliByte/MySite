@@ -159,7 +159,7 @@ $(document).ready(function () {
 		document.body.appendChild(hoverDiv);
 		$(hoverDiv).draggable({
 			distance:20,
-			drag: function {
+			drag: function() {
 				nodes[returnIndex(this.id)].x = parseInt(hoverDiv.style.left);
 				nodes[returnIndex(this.id)].y = parseInt(hoverDiv.style.top);
 			}
