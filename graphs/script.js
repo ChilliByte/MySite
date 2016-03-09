@@ -174,8 +174,8 @@ function render() {
 		ctx.lineTo(to.x,to.y);
 		ctx.stroke();
 		
-		node[i].x += node[i].velX;	
-		node[i].y += node[i].velY;
+		nodes[i].x += nodes[i].velX;	
+		nodes[i].y += nodes[i].velY;
 	}
 }
 window.requestAnimFrame = (function(){
