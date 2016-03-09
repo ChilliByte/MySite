@@ -4,8 +4,8 @@ function Person(name,to,male) {
 	this.isMale = male;
 	this.x = 0;
 	this.y = 0;
-	this.velX = 0.5 - Math.random();
-	this.velY = 0.5 - Math.random();
+	this.velX = (0.5 - Math.random()*0.7);
+	this.velY = (0.5 - Math.random()*0.7);
 }
 function checkFigurate(n) {
 	/*if (0.25*(1+ Math.sqrt((8*n)+1)) % 1 == 0) {
