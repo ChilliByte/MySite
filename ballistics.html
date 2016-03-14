@@ -22,7 +22,12 @@
       var w = window.innerWidth - 10
       canvas.height = h;
       canvas.width = w;
-      
+      function toDegrees (angle) {
+        return angle * (180 / Math.PI);
+      }
+      function toRadians (angle) {
+        return angle * (Math.PI / 180);
+      }
       // shim layer with setTimeout fallback
       window.requestAnimFrame = (function(){
         return  window.requestAnimationFrame       ||
