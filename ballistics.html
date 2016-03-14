@@ -45,7 +45,7 @@
       var oX = 50;
       var oY = h - 50;
       var projectiles = [];
-      
+      var fric = 1;
       function render() {
         ctx.strokeStyle = "black";
         ctx.moveTo(oX,oY-20);
@@ -61,9 +61,9 @@
           ctx.arc(projectiles[i].x,projectiles[i].y,10,0,2*Math.PI);
           ctx.fill();
           projectiles[i].x += projectiles[i].velX; 
-          projectiles[i].y += projectiles[i].velY;
+          projectiles[i].y -= projectiles[i].velY;
           
-          projectiles[i].velX *= 1; 
+          projectiles[i].velX *= fric; 
           projectiles[i].velY -= 0.05;
         
         }
