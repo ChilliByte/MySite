@@ -55,13 +55,12 @@
       })();
       canvas.addEventListener("mousedown", getPosition, false);
 
-function getPosition(event) {
-    if (player.powerups.shoot) {
+      function getPosition(event) {
         evX = event.x;
         evY = event.y;
         evX -= canvas.offsetLeft;
         evY -= canvas.offsetTop;
-
+  
         dx = evX - oX;
         dy = oY - evY;
         length = Math.sqrt((dx * dx) + (dy * dy));
@@ -71,8 +70,7 @@ function getPosition(event) {
             theta = 360 - theta;
         }
         alert("New Projectile Added! Launch Angle: " + theta);
-    }
-}
+      }
     </script>
   </body>
 </html>
