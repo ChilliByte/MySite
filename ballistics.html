@@ -44,6 +44,7 @@
       
       var oX = 50;
       var oY = h - 50;
+      var projectiles = [];
       
       function render() {
         ctx.strokeStyle = "black";
@@ -52,6 +53,20 @@
         ctx.moveTo(oX-20,oY);
         ctx.lineTo(oX+20,oY);
         ctx.stroke();
+        
+        var i = projectiles.length ;
+        while (i--) {
+          ctx.fillStyle = "red";
+          ctx.beginPath();
+          ctx.arc(projectiles[i].x,projectiles[i].y,10,0,2*Math.PI);
+          ctx.fill();
+          projectiles[i].x += projectiles[i].velX; 
+          projectiles[i].y += projectiles[i].velY;
+          
+          projectiles[i].velX *= 1; 
+          projectiles[i].velY -= 0.5;
+        
+        }
       }
       
       (function animloop(){
@@ -59,7 +74,16 @@
         render();
       })();
       canvas.addEventListener("mousedown", getPosition, false);
-
+      
+      function Projectile(theta) {
+          this.x = oX;
+          this.y = oY;
+          this.theta = theta;
+          this.speed = 5;
+          this.velX = speed * Math.cos(toRadians(theta));
+          this.velY = speed * Math.sin(toRadians(theta));
+      }
+      
       function getPosition(event) {
         evX = event.x;
         evY = event.y;
@@ -75,6 +99,7 @@
             theta = 360 - theta;
         }
         alert("New Projectile Added! Launch Angle: " + theta);
+        projectiles.push(new Projectile(theta));
       }
     </script>
   </body>
