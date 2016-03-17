@@ -38,7 +38,7 @@ function randInt(min, max) {
 function getBearing(p1,p2) {
 	//Returns an angle relative to the +ve x axis
 	dx = p2.x - p1.x;
-	dy = p2.y - p1.y;
+	dy = p1.y - p2.y;
 	theta = toDegrees(Math.atan2(dy,dx));
 	if(theta < 0) {
 		theta = 360 + theta;
