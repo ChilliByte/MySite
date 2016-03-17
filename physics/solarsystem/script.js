@@ -10,12 +10,14 @@ origin = {
 	x: w/2,
 	y: h/2
 }
-function Particle(x,y,mass,angle,vel) {
+function Particle(x,y,mass,angle,vel,comp) {
 	this.x = x;
 	this.y = y;
 	this.mass = mass;
 	this.angle = angle;
 	this.vel = vel;
+	this.cX = comp.x;
+	this.cY = comp.y;
 }
 
 function toDegrees (angle) {
@@ -30,21 +32,42 @@ function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getAngle(p1,p2) {
-	//Returns an angle relative to the horizontal
+function getBearing(p1,p2) {
+	//Returns an angle relative to the +ve x axis
 	dx = p2.x - p1.x;
 	dy = p2.y - p1.y;
 	theta = toDegrees(Math.atan2(dy,dx));
 	return theta + 90;
 }
 
+function getComponentVectors(bearing,vel) {
+	cX = vel * Math.sin(toRadians(bearing % 90));
+	cY = vel * Math.cos(toRadians(bearing % 90));
+	temp = 0
+	if((bearing >= 90) && (bearing < 180)) {
+		temp = cY;
+		cY = cX;
+		cX = -1*temp;
+	}
+	if((bearing >= 180) && (bearing < 270)) {
+		cX *= -1;
+		cY *= -1;
+	}
+	if((bearing >= 270) && (bearing < 360)) {
+		temp = cY;
+		cY = -1*cX;
+		cX = temp;
+	}
+	return {x:cX,y:cY};
+}
+
 var i = particleCount;
 while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
-	angle = getAngle(origin,{x:x,y:y})
-		
-	particles.push(new Particle(x,y,randInt(1,4),angle,Math.random()));
+	angle = getBearing(origin,{x:x,y:y})
+	vel = Math.random();
+	particles.push(new Particle(x,y,randInt(1,4),angle,vel,getComponentVectors(angle,vel)));
 }
 
 // shim layer with setTimeout fallback
@@ -69,6 +92,8 @@ function render() {
 		ctx.beginPath();
 		ctx.arc(particles[i].x,particles[i].y,particles[i].mass,0,2*Math.PI);
 		ctx.fill();	
+		particles[i].x += particles[i].cX;
+		particles[i].y += particles[i].cY;
 	}
 
 }
