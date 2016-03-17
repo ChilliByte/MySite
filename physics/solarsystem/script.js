@@ -10,7 +10,9 @@ var origin = {
 	x: w/2,
 	y: h/2
 }
+//Gravitational Constant, increase to strengthen gravity
 var bigG = 0.025;
+
 function Particle(x,y,mass,angle,vel,comp) {
 	this.x = x;
 	this.y = y;
@@ -42,6 +44,7 @@ function getBearing(p1,p2) {
 }
 
 function getComponentVectors(bearing,vel) {
+	//Splits a vector into its X and Y components
 	cX = vel * Math.sin(toRadians(bearing % 90));
 	cY = vel * Math.cos(toRadians(bearing % 90));
 	temp = 0
@@ -68,6 +71,7 @@ function getDistanceSquared(p1,p2) {
 function getGravitationalForce(p1,p2) {
 	r2 = getDistanceSquared(p1,p2);
 	force = bigG * ((p1.mass*p2.mass)/r2)
+	//Newtons Law of Gravitation: F=G * (m1m1/r2)
 	return force;
 }
 
@@ -78,6 +82,7 @@ function getNetPull(p1) {
 			cObj = getComponentVectors(getBearing(p1,particles[i]),getGravitationalForce(p1,particles[i]));
 			p1.cX += cObj.x;
 			p1.cY -= cObj.y;
+			//adds up all of the horizonal and vertical forces acting on the particle
 		}
 	}
 }
@@ -87,7 +92,7 @@ while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
 	angle = getBearing(origin,{x:x,y:y})
-	vel = 0.001 * Math.sqrt(getDistanceSquared(origin,{x:x,y:y})); 0
+	vel = 0.001 * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
 	particles.push(new Particle(x,y,randInt(1,5),angle,vel,getComponentVectors(angle,vel)));
 }
 
