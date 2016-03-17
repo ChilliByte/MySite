@@ -6,7 +6,10 @@ var particleCount = 100;
 var particles = [];
 canvas.height = h;
 canvas.width = w;
-
+origin = {
+	x: w/2,
+	y: h/2
+}
 function Particle(x,y,mass,angle,vel) {
 	this.x = x;
 	this.y = y;
@@ -28,19 +31,33 @@ function randInt(min, max) {
 }
 
 function getAngle(p1,p2) {
+	//Returns an angle relative to the horizontal
 	dx = p2.x - p1.x;
-	dy = p2.y - p1.y;
-	length = Math.sqrt((dx * dx) + (dy * dy));
-	cosTheta = ((length * length) + (dx * dx) - (dy * dy)) / (2 * length * dx)
+	dy = p1.y - p2.y;
+	cosTheta = dx/((dx*dx)+(dy*dy));
 	theta = toDegrees(Math.acos(cosTheta));
-	if (dy < 0) {
-		theta = 360 - theta;
-	}
+	return theta;
 }
 
 var i = particleCount;
 while(i--) {
-	particles.push(new Particle(randInt(10,w-10),randInt(10,h-10),randInt(1,4),randInt(0,359),Math.random()))
+	x = randInt(10,w-10);
+	y = randInt(10,h-10);
+	angle = getAngle(origin,particles[i])
+	if((x > origin.x) && (y < origin.y)) {
+		angle = 90-angle;
+	}
+	if((x > origin.x) && (y > origin.y)) {
+		angle = 90+angle;
+	}
+	if((x < origin.x) && (y < origin.y)) {
+		angle = 270 + angle;
+	}
+	if((x < origin.x) && (y > origin.y)) {
+		angle = 270 - angle;
+	}
+		
+	particles.push(new Particle(x,y,randInt(1,4),angle,Math.random()));
 }
 
 // shim layer with setTimeout fallback
