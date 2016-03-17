@@ -40,7 +40,10 @@ function getBearing(p1,p2) {
 	dx = p2.x - p1.x;
 	dy = p2.y - p1.y;
 	theta = toDegrees(Math.atan2(dy,dx));
-	return theta + 90;
+	if(theta < 0) {
+		theta = 180 - theta;
+	}
+	return theta;
 }
 
 function getComponentVectors(bearing,vel) {
