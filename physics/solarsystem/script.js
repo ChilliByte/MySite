@@ -2,7 +2,7 @@ var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext("2d");
 var h = window.innerHeight - 10
 var w = window.innerWidth - 10
-var particleCount = 100;
+var particleCount = 500;
 var particles = [];
 canvas.height = h;
 canvas.width = w;
@@ -87,7 +87,7 @@ while(i--) {
 	y = randInt(10,h-10);
 	angle = getBearing(origin,{x:x,y:y})
 	vel = 0.001 * Math.random() * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
-	particles.push(new Particle(x,y,randInt(1,4),angle,vel,getComponentVectors(angle,vel)));
+	particles.push(new Particle(x,y,randInt(1,5),angle,vel,getComponentVectors(angle,vel)));
 }
 
 // shim layer with setTimeout fallback
