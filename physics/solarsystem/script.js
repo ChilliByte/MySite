@@ -34,9 +34,8 @@ function getAngle(p1,p2) {
 	//Returns an angle relative to the horizontal
 	dx = p2.x - p1.x;
 	dy = p1.y - p2.y;
-	tanTheta = dy/dx;
-	theta = toDegrees(Math.atan(tanTheta));
-	return theta;
+	theta = toDegrees(Math.atan2(dy,dx));
+	return theta + 90;
 }
 
 var i = particleCount;
@@ -44,18 +43,6 @@ while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
 	angle = getAngle(origin,{x:x,y:y})
-	if((x > origin.x) && (y < origin.y)) {
-		angle = 90-angle;
-	}
-	if((x > origin.x) && (y > origin.y)) {
-		angle = 90+angle;
-	}
-	if((x < origin.x) && (y < origin.y)) {
-		angle = 270 + angle;
-	}
-	if((x < origin.x) && (y > origin.y)) {
-		angle = 270 - angle;
-	}
 		
 	particles.push(new Particle(x,y,randInt(1,4),angle,Math.random()));
 }
