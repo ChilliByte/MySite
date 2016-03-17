@@ -10,7 +10,6 @@ var origin = {
 	x: w/2,
 	y: h/2
 }
-var testAngMom = false;
 //Gravitational Constant, increase to strengthen gravity
 var bigG = 0.025;
 
@@ -85,11 +84,10 @@ function getNetPull(p1) {
 			//adds up all of the horizonal and vertical forces acting on the particle
 		}
 	}
-	if(testAngMom){
-	angMom = getComponentVectors(getBearing(origin,p1),0.001 * Math.sqrt(getDistanceSquared(origin,p1)));
+
+	angMom = getComponentVectors(getBearing(origin,p1),0.001 * (1/Math.sqrt(getDistanceSquared(origin,p1))));
 	p1.cX += angMom.x;
 	p1.cY += angMom.y;
-	}	
 }
 
 var i = particleCount;
