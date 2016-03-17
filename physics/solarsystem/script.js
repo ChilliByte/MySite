@@ -86,7 +86,7 @@ while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
 	angle = getBearing(origin,{x:x,y:y})
-	vel = Math.random() * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
+	vel = 0.0001 * Math.random() * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
 	particles.push(new Particle(x,y,randInt(1,4),angle,vel,getComponentVectors(angle,vel)));
 }
 
