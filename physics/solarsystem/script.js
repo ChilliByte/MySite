@@ -58,6 +58,7 @@ window.requestAnimFrame = (function(){
 // instead of setInterval(render, 16) ....
 
 function render() {
+	ctx.clearRect(0,0,w,h)
 	ctx.fillStyle = "grey";
 	var i = particleCount;
 	while(i--) {
