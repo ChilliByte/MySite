@@ -76,7 +76,7 @@ function getNetPull(p1) {
 		if(p1 != particles[i]) {
 			cObj = getComponentVectors(getBearing(p1,particles[i]),getGravitationalForce(p1,particles[i]));
 			p1.cX += cObj.x;
-			p1.cY += cObj.y;
+			p1.cY -= cObj.y;
 		}
 	}
 }
