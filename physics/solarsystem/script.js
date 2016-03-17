@@ -48,7 +48,7 @@ function getComponentVectors(bearing,vel) {
 	cX = vel * Math.sin(toRadians(bearing % 90));
 	cY = vel * Math.cos(toRadians(bearing % 90));
 	temp = 0
-	/*if((bearing >= 90) && (bearing < 180)) {
+	if((bearing >= 90) && (bearing < 180)) {
 		temp = cY;
 		cY = cX;
 		cX = -1*temp;
@@ -62,7 +62,7 @@ function getComponentVectors(bearing,vel) {
 		temp = cY;
 		cY = -1*cX;
 		cX = temp;
-	}*/
+	}
 	return {x:cX,y:cY};
 }
 function getDistanceSquared(p1,p2) {
@@ -79,7 +79,7 @@ function getNetPull(p1) {
 	var i = particleCount;
 	while(i--) {
 		if(p1 != particles[i]) {
-			cObj = getComponentVectors(getBearing(p1,particles[i]),getGravitationalForce(p1,particles[i]));
+			cObj = getComponentVectors(getBearing(p1,particles[i]),getGravitationalForce(p1,particles[i])/p1.mass);
 			p1.cX += cObj.x;
 			p1.cY -= cObj.y;
 			//adds up all of the horizonal and vertical forces acting on the particle
@@ -92,7 +92,7 @@ while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
 	angle = getBearing(origin,{x:x,y:y})
-	vel = 0.001 * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
+	vel = /*0.001 * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));*/ 0
 	particles.push(new Particle(x,y,randInt(1,5),angle,vel,getComponentVectors(angle,vel)));
 }
 
