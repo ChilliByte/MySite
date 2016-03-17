@@ -34,8 +34,8 @@ function getAngle(p1,p2) {
 	//Returns an angle relative to the horizontal
 	dx = p2.x - p1.x;
 	dy = p1.y - p2.y;
-	cosTheta = dx/((dx*dx)+(dy*dy));
-	theta = toDegrees(Math.acos(cosTheta));
+	tanTheta = dy/dx;
+	theta = toDegrees(Math.atan(tanTheta));
 	return theta;
 }
 
