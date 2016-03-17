@@ -6,10 +6,11 @@ var particleCount = 100;
 var particles = [];
 canvas.height = h;
 canvas.width = w;
-origin = {
+var origin = {
 	x: w/2,
 	y: h/2
 }
+var bigG = 0.0000000001;
 function Particle(x,y,mass,angle,vel,comp) {
 	this.x = x;
 	this.y = y;
@@ -61,6 +62,21 @@ function getComponentVectors(bearing,vel) {
 	return {x:cX,y:cY};
 }
 
+function getGravitationalForce(p1,p2) {
+	r2 = ((p2.y-p1.y)*(p2.y-p1.y)) + ((p2.x-p1.x)*(p2.x-p1.x))
+	force = bigG * ((p1.mass*p2.mass)/r2)
+	return force;
+}
+
+function getNetPull(p1) {
+	var i = particleCount;
+	while(i--) {
+		cObj = getComponentVectors(getBearing(p1,particles[i]),getGravitationalForce(p1,particles[i]));
+		p1.cX += cObj.x;
+		p1.cY += cObj.y;
+	}
+}
+
 var i = particleCount;
 while(i--) {
 	x = randInt(10,w-10);
@@ -94,6 +110,7 @@ function render() {
 		ctx.fill();	
 		particles[i].x += particles[i].cX;
 		particles[i].y += particles[i].cY;
+		getNetPull(particles[i]);
 	}
 
 }
