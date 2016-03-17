@@ -33,7 +33,7 @@ function randInt(min, max) {
 function getAngle(p1,p2) {
 	//Returns an angle relative to the horizontal
 	dx = p2.x - p1.x;
-	dy = p1.y - p2.y;
+	dy = p2.y - p1.y;
 	theta = toDegrees(Math.atan2(dy,dx));
 	return theta + 90;
 }
