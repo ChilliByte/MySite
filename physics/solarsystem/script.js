@@ -45,7 +45,7 @@ function getComponentVectors(bearing,vel) {
 	cX = vel * Math.sin(toRadians(bearing % 90));
 	cY = vel * Math.cos(toRadians(bearing % 90));
 	temp = 0
-	if((bearing >= 90) && (bearing < 180)) {
+	/*if((bearing >= 90) && (bearing < 180)) {
 		temp = cY;
 		cY = cX;
 		cX = -1*temp;
@@ -59,7 +59,7 @@ function getComponentVectors(bearing,vel) {
 		temp = cY;
 		cY = -1*cX;
 		cX = temp;
-	}
+	}*/
 	return {x:cX,y:cY};
 }
 function getDistanceSquared(p1,p2) {
