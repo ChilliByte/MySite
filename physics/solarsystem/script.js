@@ -10,7 +10,7 @@ var origin = {
 	x: w/2,
 	y: h/2
 }
-var bigG = 0.01;
+var bigG = 0.025;
 function Particle(x,y,mass,angle,vel,comp) {
 	this.x = x;
 	this.y = y;
