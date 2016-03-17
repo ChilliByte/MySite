@@ -51,8 +51,9 @@ function getComponentVectors(bearing,vel) {
 		cX = -1*temp;
 	}
 	if((bearing >= 180) && (bearing < 270)) {
-		cX *= -1;
-		cY *= -1;
+		temp = cX
+		cX = -1*cY;
+		cY = -1*temp;
 	}
 	if((bearing >= 270) && (bearing < 360)) {
 		temp = cY;
