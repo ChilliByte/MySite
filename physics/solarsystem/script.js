@@ -2,7 +2,7 @@ var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext("2d");
 var h = window.innerHeight - 10
 var w = window.innerWidth - 10
-var particleCount = 2;
+var particleCount = 20;
 var particles = [];
 canvas.height = h;
 canvas.width = w;
@@ -10,7 +10,7 @@ var origin = {
 	x: w/2,
 	y: h/2
 }
-var bigG = 0.0001;
+var bigG = 0.01;
 function Particle(x,y,mass,angle,vel,comp) {
 	this.x = x;
 	this.y = y;
