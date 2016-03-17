@@ -2,7 +2,7 @@ var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext("2d");
 var h = window.innerHeight - 10
 var w = window.innerWidth - 10
-var particleCount = 500;
+var particleCount = 200;
 var particles = [];
 canvas.height = h;
 canvas.width = w;
@@ -10,7 +10,7 @@ var origin = {
 	x: w/2,
 	y: h/2
 }
-var bigG = 0.00001;
+var bigG = 0.0001;
 function Particle(x,y,mass,angle,vel,comp) {
 	this.x = x;
 	this.y = y;
@@ -86,7 +86,7 @@ while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
 	angle = getBearing(origin,{x:x,y:y})
-	vel = 0.001 * Math.random() * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
+	vel = 0.01 * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
 	particles.push(new Particle(x,y,randInt(1,5),angle,vel,getComponentVectors(angle,vel)));
 }
 
