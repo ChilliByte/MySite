@@ -43,7 +43,7 @@ var i = particleCount;
 while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
-	angle = getAngle(origin,particles[i])
+	angle = getAngle(origin,{x:x,y:y})
 	if((x > origin.x) && (y < origin.y)) {
 		angle = 90-angle;
 	}
