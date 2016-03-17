@@ -12,12 +12,14 @@
       var w = window.innerWidth - 10
       canvas.height = h;
       canvas.width = w;
+      
       function toDegrees (angle) {
         return angle * (180 / Math.PI);
       }
       function toRadians (angle) {
         return angle * (Math.PI / 180);
       }
+      
       // shim layer with setTimeout fallback
       window.requestAnimFrame = (function(){
         return  window.requestAnimationFrame       ||
@@ -32,31 +34,8 @@
       // usage:
       // instead of setInterval(render, 16) ....
       
-      var oX = 50;
-      var oY = h - 50;
-      var projectiles = [];
-      var fric = 1;
       function render() {
-        ctx.strokeStyle = "black";
-        ctx.moveTo(oX,oY-20);
-        ctx.lineTo(oX,oY + 20);
-        ctx.moveTo(oX-20,oY);
-        ctx.lineTo(oX+20,oY);
-        ctx.stroke();
-        
-        var i = projectiles.length ;
-        while (i--) {
-          ctx.fillStyle = "red";
-          ctx.beginPath();
-          ctx.arc(projectiles[i].x,projectiles[i].y,10,0,2*Math.PI);
-          ctx.fill();
-          projectiles[i].x += projectiles[i].velX; 
-          projectiles[i].y -= projectiles[i].velY;
-          
-          projectiles[i].velX *= fric; 
-          projectiles[i].velY -= 0.05;
-        
-        }
+
       }
       
       (function animloop(){
@@ -65,31 +44,15 @@
       })();
       canvas.addEventListener("mousedown", getPosition, false);
       
-      function Projectile(theta) {
-          this.x = oX;
-          this.y = oY;
-          this.theta = theta;
-          this.speed = 5;
-          this.velX = 5 * Math.cos(toRadians(theta));
-          this.velY = 5 * Math.sin(toRadians(theta));
-      }
-      
-      function getPosition(event) {
-        evX = event.x;
-        evY = event.y;
-        evX -= canvas.offsetLeft;
-        evY -= canvas.offsetTop;
-  
-        dx = evX - oX;
-        dy = oY - evY;
+      function getAngle(p1,p2) {
+        dx = p2.x - p1.x;
+        dy = p2.y - p1.y;
         length = Math.sqrt((dx * dx) + (dy * dy));
         cosTheta = ((length * length) + (dx * dx) - (dy * dy)) / (2 * length * dx)
         theta = toDegrees(Math.acos(cosTheta));
         if (dy < 0) {
             theta = 360 - theta;
         }
-        alert("New Projectile Added! Launch Angle: " + theta);
-        projectiles.push(new Projectile(theta));
       }
     </script>
   </body>
