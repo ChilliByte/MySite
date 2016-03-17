@@ -54,9 +54,8 @@ function getComponentVectors(bearing,vel) {
 		cX = -1*temp;
 	}
 	if((bearing >= 180) && (bearing < 270)) {
-		temp = cX
-		cX = -1*cY;
-		cY = -1*temp;
+		cX *= -1;
+		cY *= -1;
 	}
 	if((bearing >= 270) && (bearing < 360)) {
 		temp = cY;
@@ -92,7 +91,7 @@ while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
 	angle = getBearing(origin,{x:x,y:y})
-	vel = /*0.001 * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));*/ 0
+	vel = 0.001 * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
 	particles.push(new Particle(x,y,randInt(1,5),angle,vel,getComponentVectors(angle,vel)));
 }
 
