@@ -41,7 +41,7 @@ function getBearing(p1,p2) {
 	dy = p2.y - p1.y;
 	theta = toDegrees(Math.atan2(dy,dx));
 	if(theta < 0) {
-		theta = 180 - theta;
+		theta = 360 + theta;
 	}
 	return theta;
 }
