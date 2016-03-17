@@ -61,9 +61,11 @@ function getComponentVectors(bearing,vel) {
 	}
 	return {x:cX,y:cY};
 }
-
+function getDistanceSquared(p1,p2) {
+	return ((p2.y-p1.y)*(p2.y-p1.y)) + ((p2.x-p1.x)*(p2.x-p1.x));
+}
 function getGravitationalForce(p1,p2) {
-	r2 = ((p2.y-p1.y)*(p2.y-p1.y)) + ((p2.x-p1.x)*(p2.x-p1.x))
+	r2 = getDistanceSquared(p1,p2);
 	force = bigG * ((p1.mass*p2.mass)/r2)
 	return force;
 }
@@ -83,8 +85,8 @@ var i = particleCount;
 while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
-	angle = getBearing(origin,{x:x,y:y})
-	vel = Math.random();
+	angle = getBearing()
+	vel = Math.random() * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
 	particles.push(new Particle(x,y,randInt(1,4),angle,vel,getComponentVectors(angle,vel)));
 }
 
