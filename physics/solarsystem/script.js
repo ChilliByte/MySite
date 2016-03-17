@@ -71,9 +71,11 @@ function getGravitationalForce(p1,p2) {
 function getNetPull(p1) {
 	var i = particleCount;
 	while(i--) {
-		cObj = getComponentVectors(getBearing(p1,particles[i]),getGravitationalForce(p1,particles[i]));
-		p1.cX += cObj.x;
-		p1.cY += cObj.y;
+		if(p1 != particles[i]) {
+			cObj = getComponentVectors(getBearing(p1,particles[i]),getGravitationalForce(p1,particles[i]));
+			p1.cX += cObj.x;
+			p1.cY += cObj.y;
+		}
 	}
 }
 
