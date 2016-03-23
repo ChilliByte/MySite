@@ -15,7 +15,7 @@ pubnub.subscribe({
     channel: '7cc',
     connect: alert("connected!"),
     callback: function(m) {
-      
+        msgBox.innerHTML += m;
     },
     error: function(err) {
         console.log(err);
