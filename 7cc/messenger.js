@@ -8,14 +8,6 @@ window.onload = function() {
         publish_key: 'pub-c-fde6521c-dd9d-4eb1-9081-1420d5c0e8ff' // only required if publishing
     });
     
-    function send() {
-      pubnub.publish({
-          channel: me,
-          message: msg.value,
-      });
-      msgBox.innerHTML += "<div class='from'><h1>"+me.substring(0,1).toUpperCase()+"</h1><p>"+msg.value+"</p></div>";
-    }
-    
     pubnub.subscribe({
         channel: who,
         connect: alert("connected!"),
@@ -26,4 +18,11 @@ window.onload = function() {
             console.log(err);
         }
     });
+}
+function send() {
+  pubnub.publish({
+      channel: me,
+      message: msg.value,
+  });
+  msgBox.innerHTML += "<div class='from'><h1>"+me.substring(0,1).toUpperCase()+"</h1><p>"+msg.value+"</p></div>";
 }
