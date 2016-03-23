@@ -30,11 +30,10 @@ main {
 
 textarea {
   height:40px;
-  width:calc(80% - 50px);
+  width:calc(80% - 51px);
   position:fixed;
   left:20%;
   bottom:0;
-  right:5%;
   box-sizing:border-box;
   border-radius:3px;
 }
@@ -55,4 +54,36 @@ button {
   font-size: 16px;
   box-sizing:border-box;
   border-radius:3px;
+}
+div {
+  position:relative;
+  width:100%;
+}
+div.to h1 {
+  display:inline-block;
+  height:80px;
+  width:80px;
+  color:white;
+  background-color:#09f;
+  float:left;
+  border-radius:50%;
+}
+div.to p {
+  width: calc(90% - 100px);
+  
+}
+div.to p:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 16px 16px 16px 0;
+border-color: transparent #999;
+display: block;
+width: 0;
+z-index: 1;
+left: -16px;
+top: calc(50% - 8px);
+}
+
 }
