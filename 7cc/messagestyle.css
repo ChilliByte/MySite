@@ -16,6 +16,7 @@ nav {
   left:0;
   top:0;
   bottom:0;
+  border-right:1px solid #333;
   box-sizing:border-box;
 }
 
@@ -29,7 +30,7 @@ main {
 
 textarea {
   height:40px;
-  width:75%;
+  width:calc(80% - 50px);
   position:fixed;
   left:20%;
   bottom:0;
@@ -40,7 +41,7 @@ textarea {
 
 button {
   height:40px;
-  width:4.5%;
+  width:50px;
   position:fixed;
   right:0;
   bottom:0;
