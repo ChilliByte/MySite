@@ -1,0 +1,415 @@
+html {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  
+  background-image: url("https://download.unsplash.com/photo-1433733071959-30cd185d14a8"), url('https://download.unsplash.com/photo-1438164249452-3220997b62e7');
+  background-size:cover;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+html.scrolled {
+  background-image: url('https://download.unsplash.com/photo-1438164249452-3220997b62e7');
+  background-size:cover;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+body {
+  position:relative;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  width:100%;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  background-color:rgba(0,0,0,0.5);
+  color:white;
+  font-family:Raleway;
+}
+
+nav {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:999;
+  height:60px;
+  width:100%;
+  background-color:rgba(0,0,0,0);
+  border-bottom:0px solid rgba(10,10,10,0);
+  transition: background-color 0.5s, border-bottom 0.5s;
+  font-size:2em;
+  padding-left:10px;
+  line-height:60px;
+}
+
+nav a {
+  position:relative;
+  top:0;
+  display:inline-block;
+  height:61px;
+  width:120px;
+  margin:0;
+  box-sizing:border-box;
+  float:right;
+  text-align:center;
+  border-left:0.5px solid #FFFFFF;
+  border-right:0.5px solid white;
+  border-bottom:3px solid #FFFFFF;
+  font-size:0.5em;
+  color:white;
+  text-decoration:none;
+}
+
+nav a:hover {
+  border-color:#f30000;
+  color:#f30000;
+}
+
+nav.section1 a:last-child {
+    border-color:#f30000;
+    color:#f30000;
+}
+
+nav.section2 a:last-child {
+    border-color:#FFFFFF;
+    color:white;
+}
+
+nav.section2 a:nth-child(2) {
+    border-color:#f30000;
+    color:#f30000;
+}
+
+nav.section3 a:last-child {
+    border-color:#FFFFFF;
+    color:white;
+}
+
+nav.section3 a:nth-child(2) {
+    border-color:#FFFFFF;
+    color:white;
+}
+
+nav.section3 a:first-child {
+    border-color:#f30000;
+    color:#f30000;
+}
+#nav {
+  height:22vh;
+}
+
+body.scrolled nav {
+  background-color:rgba(40,40,40,1);
+  border-bottom:1px solid rgba(150,150,150,1);
+  transition: background-color 0.5s, border-bottom 0.5s;
+}
+
+section {
+  height:calc(100vh - 60px);
+  width:100%;
+  margin:0;
+  box-sizing:border-box;
+}
+
+section:nth-child(3) {
+  margin-top:60px;
+  text-align:center;
+  height: 69vh;
+}
+
+
+section:nth-child(3) h1 {
+  font-size:9vw;
+  margin:5px;
+}
+
+section:nth-child(3) h2 {
+  font-size:4vw;
+  margin:5px;
+}
+
+section:nth-child(3) h3 {
+  font-size:2.5vw;
+  margin:5px;
+}
+
+section:nth-child(4) {
+  background-color:#EEEEEE;
+  height:140vh;
+  color:#333;
+  text-align:center;
+}
+
+section:nth-child(4) h1 {
+  font-size:2em;
+  margin-bottom:30px;
+}
+
+section:nth-child(4) figure {
+  position:relative;
+  display:inline-block;
+  height:400px;
+  width:250px;
+  margin:auto 10px auto;
+  border:3px solid #333;
+  border-radius:15px;
+  background-color:rgb(50,40,50);
+  color:white;
+}
+
+section:nth-child(4) figure figcaption {
+  position:absolute;
+  margin:auto;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  height:50%;
+  width:80%;
+}
+section:nth-child(4) article {
+  background-color:rgb(40,40,40);
+  height:250px;
+  color:#EEEEEE;
+  text-align:left;
+  padding:20px;
+  position:relative;
+}
+
+section:nth-child(4) article h1 {
+  font-size:2em;
+  margin:0 0 5px;
+  width:400px;
+}
+
+section:nth-child(4) article p {
+  width:400px;
+  margin:0;
+  display:inline-block;
+}
+
+section:nth-child(4) article img {
+  height:100%;
+  width:234px; /*CHANGE TO AUTO LATER*/
+  border-radius:50%;
+  display:inline-block;
+  vertical-align:top;
+  position:absolute;
+  top:0;
+  right:0;
+  border-bottom:3px solid #131313;
+  border-right:3px solid #131313;
+}
+
+section:nth-child(4) article #container {
+  height:80%;
+  width:650px;  
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+section:nth-child(5) {
+  position:relative;
+  height:83vh;
+}
+
+section:nth-child(5) input {
+  height:35px;
+  width:90%;
+  background-color:#FFF;
+  color:#333;
+  border:1px solid #333;
+  border-radius:5px;
+  margin-bottom:5px;
+  padding-left:10px;
+  padding-top:3px;
+  font-size:105%;
+  box-sizing:border-box;
+}
+
+section:nth-child(5) input[type="submit"]:hover {
+  background-color:#333;
+  color:#eee;
+  border:1px solid #eee;
+}
+
+section:nth-child(5) input[type="submit"]:active {
+  background-color:#333;
+  color:#f30000;
+  border:3px solid #f30000;
+}
+
+
+
+section:nth-child(5) textarea {
+  height:150px;
+  width:90%;
+  background-color:#FFF;
+  color:#333;
+  border:1px solid #333;
+  border-radius:5px;
+  margin-bottom:5px;
+  font-size:105%;
+  box-sizing:border-box;
+}
+
+#socialContainer {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  padding-top:16%;
+  text-align:center;
+  box-sizing:border-box;
+}
+
+#socialContainer a {
+  font-size:4em;
+  color:white;
+  text-decoration:none;
+  opacity:0.5;
+  transition: opacity 0.5s;
+  display:inline-block;
+  margin: 5px 10px;
+}
+
+#socialContainer  a:hover {
+  opacity:1;
+  transition: opacity 0.5s;
+}
+
+#socialContainer:after {
+/*  content: "Or, alternatively, you can contact me using the form on the right!";*/
+}
+
+#formContainer {
+  position:absolute;
+  right:0;
+  height:100%;
+  width:45%;
+}
+
+footer {
+  height:8vh;
+  background-color:#eee;
+  text-align:center;
+  color:#333;
+  padding-top:15px;
+  box-sizing:border-box;
+  border-top:3px solid #ccc;
+}
+
+@media screen and (min-width: 1200px) {
+  section:nth-child(3) h1 {
+    font-size: 115px;
+  }
+}
+/* Tablets */
+/*This one should change the portfolio tiles */
+@media screen and (max-width: 855px) {
+  section:nth-child(4)  {
+    height:192vh;
+  }
+  section:nth-child(4)  figure {
+    height:140px;
+    width:90%;
+    margin-bottom: 10px;
+  }
+  section:nth-child(4)  figcaption {
+    height:90%;
+    width:60%;
+  }
+  
+}
+/* Large Phones */
+/*This one should change the about section */
+@media screen and (max-width: 675px) {
+  section:nth-child(4) article {
+    height:500px;
+  }
+  section:nth-child(4) article #container {
+    height:100%;
+    width:100%;
+    margin:0;
+    text-align:center;
+  }
+  section:nth-child(4) article #container img {
+    height:220px;
+    width:220px;
+    top:20px;
+    left:0;
+    right:0;
+    margin:0 auto;
+  }
+  
+  section:nth-child(4) article #container h1 {
+    width:80%;
+    margin:280px 10% 10px;
+  }
+  section:nth-child(4) article #container p {
+    width:80%;
+  }
+  footer {
+    font-size: 2.5vw;
+  }
+}
+/* Small Phones */
+/*This one should change the contact form and remove the <a>  's in <nav>*/
+@media screen and (max-width: 600px) {
+  nav a {
+    width:60px;
+    line-height:22px;
+    padding-top:6px;
+  }
+  
+  section:nth-child(4) {
+    height:192vh;
+  }
+  section:nth-child(5) {
+    height:116vh;
+  }
+  section:nth-child(5) #socialContainer {
+      width:95%;
+      left:0;
+      right:0;
+  }
+  section:nth-child(5) #formContainer {
+    width:95%;
+    left:0;
+    right:0;
+    margin:260px auto 0;
+    height:80vh;
+  }
+  section:nth-child(5) input {
+    width:100%;
+  }
+  section:nth-child(5) textarea {
+    width:100%;
+  }
+  #socialContainer:after {
+    /*content: "Or, alternatively, you can contact me using to form below!";*/
+  }
+}
+@media screen and (max-width: 400px) {
+  nav   {text-align:center;}
+  nav a {display:none;}
+}
