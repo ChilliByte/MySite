@@ -35,7 +35,7 @@ body {
   margin:0;
   padding:0;
   box-sizing:border-box;
-  background-color:rgba(255,255,255,0.5);
+  background-color:rgba(200,200,200,0.2);
   color:white;
   font-family:Raleway;
 }
@@ -68,7 +68,7 @@ nav a {
   text-align:center;
   border-bottom:3px solid #999999;
   font-size:0.5em;
-  color:white;
+  color:#999999;
   text-decoration:none;
 }
 
@@ -78,8 +78,8 @@ nav a:hover {
 }
 
 nav.section1 a:last-child {
-    border-color:#f30000;
-    color:#f30000;
+    border-color:#0099ff;
+    color:#0099ff;
 }
 
 nav.section2 a:last-child {
@@ -88,8 +88,8 @@ nav.section2 a:last-child {
 }
 
 nav.section2 a:nth-child(2) {
-    border-color:#f30000;
-    color:#f30000;
+    border-color:#0099ff;
+    color:#0099ff;
 }
 
 nav.section3 a:last-child {
@@ -103,16 +103,16 @@ nav.section3 a:nth-child(2) {
 }
 
 nav.section3 a:first-child {
-    border-color:#f30000;
-    color:#f30000;
+    border-color:#0099ff;
+    color:#0099ff;
 }
 #nav {
   height:22vh;
 }
 
 body.scrolled nav {
-  background-color:rgba(200,200,200,1);
-  border-bottom:1px solid rgba(200,200,200,1);
+  background-color:rgba(255,255,255,1);
+  border-bottom:1px solid rgba(255,255,255,1);
   transition: background-color 0.5s, border-bottom 0.5s;
 }
 
