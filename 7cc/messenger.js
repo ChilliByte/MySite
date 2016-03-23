@@ -13,7 +13,7 @@ function send() {
 var msgBox = document.getElementById("messages");
 pubnub.subscribe({
     channel: '7cc',
-    connect: play,
+    connect: alert("connected!"),
     callback: function(m) {
       
     },
