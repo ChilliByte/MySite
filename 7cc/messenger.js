@@ -1,8 +1,6 @@
-window.onload = function() {
-    var me = prompt("Enter Name");
-    var who = prompt("Who to talk to?");
-    var msgBox = document.getElementById("messages");
-}
+var me = prompt("Enter Name");
+var who = prompt("Who to talk to?");
+var msgBox = document.getElementById("messages");
 
 var pubnub = PUBNUB({
         subscribe_key: 'sub-c-055f8160-f12c-11e5-8126-0619f8945a4f', // always required
