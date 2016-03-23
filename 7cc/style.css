@@ -10,7 +10,7 @@ html {
   padding:0;
   box-sizing:border-box;
   
-  background-image: url("https://download.unsplash.com/photo-1433733071959-30cd185d14a8"), url('https://download.unsplash.com/photo-1438164249452-3220997b62e7');
+  background-image: url("https://images.unsplash.com/photo-1455541029258-597a69778eed"), url('https://images.unsplash.com/photo-1454625191319-786c05137ef5');
   background-size:cover;
   background-attachment:fixed;
   background-repeat:no-repeat;
@@ -18,7 +18,7 @@ html {
 }
 
 html.scrolled {
-  background-image: url('https://download.unsplash.com/photo-1438164249452-3220997b62e7');
+  background-image: url('https://images.unsplash.com/photo-1454625191319-786c05137ef5');
   background-size:cover;
   background-attachment:fixed;
   background-repeat:no-repeat;
@@ -35,7 +35,7 @@ body {
   margin:0;
   padding:0;
   box-sizing:border-box;
-  background-color:rgba(0,0,0,0.5);
+  background-color:rgba(255,255,255,0.5);
   color:white;
   font-family:Raleway;
 }
@@ -48,8 +48,8 @@ nav {
   z-index:999;
   height:60px;
   width:100%;
-  background-color:rgba(0,0,0,0);
-  border-bottom:0px solid rgba(10,10,10,0);
+  background-color:rgba(200,200,200,0);
+  border-bottom:0px solid rgba(200,200,200,0);
   transition: background-color 0.5s, border-bottom 0.5s;
   font-size:2em;
   padding-left:10px;
@@ -66,17 +66,15 @@ nav a {
   box-sizing:border-box;
   float:right;
   text-align:center;
-  border-left:0.5px solid #FFFFFF;
-  border-right:0.5px solid white;
-  border-bottom:3px solid #FFFFFF;
+  border-bottom:3px solid #999999;
   font-size:0.5em;
   color:white;
   text-decoration:none;
 }
 
 nav a:hover {
-  border-color:#f30000;
-  color:#f30000;
+  border-color:#0099ff;
+  color:#0099ff;
 }
 
 nav.section1 a:last-child {
@@ -113,8 +111,8 @@ nav.section3 a:first-child {
 }
 
 body.scrolled nav {
-  background-color:rgba(40,40,40,1);
-  border-bottom:1px solid rgba(150,150,150,1);
+  background-color:rgba(200,200,200,1);
+  border-bottom:1px solid rgba(200,200,200,1);
   transition: background-color 0.5s, border-bottom 0.5s;
 }
 
