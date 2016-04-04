@@ -8,6 +8,7 @@
         width:100%;
         margin:0;
         padding:0;
+        font-family:Calibri;
       }
       textarea {
         height:100%;
@@ -26,11 +27,12 @@
         left:70%;
         bottom:0;
         right:0;
+        padding-left:10px;
       }
     </style>
   </head>
   <body>
-    <textarea id="article"></textarea>
+    <textarea id="article">Paste your article body (no headings, bylines or images)here, then fill in the form on the right!</textarea>
     <nav>
       <h2>Category</h2>
       <select id="cat">
@@ -46,8 +48,20 @@
       <input type="date" id="date" />
       <h2>Author</h2>
       <input type="text" id="author" />
+      
+      <h2>Submit</h2>
+      <button onclick="submit()">Submit</button>
+      
       <h2>Image</h2>
       <button onclick="addImage()">Add Image</button>
+      
     </nav>
+    <script>
+      var output = document.getElementById("article");
+      function submit() {
+        var text = output.innerHTML;
+        alert(text);
+      }
+    </script>
   </body>
 </html>
