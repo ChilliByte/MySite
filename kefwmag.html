@@ -55,6 +55,8 @@
       <h2>Image</h2>
       <button onclick="addImage()">Add Image</button>
       
+      <h2>Filename:</h2>
+      <p id="filename">Press Submit to Generate Filename</p>
     </nav>
     <script>
       var output = document.getElementById("article");
@@ -70,6 +72,8 @@
         output.innerHTML += "author: \"" + author.value + "\"\n";
         output.innerHTML += "---\n";
         output.innerHTML += text;
+        text = title.toLowerCase().replace(/ /g,"-");
+        document.getElementById("filename").innerHTML = date.value + "-" + text + ".md";
       }
       function addImage() {
         var fname = prompt("Filename?");
