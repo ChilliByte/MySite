@@ -75,7 +75,7 @@
         output.innerHTML += "author: \"" + author.value + "\"\n";
         output.innerHTML += "---\n";
         output.innerHTML += text;
-        text = title.toLowerCase().replace(/ /g,"-");
+        text = title.value.toLowerCase().replace(/ /g,"-");
         document.getElementById("filename").innerHTML = date.value + "-" + text + ".md";
       }
       function addImage() {
