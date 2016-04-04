@@ -74,7 +74,7 @@
       function addImage() {
         var fname = prompt("Filename?");
         var desc = prompt("Description?");
-        text = "{% include image.html url=\"assets/"+fname+"\" description=\""+desc+"\" %}";
+        text = "\n {% include image.html url=\"assets/"+fname+"\" description=\""+desc+"\" %}";
         output.innerHTML += text;
       }
     </script>
