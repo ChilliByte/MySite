@@ -58,8 +58,9 @@
     </nav>
     <script>
       var output = document.getElementById("article");
+      var text = "";
       function submit() {
-        var text = output.innerHTML;
+        text = output.innerHTML;
         var formattedDate = date.value + " 12:00:00 +0000";
         output.innerHTML  = "---\n";
         output.innerHTML += "layout: dposts\n";
