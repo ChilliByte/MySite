@@ -11,18 +11,43 @@
       }
       textarea {
         height:100%;
+        width:70%;
+        position:fixed;
+        left:0;
+        top:0;
+        bottom:0;
+        right:30%;
+      }
+      nav {
+        height:100%;
+        width:30%;
+        position:fixed;
+        top:0;
+        left:70%;
+        bottom:0;
+        right:0;
+      }
     </style>
   </head>
   <body>
     <textarea id="article"></textarea>
     <nav>
-      <select>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
+      <h2>Category</h2>
+      <select id="cat">
+        <option value="tech">Technology</option>
+        <option value="news">School News</option>
+        <option value="arts">Arts and Entertainment</option>
+        <option value="lifestyle">Lifestyle</option>
+        <option value="sports">Sports</option>
       </select>
+      <h2>Title</h2>
+      <input type="text" id="title" />
+      <h2>Date</h2>
+      <input type="date" id="date" />
+      <h2>Author</h2>
+      <input type="text" id="author" />
+      <h2>Image</h2>
+      <button onclick="addImage()">Add Image</button>
     </nav>
   </body>
 </html>
