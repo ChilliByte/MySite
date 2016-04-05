@@ -18,7 +18,7 @@ function drawBean(bean) {
   } else if (bean.water < 50) {
   } else if (bean.love < 50) {
   } else {
-    svg = '<svg width="165" height="169" id='+ bean.name + 'xmlns="http://www.w3.org/2000/svg">'+
+    svg = '<svg width="165" height="169" id=\"'+ bean.name + '\" xmlns="http://www.w3.org/2000/svg">'+
           ' <g>'+
           '    <title>background</title>'+
           '    <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>'+
