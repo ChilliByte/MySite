@@ -32,7 +32,7 @@ function render() {
     player.velX *= friction;
     player.velY += gravity;
     for(var i = 0; i < boxes.length; i++) {
-      ctx.fillRect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
+      ctx.fillRect(boxes[i].x, boxes[i].y, boxes[i].w, boxes[i].h);
       var dir = colCheck(player,boxes[i]);
       if (dir === "l" || dir === "r") {
         player.velX = 0;
