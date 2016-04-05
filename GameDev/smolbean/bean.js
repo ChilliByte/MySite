@@ -11,7 +11,7 @@ function Bean(color,name) {
   this.water = 100;
   this.love = 100;
 }
-var Deep = new Bean("#07E","Deep");
+var Deep = new Bean("#e6a062","Deep");
 function drawBean(bean) {
   if(bean.fun < 50) {
   } else if (bean.food < 50) {
