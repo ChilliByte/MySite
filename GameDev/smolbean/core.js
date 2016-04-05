@@ -4,7 +4,7 @@ var h = 900;
 var w = 1600;
 canvas.height = h;
 canvas.width = w;
-var friction = 0.8;
+var friction = 0.9;
 var gravity = 0.3;
 var boxes = [];
 boxes.push({
@@ -42,6 +42,10 @@ function render() {
     player.x += player.velX;
     player.y += player.velY;
     ctx.drawSvg(drawBean(player),player.x,player.y,player.w,player.h);
+    if(Math.random() < (1/200)) {
+      player.velY = -6;
+      player.velX = (Math.random()-0.5) * 20;
+    }
   }
 }
 (function animloop(){
