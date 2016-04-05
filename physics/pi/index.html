@@ -101,11 +101,11 @@
           } else {
             t-=3
           }
-          if (t == 0.8) {
+          if (t < 0.8) {
             inc = true;
           }
-          if (t >150) {
-            inc = false
+          if (t > 150) {
+            inc = false;
           }
           innerLoop = true;
           while(innerLoop) {
