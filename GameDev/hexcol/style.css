@@ -55,11 +55,15 @@ body {
   box-sizing:border-box;
   text-align:center;
 }
-
-.game h1 {
-  font-size:2em;
+.game div {
   height:30vh;
   width:90vw;
+  background:#555;
+}
+.game div h1 {
+  font-size:2em;
+  height:28vh;
+  width:80vw;
   margin:15px auto;
   background:#555;
   border: 5px dashed #333;
