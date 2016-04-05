@@ -60,14 +60,15 @@
       // instead of setInterval(render, 16) ....
       
       var oX = w/2;
-      var loop = true;
+      var mainLoop = true;
+      var innerloop = true;
       var x = 16;
       var y = 16;
       var c = 0;
       var d = 0;
       var t=0.8
       function render() {
-        if(loop) {
+        if(mainloop) {
           c++;
           if(c == parseInt(pi[d],10)+1) {
             ctx.fillStyle=getColor((t%w),w-x,y);
@@ -89,12 +90,12 @@
             loop = false
           }
         } else {
-          loop = true;
           x = 16;
           y = 16;
           c = 0;
           d = 0;
-          while(loop) {
+          innerLoop = true;
+          while(innerLoop) {
             c++;
             if(c == parseInt(pi[d],10)+1) {
               ctx.fillStyle=getColor((t%w),w-x,y);
@@ -113,7 +114,7 @@
               x=16;
             }
             if (y == 784) {
-              loop = false
+              innerLoop = false
             }
         }
       }
