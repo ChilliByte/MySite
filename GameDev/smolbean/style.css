@@ -55,6 +55,12 @@ div {
     z-index:5;
     text-align:left;
 }
+#beanSvg h1 {
+    text-align:center;
+}
+#beanSvg h3 {
+    width:40%;
+}
 #beanSvg svg {
     float:right;
 }
