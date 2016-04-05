@@ -56,15 +56,17 @@ body {
   text-align:center;
 }
 .game div {
-  height:30vh;
+  height:35vh;
   width:90vw;
   background:#555;
+  border-radius: 20px;
+  margin:0 auto;
 }
 .game div h1 {
   font-size:2em;
   height:28vh;
   width:80vw;
-  margin:15px auto;
+  margin:calc(50% - 14vh) auto;
   background:#555;
   border: 5px dashed #333;
   border-radius:15px;
