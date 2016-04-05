@@ -27,7 +27,7 @@
       canvas.width = w;
       
       var r,g,b;
-      function getColor(x,y,t) {
+      function getColor(x,y) {
         return "rgb(" + Math.floor(((4*x)/w)*255) + ","+ 200 + "," + Math.floor(((4*y)/h)*255) + ")";
       }
       // shim layer with setTimeout fallback
@@ -48,16 +48,14 @@
       var oY = h/2;
       var x = 0;
       var y = 0;
-      var t = 0;
       function render() {
         ctx.fillStyle = getColor(x,y,t);
         ctx.beginPath();
-        ctx.arc(x,y,0.5,0,2*Math.PI);
+        ctx.arc(x,y,3,0,2*Math.PI);
         ctx.fill();
-        x++
-        t++
-        if(x%w == w-1) {
-          y++
+        x+=10
+        if (x == 200) {
+          y+=10
           x=0;
         }
       }
