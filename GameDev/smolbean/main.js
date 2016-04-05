@@ -26,7 +26,10 @@ function colCheck(shapeA, shapeB) {
         colDir = null;
  
     // if the x and y vector are less than the half width or half height, they we must be inside the object, causing a collision
-    if (Math.abs(vX) < hWidths && Math.abs(vY) < hHeights) {         // figures out on which side we are colliding (top, bottom, left, or right)         var oX = hWidths - Math.abs(vX),             oY = hHeights - Math.abs(vY);         if (oX >= oY) {
+    if (Math.abs(vX) < hWidths && Math.abs(vY) < hHeights) {         // figures out on which side we are colliding (top, bottom, left, or right)         
+      var oX = hWidths - Math.abs(vX),             
+          oY = hHeights - Math.abs(vY);         
+      if (oX >= oY) {
             if (vY > 0) {
                 colDir = "t";
                 shapeA.y += oY;
@@ -34,7 +37,7 @@ function colCheck(shapeA, shapeB) {
                 colDir = "b";
                 shapeA.y -= oY;
             }
-        } else {
+      } else {
             if (vX > 0) {
                 colDir = "l";
                 shapeA.x += oX;
