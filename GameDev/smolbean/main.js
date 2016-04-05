@@ -8,10 +8,11 @@ function createBean() {
 
 window.onload = function() {
   var beanCols = document.querySelectorAll("input[type=color]");
-  for(var i = 0; i < beanCols.length; i++) {
-    beanCols[i].onchange = function(e) {
-      alert("color changed to " + this.value);
-      console.log(e);
-    }
+  beanCols[0].onchange = function(e) {
+      document.getElementsByTagName("path")[0].style.fill=this.value;
+  }
+  beanCols[1].onchange = function(e) {
+      document.getElementsByTagName("ellipse")[0].style.fill=this.value;
+      document.getElementsByTagName("ellipse")[1].style.fill=this.value;
   }
 }
