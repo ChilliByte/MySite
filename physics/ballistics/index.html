@@ -25,7 +25,7 @@
     <canvas id="myCanvas"></canvas>
     <div id="powerCont">
       Power:
-      <input type="number" id="power" />
+      <input type="number" id="power" value="5" />
     </div>
     <script>
       var canvas = document.getElementById('myCanvas');
@@ -43,7 +43,7 @@
       }
       var r,g,b;
       function getColor(x,y) {
-        return "rgb(" + 0 + ",130," + 0 + ")";
+        return "rgb(" + (x/w)*255 + ",130," + (y/h)*255 + ")";
       }
       // shim layer with setTimeout fallback
       window.requestAnimFrame = (function(){
