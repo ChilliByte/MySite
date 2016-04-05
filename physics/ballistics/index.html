@@ -43,7 +43,7 @@
       }
       var r,g,b;
       function getColor(x,y) {
-        return "rgb(" + Math.floor((x/w)*255) + ",130," + Math.floor((y/h)*255) + ")";
+        return "rgb(" + Math.floor((x/w)*127.5)*2 + ",130," + Math.floor((y/h)*255) + ")";
       }
       // shim layer with setTimeout fallback
       window.requestAnimFrame = (function(){
