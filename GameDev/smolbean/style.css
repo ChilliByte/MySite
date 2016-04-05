@@ -60,6 +60,7 @@ a {
 }
 #beanSvg h3 {
     width:40%;
+    margin:0;
 }
 #beanSvg svg {
     float:right;
