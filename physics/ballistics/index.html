@@ -99,7 +99,7 @@
           this.x = oX;
           this.y = oY;
           this.theta = theta;
-          this.speed = power.value;
+          this.speed = parseInt(power.value,10);
           this.velX = 5 * Math.cos(toRadians(theta));
           this.velY = 5 * Math.sin(toRadians(theta));
       }
