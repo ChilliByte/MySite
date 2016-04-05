@@ -18,7 +18,7 @@ window.requestAnimFrame = (function(){
 // usage:
 // instead of setInterval(render, 16) ....
 function render() {
- 
+  Deep.draw();
 }
 (function animloop(){
   requestAnimFrame(animloop);
