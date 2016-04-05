@@ -24,7 +24,7 @@ function getWrongColor(correct,diff) {
     wrongCol -= shiftArray[diff];
   }
   wrongCol = wrongCol.toString(16);
-  wrongCol = correct.slice(0,shiftedCol)+wrongCol+correct.slice(shiftedCol+2);
+  return correct.slice(0,shiftedCol)+wrongCol+correct.slice(shiftedCol+2);
 }
 
 function hideMenu() {
@@ -35,10 +35,10 @@ function play(difficulty) {
   currentSection = document.querySelectorAll("section.game")[difficulty]
   currentSection.style.display = "block";
   count = currentSection.children.length
-  wrong = getRandomInt(0,count);
+  wrong = getRandomInt(1,count);
   correctCol = getRandomColor();
   wrongCol = getWrongColor(correctCol,difficulty);
-  while(count--) {
+  while(count-- > 0) {
     if(count == wrong) {
       currentSection.children[count].style.backgroundColor = wrongCol;
     } else {
