@@ -41,7 +41,7 @@ function render() {
     }
     player.x += player.velX;
     player.y += player.velY;
-    ctx.drawSvg(drawBean(player),player.x,player.y,64,64);
+    ctx.drawSvg(drawBean(player),player.x,player.y,player.w,player.h);
   }
 }
 (function animloop(){
