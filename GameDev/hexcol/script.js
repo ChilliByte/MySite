@@ -10,8 +10,16 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function getRandomHex(min, max) {
+    value = getRandomInt(min,max).toString();
+    if(value.length == 1) {
+        value = "0"+value;
+    }
+    return value;
+}
+
 function getRandomColor() {
-    return "#" + getRandomInt(0, 256).toString(16) + "" + getRandomInt(0, 256).toString(16) + "" + getRandomInt(0, 256).toString(16);
+    return "#" + getRandomHex(0,256) + "" + getRandomHex(0, 256) + "" + getRandomHex(0, 256);
 }
 
 function getWrongColor(correct, diff) {
