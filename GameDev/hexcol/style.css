@@ -59,6 +59,27 @@ body {
   font-size:3vmin;
 }
 
+.game a {
+  display:inline-block;
+}
+
+nav a {
+  height:15vh;
+  width:80vw;
+  border-bottom:3px solid #FFA;
+  background-color:#FFF;
+  color:#FFA;
+}
+
+nav a:active {
+  height:15vh;
+  width:80vw;
+  margin-top:2px;
+  border-bottom:1px solid #FFA;
+  background-color:#FFF;
+  color:#FFA;
+}
+
 section {
   display:none;
   box-sizing:border-box;
