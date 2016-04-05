@@ -11,7 +11,7 @@ function getRandomInt(min, max) {
 }
 
 function getRandomHex(min, max) {
-    value = getRandomInt(min,max).toString();
+    value = getRandomInt(min,max).toString(16);
     if(value.length == 1) {
         value = "0"+value;
     }
