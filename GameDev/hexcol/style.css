@@ -58,6 +58,12 @@ body {
 
 .game h1 {
   font-size:2em;
+  height:30vh;
+  width:90vw;
+  margin:15px auto;
+  background:#555;
+  border: 5px dashed #333;
+  border-radius:15px;
 }
 
 .game a {
@@ -68,10 +74,11 @@ nav a {
   height:10vh;
   width:80vw;
   margin-bottom:2vh;
-  border-bottom:8px solid #DDD;
+  border-bottom:8px solid #333;
   border-radius:10px;
   background-color:#FFF;
-  color:#DDD;
+  color:#333;
+  line-height:10vh;
   font-size:1.5em;
 }
 
