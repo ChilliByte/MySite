@@ -62,6 +62,7 @@
       var oX = w/2;
       var mainLoop = true;
       var innerLoop = true;
+      var inc = true;
       var x = 16;
       var y = 16;
       var c = 0;
@@ -95,7 +96,17 @@
           y = 16;
           c = 0;
           d = 0;
-          t+= 3;
+          if(inc) {
+            t+= 3;
+          } else {
+            t-=3
+          }
+          if (t == 0.8) {
+            inc = true;
+          }
+          if (t >150) {
+            inc = false
+          }
           innerLoop = true;
           while(innerLoop) {
             c++;
