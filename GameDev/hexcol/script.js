@@ -47,7 +47,7 @@ function play(difficulty) {
     wrong = getRandomInt(1, count);
     correctCol = getRandomColor();
     wrongCol = getWrongColor(correctCol, difficulty);
-    while (count-- > 0) {
+    while (count > 0) {
         if (count == wrong) {
             currentSection.children[count].style.backgroundColor = wrongCol;
             currentSection.children[count].onclick = function() {
@@ -58,5 +58,6 @@ function play(difficulty) {
             currentSection.children[count].style.backgroundColor = correctCol;
             currentSection.children[count].onclick = gameOver;
         }
+        count--;
     }
 }
