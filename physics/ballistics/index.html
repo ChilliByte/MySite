@@ -100,8 +100,8 @@
           this.y = oY;
           this.theta = theta;
           this.speed = parseInt(power.value,10);
-          this.velX = 5 * Math.cos(toRadians(theta));
-          this.velY = 5 * Math.sin(toRadians(theta));
+          this.velX = this.speed * Math.cos(toRadians(theta));
+          this.velY = this.speed * Math.sin(toRadians(theta));
       }
       
       function getPosition(event) {
