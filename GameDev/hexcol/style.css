@@ -66,7 +66,7 @@ body {
 }
 .game div h1 {
   font-size:2em;
-  height:33vh;
+  height:30vh;
   width:75vw;
   margin:0;
   background:#555;
@@ -82,7 +82,7 @@ body {
 nav a {
   height:10vh;
   width:80vw;
-  margin-bottom:2vh;
+  margin-top:2vh;
   border-bottom:8px solid #333;
   border-radius:10px;
   background-color:#FFF;
@@ -92,8 +92,8 @@ nav a {
 }
 
 nav a:active {
-  margin-top:7px;
-  border-bottom:1px solid #FFA;
+  margin-top:calc(2vh + 7px);
+  border-bottom:1px solid #333;
 }
 
 section {
