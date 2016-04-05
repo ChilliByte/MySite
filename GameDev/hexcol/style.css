@@ -49,11 +49,17 @@ body {
   background-size: 100px 100px;
 }
 .game {
-  height:100%;
-  width:100%;
-  padding:10px;
+  height:100vh;
+  width:100vw;
+  padding:0;
+  box-sizing:border-box;
 }
 
 .game h1 {
   font-size:3vmin;
+}
+
+section {
+  display:none;
+  box-sizing:border-box;
 }
