@@ -15,8 +15,18 @@
         border: 1px solid black;
         margin: 4px;
       }
+      #powerCont {
+        position:fixed;
+        top:0;
+        right:0;
+        color:white;
+      }
     </style>
     <canvas id="myCanvas"></canvas>
+    <div id="powerCont">
+      Power:
+      <input type="number" id="power" />
+    </div>
     <script>
       var canvas = document.getElementById('myCanvas');
       var ctx = canvas.getContext("2d");
@@ -86,7 +96,7 @@
           this.x = oX;
           this.y = oY;
           this.theta = theta;
-          this.speed = 5;
+          this.speed = power.value;
           this.velX = 5 * Math.cos(toRadians(theta));
           this.velY = 5 * Math.sin(toRadians(theta));
       }
@@ -105,7 +115,6 @@
         if (dy < 0) {
             theta = 360 - theta;
         }
-        alert("New Projectile Added! Launch Angle: " + theta);
         projectiles.push(new Projectile(theta));
       }
     </script>
