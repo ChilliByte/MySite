@@ -34,5 +34,5 @@ function drawBean(bean) {
           '  </g>'+
           '</svg>';
   }
-  document.getElementById("beanSvg").innerHTML = svg + "<p id='beanName'>" + bean.name + "</p>";
+  return svg;
 }
