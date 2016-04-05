@@ -2,7 +2,7 @@ var points = 0;
 var currentSection;
 var wrong;
 var shiftedCol;
-var shiftArray = [50, 25, 15, 1];
+var shiftArray = [100, 50, 25, 5];
 var correctCol;
 var count = 0;
 
@@ -58,7 +58,7 @@ function play(difficulty) {
     wrong = getRandomInt(1, count);
     correctCol = getRandomColor();
     wrongCol = getWrongColor(correctCol, difficulty);
-    currentSection.children[0].innerHTML = "Your score is: " + points + "!";
+    currentSection.children[0].innerHTML = "Which one of these is not " + correctCol + "? <br/> Your score is: " + points + "!";
     for (var i = 1; i < count; i++) {
         if (i == wrong) {
             currentSection.children[i].style.backgroundColor = wrongCol;
