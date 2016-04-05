@@ -15,6 +15,7 @@ function Bean(color,eyecol,name) {
 }
 function createBean() {
   player = new Bean(beanColor.value,beaneyecolor.value,beanName.value);
+  document.getElementById("beanSvg").style.display = "none";
 }
 function drawBean(bean) {
   if((bean.water == 100) && (bean.food == 100) && (bean.love == 100) && (bean.fun == 10)) { 
