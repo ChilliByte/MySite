@@ -18,3 +18,25 @@ canvas {
     left:0;
     right:0;
 }
+#title {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height:100%;
+    width:100%;
+    font-size:x-large;
+    color:white;
+}
+
+#title a {
+    height:50px;
+    width:200px;
+    background-color: #fd0;
+    background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+    background-size: 50px 50px;
+    color:white;
+    display:block;
+}
+    
