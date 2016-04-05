@@ -55,22 +55,22 @@ body {
   box-sizing:border-box;
   text-align:center;
 }
+nav {
+  padding:0 10vw;
+}
 .game div {
   height:35vh;
-  width:90vw;
+  width:80vw;
   background:#555;
   border-radius: 20px;
-  position:fixed;
-  left:0;
-  right:0;
-  margin:0 auto;
+  margin:3px 0;
   display:table-cell;
   vertical-align:middle;
 }
 .game div h1 {
   font-size:2em;
   height:29vh;
-  width:85vw;
+  width:75vw;
   margin:0;
   background:#555;
   border: 5px dashed #333;
