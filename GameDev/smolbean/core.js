@@ -6,6 +6,13 @@ canvas.height = h;
 canvas.width = w;
 var friction = 0.8;
 var gravity = 0.3;
+var boxes = [];
+boxes.push({
+  x:0,
+  y:400,
+  h:50,
+  w:800
+}) 
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
@@ -24,7 +31,10 @@ function render() {
     ctx.drawSvg(drawBean(player),player.x,player.y,64,64);
     player.velX *= friction;
     player.velY += gravity;
+    ctx.fillStyle = "black";
+    ctx.beginPath();
     for(var i = 0; i < boxes.length; i++) {
+      ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
       var dir = colCheck(player,boxes[i]);
       if (dir === "l" || dir === "r") {
         player.velX = 0;
@@ -34,6 +44,7 @@ function render() {
         player.velY *= -1;
       }
     }
+    ctx.fill();
     player.x += player.velX;
     player.y += player.velY;
   }
