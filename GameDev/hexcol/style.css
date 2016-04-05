@@ -101,3 +101,25 @@ section {
   display:none;
   box-sizing:border-box;
 }
+.tile {
+  display:inline-block;
+  border:3px solid white;
+  border-radius:3px;
+}
+
+.tile.easy {
+  height:12vh;
+  width:80vw;
+}
+.tile.med {
+  height:18vh;
+  width:38vw;
+}
+.tile.hard {
+  height:12vh;
+  width:26vw;
+}
+.tile.ext {
+  height:9vh;
+  width:19vw;
+}
