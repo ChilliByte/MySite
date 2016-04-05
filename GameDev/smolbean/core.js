@@ -28,7 +28,6 @@ window.requestAnimFrame = (function(){
 function render() {
   if(player !== undefined) {
     ctx.clearRect(0,0,w,h);
-    ctx.drawSvg(drawBean(player),player.x,player.y,64,64);
     player.velX *= friction;
     player.velY += gravity;
     for(var i = 0; i < boxes.length; i++) {
@@ -36,14 +35,13 @@ function render() {
       var dir = colCheck(player,boxes[i]);
       if (dir === "l" || dir === "r") {
         player.velX = 0;
-      } else if (dir === "b") {
-        player.velY = 0;
-      } else if (dir === "t") {
-        player.velY *= -1;
+      } else if (dir === "b" || dir === "t") {
+        player.velY *= -0.8;
       }
     }
     player.x += player.velX;
     player.y += player.velY;
+    ctx.drawSvg(drawBean(player),player.x,player.y,64,64);
   }
 }
 (function animloop(){
