@@ -46,5 +46,6 @@ function colCheck(shapeA, shapeB) {
                 shapeA.x -= oX;
             }
         }
+    }
     return colDir;
 }
