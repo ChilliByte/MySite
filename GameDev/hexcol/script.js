@@ -31,7 +31,15 @@ function hideMenu() {
     document.getElementsByClassName("menu")[0].style.display = "none";
 }
 
+function showMenu() {
+    document.getElementsByClassName("menu")[0].style.display = "block";
+}
+
+function gameOver() {
+    document.getElementById("scores").innerHTML = "Your score: " + points +"! Well Done!";
+}
 function play(difficulty) {
+  hideMenu();
   currentSection = document.querySelectorAll("section.game")[difficulty]
   currentSection.style.display = "block";
   count = currentSection.children.length
@@ -41,8 +49,14 @@ function play(difficulty) {
   while(count-- > 0) {
     if(count == wrong) {
       currentSection.children[count].style.backgroundColor = wrongCol;
+      currentSection.children[count].onclick = function() {
+        points+= difficulty+1;
+        play(difficulty);
+      };
     } else {
       currentSection.children[count].style.backgroundColor = correctCol;
+      currentSection.children[count].onclick = gameOver;
+      }
     }
   }
 }
