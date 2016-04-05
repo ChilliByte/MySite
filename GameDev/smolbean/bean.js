@@ -1,3 +1,4 @@
+var svg;
 function Bean(color,name) {
   this.x = 10;
   this.y = 10;
@@ -17,7 +18,7 @@ function drawBean(bean) {
   } else if (bean.water < 50) {
   } else if (bean.love < 50) {
   } else {
-    var svg = '<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">'+
+    svg = '<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">'+
               ' <g>'+
               '    <title>background</title>'+
               '    <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>'+
@@ -33,4 +34,5 @@ function drawBean(bean) {
               '  </g>'+
               '</svg>';
   }
+  document.getElementById(beanSvg).innherHTML = svg;
 }
