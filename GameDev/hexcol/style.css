@@ -116,7 +116,7 @@ section {
   display:inline-block;
   border:5px solid white;
   border-radius:25px;
-  margin: 5vh auto;
+  margin: 4vh auto;
 }
 
 .tile.easy {
@@ -129,9 +129,10 @@ section {
 }
 .tile.hard {
   height:12vh;
-  width:26vw;
+  width:23vw;
 }
 .tile.ext {
   height:9vh;
-  width:19vw;
+  width:17vw;
+  margin:2vh auto;
 }
