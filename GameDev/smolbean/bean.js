@@ -2,6 +2,8 @@ var svg,player;
 function Bean(color,eyecol,name) {
   this.x = 10;
   this.y = 10;
+  this.w = 64;
+  this.h = 64;
   this.velX = 0;
   this.velY = 0;
   this.name = name;
