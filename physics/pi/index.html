@@ -61,14 +61,14 @@
       
       var oX = w/2;
       var mainLoop = true;
-      var innerloop = true;
+      var innerLoop = true;
       var x = 16;
       var y = 16;
       var c = 0;
       var d = 0;
       var t=0.8
       function render() {
-        if(mainloop) {
+        if(mainLoop) {
           c++;
           if(c == parseInt(pi[d],10)+1) {
             ctx.fillStyle=getColor((t%w),w-x,y);
@@ -87,7 +87,7 @@
             x=16;
           }
           if (y == 784) {
-            loop = false
+            mainLoop = false
           }
         } else {
           x = 16;
