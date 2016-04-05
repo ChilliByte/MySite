@@ -36,7 +36,9 @@ function showMenu() {
 }
 
 function gameOver() {
-    document.getElementById("scores").innerHTML = "Your score: " + points + "! Well Done!";
+    document.getElementById("scores").innerHTML = "Your score is: " + points + "! Well Done!";
+    points = 0;
+    showMenu();
 }
 
 function play(difficulty) {
@@ -47,8 +49,9 @@ function play(difficulty) {
     wrong = getRandomInt(1, count);
     correctCol = getRandomColor();
     wrongCol = getWrongColor(correctCol, difficulty);
+    currentSection.children[0].innerHTML = "Your score is: " + points + "!";
     for (var i = 1; i < count; i++) {
-        if (count == wrong) {
+        if (i == wrong) {
             currentSection.children[i].style.backgroundColor = wrongCol;
             currentSection.children[i].onclick = function() {
                 points += difficulty + 1;
