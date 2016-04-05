@@ -44,7 +44,7 @@ a {
     background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
     background-size: 50px 50px;
     border-radius:15px;
-    margin:0 auto;
+    margin:5px auto;
     line-height:75px;
     font-weight:900;
     font-size:xx-large;
@@ -61,7 +61,7 @@ a {
 }
 #beanSvg h3 {
     width:40%;
-    margin:0 10px 0 0;
+    margin:0 10px;
 }
 #beanSvg svg {
     position:absolute;
