@@ -60,16 +60,22 @@ body {
   width:90vw;
   background:#555;
   border-radius: 20px;
-  margin:10px auto;
+  position:fixed;
+  left:0;
+  right:0;
+  margin:0 auto;
+  display:table-cell;
+  vertical-align:middle;
 }
 .game div h1 {
   font-size:2em;
-  height:28vh;
-  width:80vw;
+  height:29vh;
+  width:85vw;
   margin:0;
   background:#555;
   border: 5px dashed #333;
   border-radius:15px;
+  display:inline-block;
 }
 
 .game a {
