@@ -7,6 +7,7 @@ html,body {
 
 body {
   font-family:Raleway;
+  color:white;
   background: -webkit-linear-gradient(126deg, #232927 4%,   transparent 4%) -70px 43px,
               -webkit-linear-gradient( 54deg, #232927 4%,   transparent 4%) 30px 43px,
               -webkit-linear-gradient( 18deg, #e3d7bf 8.5%, transparent 8.5%) 30px 43px,
@@ -46,4 +47,13 @@ body {
               linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 80px 73px;
   background-color: #232927;
   background-size: 100px 100px;
+}
+.game {
+  height:100%;
+  width:100%;
+  padding:10px;
+}
+
+.game h1 {
+  font-size:3vmin;
 }
