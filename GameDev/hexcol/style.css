@@ -60,13 +60,13 @@ body {
   width:90vw;
   background:#555;
   border-radius: 20px;
-  margin:0 auto;
+  margin:10px auto;
 }
 .game div h1 {
   font-size:2em;
   height:28vh;
   width:80vw;
-  margin:calc(50% - 14vh) auto;
+  margin:0;
   background:#555;
   border: 5px dashed #333;
   border-radius:15px;
