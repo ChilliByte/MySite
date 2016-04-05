@@ -16,21 +16,8 @@
         border: 1px solid black;
         margin: 4px;
       }
-      #powerCont {
-        position:fixed;
-        top:0;
-        right:0;
-        color:white;
-        text-align:right;
-      }
     </style>
     <canvas id="myCanvas"></canvas>
-    <div id="powerCont">
-      Power:
-      <input type="number" id="power" value="5" /><br>
-      Air Resistance:
-      <input type="number" id="res" value="0.992" />
-    </div>
     <script>
       var canvas = document.getElementById('myCanvas');
       var ctx = canvas.getContext("2d");
@@ -64,6 +51,7 @@
       var t = 0;
       function render() {
         ctx.fillStyle = getColor(x,y,t);
+        ctx.beginPath();
         ctx.arc(x,y,1,0,2*Math.PI);
         ctx.fill();
         x++
