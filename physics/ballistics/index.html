@@ -10,6 +10,7 @@
         margin:0;
         padding:0;
         background-color:black;
+        font-family:Calibri;
       }
       canvas {
         border: 1px solid black;
@@ -26,6 +27,8 @@
     <div id="powerCont">
       Power:
       <input type="number" id="power" value="5" />
+      Air Resistance:
+      <input type="number" id="res" value="0.992" />
     </div>
     <script>
       var canvas = document.getElementById('myCanvas');
@@ -86,6 +89,7 @@
           if(projectiles[i].y > 2000) {
             projectiles.splice(i,i+1);
           }
+          fric = parseInt(res.value,10);
         }
       }
       
