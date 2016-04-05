@@ -2,7 +2,7 @@ var points = 0;
 var currentSection;
 var wrong;
 var shiftedCol;
-var shiftArray = [30, 15, 5, 1];
+var shiftArray = [50, 25, 15, 1];
 var correctCol;
 var count = 0;
 
@@ -38,6 +38,7 @@ function showMenu() {
 function gameOver() {
     document.getElementById("scores").innerHTML = "Your score is: " + points + "! Well Done!";
     points = 0;
+    currentSection.style.display = "none";
     showMenu();
 }
 
