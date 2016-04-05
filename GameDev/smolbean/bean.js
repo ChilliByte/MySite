@@ -25,8 +25,8 @@ function drawBean(bean) {
           '    <g id="svg_2">'+
           '      <path fill="'+bean.color+'" fill-opacity="null" stroke="#000" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m9,92c-8,-46.72376 1.0663,-91 53,-91c51.9337,0 19,83.13812 61,82c42,-1.13812 21.98343,61.61188 11.47514,73.14641c-10.50829,11.53453 -31.50829,12.85359 -57.47514,12.85359c-51.9337,0 -60,-30.27624 -68,-77z" id="svg_1"/>';
   
-  if((bean.water > 80) && (bean.food > 80) && (bean.love > 80) && (bean.fun > 80) && (bean.state != "Content")) { 
-    svg = '<path stroke="#000" fill="#fff" fill-opacity="null" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m33.159,105.23217c0,-20.96475 18.11972,-10.99889 40.48973,-10.99889c22.37001,0 40.48973,-9.96584 40.48973,10.99889c0,20.96475 -18.11972,37.94619 -40.48973,37.94619c-22.37001,0 -40.48973,-16.98143 -40.48973,-37.94619z" id="svg_7" transform="rotate(-13.678772926330566 73.64873504638662,117.52222442626955) "/>'+
+  if((bean.water > 80) && (bean.food > 80) && (bean.love > 80) && (bean.fun > 80)) { 
+    svg += '<path stroke="#000" fill="#fff" fill-opacity="null" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m33.159,105.23217c0,-20.96475 18.11972,-10.99889 40.48973,-10.99889c22.37001,0 40.48973,-9.96584 40.48973,10.99889c0,20.96475 -18.11972,37.94619 -40.48973,37.94619c-22.37001,0 -40.48973,-16.98143 -40.48973,-37.94619z" id="svg_7" transform="rotate(-13.678772926330566 73.64873504638662,117.52222442626955) "/>'+
           '<path id="svg_3" d="m119,57" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>'+
           '<path id="svg_16" d="m20,74" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>'+
           '<path id="svg_17" d="m6,67" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>'+
@@ -35,11 +35,11 @@ function drawBean(bean) {
           '<path transform="rotate(20 139.93428039550776,34.88282775878907) " id="svg_21" d="m133.99838,47.23848c-10.66661,-7.5106 -14.48035,-12.26167 -14.51125,-18.07784c-0.02819,-5.30215 4.67968,-10.41951 9.55855,-10.39c2.43629,0.01477 7.66229,1.96625 9.51283,3.55231c0.93241,0.79915 1.37405,0.72035 3.44997,-0.6156c5.64977,-3.63589 11.16683,-3.7122 14.73992,-0.20388c5.71056,5.60704 4.67089,12.30288 -2.9887,19.24827c-4.07228,3.69257 -12.96523,10.2434 -13.90573,10.2434c-0.28618,0 -2.92119,-1.6905 -5.85558,-3.75666l0,0z" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>'+
           '</g>'+
           '</svg>';
-  } else if ((bean.water < 50) && (bean.status != "Thirsty")) {
-  } else if ((bean.food  < 50) && (bean.status != "Hungry")) {
-  } else if ((bean.love  < 50) && (bean.status != "Lonely")) {
-  } else if ((bean.fun   < 50) && (bean.status != "Bored")) { 
-  } else if (bean.status != "Average") {
+  } else if (bean.water < 50) {
+  } else if (bean.food  < 50) {
+  } else if (bean.love  < 50) {
+  } else if (bean.fun   < 50) { 
+  } else{
     svg+=      '      <ellipse fill="'+ bean.eyecolor +'" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="46.5" cy="72.5" id="svg_4" rx="7" ry="7"/>'+
           '      <ellipse fill="'+ bean.eyecolor  +'" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="71.5" cy="68" id="svg_5" rx="7" ry="7" stroke="#000"/>'+
           '      <path fill="#f99" fill-opacity="null" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m50.25,91.98459c0,-8.29581 6.71271,-4.35229 15,-4.35229c8.28729,0 15,-3.94351 15,4.35229c0,8.29581 -6.71271,15.01541 -15,15.01541c-8.28729,0 -15,-6.7196 -15,-15.01541z" id="svg_7" stroke="#000" transform="rotate(-10 65.24999999999974,96.84779357910153) "/>'+
