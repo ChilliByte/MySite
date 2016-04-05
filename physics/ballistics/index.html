@@ -21,6 +21,7 @@
         top:0;
         right:0;
         color:white;
+        text-align:right;
       }
     </style>
     <canvas id="myCanvas"></canvas>
@@ -65,7 +66,8 @@
       var oX = 50;
       var oY = h - 50;
       var projectiles = [];
-      var fric = 0.992;
+      var fric;
+      var rad = 2
       function render() {
         ctx.strokeStyle = "white";
         ctx.beginPath();
@@ -79,7 +81,7 @@
         while (i--) {
           ctx.fillStyle = getColor(projectiles[i].x,projectiles[i].y);
           ctx.beginPath();
-          ctx.arc(projectiles[i].x,projectiles[i].y,1,0,2*Math.PI);
+          ctx.arc(projectiles[i].x,projectiles[i].y,rad,0,2*Math.PI);
           ctx.fill();
           projectiles[i].x += projectiles[i].velX; 
           projectiles[i].y -= projectiles[i].velY;
