@@ -49,21 +49,25 @@
       // instead of setInterval(render, 16) ....
       
       var oX = w/2;
-      var oY = w/2;
-      var x = 10;
-      var y = 10;
+      var loop = true;
+      var x = 16;
+      var y = 16;
+      var c = 0;
       function render() {
-        ctx.fillStyle = getColor(x,y);
-        ctx.beginPath();
-        ctx.arc(x,y,3,0,2*Math.PI);
-        ctx.fill();
-        x+=10
-        if (x == 780) {
-          y+=10
-          x=10;
-        }
-        if (y == 780) {
-          window.cancelAnimationFrame(animloop);
+        if(loop) {
+          ctx.fillStyle = getColor(x,y);
+          ctx.beginPath();
+          ctx.arc(x,y,5,0,2*Math.PI);
+          ctx.fill();
+          c++;
+          x+=16
+          if (x == 784) {
+            y+=16
+            x=16;
+          }
+          if (y == 784) {
+            loop = false
+          }
         }
       }
       
