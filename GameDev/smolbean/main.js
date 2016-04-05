@@ -2,7 +2,7 @@ function play() {
   document.getElementById("title").style.display = "none";
 }
 function createBean() {
-  player = new Bean(beanColor.value,beaneyecolor.value,beanName.value);
+  player = new Bean(beanColor.value,beaneyecolor.value,beanName.value+"bean");
   document.getElementById("beanSvg").style.display = "none";
 }
 
