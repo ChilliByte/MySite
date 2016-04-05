@@ -15,7 +15,7 @@ function Bean(color,eyecol,name) {
 }
 var Deep = new Bean("#6fc","#FFF","Deep");
 function drawBean(bean) {
-  if((bean.water == 100) && (bean.food == 100) && (bean.love == 100) && (bean.fun == 1=0)) { 
+  if((bean.water == 100) && (bean.food == 100) && (bean.love == 100) && (bean.fun == 10)) { 
     svg = '<svg width="165" height="169" xmlns="http://www.w3.org/2000/svg">'+
           ' <g>'+
           '  <title>background</title>'+
@@ -100,7 +100,7 @@ function drawBean(bean) {
           '<path fill="#fff" fill-opacity="null" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m50.25,91.98459c0,-8.29581 6.71271,-4.35229 15,-4.35229c8.28729,0 15,-3.94351 15,4.35229c0,8.29581 -6.71271,15.01541 -15,15.01541c-8.28729,0 -15,-6.7196 -15,-15.01541z" id="svg_7" stroke="#000" transform="rotate(-10 65.24999999999974,96.84779357910153) "/>'+
           '</g>'+
           '</g>'+
-          '</svg>
+          '</svg>';
   }
   return svg;
 }
