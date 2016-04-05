@@ -37,7 +37,7 @@ div {
     z-index:9;
 }
 
-#title a {
+a {
     height:75px;
     width:300px;
     background-color: #fd0;
