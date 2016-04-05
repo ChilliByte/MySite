@@ -47,16 +47,16 @@ function play(difficulty) {
     wrong = getRandomInt(1, count);
     correctCol = getRandomColor();
     wrongCol = getWrongColor(correctCol, difficulty);
-    while (count-- > 0) {
+    for (var i = 1; i < count; i++) {
         if (count == wrong) {
-            currentSection.children[count].style.backgroundColor = wrongCol;
-            currentSection.children[count].onclick = function() {
+            currentSection.children[i].style.backgroundColor = wrongCol;
+            currentSection.children[i].onclick = function() {
                 points += difficulty + 1;
                 play(difficulty);
             };
         } else {
-            currentSection.children[count].style.backgroundColor = correctCol;
-            currentSection.children[count].onclick = gameOver;
+            currentSection.children[i].style.backgroundColor = correctCol;
+            currentSection.children[i].onclick = gameOver;
         }
     }
 }
