@@ -32,14 +32,23 @@ function render() {
     for(var i = 0; i < boxes.length; i++) {
       ctx.fillStyle = "#ffdd00";
       ctx.fillRect(boxes[i].x, boxes[i].y, boxes[i].w, boxes[i].h);
+      ctx.fillStyle = "#eecc00";
+      ctx.beginPath();
+      ctx.moveTo(boxes[i].x,boxes[i].y);
+      ctx.lineTo(boxes[i].x,boxes[i].y+boxes[i].h);
+      ctx.lineTo(boxes[i].x- 100, boxes[i].y+boxes[i].h - 100);
+      ctx.lineTo(boxes[i].x - 100,boxes[i].y - 100);
+      ctx.closePath();
+      ctx.fill();
       ctx.fillStyle = "#ddbb00";
       ctx.beginPath();
       ctx.moveTo(boxes[i].x,boxes[i].y);
       ctx.lineTo(boxes[i].x+boxes[i].w,boxes[i].y);
-      ctx.lineTo(boxes[i].x+boxes[i].w - 15, boxes[i].y-15);
-      ctx.lineTo(boxes[i].x-15,boxes[i].y-15);
+      ctx.lineTo(boxes[i].x+boxes[i].w - 100, boxes[i].y - 100);
+      ctx.lineTo(boxes[i].x - 100,boxes[i].y - 100);
       ctx.closePath();
       ctx.fill();
+      
       var dir = colCheck(player,boxes[i]);
       if (dir === "l" || dir === "r") {
         player.velX = 0;
