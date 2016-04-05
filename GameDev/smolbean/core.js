@@ -45,9 +45,9 @@ function render() {
     if(Math.random() < (1/150)) {
       player.velY -= 8;
       if(player.x < 800) {
-        player.velX += 15;
+        player.velX += 5;
       } else {
-        player.velX -= 15; 
+        player.velX -= 5; 
       }
     }
   }
