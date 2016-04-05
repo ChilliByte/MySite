@@ -32,7 +32,7 @@
       
       var r,g,b;
       function getColor(x,y) {
-        return "rgb(" + Math.floor(x/w)*255 + ","+ 200 + "," + Math.floor(y/w)*255 + ")";
+        return "rgb(" + Math.floor((x/w)*255) + ","+ 200 + "," + Math.floor((y/w)*255) + ")";
       }
       // shim layer with setTimeout fallback
       window.requestAnimFrame = (function(){
