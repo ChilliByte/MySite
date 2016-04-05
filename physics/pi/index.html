@@ -57,6 +57,7 @@
       var d = 0;
       function render() {
         if(loop) {
+          c++;
           if(c == pi[d]+1) {
             ctx.fillStyle=getColor((0.8*w),x,y);
             c = 0;
@@ -76,7 +77,6 @@
           if (y == 784) {
             loop = false
           }
-          c++
         }
       }
       
@@ -84,7 +84,6 @@
         requestAnimFrame(animloop);
         render();
       })();
-      canvas.addEventListener("mousedown", getPosition, false);
       
       
     </script>
