@@ -46,17 +46,17 @@
       
       var oX = w/2;
       var oY = h/2;
-      var x = 0;
-      var y = 0;
+      var x = 10;
+      var y = 10;
       function render() {
         ctx.fillStyle = getColor(x,y);
         ctx.beginPath();
         ctx.arc(x,y,3,0,2*Math.PI);
         ctx.fill();
         x+=10
-        if (x == 200) {
+        if (x == 600) {
           y+=10
-          x=0;
+          x=10;
         }
       }
       
