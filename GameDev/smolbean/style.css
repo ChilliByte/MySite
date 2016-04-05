@@ -70,7 +70,7 @@ a {
 }
 #beanSvg input {
     margin-left:10px;
-    height:75px;
+    height:50px;
     width:300px;
     background-color: #fd0;
     background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
@@ -80,4 +80,6 @@ a {
     color:white;
     display:block;
     text-align:center;
+    font-family: 'Gloria Hallelujah', cursive;
+    line-height:initial;
 }
