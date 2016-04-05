@@ -18,7 +18,8 @@ window.requestAnimFrame = (function(){
 // usage:
 // instead of setInterval(render, 16) ....
 function render() {
-  ctx.drawSvg(drawBean(Deep),Deep.x,Deep.y,64,64);
+  ctx.clearRect(0,0,w,h);
+  ctx.drawSvg(drawBean(player),player.x,player.y,64,64);
 }
 (function animloop(){
   requestAnimFrame(animloop);
