@@ -43,7 +43,7 @@ function render() {
     player.y += player.velY;
     ctx.drawSvg(drawBean(player),player.x,player.y,player.w,player.h);
     if(Math.random() < (1/150)) {
-      player.velY -= 8;
+      player.velY -= 5;
       if(player.x < 800) {
         player.velX += 5;
       } else {
