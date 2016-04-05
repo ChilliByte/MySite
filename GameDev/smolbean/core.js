@@ -1,7 +1,7 @@
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext("2d");
-var h = 450;
-var w = 800;
+var h = 900;
+var w = 1600;
 canvas.height = h;
 canvas.width = w;
 var friction = 0.8;
@@ -9,9 +9,9 @@ var gravity = 0.3;
 var boxes = [];
 boxes.push({
   x:0,
-  y:400,
+  y:850,
   h:50,
-  w:800
+  w:1600
 }) 
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
