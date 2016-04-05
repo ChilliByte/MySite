@@ -41,8 +41,8 @@ function drawBean(bean) {
           ' <g>'+
           '  <title>Layer 1</title>'+
           '  <path fill="'+ bean.color+'" fill-opacity="null" stroke="#000" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m9,92c-8,-46.72376 1.0663,-91 53,-91c51.9337,0 19,83.13812 61,82c42,-1.13812 21.98343,61.61188 11.47514,73.14641c-10.50829,11.53453 -31.50829,12.85359 -57.47514,12.85359c-51.9337,0 -60,-30.27624 -68,-77z" id="svg_1"/>'+
-          '  <ellipse fill="'+ bean.eyecolor + '" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="46.5" cy="72.5" id="svg_4" rx="7" ry="7"/>'+
-          '  <ellipse fill="' + bean.eyecolor + '" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="71.5" cy="68" id="svg_5" rx="7" ry="7" stroke="#000"/>'+
+          '  <ellipse fill="' + bean.eyecolor + '" stroke="#fff" stroke-width="6" stroke-opacity="null" fill-opacity="null" cx="46.5" cy="72.5" id="svg_4" rx="7" ry="7"/>'+
+          '  <ellipse fill="' + bean.eyecolor + '" stroke="#fff" stroke-width="6" stroke-opacity="null" fill-opacity="null" cx="71.5" cy="68" id="svg_5" rx="7" ry="7" />'+
           '  <path stroke="#f55" fill="#fff" fill-opacity="null" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m49.14874,90.41111c0,-3.60119 6.71271,-1.88932 15,-1.88932c8.28729,0 15,-1.71187 15,1.88932c0,3.60119 -6.71271,6.51815 -15,6.51815c-8.28729,0 -15,-2.91696 -15,-6.51815z" id="svg_7" transform="rotate(171 64.14874267578125,92.52222442626953) "/>'+
           '  <rect stroke="#000" fill="#fff" stroke-width="1.5" x="52" y="45" width="108" height="11" id="svg_3" transform="rotate(-51 106,50.5) "/>'+
           '  <line stroke="#F00" fill="none" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" x1="72" y1="92" x2="133" y2="18" id="svg_6" stroke-linejoin="null" stroke-linecap="null"/>'+
@@ -57,8 +57,8 @@ function drawBean(bean) {
           ' <g>'+
           '  <title>Layer 1</title>'+
           '  <path fill="'+bean.color+'" fill-opacity="null" stroke="#000" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m9,92c-8,-46.72376 1.0663,-91 53,-91c51.9337,0 19,83.13812 61,82c42,-1.13812 21.98343,61.61188 11.47514,73.14641c-10.50829,11.53453 -31.50829,12.85359 -57.47514,12.85359c-51.9337,0 -60,-30.27624 -68,-77z" id="svg_1"/>'+
-          '  <ellipse fill="'+bean.eyecolor+'" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="46.5" cy="72.5" id="svg_4" rx="7" ry="7"/>'+
-          '  <ellipse fill="'+bean.eyecolor+'" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="71.5" cy="68" id="svg_5" rx="7" ry="7" stroke="#000"/>'+
+          '  <ellipse fill="'+bean.eyecolor+'" stroke="#fff" stroke-width="6" stroke-opacity="null" fill-opacity="null" cx="46.5" cy="72.5" id="svg_4" rx="7" ry="7"/>'+
+          '  <ellipse fill="'+bean.eyecolor+'" stroke="#fff" stroke-width="6" stroke-opacity="null" fill-opacity="null" cx="71.5" cy="68" id="svg_5" rx="7" ry="7"/>'+
           '  <path stroke="#000" fill="#fff" fill-opacity="null" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m32.159,98.23217c0,-20.96475 18.11972,-10.99889 40.48973,-10.99889c22.37001,0 40.48973,-9.96584 40.48973,10.99889c0,20.96475 -18.11972,37.94619 -40.48973,37.94619c-22.37001,0 -40.48973,-16.98143 -40.48973,-37.94619z" id="svg_7" transform="rotate(171 72.64873504638672,110.52222442626953) "/>'+
           '  <path id="svg_3" d="m119,57" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>'+
           '  <path transform="rotate(-31 94.17671966552732,46.579029083251946) " stroke="#000" id="svg_2" d="m77.8357,48.74821c-7.84099,6.10994 17.61592,-11.89435 25.20317,-10.7879c7.58725,1.10645 8.96113,4.17365 8.96113,8.02177c0,3.84813 -2.49402,7.46855 -8.40106,9.12822c-5.90704,1.65968 -17.92226,-12.47203 -25.76324,-6.3621z" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="1.5" fill-opacity="null" fill="#fff"/>'+
@@ -78,8 +78,8 @@ function drawBean(bean) {
           '  <title>Layer 1</title>'+
           '  <g id="svg_2">'+
           '   <path fill="'+bean.color+'" fill-opacity="null" stroke="#000" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m9,92c-8,-46.72376 1.0663,-91 53,-91c51.9337,0 19,83.13812 61,82c42,-1.13812 21.98343,61.61188 11.47514,73.14641c-10.50829,11.53453 -31.50829,12.85359 -57.47514,12.85359c-51.9337,0 -60,-30.27624 -68,-77z" id="svg_1"/>'+
-          '   <ellipse fill="'+bean.eyecolor+'" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="46.5" cy="72.5" id="svg_4" rx="7" ry="7"/>'+
-          '   <ellipse fill="'+bean.eyecolor+'" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="71.5" cy="68" id="svg_5" rx="7" ry="7" stroke="#000"/>'+
+          '   <ellipse fill="'+bean.eyecolor+'" stroke="#fff" stroke-width="6" stroke-opacity="null" fill-opacity="null" cx="46.5" cy="72.5" id="svg_4" rx="7" ry="7"/>'+
+          '   <ellipse fill="'+bean.eyecolor+'" stroke="#fff" stroke-width="6" stroke-opacity="null" fill-opacity="null" cx="71.5" cy="68" id="svg_5" rx="7" ry="7" />'+
           '   <path stroke="#000" fill="#f99" fill-opacity="null" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m50.25,91.98459c0,-8.29581 6.71271,-4.35229 15,-4.35229c8.28729,0 15,-3.94351 15,4.35229c0,8.29581 -6.71271,15.01541 -15,15.01541c-8.28729,0 -15,-6.7196 -15,-15.01541z" id="svg_7" transform="rotate(171 65.25,96.8478012084961) "/>'+
           '  </g>'+
           ' </g>'+
@@ -94,8 +94,8 @@ function drawBean(bean) {
           '<title>Layer 1</title>'+
           '<g id="svg_2">'+
           '<path fill="'+ bean.color+'" fill-opacity="null" stroke="#000" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m9,92c-8,-46.72376 1.0663,-91 53,-91c51.9337,0 19,83.13812 61,82c42,-1.13812 21.98343,61.61188 11.47514,73.14641c-10.50829,11.53453 -31.50829,12.85359 -57.47514,12.85359c-51.9337,0 -60,-30.27624 -68,-77z" id="svg_1"/>'+
-          '<ellipse fill="'+bean.eyecolor+'" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="46.5" cy="72.5" id="svg_4" rx="7" ry="7"/>'+
-          '<ellipse fill="'+bean.eyecolor+'" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" cx="71.5" cy="68" id="svg_5" rx="7" ry="7" stroke="#000"/>'+
+          '<ellipse fill="'+bean.eyecolor+'" stroke="#fff" stroke-width="6" stroke-opacity="null" fill-opacity="null" cx="46.5" cy="72.5" id="svg_4" rx="7" ry="7"/>'+
+          '<ellipse fill="'+bean.eyecolor+'" stroke="#fff" stroke-width="6" stroke-opacity="null" fill-opacity="null" cx="71.5" cy="68" id="svg_5" rx="7" ry="7" />'+
           '<path fill="#f99" fill-opacity="null" stroke-width="1.5" stroke-linejoin="null" stroke-linecap="null" stroke-opacity="null" d="m50.25,91.98459c0,-8.29581 6.71271,-4.35229 15,-4.35229c8.28729,0 15,-3.94351 15,4.35229c0,8.29581 -6.71271,15.01541 -15,15.01541c-8.28729,0 -15,-6.7196 -15,-15.01541z" id="svg_7" stroke="#000" transform="rotate(-10 65.24999999999974,96.84779357910153) "/>'+
           '</g>'+
           '</g>'+
