@@ -27,7 +27,8 @@
         display:block;
         color:black;
         text-align:center;
-        line-height:90vmin;
+        line-height:75vmin;
+        font-size:45vmin;
       }
     </style>
     <canvas id="myCanvas"></canvas>
@@ -64,15 +65,16 @@
       var y = 16;
       var c = 0;
       var d = 0;
+      var t=0.8
       function render() {
         if(loop) {
           c++;
           if(c == parseInt(pi[d],10)+1) {
-            ctx.fillStyle=getColor((0.6*w),w-x,y);
+            ctx.fillStyle=getColor((t%w),w-x,y);
             c = 0;
             d++;
           } else {
-            ctx.fillStyle = getColor(x,y,(0.8*w));
+            ctx.fillStyle = getColor(x,y,(t%*w));
           }
           ctx.beginPath();
           ctx.arc(x,y,5,0,2*Math.PI);
@@ -86,9 +88,36 @@
           if (y == 784) {
             loop = false
           }
-        } 
+        } else {
+          loop = true;
+          x = 16;
+          y = 16;
+          c = 0;
+          d = 0;
+          while(loop) {
+            c++;
+            if(c == parseInt(pi[d],10)+1) {
+              ctx.fillStyle=getColor((t%w),w-x,y);
+              c = 0;
+              d++;
+            } else {
+              ctx.fillStyle = getColor(x,y,(t%*w));
+            }
+            ctx.beginPath();
+            ctx.arc(x,y,5,0,2*Math.PI);
+            ctx.fill();
+            
+            x+=16
+            if (x == 784) {
+              y+=16
+              x=16;
+            }
+            if (y == 784) {
+              loop = false
+            }
+        }
       }
-      
+      }
       (function animloop(){
         requestAnimFrame(animloop);
         render();
