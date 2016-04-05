@@ -30,7 +30,16 @@ function render() {
     ctx.clearRect(0,0,w,h);
     player.velY += gravity;
     for(var i = 0; i < boxes.length; i++) {
+      ctx.fillStyle = "#ffdd00";
       ctx.fillRect(boxes[i].x, boxes[i].y, boxes[i].w, boxes[i].h);
+      ctx.fillStyle = "#ddbb00";
+      ctx.beginPath();
+      ctx.moveTo(boxes[i].x,boxes[i].y);
+      ctx.lineTo(boxes[i].x+boxes[i].w,boxes[i].y);
+      ctx.lineTo(boxes[i].x+boxes[i].w - 15, boxes[i].y-15);
+      ctx.lineTo(boxes[i].x-15,boxes[i].y-15);
+      ctx.closePath();
+      ctx.fill();
       var dir = colCheck(player,boxes[i]);
       if (dir === "l" || dir === "r") {
         player.velX = 0;
