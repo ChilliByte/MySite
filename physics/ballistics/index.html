@@ -13,7 +13,7 @@
       }
       canvas {
         border: 1px solid black;
-        margin:5px;
+        margin: 4px;
       }
     </style>
     <canvas id="myCanvas"></canvas>
@@ -33,7 +33,7 @@
       }
       var r,g,b;
       function getColor(x,y) {
-
+        return "rgb(" + (x/w)*255 + ",130," + (y/h)*255 + ")";
       }
       // shim layer with setTimeout fallback
       window.requestAnimFrame = (function(){
