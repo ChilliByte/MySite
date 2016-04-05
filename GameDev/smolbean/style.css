@@ -19,10 +19,6 @@ canvas {
     right:0;
     height:450px;
     width:800px;
-    border-width:10px;
-    border-color: #fd0;
-    border-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
-    
 }
 #title,#beanSvg {
     position:fixed;
