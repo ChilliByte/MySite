@@ -64,20 +64,18 @@ body {
 }
 
 nav a {
-  height:15vh;
+  height:10vh;
   width:80vw;
+  margin-bottom:10px;
   border-bottom:3px solid #FFA;
+  border-radius:5px;
   background-color:#FFF;
   color:#FFA;
 }
 
 nav a:active {
-  height:15vh;
-  width:80vw;
   margin-top:2px;
   border-bottom:1px solid #FFA;
-  background-color:#FFF;
-  color:#FFA;
 }
 
 section {
