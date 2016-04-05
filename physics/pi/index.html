@@ -14,21 +14,26 @@
       }
       canvas {
         border: 1px solid black;
-        margin: 4px;
+        margin: auto;
+        position:fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
       }
     </style>
     <canvas id="myCanvas"></canvas>
     <script>
       var canvas = document.getElementById('myCanvas');
       var ctx = canvas.getContext("2d");
-      var h = window.innerHeight - 10;
-      var w = window.innerWidth - 10;
+      var h = 800;
+      var w = 800;
       canvas.height = h;
       canvas.width = w;
       
       var r,g,b;
       function getColor(x,y) {
-        return "rgb(" + Math.floor(((4*x)/w)*255) + ","+ 200 + "," + Math.floor(((4*y)/h)*255) + ")";
+        return "rgb(" + Math.floor(x/800)*255 + ","+ g + "," + Math.floor(y/800)*255 + ")";
       }
       // shim layer with setTimeout fallback
       window.requestAnimFrame = (function(){
@@ -54,7 +59,7 @@
         ctx.arc(x,y,3,0,2*Math.PI);
         ctx.fill();
         x+=10
-        if (x == 600) {
+        if (x == 750) {
           y+=10
           x=10;
         }
