@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Ballistics</title>
+  </head>
+  <body>
+    <style>
+      html, body {
+        height:100%;
+        width:100%;
+        margin:0;
+        padding:0;
+        background-color:black;
+        font-family:Calibri;
+      }
+      canvas {
+        border: 1px solid black;
+        margin: 4px;
+      }
+      #powerCont {
+        position:fixed;
+        top:0;
+        right:0;
+        color:white;
+        text-align:right;
+      }
+    </style>
+    <canvas id="myCanvas"></canvas>
+    <div id="powerCont">
+      Power:
+      <input type="number" id="power" value="5" /><br>
+      Air Resistance:
+      <input type="number" id="res" value="0.992" />
+    </div>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext("2d");
+      var h = window.innerHeight - 10;
+      var w = window.innerWidth - 10;
+      canvas.height = h;
+      canvas.width = w;
+      
+      var r,g,b;
+      function getColor(x,y,t) {
+        return "rgb(" + Math.floor((x/w)*127.5)*2 + ","+ (t%64)*4 +"," + Math.floor((y/h)*255) + ")";
+      }
+      // shim layer with setTimeout fallback
+      window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame    ||
+                function( callback ){
+                  window.setTimeout(callback, 1000 / 60);
+                };
+      })();
+      
+      
+      // usage:
+      // instead of setInterval(render, 16) ....
+      
+      var oX = w/2;
+      var oY = h/2;
+      var x = 0;
+      var y = 0;
+      var t = 0;
+      function render() {
+        ctx.fillStyle = getColor(x,y,t);
+        ctx.arc(x,y,1,0,2*Math.PI);
+        ctx.fill();
+        x++
+        t++
+        if(x%w == w-1) {
+          y++
+          x=0;
+        }
+      }
+      
+      (function animloop(){
+        requestAnimFrame(animloop);
+        render();
+      })();
+      canvas.addEventListener("mousedown", getPosition, false);
+      
+      
+    </script>
+  </body>
+</html>
