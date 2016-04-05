@@ -90,10 +90,12 @@
             mainLoop = false
           }
         } else {
+          ctx.clearRect(0,0,w,w);
           x = 16;
           y = 16;
           c = 0;
           d = 0;
+          t++;
           innerLoop = true;
           while(innerLoop) {
             c++;
