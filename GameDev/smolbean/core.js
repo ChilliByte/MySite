@@ -36,15 +36,15 @@ function render() {
       if (dir === "l" || dir === "r") {
         player.velX = 0;
       } else if (dir === "b" || dir === "t") {
-        player.velY *= -0.8;
+        player.velY *= -0.3;
       }
     }
     player.x += player.velX;
     player.y += player.velY;
     ctx.drawSvg(drawBean(player),player.x,player.y,player.w,player.h);
-    if(Math.random() < (1/200)) {
-      player.velY = -6;
-      player.velX = (Math.random()-0.5) * 20;
+    if(Math.random() < (1/150)) {
+      player.velY = -8;
+      player.velX = (Math.random()-0.5) * 30;
     }
   }
 }
