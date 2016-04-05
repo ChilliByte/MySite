@@ -1,4 +1,4 @@
-var svg;
+var svg,player;
 function Bean(color,eyecol,name) {
   this.x = 10;
   this.y = 10;
@@ -13,7 +13,9 @@ function Bean(color,eyecol,name) {
   this.love = 100;
   this.state = "Content";
 }
-var Deep = new Bean("#6fc","#FFF","Deep");
+function createBean() {
+  player = new Bean(beanColor.value,beaneyecolor.value,beanName.value);
+}
 function drawBean(bean) {
   if((bean.water == 100) && (bean.food == 100) && (bean.love == 100) && (bean.fun == 10)) { 
     svg = '<svg width="165" height="169" xmlns="http://www.w3.org/2000/svg">'+
