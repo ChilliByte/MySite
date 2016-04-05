@@ -53,6 +53,7 @@ body {
   width:100vw;
   padding:0;
   box-sizing:border-box;
+  text-align:center;
 }
 
 .game h1 {
@@ -66,7 +67,7 @@ body {
 nav a {
   height:10vh;
   width:80vw;
-  margin-bottom:10px;
+  margin-bottom:2vh;
   border-bottom:3px solid #FFA;
   border-radius:5px;
   background-color:#FFF;
