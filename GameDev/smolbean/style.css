@@ -100,11 +100,11 @@ a {
        top:0;
        bottom:0;
        height:100%;
-       width:10vw;
+       width:18vw;
     } 
     canvas {
-        height:45vw;
-        width:80vw;
+        height:36vw;
+        width:64vw;
     }
 }
 @media screen and (max-width: 900px) {
