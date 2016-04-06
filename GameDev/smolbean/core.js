@@ -4,7 +4,6 @@ var h = 900;
 var w = 1600;
 canvas.height = h;
 canvas.width = w;
-var friction = 0.9;
 var gravity = 0.3;
 var boxes = [];
 boxes.push({
@@ -33,7 +32,6 @@ function render() {
     player.x += player.velX;
     player.y += player.velY;
     ctx.drawSvg(drawBean(player),player.x,player.y,player.w,player.h);
-    
     if(Math.random() < (1/150)) {
       player.velY -= 5;
       if(player.x < 800) {
@@ -49,15 +47,15 @@ function render() {
   render();
 })();
 function checkCollisions() {
-  for(var i = 0; i < boxes.length; i++) {
-      ctx.fillStyle = "#ffdd00";
-      ctx.fillRect(boxes[i].x, boxes[i].y, boxes[i].w, boxes[i].h);
-      var dir = colCheck(player,boxes[i]);
-      if (dir === "l" || dir === "r") {
-        player.velX = 0;
-      } else if (dir === "b" || dir === "t") {
-        player.velY *= -0.3;
-        player.velX = 0;
-      }
-  }
+    for(var i = 0; i < boxes.length; i++) {
+        ctx.fillStyle = "#ffdd00";
+        ctx.fillRect(boxes[i].x, boxes[i].y, boxes[i].w, boxes[i].h);
+        var dir = colCheck(player,boxes[i]);
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+        } else if (dir === "b" || dir === "t") {
+            player.velY *= -0.3;
+            player.velX = 0;
+        }
+    }
 }
