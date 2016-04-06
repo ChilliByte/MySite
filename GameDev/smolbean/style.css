@@ -33,8 +33,18 @@ canvas {
 }
 #title {
     text-align:center;
-    line-height:70vh;
     z-index:9;
+}
+
+#titlePosition {
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    height:45%;
+    width:100%;
 }
 
 a {
