@@ -17,8 +17,6 @@ canvas {
     bottom:0;
     left:0;
     right:0;
-    height:45vmin;
-    width:80vmin;
 }
 #title,#beanSvg {
     position:fixed;
@@ -85,11 +83,33 @@ a {
     font-family: 'Gloria Hallelujah', cursive;
     line-height:initial;
 }
-nav {
-   position:fixed;
-   left:0;
-   top:0;
-   bottom:0;
-   height:100%;
-   width:10vmin;
-} 
+@media screen and (min-width: 900px) {
+    nav {
+       position:fixed;
+       left:0;
+       top:0;
+       bottom:0;
+       height:100%;
+       width:10vw;
+    } 
+    canvas {
+        height:45vw;
+        width:80vw;
+    }
+}
+@media screen and (max-width: 900px) {
+    nav {
+       position:fixed;
+       left:0;
+       bottom:0;
+       right:0;
+       height:10vh;
+       width:100%;
+    } 
+    canvas {
+        height:54vw;
+        width:96vw;
+        bottom:initial;
+        top:2vw;
+    }
+}
