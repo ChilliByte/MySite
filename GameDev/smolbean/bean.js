@@ -12,7 +12,11 @@ function Bean(color,eyecol,name) {
   this.fun = 100;
   this.food = 100;
   this.water = 100;
+  this.health = 100;
+  this.social = 100;
   this.love = 100;
+  this.sleep = 100;
+  this.clean = 100;
   this.state = "Content";
 }
 function drawBean(bean) {
