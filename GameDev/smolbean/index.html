@@ -14,14 +14,10 @@
       <h1> Create a bean!</h1>
       <h3>Name:</h3>
       <input type="text" id="beanName" />
-      
       <h3>Color:</h3>
       <input type="color" id="beanColor" />
-      
-      
       <h3>Eyecolor:</h3>
       <input type="color" id="beaneyecolor" />
-      
       <a onclick="createBean()">Create Bean!</a>
       <svg width="165" height="169" xmlns="http://www.w3.org/2000/svg">
        <g>
@@ -43,6 +39,16 @@
       <h1>Welcome to Your Smol Bean</h1>
       <a onclick="play()">Play!</a>
     </div>
+    <nav id="hud">
+      <progress id="funBar" max="100" value="100"></progress>
+      <progress id="foodBar" max="100" value="85"></progress>
+      <progress id="waterBar" max="100" value="70"></progress>
+      <progress id="healthBar" max="100" value="55"></progress>
+      <progress id="socialBar" max="100" value="40"></progress>
+      <progress id="loveBar" max="100" value="25"></progress>
+      <progress id="sleepBar" max="100" value="10"></progress>
+      <progress id="cleanBar" max="100" value="0"></progress>
+    </nav>
     <script src="main.js"></script>
     <script src="bean.js"></script>
     <script src="core.js"></script>
