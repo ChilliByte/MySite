@@ -53,6 +53,7 @@ a {
     background-color: #fd0;
     background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
     background-size: 50px 50px;
+    border-bottom:5px solid #db0;
     border-radius:15px;
     margin:5px auto;
     line-height:75px;
@@ -61,6 +62,16 @@ a {
     color:white;
     display:block;
     text-align:center;
+}
+a:active {
+    margin-top:9px;
+    border-bottom-width:1px;
+}
+a:nth-of-type(2) {
+    height:25px;
+    font-size:initial;
+    background-color:#f20;
+    border-color:#d00;
 }
 #beanSvg {
     z-index:5;
