@@ -1,8 +1,8 @@
-function saveBean(bean) {
+function saveBean() {
     var d = new Date();
     d.setTime(d.getTime() + (3650*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
-    document.cookie = "bean=" + JSON.stringify(bean) + "; " + expires;
+    document.cookie = "bean=" + JSON.stringify(player) + "; " + expires;
 }
 
 function deleteBean() {
@@ -34,6 +34,7 @@ function play() {
 function createBean() {
     player = new Bean(beanColor.value,beaneyecolor.value,beanName.value+"bean");
     document.getElementById("beanSvg").style.display = "none";
+    saveBean();
  
 }
 
