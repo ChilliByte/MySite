@@ -31,6 +31,7 @@ function render() {
     checkCollisions();
     player.x += player.velX;
     player.y += player.velY;
+    updateHUD();
     ctx.drawSvg(drawBean(player),player.x,player.y,player.w,player.h);
     if(Math.random() < (1/150)) {
       player.velY -= 5;
