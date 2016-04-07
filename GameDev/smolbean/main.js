@@ -1,8 +1,8 @@
-function setCookie(cname, cvalue, exdays) {
+function saveBean(bean) {
     var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    d.setTime(d.getTime() + (3650*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
+    document.cookie = "bean=" + JSON.stringify(bean) + "; " + expires;
 }
 
 function getCookie(cname) {
@@ -20,6 +20,7 @@ function play() {
   document.getElementById("title").style.display = "none";
   if(getCookie("bean") != "") {
       document.getElementById("beanSvg").style.display = "none";
+      player = JSON.parse(getCookie("bean"));
   }
 }
 function createBean() {
@@ -69,4 +70,14 @@ function colCheck(shapeA, shapeB) {
         }
     }
     return colDir;
+}
+function updateHUD() {
+    document.getElementById("funBar").value    = player.fun;
+    document.getElementById("waterBar").value  = player.water;
+    document.getElementById("foodBar").value   = player.food;
+    document.getElementById("healthBar").value = player.health;
+    document.getElementById("socialBar").value = player.social;
+    document.getElementById("loveBar").value   = player.love;
+    document.getElementById("sleepBar").value  = player.sleep;
+    document.getElementById("cleanBar").value  = player.clean;
 }
