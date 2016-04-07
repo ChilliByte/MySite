@@ -97,6 +97,8 @@ function getPosition(event) {
     evY = event.y;
     evX -= canvas.offsetLeft;
     evY -= canvas.offsetTop;
+    evX = (evX/parseInt(window.getComputedStyle(canvas).width))*canvas.width;
+    evY = (evY/parseInt(window.getComputedStyle(canvas).height))*canvas.height;
     checkClickCollisions({
         X:evX,
         y:evY,
