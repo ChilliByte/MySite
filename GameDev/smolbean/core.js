@@ -57,6 +57,7 @@ function checkCollisions() {
         } else if (dir === "b" || dir === "t") {
             player.velY *= -0.3;
             player.velX = 0;
+            player.jumping = false;
         }
     }
 }
