@@ -100,7 +100,7 @@ function getPosition(event) {
     evX = (evX/parseInt(window.getComputedStyle(canvas).width))*canvas.width;
     evY = (evY/parseInt(window.getComputedStyle(canvas).height))*canvas.height;
     checkClickCollisions({
-        X:evX,
+        x:evX,
         y:evY,
         w:1,
         h:1
@@ -109,14 +109,12 @@ function getPosition(event) {
 
 function checkClickCollisions(mouse) {
     console.log(mouse);
-    if((mouse.x > player.x) && (mouse.x < player.x + player.w) && (mouse.y > player.y) & (mouse.y < player.y + player.h)) {
-        if((!player.jumping) && (player.love < 100)) {
-            player.velY -= 6;
-            player.jumping = true;
-            player.love += 10;
-            if (player.love > 100) {
-                player.love = 100;
-            }
+    if((colCheck(mouse,player) !== null) && (!player.jumping) && (player.love < 100)) {
+        player.velY -= 6;
+        player.jumping = true;
+        player.love += 10;
+        if (player.love > 100) {
+            player.love = 100;
         }
     }
 }
