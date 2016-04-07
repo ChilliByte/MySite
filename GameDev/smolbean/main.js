@@ -91,3 +91,25 @@ function updateHUD() {
     document.getElementById("sleepBar").value  = player.sleep;
     document.getElementById("cleanBar").value  = player.clean;
 }
+canvas.addEventListener("mousedown", getPosition, false);
+
+function getPosition(event) {
+    evX = event.x;
+    evY = event.y;
+    evX -= canvas.offsetLeft;
+    evY -= canvas.offsetTop;
+    checkClickCollisions({
+        X:evX,
+        y:evY,
+        w:1,
+        h:1
+    });
+}
+
+function checkClickCollisions(mouse) {
+    if((colCheck(mouse,player) !== null) && (!player.jumping)) {
+        player.velY -= 6;
+        player.jumping = true;
+        player.love += 10;
+    }
+}
