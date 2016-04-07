@@ -97,7 +97,6 @@ progress[value] {
   /* Reset the default appearance */
   -webkit-appearance: none;
   appearance: none;
-  width: 99%;
 }
 progress[value]::-webkit-progress-bar {
   background-color: #f30;
@@ -126,6 +125,14 @@ progress[value]::-webkit-progress-value {
     canvas {
         height:36vw;
         width:64vw;
+    }
+    progress {
+        width: 92%;
+        margin:0 4%;
+    }
+    h3 {
+        color:white;
+        margin:0 4%;
     }
 }
 @media screen and (max-width: 900px) {
