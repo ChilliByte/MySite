@@ -109,12 +109,14 @@ function getPosition(event) {
 
 function checkClickCollisions(mouse) {
     console.log(mouse);
-    if((colCheck(mouse,player) !== null) && (!player.jumping) && (player.love < 100)) {
-        player.velY -= 6;
-        player.jumping = true;
-        player.love += 10;
-        if (player.love > 100) {
-            player.love = 100;
+    if((mouse.x > player.x) && (mouse.x < player.x + player.w) && (mouse.y > player.y) & (mouse.y < player.y + player.h)) {
+        if((!player.jumping) && (player.love < 100)) {
+            player.velY -= 6;
+            player.jumping = true;
+            player.love += 10;
+            if (player.love > 100) {
+                player.love = 100;
+            }
         }
     }
 }
