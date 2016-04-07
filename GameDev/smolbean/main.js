@@ -91,7 +91,6 @@ function updateHUD() {
     document.getElementById("sleepBar").value  = player.sleep;
     document.getElementById("cleanBar").value  = player.clean;
 }
-canvas.addEventListener("mousedown", getPosition, false);
 
 function getPosition(event) {
     evX = event.x;
