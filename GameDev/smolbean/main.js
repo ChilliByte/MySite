@@ -106,9 +106,13 @@ function getPosition(event) {
 }
 
 function checkClickCollisions(mouse) {
-    if((colCheck(mouse,player) !== null) && (!player.jumping)) {
+    console.log(mouse);
+    if((colCheck(mouse,player) !== null) && (!player.jumping) && (player.love < 100)) {
         player.velY -= 6;
         player.jumping = true;
         player.love += 10;
+        if (player.love > 100) {
+            player.love = 100;
+        }
     }
 }
