@@ -156,6 +156,7 @@ progress[value]::-webkit-progress-value {
     }
     h3 {
         display:inline-block;
+        color:white;
         width:15vw;
         margin:0;
     }
