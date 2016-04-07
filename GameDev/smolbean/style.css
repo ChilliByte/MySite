@@ -64,11 +64,13 @@ a {
     text-align:center;
 }
 a:active {
-    margin-top:9px;
-    border-bottom-width:1px;
+    border-bottom-width: 1px;
+    position: relative;
+    top: 4px;
 }
 a:nth-of-type(2) {
-    height:25px;
+    height:32px;
+    line-height:30px;
     font-size:initial;
     background-color:#f20;
     border-color:#d00;
