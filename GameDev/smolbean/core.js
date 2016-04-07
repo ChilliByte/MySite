@@ -12,6 +12,7 @@ boxes.push({
   h:50,
   w:1600
 }) 
+canvas.addEventListener("mousedown", getPosition, false);
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
