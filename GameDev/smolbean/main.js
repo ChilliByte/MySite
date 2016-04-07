@@ -5,8 +5,8 @@ function saveBean(bean) {
     document.cookie = "bean=" + JSON.stringify(bean) + "; " + expires;
 }
 
-function getCookie(cname) {
-    var name = cname + "=";
+function getBean() {
+    var name = "bean=";
     var ca = document.cookie.split(';');
     for(var i=0; i<ca.length; i++) {
         var c = ca[i];
@@ -18,7 +18,7 @@ function getCookie(cname) {
 
 function play() {
   document.getElementById("title").style.display = "none";
-  if(getCookie("bean") != "") {
+  if(getBean() != "") {
       document.getElementById("beanSvg").style.display = "none";
       player = JSON.parse(getCookie("bean"));
   }
