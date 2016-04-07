@@ -29,8 +29,11 @@ function play() {
   }
 }
 function createBean() {
-  player = new Bean(beanColor.value,beaneyecolor.value,beanName.value+"bean");
-  document.getElementById("beanSvg").style.display = "none";
+    player = new Bean(beanColor.value,beaneyecolor.value,beanName.value+"bean");
+    document.getElementById("beanSvg").style.display = "none";
+    document.getElementsByTagName("path")[0].style.fill=player.color;
+    document.getElementsByTagName("ellipse")[0].style.fill=player.eyecolor;
+    document.getElementsByTagName("ellipse")[1].style.fill=player.eyecolor;
 }
 
 window.onload = function() {
