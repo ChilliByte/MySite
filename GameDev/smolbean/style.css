@@ -102,7 +102,7 @@ progress[value]::-webkit-progress-bar {
   background-color: #f30;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-  background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+  background-image: linear-gradient(90deg, transparent 50%, rgba(50,50,50,.5) 50%);
   background-size: 50px 50px;
     
 }
@@ -149,5 +149,14 @@ progress[value]::-webkit-progress-value {
         width:96vw;
         bottom:initial;
         top:2vw;
+    }
+    progress {
+        width: 9vw;
+        margin:0;
+    }
+    h3 {
+        display:inline-block;
+        width:15vw;
+        margin:0;
     }
 }
