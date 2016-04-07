@@ -5,6 +5,11 @@ function saveBean(bean) {
     document.cookie = "bean=" + JSON.stringify(bean) + "; " + expires;
 }
 
+function deleteBean() {
+    var expires = "expires=Thu, 01 Jan 1970 00:00:01 GMT";
+    document.cookie = "bean=; " + expires;
+}
+
 function getBean() {
     var name = "bean=";
     var ca = document.cookie.split(';');
