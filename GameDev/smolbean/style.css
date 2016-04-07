@@ -96,10 +96,8 @@ a {
 progress[value] {
   /* Reset the default appearance */
   -webkit-appearance: none;
-   appearance: none;
-
-  width: 250px;
-  height: 20px;
+  appearance: none;
+  width: 99%;
 }
 progress[value]::-webkit-progress-bar {
   background-color: #f30;
