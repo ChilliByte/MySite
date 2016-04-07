@@ -67,7 +67,7 @@ a:active {
     border-bottom-width: 1px;
     position: relative;
     top: 4px;
-    margin-bottom:9px;
+    margin-bottom:16px;
 }
 a:nth-of-type(2) {
     height:32px;
@@ -75,6 +75,7 @@ a:nth-of-type(2) {
     font-size:initial;
     background-color:#f20;
     border-color:#d00;
+    margin-top:12px
 }
 #beanSvg {
     z-index:5;
