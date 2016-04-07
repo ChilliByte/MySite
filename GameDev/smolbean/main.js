@@ -25,7 +25,7 @@ function play() {
   document.getElementById("title").style.display = "none";
   if(getBean() != "") {
       document.getElementById("beanSvg").style.display = "none";
-      player = JSON.parse(getBean);
+      player = JSON.parse(getBean());
   }
 }
 function createBean() {
