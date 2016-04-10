@@ -1,4 +1,4 @@
-var posts = ["ballistics"];
+var posts = ["ballistics","pi"];
 
 function ahah(url, target, delay) {
   var req;
