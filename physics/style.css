@@ -77,9 +77,8 @@ main {
   bottom:0;
   height:100%;
   width:70%;
-  position:relative;
 }
-main a:last-child {
+main > a:last-child {
   width:80%;
   height:5%;
   position:absolute;
@@ -91,8 +90,10 @@ main a:last-child {
   background-color:white;
   color:#333;
   border-bottom:9px solid #ddd;
+  text-decoration:none;
+  text-align:center;
 }
-main a:last-child:hover {
+main > a:last-child:hover {
   bottom:8px;
   border-bottom:2px solid #ddd;
 }
