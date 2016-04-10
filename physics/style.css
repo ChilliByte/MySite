@@ -77,15 +77,17 @@ main {
   bottom:0;
   height:100%;
   width:70%;
+  position:relative;
 }
 main a:last-child {
   width:80%;
   height:5%;
-  position:fixed;
+  position:absolute;
   bottom:15px;
   left:0;
   right:0;
   display:block;
+  margin:0 auto;
   background-color:white;
   color:#333;
   border-bottom:9px solid #ddd;
