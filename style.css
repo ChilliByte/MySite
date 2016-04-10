@@ -166,8 +166,8 @@ section:nth-child(4) h1 {
 section:nth-child(4) figure {
   position:relative;
   display:inline-block;
-  height:400px;
-  width:250px;
+  height:35vmin;
+  width:35vmin;
   margin:auto 10px auto;
   border:3px solid #333;
   border-radius:15px;
@@ -182,8 +182,11 @@ section:nth-child(4) figure figcaption {
   right:0;
   top:0;
   bottom:0;
-  height:50%;
+  height:80%;
   width:80%;
+}
+section:nth-child(4) figure figcaption h1 {
+  margin-bottom:8px;
 }
 section:nth-child(4) article {
   background-color:rgb(40,40,40);
@@ -339,8 +342,8 @@ footer {
     margin-bottom: 10px;
   }
   section:nth-child(4)  figcaption {
-    height:90%;
-    width:60%;
+    height:30vmin;
+    width:30vmin;
     color:rgb(50,40,50);
     overflow:hidden;
   }
