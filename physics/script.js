@@ -1,4 +1,4 @@
-var posts = [];
+var posts = ["ballistics"];
 
 function ahah(url, target, delay) {
   var req;
@@ -30,5 +30,5 @@ function ahahDone(req, url, target, delay) {
 }
 
 function loadToy(x) {
-  ahah(posts[x],"main")
+  ahah("posts/" + posts[x] + ".html","main");
 }
