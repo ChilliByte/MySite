@@ -1,0 +1,13 @@
+html, body {
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+body {
+  background-image:url('https://images.unsplash.com/photo-1446776709462-d6b525c57bd3');
+  background-size:cover;
+  font-family:Raleway;
+  color:white;
+}
