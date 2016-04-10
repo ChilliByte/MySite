@@ -22,12 +22,11 @@ function Bean(color,eyecol,name) {
 var outline = new Path2D("m9,92c-8,-46.72376 1.0663,-91 53,-91c51.9337,0 19,83.13812 61,82c42,-1.13812 21.98343,61.61188 11.47514,73.14641c-10.50829,11.53453 -31.50829,12.85359 -57.47514,12.85359c-51.9337,0 -60,-30.27624 -68,-77z");
 var mouth = new Path2D("m50.25,91.98459c0,-8.29581 6.71271,-4.35229 15,-4.35229c8.28729,0 15,-3.94351 15,4.35229c0,8.29581 -6.71271,15.01541 -15,15.01541c-8.28729,0 -15,-6.7196 -15,-15.01541z");
 function drawBean(bean) {
-  ctx.moveTo(player.x,player.y);
-  outline.moveTo(player.x,player.y);
-  mouth.moveTo(player.x,player.y);
+  beanPath = new Path2D().moveTo(player.x,player.y).add(outline);
   ctx.fillStyle = player.color;
-  ctx.fill(outline);
-  ctx.stroke(outline);
+  ctx.fill(beanPath);
+  ctx.stroke(beanPath);
+  beanPath = new Path2D().moveTo(player.x,player.y).add(mouth);
   ctx.fillStyle = "#f33";
   ctx.stroke(mouth);
   ctx.fill(mouth);
