@@ -215,8 +215,8 @@ section:nth-child(4) article img {
   position:absolute;
   top:0;
   right:0;
-  border-bottom:3px solid #131313;
-  border-right:3px solid #131313;
+  border-bottom:3px solid #B1B1B1;
+  border-right:3px solid #B1B1B1;
 }
 
 section:nth-child(4) article #container {
