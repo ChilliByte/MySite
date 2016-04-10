@@ -65,6 +65,10 @@ nav ul li:after {
   position:absolute;
   right:10px;
   top:5px;
+  height: 45px;
+  line-height: 40px;
+  bottom: 5px;
+  margin: auto 3px;
 }
 main {
   position:fixed;
