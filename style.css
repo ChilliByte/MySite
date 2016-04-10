@@ -83,6 +83,11 @@ nav a:hover {
   color:#f30000;
 }
 
+nav.section2 a, nav.section3 a{
+  border-color:#333;
+  color:#333;
+}
+
 nav.section1 a:last-child {
     border-color:#f30000;
     color:#f30000;
@@ -90,11 +95,6 @@ nav.section1 a:last-child {
 
 nav.section2 {
   background-color:#eee;
-  color:#eee;
-}
-
-nav.section2 a, nav.section3 a{
-  border-color:#333;
   color:#333;
 }
 
