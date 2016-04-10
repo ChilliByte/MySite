@@ -337,13 +337,11 @@ footer {
     height:192vh;
   }
   section:nth-child(4)  figure {
-    height:140px;
-    width:90%;
+    height:30vmin;
+    width:30vmin;
     margin-bottom: 10px;
   }
   section:nth-child(4)  figcaption {
-    height:30vmin;
-    width:30vmin;
     color:rgb(50,40,50);
     overflow:hidden;
   }
