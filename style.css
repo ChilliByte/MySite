@@ -341,8 +341,12 @@ footer {
   section:nth-child(4)  figcaption {
     height:90%;
     width:60%;
+    color:rgb(50,40,50);
+    overflow:hidden;
   }
-  
+  section:nth-child(4)  figcaption h1 {
+    color:white;
+  }
 }
 /* Large Phones */
 /*This one should change the about section */
