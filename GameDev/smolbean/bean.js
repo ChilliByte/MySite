@@ -23,6 +23,8 @@ var outline = new Path2D("m9,92c-8,-46.72376 1.0663,-91 53,-91c51.9337,0 19,83.1
 var mouth = new Path2D("m50.25,91.98459c0,-8.29581 6.71271,-4.35229 15,-4.35229c8.28729,0 15,-3.94351 15,4.35229c0,8.29581 -6.71271,15.01541 -15,15.01541c-8.28729,0 -15,-6.7196 -15,-15.01541z");
 function drawBean(bean) {
   ctx.moveTo(player.x,player.y);
+  outline.moveTo(player.x,player.y);
+  mouth.moveTo(player.x,player.y);
   ctx.fillStyle = player.color;
   ctx.fill(outline);
   ctx.stroke(outline);
