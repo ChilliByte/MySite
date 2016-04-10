@@ -78,3 +78,19 @@ main {
   height:100%;
   width:70%;
 }
+main a:last-child {
+  width:80%;
+  height:5%;
+  position:fixed;
+  bottom:15px;
+  left:0;
+  right:0;
+  display:block;
+  background-color:white;
+  color:#333;
+  border-bottom:9px solid #ddd;
+}
+main a:last-child:hover {
+  bottom:8px;
+  border-bottom:2px solid #ddd;
+}
