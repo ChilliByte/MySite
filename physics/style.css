@@ -32,13 +32,16 @@ nav ul {
   height:100%;
   width:100%;
   margin:0;
+  padding:0;
 }
 nav ul li {
   text-decoration:none;
   display:block;
-  height:100px;
+  height:70px;
   width:100%;
   background-color:rgba(0,0,0,0.25);
+  border-bottom:3px solid white;
+  margin-bottom:8px;
 }
 main {
   position:fixed;
