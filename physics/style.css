@@ -24,8 +24,22 @@ nav {
   bottom:0;
   height:100%;
   width:30%;
+  border-left:3px solid white;
+  background-color:rgba(0,0,0,0.2);
+  padding:none;
 }
-
+nav ul {
+  height:100%;
+  width:100%;
+  margin:0;
+}
+nav ul li {
+  text-decoration:none;
+  display:block;
+  height:100px;
+  width:100%;
+  background-color:rgba(0,0,0,0.25);
+}
 main {
   position:fixed;
   right:0;
