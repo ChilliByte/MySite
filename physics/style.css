@@ -77,7 +77,8 @@ main {
   bottom:0;
   height:100%;
   width:70%;
-  margin:0 15px;
+  padding:0 15px;
+  box-sizing:border-box;
 }
 main > a:last-child {
   width:80%;
