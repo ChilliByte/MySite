@@ -34,6 +34,7 @@ function drawBean(bean) {
   ctx.fillStyle = player.eyecolor;
   ctx.lineWidth = 1.5;
   ctx.strokeStyle = "#FFFFFF";
+  ctx.beginPath();
   ctx.arc(player.x + 46.5,player.y + 72.5,7,0,2*Math.Pi);
   ctx.arc(player.x + 71.5,player.y + 68,7,0,2*Math.Pi);
   ctx.stroke();
