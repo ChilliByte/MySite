@@ -57,6 +57,11 @@ nav {
   box-sizing:border-box;
 }
 
+body.scrolled nav {
+  background-color:rgba(40,40,40,1);
+  transition: background-color 0.5s, border-bottom 0.5s;
+}
+
 nav a {
   position:relative;
   top:0;
@@ -104,11 +109,6 @@ nav.section3 a:first-child {
 }
 #nav {
   height:22vh;
-}
-
-body.scrolled nav {
-  background-color:rgba(40,40,40,1);
-  transition: background-color 0.5s, border-bottom 0.5s;
 }
 
 section {
