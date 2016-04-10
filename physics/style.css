@@ -5,9 +5,32 @@ html, body {
   padding:0;
 }
 
-body {
+html {
   background-image:url('https://images.unsplash.com/photo-1446776709462-d6b525c57bd3');
   background-size:cover;
   font-family:Raleway;
   color:white;
+}
+
+body {
+  background-color:rgba(0,0,0,0.3);
+  position:fixed;
+}
+
+nav {
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  height:100%;
+  width:30%;
+}
+
+main {
+  position:fixed;
+  right:0;
+  top:0;
+  bottom:0;
+  height:100%;
+  width:70%;
 }
