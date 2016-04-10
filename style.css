@@ -83,21 +83,24 @@ nav a:hover {
   color:#f30000;
 }
 
-nav.section2 a, nav.section3 a{
+nav.section2 a {
   border-color:#333;
   color:#333;
 }
 
 nav.section1 a:last-child {
     border-color:#f30000;
-    color:#f30000;
+    color:#f30000
 }
 
 nav.section2 {
-  background-color:#eee;
+  background-color:#eee !important;
   color:#333;
 }
-
+nav.section2 a:last-child {
+    border-color:#333;
+  color:#333;
+}
 nav.section2 a:nth-child(2) {
     border-color:#f30000;
     color:#f30000;
@@ -106,6 +109,14 @@ nav.section2 a:nth-child(2) {
 nav.section3 a:first-child {
     border-color:#f30000;
     color:#f30000;
+}
+nav.section3 a:nth-child(2) {
+    border-color:#333;
+  color:#333;
+}
+nav.section3 a:last-child {
+    border-color:#333;
+  color:#333;
 }
 #nav {
   height:22vh;
