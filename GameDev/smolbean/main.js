@@ -92,6 +92,20 @@ function updateHUD() {
     document.getElementById("cleanBar").value  = player.clean;
 }
 
+function updateValues() {
+    if(Date.now() - player.lastUpdated > 8640) {
+        player.fun--;
+        player.water--;
+        player.food--;
+        player.health--;
+        player.social--;
+        player.love--;
+        player.sleep--;
+        player.clean--;
+        player.lastUpdated = Date.now();
+    }
+}
+
 function getPosition(event) {
     evX = event.x;
     evY = event.y;
