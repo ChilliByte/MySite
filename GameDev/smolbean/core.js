@@ -32,6 +32,7 @@ function render() {
     checkCollisions();
     player.x += player.velX;
     player.y += player.velY;
+    updateValues();
     updateHUD();
     ctx.drawSvg(document.getElementById("svg").outerHTML,player.x,player.y,player.w,player.h);
     if(Math.random() < (1/150)) {
