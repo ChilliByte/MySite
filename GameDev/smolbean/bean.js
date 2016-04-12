@@ -17,6 +17,7 @@ function Bean(color,eyecol,name) {
   this.love = 100;
   this.sleep = 100;
   this.clean = 100;
+  this.created = Date.now();
   this.state = "Content";
 }
 var outline = new Path2D("m9,92c-8,-46.72376 1.0663,-91 53,-91c51.9337,0 19,83.13812 61,82c42,-1.13812 21.98343,61.61188 11.47514,73.14641c-10.50829,11.53453 -31.50829,12.85359 -57.47514,12.85359c-51.9337,0 -60,-30.27624 -68,-77z");
