@@ -141,6 +141,11 @@ function checkClickCollisions(mouse) {
             player.love = 100;
         }
     }
+    if(currentLevel.left) {
+       if(colCheck(mouse,{x:36,y:410,w:64,h:80})) {
+           player.worldX--;
+       }
+    }
 }
 
 function drawArrows() {
