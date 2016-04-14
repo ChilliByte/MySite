@@ -86,7 +86,7 @@ function getNetPull(p1) {
 			p1.cY -= cObj.y;
 			//adds up all of the horizonal and vertical forces acting on the particle
 			if(getDistanceSquared(p1,particles[i]) < (p1.mass+particles[i].mass)*(p1.mass+particles[i].mass)) {
-				particle[i].mass += p1.mass;
+				particles[i].mass += p1.mass;
 				p1.mass = 0;
 			}
 		}
