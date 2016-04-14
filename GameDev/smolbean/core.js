@@ -7,7 +7,7 @@ canvas.width = w;
 var gravity = 0.3;
 var currentLevel;
 function setLevel() {
-  currentLevel = worldMap[player.y][player.x];
+  currentLevel = worldMap[player.worldY][player.worldX];
 };
 canvas.addEventListener("mousedown", getPosition, false);
 // shim layer with setTimeout fallback
