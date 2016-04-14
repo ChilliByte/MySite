@@ -93,15 +93,25 @@ function updateHUD() {
 }
 
 function updateValues() {
-    if(Date.now() - player.lastUpdated > 8640) {
-        player.fun--;
-        player.water--;
-        player.food--;
-        player.health--;
-        player.social--;
-        player.love--;
-        player.sleep--;
-        player.clean--;
+    timeDiff = Date.now() - player.lastUpdated;
+    modifier = Math.floor(timeDiff / 84600);
+    if(modifier > 0) {
+        player.fun    -= modifier;
+        player.water  -= modifier;
+        player.food   -= modifier;
+        player.health -= modifier;
+        player.social -= modifier;
+        player.love   -= modifier;
+        player.sleep  -= modifier;
+        player.clean  -= modifier;
+        if(player.fun    < 0) {player.fun    = 0} 
+        if(player.water  < 0) {player.water  = 0}  
+        if(player.food   < 0) {player.food   = 0} 
+        if(player.health < 0) {player.health = 0} 
+        if(player.social < 0) {player.social = 0} 
+        if(player.love   < 0) {player.love   = 0} 
+        if(player.sleep  < 0) {player.sleep  = 0}  
+        if(player.clean  < 0) {player.clean  = 0}  
         player.lastUpdated = Date.now();
     }
 }
