@@ -147,17 +147,17 @@ function drawArrows() {
     if(currentLevel.left) {
         ctx.fillStyle = "#fd0"
         ctx.beginPath();
-        ctx.moveTo(160,410);
-        ctx.lineTo(160,490);
-        ctx.lineTo(80,450);
+        ctx.moveTo(100,410);
+        ctx.lineTo(100,490);
+        ctx.lineTo(36,450);
         ctx.fill();
     }    
     if(currentLevel.right) {
         ctx.fillStyle = "#fd0"
         ctx.beginPath();
-        ctx.moveTo(1440,410);
-        ctx.lineTo(1440,490);
-        ctx.lineTo(1520,450);
+        ctx.moveTo(1500,410);
+        ctx.lineTo(1500,490);
+        ctx.lineTo(1564,450);
         ctx.fill();
     }
 }
