@@ -6,9 +6,9 @@ canvas.height = h;
 canvas.width = w;
 var gravity = 0.3;
 var currentLevel;
-(function setLevel() {
+function setLevel() {
   currentLevel = worldMap[player.y][player.x];
-})();
+};
 canvas.addEventListener("mousedown", getPosition, false);
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
@@ -25,6 +25,7 @@ window.requestAnimFrame = (function(){
 function render() {
   if(player !== undefined) {
     ctx.clearRect(0,0,w,h);
+    setLevel();
     player.velY += gravity;
     checkCollisions();
     player.x += player.velX;
