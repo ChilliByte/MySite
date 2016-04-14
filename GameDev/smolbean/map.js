@@ -13,7 +13,9 @@ function SpecialBox(type,x,y,h,w) {
 }
 
 function Room() {
-  this.boxes = [];
+  this.boxes = [
+    new Box(0,850,50,1600)
+  ];
   this.specialBoxes = [];
 }
 
