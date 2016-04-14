@@ -33,6 +33,7 @@ function render() {
     updateValues();
     updateHUD();
     ctx.drawSvg(document.getElementById("svg").outerHTML,player.x,player.y,player.w,player.h);
+    drawArrows();
     if(Math.random() < (1/150)) {
       player.velY -= 5;
       if(player.x < 800) {
