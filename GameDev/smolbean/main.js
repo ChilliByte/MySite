@@ -142,3 +142,14 @@ function checkClickCollisions(mouse) {
         }
     }
 }
+
+function drawArrows() {
+    if(currentLevel.left) {
+        ctx.fillStyle = "#fd0"
+        ctx.beginPath();
+        ctx.moveTo(160,410);
+        ctx.lineTo(160,490);
+        ctx.lineTo(80,450);
+        ctx.fill();
+    }
+}
