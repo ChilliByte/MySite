@@ -12,31 +12,35 @@ function SpecialBox(type,x,y,h,w) {
   this.type = type;
 }
 
-function Room() {
+function Room(u,d,l,r) {
   this.boxes = [
     new Box(0,850,50,1600)
   ];
+  this.above = u;
+  this.below = d;
+  this.left  = l;
+  this.right = r;
   this.specialBoxes = [];
 }
 
-var kitchen = new Room();
-var bedroom = new Room();
-var livingRoom = new Room();
-var bathroom = new Room();
-var hallway = new Room();
-var landing = new Room();
-var driveway = new Room();
+var kitchen       = new Room(false, false, true, false);
+var bedroom       = new Room(false, false, false, true);
+var livingRoom    = new Room(false, false, false, true);
+var bathroom      = new Room(false, false, true, false);
+var hallway       = new Room(true,  false, true,  true);
+var landing       = new Room(false, true , true,  true);
+var driveway      = new Room(false, false, true,  true);
 
-var mainStreet1 = new Room();
-var mainStreet2 = new Room();
-var mainStreet3 = new Room();
-var sideAlley = new Room();
+var mainStreet1   = new Room(false, false, true,  true);
+var mainStreet2   = new Room(false, false, true,  true);
+var mainStreet3   = new Room(false, false, true,  true);
+var sideAlley     = new Room(false, false, true, false);
 
-var clothesShop = new Room();
-var doctors = new Room();
-var arcade = new Room();
-var restaurant = new Room();
-var furnitureShop = new Room();
+var clothesShop   = new Room(false, true, false,  false);
+var doctors       = new Room(false, true, false,  false);
+var arcade        = new Room(false, true, false,  false);
+var restaurant    = new Room(false, true, false,  false);
+var furnitureShop = new Room(false, true, false,  false);
   
 var worldMap = [
   [bedroom,landing,bathroom],
