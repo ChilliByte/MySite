@@ -5,13 +5,10 @@ var w = 1600;
 canvas.height = h;
 canvas.width = w;
 var gravity = 0.3;
-var boxes = [];
-boxes.push({
-  x:0,
-  y:850,
-  h:50,
-  w:1600
-}) 
+var currentLevel;
+(function setLevel() {
+  currentLevel = worldMap[player.y][player.x];
+})();
 canvas.addEventListener("mousedown", getPosition, false);
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
@@ -50,10 +47,10 @@ function render() {
   render();
 })();
 function checkCollisions() {
-    for(var i = 0; i < boxes.length; i++) {
+    for(var i = 0; i < currentLevel.boxes.length; i++) {
         ctx.fillStyle = "#ffdd00";
-        ctx.fillRect(boxes[i].x, boxes[i].y, boxes[i].w, boxes[i].h);
-        var dir = colCheck(player,boxes[i]);
+        ctx.fillRect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].w, currentLevel.boxes[i].h);
+        var dir = colCheck(player,currentLevel.boxes[i]);
         if (dir === "l" || dir === "r") {
             player.velX = 0;
         } else if (dir === "b" || dir === "t") {
