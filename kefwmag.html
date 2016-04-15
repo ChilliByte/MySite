@@ -65,16 +65,16 @@
       var output = document.getElementById("article");
       var text = "";
       function submit() {
-        text = output.innerHTML;
+        text = output.value;
         var formattedDate = date.value + " 12:00:00 +0000";
-        output.innerHTML  = "---\n";
-        output.innerHTML += "layout: dposts\n";
-        output.innerHTML += "title: \""+ title.value +"\"\n";
-        output.innerHTML += "date: " + formattedDate+ "\n";
-        output.innerHTML += "category: \"" + cat.value + "\"\n";
-        output.innerHTML += "author: \"" + author.value + "\"\n";
-        output.innerHTML += "---\n";
-        output.innerHTML += text;
+        output.value  = "---\n";
+        output.value += "layout: dposts\n";
+        output.value += "title: \""+ title.value +"\"\n";
+        output.value += "date: " + formattedDate+ "\n";
+        output.value += "category: \"" + cat.value + "\"\n";
+        output.value += "author: \"" + author.value + "\"\n";
+        output.value += "---\n";
+        output.value += text;
         text = title.value.toLowerCase().replace(/ /g,"-");
         document.getElementById("filename").innerHTML = date.value + "-" + text + ".md";
       }
@@ -82,7 +82,7 @@
         var fname = prompt("Filename?");
         var desc = prompt("Description?");
         text = "\n {% include image.html url=\"assets/"+fname+"\" description=\""+desc+"\" %}";
-        output.innerHTML += text;
+        output.value += text;
       }
     </script>
   </body>
