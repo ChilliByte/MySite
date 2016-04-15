@@ -150,6 +150,16 @@ function checkClickCollisions(mouse) {
        if(colCheck(mouse,{x:1500,y:410,w:64,h:80})) {
            player.worldX++;
        }
+    }    
+    if(currentLevel.above) {
+       if(colCheck(mouse,{x:760,y:36,w:80,h:64})) {
+           player.worldY--;
+       }
+    }
+    if(currentLevel.below) {
+       if(colCheck(mouse,{x:760,y:800,w:80,h:36})) {
+           player.worldY++;
+       }
     }
 }
 
