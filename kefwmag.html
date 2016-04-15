@@ -59,6 +59,9 @@
       <h2>Image</h2>
       <button onclick="addImage()">Add Image</button>
       
+      <h2>Remove Newline</h2>
+      <button onclick="removeNewLines()">Clean</button>
+      
       <h2>Filename:</h2>
       <p id="filename">Press Submit to Generate Filename</p>
     </nav>
@@ -84,6 +87,9 @@
         var desc = prompt("Description?");
         text = "\n {% include image.html url=\"assets/"+fname+"\" description=\""+desc+"\" %}";
         output.value += text;
+      }
+      function removeNewLines() {
+        output.value = output.value.replace(/\n/g," ");
       }
     </script>
   </body>
