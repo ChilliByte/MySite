@@ -169,5 +169,21 @@ function drawArrows() {
         ctx.lineTo(1500,490);
         ctx.lineTo(1564,450);
         ctx.fill();
+    }    
+    if(currentLevel.above) {
+        ctx.fillStyle = "#fd0"
+        ctx.beginPath();
+        ctx.moveTo(760,100);
+        ctx.lineTo(840,100);
+        ctx.lineTo(800,36);
+        ctx.fill();
+    }
+    if(currentLevel.below) {
+        ctx.fillStyle = "#fd0"
+        ctx.beginPath();
+        ctx.moveTo(760,800);
+        ctx.lineTo(840,800);
+        ctx.lineTo(800,864);
+        ctx.fill();
     }
 }
