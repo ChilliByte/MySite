@@ -165,7 +165,7 @@ function checkClickCollisions(mouse) {
     var i = currentLevel.specialBoxes.length;
     while(i--) {
         if(colCheck(mouse,currentLevel.specialBoxes[i])) {
-           console.log("clicked special")
+           console.log("clicked special");
        }
     }
 }
