@@ -113,6 +113,7 @@ function updateValues() {
         if(player.sleep  < 0) {player.sleep  = 0}  
         if(player.clean  < 0) {player.clean  = 0}  
         player.lastUpdated = Date.now();
+        saveBean();
     }
 }
 
