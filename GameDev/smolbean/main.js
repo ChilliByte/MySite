@@ -166,6 +166,11 @@ function checkClickCollisions(mouse) {
     while(i--) {
         if(colCheck(mouse,currentLevel.specialBoxes[i])) {
            console.log("clicked special");
+           var sBoxType = currentLevel.specialBoxes[i].type;
+           if(sBoxType == "door") {
+               player.worldX = currentLevel.specialBoxes[i].data.toX;
+               player.worldY = currentLevel.specialBoxes[i].data.toY;
+           }
        }
     }
 }
