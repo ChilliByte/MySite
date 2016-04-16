@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Pi</title>
+  </head>
+  <body>
+    <style>
+      html, body {
+        height:100%;
+        width:100%;
+        margin:0;
+        padding:0;
+        background-color:black;
+        font-family: Garamond;
+      }
+      canvas {
+        border: 1px solid black;
+        margin: auto;
+        position:fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        height:90vmin;
+        width:90vmin;
+      }
+    </style>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext("2d");
+      var w = 1000;
+      canvas.height = w;
+      canvas.width = w;
+      
+      window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame    ||
+                function( callback ){
+                  window.setTimeout(callback, 1000 / 60);
+                };
+      })();
+      
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+      function getRandomColor() {
+      	return "rgb("+getRandomInt(100,256)+","+getRandomInt(100,256)+","+getRandomInt(100,256)+")";
+      }
+      function isNumber(n) {
+		  return !isNaN(parseFloat(n)) && isFinite(n);
+		}
+      var plant = {
+      	color: getRandomColor(),
+      	layers: [1],
+      };
+      var currentLayer = 0;
+      (function generatePlant(arr) {
+      	if(currentLayer < 4) {
+      		if(Array.isArray(arr[arr.length-1])) {
+				var i = arr.length
+				while(i--) {
+					tempArr.push(generatePlant(arr[i]));
+				}
+			} else if(isNumber(arr)) {
+				var j = arr;
+				while (j--) {
+					nodeArr.push(getRandomInt(0,4))
+				}
+				return nodeArr
+			}
+			plant.layers.push(tempArr);
+			currentLayer++;
+      	}
+      })(plant.layers);
+      
+      function render() {
+        
+      }
+      (function animloop(){
+        requestAnimFrame(animloop);
+        render();
+      })();
+      
+      
+    </script>
+  </body>
+</html>
