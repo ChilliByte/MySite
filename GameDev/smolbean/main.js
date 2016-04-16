@@ -94,7 +94,7 @@ function updateHUD() {
 
 function updateValues() {
     timeDiff = Date.now() - player.lastUpdated;
-    modifier = Math.floor(timeDiff / 84600);
+    modifier = Math.floor(timeDiff / 846000);
     if(modifier > 0) {
         player.fun    -= modifier;
         player.water  -= modifier;
