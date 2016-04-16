@@ -48,7 +48,7 @@ var furnitureShop = new Room(false, true, false,  false);
 var worldMap = [
   [bedroom    , landing  , bathroom ],
   [livingRoom , hallway  , kitchen  ],
-  [null,      , null     , clothesShop, doctors       , arcade      , restaurant],
+  [null       , null     , clothesShop, doctors       , arcade      , restaurant],
   [null       , driveway , mainStreet1, mainStreet2   , mainStreet3 , sideAlley ],
   [null       , null     , furnitureShop]
 ]
