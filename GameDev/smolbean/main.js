@@ -133,14 +133,6 @@ function getPosition(event) {
 
 function checkClickCollisions(mouse) {
     console.log(mouse);
-    if((colCheck(mouse,player) !== null) && (!player.jumping) && (player.love < 100)) {
-        player.velY -= 6;
-        player.jumping = true;
-        player.love += 10;
-        if (player.love > 100) {
-            player.love = 100;
-        }
-    }
     if(currentLevel.left) {
        if(colCheck(mouse,{x:36,y:410,w:64,h:80})) {
            player.worldX--;
@@ -159,6 +151,20 @@ function checkClickCollisions(mouse) {
     if(currentLevel.below) {
        if(colCheck(mouse,{x:760,y:800,w:80,h:36})) {
            player.worldY++;
+       }
+    }
+    if((colCheck(mouse,player) !== null) && (!player.jumping) && (player.love < 100)) {
+        player.velY -= 6;
+        player.jumping = true;
+        player.love += 10;
+        if (player.love > 100) {
+            player.love = 100;
+        }
+    }
+    var i = currentLevel.specialBoxes.length;
+    while(i--) {
+        if(colCheck(mouse,currentLevel.specialBoxes[i])) {
+           console.log("clicked special")
        }
     }
 }
