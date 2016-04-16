@@ -28,6 +28,7 @@ function render() {
     setLevel();
     player.velY += gravity;
     checkCollisions();
+    drawSpecials();
     player.x += player.velX;
     player.y += player.velY;
     updateValues();
@@ -49,7 +50,8 @@ function render() {
   render();
 })();
 function checkCollisions() {
-    for(var i = 0; i < currentLevel.boxes.length; i++) {
+  i = currentLevel.boxes.length
+    while (i--) {
         ctx.fillStyle = "#ffdd00";
         ctx.fillRect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].w, currentLevel.boxes[i].h);
         var dir = colCheck(player,currentLevel.boxes[i]);
@@ -60,5 +62,12 @@ function checkCollisions() {
             player.velX = 0;
             player.jumping = false;
         }
+    }
+}
+function drawSpecials() {
+  i = currentLevel.specialBoxes.length;
+    while (i--) {
+        ctx.fillStyle = "#ff0000";
+        ctx.fillRect(currentLevel.specialBoxes[i].x, currentLevel.specialBoxes[i].y, currentLevel.specialBoxes[i].w, currentLevel.specialBoxes[i].h);
     }
 }
