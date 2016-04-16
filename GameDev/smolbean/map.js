@@ -39,11 +39,11 @@ var mainStreet2   = new Room(false, false, true,  true);
 var mainStreet3   = new Room(false, false, true,  true);
 var sideAlley     = new Room(false, false, true, false);
 
-var clothesShop   = new Room(false, true, false,  false);
-var doctors       = new Room(false, true, false,  false);
-var arcade        = new Room(false, true, false,  false);
-var restaurant    = new Room(false, true, false,  false);
-var furnitureShop = new Room(false, true, false,  false);
+var clothesShop   = new Room(false, true,  false, false);
+var doctors       = new Room(false, true,  false, false);
+var arcade        = new Room(false, true,  false, false);
+var restaurant    = new Room(false, true,  false, false);
+var furnitureShop = new Room(true,  false, false, false);
   
 var worldMap = [
   [bedroom    , landing  , bathroom ],
