@@ -56,21 +56,21 @@
       var tempArr = [];
       var nodeArr = [];
       (function generatePlant(arr) {
-      	if(currentLayer < 4) {
+      	if(currentLayer < 6) {
       		if(Array.isArray(arr[arr.length-1])) {
 				var i = arr.length
 				while(i--) {
 					tempArr.push(generatePlant(arr[i]));
 				}
-			} else if(isNumber(arr)) {
+		} else if(isNumber(arr)) {
 				var j = arr;
 				while (j--) {
 					nodeArr.push(getRandomInt(0,4))
 				}
 				return nodeArr
-			}
-			plant.layers.push(tempArr);
-			currentLayer++;
+		}
+		plant.layers.push(tempArr);
+		currentLayer++;
       	}
       })(plant.layers);
       
