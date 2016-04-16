@@ -10,6 +10,7 @@ function SpecialBox(type,data,x,y,h,w) {
   this.h = h;
   this.w = w;
   this.type = type;
+  this.data = data;
 }
 
 function Room(u,d,l,r) {
