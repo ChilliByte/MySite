@@ -9,8 +9,6 @@
         width:100%;
         margin:0;
         padding:0;
-        background-color:black;
-        font-family: Garamond;
       }
       canvas {
         border: 1px solid black;
@@ -55,6 +53,7 @@
       	layers: [1],
       };
       var currentLayer = 0;
+      var tempArr,nodeArr;
       (function generatePlant(arr) {
       	if(currentLayer < 4) {
       		if(Array.isArray(arr[arr.length-1])) {
