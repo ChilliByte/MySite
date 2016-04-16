@@ -36,7 +36,7 @@ var driveway      = new Room(false, false, false, true);
 
 var mainStreet1   = new Room(false, false, true,  true);
 var mainStreet2   = new Room(false, false, true,  true);
-var mainStreet3   = new Room(false, false, true,  true);
+var mainStreet3   = new Room(false, false, true, false);
 var sideAlley     = new Room(false, false, true, false);
 
 var clothesShop   = new Room(false, true,  false, false);
@@ -53,10 +53,19 @@ var worldMap = [
   [null       , null     , furnitureShop]
 ]
 
+bedroom.specialBoxes.push(new SpecialBox("bed",{color:"#ff00f0"},300,700,200,400));
+bathroom.specialBoxes.push(new SpecialBox("shower",null,1000,300,600,400));
+bathroom.specialBoxes.push(new SpecialBox("sink",null,400,700,200,200));
+livingRoom.specialBoxes.push(new SpecialBox("tv",{x:300,y:800},100,600,300,100));
+kitchen.specialBoxes.push(new SpecialBox("sink",null,1000,700,200,200));
+kitchen.specialBoxes.push(new SpecialBox("fridge",null,1100,650,500,250));
+
+
 hallway.specialBoxes.push(new SpecialBox("door",{toX:1,toY:3},600,600,200,300));
 driveway.specialBoxes.push(new SpecialBox("door",{toX:1,toY:1},200,600,200,300));
 mainStreet1.specialBoxes.push(new SpecialBox("door",{toX:2,toY:2},400,600,200,300));
 mainStreet1.specialBoxes.push(new SpecialBox("door",{toX:2,toY:4},1000,600,200,300));
 mainStreet2.specialBoxes.push(new SpecialBox("door",{toX:3,toY:2},600,600,200,300));
 mainStreet3.specialBoxes.push(new SpecialBox("door",{toX:4,toY:2},800,600,200,300));
+mainStreet3.specialBoxes.push(new SpecialBox("door",{toX:5,toY:3},1100,600,200,100));
 sideAlley.specialBoxes.push(new SpecialBox("door",{toX:3,toY:2},700,600,200,300));
