@@ -56,7 +56,7 @@ var worldMap = [
 bedroom.specialBoxes.push(new SpecialBox("bed",{color:"#ff00f0"},300,700,200,400));
 bathroom.specialBoxes.push(new SpecialBox("shower",null,1000,300,600,400));
 bathroom.specialBoxes.push(new SpecialBox("sink",null,400,700,200,200));
-livingRoom.specialBoxes.push(new SpecialBox("tv",{x:300,y:800},100,600,300,100));
+livingRoom.specialBoxes.push(new SpecialBox("tv",{x:300,y:800},50,500,300,50));
 kitchen.specialBoxes.push(new SpecialBox("sink",null,1000,700,200,200));
 kitchen.specialBoxes.push(new SpecialBox("fridge",null,1100,650,500,250));
 
