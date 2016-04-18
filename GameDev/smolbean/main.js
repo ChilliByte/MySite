@@ -182,19 +182,19 @@ function checkClickCollisions(mouse) {
                    player.water = 100;
                }
            }
-           if(sBoxType = "fridge") {
+           if(sBoxType == "fridge") {
                player.food += 50;
                if(player.food > 100) {
                    player.food = 100;
                }
            }
-           if(sBoxType = "bed") {
+           if(sBoxType == "bed") {
                player.sleeping = !player.sleeping;
            }
-            if(sBoxType = "shower") {
+            if(sBoxType == "shower") {
                player.showering = !player.showering;
            }
-           if(sBoxType = "tv") {
+           if(sBoxType == "tv") {
                player.watching = !player.watching;
            }
        }
