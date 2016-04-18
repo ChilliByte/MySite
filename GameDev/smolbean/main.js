@@ -134,24 +134,29 @@ function getPosition(event) {
 
 function checkClickCollisions(mouse) {
     console.log(mouse);
+    var moved = false;
     if(currentLevel.left) {
        if(colCheck(mouse,{x:36,y:410,w:64,h:80})) {
            player.worldX--;
+           moved = true;
        }
     }
     if(currentLevel.right) {
        if(colCheck(mouse,{x:1500,y:410,w:64,h:80})) {
            player.worldX++;
+           moved = true;
        }
     }    
     if(currentLevel.above) {
        if(colCheck(mouse,{x:760,y:36,w:80,h:64})) {
            player.worldY--;
+           moved = true;
        }
     }
     if(currentLevel.below) {
        if(colCheck(mouse,{x:760,y:800,w:80,h:36})) {
            player.worldY++;
+           moved = true
        }
     }
     if((colCheck(mouse,player) !== null) && (!player.jumping) && (player.love < 100)) {
@@ -171,7 +176,33 @@ function checkClickCollisions(mouse) {
                player.worldX = currentLevel.specialBoxes[i].data.toX;
                player.worldY = currentLevel.specialBoxes[i].data.toY;
            }
+           if(sBoxType == "sink") {
+               player.water += 50;
+               if (player.water > 100) {
+                   player.water = 100;
+               }
+           }
+           if(sBoxType = "fridge") {
+               player.food += 50;
+               if(player.food > 100) {
+                   player.food = 100;
+               }
+           }
+           if(sBoxType = "bed") {
+               player.sleeping = !player.sleeping;
+           }
+            if(sBoxType = "shower") {
+               player.showering = !player.showering;
+           }
+           if(sBoxType = "tv") {
+               player.watching = !player.watching;
+           }
        }
+    }
+    if (moved) {
+        player.sleeping = false;
+        player.showering = false;
+        player.watching = false;
     }
 }
 
