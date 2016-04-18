@@ -68,4 +68,4 @@ mainStreet1.specialBoxes.push(new SpecialBox("door",{toX:2,toY:4},1000,550,300,1
 mainStreet2.specialBoxes.push(new SpecialBox("door",{toX:3,toY:2},600,550,300,150));
 mainStreet3.specialBoxes.push(new SpecialBox("door",{toX:4,toY:2},800,550,300,150));
 mainStreet3.specialBoxes.push(new SpecialBox("door",{toX:5,toY:3},1100,550,300,150));
-sideAlley.specialBoxes.push(new SpecialBox("door",{toX:3,toY:2},700,550,300,150));
+sideAlley.specialBoxes.push(new SpecialBox("door",{toX:5,toY:2},700,550,300,150));
