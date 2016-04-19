@@ -103,7 +103,11 @@ function updateValues() {
         player.health -= modifier;
         player.social -= modifier;
         player.love   -= modifier;
-        player.sleep  -= modifier;
+        if(player.sleeping) {
+            player.sleep  += 3*modifier;
+        } else {
+            player.sleep  -= modifier;
+        }
         player.clean  -= modifier;
         if(player.fun    < 0) {player.fun    = 0} 
         if(player.water  < 0) {player.water  = 0}  
@@ -112,12 +116,19 @@ function updateValues() {
         if(player.social < 0) {player.social = 0} 
         if(player.love   < 0) {player.love   = 0} 
         if(player.sleep  < 0) {player.sleep  = 0}  
+        if(player.sleep  < 0) {player.sleep  = 0}  
         if(player.clean  < 0) {player.clean  = 0}  
         player.lastUpdated = Date.now();
 
     }
-    if(timeDiff > 1000) {
-         saveBean();       
+    if(timeDiff > 100) {
+        saveBean(); 
+        if(player.watching) {
+            player.fun++;
+        }
+        if(player.showering) {
+            player.clean++;
+        }
     }
 }
 
@@ -194,6 +205,13 @@ function checkClickCollisions(mouse) {
            }
            if(sBoxType == "bed") {
                player.sleeping = !player.sleeping;
+               if(player.sleeping) {
+                   player.x = currentLevel.specialBoxes[i].data.x;
+                   player.y = currentLevel.specialBoxes[i].data.y;
+               } else {
+                   player.velX += 3;
+                   player.velY -= 6;
+               }
            }
             if(sBoxType == "shower") {
                player.showering = !player.showering;
