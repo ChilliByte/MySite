@@ -94,8 +94,9 @@ function updateHUD() {
 
 function updateValues() {
     timeDiff = Date.now() - player.lastUpdated;
-    modifier = Math.floor(timeDiff / 846000);
-    if(modifier > 0) {
+    modifier = timeDiff / 846000;
+    if(Math.floor(modifier) > 0) {
+        modifier = Math.floor(modifier);
         player.fun    -= modifier;
         player.water  -= modifier;
         player.food   -= modifier;
@@ -113,7 +114,10 @@ function updateValues() {
         if(player.sleep  < 0) {player.sleep  = 0}  
         if(player.clean  < 0) {player.clean  = 0}  
         player.lastUpdated = Date.now();
-        saveBean();
+
+    }
+    if(timeDiff > 1000) {
+         saveBean();       
     }
 }
 
