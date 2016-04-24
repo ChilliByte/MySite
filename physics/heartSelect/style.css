@@ -5,6 +5,7 @@ html,body {
   margin:0;
   text-align:center;
   font-family:Calibri;
+  position:fixed;
 }
 input#heart {
   display:none;
@@ -12,10 +13,23 @@ input#heart {
 
 #heart ~ label {
   display:block;
-  margin-top:30%;
+  position:fixed;
+  left:calc(50vw - 12.5px);
+  top:30%;
+  margin:auto;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 12.5px 12.5px 12.5px 0;
+  border-width: 25px 12px 0 25px;
   border-color: transparent #f99 transparent transparent;
+}
+
+#heart ~ label:before {
+  display:block;
+  margin:0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 12.5px 12.5px 12.5px;
+  border-color: transparent transparent #f99 transparent;
 }
