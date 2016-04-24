@@ -22,22 +22,22 @@
       input#heart {
         display:none;
       }
-      .my-icon {
+      .leftHeart {
           position: relative;
       }
-      .my-icon > i {
+      .leftHeart > i {
           position: absolute;
           display: inline-block;
           width: 0;
           height: 0;
           line-height: 0;
-          border: 17.857142857142858px solid transparent;
-          margin-left: -17.857142857142858px;
-          border-right: 17.857142857142858px solid #F99;
-          left: 3.5714285714285716px;
-          top: 3.5714285714285716px;
+          border: 18px solid transparent;
+          margin-left: -18px;
+          border-right: 18px solid #F99;
+          left: 3px;
+          top: 3px;
       }
-      .my-icon > i+i {
+      .leftHeart > i+i {
           position: absolute;
           display: inline-block;
           width: 0;
@@ -46,6 +46,34 @@
           border: 12.5px solid transparent;
           border-radius: 12.5px;
           border-left: 12.5px solid #F99;
+          border-top: 12.5px solid #F99;
+          left: 17px;
+          top: 0px;
+      }
+      
+      .rightHeard {
+          position: relative;
+      }
+      .rightHeart > i {
+          position: absolute;
+          display: inline-block;
+          width: 0;
+          height: 0;
+          line-height: 0;
+          border: 18px solid transparent;
+          border-left: 18px solid #F99;
+          left: 3px;
+          top: 3px;
+      }
+      .rightHeart > i+i {
+          position: absolute;
+          display: inline-block;
+          width: 0;
+          height: 0;
+          line-height: 0;
+          border: 12.5px solid transparent;
+          border-radius: 12.5px;
+          border-right: 12.5px solid #F99;
           border-top: 12.5px solid #F99;
           left: 0px;
           top: 0px;
@@ -57,7 +85,8 @@
     	<div>
     	<input type="checkbox" id="heart" name="heart"/>
     	<label for="heart">
-    		<i class="my-icon"><i></i><i></i></i>
+    		<i class="leftHeart"><i></i><i></i></i>
+    		<i class="rightHeart"><i></i><i></i></i>
     	</label>
     	</div>
     	
