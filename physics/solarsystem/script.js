@@ -13,14 +13,10 @@ var origin = {
 //Gravitational Constant, increase to strengthen gravity
 var bigG = 0.025;
 
-function Particle(x,y,mass,angle,vel,comp) {
+function Particle(x,y,mass) {
 	this.x = x;
 	this.y = y;
 	this.mass = mass;
-	this.angle = angle;
-	this.vel = vel;
-	this.cX = comp.x;
-	this.cY = comp.y;
 }
 
 function toDegrees (angle) {
@@ -35,38 +31,6 @@ function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getBearing(p1,p2) {
-	//Returns an angle relative to the +ve x axis
-	dx = p2.x - p1.x;
-	dy = p1.y - p2.y;
-	theta = toDegrees(Math.atan2(dy,dx));
-	if(theta < 0) {
-		theta = 360 + theta;
-	}
-	return theta;
-}
-
-function getComponentVectors(bearing,vel) {
-	//Splits a vector into its X and Y components
-	cX = vel * Math.sin(toRadians(bearing % 90));
-	cY = vel * Math.cos(toRadians(bearing % 90));
-	temp = 0
-	if((bearing >= 90) && (bearing < 180)) {
-		temp = cY;
-		cY = cX;
-		cX = -1*temp;
-	}
-	if((bearing >= 180) && (bearing < 270)) {
-		cX *= -1;
-		cY *= -1;
-	}
-	if((bearing >= 270) && (bearing < 360)) {
-		temp = cY;
-		cY = -1*cX;
-		cX = temp;
-	}
-	return {x:cX,y:cY};
-}
 function getDistanceSquared(p1,p2) {
 	return ((p2.y-p1.y)*(p2.y-p1.y)) + ((p2.x-p1.x)*(p2.x-p1.x));
 }
@@ -78,28 +42,16 @@ function getGravitationalForce(p1,p2) {
 }
 
 function getNetPull(p1) {
-	var i = particleCount;
-	while(i--) {
-		if(p1 != particles[i]) {
-			cObj = getComponentVectors(getBearing(p1,particles[i]),getGravitationalForce(p1,particles[i])/p1.mass);
-			p1.cX += cObj.x;
-			p1.cY -= cObj.y;
-			//adds up all of the horizonal and vertical forces acting on the particle
-		}
-	}
 
-	angMom = getComponentVectors(getBearing(origin,p1),0.001 * (1/Math.sqrt(getDistanceSquared(origin,p1))));
-	p1.cX += angMom.x;
-	p1.cY += angMom.y;
+	
 }
 
 var i = particleCount;
 while(i--) {
 	x = randInt(10,w-10);
 	y = randInt(10,h-10);
-	angle = getBearing(origin,{x:x,y:y})
-	vel = 0.001 * Math.sqrt(getDistanceSquared(origin,{x:x,y:y}));
-	particles.push(new Particle(x,y,randInt(1,5),angle,vel,getComponentVectors(angle,vel)));
+	m = randInt(1,4);
+	particles.push(new Particle(x,y,m));
 }
 
 // shim layer with setTimeout fallback
@@ -124,12 +76,6 @@ function render() {
 		ctx.beginPath();
 		ctx.arc(particles[i].x,particles[i].y,particles[i].mass,0,2*Math.PI);
 		ctx.fill();	
-		particles[i].x += particles[i].cX;
-		particles[i].y += particles[i].cY;
-		getNetPull(particles[i]);
-		if(particles[i].mass == 0) {
-			particles.splice(i,0);
-		}
 	}
 
 }
