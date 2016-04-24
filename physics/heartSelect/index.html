@@ -1,13 +1,66 @@
 <html>
   <head>
     <title>Heart Checkboxes</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      html,body {
+        height:100%;
+        width:100%;
+        padding:0;
+        margin:0;
+        font-family:Calibri;
+      }
+      div {
+        height:200px;
+        width:200px;
+        margin:auto;
+        position:fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+      }
+      input#heart {
+        display:none;
+      }
+      .my-icon {
+          position: relative;
+      }
+      .my-icon > i {
+          position: absolute;
+          display: inline-block;
+          width: 0;
+          height: 0;
+          line-height: 0;
+          border: 17.857142857142858px solid transparent;
+          margin-left: -17.857142857142858px;
+          border-right: 17.857142857142858px solid #F99;
+          left: 3.5714285714285716px;
+          top: 3.5714285714285716px;
+      }
+      .my-icon > i+i {
+          position: absolute;
+          display: inline-block;
+          width: 0;
+          height: 0;
+          line-height: 0;
+          border: 12.5px solid transparent;
+          border-radius: 12.5px;
+          border-left: 12.5px solid #F99;
+          border-top: 12.5px solid #F99;
+          left: 0px;
+          top: 0px;
+      }
+
+    </style>
   </head>
   <body>
-  	<input type="checkbox" id="heart" name="heart"/>
-  	<label for="heart">
-  		
-  	</label>
-  	<h1>Click Me!</h1>
+    	<div>
+    	<input type="checkbox" id="heart" name="heart"/>
+    	<label for="heart">
+    		<i class="my-icon"><i></i><i></i></i>
+    	</label>
+    	</div>
+    	
+    	<h1>Click Me!</h1>
   </body>
 </html>
