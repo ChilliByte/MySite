@@ -129,6 +129,13 @@ function updateValues() {
         if(player.showering) {
             player.clean++;
         }
+       if(player.sleeping) {
+           player.x = currentLevel.specialBoxes[i].data.x;
+           player.y = currentLevel.specialBoxes[i].data.y;
+       } else {
+           player.velX = 3;
+           player.velY = -6;
+       }
     }
 }
 
@@ -205,13 +212,6 @@ function checkClickCollisions(mouse) {
            }
            if(sBoxType == "bed") {
                player.sleeping = !player.sleeping;
-               if(player.sleeping) {
-                   player.x = currentLevel.specialBoxes[i].data.x;
-                   player.y = currentLevel.specialBoxes[i].data.y;
-               } else {
-                   player.velX += 3;
-                   player.velY -= 6;
-               }
            }
             if(sBoxType == "shower") {
                player.showering = !player.showering;
