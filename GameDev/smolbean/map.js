@@ -53,7 +53,7 @@ var worldMap = [
   [null       , null     , furnitureShop]
 ]
 
-bedroom.specialBoxes.push(new SpecialBox("bed",{color:"#ff00f0"},250,650,200,400));
+bedroom.specialBoxes.push(new SpecialBox("bed",{color:"#ff00f0",x:450,y:650},250,650,200,400));
 bathroom.specialBoxes.push(new SpecialBox("shower",null,1200,300,550,225));
 bathroom.specialBoxes.push(new SpecialBox("sink",null,400,450,150,200));
 livingRoom.specialBoxes.push(new SpecialBox("tv",{x:300,y:800},50,500,300,50));
