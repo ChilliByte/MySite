@@ -49,7 +49,13 @@ function update() {
     drawCollectibles();
     drawMobs();
     drawCrates();
-
+    
+    if(player.powerups.shrink) {
+        player.height = units;
+    } else {
+        player.height = 2*units;
+    }
+    
     if (player.grounded) {
         player.velY = 0;
     }
