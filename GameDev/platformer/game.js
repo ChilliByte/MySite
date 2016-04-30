@@ -17,6 +17,9 @@ function update() {
     checkKeys()
 
     //Choose the right frictional and grvitational coefficients
+    if (player.powerups.glide) {
+        gravity = 0.15;
+    }
     if (touchingIce) {
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
@@ -46,7 +49,6 @@ function update() {
     drawCollectibles();
     drawMobs();
     drawCrates();
-    drawHUD();
 
     if (player.grounded) {
         player.velY = 0;
@@ -104,12 +106,13 @@ function update() {
             currentLevel.offset = 0;
         }
         currentLevel = levels[0];
-        player.health = 100;
+        player.health = 1000;
     }
 
     checkLevelChange()
     checkTriggers()
     drawChar();
+    drawHUD();
     requestAnimationFrame(update);
 }
 
@@ -278,8 +281,6 @@ function checkKeys() {
 
 function drawChar() {
     if (player.char == 1) {
-        player.height = 2 * units;
-        player.width = 1 * units;
         if (player.velX < -1) {
             if (frame > 3) {
                 //Facing Right, Left Leg Forward
