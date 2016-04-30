@@ -17,9 +17,6 @@ function update() {
     checkKeys()
 
     //Choose the right frictional and grvitational coefficients
-    if (player.powerups.glide) {
-        gravity = 0.15;
-    }
     if (touchingIce) {
         player.vertiSpeed = normalVertiSpeed;
         gravity = normalGravity;
@@ -33,7 +30,15 @@ function update() {
         gravity = waterGravity;
         friction = waterFriction;
     }
-
+    
+    if ((player.powerups.glide) && (player.isGliding)) {
+        gravity = 0.15;
+    } 
+    
+    if(!gravityDown) {
+        gravity *= -1;
+    }
+    
     //Factor in Friction and Gravity
     player.velX *= friction;
     player.velY += gravity;
@@ -236,7 +241,7 @@ function drawHUD() {
 }
 
 function checkKeys() {
-    if (keys[38] || keys[32] || keys[87]) {
+    if (keys[38] || keys[32]) {
         // up arrow or space
         if (!inWater) {
             if (!player.jumping && player.grounded) {
@@ -282,6 +287,10 @@ function checkKeys() {
         openKeyPressed = true;
     } else {
         openKeyPressed = false;
+    }
+    
+    if((keys[87]) && (player.powerups.antigrav)) {
+        flipGravity();
     }
 }
 
