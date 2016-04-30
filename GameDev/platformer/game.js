@@ -194,6 +194,10 @@ function scrollLevel(scrollX) {
     while (i--) {
         currentLevel.crates[i].x -= scrollX;
     }
+    i = currentLevel.mobs.length
+    while (i--) {
+        currentLevel.mobs[i].x -= scrollX;
+    }
 }
 
 function checkTriggers() {
