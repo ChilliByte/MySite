@@ -775,7 +775,7 @@ function drawCollectibles() {
 }
 
 function checkPlayerMobCollision() {
-    currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player, false)
+    currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player, true);
     if (currentLevel.mobs[k].hitPlayer === "t") {
         currentLevel.mobs[k].dead = true;
         console.log("Hit Mob Top")
