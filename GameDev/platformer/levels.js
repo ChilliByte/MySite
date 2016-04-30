@@ -111,13 +111,13 @@ level1.boxes.push(new Box(22,12,1,4));
 level1.boxes.push(new Box(23,11,1,2));
 level1.boxes.push(new Box(24,10,6,16));
 
-level1.boxes.push(new Box(46,15,5,33));
+level1.boxes.push(new Box(46,15,5,30));
 level1.boxes.push(new Box(46,10,10,4));
 level1.boxes.push(new Box(71,10,10,4));
 level1.boxes.push(new Box(50,13,3,3));
 level1.boxes.push(new Box(68,13,3,3));
 
-level1.boxes.push(new Box(78,16,4,64));
+level1.boxes.push(new Box(80,16,4,64));
 level1.boxes.push(new Box(103,14,6,36));
 
 level1.boxes.push(new Box(102,15,1,38));
