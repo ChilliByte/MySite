@@ -782,13 +782,13 @@ function checkPlayerMobCollision() {
     }
     if (currentLevel.mobs[k].hitPlayer === "l") {
         player.velY -= 2;
-        player.velX += 8;
+        player.velX -= 8;
         currentLevel.mobs[k].velX += 5;
         console.log("Hit Mob Left");
     }
     if (currentLevel.mobs[k].hitPlayer === "r") {
         player.velY -= 2;
-        player.velX -= 8;
+        player.velX += 8;
         currentLevel.mobs[k].velX -= 5;
         console.log("Hit Mob Right");
     }
