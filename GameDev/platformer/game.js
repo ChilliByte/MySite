@@ -121,7 +121,7 @@ function update() {
     }
 
     checkLevelChange()
-    checkTriggers()
+    displayHints();
     drawChar();
     drawHUD();
     requestAnimationFrame(update);
@@ -200,13 +200,6 @@ function scrollLevel(scrollX) {
     }
 }
 
-function checkTriggers() {
-    if (!triggers.firstStep) {
-        hint(player.x, 30, "Use the arrow keys or WASD to move, space to jump!");
-        triggers.firstStep = true;
-    }
-}
-
 function checkLevelChange() {
     if (player.x < 0) {
         player.x = canvas.width - 5;
@@ -243,7 +236,7 @@ function drawHUD() {
     ctx.closePath();
     ctx.fill();
     
-    ctx.fillStyle = "#FF9";
+    ctx.fillStyle = "orange";
     ctx.beginPath();
     ctx.rect(38*units,units, units,units);
     ctx.closePath();
