@@ -109,6 +109,7 @@ function update() {
         player.velY = 0;
         scrollLevel(currentLevel.offset*-1);
         currentLevel.offset = 0;
+        scrolling=false;
         if(player.lives < 0) {
             currentLevelInt = 0;
             resetCount = levels.length;
