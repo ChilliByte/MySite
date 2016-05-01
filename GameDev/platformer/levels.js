@@ -127,7 +127,7 @@ level1.boxes.push(new Box(106,11,1,6));
 level1.boxes.push(new Box(107,10,1,5));
 
 level1.boxes.push(new Box(120,10,2,2));
-level1.boxes.push(new Box(120,5,1,2));
+level1.boxes.push(new Box(120,6,1,2));
 
 level1.boxes.push(new Box(130,13,1,8));
 level1.boxes.push(new Box(130,12,1,7));
