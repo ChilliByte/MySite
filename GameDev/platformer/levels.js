@@ -117,10 +117,10 @@ level1.boxes.push(new Box(71,10,10,4));
 level1.boxes.push(new Box(50,13,3,3));
 level1.boxes.push(new Box(68,13,3,3));
 
-level1.boxes.push(new Box(82,16,4,64));
+level1.boxes.push(new Box(82,16,4,70));
 level1.boxes.push(new Box(103,14,6,36));
 
-level1.boxes.push(new Box(102,15,1,38));
+level1.boxes.push(new Box(102,15,1,40));
 level1.boxes.push(new Box(104,13,1,8));
 level1.boxes.push(new Box(105,12,1,7));
 level1.boxes.push(new Box(106,11,1,6));
@@ -130,11 +130,6 @@ level1.boxes.push(new Box(130,13,1,8));
 level1.boxes.push(new Box(130,12,1,7));
 level1.boxes.push(new Box(130,11,1,6));
 level1.boxes.push(new Box(130,10,1,5));
-
-level1.boxes.push(new Box(94,4,1,8));
-level1.boxes.push(new Box(112,4,1,4));
-level1.boxes.push(new Box(126,4,1,4));
-level1.boxes.push(new Box(120,10,2,2));
 
 level1.boxes.push(new Box(156,19,1,16));
 level1.boxes.push(new Box(156,16,3,6));
