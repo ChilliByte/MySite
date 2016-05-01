@@ -221,8 +221,8 @@ level2.boxes.push(new Box(140,18,2,20));
 level2.boxes.push(new Box(164,13,6,4));
 level2.boxes.push(new Box(168,12,10,2));
 
-level2.doors.push(new Door(138,15,3,1));
-level2.switches.push(new Switch(140,15));
+level2.doors.push(new Door(138,15,1,3));
+level2.switches.push(new Switch(140,16));
 //Ending Sequence
 level2.boxes.push(new Box(176,17,3,24));
 level2.boxes.push(new Box(176,16,1,10));
