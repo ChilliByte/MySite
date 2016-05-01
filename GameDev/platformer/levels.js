@@ -161,6 +161,13 @@ level1.collectibles.push(new Collectible(60.5,14,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(64.5,14,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(69.5,12,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(73,9,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(120,9,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(121,9,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(120,5,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(121,5,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(120,4,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(121,4,0.4,0.4,"coin"));
+
 // Level 2
 level2.boxes.push(new Box(-10,16,32,20));
 level2.boxes.push(new Box(22,13,20,180));
