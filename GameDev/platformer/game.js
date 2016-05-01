@@ -98,11 +98,10 @@ function update() {
         document.getElementById("stats").style.display = "block"
         document.getElementById("stats").innerHTML = "X: " + player.x + ", <br>Units: " + player.x / units + "<br>Y: " + player.y + ",<br> Units: " + player.y / units + "<br>velX: " + player.velX + "<br>velY: " + player.velY + "<br>Scrolling? " + scrolling + "<br>Open key: " + openKeyPressed;
     }
-    
     if (player.y > canvas.height) {
         player.health = 0;
     }
-    
+    checkLevelChange();
     if (player.health < 1) {
         alert("You died");
         player.x = units;
@@ -125,8 +124,6 @@ function update() {
         }
         player.health = 200;
     }
-
-    checkLevelChange()
     displayHints();
     drawChar();
     drawHUD();
