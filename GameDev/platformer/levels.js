@@ -204,8 +204,8 @@ level2.boxes.push(new Box(68,13,7,1));
 
 level2.boxes.push(new Box(74,13,7,1));
 level2.boxes.push(new Box(75,12,8,1));
-level2.boxes.push(new Box(73,11,9,1));
-level2.boxes.push(new Box(72,10,10,20));
+level2.boxes.push(new Box(76,11,9,1));
+level2.boxes.push(new Box(77,10,10,20));
 //Level 3
 /*
 level2.ice.push(new Box(25,10,1,50));
