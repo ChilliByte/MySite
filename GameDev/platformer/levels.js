@@ -218,7 +218,7 @@ level2.boxes.push(new Box(138,12,3,2));
 level2.boxes.push(new Box(138,14,1,6));
 
 level2.boxes.push(new Box(140,18,2,20));
-level2.boxes.push(new Box(164,13,6,4));
+level2.boxes.push(new Box(164,15,6,4));
 level2.boxes.push(new Box(168,12,10,2));
 
 level2.doors.push(new Door(138,15,1,3));
