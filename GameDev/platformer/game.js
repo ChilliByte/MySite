@@ -101,7 +101,6 @@ function update() {
     if (player.y > canvas.height) {
         player.health = 0;
     }
-    checkLevelChange();
     if (player.health < 1) {
         alert("You died");
         player.x = units;
@@ -123,6 +122,8 @@ function update() {
             player.lives = 2;
         }
         player.health = 200;
+    } else {
+        checkLevelChange();
     }
     displayHints();
     drawChar();
