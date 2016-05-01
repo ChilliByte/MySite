@@ -211,11 +211,11 @@ level2.boxes.push(new Box(77,10,10,23));
 level2.boxes.push(new Box(105,13.5,1,10));
 
 level2.boxes.push(new Box(120,10,2,20));
-level2.boxes.push(new Box(120,10,6,2));
+level2.boxes.push(new Box(120,10,10,2));
 level2.boxes.push(new Box(120,18,2,20));
 
-level2.boxes.push(new Box(138,12,6,2));
-level2.boxes.push(new Box(138,13,1,3));
+level2.boxes.push(new Box(138,12,4,2));
+level2.boxes.push(new Box(138,13,2,6));
 
 level2.boxes.push(new Box(144,18,2,20));
 level2.boxes.push(new Box(164,14,6,4));
