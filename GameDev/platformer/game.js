@@ -105,18 +105,19 @@ function update() {
     
     if (player.health < 1) {
         alert("You died");
-        currentLevelInt = 0;
         player.x = units;
         player.y = units;
         player.velX = 0;
         player.velY = 0;
-        resetCount = levels.length;
-        while (resetCount--){
-            currentLevel = levels[resetCount];
-            scrollLevel(currentLevel.offset*-1);
-            currentLevel.offset = 0;
-        }
+        scrollLevel(currentLevel.offset*-1);
         if(player.lives < 0) {
+            currentLevelInt = 0;
+            resetCount = levels.length;
+            while (resetCount--){
+                currentLevel = levels[resetCount];
+                scrollLevel(currentLevel.offset*-1);
+                currentLevel.offset = 0;
+            }
             currentLevel = levels[0];
             alert("Game Over");
             player.lives = 2;
