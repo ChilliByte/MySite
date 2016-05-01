@@ -235,6 +235,31 @@ level2.boxes.push(new Box(191,10,2,2));
 level2.boxes.push(new Box(196,0,8,4));
 level2.boxes.push(new Box(196,14,3,4));
 
+level2.collectibles.push(new Collectible(24.3,9,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(34,13,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(38,13,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(45.3,12,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(50,15,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(55,15,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(60,15,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(64.3,12,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(68.3,12,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(74.3,13,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(78,9,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(79,9,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(80,9,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(81,9,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(82,9,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(96,9,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(100,6,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(105,11,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(119,9,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(128,9,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(137,9,0.4,0.4,"coin"));
+
+
+
+
 //Ending Sequence Coins
 level2.collectibles.push(new Collectible(180,10.7,0.4,0.4,"coin"));
 level2.collectibles.push(new Collectible(183,10.7,0.4,0.4,"coin"));
@@ -251,31 +276,4 @@ level2.collectibles.push(new Collectible(195,10.7,0.4,0.4,"coin"));
 level2.ice.push(new Box(25,10,1,50));
 
 level2.crates.push(new Crate(30,8,2,2,null))
-
-level3.collectibles.push({
-    x: 26*units,
-    y: 13 * units,
-    type: "coin",
-    width: (units/5)*2,
-    height: (units/5)*2,
-    collected: false
-});
-level5.mobs = [];
-level5.mobs.push({
-    x: 28*units,
-    y: 6*units,
-    width: (units/8)*7,
-    height: (units/8)*7,
-    speed: 0.3,
-    velX: 0,
-    velY: 0,
-    type: "patrol",
-    x1Limit: 22*units,
-    x2Limit: 34*units,
-    collisionDir: "",
-    grounded: false,
-    hitPlayer: "",
-    dead: false
-});
-// End Levels
 */
