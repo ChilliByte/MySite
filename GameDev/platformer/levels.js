@@ -214,12 +214,12 @@ level2.boxes.push(new Box(120,10,2,20));
 level2.boxes.push(new Box(120,10,10,2));
 level2.boxes.push(new Box(120,18,2,20));
 
-level2.boxes.push(new Box(138,12,4,2));
-level2.boxes.push(new Box(138,14,2,6));
+level2.boxes.push(new Box(138,12,3,2));
+level2.boxes.push(new Box(138,14,1,6));
 
-level2.boxes.push(new Box(144,18,2,20));
-level2.boxes.push(new Box(164,14,6,4));
-level2.boxes.push(new Box(168,10,10,2));
+level2.boxes.push(new Box(140,18,2,20));
+level2.boxes.push(new Box(164,13,6,4));
+level2.boxes.push(new Box(168,12,10,2));
 
 //Ending Sequence
 level2.boxes.push(new Box(176,17,3,24));
