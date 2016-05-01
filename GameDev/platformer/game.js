@@ -104,7 +104,7 @@ function update() {
     if (player.health < 1) {
         alert("You died");
         player.x = units;
-        player.y = units;
+        player.y = 12*units;
         player.velX = 0;
         player.velY = 0;
         scrollLevel(currentLevel.offset*-1);
