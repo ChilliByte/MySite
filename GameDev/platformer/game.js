@@ -198,6 +198,10 @@ function scrollLevel(scrollX) {
     while (i--) {
         currentLevel.mobs[i].x -= scrollX;
     }
+    i = currentLevel.collectibles.length
+    while (i--) {
+        currentLevel.collectibles[i].x -= scrollX;
+    }
 }
 
 function checkLevelChange() {
