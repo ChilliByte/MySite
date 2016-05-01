@@ -243,7 +243,7 @@ function drawHUD() {
     ctx.closePath();
     ctx.fill();
     
-    ctx.fillStyle = "#F00";
+    ctx.fillStyle = "#FF9";
     ctx.beginPath();
     ctx.rect(38*units,units, units,units);
     ctx.closePath();
@@ -251,7 +251,7 @@ function drawHUD() {
     ctx.fillStyle = "#FFF";
     ctx.beginPath();
     ctx.font = "24px Arial";
-    ctx.fillText(player.collected,units*38.5,units*1.75);
+    ctx.fillText(player.collected,units*38.2,units*1.75);
     ctx.closePath();
     ctx.fill();
 }
