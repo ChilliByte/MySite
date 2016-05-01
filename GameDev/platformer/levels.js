@@ -215,7 +215,7 @@ level2.boxes.push(new Box(120,10,10,2));
 level2.boxes.push(new Box(120,18,2,20));
 
 level2.boxes.push(new Box(138,12,4,2));
-level2.boxes.push(new Box(138,13,2,6));
+level2.boxes.push(new Box(138,14,2,6));
 
 level2.boxes.push(new Box(144,18,2,20));
 level2.boxes.push(new Box(164,14,6,4));
@@ -234,8 +234,6 @@ level2.boxes.push(new Box(196,0,8,4));
 level2.boxes.push(new Box(196,14,3,4));
 
 //Ending Sequence Coins
-level2.collectibles.push(new Collectible(165,13,0.4,0.4,"coin"));
-level2.collectibles.push(new Collectible(169.8,11,0.4,0.4,"coin"));
 level2.collectibles.push(new Collectible(180,10.7,0.4,0.4,"coin"));
 level2.collectibles.push(new Collectible(183,10.7,0.4,0.4,"coin"));
 level2.collectibles.push(new Collectible(186,6.7,0.4,0.4,"coin"));
