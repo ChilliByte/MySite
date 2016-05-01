@@ -117,7 +117,7 @@ function update() {
             currentLevel.offset = 0;
         }
         currentLevel = levels[0];
-        player.health = 1000;
+        player.health = 200;
     }
 
     checkLevelChange()
@@ -202,7 +202,7 @@ function scrollLevel(scrollX) {
 
 function checkTriggers() {
     if (!triggers.firstStep) {
-        hint(player.x, 30, "Use the arrow keys to move!");
+        hint(player.x, 30, "Use the arrow keys or WASD to move, space to jump!");
         triggers.firstStep = true;
     }
 }
@@ -240,6 +240,18 @@ function drawHUD() {
     ctx.beginPath();
     ctx.font = "24px Arial";
     ctx.fillText(player.health,units*1.5,units*1.75);
+    ctx.closePath();
+    ctx.fill();
+    
+    ctx.fillStyle = "#F00";
+    ctx.beginPath();
+    ctx.rect(38*units,units, units,units);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = "#FFF";
+    ctx.beginPath();
+    ctx.font = "24px Arial";
+    ctx.fillText(player.collected,units*38.5,units*1.75);
     ctx.closePath();
     ctx.fill();
 }
