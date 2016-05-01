@@ -169,6 +169,7 @@ level1.collectibles.push(new Collectible(121.3,5,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(120.3,4,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(121.3,4,0.4,0.4,"coin"));
 
+//Ending Sequence Coins
 level1.collectibles.push(new Collectible(165,13,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(169.8,11,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(180,10.7,0.4,0.4,"coin"));
@@ -205,7 +206,44 @@ level2.boxes.push(new Box(68,13,7,1));
 level2.boxes.push(new Box(74,13,7,1));
 level2.boxes.push(new Box(75,12,8,1));
 level2.boxes.push(new Box(76,11,9,1));
-level2.boxes.push(new Box(77,10,10,20));
+level2.boxes.push(new Box(77,10,10,23));
+
+level2.boxes.push(new Box(105,15,1,10));
+
+level2.boxes.push(new Box(120,10,2,20));
+level2.boxes.push(new Box(120,10,10,1));
+level2.boxes.push(new Box(120,18,2,20));
+
+level2.boxes.push(new Box(140,14,6,4));
+level2.boxes.push(new Box(144,18,2,20));
+level2.boxes.push(new Box(164,14,6,4));
+level2.boxes.push(new Box(168,10,10,2));
+
+//Ending Sequence
+level2.boxes.push(new Box(176,17,3,24));
+level2.boxes.push(new Box(176,16,1,10));
+level2.boxes.push(new Box(176,15,1,8));
+level2.boxes.push(new Box(176,14,1,6));
+level2.boxes.push(new Box(176,13,1,4));
+level2.boxes.push(new Box(176,12,1,2));
+
+level2.boxes.push(new Box(191,10,2,2));
+level2.boxes.push(new Box(196,0,8,4));
+level2.boxes.push(new Box(196,14,3,4));
+
+//Ending Sequence Coins
+level2.collectibles.push(new Collectible(165,13,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(169.8,11,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(180,10.7,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(183,10.7,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(186,6.7,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(186,10.7,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(186,14.7,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(189,10.7,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(189,8.7,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(189,12.7,0.4,0.4,"coin"));
+level2.collectibles.push(new Collectible(195,10.7,0.4,0.4,"coin"));
+
 //Level 3
 /*
 level2.ice.push(new Box(25,10,1,50));
