@@ -173,8 +173,12 @@ level1.collectibles.push(new Collectible(165,13,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(169.8,11,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(180,10.7,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(183,10.7,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(186,6.7,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(186,10.7,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(186,14.7,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(189,10.7,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(189,8.7,0.4,0.4,"coin"));
+level1.collectibles.push(new Collectible(189,12.7,0.4,0.4,"coin"));
 level1.collectibles.push(new Collectible(195,10.7,0.4,0.4,"coin"));
 
 
