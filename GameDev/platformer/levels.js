@@ -152,6 +152,7 @@ level1.boxes.push(new Box(191,10,2,2));
 level1.boxes.push(new Box(196,0,8,4));
 level1.boxes.push(new Box(196,14,3,4));
 
+level1.collectibles.push(new Collectible(31,8,0.4,0.4,"coin"));
 // Level 2
 level2.boxes.push(new Box(-10,16,32,20));
 level2.boxes.push(new Box(22,13,20,180));
