@@ -301,7 +301,7 @@ function checkKeys() {
         }
     }
 
-    if (keys[83] || keys[40]) {
+    if ((keys[83] || keys[40]) && player.powerups.doors) {
         openKeyPressed = true;
     } else {
         openKeyPressed = false;
