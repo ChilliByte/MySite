@@ -794,17 +794,20 @@ function checkPlayerMobCollision() {
         player.velX -= 8;
         currentLevel.mobs[k].velX += 5;
         console.log("Hit Mob Left");
+        player.health -= 10;
     }
     if (currentLevel.mobs[k].hitPlayer === "r") {
         player.velY -= 2;
         player.velX += 8;
         currentLevel.mobs[k].velX -= 5;
         console.log("Hit Mob Right");
+        player.health -= 10;
     }
     if (currentLevel.mobs[k].hitPlayer === "b") {
         player.velY -= 2;
         player.velX -= 8;
         console.log("Hit Mob Bottom");
+        player.health -= 20;
     }
 }
 
@@ -813,7 +816,7 @@ function patrolMobAI() {
         if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
             currentLevel.mobs[k].velX++;
         }
-        if (currentLevel.mobs[k].x > currentLevel.mobs[k].x2Limit) {
+        if ((currentLevel.mobs[k].x + currentLevel.offset) > currentLevel.mobs[k].x2Limit) {
             mobDir = "left";
             currentLevel.mobs[k].x -= 5
         }
@@ -822,7 +825,7 @@ function patrolMobAI() {
         if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
             currentLevel.mobs[k].velX--;
         }
-        if (currentLevel.mobs[k].x < currentLevel.mobs[k].x1Limit) {
+        if ((currentLevel.mobs[k].x+currentLevel.offset) < currentLevel.mobs[k].x1Limit) {
             mobDir = "right";
             currentLevel.mobs[k].x += 5
         }
@@ -834,7 +837,7 @@ function drawMobs() {
     ctx.fillStyle = "#90f";
     k = currentLevel.mobs.length;
     while (k--) {
-        if (!currentLevel.mobs[k].dead) {
+        if ((!currentLevel.mobs[k].dead) && (currentLevel.mobs[k].x < 40*units)) {
             ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
 
             if (currentLevel.mobs[k].type == "patrol") {
