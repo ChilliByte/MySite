@@ -35,6 +35,7 @@ var canvas = document.getElementById("canvas"),
         health:200,
         powerups: {
             swim:false,
+            doors:false,
             glide:false,
             invincible:false,
             antigrav:false,
