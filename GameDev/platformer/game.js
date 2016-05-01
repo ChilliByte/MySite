@@ -116,7 +116,11 @@ function update() {
             scrollLevel(currentLevel.offset*-1);
             currentLevel.offset = 0;
         }
-        currentLevel = levels[0];
+        if(player.lives < 0) {
+            currentLevel = levels[0];
+            alert("Game Over");
+            player.lives = 2;
+        }
         player.health = 200;
     }
 
