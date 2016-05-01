@@ -965,7 +965,7 @@ function drawCrates() {
 function displayHints() {
     if (!triggers.firstLevel) {
         if ((currentLevelInt == 0) && (currentLevel.offset > 1)) {
-            hint(player.x, 30, "Go to the right ot get to the end of the level!");
+            hint(player.x, 30, "Go to the right to get to the end of the level!");
             triggers.firstLevel = true;
             setTimeout(function() {
                 hint(10000, 10000, "")
@@ -1034,3 +1034,7 @@ function flipGravity() {
     gravity = gravity * -1;
     gravityDown = !gravityDown;
 }
+hint(player.x, 30, "A and D to move, Space to Jump!");
+setTimeout(function() {
+    hint(10000, 10000, "")
+}, 5000);
