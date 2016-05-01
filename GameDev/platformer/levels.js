@@ -208,10 +208,10 @@ level2.boxes.push(new Box(75,12,8,1));
 level2.boxes.push(new Box(76,11,9,1));
 level2.boxes.push(new Box(77,10,10,23));
 
-level2.boxes.push(new Box(105,14,1,10));
+level2.boxes.push(new Box(105,13.5,1,10));
 
 level2.boxes.push(new Box(120,10,2,20));
-level2.boxes.push(new Box(120,10,10,2));
+level2.boxes.push(new Box(120,10,6,2));
 level2.boxes.push(new Box(120,18,2,20));
 
 level2.boxes.push(new Box(138,12,6,2));
