@@ -185,7 +185,16 @@ level1.collectibles.push(new Collectible(195,10.7,0.4,0.4,"coin"));
 // Level 2
 level2.boxes.push(new Box(0,0,8,4));
 level2.boxes.push(new Box(0,14,6,14));
+
 level2.boxes.push(new Box(20,14,6,4));
+level2.boxes.push(new Box(24,10,10,1));
+
+level2.boxes.push(new Box(30,14,6,14));
+level2.boxes.push(new Box(41,13,1,4));
+level2.boxes.push(new Box(42,12,1,3));
+level2.boxes.push(new Box(43,11,1,2));
+level2.boxes.push(new Box(44,10,1,1));
+level2.boxes.push(new Box(45,16,4,10));
 
 //Level 3
 /*
