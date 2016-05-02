@@ -799,20 +799,20 @@ function checkPlayerMobCollision() {
         player.velX -= 8;
         currentLevel.mobs[k].velX += 5;
         console.log("Hit Mob Left");
-        player.health -= 10;
+        player.health -= currentLevel.mobs[k].damage;
     }
     if (currentLevel.mobs[k].hitPlayer === "r") {
         player.velY -= 2;
         player.velX += 8;
         currentLevel.mobs[k].velX -= 5;
         console.log("Hit Mob Right");
-        player.health -= 10;
+        player.health -= currentLevel.mobs[k].damage;
     }
     if (currentLevel.mobs[k].hitPlayer === "b") {
         player.velY -= 2;
         player.velX -= 8;
         console.log("Hit Mob Bottom");
-        player.health -= 20;
+        player.health -= currentLevel.mobs[k].damage;
     }
 }
 
