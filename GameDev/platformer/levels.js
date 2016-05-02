@@ -283,7 +283,7 @@ level2.mobs.push(new Mob(87,9,1,1,3,"left",0,0,15));
 level2.mobs.push(new Mob(89,9,1,1,2,"left",0,0,15));
 level2.mobs.push(new Mob(91,9,1,1,2,"left",0,0,15));
 
-level2.mobs.push(new Mob(112,8,2,2,1,"left",0,0,50));
+level2.mobs.push(new Mob(114,6,2,2,1,"left",0,0,50));
 
 level2.mobs.push(new Mob(123,12,1,1,1,"right",0,0,15));
 level2.mobs.push(new Mob(133,12,1,1,1,"right",0,0,15));
