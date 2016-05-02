@@ -43,7 +43,7 @@ function Mob(x,y,w,h,s,t,x1,x2,d) {
     this.speed = s;
     this.type = t;
     this.x1Limit = (x1*units)+1;
-    this.x2Limit = (x2-w)*units;
+    this.x2Limit = ((x2-w)*units)-1;
     this.damage = d;
     this.velX = 0;
     this.velY = 0;
