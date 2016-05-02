@@ -780,6 +780,12 @@ function drawCollectibles() {
                 if (currentLevel.collectibles[j].type === "coin") {
                     player.collected++
                 };
+                if (currentLevel.collectibles[j].type === "health") {
+                    player.health+=10;
+                };
+                if (currentLevel.collectibles[j].type === "red") {
+                    player.reds++;
+                };
                 console.log("Collected")
             }
         }
