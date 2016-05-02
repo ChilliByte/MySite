@@ -817,21 +817,21 @@ function checkPlayerMobCollision() {
 }
 
 function patrolMobAI() {
-    if (mobDir == "right") {
+    if (currentLevel.mobs[k].mobDir == "right") {
         if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
             currentLevel.mobs[k].velX++;
         }
         if ((currentLevel.mobs[k].x + currentLevel.offset) > currentLevel.mobs[k].x2Limit) {
-            mobDir = "left";
+            currentLevel.mobs[k].mobDir = "left";
             currentLevel.mobs[k].x -= 5
         }
     }
-    if (mobDir == "left") {
+    if (currentLevel.mobs[k].mobDir == "left") {
         if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
             currentLevel.mobs[k].velX--;
         }
         if ((currentLevel.mobs[k].x+currentLevel.offset) < currentLevel.mobs[k].x1Limit) {
-            mobDir = "right";
+            currentLevel.mobs[k].mobDir = "right";
             currentLevel.mobs[k].x += 5
         }
     }
