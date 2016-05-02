@@ -559,7 +559,7 @@ function checkMobDoorCollision() {
     //Loop through each of the mobs in this level, and see if any of them have collided with a box.
     l = currentLevel.mobs.length
     while (l--) {
-        currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.door[i], true)
+        currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.doors[i], true)
         if (currentLevel.mobs[l].collisionDir === "b") {
             currentLevel.mobs[l].grounded = true
         }
