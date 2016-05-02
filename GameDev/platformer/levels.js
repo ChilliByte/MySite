@@ -51,6 +51,7 @@ function Mob(x,y,w,h,s,t,x1,x2,d) {
     this.grounded = false;
     this.hitPlayer = "";
     this.dead = false;
+    this.mobDir = "right";
 }
 
 function Switch(x,y) {
