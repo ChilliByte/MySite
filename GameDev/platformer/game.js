@@ -852,7 +852,7 @@ function drawMobs() {
     ctx.fillStyle = "#90f";
     k = currentLevel.mobs.length;
     while (k--) {
-        if ((!currentLevel.mobs[k].dead) && (currentLevel.mobs[k].x < 40*units) && (currentLevel.mobs[k].x > 0)) {
+        if ((!currentLevel.mobs[k].dead) && (currentLevel.mobs[k].x < 40*units) && (currentLevel.mobs[k].x > (-1*currentLevel.mobs[k].width))) {
             ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height);
 
             if (currentLevel.mobs[k].type == "patrol") {
