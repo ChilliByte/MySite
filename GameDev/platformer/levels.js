@@ -35,7 +35,7 @@ function Collectible(x,y,w,h,t) {
     this.collected = false;
 }
 
-function Mob(x,y,w,h,s,t,x1,x2) {
+function Mob(x,y,w,h,s,t,x1,x2,d) {
     this.x = x*units;
     this.y = y*units;
     this.width = w*units;
@@ -44,6 +44,7 @@ function Mob(x,y,w,h,s,t,x1,x2) {
     this.type = t;
     this.x1Limit = (x1*units)+1;
     this.x2Limit = (x2-w)*units;
+    this.damage = d;
     this.velX = 0;
     this.velY = 0;
     this.collisionDir = "";
@@ -275,11 +276,11 @@ level2.collectibles.push(new Collectible(195,10.7,0.4,0.4,"coin"));
 
 
 //Mobs
-level2.mobs.push(new Mob(56,15,2,2,0.3,"patrol",46,64))
+level2.mobs.push(new Mob(56,15,2,2,0.3,"patrol",46,64,50))
 
-level2.mobs.push(new Mob(84,9,1,1,2,"left",0,0))
-level2.mobs.push(new Mob(89,9,1,1,2,"left",0,0))
-level2.mobs.push(new Mob(94,9,1,1,2,"left",0,0))
+level2.mobs.push(new Mob(87,9,1,1,3,"left",0,0,50))
+level2.mobs.push(new Mob(89,9,1,1,2,"left",0,0,50))
+level2.mobs.push(new Mob(91,9,1,1,1,"left",0,0,50))
 //Level 3
 /*
 level2.ice.push(new Box(25,10,1,50));
