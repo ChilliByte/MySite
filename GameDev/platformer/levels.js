@@ -42,7 +42,7 @@ function Mob(x,y,w,h,s,t,x1,x2) {
     this.height = h*units;
     this.speed = s;
     this.type = t;
-    this.x1Limit = (x1+0.001)*units;
+    this.x1Limit = (x1*units)+1;
     this.x2Limit = (x2-w)*units;
     this.velX = 0;
     this.velY = 0;
