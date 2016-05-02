@@ -42,8 +42,8 @@ function Mob(x,y,w,h,s,t,xl,yl) {
     this.height = h*units;
     this.speed = s;
     this.type = t;
-    this.x1Limit = x1;
-    this.x2Limit = x2;
+    this.x1Limit = x1*units;
+    this.x2Limit = x2*units;
     this.velX = 0;
     this.velY = 0;
     this.collisionDir = "";
@@ -273,9 +273,29 @@ level2.collectibles.push(new Collectible(189,8.7,0.4,0.4,"coin"));
 level2.collectibles.push(new Collectible(189,12.7,0.4,0.4,"coin"));
 level2.collectibles.push(new Collectible(195,10.7,0.4,0.4,"coin"));
 
+
+//Mobs
+level1.mobs.push(new Mob(56,15,2,2,0.3,"patrol",46,63))
+
 //Level 3
 /*
 level2.ice.push(new Box(25,10,1,50));
 
 level2.crates.push(new Crate(30,8,2,2,null))
+level1.mobs.push({
+    x: 28*units,
+    y: 6*units,
+    width: (units/8)*7,
+    height: (units/8)*7,
+    speed: 0.3,
+    velX: 0,
+    velY: 0,
+    type: "patrol",
+    x1Limit: 22*units,
+    x2Limit: 34*units,
+    collisionDir: "",
+    grounded: false,
+    hitPlayer: "",
+    dead: false
+});
 */
