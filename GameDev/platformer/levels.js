@@ -276,11 +276,19 @@ level2.collectibles.push(new Collectible(195,10.7,0.4,0.4,"coin"));
 
 
 //Mobs
-level2.mobs.push(new Mob(56,15,2,2,0.3,"patrol",46,64,50))
+level2.mobs.push(new Mob(56,15,2,2,0.3,"patrol",46,64,50));
 
-level2.mobs.push(new Mob(87,9,1,1,3,"left",0,0,50))
-level2.mobs.push(new Mob(89,9,1,1,2,"left",0,0,50))
-level2.mobs.push(new Mob(91,9,1,1,1,"left",0,0,50))
+level2.mobs.push(new Mob(87,9,1,1,3,"left",0,0,15));
+level2.mobs.push(new Mob(89,9,1,1,2,"left",0,0,15));
+level2.mobs.push(new Mob(91,9,1,1,2,"left",0,0,15));
+
+level2.mobs.push(new Mob(112,11,2,2,3,"left",0,0,50));
+
+level2.mobs.push(new Mob(123,12,1,1,1,"right",0,0,15));
+level2.mobs.push(new Mob(133,12,1,1,1,"right",0,0,15));
+
+level2.mobs.push(new Mob(150,15,3,3,0.5,"patrol",146,158,85));
+
 //Level 3
 /*
 level2.ice.push(new Box(25,10,1,50));
