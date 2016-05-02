@@ -31,6 +31,7 @@ var canvas = document.getElementById("canvas"),
         isGliding: false,
         lives:2,
         char: 1,
+        reds: 0,
         lastDir: "l",
         health:200,
         powerups: {
