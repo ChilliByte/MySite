@@ -870,7 +870,8 @@ function drawMobs() {
             if (currentLevel.mobs[k].type == "right") {
                 rightMobAI();
             };
-            if (currentLevel.mobs[k].type == "bounce") {
+            if (currentLevel.mobs[k].type == "flyingpatrol1") {
+                currentLevel.mobs[k].velY -= gravity;
                 patrolMobAI();
             };
             
