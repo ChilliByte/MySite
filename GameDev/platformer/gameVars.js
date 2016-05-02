@@ -57,7 +57,6 @@ var canvas = document.getElementById("canvas"),
     gravityDown = true,
     inWater = false,
     char1Sheet,
-    mobDir = "right",
     touchingEdge = false,
     frame = false;
 
