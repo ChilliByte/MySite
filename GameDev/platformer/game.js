@@ -842,6 +842,26 @@ function patrolMobAI() {
         }
     }
 }
+function flyingPatrolMobAI() {
+    if (currentLevel.mobs[k].mobDir == "down") {
+        if (currentLevel.mobs[k].velY < currentLevel.mobs[k].speed) {
+            currentLevel.mobs[k].velY++;
+        }
+        if ((currentLevel.mobs[k].y + currentLevel.offset) > currentLevel.mobs[k].x2Limit) {
+            currentLevel.mobs[k].mobDir = "up";
+            currentLevel.mobs[k].y -= 5
+        }
+    }
+    if (currentLevel.mobs[k].mobDir == "up") {
+        if (currentLevel.mobs[k].velY > -currentLevel.mobs[k].speed) {
+            currentLevel.mobs[k].velY--;
+        }
+        if ((currentLevel.mobs[k].y+currentLevel.offset) < currentLevel.mobs[k].x1Limit) {
+            currentLevel.mobs[k].mobDir = "down";
+            currentLevel.mobs[k].y += 5
+        }
+    }
+}
 function leftMobAI() {
     if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
         currentLevel.mobs[k].velX--;
@@ -873,6 +893,12 @@ function drawMobs() {
             if (currentLevel.mobs[k].type == "flyingpatrol1") {
                 currentLevel.mobs[k].velY -= gravity;
                 patrolMobAI();
+            };
+            if (currentLevel.mobs[k].type == "flyingpatrol2") {
+                if(currentLevel.mobs[k].mobDir == "right") {
+                    currentLevel.mobs[k].mobDir = "down";
+                }
+                flyingPatrolMobAI();
             };
             
             currentLevel.mobs[k].velX *= friction;
