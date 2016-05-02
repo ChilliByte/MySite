@@ -35,7 +35,7 @@ function Collectible(x,y,w,h,t) {
     this.collected = false;
 }
 
-function Mob(x,y,w,h,s,t,xl,yl) {
+function Mob(x,y,w,h,s,t,x1,x2) {
     this.x = x*units;
     this.y = y*units;
     this.width = w*units;
