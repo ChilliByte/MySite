@@ -277,6 +277,9 @@ level2.collectibles.push(new Collectible(195,10.7,0.4,0.4,"coin"));
 //Mobs
 level2.mobs.push(new Mob(56,15,2,2,0.3,"patrol",46,64))
 
+level2.mobs.push(new Mob(84,9,1,1,2,"left",0,0))
+level2.mobs.push(new Mob(89,9,1,1,2,"left",0,0))
+level2.mobs.push(new Mob(94,9,1,1,2,"left",0,0))
 //Level 3
 /*
 level2.ice.push(new Box(25,10,1,50));
