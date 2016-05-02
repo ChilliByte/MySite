@@ -836,6 +836,16 @@ function patrolMobAI() {
         }
     }
 }
+function leftMobAI() {
+    if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
+        currentLevel.mobs[k].velX--;
+    }
+}
+function rightMobAI(){
+    if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
+        currentLevel.mobs[k].velX++;
+    }
+}
 
 function drawMobs() {
     ctx.beginPath();
@@ -843,12 +853,21 @@ function drawMobs() {
     k = currentLevel.mobs.length;
     while (k--) {
         if ((!currentLevel.mobs[k].dead) && (currentLevel.mobs[k].x < 40*units)) {
-            ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height)
+            ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height);
 
             if (currentLevel.mobs[k].type == "patrol") {
-                patrolMobAI()
+                patrolMobAI();
             };
-
+            if (currentLevel.mobs[k].type == "left") {
+                leftMobAI();
+            };
+            if (currentLevel.mobs[k].type == "right") {
+                rightMobAI();
+            };
+            if (currentLevel.mobs[k].type == "bounce") {
+                patrolMobAI();
+            };
+            
             currentLevel.mobs[k].velX *= friction;
             currentLevel.mobs[k].velY += gravity;
             currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
