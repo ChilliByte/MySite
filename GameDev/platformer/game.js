@@ -894,9 +894,12 @@ function drawMobs() {
                 currentLevel.mobs[k].velY -= gravity;
                 patrolMobAI();
             };
-            if (currentLevel.mobs[k].type == "flyingpatrol2") {
+            if ((currentLevel.mobs[k].type == "flyingpatrol2") || (currentLevel.mobs[k].type == "thwomp")) {
                 if(currentLevel.mobs[k].mobDir == "right") {
                     currentLevel.mobs[k].mobDir = "down";
+                }
+                if (currentLevel.mobs[k].type == "flyingpatrol2") {
+                    currentLevel.mobs[k].velY -= gravity;    
                 }
                 flyingPatrolMobAI();
             };
