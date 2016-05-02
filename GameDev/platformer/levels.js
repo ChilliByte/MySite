@@ -275,7 +275,7 @@ level2.collectibles.push(new Collectible(195,10.7,0.4,0.4,"coin"));
 
 
 //Mobs
-level1.mobs.push(new Mob(56,15,2,2,0.3,"patrol",46,63))
+level2.mobs.push(new Mob(56,15,2,2,0.3,"patrol",46,64))
 
 //Level 3
 /*
