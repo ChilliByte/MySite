@@ -143,6 +143,7 @@ document.body.addEventListener("keyup", function(e) {
 window.addEventListener("load", function() {
     console.log("Loaded");
     char1Sheet = document.getElementById("char1SpriteSheet");
+    heartImg = document.getElementById("heartIcon");
     setInterval(function() {
         frame++;
         if (frame == 5) {
@@ -769,12 +770,10 @@ function drawProjectiles() {
 }
 
 function drawCollectibles() {
-    ctx.beginPath();
-    ctx.fillStyle = "#ea2";
     j = currentLevel.collectibles.length;
     while (j--) {
         if (currentLevel.collectibles[j].collected == false) {
-            ctx.rect(currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height)
+            ctx.drawImage(img,currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height);
             var collectCheck = colCheck(player, currentLevel.collectibles[j]);
             if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
                 currentLevel.collectibles[j].collected = true;
@@ -791,8 +790,6 @@ function drawCollectibles() {
             }
         }
     }
-    ctx.closePath()
-    ctx.fill();
 }
 
 function checkPlayerMobCollision() {
@@ -1001,7 +998,6 @@ function checkCrateIceCollision() {
         }
     }
 }
-
 
 function drawCrates() {
     ctx.beginPath();
