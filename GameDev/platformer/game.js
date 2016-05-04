@@ -876,7 +876,7 @@ function rightMobAI(){
 
 function drawMobs() {
     ctx.beginPath();
-    ctx.fillStyle = "#90f";
+    ctx.fillStyle = "#dd335a";
     k = currentLevel.mobs.length;
     while (k--) {
         if ((!currentLevel.mobs[k].dead) && (currentLevel.mobs[k].x < 40*units) && (currentLevel.mobs[k].x > (-1*currentLevel.mobs[k].width))) {
