@@ -1,7 +1,7 @@
 //Begin Levels
 levels = [];
 
-function level(w) {
+function level(w,bg,bcol) {
     this.boxes = [];
     this.water = [];
     this.ice = [];
@@ -13,6 +13,8 @@ function level(w) {
     this.crates = [];
     this.width = w*units;
     this.offset = 0;
+    this.bgColor = bg;
+    this.boxColor = bcol;
     levels.push(this)
 }
 
@@ -100,8 +102,8 @@ function Crate(x,y,height,width,contents) {
     this.contents = contents;
 }
 
-level1 = new level(200);
-level2 = new level(200);
+level1 = new level(200,"#aff","#380");
+level2 = new level(200,"#aff","#380");
 
 //Level1
 level1.boxes.push(
