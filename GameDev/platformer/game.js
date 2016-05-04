@@ -234,7 +234,7 @@ function confirmChar() {
 }
 
 function drawHUD() {
-    ctx.fillStyle = "#F00";
+    ctx.fillStyle = "#E22";
     ctx.beginPath();
     ctx.rect(units,units, player.health,units);
     ctx.closePath();
@@ -246,7 +246,7 @@ function drawHUD() {
     ctx.closePath();
     ctx.fill();
     ctx.textAlign = 'center';
-    ctx.fillStyle = "orange";
+    ctx.fillStyle = "#ea2";
     ctx.beginPath();
     ctx.rect(38*units,units, units,units);
     ctx.closePath();
@@ -770,7 +770,7 @@ function drawProjectiles() {
 
 function drawCollectibles() {
     ctx.beginPath();
-    ctx.fillStyle = "orange";
+    ctx.fillStyle = "#ea2";
     j = currentLevel.collectibles.length;
     while (j--) {
         if (currentLevel.collectibles[j].collected == false) {
@@ -799,6 +799,7 @@ function checkPlayerMobCollision() {
     currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player, true);
     if (currentLevel.mobs[k].hitPlayer === "t") {
         currentLevel.mobs[k].dead = true;
+        player.velY *= -1;
         console.log("Hit Mob Top")
     }
     if (currentLevel.mobs[k].hitPlayer === "l") {
