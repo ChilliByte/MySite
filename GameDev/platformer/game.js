@@ -245,7 +245,7 @@ function drawHUD() {
     ctx.fillText(player.health,units*1.5,units*1.75);
     ctx.closePath();
     ctx.fill();
-    
+    ctx.textAlign = 'center';
     ctx.fillStyle = "orange";
     ctx.beginPath();
     ctx.rect(38*units,units, units,units);
