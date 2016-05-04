@@ -773,7 +773,7 @@ function drawCollectibles() {
     j = currentLevel.collectibles.length;
     while (j--) {
         if (currentLevel.collectibles[j].collected == false) {
-            ctx.drawImage(img,currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height);
+            ctx.drawImage(heartImg,currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height);
             var collectCheck = colCheck(player, currentLevel.collectibles[j]);
             if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
                 currentLevel.collectibles[j].collected = true;
