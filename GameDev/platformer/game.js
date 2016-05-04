@@ -12,7 +12,8 @@ triggers.firstStep = false;
 function update() {
     //Clear The Last Frame
     ctx.clearRect(0, 0, 40 * units, 20 * units);
-
+    ctx.fillStyle = currentLevel.bgColor;
+    ctx.fillRect(0, 0, 40 * units, 20 * units)
     //Check keys
     checkKeys()
 
@@ -638,7 +639,7 @@ function checkMobBoxCollision() {
 
 function drawBoxes() {
     //Change to green and begin drawing
-    ctx.fillStyle = "#380";
+    ctx.fillStyle = currentLevel.boxColor;
     ctx.beginPath();
 
     i = currentLevel.boxes.length;
