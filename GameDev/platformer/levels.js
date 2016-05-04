@@ -102,8 +102,8 @@ function Crate(x,y,height,width,contents) {
     this.contents = contents;
 }
 
-level1 = new level(200,"#aff","#380");
-level2 = new level(200,"#aff","#380");
+level1 = new level(200,"#72c5ff","#00D230");
+level2 = new level(200,"#72c5ff","#00D230");
 
 //Level1
 level1.boxes.push(
