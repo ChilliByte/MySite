@@ -771,7 +771,7 @@ function drawProjectiles() {
 
 function drawCollectibles() {
     ctx.beginPath();		
- -  ctx.fillStyle = "#ea2";
+    ctx.fillStyle = "#ea2";
     j = currentLevel.collectibles.length;
     while (j--) {
         if (currentLevel.collectibles[j].collected == false) {
