@@ -242,7 +242,7 @@ function drawHUD() {
     ctx.fillStyle = "#FFF";
     ctx.beginPath();
     ctx.font = "24px Arial";
-    ctx.fillText(player.health,units*1.5,units*1.75);
+    ctx.fillText(player.health,units*2,units*1.75);
     ctx.closePath();
     ctx.fill();
     ctx.textAlign = 'center';
@@ -254,7 +254,7 @@ function drawHUD() {
     ctx.fillStyle = "#FFF";
     ctx.beginPath();
     ctx.font = "24px Arial";
-    ctx.fillText(player.collected,units*38.2,units*1.75);
+    ctx.fillText(player.collected,units*38.5,units*1.75);
     ctx.closePath();
     ctx.fill();
 }
