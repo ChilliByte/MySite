@@ -383,7 +383,7 @@ level3.mobs.push(
     new Mob(48,10,1,1,0,"left",0,0,10),
     new Mob(52,12,1,1,0,"left",0,0,10),
     new Mob(56,14,1,1,0,"left",0,0,10),
-    new Mob(72,14,3,3,12,"patrol",65,6,10)
+    new Mob(72,14,3,3,1,"patrol",65,85,10)
 );
 /*
 level2.ice.push(new Box(25,10,1,50));
