@@ -390,13 +390,21 @@ level3.mobs.push(
 level4.boxes.push(
     new Box(0,0,8,4),
     new Box(0,14,6,4),
-    new Box(8,14,6,24),
+    new Box(6,11,1,1),
+    new Box(6,8,1,1),
+    new Box(6,5,1,1),
+    new Box(8,16,6,24),
+    new Box(10,5,1,1),
     new Box(36,0,8,4),
     new Box(36,14,6,4)
 )
 
 level4.doors.push(new Door(0,8,0.5,6));
 level4.doors.push(new Door(39.5,8,0.5,6));
+
+level4.mobs.push(
+        new Mob(20,0,11,11,1,"boss1",8,32,100);    
+)
 /*
 level2.ice.push(new Box(25,10,1,50));
 
