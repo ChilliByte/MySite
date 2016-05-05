@@ -378,11 +378,11 @@ level3.collectibles.push(
 );
 
 level3.mobs.push(
-    new Mob(40,7,1,1,0,"noai",0,0,10),
-    new Mob(44,9,1,1,0,"noai",0,0,10),
-    new Mob(48,11,1,1,0,"noai",0,0,10),
-    new Mob(52,13,1,1,0,"noai",0,0,10),
-    new Mob(56,15,1,1,0,"noai",0,0,10)
+    new Mob(40,7,1,1,0,"left",0,0,10),
+    new Mob(44,9,1,1,0,"left",0,0,10),
+    new Mob(48,11,1,1,0,"left",0,0,10),
+    new Mob(52,13,1,1,0,"left",0,0,10),
+    new Mob(56,15,1,1,0,"left",0,0,10)
 );
 /*
 level2.ice.push(new Box(25,10,1,50));
