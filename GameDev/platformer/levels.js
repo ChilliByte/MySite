@@ -338,7 +338,6 @@ level3.boxes.push(
     new Box(110,11,1,3),
     new Box(118,8,1,2),
     new Box(125,8,1,1),
-    new Box(132,8,1,1),
     new Box(134,16,4,2),
     
     //Ending Sequence
@@ -363,8 +362,8 @@ level3.collectibles.push(
     new Collectible(94.3,15,0.4,0.4,"coin"),
     new Collectible(102,11,0.4,0.4,"coin"),
     new Collectible(111.3,10,0.4,0.4,"coin"),
-    new Collectible(121,7,0.4,0.4,"coin"),
-    new Collectible(130,7,0.4,0.4,"coin"),
+    new Collectible(118,7,0.4,0.4,"coin"),
+    new Collectible(125,7,0.4,0.4,"coin"),
     
     //Ending Sequence Coins
     new Collectible(140,10.7,0.4,0.4,"coin"),
