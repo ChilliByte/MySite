@@ -403,7 +403,7 @@ level4.doors.push(new Door(0,8,0.5,6));
 level4.doors.push(new Door(39.5,8,0.5,6));
 
 level4.mobs.push(
-        new Mob(20,0,11,11,1,"boss1",8,32,100);    
+        new Mob(20,0,11,11,1,"boss1",8,32,100)  
 )
 /*
 level2.ice.push(new Box(25,10,1,50));
