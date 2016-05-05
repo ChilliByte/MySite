@@ -102,8 +102,23 @@ function Crate(x,y,height,width,contents) {
     this.contents = contents;
 }
 
-level1 = new level(200,"#72c5ff","#00D230");
-level2 = new level(200,"#72c5ff","#00D230");
+function Sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
+
+level1 = new level(200,"#72c5ff","#00D230",new Sound("level1.ogg"));
+level2 = new level(200,"#72c5ff","#00D230",new Sound("level1.ogg");
 
 //Level1
 level1.boxes.push(
