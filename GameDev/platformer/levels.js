@@ -386,8 +386,8 @@ level3.mobs.push(
     new Mob(56,14,1,1,0,"left",0,0,10),
     new Mob(72,14,3,3,1,"patrol",65,85,10)
 );
-
-level3.boxes.push(
+// Level 4
+level4.boxes.push(
     new Box(0,0,8,4),
     new Box(0,14,6,4),
     new Box(8,14,6,32),
