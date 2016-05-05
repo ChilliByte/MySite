@@ -321,6 +321,7 @@ level2.mobs.push(
 level3.boxes.push(
     new Box(0,0,8,4),
     new Box(0,14,6,10),
+    new Box(0,18,2,160),
     new Box(14,14,1,5),
     new Box(22,12,1,4),
     new Box(30,10,1,3),
