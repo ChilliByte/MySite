@@ -117,8 +117,8 @@ function Sound(src) {
     }
 }
 
-level1 = new level(200,"#72c5ff","#00D230",new Sound("level1.ogg"));
-level2 = new level(200,"#72c5ff","#00D230",new Sound("level1.ogg");
+level1 = new level(200,"#72c5ff","#00D230");
+level2 = new level(200,"#72c5ff","#00D230");
 
 //Level1
 level1.boxes.push(
