@@ -879,7 +879,17 @@ function rightMobAI(){
         currentLevel.mobs[k].velX++;
     }
 }
-
+function boss1AI() {
+    if(Math.abs(currentLevel.mobs[k].velY) < 1 ) {
+        if (player.x < currentLevel.mobs[k].x) {
+            currentLevel.mobs[k].velX -= 6;
+        }
+        if (player.x > currentLevel.mobs[k].x) {
+            currentLevel.mobs[k].velX += 6;
+        }
+        currentLevel.mobs[k].velY -= 9;
+    }
+}
 function drawMobs() {
     ctx.beginPath();
     ctx.fillStyle = "#dd335a";
@@ -901,6 +911,7 @@ function drawMobs() {
                 currentLevel.mobs[k].velY -= gravity;
                 patrolMobAI();
             };
+            
             if ((currentLevel.mobs[k].type == "flyingpatrol2") || (currentLevel.mobs[k].type == "thwomp")) {
                 if(currentLevel.mobs[k].mobDir == "right") {
                     currentLevel.mobs[k].mobDir = "down";
@@ -910,6 +921,11 @@ function drawMobs() {
                 }
                 flyingPatrolMobAI();
             };
+            
+            if (currentLevel.mobs[k].type == "boss1") {
+                boss1AI();
+            };
+            
             
             currentLevel.mobs[k].velX *= friction;
             currentLevel.mobs[k].velY += gravity;
