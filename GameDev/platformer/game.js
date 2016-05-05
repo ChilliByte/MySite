@@ -801,7 +801,7 @@ function checkPlayerMobCollision() {
     currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player, true);
     if (currentLevel.mobs[k].hitPlayer === "t") {
         currentLevel.mobs[k].dead = true;
-        player.velY *= -1;
+        player.velY *= -0.85;
         console.log("Hit Mob Top")
     }
     if (currentLevel.mobs[k].hitPlayer === "l") {
