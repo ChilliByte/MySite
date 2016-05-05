@@ -880,14 +880,14 @@ function rightMobAI(){
     }
 }
 function boss1AI() {
-    if((Math.abs(currentLevel.mobs[k].velY) < 1 ) && (currentLevel.mobs[k].y > 10*units)) {
+    if((Math.abs(currentLevel.mobs[k].velY) < 1 ) && (currentLevel.mobs[k].y > 4*units)) {
         if (player.x < currentLevel.mobs[k].x) {
             currentLevel.mobs[k].velX -= 6;
         }
         if (player.x > currentLevel.mobs[k].x) {
             currentLevel.mobs[k].velX += 6;
         }
-        currentLevel.mobs[k].velY -= 9;
+        currentLevel.mobs[k].velY -= 8;
     }
 }
 function drawMobs() {
