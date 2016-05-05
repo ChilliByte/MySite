@@ -120,6 +120,7 @@ function Sound(src) {
 level1 = new level(200,"#72c5ff","#00D230");
 level2 = new level(200,"#72c5ff","#00D230");
 level3 = new level(160,"#72c5ff","#00D230");
+level4 = new level(40,"#72c5ff","#00D230");
 
 //Level1
 level1.boxes.push(
@@ -385,6 +386,14 @@ level3.mobs.push(
     new Mob(56,14,1,1,0,"left",0,0,10),
     new Mob(72,14,3,3,1,"patrol",65,85,10)
 );
+
+level3.boxes.push(
+    new Box(0,0,8,4),
+    new Box(0,14,6,4),
+    new Box(8,14,6,32),
+    new Box(36,0,8,4),
+    new Box(36,14,6,4)
+)
 /*
 level2.ice.push(new Box(25,10,1,50));
 
