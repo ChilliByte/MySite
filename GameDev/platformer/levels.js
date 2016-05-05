@@ -352,24 +352,41 @@ level3.boxes.push(
     new Box(156,0,8,4),
     new Box(156,14,3,4)
 );
+
+level3.collectibles.push(
+    new Collectible(16,13,0.4,0.4,"coin"),
+    new Collectible(24,11,0.4,0.4,"coin"),
+    new Collectible(31,9,0.4,0.4,"coin"),
+    new Collectible(35.6,7,0.4,0.4,"coin"),
+    new Collectible(40.3,5,0.4,0.4,"coin"),
+    new Collectible(94.3,15,0.4,0.4,"coin"),
+    new Collectible(102,11,0.4,0.4,"coin"),
+    new Collectible(111.3,10,0.4,0.4,"coin"),
+    new Collectible(121,7,0.4,0.4,"coin"),
+    new Collectible(130,7,0.4,0.4,"coin"),
+    
+    //Ending Sequence Coins
+    new Collectible(140,10.7,0.4,0.4,"coin"),
+    new Collectible(143,10.7,0.4,0.4,"coin"),
+    new Collectible(146,6.7,0.4,0.4,"coin"),
+    new Collectible(146,10.7,0.4,0.4,"coin"),
+    new Collectible(146,14.7,0.4,0.4,"coin"),
+    new Collectible(149,10.7,0.4,0.4,"coin"),
+    new Collectible(149,8.7,0.4,0.4,"coin"),
+    new Collectible(149,12.7,0.4,0.4,"coin"),
+    new Collectible(155,10.7,0.4,0.4,"coin")
+);
+
+level3.mobs.push(
+    new Mob(40,7,1,1,0,"noai",0,0,10),
+    new Mob(44,9,1,1,0,"noai",0,0,10),
+    new Mob(48,11,1,1,0,"noai",0,0,10),
+    new Mob(52,13,1,1,0,"noai",0,0,10),
+    new Mob(56,15,1,1,0,"noai",0,0,10)
+);
 /*
 level2.ice.push(new Box(25,10,1,50));
 
 level2.crates.push(new Crate(30,8,2,2,null))
-level1.mobs.push({
-    x: 28*units,
-    y: 6*units,
-    width: (units/8)*7,
-    height: (units/8)*7,
-    speed: 0.3,
-    velX: 0,
-    velY: 0,
-    type: "patrol",
-    x1Limit: 22*units,
-    x2Limit: 34*units,
-    collisionDir: "",
-    grounded: false,
-    hitPlayer: "",
-    dead: false
-});
+
 */
