@@ -394,6 +394,9 @@ level4.boxes.push(
     new Box(36,0,8,4),
     new Box(36,14,6,4)
 )
+
+level4.doors.push(new Door(0,8,0.5,6));
+level4.doors.push(new Door(39.5,8,0.5,6));
 /*
 level2.ice.push(new Box(25,10,1,50));
 
