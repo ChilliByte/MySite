@@ -322,7 +322,10 @@ level3.boxes.push(
     new Box(0,0,8,4),
     new Box(0,14,6,10),
     new Box(14,14,1,5),
-    new Box(22,12,1,5)
+    new Box(22,12,1,4),
+    new Box(30,10,1,3),
+    new Box(35,8,1,2),
+    new Box(40,6,1,1)
 );
 /*
 level2.ice.push(new Box(25,10,1,50));
