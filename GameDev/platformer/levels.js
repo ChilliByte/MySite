@@ -37,7 +37,7 @@ function Collectible(x,y,w,h,t) {
     this.collected = false;
 }
 
-function Mob(x,y,w,h,s,t,x1,x2,d) {
+function Mob(x,y,w,h,s,t,x1,x2,d,health) {
     this.x = x*units;
     this.y = y*units;
     this.width = w*units;
@@ -52,6 +52,7 @@ function Mob(x,y,w,h,s,t,x1,x2,d) {
     this.collisionDir = "";
     this.grounded = false;
     this.hitPlayer = "";
+    this.health = health;
     this.dead = false;
     this.mobDir = "right";
 }
@@ -304,18 +305,18 @@ level2.collectibles.push(
 
 //Mobs
 level2.mobs.push(
-    new Mob(56,15,2,2,0.3,"patrol",46,64,50),
+    new Mob(56,15,2,2,0.3,"patrol",46,64,50,1),
 
-    new Mob(87,9,1,1,3,"left",0,0,15),
-    new Mob(89,9,1,1,2,"left",0,0,15),
-    new Mob(91,9,1,1,2,"left",0,0,15),
+    new Mob(87,9,1,1,3,"left",0,0,15,1),
+    new Mob(89,9,1,1,2,"left",0,0,15,1),
+    new Mob(91,9,1,1,2,"left",0,0,15,1),
 
-    new Mob(114,6,2,2,1,"left",0,0,50),
+    new Mob(114,6,2,2,1,"left",0,0,50,1),
 
-    new Mob(123,12,1,1,1,"right",0,0,15),
-    new Mob(133,12,1,1,1,"right",0,0,15),
+    new Mob(123,12,1,1,1,"right",0,0,15,1),
+    new Mob(133,12,1,1,1,"right",0,0,15,1),
     
-    new Mob(150,15,3,3,0.5,"patrol",146,158,85)
+    new Mob(150,15,3,3,0.5,"patrol",146,158,85,1)
 );
 
 //Level 3
@@ -379,12 +380,12 @@ level3.collectibles.push(
 );
 
 level3.mobs.push(
-    new Mob(40,6,1,1,0,"left",0,0,10),
-    new Mob(44,8,1,1,0,"left",0,0,10),
-    new Mob(48,10,1,1,0,"left",0,0,10),
-    new Mob(52,12,1,1,0,"left",0,0,10),
-    new Mob(56,14,1,1,0,"left",0,0,10),
-    new Mob(72,14,3,3,1,"patrol",65,85,10)
+    new Mob(40,6,1,1,0,"left",0,0,10,1),
+    new Mob(44,8,1,1,0,"left",0,0,10,1),
+    new Mob(48,10,1,1,0,"left",0,0,10,1),
+    new Mob(52,12,1,1,0,"left",0,0,10,1),
+    new Mob(56,14,1,1,0,"left",0,0,10,1),
+    new Mob(72,14,3,3,1,"patrol",65,85,10,1)
 );
 // Level 4
 level4.boxes.push(
@@ -403,7 +404,7 @@ level4.doors.push(new Door(0,8,0.5,6));
 level4.doors.push(new Door(39.5,8,0.5,6));
 
 level4.mobs.push(
-        new Mob(20,0,11,11,1,"boss1",8,32,100)  
+        new Mob(20,0,11,11,1,"boss1",8,32,100,3)  
 )
 /*
 level2.ice.push(new Box(25,10,1,50));
