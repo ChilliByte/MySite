@@ -880,7 +880,7 @@ function rightMobAI(){
     }
 }
 function boss1AI() {
-    if(Math.abs(currentLevel.mobs[k].velY) < 1 ) {
+    if((Math.abs(currentLevel.mobs[k].velY) < 1 ) && (currentLevel.mobs[k].y > 10*units)) {
         if (player.x < currentLevel.mobs[k].x) {
             currentLevel.mobs[k].velX -= 6;
         }
