@@ -337,7 +337,8 @@ level3.boxes.push(
     new Box(100,12,1,4),
     new Box(110,11,1,3),
     new Box(118,8,1,2),
-    new Box(130,8,1,1),
+    new Box(125,8,1,1),
+    new Box(132,8,1,1),
     new Box(134,16,4,2),
     
     //Ending Sequence
