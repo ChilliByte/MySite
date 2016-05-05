@@ -331,7 +331,7 @@ level3.boxes.push(
     new Box(52,12,1,1),
     new Box(56,14,1,1),
     new Box(65,16,8,20),
-    new Box(94,16,1,5),
+    new Box(92,16,1,5),
     new Box(100,12,1,4),
     new Box(113,11,1,3),
     new Box(120,8,1,2),
