@@ -390,7 +390,7 @@ level3.mobs.push(
 level4.boxes.push(
     new Box(0,0,8,4),
     new Box(0,14,6,4),
-    new Box(8,14,6,32),
+    new Box(8,14,6,24),
     new Box(36,0,8,4),
     new Box(36,14,6,4)
 )
