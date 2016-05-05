@@ -320,7 +320,9 @@ level2.mobs.push(
 //Level 3
 level3.boxes.push(
     new Box(0,0,8,4),
-    new Box(0,14,6,14)
+    new Box(0,14,6,10),
+    new Box(14,14,1,5),
+    new Box(22,12,1,5)
 );
 /*
 level2.ice.push(new Box(25,10,1,50));
