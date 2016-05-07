@@ -1,5 +1,5 @@
 //Begin Levels
-levels = [];
+var levels = [];
 
 function level(w, bg, bcol) {
     this.boxes = [];
@@ -119,10 +119,10 @@ function Sound(src) {
     }
 }
 
-level1 = new level(200, "#72c5ff", "#00D230");
-level2 = new level(200, "#72c5ff", "#00D230");
-level3 = new level(160, "#72c5ff", "#00D230");
-level4 = new level(40, "#72c5ff", "#00D230");
+var level1 = new level(200, "#72c5ff", "#00D230");
+var level2 = new level(200, "#72c5ff", "#00D230");
+var level3 = new level(160, "#72c5ff", "#00D230");
+var level4 = new level(40, "#72c5ff", "#00D230");
 
 //Level1
 level1.boxes.push(
@@ -386,19 +386,21 @@ new Box(0, 14, 6, 4),
 new Box(6, 11, 1, 1),
 new Box(6, 7, 1, 1),
 new Box(6, 3, 1, 1),
-new Box(8, 16, 6, 24),
+new Box(8, 14, 6, 24),
 new Box(10, 3, 1, 1),
 new Box(36, 0, 8, 4),
-new Box(36, 14, 6, 4))
+new Box(36, 14, 6, 4)
+);
 
 level4.doors.push(new Door(0, 8, 0.5, 6));
 level4.doors.push(new Door(39.5, 8, 0.5, 6));
 
 level4.mobs.push(
-new Mob(20, 0, 11, 11, 1, "boss1", 8, 32, 100, 3))
-/*
-level2.ice.push(new Box(25,10,1,50));
+new Mob(20, 0, 11, 11, 1, "boss1", 8, 32, 100, 3)
+);
 
-level2.crates.push(new Crate(30,8,2,2,null))
+/*
+
+level.crates.push(new Crate(30,8,2,2,null))
 
 */
