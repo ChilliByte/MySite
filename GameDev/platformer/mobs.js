@@ -79,7 +79,7 @@ function rightMobAI(){
 }
 function boss1AI() {
     patrolMobAI();
-    if ((currentLevel.mobs[k].health === 0) && (currentLevel.mobs[k].width > 1)) {
+    if ((currentLevel.mobs[k].health === 0) && (currentLevel.mobs[k].width > units)) {
         currentLevel.mobs.push(new Mob(20, 0, currentLevel.mobs[k].width-2, currentLevel.mobs[k].width-2, currentLevel.mobs[k].speed + 1, "boss1", 8, 32, 100, 3));
         currentLevel.mobs[k].health = -1;
     }
@@ -91,7 +91,7 @@ function drawMobs() {
     while (k--) {
         if ((!currentLevel.mobs[k].dead) && (currentLevel.mobs[k].x < 40*units) && (currentLevel.mobs[k].x > (-1*currentLevel.mobs[k].width))) {
             ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height);
-
+            
             if (currentLevel.mobs[k].type == "patrol") {
                 patrolMobAI();
             };
