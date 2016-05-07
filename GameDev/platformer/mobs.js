@@ -79,7 +79,7 @@ function rightMobAI(){
 }
 function boss1AI() {
     patrolMobAI();
-    if(Math.random()  0.05) {
+    if(Math.random() < 0.05) {
         console.log("random");
     }
     if ((currentLevel.mobs[k].health === 0) && (currentLevel.mobs[k].width > units)) {
