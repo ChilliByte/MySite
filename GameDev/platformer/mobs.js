@@ -80,7 +80,8 @@ function rightMobAI(){
 function boss1AI() {
     patrolMobAI();
     if(Math.random() < 0.005) {
-        console.log("random");
+        currentLevel.mobs[k].velY = -9;
+        player.velX += 5;
     }
     if ((currentLevel.mobs[k].health === 0) && (currentLevel.mobs[k].width > units)) {
         currentLevel.mobs.push(new Mob(20, 10, (currentLevel.mobs[k].width/units)-2, (currentLevel.mobs[k].width/units)-2, currentLevel.mobs[k].speed + 2, "boss1", 8, 32, 100, 3));
