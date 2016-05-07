@@ -40,6 +40,8 @@ function Collectible(x, y, w, h, t) {
 function Mob(x, y, w, h, s, t, x1, x2, d, health) {
     this.x = x * units;
     this.y = y * units;
+    this.initialX = x*units;
+    this.initialY = y*units;
     this.width = w * units;
     this.height = h * units;
     this.speed = s;
@@ -52,6 +54,7 @@ function Mob(x, y, w, h, s, t, x1, x2, d, health) {
     this.collisionDir = "";
     this.grounded = false;
     this.hitPlayer = "";
+    this.initialHealth = health;
     this.health = health;
     this.dead = false;
     this.mobDir = "right";

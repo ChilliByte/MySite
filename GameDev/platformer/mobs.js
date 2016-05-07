@@ -2,9 +2,6 @@ function checkPlayerMobCollision() {
     currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player, true);
     if (currentLevel.mobs[k].hitPlayer === "t") {
         currentLevel.mobs[k].health--;
-        if(currentLevel.mobs[k].health < 1) {
-            currentLevel.mobs[k].dead = true;
-        }
         player.velY *= -0.85;
         console.log("Hit Mob Top")
     }
@@ -81,14 +78,10 @@ function rightMobAI(){
     }
 }
 function boss1AI() {
-    if((Math.abs(currentLevel.mobs[k].velY) < 1 ) && (currentLevel.mobs[k].y > 4*units)) {
-        if (player.x < currentLevel.mobs[k].x) {
-            currentLevel.mobs[k].velX -= 30;
-        }
-        if (player.x > currentLevel.mobs[k].x) {
-            currentLevel.mobs[k].velX += 30;
-        }
-        currentLevel.mobs[k].velY -= 8;
+    patrolMobAI();
+    if ((currentLevel.mobs[k].health === 0) && (currentLevel.mobs[k].width > 1)) {
+        currentLevel.mobs.push(new Mob(20, 0, currentLevel.mobs[k].width-2, currentLevel.mobs[k].width-2, currentLevel.mobs[k].speed + 1, "boss1", 8, 32, 100, 3));
+        currentLevel.mobs[k].health = -1;
     }
 }
 function drawMobs() {
@@ -139,7 +132,10 @@ function drawMobs() {
             if(currentLevel.mobs[k].y > 40*units) {
                 currentLevel.mobs[k].dead = true;
             }
-            checkPlayerMobCollision()
+            checkPlayerMobCollision();
+            if(currentLevel.mobs[k].health == 0) {
+                currentLevel.mobs[k].dead = true;
+            }
         }
     };
     ctx.closePath();
