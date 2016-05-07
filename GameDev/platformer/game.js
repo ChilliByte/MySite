@@ -31,15 +31,15 @@ function update() {
         gravity = waterGravity;
         friction = waterFriction;
     }
-    
+
     if ((player.powerups.glide) && (player.isGliding)) {
         gravity = 0.15;
-    } 
-    
-    if(!gravityDown) {
+    }
+
+    if (!gravityDown) {
         gravity *= -1;
     }
-    
+
     //Factor in Friction and Gravity
     player.velX *= friction;
     player.velY += gravity;
@@ -55,13 +55,13 @@ function update() {
     drawCollectibles();
     drawMobs();
     drawCrates();
-    
-    if(player.powerups.shrink) {
+
+    if (player.powerups.shrink) {
         player.height = units;
     } else {
-        player.height = 2*units;
+        player.height = 2 * units;
     }
-    
+
     if (player.grounded) {
         player.velY = 0;
     }
@@ -105,18 +105,18 @@ function update() {
     if (player.health < 1) {
         alert("You died");
         player.x = units;
-        player.y = 12*units;
+        player.y = 12 * units;
         player.velX = 0;
         player.velY = 0;
-        scrollLevel(currentLevel.offset*-1);
+        scrollLevel(currentLevel.offset * -1);
         currentLevel.offset = 0;
-        scrolling=false;
-        if(player.lives < 0) {
+        scrolling = false;
+        if (player.lives < 0) {
             currentLevelInt = 0;
             resetCount = levels.length;
-            while (resetCount--){
+            while (resetCount--) {
                 currentLevel = levels[resetCount];
-                scrollLevel(currentLevel.offset*-1);
+                scrollLevel(currentLevel.offset * -1);
                 currentLevel.offset = 0;
             }
             currentLevel = levels[0];
@@ -133,13 +133,6 @@ function update() {
     requestAnimationFrame(update);
 }
 
-document.body.addEventListener("keydown", function(e) {
-    keys[e.keyCode] = true;
-});
-document.body.addEventListener("keyup", function(e) {
-    keys[e.keyCode] = false;
-});
-
 window.addEventListener("load", function() {
     console.log("Loaded");
     char1Sheet = document.getElementById("char1SpriteSheet");
@@ -153,27 +146,7 @@ window.addEventListener("load", function() {
     update();
 });
 
-canvas.addEventListener("mousedown", getPosition, false);
 
-function getPosition(event) {
-    if (player.powerups.shoot) {
-        evX = event.x;
-        evY = event.y;
-        evX -= canvas.offsetLeft;
-        evY -= canvas.offsetTop;
-        evX = evX * (units / tileDisplayWidth);
-        evY = evY * (units / tileDisplayWidth);
-        dx = evX - (player.x + units / 4);
-        dy = (player.y + units) - evY;
-        length = Math.sqrt((dx * dx) + (dy * dy));
-        cosTheta = ((length * length) + (dx * dx) - (dy * dy)) / (2 * length * dx)
-        theta = toDegrees(Math.acos(cosTheta));
-        if (dy < 0) {
-            theta = 360 - theta;
-        }
-        currentLevel.projectiles.push(new Projectile(player.x, player.y, theta, units / 5, 0.125, 0.125, player.velX))
-    }
-}
 
 function scrollLevel(scrollX) {
     i = currentLevel.boxes.length
@@ -237,81 +210,27 @@ function confirmChar() {
 function drawHUD() {
     ctx.fillStyle = "#E22";
     ctx.beginPath();
-    ctx.rect(units,units, player.health,units);
+    ctx.rect(units, units, player.health, units);
     ctx.closePath();
     ctx.fill();
     ctx.fillStyle = "#FFF";
     ctx.beginPath();
     ctx.font = "24px Arial";
-    ctx.fillText(player.health,units*2,units*1.75);
+    ctx.fillText(player.health, units * 2, units * 1.75);
     ctx.closePath();
     ctx.fill();
     ctx.textAlign = 'center';
     ctx.fillStyle = "#ea2";
     ctx.beginPath();
-    ctx.rect(38*units,units, units,units);
+    ctx.rect(38 * units, units, units, units);
     ctx.closePath();
     ctx.fill();
     ctx.fillStyle = "#FFF";
     ctx.beginPath();
     ctx.font = "24px Arial";
-    ctx.fillText(player.collected,units*38.5,units*1.75);
+    ctx.fillText(player.collected, units * 38.5, units * 1.75);
     ctx.closePath();
     ctx.fill();
-}
-
-function checkKeys() {
-    if (keys[38] || keys[32]) {
-        // up arrow or space
-        if (!inWater) {
-            if (!player.jumping && player.grounded) {
-                player.jumping = true;
-                player.grounded = false;
-
-                if (gravityDown) {
-                    player.velY = -player.vertiSpeed;
-                } else {
-                    player.velY = player.vertiSpeed;
-                }
-            }
-        } else {
-            if (gravityDown) {
-                player.velY = -player.vertiSpeed;
-            } else {
-                player.velY = player.vertiSpeed;
-            }
-        }
-    }
-    if (keys[39] || keys[68]) {
-        // right arrow
-        player.lastDir = "l"
-        if (player.velX < player.horizSpeed) {
-            player.velX += player.horizSpeed;
-        }
-        if ((player.x > 9 * units) && (player.x < 10 * units)) {
-            scrolling = true;
-        }
-    }
-    if (keys[37] || keys[65]) {
-        // left arrow
-        player.lastDir = "r"
-        if (player.velX > -player.horizSpeed) {
-            player.velX -= player.horizSpeed;
-        }
-        if ((player.x > 9 * units) && (player.x < 10 * units)) {
-            scrolling = true;
-        }
-    }
-
-    if ((keys[83] || keys[40]) && player.powerups.doors) {
-        openKeyPressed = true;
-    } else {
-        openKeyPressed = false;
-    }
-    
-    if((keys[87]) && (player.powerups.antigrav)) {
-        flipGravity();
-    }
 }
 
 function drawChar() {
@@ -449,606 +368,6 @@ function drawChar() {
     }
 }
 
-function checkPlayerWaterCollision() {
-    inWater = false;
-    var dir = colCheck(player, currentLevel.water[i], false);
-    //Do something depending on the direction the collision happened from.
-    if (dir === "l" || dir === "r" || dir === "t" || dir == "b") {
-        inWater = true;
-        if (player.velY > 13) {
-            player.velY--
-        }
-        if (player.velY > 10) {
-            player.velY--
-        }
-        if (player.velY > 2) {
-            player.velY--
-        }
-        
-        if ((player.velY > 1) && (player.velY < 2)) {
-            player.velY -= 0.1
-        }
-        if (!player.powerups.swim) {
-            player.health--
-        }
-    }
-}
-
-function drawWater() {
-    //Change to blue and begin drawing
-    ctx.fillStyle = "#66F";
-    ctx.beginPath();
-
-    i = currentLevel.water.length;
-    while (i--) {
-        //Draw each box
-        ctx.rect(currentLevel.water[i].x, currentLevel.water[i].y, currentLevel.water[i].width, currentLevel.water[i].height);
-        //Figure out whether we've touched a box
-        checkPlayerWaterCollision()
-    }
-
-    //End drawing and fill
-    ctx.closePath()
-    ctx.fill();
-}
-
-function checkPlayerSwitchCollision() {
-    if (openKeyPressed) {
-        if (!triggered) {
-            var dir = colCheck(player, currentLevel.switches[i], false);
-            //Do something depending on the direction the collision happened from.
-            if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
-                currentLevel.switches[i].isOn = !currentLevel.switches[i].isOn;
-                console.log("Switch Number " + i + " toggled. Is on? " + currentLevel.switches[i].isOn)
-                currentLevel.doors[i].isOpen = currentLevel.switches[i].isOn;
-            } else {
-                touchingEdge = false;
-            }
-            triggered = true;
-        }
-    } else {
-        triggered = false;
-    }
-}
-
-function drawSwitches() {
-    //Change to pink and begin drawing
-    ctx.fillStyle = "#f99";
-    ctx.beginPath();
-
-    i = currentLevel.switches.length;
-    while (i--) {
-        //Draw each box
-        checkPlayerSwitchCollision();
-        ctx.rect(currentLevel.switches[i].x, currentLevel.switches[i].y, currentLevel.switches[i].width, currentLevel.switches[i].height);
-    }
-
-    //End drawing and fill
-    ctx.closePath()
-    ctx.fill();
-}
-
-function checkPlayerDoorCollision() {
-    var dir = colCheck(player, currentLevel.doors[i], true);
-    //Do something depending on the direction the collision happened from.
-    if (dir === "l" || dir === "r") {
-        touchingIce = false;
-        player.velX = 0;
-        player.jumping = false;
-        scrolling = false;
-    } else if (dir === "b") {
-        touchingIce = false;
-        if (gravityDown) {
-            player.grounded = true;
-            player.jumping = false;
-        } else {
-            player.velY *= -1;
-        }
-    } else if (dir === "t") {
-        touchingIce = false;
-        if (gravityDown) {
-            player.velY *= -1;
-        } else {
-            player.grounded = true;
-            player.jumping = false;
-        }
-    } else {
-        touchingEdge = false;
-    }
-}
-
-function checkMobDoorCollision() {
-    //Loop through each of the mobs in this level, and see if any of them have collided with a box.
-    l = currentLevel.mobs.length
-    while (l--) {
-        currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.doors[i], true)
-        if (currentLevel.mobs[l].collisionDir === "b") {
-            currentLevel.mobs[l].grounded = true
-        }
-    }
-}
-
-function drawDoors() {
-    //Change to green and begin drawing
-    ctx.fillStyle = "#555";
-    ctx.beginPath();
-
-    i = currentLevel.doors.length;
-    while (i--) {
-        if (!currentLevel.doors[i].isOpen) {
-            //Draw each box
-            ctx.rect(currentLevel.doors[i].x, currentLevel.doors[i].y, currentLevel.doors[i].width, currentLevel.doors[i].height);
-            //Figure out whether we've touched a box
-            checkPlayerDoorCollision()
-            checkMobDoorCollision()
-        }
-    }
-
-    //End drawing and fill
-    ctx.closePath()
-    ctx.fill();
-}
-
-function checkPlayerBoxCollision() {
-    var dir = colCheck(player, currentLevel.boxes[i], true);
-    //Do something depending on the direction the collision happened from.
-    if (dir === "l" || dir === "r") {
-        touchingIce = false;
-        player.velX = 0;
-        player.jumping = false;
-        scrolling = false;
-        if (currentLevel.boxes[i].waterEdge) {
-            touchingEdge = true
-        }
-    } else if (dir === "b") {
-        touchingIce = false;
-        if (gravityDown) {
-            player.grounded = true;
-            player.jumping = false;
-        } else {
-            player.velY *= -1;
-        }
-        if (currentLevel.boxes[i].waterEdge) {
-            touchingEdge = true
-        }
-    } else if (dir === "t") {
-        touchingIce = false;
-        if (gravityDown) {
-            player.velY *= -1;
-        } else {
-            player.grounded = true;
-            player.jumping = false;
-        }
-        if (currentLevel.boxes[i].waterEdge) {
-            touchingEdge = true
-        }
-    } else {
-        touchingEdge = false;
-    }
-}
-
-function checkMobBoxCollision() {
-    //Loop through each of the mobs in this level, and see if any of them have collided with a box.
-    l = currentLevel.mobs.length
-    while (l--) {
-        currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.boxes[i], true)
-        if (currentLevel.mobs[l].collisionDir === "b") {
-            currentLevel.mobs[l].grounded = true
-        }
-    }
-}
-
-function drawBoxes() {
-    //Change to green and begin drawing
-    ctx.fillStyle = currentLevel.boxColor;
-    ctx.beginPath();
-
-    i = currentLevel.boxes.length;
-    while (i--) {
-        //Draw each box
-        ctx.rect(currentLevel.boxes[i].x, currentLevel.boxes[i].y, currentLevel.boxes[i].width, currentLevel.boxes[i].height);
-        //Figure out whether we've touched a box
-        checkPlayerBoxCollision()
-        checkMobBoxCollision()
-    }
-
-    //End drawing and fill
-    ctx.closePath()
-    ctx.fill();
-}
-
-function checkPlayerIceCollision() {
-    var dir = colCheck(player, currentLevel.ice[i], true);
-    //Do something depending on the direction the collision happened from.
-    if (dir === "l" || dir === "r") {
-        player.velX = 0;
-        player.jumping = false;
-        touchingIce = true;
-    } else if (dir === "b") {
-        touchingIce = true;
-        if (gravityDown) {
-            player.grounded = true;
-            player.jumping = false;
-        } else {
-            player.velY *= -1;
-        }
-    } else if (dir === "t") {
-        touchingIce = true;
-        if (gravityDown) {
-            player.velY *= -1;
-        } else {
-            player.grounded = true;
-            player.jumping = false;
-        }
-    }
-}
-
-function checkMobIceCollision() {
-    //Loop through each of the mobs in this level, and see if any of them have collided with a box.
-    l = currentLevel.mobs.length
-    while (l--) {
-        currentLevel.mobs[l].collisionDir = colCheck(currentLevel.mobs[l], currentLevel.ice[i], true)
-        if (currentLevel.mobs[l].collisionDir === "b") {
-            currentLevel.mobs[l].grounded = true
-        }
-    }
-}
-
-function drawIce() {
-    //Change to green and begin drawing
-    ctx.fillStyle = "#DFF";
-    ctx.beginPath();
-    i = currentLevel.ice.length;
-    while (i--) {
-        //Draw each box
-        ctx.rect(currentLevel.ice[i].x, currentLevel.ice[i].y, currentLevel.ice[i].width, currentLevel.ice[i].height);
-        //Figure out whether we've touched a box
-
-        checkPlayerIceCollision()
-        checkMobIceCollision()
-    }
-    //End drawing and fill
-    ctx.closePath()
-    ctx.fill();
-}
-
-function moveProjectiles() {
-    currentLevel.projectiles[i].x += currentLevel.projectiles[i].velX;
-    currentLevel.projectiles[i].y -= currentLevel.projectiles[i].velY;
-    currentLevel.projectiles[i].velY -= gravity / 4;
-    /*
-    currentLevel.projectiles[i].velX = Math.sqrt((currentLevel.projectiles[i].speed * currentLevel.projectiles[i].speed) - (currentLevel.projectiles[i].velY * currentLevel.projectiles[i].velY));
-    if ((currentLevel.projectiles[i].theta > 90) && (currentLevel.projectiles[i].theta < 270)) {
-        currentLevel.projectiles[i].velX = -1 * Math.abs(currentLevel.projectiles[i].velX);
-    }
-    */
-
-}
-
-function checkProjectileBoxCollision() {
-    j = currentLevel.boxes.length;
-    while (j--) {
-        var dir = colCheck(currentLevel.projectiles[i], currentLevel.boxes[j], false);
-        //Do something depending on the direction the collision happened from.
-        if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
-            currentLevel.projectiles[i].y = canvas.height + 10;
-        }
-    }
-}
-
-function checkProjectileCrateCollision() {
-    j = currentLevel.crates.length;
-    while (j--) {
-        var dir = colCheck(currentLevel.projectiles[i], currentLevel.crates[j], false);
-        //Do something depending on the direction the collision happened from.
-        if (dir === "l" || dir === "r" || dir === "b" || dir === "t") {
-            currentLevel.projectiles[i].y = canvas.height + 10;
-            currentLevel.crates[j].broken = true;
-        }
-    }
-}
-
-function drawProjectiles() {
-    //Change to green and begin drawing
-    ctx.fillStyle = "#F00";
-    ctx.beginPath();
-    i = currentLevel.projectiles.length;
-    while (i--) {
-        //Draw each box
-        ctx.rect(currentLevel.projectiles[i].x, currentLevel.projectiles[i].y, currentLevel.projectiles[i].height, currentLevel.projectiles[i].width);
-        //Figure out whether we've touched a box
-        moveProjectiles();
-        checkProjectileBoxCollision();
-        checkProjectileCrateCollision();
-        if ((currentLevel.projectiles[i].y > canvas.height) || (currentLevel.projectiles[i].x > canvas.width)) {
-            currentLevel.projectiles.splice(i, 1)
-        }
-    }
-    //End drawing and fill
-    ctx.closePath()
-    ctx.fill();
-}
-
-function drawCollectibles() {
-    ctx.beginPath();		
-    ctx.fillStyle = "#ea2";
-    j = currentLevel.collectibles.length;
-    while (j--) {
-        if (currentLevel.collectibles[j].collected == false) {
-            //ctx.drawImage(heartImg,currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height);
-            ctx.rect(currentLevel.collectibles[j].x, currentLevel.collectibles[j].y, currentLevel.collectibles[j].width, currentLevel.collectibles[j].height);
-            var collectCheck = colCheck(player, currentLevel.collectibles[j]);
-            if (collectCheck === "l" || collectCheck === "r" || collectCheck === "t" || collectCheck === "b") {
-                currentLevel.collectibles[j].collected = true;
-                if (currentLevel.collectibles[j].type === "coin") {
-                    player.collected++
-                };
-                if (currentLevel.collectibles[j].type === "health") {
-                    player.health+=10;
-                };
-                if (currentLevel.collectibles[j].type === "red") {
-                    player.reds++;
-                };
-                console.log("Collected")
-            }
-        }
-    }
-    ctx.closePath()		
-    ctx.fill();
-}
-
-function checkPlayerMobCollision() {
-    currentLevel.mobs[k].hitPlayer = colCheck(currentLevel.mobs[k], player, true);
-    if (currentLevel.mobs[k].hitPlayer === "t") {
-        currentLevel.mobs[k].health--;
-        if(currentLevel.mobs[k].health < 1) {
-            currentLevel.mobs[k].dead = true;
-        }
-        player.velY *= -0.85;
-        console.log("Hit Mob Top")
-    }
-    if (currentLevel.mobs[k].hitPlayer === "l") {
-        player.velY -= 2;
-        player.velX -= 8;
-        currentLevel.mobs[k].velX += 5;
-        console.log("Hit Mob Left");
-        player.health -= currentLevel.mobs[k].damage;
-    }
-    if (currentLevel.mobs[k].hitPlayer === "r") {
-        player.velY -= 2;
-        player.velX += 8;
-        currentLevel.mobs[k].velX -= 5;
-        console.log("Hit Mob Right");
-        player.health -= currentLevel.mobs[k].damage;
-    }
-    if (currentLevel.mobs[k].hitPlayer === "b") {
-        player.velY -= 2;
-        player.velX -= 8;
-        console.log("Hit Mob Bottom");
-        player.health -= currentLevel.mobs[k].damage;
-    }
-}
-
-function patrolMobAI() {
-    if (currentLevel.mobs[k].mobDir == "right") {
-        if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
-            currentLevel.mobs[k].velX++;
-        }
-        if ((currentLevel.mobs[k].x + currentLevel.offset) > currentLevel.mobs[k].x2Limit) {
-            currentLevel.mobs[k].mobDir = "left";
-            currentLevel.mobs[k].x -= 5
-        }
-    }
-    if (currentLevel.mobs[k].mobDir == "left") {
-        if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
-            currentLevel.mobs[k].velX--;
-        }
-        if ((currentLevel.mobs[k].x+currentLevel.offset) < currentLevel.mobs[k].x1Limit) {
-            currentLevel.mobs[k].mobDir = "right";
-            currentLevel.mobs[k].x += 5
-        }
-    }
-}
-function flyingPatrolMobAI() {
-    if (currentLevel.mobs[k].mobDir == "down") {
-        if (currentLevel.mobs[k].velY < currentLevel.mobs[k].speed) {
-            currentLevel.mobs[k].velY++;
-        }
-        if ((currentLevel.mobs[k].y + currentLevel.offset) > currentLevel.mobs[k].x2Limit) {
-            currentLevel.mobs[k].mobDir = "up";
-            currentLevel.mobs[k].y -= 5
-        }
-    }
-    if (currentLevel.mobs[k].mobDir == "up") {
-        if (currentLevel.mobs[k].velY > -currentLevel.mobs[k].speed) {
-            currentLevel.mobs[k].velY--;
-        }
-        if ((currentLevel.mobs[k].y+currentLevel.offset) < currentLevel.mobs[k].x1Limit) {
-            currentLevel.mobs[k].mobDir = "down";
-            currentLevel.mobs[k].y += 5
-        }
-    }
-}
-function leftMobAI() {
-    if (currentLevel.mobs[k].velX > -currentLevel.mobs[k].speed) {
-        currentLevel.mobs[k].velX--;
-    }
-}
-function rightMobAI(){
-    if (currentLevel.mobs[k].velX < currentLevel.mobs[k].speed) {
-        currentLevel.mobs[k].velX++;
-    }
-}
-function boss1AI() {
-    if((Math.abs(currentLevel.mobs[k].velY) < 1 ) && (currentLevel.mobs[k].y > 4*units)) {
-        if (player.x < currentLevel.mobs[k].x) {
-            currentLevel.mobs[k].velX -= 30;
-        }
-        if (player.x > currentLevel.mobs[k].x) {
-            currentLevel.mobs[k].velX += 30;
-        }
-        currentLevel.mobs[k].velY -= 8;
-    }
-}
-function drawMobs() {
-    ctx.beginPath();
-    ctx.fillStyle = "#dd335a";
-    k = currentLevel.mobs.length;
-    while (k--) {
-        if ((!currentLevel.mobs[k].dead) && (currentLevel.mobs[k].x < 40*units) && (currentLevel.mobs[k].x > (-1*currentLevel.mobs[k].width))) {
-            ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height);
-
-            if (currentLevel.mobs[k].type == "patrol") {
-                patrolMobAI();
-            };
-            if (currentLevel.mobs[k].type == "left") {
-                leftMobAI();
-            };
-            if (currentLevel.mobs[k].type == "right") {
-                rightMobAI();
-            };
-            if (currentLevel.mobs[k].type == "flyingpatrol1") {
-                currentLevel.mobs[k].velY -= gravity;
-                patrolMobAI();
-            };
-            
-            if ((currentLevel.mobs[k].type == "flyingpatrol2") || (currentLevel.mobs[k].type == "thwomp")) {
-                if(currentLevel.mobs[k].mobDir == "right") {
-                    currentLevel.mobs[k].mobDir = "down";
-                }
-                if (currentLevel.mobs[k].type == "flyingpatrol2") {
-                    currentLevel.mobs[k].velY -= gravity;    
-                }
-                flyingPatrolMobAI();
-            };
-            
-            if (currentLevel.mobs[k].type == "boss1") {
-                boss1AI();
-            };
-            
-            
-            currentLevel.mobs[k].velX *= friction;
-            currentLevel.mobs[k].velY += gravity;
-            currentLevel.mobs[k].x += currentLevel.mobs[k].velX;
-            if (currentLevel.mobs[k].grounded) {
-                currentLevel.mobs[k].velY = 0;
-                currentLevel.mobs[k].grounded = false;
-            }
-            currentLevel.mobs[k].y += currentLevel.mobs[k].velY;
-            if(currentLevel.mobs[k].y > 40*units) {
-                currentLevel.mobs[k].dead = true;
-            }
-            checkPlayerMobCollision()
-        }
-    };
-    ctx.closePath();
-    ctx.fill();
-}
-
-function checkPlayerCrateCollision() {
-    var dir = colCheck(player, currentLevel.crates[i], true);
-    //Do something depending on the direction the collision happened from.
-    if (dir === "l" || dir === "r") {
-        currentLevel.crates[i].velX = player.velX;
-        player.velX *= 0.75;
-        player.jumping = false;
-    } else if (dir === "b") {
-        touchingIce = false;
-        if (gravityDown) {
-            player.grounded = true;
-            player.jumping = false;
-        } else {
-            currentLevel.crates[i].broken = true;
-        }
-    } else if (dir === "t") {
-        touchingIce = false;
-        if (gravityDown) {
-            currentLevel.crates[i].broken = true;
-        } else {
-            player.grounded = true;
-            player.jumping = false;
-        }
-    } else {
-        touchingEdge = false;
-    }
-}
-
-function checkCrateBoxCollision() {
-    j = currentLevel.boxes.length;
-    while (j--) {
-        var dir = colCheck(currentLevel.crates[i], currentLevel.boxes[j], true);
-        //Do something depending on the direction the collision happened from.
-        if (dir === "l" || dir === "r") {
-            currentLevel.crates[i].velX = 0;
-            player.velX *= 0;
-            currentLevel.crates[i].grounded = true;
-        } else if (dir === "b") {
-            if (gravityDown) {
-                currentLevel.crates[i].grounded = true;
-            } else {
-                currentLevel.crates[i].broken = true;
-            }
-        } else if (dir === "t") {
-            if (gravityDown) {
-                currentLevel.crates[i].broken = true;
-            } else {
-                currentLevel.crates[i].grounded = true;
-            }
-        }
-    }
-}
-
-function checkCrateIceCollision() {
-    j = currentLevel.ice.length;
-    while (j--) {
-        var dir = colCheck(currentLevel.crates[i], currentLevel.ice[j], true);
-        //Do something depending on the direction the collision happened from.
-        if (dir === "l" || dir === "r") {
-            currentLevel.crates[i].velX = 0;
-            player.velX *= 0;
-            currentLevel.crates[i].grounded = true;
-        } else if (dir === "b") {
-            if (gravityDown) {
-                currentLevel.crates[i].grounded = true;
-            } else {
-                currentLevel.crates[i].broken = true;
-            }
-        } else if (dir === "t") {
-            if (gravityDown) {
-                currentLevel.crates[i].broken = true;
-            } else {
-                currentLevel.crates[i].grounded = true;
-            }
-        }
-    }
-}
-
-function drawCrates() {
-    ctx.beginPath();
-    ctx.fillStyle = "#FF6";
-    i = currentLevel.crates.length;
-    while (i--) {
-        if (!currentLevel.crates[i].broken) {
-            ctx.rect(currentLevel.crates[i].x, currentLevel.crates[i].y, currentLevel.crates[i].width, currentLevel.crates[i].height)
-
-            currentLevel.crates[i].velX *= friction;
-            currentLevel.crates[i].velY += gravity;
-            currentLevel.crates[i].x += currentLevel.crates[i].velX;
-            if (currentLevel.crates[i].grounded) {
-                currentLevel.crates[i].velY = 0;
-                currentLevel.crates[i].grounded = false;
-            }
-            currentLevel.crates[i].y += currentLevel.crates[i].velY;
-
-            checkPlayerCrateCollision();
-            checkCrateBoxCollision();
-            checkCrateIceCollision();
-        }
-    };
-    ctx.closePath();
-    ctx.fill();
-}
-
 function displayHints() {
     if (!triggers.firstLevel) {
         if ((currentLevelInt == 0) && (currentLevel.offset > 1)) {
@@ -1060,51 +379,6 @@ function displayHints() {
         }
     }
     //if (trigger) { if (location parameters) {hint(); set trigger to true; setTimeout to close}}
-}
-
-function colCheck(shapeA, shapeB, solid) {
-    // get the vectors to check against
-    var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
-        vY = (shapeA.y + (shapeA.height / 2)) - (shapeB.y + (shapeB.height / 2)),
-        // add the half widths and half heights of the objects
-        hWidths = (shapeA.width / 2) + (shapeB.width / 2),
-        hHeights = (shapeA.height / 2) + (shapeB.height / 2),
-        colDir = null;
-    // if the x and y vector are less than the half width or half height, they we must be inside the object, causing a collision
-    if (Math.abs(vX) < hWidths && Math.abs(vY) < hHeights) {
-        // figures out on which side we are colliding (top, bottom, left, or right)
-        var oX = hWidths - Math.abs(vX),
-            oY = hHeights - Math.abs(vY);
-        if (oX >= oY) {
-            if (vY > 0) {
-                colDir = "t";
-                if (solid) {
-                    shapeA.y += oY;
-                }
-            } else {
-                colDir = "b";
-                if (solid) {
-                    shapeA.y -= oY;
-                }
-            }
-        } else {
-            if (vX > 0) {
-                colDir = "l";
-                if (solid) {
-                    shapeA.x += oX;
-                }
-            } else {
-                colDir = "r";
-                if (solid) {
-                    shapeA.x -= oX;
-                }
-            }
-        }
-    }
-    if (debug && logCols && (colDir != null)) {
-        console.log(colDir)
-    };
-    return colDir;
 }
 
 function hint(x, y, text) {

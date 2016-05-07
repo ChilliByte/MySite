@@ -1,24 +1,20 @@
 function addClasses() {
     document.body.classList[
-        document.body.scrollTop > 100 ? 'add': 'remove'
-    ]('scrolled');
+    document.body.scrollTop > 100 ? 'add' : 'remove']('scrolled');
     document.getElementsByTagName("html")[0].classList[
-        document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop ? 'add': 'remove'
-    ]('scrolled');
+    document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop ? 'add' : 'remove']('scrolled');
     document.getElementsByTagName("nav")[0].classList[
-        document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop - 60 ? 'add': 'remove'
-    ]('section1');
+    document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop - 60 ? 'add' : 'remove']('section1');
     document.getElementsByTagName("nav")[0].classList[
-        document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop + 250 ? 'add': 'remove'
-    ]('section2');
+    document.body.scrollTop > document.getElementsByTagName("section")[1].offsetTop + 250 ? 'add' : 'remove']('section2');
     document.getElementsByTagName("nav")[0].classList[
-        document.body.scrollTop > document.getElementsByTagName("section")[2].offsetTop - 100 ? 'add': 'remove'
-    ]('section3');
+    document.body.scrollTop > document.getElementsByTagName("section")[2].offsetTop - 100 ? 'add' : 'remove']('section3');
 }
 
 function vh(x) {
-    return Math.round((x/100) * window.innerHeight) + "px";
+    return Math.round((x / 100) * window.innerHeight) + "px";
 }
+
 function setSizes() {
     document.querySelector("#nav").height = vh(22);
     document.querySelector("section:nth-child(3)").height = vh(69);
@@ -35,7 +31,7 @@ window.onload = function() {
     console.log("Loaded");
     addClasses();
     setSizes();
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', function() {
         console.log("scrolling");
         addClasses();
     });
