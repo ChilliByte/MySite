@@ -79,7 +79,7 @@ function rightMobAI(){
 }
 function boss1AI() {
     patrolMobAI();
-    if(Math.random() < 0.005) {
+    if(Math.random() < (0.05/currentLevel.mobs[k].width)) {
         currentLevel.mobs[k].velY = -9;
         player.velX += 5;
     }
