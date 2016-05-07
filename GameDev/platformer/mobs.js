@@ -80,7 +80,7 @@ function rightMobAI(){
 function boss1AI() {
     patrolMobAI();
     if ((currentLevel.mobs[k].health === 0) && (currentLevel.mobs[k].width > units)) {
-        currentLevel.mobs.push(new Mob(20, 0, (currentLevel.mobs[k].width/units)-(2*units), (currentLevel.mobs[k].width/units)-(2*units), currentLevel.mobs[k].speed + 1, "boss1", 8, 32, 100, 3));
+        currentLevel.mobs.push(new Mob(20, 10, (currentLevel.mobs[k].width/units)-(2*units), (currentLevel.mobs[k].width/units)-(2*units), currentLevel.mobs[k].speed + 1, "boss1", 8, 32, 100, 3));
         currentLevel.mobs[k].health = -1;
     }
 }

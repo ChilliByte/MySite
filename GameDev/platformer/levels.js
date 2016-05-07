@@ -388,9 +388,9 @@ new Box(0, 0, 8, 4),
 new Box(0, 14, 6, 4),
 new Box(6, 11, 1, 1),
 new Box(6, 7, 1, 1),
-new Box(6, 2, 1, 1),
+new Box(6, 3, 1, 1),
 new Box(8, 14, 6, 24),
-new Box(10, 3, 1, 1),
+new Box(10, 2, 1, 1),
 new Box(36, 0, 8, 4),
 new Box(36, 14, 6, 4)
 );
