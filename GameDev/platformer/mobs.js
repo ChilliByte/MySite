@@ -90,6 +90,9 @@ function drawMobs() {
     k = currentLevel.mobs.length;
     while (k--) {
         if ((!currentLevel.mobs[k].dead) && (currentLevel.mobs[k].x < 40*units) && (currentLevel.mobs[k].x > (-1*currentLevel.mobs[k].width))) {
+            if(currentLevel.mobs[k].health == 0) {
+                currentLevel.mobs[k].dead = true;
+            }
             ctx.rect(currentLevel.mobs[k].x, currentLevel.mobs[k].y, currentLevel.mobs[k].width, currentLevel.mobs[k].height);
             
             if (currentLevel.mobs[k].type == "patrol") {
@@ -133,9 +136,6 @@ function drawMobs() {
                 currentLevel.mobs[k].dead = true;
             }
             checkPlayerMobCollision();
-            if(currentLevel.mobs[k].health == 0) {
-                currentLevel.mobs[k].dead = true;
-            }
         }
     };
     ctx.closePath();
