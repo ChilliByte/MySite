@@ -142,11 +142,9 @@ window.addEventListener("load", function() {
         if (frame == 5) {
             frame = 0;
         }
-    }, 250)
+    }, 250);
     update();
 });
-
-
 
 function scrollLevel(scrollX) {
     i = currentLevel.boxes.length
@@ -395,7 +393,13 @@ function flipGravity() {
     gravity = gravity * -1;
     gravityDown = !gravityDown;
 }
+
+function completeWorld1() {
+    level4.doors[0].isOpen = true;
+    level4.doors[1].isOpen = true;
+}
+
 hint(player.x, 30, "A and D to move, Space to Jump!");
 setTimeout(function() {
-    hint(10000, 10000, "")
+    hint(10000, 10000, "");
 }, 5000);

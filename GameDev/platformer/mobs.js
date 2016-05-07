@@ -79,9 +79,14 @@ function rightMobAI(){
 }
 function boss1AI() {
     patrolMobAI();
+    if(Math.random()  0.05) {
+        console.log("random");
+    }
     if ((currentLevel.mobs[k].health === 0) && (currentLevel.mobs[k].width > units)) {
-        currentLevel.mobs.push(new Mob(20, 10, (currentLevel.mobs[k].width/units)-2, (currentLevel.mobs[k].width/units)-2, currentLevel.mobs[k].speed + 1, "boss1", 8, 32, 100, 3));
+        currentLevel.mobs.push(new Mob(20, 10, (currentLevel.mobs[k].width/units)-2, (currentLevel.mobs[k].width/units)-2, currentLevel.mobs[k].speed + 2, "boss1", 8, 32, 100, 3));
         currentLevel.mobs[k].health = -1;
+    } else if((currentLevel.mobs[k].width == units) && ((currentLevel.mobs[k].health === 0)) {
+        completeWorld1();
     }
 }
 function drawMobs() {
