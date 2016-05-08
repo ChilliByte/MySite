@@ -103,7 +103,7 @@ function update() {
         player.health = 0;
     }
     if (player.health < 1) {
-        hint(window.innerWidth/2,window.innerHeight/2,"You died");
+        hint((window.innerWidth/2)-150,(window.innerHeight/2)-50,"You died");
         setTimeout(function() {
             hint(10000, 10000, "");
         }, 5000);

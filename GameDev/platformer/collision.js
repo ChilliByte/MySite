@@ -37,8 +37,5 @@ function colCheck(shapeA, shapeB, solid) {
             }
         }
     }
-    if (debug && logCols && (colDir != null)) {
-        console.log(colDir)
-    };
     return colDir;
 }

@@ -100,6 +100,9 @@ function respawnMobs() {
         currentLevel.mobs[k].x = currentLevel.mobs[k].initialX;
         currentLevel.mobs[k].y = currentLevel.mobs[k].initialY;
         currentLevel.mobs[k].health = currentLevel.mobs[k].initialHealth;
+        if (currentLevel.mobs[k].type != "boss1") {
+            currentLevel.mobs[k].dead = false;
+        };
     }
 }
 
