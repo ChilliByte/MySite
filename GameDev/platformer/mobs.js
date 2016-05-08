@@ -3,7 +3,7 @@ function checkPlayerMobCollision() {
     if (currentLevel.mobs[k].hitPlayer === "t") {
         currentLevel.mobs[k].health--;
         player.velY *= -0.85;
-        if(player.velY < -2) {
+        if(player.velY > -2) {
             player.velY = -2;
         }
         console.log("Hit Mob Top")
