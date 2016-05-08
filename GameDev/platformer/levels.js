@@ -386,11 +386,11 @@ new Mob(72, 14, 3, 3, 1, "patrol", 65, 85, 10, 1));
 level4.boxes.push(
 new Box(0, 0, 8, 4),
 new Box(0, 14, 6, 4),
-new Box(6, 11, 1, 0.5),
-new Box(6, 7, 1, 0.5),
+new Box(6, 11, 1, 1),
+new Box(6, 7, 1, 1),
 new Box(6, 3, 1, 0.5),
 new Box(8, 14, 6, 24),
-new Box(10, 2, 1, 0.5),
+new Box(10, 2, 0.5, 1),
 new Box(36, 0, 8, 4),
 new Box(36, 14, 6, 4)
 );

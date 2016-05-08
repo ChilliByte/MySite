@@ -84,7 +84,7 @@ function boss1AI() {
         player.velX += 5;
     }
     if ((currentLevel.mobs[k].health === 0) && (currentLevel.mobs[k].width > units)) {
-        currentLevel.mobs.push(new Mob(currentLevel.mobs[k].x+units, currentLevel.mobs[k].y+units, (currentLevel.mobs[k].width/units)-2, (currentLevel.mobs[k].width/units)-2, currentLevel.mobs[k].speed + 2, "boss1", 8, 32, 100, 3));
+        currentLevel.mobs.push(new Mob((currentLevel.mobs[k].x/units) + 1, (currentLevel.mobs[k].y/units)+1, (currentLevel.mobs[k].width/units)-2, (currentLevel.mobs[k].width/units)-2, currentLevel.mobs[k].speed + 2, "boss1", 8, 32, 100, 3));
         currentLevel.mobs[k].health = -1;
     } else if((currentLevel.mobs[k].width == units) && (currentLevel.mobs[k].health === 0)) {
         completeWorld1();
