@@ -84,12 +84,22 @@ function boss1AI() {
         player.velX += 5;
     }
     if ((currentLevel.mobs[k].health === 0) && (currentLevel.mobs[k].width > units)) {
-        currentLevel.mobs.push(new Mob(20, 10, (currentLevel.mobs[k].width/units)-2, (currentLevel.mobs[k].width/units)-2, currentLevel.mobs[k].speed + 2, "boss1", 8, 32, 100, 3));
+        currentLevel.mobs.push(new Mob(currentLevel.mobs[k].x+units, currentLevel.mobs[k].y+units, (currentLevel.mobs[k].width/units)-2, (currentLevel.mobs[k].width/units)-2, currentLevel.mobs[k].speed + 2, "boss1", 8, 32, 100, 3));
         currentLevel.mobs[k].health = -1;
     } else if((currentLevel.mobs[k].width == units) && (currentLevel.mobs[k].health === 0)) {
         completeWorld1();
     }
 }
+
+function respawnMobs() {
+    k = currentLevel.mobs.length;
+    while (k--) {
+        currentLevel.mobs[k].x = currentLevel.mobs[k].initialX;
+        currentLevel.mobs[k].y = currentLevel.mobs[k].initialY;
+        currentLevel.mobs[k].health = currentLevel.mobs[k].initialHealth;
+    }
+}
+
 function drawMobs() {
     ctx.beginPath();
     ctx.fillStyle = "#dd335a";
@@ -115,15 +125,20 @@ function drawMobs() {
                 patrolMobAI();
             };
             
-            if ((currentLevel.mobs[k].type == "flyingpatrol2") || (currentLevel.mobs[k].type == "thwomp")) {
+            if (currentLevel.mobs[k].type == "flyingpatrol2") {
                 if(currentLevel.mobs[k].mobDir == "right") {
                     currentLevel.mobs[k].mobDir = "down";
                 }
-                if (currentLevel.mobs[k].type == "flyingpatrol2") {
-                    currentLevel.mobs[k].velY -= gravity;    
-                }
+                currentLevel.mobs[k].velY -= gravity;    
                 flyingPatrolMobAI();
             };
+            
+            if(currentLevel.mobs[k].type == "thwomp") {
+                if(currentLevel.mobs[k].mobDir == "right") {
+                    currentLevel.mobs[k].mobDir = "down";
+                }
+                flyingPatrolMobAI();
+            }
             
             if (currentLevel.mobs[k].type == "boss1") {
                 boss1AI();

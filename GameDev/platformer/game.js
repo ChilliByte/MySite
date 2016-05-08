@@ -103,7 +103,10 @@ function update() {
         player.health = 0;
     }
     if (player.health < 1) {
-        alert("You died");
+        hint(window.innerWidth/2,window.innerHeight/2,"You died");
+        setTimeout(function() {
+            hint(10000, 10000, "");
+        }, 5000);
         player.x = units;
         player.y = 12 * units;
         player.velX = 0;
@@ -124,6 +127,7 @@ function update() {
             player.lives = 2;
         }
         player.health = 200;
+        respawnMobs();
     } else {
         checkLevelChange();
     }
@@ -396,7 +400,8 @@ function flipGravity() {
 
 function completeWorld1() {
     level4.doors[0].isOpen = true;
-    level4.doors[1].isOpen = true;
+    level4.doors[0].isOpen = true;
+    level4.collectibles.push(new Collectible(19, 10, 2, 2, "blue"));
 }
 
 hint(player.x, 30, "A and D to move, Space to Jump!");
