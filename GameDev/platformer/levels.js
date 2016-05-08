@@ -399,7 +399,7 @@ level4.doors.push(new Door(0, 8, 0.5, 6));
 level4.doors.push(new Door(39.5, 8, 0.5, 6));
 
 level4.mobs.push(
-new Mob(20, 0, 9, 9, 1, "boss1", 8, 32, 100, 3)
+new Mob(20, 0, 9, 9, 1, "boss1", 8, 32, 100, 5)
 );
 
 /*

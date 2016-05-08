@@ -400,7 +400,7 @@ function flipGravity() {
 
 function completeWorld1() {
     level4.doors[0].isOpen = true;
-    level4.doors[0].isOpen = true;
+    level4.doors[1].isOpen = true;
     level4.collectibles.push(new Collectible(19, 10, 2, 2, "blue"));
 }
 
