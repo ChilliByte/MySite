@@ -47,8 +47,8 @@ function update() {
     player.grounded = false;
 
     drawProjectiles();
-    drawBoxes();
     drawWater();
+    drawBoxes();
     drawIce();
     drawSwitches();
     drawDoors();

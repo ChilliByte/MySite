@@ -126,6 +126,7 @@ var level1 = new level(200, "#72c5ff", "#00D230");
 var level2 = new level(200, "#72c5ff", "#00D230");
 var level3 = new level(160, "#72c5ff", "#00D230");
 var level4 = new level(40, "#72c5ff", "#00D230");
+var level5 = new level(40, "#650909", "#003366");
 
 //Level1
 level1.boxes.push(
@@ -405,7 +406,25 @@ level4.doors.push(new Door(39.5, 8, 0.5, 6));
 level4.mobs.push(
 new Mob(20, 0, 9, 9, 1, "boss1", 8, 32, 100, 5)
 );
-
+//Level5
+level5.boxes.push(
+    new Box(0, 0, 8, 4),
+    new Box(0, 14, 6, 3),
+    new Box(0, 19, 1, 44),
+    new Box(3, 17, 3, 1),
+    new Box(4, 18, 2, 1),
+    new Box(5, 13, 2, 1),
+    new Box(6, 12, 4, 2),
+    new Box(7, 11, 6, 1),
+    new Box(8, 10, 4, 1),
+    new Box(9, 9, 4, 1),
+    new Box(10, 8, 4, 1),
+    new Box(11, 7, 4, 1),
+    new Box(12, 6, 4, 1),
+    new Box(13, 5, 4, 1),
+    new Box(14, 4, 4, 1),
+    new Box(15, 4, 3, 3)
+);
 /*
 
 level.crates.push(new Crate(30,8,2,2,null))
