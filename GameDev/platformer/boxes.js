@@ -15,7 +15,7 @@ function checkPlayerBoxCollision() {
             player.grounded = true;
             player.jumping = false;
         } else {
-            player.velY *= -1;
+            player.velY = 0;
         }
         if (currentLevel.boxes[i].waterEdge) {
             touchingEdge = true
@@ -23,7 +23,7 @@ function checkPlayerBoxCollision() {
     } else if (dir === "t") {
         touchingIce = false;
         if (gravityDown) {
-            player.velY *= -1;
+            player.velY = 0;
         } else {
             player.grounded = true;
             player.jumping = false;
