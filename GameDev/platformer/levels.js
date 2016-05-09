@@ -126,7 +126,7 @@ var level1 = new level(200, "#72c5ff", "#00D230");
 var level2 = new level(200, "#72c5ff", "#00D230");
 var level3 = new level(160, "#72c5ff", "#00D230");
 var level4 = new level(40, "#72c5ff", "#00D230");
-var level5 = new level(200, "#dddddd", "#003366");
+var level5 = new level(200, "#222", "#003366");
 
 //Level1
 level1.boxes.push(
@@ -434,7 +434,7 @@ level5.boxes.push(
     new Box(31, 16, 1, 41),
     new Box(30, 19, 1, 34),
     new Box(71, 17, 1, 2),
-    new Box(72, 1, 13, 1),
+    new Box(72, -6, 20, 1),
     new Box(72, 18, 1, 2),
     new Box(73, 19, 1, 46)
 );
