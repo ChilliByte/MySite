@@ -40,8 +40,8 @@ function Collectible(x, y, w, h, t) {
 function Mob(x, y, w, h, s, t, x1, x2, d, health) {
     this.x = x * units;
     this.y = y * units;
-    this.initialX = x*units;
-    this.initialY = y*units;
+    this.initialX = x * units;
+    this.initialY = y * units;
     this.width = w * units;
     this.height = h * units;
     this.speed = s;
@@ -208,7 +208,8 @@ new Collectible(186, 14.7, 0.4, 0.4, "coin"),
 new Collectible(189, 10.7, 0.4, 0.4, "coin"),
 new Collectible(189, 8.7, 0.4, 0.4, "coin"),
 new Collectible(189, 12.7, 0.4, 0.4, "coin"),
-new Collectible(195, 10.7, 0.4, 0.4, "coin"));
+new Collectible(195, 10.7, 0.4, 0.4, "coin")
+);
 
 
 // Level 2
@@ -248,7 +249,8 @@ new Box(138, 14, 1, 6),
 
 new Box(140, 18, 2, 20),
 new Box(164, 15, 6, 4),
-new Box(168, 12, 10, 2));
+new Box(168, 12, 10, 2)
+);
 
 level2.doors.push(new Door(138, 15, 1, 3));
 level2.switches.push(new Switch(140, 16));
@@ -263,7 +265,8 @@ new Box(176, 12, 1, 2),
 
 new Box(191, 10, 2, 2),
 new Box(196, 0, 8, 4),
-new Box(196, 14, 3, 4));
+new Box(196, 14, 3, 4)
+);
 
 level2.collectibles.push(
 new Collectible(24.3, 9, 0.4, 0.4, "coin"),
@@ -316,7 +319,8 @@ new Mob(114, 6, 2, 2, 1, "left", 0, 0, 50, 1),
 new Mob(123, 12, 1, 1, 1, "right", 0, 0, 15, 1),
 new Mob(133, 12, 1, 1, 1, "right", 0, 0, 15, 1),
 
-new Mob(150, 15, 3, 3, 0.5, "patrol", 146, 158, 85, 1));
+new Mob(150, 15, 3, 3, 0.5, "patrol", 146, 158, 85, 1)
+);
 
 //Level 3
 level3.boxes.push(
@@ -351,7 +355,8 @@ new Box(136, 12, 1, 2),
 
 new Box(151, 10, 2, 2),
 new Box(156, 0, 8, 4),
-new Box(156, 14, 3, 4));
+new Box(156, 14, 3, 4)
+);
 
 level3.collectibles.push(
 new Collectible(16, 13, 0.4, 0.4, "coin"),
@@ -374,7 +379,8 @@ new Collectible(146, 14.7, 0.4, 0.4, "coin"),
 new Collectible(149, 10.7, 0.4, 0.4, "coin"),
 new Collectible(149, 8.7, 0.4, 0.4, "coin"),
 new Collectible(149, 12.7, 0.4, 0.4, "coin"),
-new Collectible(155, 10.7, 0.4, 0.4, "coin"));
+new Collectible(155, 10.7, 0.4, 0.4, "coin")
+);
 
 level3.mobs.push(
 new Mob(40, 6, 1, 1, 0, "left", 0, 0, 10, 1),
@@ -382,7 +388,8 @@ new Mob(44, 8, 1, 1, 0, "left", 0, 0, 10, 1),
 new Mob(48, 10, 1, 1, 0, "left", 0, 0, 10, 1),
 new Mob(52, 12, 1, 1, 0, "left", 0, 0, 10, 1),
 new Mob(56, 14, 1, 1, 0, "left", 0, 0, 10, 1),
-new Mob(72, 14, 3, 3, 1, "patrol", 65, 85, 10, 1));
+new Mob(72, 14, 3, 3, 1, "patrol", 65, 85, 10, 1)
+);
 // Level 4
 level4.boxes.push(
 new Box(0, 0, 8, 4),
@@ -404,39 +411,50 @@ level4.doors.push(new Door(0, 8, 0.5, 6));
 level4.doors.push(new Door(39.5, 8, 0.5, 6));
 
 level4.mobs.push(
-new Mob(20, 0, 9, 9, 1, "boss1", 8, 32, 100, 5)
-);
+new Mob(20, 0, 9, 9, 1, "boss1", 8, 32, 100, 5));
 //Level5
 level5.boxes.push(
-    new Box(0, 0, 8, 4),
-    new Box(0, 14, 6, 3),
-    new Box(0, 19, 1, 44),
-    new Box(3, 17, 3, 1),
-    new Box(4, 18, 2, 1),
-    new Box(5, 13, 2, 1),
-    new Box(6, 12, 4, 2),
-    new Box(7, 11, 6, 1),
-    new Box(8, 10, 4, 1),
-    new Box(9, 9, 4, 1),
-    new Box(10, 8, 4, 1),
-    new Box(11, 7, 4, 1),
-    new Box(12, 6, 4, 1),
-    new Box(13, 5, 4, 1),
-    new Box(14, 4, 4, 1),
-    new Box(15, 4, 3, 3),
-    new Box(17, 7, 10, 1),
-    new Box(21, 0, 15, 4),
-    new Box(36, 1, 1, 36),
-    new Box(35, 4, 1, 46),
-    new Box(34, 7, 1, 38),
-    new Box(33, 10, 1, 32),
-    new Box(32, 13, 1, 40),
-    new Box(31, 16, 1, 41),
-    new Box(30, 19, 1, 34),
-    new Box(71, 17, 1, 2),
-    new Box(72, -6, 20, 1),
-    new Box(72, 18, 1, 2),
-    new Box(73, 19, 1, 46)
+new Box(0, 0, 8, 4),
+new Box(0, 14, 6, 3),
+new Box(0, 19, 1, 44),
+new Box(3, 17, 3, 1),
+new Box(4, 18, 2, 1),
+new Box(5, 13, 2, 1),
+new Box(6, 12, 4, 2),
+new Box(7, 11, 6, 1),
+new Box(8, 10, 4, 1),
+new Box(9, 9, 4, 1),
+new Box(10, 8, 4, 1),
+new Box(11, 7, 4, 1),
+new Box(12, 6, 4, 1),
+new Box(13, 5, 4, 1),
+new Box(14, 4, 4, 1),
+new Box(15, 4, 3, 3),
+new Box(17, 7, 10, 1),
+new Box(21, 0, 15, 4),
+new Box(36, 1, 1, 36),
+new Box(35, 4, 1, 46),
+new Box(34, 7, 1, 38),
+new Box(33, 10, 1, 32),
+new Box(32, 13, 1, 40),
+new Box(31, 16, 1, 41),
+new Box(30, 19, 1, 34),
+new Box(71, 17, 1, 2),
+new Box(72, -7, 20, 1),
+new Box(72, 18, 1, 2),
+new Box(73, 19, 1, 46),
+new Box(76, 11, 1, 1),
+new Box(76, 15, 1, 1),
+new Box(81, 11, 1, 1),
+new Box(84, 9, 1, 1),
+new Box(86, 11, 1, 1),
+new Box(86, 7, 1, 1),
+new Box(86, 3, 1, 1),
+new Box(87, 0, 18, 12),
+new Box(88, 13, 1, 10),
+new Box(88, 18, 1, 10),
+new Box(89, 14, 1, 8),
+new Box(89, 17, 1, 8)
 );
 /*
 
