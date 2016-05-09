@@ -433,7 +433,7 @@ level5.boxes.push(
     new Box(32, 13, 1, 20),
     new Box(31, 16, 1, 21),
     new Box(30, 19, 1, 14),
-    new Box(42, 1, 13., 1),
+    new Box(42, 1, 13, 1),
     new Box(51, 17, 1, 2),
     new Box(52, 18, 1, 2),
     new Box(53, 19, 1, 46)
