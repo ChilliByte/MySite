@@ -426,17 +426,17 @@ level5.boxes.push(
     new Box(15, 4, 3, 3),
     new Box(17, 7, 10, 1),
     new Box(21, 0, 15, 4),
-    new Box(36, 1, 1, 16),
-    new Box(35, 4, 1, 26),
-    new Box(34, 7, 1, 18),
-    new Box(33, 10, 1, 12),
-    new Box(32, 13, 1, 20),
-    new Box(31, 16, 1, 21),
-    new Box(30, 19, 1, 14),
-    new Box(51, 17, 1, 2),
-    new Box(52, 1, 13, 1),
-    new Box(52, 18, 1, 2),
-    new Box(53, 19, 1, 46)
+    new Box(36, 1, 1, 36),
+    new Box(35, 4, 1, 46),
+    new Box(34, 7, 1, 38),
+    new Box(33, 10, 1, 32),
+    new Box(32, 13, 1, 40),
+    new Box(31, 16, 1, 41),
+    new Box(30, 19, 1, 34),
+    new Box(71, 17, 1, 2),
+    new Box(72, 1, 13, 1),
+    new Box(72, 18, 1, 2),
+    new Box(73, 19, 1, 46)
 );
 /*
 
