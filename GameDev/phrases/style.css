@@ -1,0 +1,35 @@
+html, body {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+h1 {
+    background-color: #f88;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
+    background-size: 50px 50px;
+    -webkit-background-clip: text;
+}
+a {
+    height:75px;
+    width:300px;
+    background-color: #f88;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
+    background-size: 50px 50px;
+    border-bottom:5px solid #db0;
+    border-radius:15px;
+    margin:5px auto;
+    line-height:75px;
+    font-weight:900;
+    font-size:xx-large;
+    color:white;
+    display:block;
+    text-align:center;
+}
+a:active {
+    border-bottom-width: 1px;
+    position: relative;
+    top: 4px;
+    margin-bottom:16px;
+}
