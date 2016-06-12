@@ -14,10 +14,9 @@ h1 {
 }
 a,input {
     height:75px;
-    width:300px;
+    width:40%;
     background-color: #f88;
     background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
-    background-size: 50px 50px;
     border-bottom:5px solid #f44;
     border-radius:15px;
     margin:5px auto;
