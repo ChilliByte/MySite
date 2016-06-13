@@ -2,7 +2,7 @@ var genericNames = ["Sugar","Sugarplum","Sweet Pea","Sweetheart","Sweetie","Swee
 var status = ["you miss me","you're alone","you're afraid","you're scared","you're lonely","you feel alone","you feel useless","you feel scared","you feel frightened","you feel worthless","you feel like no one cares","you feel pointless","you feel empty"];
 var action = ["I love you","I miss you","I care about you","I worry about you","I worry for you","I always want you to be happy","I always want to see you smile"];
 var quanty = ["a lot","always","tons","very much","vvvvvvvv much","loads","tons and tons","loads and loads and loads"]
-var specialNames = ["Daisy","Plumb Bob","Taba","tebefa","Tabitha","tebefa","Lottie","Latte","Hannah","Hannahbanana];
+var specialNames = ["Daisy","Plumb Bob","Taba","tebefa","Tabitha","tebefa","Lottie","Latte","Hannah","Hannahbanana"];
 var phraseSkeletons = [
   "Hey, #1, just remember that when, #2, #3, #4",
   "I know sometimes #2, #1, but #3, #4, okay? <3",
