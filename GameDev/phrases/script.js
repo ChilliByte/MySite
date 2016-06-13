@@ -6,7 +6,10 @@ var specialNames = ["Daisy","Plumb Bob","Taba","tebefa","Tabitha","tebefa","Lott
 var phraseSkeletons = [
   "Hey, #1, just remember that when, #2, #3, #4",
   "I know sometimes #2, #1, but #3, #4, okay? <3",
-  "#UOI, #1. #3 #4 ALRIGHT. DONT FORGET IT. <3"
+  "#UOI, #1. #3 #4 ALRIGHT. DONT FORGET IT. <3",
+  "Hey, #1, #3 #4. Have a great day!",
+  "Hey, #1, Take care of yourself okay? #3 #4",
+  "If you ever feel like #2, #1, pretend I'm there with you, giving you a huge huggle, because #3, #4"
 ];
 var output = document.getElementById("text");
 var introed,firstname = false;
