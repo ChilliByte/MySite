@@ -1,5 +1,5 @@
 html, body {
-    height:100%;
+    height:90%;
     width:100%;
     margin:0;
     padding:0;
@@ -19,7 +19,7 @@ a,input {
     width:90%;
     background-color: #f88;
     background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
-    border-bottom:5px solid #f44;
+    border-bottom:5px solid #f77;
     border-radius:15px;
     margin:5px auto;
     line-height:75px;
@@ -28,6 +28,7 @@ a,input {
     color:white;
     display:inline-block;
     text-align:center;
+    font-family:'Gloria Hallelujah';
     margin-left:7px;
 }
 a:active {
