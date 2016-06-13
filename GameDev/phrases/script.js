@@ -11,8 +11,13 @@ var phraseSkeletons = [
 var output = document.getElementById("text");
 var introed = false;
 var nameVal = "";
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+String.prototype.toSentenceCase = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
 var g,s,a,q, phrase;
@@ -49,6 +54,4 @@ function genPhrase() {
   output.innerHTML = phrase;
 }
 
-String.prototype.toSentenceCase = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
+
