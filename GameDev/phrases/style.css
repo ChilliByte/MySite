@@ -37,4 +37,10 @@ a:active {
     top: 4px;
     margin-bottom:16px;
 }
-a { position: fixed; bottom:8px;}
+a { 
+    position: fixed; 
+    bottom:20px;
+    left:0;
+    right:0;
+    margin:auto;
+}
