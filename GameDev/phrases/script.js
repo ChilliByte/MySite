@@ -9,7 +9,8 @@ var phraseSkeletons = [
   "#UOI, #1. #3 #4 ALRIGHT. DONT FORGET IT. <3",
   "Hey, #1, #3 #4. Have a great day!",
   "Hey, #1, Take care of yourself okay? #3 #4",
-  "If you ever feel like #2, #1, pretend I'm there with you, giving you a huge huggle, because #3, #4"
+  "If you ever feel like #2, #1, pretend I'm there with you, giving you a huge huggle, because #3, #4",
+  "#1 you're the best thing ever to happen to me and #3 #4"
 ];
 var output = document.getElementById("text");
 var introed,firstname = false;
@@ -30,7 +31,7 @@ function genPhrase() {
   if(specialNames.indexOf(nameVal) != -1) {
     nameVal = specialNames[specialNames.indexOf(nameVal) + 1];
     if(!introed) {
-      output.innerHTML = "OMG! " + nameVal + "! Hey!! Thank you for checking this out!! I love you so so so much," + name.toSentenceCase(); + " , you're the best!! <3 <3 <3";
+      output.innerHTML = "OMG! " + nameVal + "! Hey!! Thank you for checking this out!! I love you so so so much, " + name.toSentenceCase() + " , you're the best!! <3 <3 <3";
       introed = true;
       return;
     }
