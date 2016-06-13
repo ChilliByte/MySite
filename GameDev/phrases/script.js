@@ -20,13 +20,14 @@ String.prototype.toSentenceCase = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-var g,s,a,q, phrase;
+var g,s,a,q, phrase, name;
 function genPhrase() {
-  nameVal = name.value.toSentenceCase();
+  name = document.getElementById("name").value;
+  nameVal = name.toSentenceCase();
   if(specialNames.indexOf(nameVal) != -1) {
     nameVal = specialNames[specialNames.indexOf(nameVal) + 1];
     if(!introed) {
-      output.innerHTML = "OMG! " + nameVal + "! Hey!! Thank you for checking this out!! I love you so so so much," + name.value.toSentenceCase(); + " , you're the best!! <3 <3 <3";
+      output.innerHTML = "OMG! " + nameVal + "! Hey!! Thank you for checking this out!! I love you so so so much," + name.toSentenceCase(); + " , you're the best!! <3 <3 <3";
       introed = true;
     }
   }
