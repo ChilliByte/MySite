@@ -47,10 +47,10 @@ function genPhrase() {
     a = a.toUpperCase();
     q = q.toUpperCase();
   }
-  phrase.replace("#1",g);
-  phrase.replace("#2",s);
-  phrase.replace("#3",a);
-  phrase.replace("#4",q);
+  phrase = phrase.replace("#1",g);
+  phrase = phrase.replace("#2",s);
+  phrase = phrase.replace("#3",a);
+  phrase = phrase.replace("#4",q);
   
   output.innerHTML = phrase;
 }
