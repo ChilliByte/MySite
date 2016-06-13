@@ -1,5 +1,5 @@
 var genericNames = ["Sugar","Sugarplum","Sweet Pea","Sweetheart","Sweetie","Sweetiepie","Honey","Honeybunches","Honeymuffin","Cutie","Cutiepie"];
-var status = ["you miss me","you're alone","you're afraid","you're scared","you're lonely","you feel alone","you feel useless","you feel scared","you feel frightened","you feel worthless","you feel like no one cares","you feel pointless","you feel empty"];
+var feeels = ["you miss me","you're alone","you're afraid","you're scared","you're lonely","you feel alone","you feel useless","you feel scared","you feel frightened","you feel worthless","you feel like no one cares","you feel pointless","you feel empty"];
 var action = ["I love you","I miss you","I care about you","I worry about you","I worry for you","I always want you to be happy","I always want to see you smile"];
 var quanty = ["a lot","always","tons","very much","vvvvvvvv much","loads","tons and tons","loads and loads and loads"]
 var specialNames = ["Daisy","Plumb Bob","Taba","tebefa","Tabitha","tebefa","Lottie","Latte","Hannah","Hannahbanana"];
@@ -9,7 +9,7 @@ var phraseSkeletons = [
   "#UOI, #1. #3 #4 ALRIGHT. DONT FORGET IT. <3"
 ];
 var output = document.getElementById("text");
-var introed = false;
+var introed,firstname = false;
 var nameVal = "";
 
 function getRandomInt(min, max) {
@@ -32,12 +32,13 @@ function genPhrase() {
       return;
     }
   }
-  if(getRandomInt(0,10) > 3) {
+  if((getRandomInt(0,10) > 3) && firstname){
     g = genericNames[getRandomInt(0,genericNames.length)];
   } else {
     g = nameVal;
+    firstname = true;
   }
-  s = status[getRandomInt(0,status.length)];
+  s = feeels[getRandomInt(0,feeels.length)];
   a = action[getRandomInt(0,action.length)];
   q = quanty[getRandomInt(0,quanty.length)];
   
