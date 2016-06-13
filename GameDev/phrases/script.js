@@ -6,7 +6,7 @@ var specialNames = ["Daisy","Plumb Bob","Taba","tebefa","Tabitha","tebefa","Lott
 var phraseSkeletons = [
   "Hey, #1, just remember that when, #2, #3, #4",
   "I know sometimes #2, #1, but #3, #4, okay? <3",
-  "#U OI, #1. #3 #4 ALRIGHT. DONT FORGET IT. <3"
+  "#UOI, #1. #3 #4 ALRIGHT. DONT FORGET IT. <3"
 ];
 var output = document.getElementById("text");
 var introed = false;
@@ -29,6 +29,7 @@ function genPhrase() {
     if(!introed) {
       output.innerHTML = "OMG! " + nameVal + "! Hey!! Thank you for checking this out!! I love you so so so much," + name.toSentenceCase(); + " , you're the best!! <3 <3 <3";
       introed = true;
+      return;
     }
   }
   if(getRandomInt(0,10) > 3) {
@@ -46,6 +47,7 @@ function genPhrase() {
     s = s.toUpperCase();
     a = a.toUpperCase();
     q = q.toUpperCase();
+    phrase = phrase.replace("#U","");
   }
   phrase = phrase.replace("#1",g);
   phrase = phrase.replace("#2",s);
