@@ -125,8 +125,6 @@ function updateValues() {
         saveBean(); 
         if(player.watching && player.fun < 100) {
             player.fun++;
-            player.x = 630;
-            player.y = 670;
         }
         if(player.showering && player.clean < 100) {
             player.clean++;
@@ -217,9 +215,23 @@ function checkClickCollisions(mouse) {
            }
             if(sBoxType == "shower") {
                player.showering = !player.showering;
+                if(player.showering) {
+                   player.x = currentLevel.specialBoxes[i].data.x;
+                   player.y = currentLevel.specialBoxes[i].data.y;
+               } else {
+                   player.velX = -3;
+                   player.velY = -6;
+               }
            }
            if(sBoxType == "tv") {
                player.watching = !player.watching;
+               if(player.watching) {
+                   player.x = currentLevel.specialBoxes[i].data.x;
+                   player.y = currentLevel.specialBoxes[i].data.y;
+               } else {
+                   player.velX = 3;
+                   player.velY = -6;
+               }
            }
        }
     }
