@@ -123,10 +123,12 @@ function updateValues() {
     }
     if(timeDiff > 100) {
         saveBean(); 
-        if(player.watching) {
+        if(player.watching && player.fun < 100) {
             player.fun++;
+            player.x = 630;
+            player.y = 670;
         }
-        if(player.showering) {
+        if(player.showering && player.clean < 100) {
             player.clean++;
         }
     }
