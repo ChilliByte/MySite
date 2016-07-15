@@ -91,10 +91,10 @@ function updateHUD() {
     document.getElementById("sleepBar").value  = player.sleep;
     document.getElementById("cleanBar").value  = player.clean;
 }
-
+var aday = 86400;
 function updateValues() {
     timeDiff = Date.now() - player.lastUpdated;
-    modifier = timeDiff / 846000;
+    modifier = timeDiff / aday;
     if(Math.floor(modifier) > 0) {
         modifier = Math.floor(modifier);
         player.fun    -= modifier;
