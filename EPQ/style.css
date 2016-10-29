@@ -1,0 +1,40 @@
+html,body {
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color:white;
+  background-image:url('https://images.unsplash.com/10/wii.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=973fe0ba7c86609ecb1e642dcb8f7b9a');
+  background-size:cover;
+}
+
+nav {
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  width:80px;
+  height:100%;
+}
+
+li {
+  height:80px;
+  width:80px;
+  line-height:80px;
+  list-style-type:none;
+}
+
+li.active {
+  border-right:3px solid white;
+}
+
+section {
+  display:block;
+  height:100%;
+  width: calc(100% - 80px);
+  float:right;
+}
