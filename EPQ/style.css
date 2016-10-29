@@ -46,4 +46,5 @@ section {
   height:100%;
   width: calc(100% - 80px);
   float:right;
+  padding-left:25px;
 }
