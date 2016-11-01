@@ -26,6 +26,9 @@ function setSizes() {
     }
 }
 
+if(window.location.href.indexOf("deepsohelia.tk") != -1) {
+    window.location.href="//chillibyte.github.io";
+}
 
 window.onload = function() {
     console.log("Loaded");
