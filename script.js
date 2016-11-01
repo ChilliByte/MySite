@@ -25,10 +25,6 @@ function setSizes() {
         document.querySelector("section:nth-child(4)").height = vh(192);
     }
 }
-alert(window.location.href)
-if(window.location.href.indexOf("deepsohelia.tk") != -1) {
-    window.location.href="//chillibyte.github.io";
-}
 
 window.onload = function() {
     console.log("Loaded");
