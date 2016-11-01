@@ -38,10 +38,10 @@ li {
   text-align:center;
 }
 
-.scroll {
+div.scroll {
   position:fixed;
   left:80px
-  top:0;
+  top:10px;
   height:16.666vh;
   width:0%;
   border-right:3px solid white;
