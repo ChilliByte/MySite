@@ -1,3 +1,7 @@
+var height;
 window.onload = function() {
-  alert("hi");
+  height = document.body.offsetHeight;
+}
+window.onscroll = function() {
+  
 }
