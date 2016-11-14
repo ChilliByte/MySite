@@ -212,7 +212,7 @@ new Collectible(195, 10.7, 0.4, 0.4, "coin")
 );
 
 level1.ice.push(
-new Box(0,10,10,40);
+new Box(0,10,10,40)
 )
 // Level 2
 level2.boxes.push(
