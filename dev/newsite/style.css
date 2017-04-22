@@ -5,5 +5,5 @@ body, html {
 
 body {
   background-image:url("https://pbs.twimg.com/profile_images/823998654935666688/JqKdLpIa.jpg");
-  clip-path: url(#myClip);
+  clip-path: circle(10px 10px 10px 10px)/*url(#myClip)*/;
 }
