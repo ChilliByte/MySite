@@ -1,19 +1,9 @@
-.clip-svg {
-  clip-path: url(#myClip);
-}
-
-img:after {
-  height:100%;
-  width:100%;
-  border:1px solid black;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0),
-    yellow
-  );
-}
-
 body, html {
   height: 100%;
   width:100%;
+}
+
+body {
+  background-image:url("https://pbs.twimg.com/profile_images/823998654935666688/JqKdLpIa.jpg"};
+  clip-path: url(#myClip);
 }
