@@ -3,7 +3,6 @@ body, html {
   width:100%;
 }
 
-body {
-  background-image:url("https://pbs.twimg.com/profile_images/823998654935666688/JqKdLpIa.jpg");
-  clip-path: circle(10px 10px 10px 10px)/*url(#myClip)*/;
+img {
+  clip-path: url(#myClip);
 }
