@@ -3,6 +3,8 @@ body, html {
   width:100%;
 }
 
-img {
-  clip-path: url(#myClip);
+image:hover {
+  x:-46%;
+  y:-10%
+  height:143%;
 }
