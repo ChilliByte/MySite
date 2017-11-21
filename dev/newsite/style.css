@@ -26,9 +26,15 @@ nav li {
   list-style-type:none;
   height:45px;
   line-height:45px;
-  font-weight:bold;
-  
+  font-weight:bold;  
   border-bottom: 1px solid #FFFFFF;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    margin: 3px 0;
 }
 
 nav footer {
