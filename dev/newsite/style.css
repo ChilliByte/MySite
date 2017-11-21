@@ -14,15 +14,17 @@ nav {
   width:300px;
   background-color:rgb(64,167,152);
   color:#FFFFFF;
+  font-size:larger;
   text-align:right;
   padding:25px;
   box-sizing:border-box;
 }
 
 nav li {
-  text-decoration:none;
-  height:15px;
-  border-bottom: 1px #FFFFFF;
+  list-style-type:none;
+  height:35px;
+  line-height:35px;
+  border-bottom: 1px solid #FFFFFF;
 }
 
 main {
