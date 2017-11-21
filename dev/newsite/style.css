@@ -22,4 +22,9 @@ main {
   width:100%;
   padding:15px;
   padding-left: 315px;
+  overflow-x:hidden;
+}
+
+main img {
+  width:100%;
 }
