@@ -20,6 +20,7 @@ nav {
 }
 
 nav h1 {font-size: 2.5em}
+nav ul {padding:0;}
 
 nav li {
   list-style-type:none;
