@@ -14,17 +14,24 @@ nav {
   width:300px;
   background-color:rgb(64,167,152);
   color:#FFFFFF;
-  font-size:larger;
   text-align:right;
   padding:25px;
   box-sizing:border-box;
 }
 
+nav h1 {font-size: 2em}
+
 nav li {
   list-style-type:none;
-  height:35px;
-  line-height:35px;
+  height:45px;
+  line-height:45px;
   border-bottom: 1px solid #FFFFFF;
+}
+
+nav footer {
+  position:relative;
+  bottom:0;
+  font-size: 0.5em;
 }
 
 main {
