@@ -14,12 +14,12 @@ nav {
   color:#FFFFFF;
   text-align:right;
   padding:10px;
+  box-sizing:border-box
 }
 
 main {
-  position: absolute;
-  top:0;
-  right:0;
-  bottom:0;
-  width:calc(100% - 300px);
+  height:100%;
+  width:100%;
+  padding:15px;
+  padding-left: 315px;
 }
