@@ -64,3 +64,9 @@ main {
 main img {
   width:100%;
 }
+
+#splash h1 {
+  color:rgb(71,98,104);
+  font-size:3em;
+  margin:1em;
+}
