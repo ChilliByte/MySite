@@ -79,6 +79,7 @@ main img {
   border: 3px solid rgb(64,167,152);
   border-radius: 5px;
   background-size:cover;
+  background-position:center;
 }
 
 #creations figure:nth-of-type(1) {background-image:  url("xDSC04861.jpg"), url("Screenshot 2017-11-20 at 16.57.45.png");}
@@ -94,4 +95,10 @@ main img {
 #creations figure figcaption {
   color:#FFFFFF;
   font-size:1.2em;
+  position:relative;
+  top:0;
+  left:0;
+  height:20vw;
+  width:20vw;
+  line-height:10vw;
 }
