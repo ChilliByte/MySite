@@ -73,8 +73,8 @@ main img {
 }
 
 #creations figure {
-  height:18vw;
-  width:32vw;
+  height: 27vmin;
+  width: 48vmin;
   display:block;
   border: 3px solid rgb(64,167,152);
   border-radius: 5px;
