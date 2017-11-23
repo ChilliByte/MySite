@@ -71,3 +71,16 @@ main img {
   margin:1em;
   text-align:center;
 }
+
+#creation figure {
+  height:20vw;
+  width:20vw;
+  display:block;
+  border: 3px solid rgb(64,167,152);
+  border-radius: 5px;
+}
+
+#creation figure figcaption {
+  color:#FFFFFF;
+  font-size:1.2em;
+}
