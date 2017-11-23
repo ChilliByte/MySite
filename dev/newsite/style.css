@@ -75,22 +75,22 @@ main img {
 #creations figure {
   height: 27vmin;
   width: 48vmin;
-  display:block;
+  display:inline-block;
   border: 3px solid rgb(64,167,152);
   border-radius: 5px;
   background-size:cover;
   background-position:center;
 }
 
-#creations figure:nth-of-type(1) {background-image:  url("xDSC04861.jpg"), url("Screenshot 2017-11-20 at 16.57.45.png");}
-#creations figure:nth-of-type(1):hover {background-image:  url("DSC04862.jpg");}
+#epq {background-image:  url("xDSC04861.jpg"), url("Screenshot 2017-11-20 at 16.57.45.png");}
+#epq:hover {background-image:  url("DSC04862.jpg");}
 
-#creations figure:nth-of-type(2) {background-image:  url("Screenshot 2017-11-20 at 16.56.14.png"), url("Screenshot 2017-11-20 at 16.57.45.png");}
-#creations figure:nth-of-type(2):hover {background-image:  url("Screenshot 2017-11-20 at 16.57.45.png");}
+#backchat {background-image:  url("Screenshot 2017-11-20 at 16.56.14.png"), url("Screenshot 2017-11-20 at 16.57.45.png");}
+#backchat:hover {background-image:  url("Screenshot 2017-11-20 at 16.57.45.png");}
 
-#creations figure:nth-of-type(3) {background-image: url("15578095_1653131864985947_5606259751347482130_o.jpg"); }
+#hth {background-image: url("15578095_1653131864985947_5606259751347482130_o.jpg"); }
 
-#creations figure:nth-of-type(4) {background-image: url("Screenshot 2017-11-23 at 13.20.13.png");}
+#cage {background-image: url("Screenshot 2017-11-23 at 13.20.13.png");}
 
 #creations figure figcaption {
   color:#FFFFFF;
