@@ -80,6 +80,10 @@ main img {
   background-color: rgb(71,98,104) ;
   color:#FFFFFF;
   height:20vmin;
+  width:calc(100% + 100px);
+  padding:50px 0;
+  position:relative;
+  left:0
 }
 
 #about p {
