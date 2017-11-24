@@ -87,18 +87,25 @@ main img {
 }
 
 #about p {
-  width:45%;
-  display:inline-block;
+  width: calc(50vw - 150px);
+  display: block;
 }
 
 #about img {
-  height:12vmin;
-  width:12vmin;
-  background-image:url("15675962_1319236084793733_5483806799840341705_o.jpg");
-  border-radius:50%;
-  display:inline-block;
-  border-bottom:3px solid rgb(71,98,104);
-  border-right:3px solid rgb(71,98,104);
+  position: absolute;
+  right: 150px;
+  top: 0;
+  bottom: 0;
+  display: inline-block;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-position: center;  
+  background-image: url(15675962_1319236084793733_5483806799840341705_o.jpg);   
+  border-radius: 50%;
+  border-bottom: 3px solid rgb(71,98,104);
+  border-right: 3px solid rgb(71,98,104);    
 }
 
 #creations figure {
