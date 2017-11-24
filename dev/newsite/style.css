@@ -76,7 +76,7 @@ main img {
   text-align:center;
 }
 
-#about { 
+#about, #cv section { 
   background-color: rgb(71,98,104) ;
   color:#FFFFFF;
   height:225px;
@@ -117,8 +117,8 @@ main img {
 }
 
 #creations figure {
-  height: 27vmin;
-  width: 48vmin;
+  height: 36vmin;
+  width: 64vmin;
   display:inline-block;
   border: 3px solid rgb(64,167,152);
   border-radius: 5px;
@@ -134,8 +134,8 @@ main img {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 27vmin;
-    width: 48vmin;
+    height: 36vmin;
+    width: 64vmin;
     margin: auto;
     background-color: rgba(0,20,20,0.5);
     text-align: center;
@@ -145,7 +145,7 @@ main img {
 #creations details summary::before {
   display:none;
 }
-summary::-webkit-details-marker {
+#creations details summary::-webkit-details-marker {
   display: none;
 } 
   
