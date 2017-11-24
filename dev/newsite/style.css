@@ -67,6 +67,13 @@ main {
 main img {
   width:100%;
 }
+main h2 {
+  rgb(71,98,104);
+}
+
+#splash {
+  height:100vh;
+}
 
 #splash h1 {
   color:rgb(71,98,104);
@@ -158,5 +165,5 @@ main img {
 #cv section {height:auto;}
 #cv section a {color:#FFFFFF;}
 #cv details summary h3 {display:inline;}
-#cv details ul {color:rgb(64,167,152);}
+#cv details ul {color:rgb(71,98,104);;}
 
