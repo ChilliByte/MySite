@@ -87,13 +87,14 @@ main img {
 }
 
 #about p {
-  height:18vmin;
   width:45%;
   display:inline-block;
 }
 
 #about img {
-  height:80%;
+  height:12vmin;
+  width:12vmin;
+  background-image:url("15675962_1319236084793733_5483806799840341705_o.jpg");
   border-radius:50%;
   display:inline-block;
   border-bottom:3px solid rgb(71,98,104);
