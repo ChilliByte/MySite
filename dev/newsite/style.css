@@ -4,9 +4,6 @@ body, html {
   margin:0;
   padding:0;
   font-family: 'Raleway', sans-serif;
-  background-image:url("sergey-zolkin-21235.jpg");
-  background-position:center;
-  background-size:cover;
 }
 
 nav {
@@ -61,9 +58,9 @@ nav footer a {
 
 main {
   width:100%;
-  padding:25px;
-  padding-left: 315px;
-  background-colour: #F7F7F7;
+  padding:55px;
+  padding-left: 345px;
+  background-color: #F7F7F7;
   box-sizing:border-box;
   overflow-x:hidden;
 }
