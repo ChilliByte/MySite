@@ -72,7 +72,7 @@ main h2 {
 }
 
 #splash {
-  height:100vh;
+  height:calc(100vh - 225px);
 }
 
 #splash h1 {
