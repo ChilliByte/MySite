@@ -142,7 +142,9 @@ main img {
     padding-top: 10vmin;
     box-sizing: border-box;
 }
-
+#creations summary::before {
+  display:none;
+}
 #epq {background-image:  url("xDSC04861.jpg"), url("Screenshot 2017-11-20 at 16.57.45.png");}
 #epq:hover {background-image:  url("DSC04862.jpg");}
 
