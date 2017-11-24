@@ -112,6 +112,9 @@ main img {
 #creations {
   text-align:center;
 }
+#creations p,h1 {
+  text-align:left;
+}
 
 #creations figure {
   height: 27vmin;
