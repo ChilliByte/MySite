@@ -109,6 +109,10 @@ main img {
   border-right: 3px solid rgb(71,98,104);    
 }
 
+#creations {
+  text-align:center;
+}
+
 #creations figure {
   height: 27vmin;
   width: 48vmin;
