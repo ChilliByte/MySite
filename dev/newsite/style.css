@@ -125,7 +125,7 @@ main img {
 
 #creations figure figcaption {
     color: #FFFFFF;
-    font-size: 1.2em;
+    font-size: 1.25em;
     position: relative;
     top: 0;
     left: 0;
@@ -136,7 +136,7 @@ main img {
     margin: auto;
     background-color: rgba(0,20,20,0.5);
     text-align: center;
-    padding-top: 10vmin;
+    line-height:36vmin;
     box-sizing: border-box;
 }
 #creations details summary::before {
@@ -158,3 +158,4 @@ main img {
 
 #cv section {height:auto;}
 #cv section a {color:#FFFFFF;}
+#cv details summary h1 {display:inline;}
