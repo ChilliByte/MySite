@@ -79,6 +79,7 @@ main img {
 #about { 
   background-color: rgb(71,98,104) ;
   color:#FFFFFF;
+  height:225px;
   width:calc(100% + 100px);
   padding:15px 50px;
   position:relative;
