@@ -158,4 +158,6 @@ main img {
 
 #cv section {height:auto;}
 #cv section a {color:#FFFFFF;}
-#cv details summary h1 {display:inline;}
+#cv details summary h3 {display:inline;}
+#cv details ul {color:rgb(64,167,152);}
+
