@@ -207,8 +207,11 @@ main h2 {
   #about, #cv section {
     text-align:center;
   }
-  #about p {display:block;
+  #about p {
+    display:block;
     position:initial; 
+    margin:25px auto;
+    width:90vw;
   }
   #about img {
     display:block;
