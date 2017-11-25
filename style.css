@@ -1,0 +1,222 @@
+body, html {
+  height: 100%;
+  width:100%;
+  margin:0;
+  padding:0;
+  font-family: 'Raleway', sans-serif;
+}
+
+nav {
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  width:300px;
+  background-color:rgb(64,167,152);
+  color:#FFFFFF;
+  text-align:right;
+  padding:25px;
+  box-sizing:border-box;
+}
+
+nav h1 {
+  font-size: 2.5em;
+}
+
+nav ul {
+  margin-top:0;
+  padding:0;
+}
+
+nav li {
+  list-style-type:none;
+  height:45px;
+  line-height:45px;
+  font-weight:bold;  
+  border-bottom: 1px solid #FFFFFF;
+}
+
+nav a {
+    color: #FFFFFF;
+    font-size:1.2em;
+    font-weight:bold;
+    text-decoration: none;
+    display: block;
+    margin: 3px 0;
+}
+
+nav footer {
+  position:relative;
+  bottom:0;
+  font-size: 0.75em;
+}
+
+nav footer a {
+  font-size:0.75em;
+}
+
+main {
+  width:100%;
+  padding:50px 10vmin;
+  padding-left: calc(300px + 10vmin);
+  background-color: #F7F7F7;
+  box-sizing:border-box;
+  overflow-x:hidden;
+}
+
+main img {
+  width:100%;
+  margin:10px auto;
+}
+main h2 {
+  rgb(71,98,104);
+}
+
+#splash {
+  height:72vh;
+}
+
+#splash h1 {
+  color:rgb(71,98,104);
+  font-size:5em;
+  margin:1em;
+  text-align:center;
+}
+
+#about, #cv section { 
+  background-color: rgb(71,98,104) ;
+  color:#FFFFFF;
+  height:auto;
+  width:calc(100% + 20vmin);
+  padding:15px 50px;
+  position:relative;
+  left:-10vmin;
+  box-sizing:border-box;
+}
+
+#about p {
+  width: calc(50vw - 150px);
+  display: block;
+}
+
+#about img {
+  position: absolute;
+  left: calc(50vw - 55px);
+  top: 0;
+  bottom: 0;
+  display: inline-block;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-position: center;  
+  background-image: url("/dev/newsite/15675962_1319236084793733_5483806799840341705_o.jpg");   
+  border-radius: 50%;
+  border-bottom: 3px solid rgb(71,98,104);
+  border-right: 3px solid rgb(71,98,104);    
+}
+
+#creations {
+  text-align:center;
+}
+
+#creations figure {
+  height: auto;
+  width: 100%;
+  display:inline-block;
+  border: 3px solid rgb(64,167,152);
+  border-radius: 5px;
+  background-size:cover;
+  background-position:center;
+  margin:10px 0;
+}
+
+#creations figure figcaption {
+    color: #FFFFFF;
+    font-size: 1.25em;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(0,20,20,0.5);
+    text-align: center;
+    line-height:30vmin;
+    box-sizing: border-box;
+}
+#creations details[open]{
+  border-bottom:3px solid rgb(64,167,152);
+  border-radius:3px;
+  padding-bottom:3px;
+  margin-bottom:10px;
+}
+
+#creations details summary::before {
+  display:none;
+}
+#creations details summary::-webkit-details-marker {
+  display: none;
+} 
+
+#creations details a {color:rgb(64,167,152);}
+#creations details img {border-radius:3px;}
+  
+#epq {background-image:  url("/dev/newsite/xDSC04861.jpg"), url("/dev/newsite/Screenshot 2017-11-20 at 16.57.45.png");}
+#epq:hover {background-image:  url("/dev/newsite/DSC04862.jpg");}
+
+#backchat {background-image:  url("/dev/newsite/Screenshot 2017-11-20 at 16.56.14.png"), url("/dev/newsite/Screenshot 2017-11-20 at 16.57.45.png");}
+#backchat:hover {background-image:  url("/dev/newsite/Screenshot 2017-11-20 at 16.57.45.png");}
+
+#hth {background-image: url("/dev/newsite/15578095_1653131864985947_5606259751347482130_o.jpg"), url("/dev/newsite/15625636_1653131901652610_8636174575099348044_o.jpg"); }
+#hth:hover {background-image: url("/dev/newsite/15625636_1653131901652610_8636174575099348044_o.jpg");}
+
+#cage {background-image: url("/dev/newsite/Screenshot 2017-11-23 at 13.20.13.png"), url("/dev/newsite/Screenshot 2017-11-24 at 21.45.43.png");}
+#cage:hover {background-image:url("/dev/newsite/Screenshot 2017-11-24 at 21.45.43.png");}
+
+#jewellery {background-image:url("/dev/newsite/19832549_1607324982625284_1432216110_n.jpg"), url("/dev/newsite/snowflake.jpg");}
+#jewellery:hover {background-image:url("/dev/newsite/snowflake.jpg");}
+
+#cv section {height:auto;}
+#cv section a {color:#FFFFFF;}
+#cv h3 {margin-bottom:3px;}
+#cv details summary h3 {display:inline;}
+#cv ul {color:rgb(71,98,104); line-height:1.2em;}
+
+@media screen and (orientation: portrait) {
+  nav{
+    display:block;
+    position:initial;
+    width:100%;
+    padding:10px;
+    height:auto;
+    text-align:center;
+  }
+  nav h1 {
+        font-size:6em;
+  }
+  nav a {
+    line-height:1.25em
+  }
+  nav ul{margin-top:25px;}
+  nav ul li {height:2.5em; line-height:2em;}
+  #splash{font-size:xx-large; text-align:center}
+  main{
+    padding:30px;
+  }
+  #about, #cv section {
+    text-align:center;
+  }
+  #about p {
+    display:block;
+    position:initial; 
+    margin:25px auto;
+    width:90vw;
+  }
+  #about img {
+    display:block;
+    position:initial;
+  }
+}
