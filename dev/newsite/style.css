@@ -87,10 +87,10 @@ main h2 {
   background-color: rgb(71,98,104) ;
   color:#FFFFFF;
   height:225px;
-  width:calc(100% + 100px);
+  width:calc(100% + 200px);
   padding:15px 50px;
   position:relative;
-  left:-50px;
+  left:-100px;
   box-sizing:border-box;
 }
 
@@ -165,7 +165,7 @@ main h2 {
 #cage {background-image: url("Screenshot 2017-11-23 at 13.20.13.png"), url("Screenshot 2017-11-24 at 21.45.43.png");}
 #cage:hover {background-image:url("Screenshot 2017-11-24 at 21.45.43.png");}
 
-#jewellery {background-image:url("19832549_1607324982625284_1432216110_n"), url("IMG_20171125_004358.jpg");}
+#jewellery {background-image:url("19832549_1607324982625284_1432216110_n.jpg"), url("IMG_20171125_004358.jpg");}
 #jewellery:hover {background-image:url("IMG_20171125_004358.jpg");}
 
 #cv section {height:auto;}
