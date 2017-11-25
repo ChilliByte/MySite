@@ -190,12 +190,15 @@ main h2 {
     display:block;
     position:initial;
     width:100%;
-    padding:0;
+    padding:10px;
     height:60vh;
     text-align:center;
   }
   main{
     padding:30px;
+  }
+  #about, #cv section {
+    text-align:center;
   }
   #about p {display:block;
     position:initial; 
