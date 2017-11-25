@@ -86,11 +86,11 @@ main h2 {
 #about, #cv section { 
   background-color: rgb(71,98,104) ;
   color:#FFFFFF;
-  height:225px;
+  height:auto;
   width:calc(100% + 20vmin);
   padding:15px 50px;
   position:relative;
-  left:10vmin;
+  left:-10vmin;
   box-sizing:border-box;
 }
 
