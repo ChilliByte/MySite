@@ -170,6 +170,7 @@ main h2 {
 
 #cv section {height:auto;}
 #cv section a {color:#FFFFFF;}
+#cv h3 {margin-bottom:3px;}
 #cv details summary h3 {display:inline;}
 #cv ul {color:rgb(71,98,104);;}
 
