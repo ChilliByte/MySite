@@ -209,6 +209,8 @@ main h2 {
   #about, #cv section {
     text-align:center;
   }
+  
+  #cv section {font-size:2em;}
   #about p {
     display:block;
     position:initial; 
