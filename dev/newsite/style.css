@@ -158,9 +158,11 @@ main h2 {
 #backchat {background-image:  url("Screenshot 2017-11-20 at 16.56.14.png"), url("Screenshot 2017-11-20 at 16.57.45.png");}
 #backchat:hover {background-image:  url("Screenshot 2017-11-20 at 16.57.45.png");}
 
-#hth {background-image: url("15578095_1653131864985947_5606259751347482130_o.jpg"); }
+#hth {background-image: url("15578095_1653131864985947_5606259751347482130_o.jpg"), url("15625636_1653131901652610_8636174575099348044_o.jpg"); }
+#hth:hover {background-image: url("15625636_1653131901652610_8636174575099348044_o.jpg");}
 
-#cage {background-image: url("Screenshot 2017-11-23 at 13.20.13.png");}
+#cage {background-image: url("Screenshot 2017-11-23 at 13.20.13.png"), url("Screenshot 2017-11-24 at 21.45.43.png");}
+#cage:hover {background-image:url("Screenshot 2017-11-24 at 21.45.43.png");}
 
 #cv section {height:auto;}
 #cv section a {color:#FFFFFF;}
