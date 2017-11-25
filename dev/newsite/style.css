@@ -191,16 +191,18 @@ main h2 {
     position:initial;
     width:100%;
     padding:10px;
-    height:53vh;
+    height:auto;
     text-align:center;
-    font-size:xx-large;
+  }
+  nav h1 {
+        font-size:xx-large;
   }
   nav a {
     line-height:1.25em
   }
   nav ul{margin-top:25px;}
   nav ul li {height:1.5em; line-height:2em;}
-  #splash{font-size:xx-large}
+  #splash{font-size:xx-large; text-align:center}
   main{
     padding:30px;
   }
