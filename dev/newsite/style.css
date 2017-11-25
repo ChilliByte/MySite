@@ -57,8 +57,8 @@ nav footer a {
 
 main {
   width:100%;
-  padding:50px 100px;
-  padding-left: 400px;
+  padding:50px 10vmin;
+  padding-left: calc(300px + 10vmin);
   background-color: #F7F7F7;
   box-sizing:border-box;
   overflow-x:hidden;
@@ -87,10 +87,10 @@ main h2 {
   background-color: rgb(71,98,104) ;
   color:#FFFFFF;
   height:225px;
-  width:calc(100% + 200px);
+  width:calc(100% + 20vmin);
   padding:15px 50px;
   position:relative;
-  left:-100px;
+  left:10vmin;
   box-sizing:border-box;
 }
 
@@ -121,8 +121,8 @@ main h2 {
 }
 
 #creations figure {
-  height: 36vmin;
-  width: 64vmin;
+  height: auto;
+  width: 100%;
   display:inline-block;
   border: 3px solid rgb(64,167,152);
   border-radius: 5px;
