@@ -138,12 +138,12 @@ main h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 36vmin;
-    width: 64vmin;
+    height: 100%;
+    width: 100%;
     margin: auto;
     background-color: rgba(0,20,20,0.5);
     text-align: center;
-    line-height:36vmin;
+    line-height:30vmin;
     box-sizing: border-box;
 }
 #creations details[open]{
