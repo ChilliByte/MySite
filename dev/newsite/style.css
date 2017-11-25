@@ -73,7 +73,7 @@ main h2 {
 }
 
 #splash {
-  height:calc(100vh - 225px);
+  height:72vh;
 }
 
 #splash h1 {
@@ -101,7 +101,7 @@ main h2 {
 
 #about img {
   position: absolute;
-  calc(50vw - 55px);
+  left: calc(50vw - 55px);
   top: 0;
   bottom: 0;
   display: inline-block;
