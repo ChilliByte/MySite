@@ -185,3 +185,18 @@ main h2 {
 #cv details summary h3 {display:inline;}
 #cv ul {color:rgb(71,98,104); line-height:1.2em;}
 
+@media screen and (max-width: 855px) {
+  nav{
+    display:block;
+    position:initial;
+    width:100%;
+    padding:0;
+    height:60vh;
+  }
+  main{
+    padding:30px;
+  }
+  #about p {display:block;)
+  #about img {display:block;)
+    
+}
