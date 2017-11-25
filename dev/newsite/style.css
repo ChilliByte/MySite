@@ -193,7 +193,10 @@ main h2 {
     padding:10px;
     height:60vh;
     text-align:center;
+    font-size:xx-large;
   }
+  nav ul{margin-top:10px;}
+  #splash{font-size:xx-large}
   main{
     padding:30px;
   }
