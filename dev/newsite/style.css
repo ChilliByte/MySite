@@ -195,13 +195,13 @@ main h2 {
     text-align:center;
   }
   nav h1 {
-        font-size:xx-large;
+        font-size:6em;
   }
   nav a {
     line-height:1.25em
   }
   nav ul{margin-top:25px;}
-  nav ul li {height:1.5em; line-height:2em;}
+  nav ul li {height:2.5em; line-height:2em;}
   #splash{font-size:xx-large; text-align:center}
   main{
     padding:30px;
