@@ -11,6 +11,7 @@ var Trebuchet = {
 var Engine = Matter.Engine,
     Render = Matter.Render,
     World = Matter.World,
+    Constraint = Matter.Constraint,
     Bodies = Matter.Bodies;
 
 // create an engine
