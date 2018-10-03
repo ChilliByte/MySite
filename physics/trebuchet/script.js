@@ -23,9 +23,9 @@ var render = Render.create({
 });
 
 // create two boxes and a ground
-var ground = Bodies.rectangle(-10, 580, 820, 60, { isStatic: true });
-var base = Bodies.rectangle(50, 568, 300, 12);
-var upright = Bodies.rectangle(200, 370, 12, 198);
+var ground = Bodies.rectangle(400, 600, 820, 40, { isStatic: true });
+var base = Bodies.rectangle(200, 572, 300, 12);
+var upright = Bodies.rectangle(196, 489, 12, 198);
 
 // add all of the bodies to the world
 World.add(engine.world, [ground,base,upright]);
