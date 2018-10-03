@@ -5,7 +5,7 @@ var Trebuchet = {
     armSetting:1,
     armHole:1,
     mass:1,
-    springConstant:1;
+    springConstant:1
 }
 
 var Engine = Matter.Engine,
