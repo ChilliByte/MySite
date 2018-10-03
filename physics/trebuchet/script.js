@@ -23,12 +23,12 @@ var render = Render.create({
 });
 
 // create two boxes and a ground
-var boxA = Bodies.rectangle(200, 598, 300, 12);
-var boxB = Bodies.rectangle(344, 400, 12, 198);
-var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
+var ground = Bodies.rectangle(-10, 580, 820, 60, { isStatic: true });
+var base = Bodies.rectangle(50, 568, 300, 12);
+var upright = Bodies.rectangle(200, 370, 12, 198);
 
 // add all of the bodies to the world
-World.add(engine.world, [boxA, boxB, ground]);
+World.add(engine.world, [ground,base,upright]);
 
 // run the engine
 Engine.run(engine);
