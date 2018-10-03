@@ -26,8 +26,8 @@ var render = Render.create({
 
 // create two boxes and a ground
 var ground = Bodies.rectangle(400, 600, 820, 40, { isStatic: true });
-var base = Bodies.rectangle(200, 568, 300, 12);
-var upright = Bodies.rectangle(196, 489, 12, 198);
+var base = Bodies.rectangle(200, 574, 300, 12);
+var upright = Bodies.rectangle(196, 469, 12, 198);
 var baseConstraint = Constraint.create({
         bodyA:base,
         bodyB:upright,
