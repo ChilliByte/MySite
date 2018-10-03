@@ -12,7 +12,8 @@ var Engine = Matter.Engine,
     Render = Matter.Render,
     World = Matter.World,
     Constraint = Matter.Constraint,
-    Bodies = Matter.Bodies;
+    Bodies = Matter.Bodies,
+    Body = Matter.Body;
 
 // create an engine
 var engine = Engine.create();
