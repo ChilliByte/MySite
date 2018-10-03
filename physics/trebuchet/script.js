@@ -29,4 +29,5 @@ Engine.run(engine);
 Render.run(render);
 
 var gui = new dat.GUI();
+console.log(boxA);
 gui.add(boxA, 'position.y');
