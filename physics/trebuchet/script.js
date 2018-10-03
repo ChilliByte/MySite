@@ -30,7 +30,8 @@ var upright = Bodies.rectangle(196, 489, 12, 198);
 var baseConstraint = Constraint.create({
         bodyA:base,
         bodyB:upright,
-        damping:0.1
+        damping:0.1,
+        length:105
 });
 
 
