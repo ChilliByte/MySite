@@ -24,7 +24,7 @@ var render = Render.create({
 
 // create two boxes and a ground
 var boxA = Bodies.rectangle(200, 598, 300, 12);
-var boxB = Bodies.rectangle(350, 400, 12, 198);
+var boxB = Bodies.rectangle(344, 400, 12, 198);
 var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
 
 // add all of the bodies to the world
