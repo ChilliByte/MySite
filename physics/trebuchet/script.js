@@ -33,10 +33,12 @@ var baseConstraint = Constraint.create({
         damping:0.1,
         length:105
 });
-
+Trebuchet.body = Body.create({
+        parts: [base, upright]
+    });
 
 // add all of the bodies to the world
-World.add(engine.world, [ground,base,upright,baseConstraint]);
+World.add(engine.world, [ground,Trebuchet.body]);
 
 // run the engine
 Engine.run(engine);
