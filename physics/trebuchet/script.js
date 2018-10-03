@@ -1,5 +1,13 @@
 console.log("loaded");
 
+var Trebuchet = {
+    uprightSetting:1,
+    armSetting:1,
+    armHole:1,
+    mass:1,
+    springConstant:1;
+}
+
 var Engine = Matter.Engine,
     Render = Matter.Render,
     World = Matter.World,
@@ -29,5 +37,8 @@ Engine.run(engine);
 Render.run(render);
 
 var gui = new dat.GUI();
-console.log(boxA);
-gui.add(boxA, 'position.y');
+gui.add(Trebuchet, "uprightSetting");
+gui.add(Trebuchet, "armSetting");
+gui.add(Trebuchet, "armHole");
+gui.add(Trebuchet, "mass");
+gui.add(Trebuchet, "springConstant");
