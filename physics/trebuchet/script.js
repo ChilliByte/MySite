@@ -26,9 +26,15 @@ var render = Render.create({
 var ground = Bodies.rectangle(400, 600, 820, 40, { isStatic: true });
 var base = Bodies.rectangle(200, 568, 300, 12);
 var upright = Bodies.rectangle(196, 489, 12, 198);
+var baseConstraint = Constraint.create({
+        bodyA:base,
+        bodyB:upright,
+        damping:0.1
+});
+
 
 // add all of the bodies to the world
-World.add(engine.world, [ground,base,upright]);
+World.add(engine.world, [ground,base,upright,baseConstraint]);
 
 // run the engine
 Engine.run(engine);
