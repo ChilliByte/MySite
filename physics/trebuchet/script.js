@@ -71,6 +71,7 @@ function drawConfig() {
     ctx.fill()
     //draw the spring
     ctx.fillStyle = "#bbb";
+    ctx.strokeStyle = "#bbb";
     ctx.beginPath();
     var y1Val = 470 - 10*sb; 
     ctx.arc(176,y1Val,4,0,2*Math.PI);
@@ -82,7 +83,6 @@ function drawConfig() {
     console.log("y2 calc:");
     console.log(au,theta,Math.cos(theta));
     console.log("x2 value: " + x2Val);
-    
     ctx.arc(x2Val,y2Val,4,0,2*Math.PI);
     ctx.fill()
     ctx.beginPath();
@@ -91,10 +91,7 @@ function drawConfig() {
     ctx.stroke();
     //draw the arm
     ctx.fillStyle = "#888";
-    ctx.beginPath();
-    var y3Val = 470 - 10*au;
-    ctx.arc(176,y3Val,4,0,2*Math.PI);
-    ctx.fill()
+    ctx.strokeStyle = "#888";
     ctx.beginPath();
     ctx.lineWidth=12
     ctx.moveTo(x2Val,y2Val);
@@ -102,8 +99,11 @@ function drawConfig() {
     var y4Val = y3Val - ((300-aL)*Math.cos(theta));
     ctx.lineTo(x4Val,y4Val);
     ctx.stroke();
+    ctx.beginPath();
+    var y3Val = 470 - 10*au;
+    ctx.arc(176,y3Val,4,0,2*Math.PI);
+    ctx.fill()
     console.log(x4Val,y4Val);
-    
 }
 function output(str) {
     document.getElementById("output").innerHTML = str;    
