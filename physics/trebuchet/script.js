@@ -57,7 +57,7 @@ function findAngle() {
     }
     //cosine rule to find the side, taken away from 90 to find the complementary angle, converted to degrees
     theta = Math.acos(((aL*aL)+(uL*uL)-(sE*sE))/(2*aL*uL));
-    config.angle = ((Math.PI/2) - theta * (180/Math.PI);
+    config.angle = ((Math.PI/2) - theta) * (180/Math.PI);
 }
 
 function drawConfig() {
