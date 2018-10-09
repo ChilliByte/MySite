@@ -47,8 +47,8 @@ function validConfig() {
 
 function findAngle() {
     //find the side lengths of the spring-upright-arm triangle
-    uL = au-sb*10;
-    aL = 50 + 10*aa;
+    uL = (au-sb)*10;
+    aL = 50 + (10*aa);
     sE = springRestLength;
     //see if the spring can natrually come to a rest
     if((uL - aL) > springRestLength) {
