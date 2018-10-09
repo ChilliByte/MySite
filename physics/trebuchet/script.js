@@ -6,6 +6,7 @@ var config = {
     permExt:false
 };
 var springRestLength = 97/*mm*/
+var springMaxExtension = 200/*mm*/
 
 function runCode() {
     if(validInput() && validConfig()) {
@@ -40,6 +41,9 @@ function validInput() {
     aa = parseInt(document.getElementsByTagName("input")[2].value);
     //fetch the values and check they're in range
     if(sb !== "" && au !== "" && aa !== "" && sb >=0 && au >= 0 && aa >= 0 && sb < 20 && au < 20 && aa < 9) {
+        if(Math.abs(uL - aL) > springMaxExtension) {
+            return false    
+        }
         return true
     }
     return false
@@ -112,6 +116,11 @@ function drawConfig() {
     ctx.fill()
     console.log(x4Val,y4Val);
 }
+
+function findDistance() {
+    
+}    
+
 function output(str) {
     document.getElementById("output").innerHTML = str;    
 }
