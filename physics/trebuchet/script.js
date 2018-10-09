@@ -65,6 +65,7 @@ function drawConfig() {
     ctx.clearRect(0,0,1000,1000);
     //draw the base and upright
     ctx.fillStyle = "#000";
+    ctx.lineWidth = 3;
     ctx.rect(20, 480, 300, 12);
     ctx.rect(170, 282, 12, 210);
     ctx.fill()
@@ -95,7 +96,7 @@ function drawConfig() {
     var y4Val = y3Val - ((300-aL)*Math.cos(theta));
     ctx.lineTo(x4Val,y4Val);
     ctx.stroke();
-    console.log(y1Val,x2Val,y2Val);
+    console.log(x4Val,y4Val);
     
 }
 function output(str) {
