@@ -25,8 +25,8 @@ window.onload = function() {
     ctx = canvas.getContext("2d");
     canvas.width = 500;
     canvas.height = 500;
-    ctx.rect(480, 480, 300, 12);
-    ctx.rect(630, 282, 12, 210);
+    ctx.rect(20, 480, 300, 12);
+    ctx.rect(170, 282, 12, 210);
     ctx.fill()
 }
 
