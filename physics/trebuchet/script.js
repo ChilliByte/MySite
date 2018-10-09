@@ -101,7 +101,8 @@ function drawConfig() {
     ctx.lineTo(x4Val,y4Val);
     ctx.stroke();
     ctx.beginPath();
-    
+    ctx.fillStyle = "#bbb";
+    ctx.strokeStyle = "#bbb";
     ctx.arc(176,y3Val,4,0,2*Math.PI);
     ctx.fill()
     console.log(x4Val,y4Val);
