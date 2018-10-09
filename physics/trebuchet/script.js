@@ -1,3 +1,5 @@
-document.getElementById("run").addEventListener("click", function(){
-    alert("bingo");
-});
+window.onload = function() {
+    document.getElementById("run").addEventListener("click", function(){
+        alert("bingo");
+    });
+}
