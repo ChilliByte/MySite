@@ -6,6 +6,7 @@
   <body>
     <style>
       html,body,canvas{position:absolute;margin:0;padding:0;}
+      * {box-sizing:border-box;}
       canvas {
         left:0;
         top:0;
@@ -21,11 +22,12 @@
         border:1px solid red;
       }
       #input {
-        position:absolute;
-        bottom:0;
+        position:relative;
+        bottom:-500px;
         left:0;
         right:0;
         height:calc(100% - 500px);
+        width:99vw;
         border:1px solid green;
       }
     </style>
