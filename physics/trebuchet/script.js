@@ -79,7 +79,7 @@ function drawConfig() {
     ctx.moveTo(176,y1Val);
     ctx.lineTo(x2Val,y2Val);    
     ctx.fill()
-
+    console.log(y1Val,x2Val,y2Val);
 }
 function output(str) {
     document.getElementById("output").innerHTML = str;    
