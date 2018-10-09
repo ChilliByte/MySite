@@ -22,8 +22,8 @@ window.onload = function() {
     });
     canvas = document.getElementById("canv");
     ctx = canvas.getContext("2d");
-    canvas.width = 340;
-    canvas.height = 340;
+    canvas.width = 500;
+    canvas.height = 500;
     ctx.rect(20, 480, 300, 12);
     ctx.rect(170, 282, 12, 210);
     ctx.fill()
@@ -71,7 +71,7 @@ function drawConfig() {
     //draw the spring
     ctx.fillStyle = "#888";
     ctx.beginPath();
-    var y1Val = 470 - 10*sB; 
+    var y1Val = 470 - 10*sb; 
     ctx.arc(176,y1Val,4,0,2*Math.PI);
     var x2Val = 176 + aL*Math.sin(theta); 
     var y2Val = 470 - 10*au - aL*Math.cos(theta);; 
