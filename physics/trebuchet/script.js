@@ -7,19 +7,24 @@ var config = {
 };
 var springRestLength = 97/*mm*/
 
+function runCode() {
+    if(validInput() && validConfig()) {
+        findAngle();
+        drawConfig();
+        /*findDistance();
+        createDataString();
+        output(data);*/
+        output("valid")
+    } else {
+        output("Please make sure the inputs are filled with valid numbers. The first two should be integers from 0-19 inclusive, and the last one 0-8 inclusive.");   
+    }
+}
+
 window.onload = function() {
-    document.getElementById("run").addEventListener("click", function(){
-        if(validInput() && validConfig()) {
-            findAngle();
-            drawConfig();
-            /*findDistance();
-            createDataString();
-            output(data);*/
-            output("valid")
-        } else {
-            output("Please make sure the inputs are filled with valid numbers. The first two should be integers from 0-19 inclusive, and the last one 0-8 inclusive.");   
-        }
-    });
+    document.getElementById("run").addEventListener("click", runCode);
+    document.getElementsByTagName("input")[0].addEventListener("input", runCode);
+    document.getElementsByTagName("input")[1].addEventListener("input", runCode);
+    document.getElementsByTagName("input")[2].addEventListener("input", runCode);
     canvas = document.getElementById("canv");
     ctx = canvas.getContext("2d");
     canvas.width = 500;
