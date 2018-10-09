@@ -75,14 +75,20 @@ function drawConfig() {
     var y1Val = 470 - 10*sb; 
     ctx.arc(176,y1Val,4,0,2*Math.PI);
     var x2Val = 176 + aL*Math.sin(theta); 
-    var y2Val = 470 - 10*au - aL*Math.cos(theta);; 
+    console.log("x2 calc:");
+    console.log(aL,theta,Math.sin(theta));
+    console.log("x2 value: " + x2Val);
+    var y2Val = 470 - 10*au + aL*Math.cos(theta);; 
+    console.log("y2 calc:");
+    console.log(au,theta,Math.cos(theta));
+    console.log("x2 value: " + x2Val);
+    
     ctx.arc(x2Val,y2Val,4,0,2*Math.PI);
     ctx.fill()
     ctx.beginPath();
     ctx.moveTo(176,y1Val);
     ctx.lineTo(x2Val,y2Val);    
     ctx.stroke();
-    console.log(y1Val,x2Val,y2Val);
     //draw the arm
     ctx.fillStyle = "#888";
     ctx.beginPath();
