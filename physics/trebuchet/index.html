@@ -5,9 +5,39 @@
   </head>
   <body>
     <style>
-    html,body,canvas{margin:0;padding:0;}
+      html,body,canvas{position:absolute;margin:0;padding:0;}
+      canvas {
+        left:0;
+        top:0;
+        height:500px;
+        width:500px;
+        border:1px solid black;  
+      }
+      #output {
+        position:absolute;
+        right:0;
+        width: calc(100% - 500px);
+        height:500px;
+        border:1px solid red;
+      }
+      #input {
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        height:calc(100% - 500px);
+        border:1px solid green;
+      }
     </style>
     <canvas id="canv"></canvas>
+    <div id="output">
+    </div>
+    <div id="input">
+      The Spring Bolt is in hole <input type="number">0</input> of the upright, out of 20<br>
+      The Arm Bolt is in hole <input type="number">0</input> of the upright, out of 20<br>
+      The Arm Bolt is in hole <input type="number">0</input> of the arm, out of 9<br>
+      <button id="run">Test configuration</button>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
