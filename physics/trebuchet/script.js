@@ -53,8 +53,9 @@ function findAngle() {
         config.permExt = true;    
         sE = uL - aL;
     }
-    theta = (Math.PI/2) - Math.acos(((aL*aL)+(uL*uL)-(sE*sE))/(2*aL*uL));
-    output(theta);
+    theta = Math.acos(((aL*aL)+(uL*uL)-(sE*sE))/(2*aL*uL));
+    
+    output(Math.cos(theta));
     /*
     cosine rule a2 = b2 + c2 - 2bccosA
     a = sE
