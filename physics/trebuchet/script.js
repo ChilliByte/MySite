@@ -9,13 +9,13 @@ var config = {
 
 window.onload = function() {
     document.getElementById("run").addEventListener("click", function(){
-        if(validInput()) {
-            /*checkValidConfig();
-            findAngle();
+        if(validInput() && validConfig()) {
+            /*findAngle();
             findDistance();
             drawConfig();
             createDataString();
-            output(data);*/alert("valid")
+            output(data);*/
+            alert("valid")
         } else {
             output("Please make sure the inputs are filled with valid numbers. The first two should be integers from 0-19 inclusive, and the last one 0-8 inclusive.");   
         }
@@ -30,11 +30,15 @@ function validInput() {
     aa = document.getElementsByTagName("input")[2].value;
     if(sb !== "" && au !== "" && aa !== "" && sb >=0 && au >= 0 && aa >= 0 && sb < 20 && au < 20 && aa < 9) {
         return true
-    } else {
-        return false
     }
+    return false
 }
-    
+
+function validConfig() {
+    if(sb < au) { return true;}
+    return false;
+}
+
 function output(str) {
     document.getElementById("output").innerHTML = str;    
 }
