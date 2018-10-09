@@ -30,9 +30,9 @@ window.onload = function() {
 }
 
 function validInput() {
-    sb = document.getElementsByTagName("input")[0].value;
-    au = document.getElementsByTagName("input")[1].value;
-    aa = document.getElementsByTagName("input")[2].value;
+    sb = parseInt(document.getElementsByTagName("input")[0].value);
+    au = parseInt(document.getElementsByTagName("input")[1].value);
+    aa = parseInt(document.getElementsByTagName("input")[2].value);
     //fetch the values and check they're in range
     if(sb !== "" && au !== "" && aa !== "" && sb >=0 && au >= 0 && aa >= 0 && sb < 20 && au < 20 && aa < 9) {
         return true
