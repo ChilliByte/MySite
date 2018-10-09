@@ -16,7 +16,7 @@ window.onload = function() {
             drawConfig();
             createDataString();
             output(data);*/alert("valid")
-        else {
+        } else {
             output("Please make sure the inputs are filled with valid numbers. The first two should be integers from 0-19 inclusive, and the last one 0-8 inclusive.");   
         }
     });
