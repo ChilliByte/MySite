@@ -95,12 +95,13 @@ function drawConfig() {
     ctx.beginPath();
     ctx.lineWidth=12
     ctx.moveTo(x2Val,y2Val);
+    var y3Val = 470 - 10*au;
     var x4Val = 176-((300-aL)*Math.sin(theta));
     var y4Val = y3Val - ((300-aL)*Math.cos(theta));
     ctx.lineTo(x4Val,y4Val);
     ctx.stroke();
     ctx.beginPath();
-    var y3Val = 470 - 10*au;
+    
     ctx.arc(176,y3Val,4,0,2*Math.PI);
     ctx.fill()
     console.log(x4Val,y4Val);
