@@ -15,7 +15,7 @@ window.onload = function() {
             /*findDistance();
             createDataString();
             output(data);*/
-            alert("valid")
+            output("valid")
         } else {
             output("Please make sure the inputs are filled with valid numbers. The first two should be integers from 0-19 inclusive, and the last one 0-8 inclusive.");   
         }
@@ -69,7 +69,7 @@ function drawConfig() {
     ctx.rect(170, 282, 12, 210);
     ctx.fill()
     //draw the spring
-    ctx.fillStyle = "#888";
+    ctx.fillStyle = "#bbb";
     ctx.beginPath();
     var y1Val = 470 - 10*sb; 
     ctx.arc(176,y1Val,4,0,2*Math.PI);
@@ -82,6 +82,21 @@ function drawConfig() {
     ctx.lineTo(x2Val,y2Val);    
     ctx.stroke();
     console.log(y1Val,x2Val,y2Val);
+    //draw the arm
+    ctx.fillStyle = "#888";
+    ctx.beginPath();
+    var y3Val = 470 - 10*au;
+    ctx.arc(176,y3Val,4,0,2*Math.PI);
+    ctx.fill()
+    ctx.beginPath();
+    ctx.lineWidth=12
+    ctx.moveTo(x2Val,y2Val);
+    var x4Val = 176-((300-aL)*Math.sin(theta));
+    var y4Val = y3Val - ((300-aL)*Math.cos(theta));
+    ctx.lineTo(x4Val,y4Val);
+    ctx.stroke();
+    console.log(y1Val,x2Val,y2Val);
+    
 }
 function output(str) {
     document.getElementById("output").innerHTML = str;    
