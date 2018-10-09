@@ -75,10 +75,12 @@ function drawConfig() {
     ctx.arc(176,y1Val,4,0,2*Math.PI);
     var x2Val = 176 + aL*Math.sin(theta); 
     var y2Val = 470 - 10*au - aL*Math.cos(theta);; 
-    ctx.arc(176,y1Val,4,0,2*Math.PI);
+    ctx.arc(x2Val,y2Val,4,0,2*Math.PI);
+    ctx.fill()
+    ctx.beginPath();
     ctx.moveTo(176,y1Val);
     ctx.lineTo(x2Val,y2Val);    
-    ctx.fill()
+    ctx.stroke();
     console.log(y1Val,x2Val,y2Val);
 }
 function output(str) {
