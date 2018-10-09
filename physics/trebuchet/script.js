@@ -56,9 +56,9 @@ function findAngle() {
     aL = 50 + (10*aa);
     sE = springRestLength;
     //see if the spring can natrually come to a rest
-    if((uL - aL) > springRestLength) {
+    if((Math.abs(uL - aL)) > springRestLength) {
         config.permExt = true;    
-        sE = uL - aL;
+        sE = Math.abs(uL - aL);
     }
     //cosine rule to find the side, taken away from 90 to find the complementary angle, converted to degrees
     theta = Math.acos(((aL*aL)+(uL*uL)-(sE*sE))/(2*aL*uL));
