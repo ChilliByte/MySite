@@ -25,9 +25,9 @@ window.onload = function() {
 }
 
 function validInput() {
-    sb = document.getelementsByTagName("input")[0].value;
-    au = document.getelementsByTagName("input")[1].value;
-    aa = document.getelementsByTagName("input")[2].value;
+    sb = document.getElementsByTagName("input")[0].value;
+    au = document.getElementsByTagName("input")[1].value;
+    aa = document.getElementsByTagName("input")[2].value;
     if(sb !== "" && au !== "" && aa !== "" && sb >=0 && au >= 0 && aa >= 0 && sb < 20 && au < 20 && aa < 9) {
         return true
     } else {
