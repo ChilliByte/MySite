@@ -1,1 +1,3 @@
-console.log("loaded script.js");
+document.getElementById("run").addEventListener("click", function(){
+    alert("bingo");
+});
