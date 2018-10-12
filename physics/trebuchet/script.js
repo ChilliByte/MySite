@@ -12,8 +12,8 @@ function runCode() {
     if(validInput() && validConfig()) {
         findAngle();
         drawConfig();
-        /*findDistance();
-        createDataString();
+        findDistance();
+        /*createDataString();
         output(data);*/
         output("valid")
     } else {
@@ -118,7 +118,12 @@ function drawConfig() {
 }
 
 function findDistance() {
-    
+    var springConstant = prompt("Enter the spring constant");
+    var mass = prompt("enter the mass of the projectile");
+    var springMaxExtension = prompt("how much can the spring safely extend?");
+    var releaseVelocity = Math.sqrt(springConstant/mass)*springMaxExtension;
+    var distance = releaseVelocity*Math.cos(theta)/g*(releaseVelocity*Math.sin(theta)+Math.sqrt((releaseVelocity*releaseVelocity*Math.sin(theta)*Math.sin(theta)) + 2*9.81*1)))
+    config.distance = distance;
 }    
 
 function output(str) {
