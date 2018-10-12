@@ -126,6 +126,10 @@ function findDistance() {
     config.distance = distance;
 }    
 
+function genTable() {
+    
+}
+
 function output(str) {
     document.getElementById("output").innerHTML = str;    
 }
