@@ -6,7 +6,7 @@ var config = {
     permExt:false
 };
 var springRestLength = 97/*mm*/
-var springMaxExtension = 200/*mm*/
+var springMaxExtension = 0.1/*mm*/
 var g = 9.81;
 
 function runCode() {
