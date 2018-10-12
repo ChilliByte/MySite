@@ -122,7 +122,7 @@ function findDistance() {
     var mass = prompt("enter the mass of the projectile");
     var springMaxExtension = prompt("how much can the spring safely extend?");
     var releaseVelocity = Math.sqrt(springConstant/mass)*springMaxExtension;
-    var distance = releaseVelocity*Math.cos(theta)/g*(releaseVelocity*Math.sin(theta)+Math.sqrt((releaseVelocity*releaseVelocity*Math.sin(theta)*Math.sin(theta)) + 2*9.81*1)))
+    var distance = releaseVelocity*Math.cos(theta)/g*(releaseVelocity*Math.sin(theta)+Math.sqrt((releaseVelocity*releaseVelocity*Math.sin(theta)*Math.sin(theta)) + 2*9.81*1));
     config.distance = distance;
 }    
 
