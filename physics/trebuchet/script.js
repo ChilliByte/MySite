@@ -129,20 +129,6 @@ function findDistance() {
     var distance = releaseVelocity*Math.cos(theta)/g*(releaseVelocity*Math.sin(theta)+Math.sqrt((releaseVelocity*releaseVelocity*Math.sin(theta)*Math.sin(theta)) + 2*9.81*1));
     config.distance = distance;
 }    
-var textFile = null;
-function makeTextFile(text) {
-    var data = new Blob([text], {type: 'text/plain'});
-
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-
-    textFile = window.URL.createObjectURL(data);
-
-    return textFile;
-};
 
 function genTable() {
     data = "";
@@ -165,8 +151,6 @@ function genTable() {
         }
         data += "\n \n";
     }
-    var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "data.csv");
 }
 
 function createDataString() {
