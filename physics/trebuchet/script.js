@@ -1,22 +1,23 @@
 //Just some set up
-var canvas,ctx,sb, au, aa,uL,aL,sE,theta;
+var canvas,ctx,sb, au, aa,uL,aL,sE,theta,data;
 var config = {
     angle:0,
     distance:0,
     permExt:false
 };
-var springRestLength = 97/*mm*/
-var springMaxExtension = 0.1/*mm*/
-var g = 9.81;
+var springRestLength = 97;/*mm*/
+var springMaxExtension = 0.1;/*mm*/
+var g = 9.81;//m/s^2
+var mass = 0.1;//kg
+var springConstant = 400;//N/m
 
 function runCode() {
     if(validInput() && validConfig()) {
         findAngle();
         drawConfig();
         findDistance();
-        /*createDataString();
-        output(data);*/
-        output("valid")
+        createDataString();
+        output(data);
     } else {
         output("Please make sure the inputs are filled with valid numbers. The first two should be integers from 0-19 inclusive, and the last one 0-8 inclusive.");   
     }
@@ -86,13 +87,7 @@ function drawConfig() {
     var y1Val = 470 - 10*sb; 
     ctx.arc(176,y1Val,4,0,2*Math.PI);
     var x2Val = 176 + aL*Math.sin(theta); 
-    console.log("x2 calc:");
-    console.log(aL,theta,Math.sin(theta));
-    console.log("x2 value: " + x2Val);
     var y2Val = 470 - 10*au + aL*Math.cos(theta);; 
-    console.log("y2 calc:");
-    console.log(au,theta,Math.cos(theta));
-    console.log("x2 value: " + x2Val);
     ctx.arc(x2Val,y2Val,4,0,2*Math.PI);
     ctx.fill()
     ctx.beginPath();
@@ -115,19 +110,39 @@ function drawConfig() {
     ctx.strokeStyle = "#bbb";
     ctx.arc(176,y3Val,4,0,2*Math.PI);
     ctx.fill()
-    console.log(x4Val,y4Val);
 }
 
 function findDistance() {
-    var springConstant = prompt("Enter the spring constant");
-    var mass = prompt("enter the mass of the projectile");
+    //check max ext
+    if((300 - aL) < ((au+1)*10)) {
+        if((uL + aL) < springMaxExtension+springRestLength)  {
+            springMaxExtension = uL+aL-springRestLength;
+        }
+    } else {
+        maxDeflectionAngle = Math.PI - theta - Math.acos(((au+1)*10)/(300-aL));
+        maxExt = Math.sqrt(aL*aL + uL*uL + 2*aL*uL*Math.cos(Math.PI - maxDeflectionAngle)) - springRestLength;
+        if (maxExt < springMaxExtension) {
+            springMaxExtension = maxExt;
+        }
+    }
     var releaseVelocity = Math.sqrt(springConstant/mass)*springMaxExtension;
     var distance = releaseVelocity*Math.cos(theta)/g*(releaseVelocity*Math.sin(theta)+Math.sqrt((releaseVelocity*releaseVelocity*Math.sin(theta)*Math.sin(theta)) + 2*9.81*1));
     config.distance = distance;
 }    
 
 function genTable() {
-    
+    for(var springBoltPos = 0; springBoltPos < 20; springBoltPos++) {
+        for(var armBoltPos = 0; armBoltPos < 20; armBoltPos++) {
+            for(var armHolePos = 0; armHolePos < 9; armHolePos++) {
+                console.log("x");
+            }
+        }
+    }
+}
+
+function createDataString() {
+    data = "For the settings chosen, the trebuchet rests at an angle of " + config.angle + " degrees from the horizontal. <br/><br/>" +
+           "This catapult can launch the projectile a distance of " + config.distance + "meters.";
 }
 
 function output(str) {
