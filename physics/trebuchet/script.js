@@ -12,6 +12,10 @@ var mass = 0.1;//kg
 var springConstant = 400;//N/m
 
 function runCode() {
+    sb = parseInt(document.getElementsByTagName("input")[0].value);
+    au = parseInt(document.getElementsByTagName("input")[1].value);
+    aa = parseInt(document.getElementsByTagName("input")[2].value);
+    
     if(validInput() && validConfig()) {
         findAngle();
         drawConfig();
@@ -37,12 +41,12 @@ window.onload = function() {
     ctx.fill()
 }
 
-function validInput() {
-    sb = parseInt(document.getElementsByTagName("input")[0].value);
-    au = parseInt(document.getElementsByTagName("input")[1].value);
-    aa = parseInt(document.getElementsByTagName("input")[2].value);
+function validInput(sB,aU,aA) {
     //fetch the values and check they're in range
-    if(sb !== "" && au !== "" && aa !== "" && sb >=0 && au >= 0 && aa >= 0 && sb < 20 && au < 20 && aa < 9) {
+    if(sB !== "" && aU !== "" && aA !== "" && sB >=0 && aU >= 0 && aA >= 0 && sB < 20 && aU < 20 && aA < 9) {
+        uL = (aU-sB)*10;
+        aL = 50 + (10*aA);
+        sE = springRestLength;
         if(Math.abs(uL - aL) > springMaxExtension+springRestLength) {
             return false    
         }
@@ -58,9 +62,7 @@ function validConfig() {
 
 function findAngle(SB,AU,AA) {
     //find the side lengths of the spring-upright-arm triangle
-    uL = (AU-SB)*10;
-    aL = 50 + (10*AA);
-    sE = springRestLength;
+  
     //see if the spring can natrually come to a rest
     if((Math.abs(uL - aL)) > springRestLength) {
         config.permExt = true;    
