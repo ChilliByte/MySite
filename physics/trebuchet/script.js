@@ -58,7 +58,7 @@ function validInput(sB,aU,aA) {
 //The spring must be below the arm pivot
 function validConfig(sB,aU,aA) {
     if(sB < aU) { return true}
-    if((uL + aL) < 
+    
     if(Math.abs(uL - aL) > springMaxExtension+springRestLength) {
             return false    
     }
