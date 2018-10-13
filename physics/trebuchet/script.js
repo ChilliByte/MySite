@@ -151,16 +151,22 @@ function genTable() {
         for(var springBoltPos = 0; springBoltPos < 20; springBoltPos++) {
             data += "Spring Hole: " + springBoltPos + ","
             for(var armBoltPos = 0; armBoltPos < 20; armBoltPos++) {
-                springMaxExtension = 100;   
-                findAngle(springBoltPos,armBoltPos,armHolePos);
-                findDistance();
-                data += "Arm Bolt Location: " + armBoltPos + ", angle: " + config.angle + ", distance: " + config.distance + ",";
+                if(validInput() && validConfig()) {
+                    springMaxExtension = 100;   
+                    findAngle(springBoltPos,armBoltPos,armHolePos);
+                    findDistance();
+                    data += "Arm Bolt Location: " + armBoltPos + ", angle: " + config.angle + ", distance: " + config.distance + ",";
+                }
+                else {
+                    data += "Invalid config,0,0,";    
+                }
             }
             data += "\n";
         }
         data += "\n \n";
     }
-    makeTextFile(data);
+    var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "data.csv");
 }
 
 function createDataString() {
