@@ -16,10 +16,10 @@ function runCode() {
     au = parseInt(document.getElementsByTagName("input")[1].value);
     aa = parseInt(document.getElementsByTagName("input")[2].value);
     
-    if(validInput() && validConfig()) {
-        findAngle();
+    if(validInput(sb,au,aa) && validConfig(sb,au,aa)) {
+        findAngle(sb,au,aa);
         drawConfig();
-        findDistance();
+        findDistance(sb,au,aa);
         createDataString();
         output(data);
     } else {
@@ -55,8 +55,8 @@ function validInput(sB,aU,aA) {
     return false
 }
 //The spring must be below the arm pivot
-function validConfig() {
-    if(sb < au) { return true;}
+function validConfig(sB,aU,aA) {
+    if(sB < aU) { return true;}
     return false;
 }
 
@@ -114,7 +114,7 @@ function drawConfig() {
     ctx.fill()
 }
 
-function findDistance() {
+function findDistance(sb,au,aa) {
     //check max ext
     if((300 - aL) < ((au+1)*10)) {
         if((uL + aL) < springMaxExtension+springRestLength)  {
@@ -139,10 +139,10 @@ function genTable() {
         for(var springBoltPos = 0; springBoltPos < 20; springBoltPos++) {
             data += "Spring Hole: " + springBoltPos + ","
             for(var armBoltPos = 0; armBoltPos < 20; armBoltPos++) {
-                if(validInput() && validConfig()) {
+                if(validInput(springBoltPos,armBoltPos,armHolePos) && validConfig(springBoltPos,armBoltPos,armHolePos)) {
                     springMaxExtension = 100;   
                     findAngle(springBoltPos,armBoltPos,armHolePos);
-                    findDistance();
+                    findDistance(springBoltPos,armBoltPos,armHolePos);
                     data += "Arm Bolt Location: " + armBoltPos + ", angle: " + config.angle + ", distance: " + config.distance + ",";
                 }
                 else {
