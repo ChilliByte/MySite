@@ -152,7 +152,7 @@ function genTable() {
                     springConstant = 400;//N/m   
                     findAngle(springBoltPos,armBoltPos,armHolePos);
                     findDistance(springBoltPos,armBoltPos,armHolePos);
-                    data += "Arm Bolt Location: " + armBoltPos + ", angle: " + config.angle + ", distance: " + config.distance + ",";
+                    data += "Arm Bolt Location: " + armBoltPos + "," + config.angle + "," + config.distance + ",";
                 }
                 else {
                     data += "Invalid config,0,0,";    
