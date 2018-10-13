@@ -6,7 +6,7 @@ var config = {
     permExt:false
 };
 var springRestLength = 97;/*mm*/
-var springMaxExtension = 0.1;/*mm*/
+var springMaxExtension = 100;/*mm*/
 var g = 9.81;//m/s^2
 var mass = 0.1;//kg
 var springConstant = 400;//N/m
@@ -43,7 +43,7 @@ function validInput() {
     aa = parseInt(document.getElementsByTagName("input")[2].value);
     //fetch the values and check they're in range
     if(sb !== "" && au !== "" && aa !== "" && sb >=0 && au >= 0 && aa >= 0 && sb < 20 && au < 20 && aa < 9) {
-        if(Math.abs(uL - aL) > springMaxExtension) {
+        if(Math.abs(uL - aL) > springMaxExtension+springRestLength) {
             return false    
         }
         return true
@@ -56,10 +56,10 @@ function validConfig() {
     return false;
 }
 
-function findAngle() {
+function findAngle(SB,AU,AA) {
     //find the side lengths of the spring-upright-arm triangle
-    uL = (au-sb)*10;
-    aL = 50 + (10*aa);
+    uL = (AU-SB)*10;
+    aL = 50 + (10*AA);
     sE = springRestLength;
     //see if the spring can natrually come to a rest
     if((Math.abs(uL - aL)) > springRestLength) {
@@ -125,19 +125,42 @@ function findDistance() {
             springMaxExtension = maxExt;
         }
     }
-    var releaseVelocity = Math.sqrt(springConstant/mass)*springMaxExtension;
+    var releaseVelocity = Math.sqrt(springConstant/mass)*springMaxExtension/1000;
     var distance = releaseVelocity*Math.cos(theta)/g*(releaseVelocity*Math.sin(theta)+Math.sqrt((releaseVelocity*releaseVelocity*Math.sin(theta)*Math.sin(theta)) + 2*9.81*1));
     config.distance = distance;
 }    
+var textFile = null;
+function makeTextFile(text) {
+    var data = new Blob([text], {type: 'text/plain'});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+};
 
 function genTable() {
-    for(var springBoltPos = 0; springBoltPos < 20; springBoltPos++) {
-        for(var armBoltPos = 0; armBoltPos < 20; armBoltPos++) {
-            for(var armHolePos = 0; armHolePos < 9; armHolePos++) {
-                console.log("x");
+    data = "";
+    for(var armHolePos = 0; armHolePos < 9; armHolePos++) {
+        data +="Arm Hole chosen," + armHolePos + "\n";
+        for(var springBoltPos = 0; springBoltPos < 20; springBoltPos++) {
+            data += "Spring Hole: " + springBoltPos + ","
+            for(var armBoltPos = 0; armBoltPos < 20; armBoltPos++) {
+                springMaxExtension = 100;   
+                findAngle(springBoltPos,armBoltPos,armHolePos);
+                findDistance();
+                data += "Arm Bolt Location: " + armBoltPos + ", angle: " + config.angle + ", distance: " + config.distance + ",";
             }
+            data += "\n";
         }
+        data += "\n \n";
     }
+    makeTextFile(data);
 }
 
 function createDataString() {
