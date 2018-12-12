@@ -3,6 +3,7 @@ var canvas,ctx;
 var world = [];
 var players = [];
 var currentPlayer = 0;
+var currentObject = null;
 var maxHeight,minHeight;
 
 //Game Variables
@@ -22,11 +23,22 @@ class Player {
 		this.money = 30;
 		this.colour = randomColour();
 		this.tiles = [world[y][x]];
+	    this.img = new Image();
+		this.img.src = "images/Base.png";
+		this.objects = [];
 	}
 	
 	capture(tile) {
-		if (tile.building == null) {
+		if (tile.contents == null) {
 			tile.owner = players[this.playerID];
+			this.tiles.push(tile);
+		}
+	}
+	
+	spawn(object,x,y) {
+		if(world[y][x].owner == this) {
+			world[y][x].contents = object;
+			this.objects.push(object);
 		}
 	}
 }
@@ -36,31 +48,60 @@ class Tile {
 		this.x = x;
 		this.y = y;
 		this.height = 1;
-		this.terrain = "FLAT";
-		this.building = null;
+		this.contents = null;
 		this.owner = null;	
 	}
 }
 
-class Unit {
-	constructor(x,y,owner) {
+class Object {
+	constructor(x,y,owner,rank) {
 		this.x = x;
 		this.y = y;
 		this.owner = owner;
+		this.rank = rank;
+		this.ips = 0;
+		this.cps = 0;
+		this.img = new Image();
+	}
+	
+	draw() {
+		ctx.drawImage(this.img, this.x*TILE_WIDTH, this.y*TILE_WIDTH, TILE_WIDTH, TILE_WIDTH);
+	}
+}
+
+class Unit extends Object {
+	constructor(x,y,owner,rank) {
+		super(x,y,owner,rank);
+		this.img.src = "images/Unit" + rank + ".png";
+	}
+}
+
+class Farm extends Object {
+	constructor(x,y,owner,rank) {
+		super(x,y,owner,rank);
+		this.ips = 5 * rank;
+		this.img.src = "images/Farm" + rank + ".png";
+	}
+}
+
+class Barracks extends Object {
+	constructor(x,y,owner,rank) {
+		super(x,y,owner,rank);
+		this.cps = 2 * rank;
+		this.img.src = "images/Barracks" + rank + ".png";
 	}
 }
 
 window.onload = function() {
-	console.log("loaded!");
 	canvas = document.getElementById("gameCanvas");
 	ctx = canvas.getContext("2d");
 	canvas.height = 1000;
 	canvas.width = 1000;
-	init();
-	setInterval(render,100);
+	ctx.imageSmoothingEnabled = false;
+	canvas.addEventListener("click", getCursorPosition);
 }
 
-function init() {
+function play() {
 	//Populate World Array
 	for(var j = 0; j < WORLD_SIZE; j++) {
 		world[j] = [];
@@ -82,6 +123,17 @@ function init() {
 			coord = genCoordWithinBounds(coord[0],coord[1],WORLD_SIZE/(2*NUMBER_OF_PLAYERS),WORLD_SIZE/2);
 		}
 	}
+	document.getElementsByTagName("nav")[0].style.display = "none";
+	render()
+}
+
+function gameLoop() {
+	
+	currentPlayer += 1
+	if (currentPlayer == players.length) {
+		currentPlayer = 0;
+	}
+	render();
 }
 
 function render() {
@@ -89,29 +141,29 @@ function render() {
 		for(var i = 0; i < WORLD_SIZE; i++) {
 			var currentTile = world[j][i];
 			if(currentTile.height < 0) {
-				ctx.fillStyle = "hsl(240,100%," + parseInt(50-(50*(currentTile.height/minHeight))) + "%)";
+				ctx.fillStyle = "hsl(240,100%,50%)";
 			}
 			if(currentTile.height > 0) {
-				ctx.fillStyle = "hsl(128,100%," + parseInt(50+(50*(currentTile.height/maxHeight))) + "%)";
+				ctx.fillStyle = "hsl(128,100%,50%)";
 			}
-			/*if (currentTile.height < 0) {
-				ctx.fillStyle = "#0350FF";
-			} else if (currentTile.height > 10) {
-				ctx.fillStyle = "#0D161D";
-			} else {
-				ctx.fillStyle = "#58F03F";
-			}*/
+			
+			if(currentTile.contents !== null) {
+				currentTile.contents.draw();
+			}
 			
 			ctx.fillRect(i*TILE_WIDTH,j*TILE_WIDTH,TILE_WIDTH,TILE_WIDTH);
 			ctx.stokeStyle = "#555555";
 			ctx.strokeRect(i*TILE_WIDTH,j*TILE_WIDTH,TILE_WIDTH,TILE_WIDTH);
+
 			if(currentTile.owner !== null) {
 				ctx.fillStyle = currentTile.owner.colour;
 				ctx.fillRect((i*TILE_WIDTH)+5,(j*TILE_WIDTH)+5,TILE_WIDTH-10,TILE_WIDTH-10);
 			}
+			
 		}
 	}
 }
+
 
 //Terrain Generation
 function generateTerrain() {
@@ -150,7 +202,7 @@ function generateTerrain() {
 		}
 		
 		segments.push([WORLD_SIZE-1,world[j][WORLD_SIZE-1].height]);
-		console.log(segments);
+
 		var heights = linearInterpolate(segments,WORLD_SIZE);
 		for (var i = 1; i < WORLD_SIZE; i++) {
 			world[j][i].height = heights[i][1];
@@ -233,6 +285,18 @@ function genCoordWithinBounds(x,y,min,max) {
 		j = randomInt(0,WORLD_SIZE);
 	}
 	return [i,j]
+}
+
+function getCursorPosition(event) {
+    var rect = canvas.getBoundingClientRect();
+	var canv = window.getComputedStyle(canvas);
+    var x = ((event.clientX - rect.left)/parseFloat(canv.width))*1000;
+    var y = ((event.clientY - rect.top)/parseFloat(canv.height))*1000;;
+    console.log("x: " + x + " y: " + y);
+	var tX = Math.floor((x*WORLD_SIZE)/1000);
+	var tY = Math.floor((y*WORLD_SIZE)/1000);
+	console.log("x: " + tX + " y: " + tY);
+	gameLoop();
 }
 
 function randomInt(min,max) {
