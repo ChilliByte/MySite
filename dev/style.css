@@ -1,0 +1,175 @@
+html,body{
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	transition-timing-function:cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+* {
+	box-sizing:border-box;
+	color:white;
+	font-family: 'Raleway', sans-serif;
+}
+
+body {
+	background-image:url('jose-aljovin-486564-unsplash.jpg');
+	background-size:cover;
+	background-attachment:fixed;
+	background-position:right 0;
+}
+
+header {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	height:10vh;
+	width:100vw;
+}
+
+nav {
+	height:100%;
+	width:76vw;
+	position:absolute;
+	top:0;
+	right:0;
+	text-align:right;
+	animation: 1s ease-out 0s 1 slideInFromTop;
+}
+
+nav a {
+	display:inline-block;
+	margin:0 3vw;
+	line-height:10vh;
+	text-align:center;
+	text-decoration: none;
+	font-size: 2vmin;
+}
+
+nav a:hover {
+	border-bottom:3px solid white;
+}
+
+#logo {
+	height:12vmin;
+	width:12vmin;
+	border:0.5vmin solid white;
+	font-size:5vmin;
+	position:absolute;
+	left:6vmin;
+	top:6vmin;
+	box-sizing:initial;
+	animation: 3s ease-out 0s 1 fadeIn;
+}
+
+#logo span {
+	display:inline-block;
+	position:absolute;
+	height:6vmin;
+	width:6vmin;
+	text-align:center;
+	line-height:6vmin;
+}
+
+#logo span:nth-of-type(1) {
+	top:0.4vmin;
+	left:0.55vmin;
+}
+#logo span:nth-of-type(2) {
+	top:0.4vmin;
+	right:0.55vmin;
+}
+#logo span:nth-of-type(3) {
+	bottom:0.4vmin;
+	left:0.55vmin;
+}
+#logo span:nth-of-type(4) {
+	bottom:0.4vmin;
+	right:0.55vmin;
+}
+
+aside {
+	position:absolute;
+	bottom:0;
+	left:0;
+	height:70vh;
+	width:5vw;
+	animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+#linkedin {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+#icons {
+	display:block;
+	width:5vw;
+	position:fixed;
+	bottom:0;
+	left:0;
+}
+
+#icons a {
+	display:block;
+	height:5vw;
+	width:5vw;
+	line-height:5vw;
+	font-size:3vw;
+	text-align:center;
+	text-decoration:none;
+}
+
+#scroller {
+  width:3px; 
+  height:0; 
+  background:white; 
+  position:fixed; 
+  left:5vw;
+  top:0;
+}
+
+section {
+	height:100vh;
+	width:100vw;
+	background-color:rgba(0,0,0,0.6);
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+	opacity:0;
+  }
+  100% {
+    transform: translateX(0);
+	opacity:1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+	opacity:0;
+  }
+  100% {
+	opacity:1;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+	opacity:0;
+  }
+  100% {
+    transform: translateY(0);
+	opacity:1;
+  }
+}
+
+
+ 
+
