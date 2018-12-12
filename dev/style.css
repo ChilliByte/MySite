@@ -3,13 +3,14 @@ html,body{
 	width:100%;
 	margin:0;
 	padding:0;
-	transition-timing-function:cubic-bezier(0.19, 1, 0.22, 1);
+	
 }
 
 * {
 	box-sizing:border-box;
 	color:white;
 	font-family: 'Raleway', sans-serif;
+	transition-timing-function:cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 body {
@@ -17,6 +18,7 @@ body {
 	background-size:cover;
 	background-attachment:fixed;
 	background-position:right 0;
+	overflow-x:hidden;
 }
 
 header {
@@ -25,7 +27,7 @@ header {
 	left:0;
 	right:0;
 	height:10vh;
-	width:100vw;
+	width:100%;
 }
 
 nav {
@@ -135,9 +137,33 @@ aside {
 
 section {
 	height:100vh;
-	width:100vw;
+	width:100%;
 	background-color:rgba(0,0,0,0.6);
+	text-align:right;
+	padding:5vmin;
 }
+
+section:nth-of-type(1) img {	
+	height:30vmin;
+	width:30vmin;
+	border-radius:50%;
+}
+
+section:nth-of-type(1) div {	
+	position:absolute;
+	bottom:10vmin;
+	right:10vmin;
+	animation: 1s ease-out 0s 1 slideInFromRight;
+}
+
+section:nth-of-type(1) h1 {	
+	font-size:3em;
+}
+
+section:nth-of-type(1) h2 {
+	font-size:2em;
+}
+
 
 @keyframes slideInFromLeft {
   0% {
@@ -166,6 +192,17 @@ section {
   }
   100% {
     transform: translateY(0);
+	opacity:1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+	opacity:0;
+  }
+  100% {
+    transform: translateX(0);
 	opacity:1;
   }
 }
