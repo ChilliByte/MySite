@@ -177,10 +177,11 @@ section p {
 section:nth-of-type(2) {	
 	text-align:left;
 	background-color:#2F2a2a;
+    max-height:60vh;
 	height:auto;
 	padding-left:10vw;
     display:grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
 }
 
 section:nth-of-type(2) h1,section:nth-of-type(2) p {
@@ -190,22 +191,33 @@ section:nth-of-type(2) h1,section:nth-of-type(2) p {
     grid-column-end: 2;
     
 }
+section:nth-of-type(2) h1 {
+    white-space: nowrap;
+    margin:3vmin 0;
+}
+
+section:nth-of-type(2) p {
+    font-size: 1.1em;
+    line-height: 1.3em;
+}
 
 section.active:nth-of-type(2) h1,section.active:nth-of-type(2) p {	
 	animation: 1s ease-out 0s 1 slideInFromLeft;
 	opacity:1;
 }
 
-section:nth-of-type(2) img {	
-	height:40vmin;
-	width:40vmin;
+section:nth-of-type(2) img {
+    max-height:50vh;
+    height:auto;
+    width:auto;
+    max-width:100%;
 	border-radius:50%;
 	border-bottom: 2px solid #999999;
 	border-right: 2px solid #999999;
 	box-shadow: 5px 5px 0px 0px rgba(255,255,255,1);
-    display:inline-grid;
 	object-fit:cover;
 	opacity:0;
+    display:inline-grid;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -219,20 +231,20 @@ section.active:nth-of-type(2) img {
 }
 
 
-section:nth-of-type(3) {	
+section#services {	
 	text-align:center;
 	padding-left:10vw;
 }
 
-section:nth-of-type(3) h1,section:nth-of-type(3) p {	
+section#services h1,section#services p {	
 	opacity:0;
 }
-section.active:nth-of-type(3) h1,section.active:nth-of-type(3) p {	
+section.active#services h1,section.active#services p {	
 	animation: 1s ease-out 0s 1 slideInFromTop;
 	opacity:1;
 }
 
-section:nth-of-type(3) figure {	
+section#services figure {	
 	height:30vw;
 	width:18vw;
 	border-radius:2vmin;
@@ -243,32 +255,32 @@ section:nth-of-type(3) figure {
 
 }
 
-section.active:nth-of-type(3) figure {
+section.active#services figure {
 	animation: 3s ease-out 0s 1 fadeIn;
 	opacity:1;
 }
 
-section:nth-of-type(3) figure:nth-of-type(1) {
+section#services figure:nth-of-type(1) {
 	background:url('resources/code.png');
 	background-size:cover;
 	
 }
-section:nth-of-type(3) figure:nth-of-type(2) {
+section#services figure:nth-of-type(2) {
 	background:url('resources/template.png');
 	background-size:cover;
 }
-section:nth-of-type(3) figure:nth-of-type(3) {
+section#services figure:nth-of-type(3) {
 	background:url('resources/epq.jpg');
 	background-size:cover;
 	background-position:top 0px left -150px ;
 }
-section:nth-of-type(3) figure:nth-of-type(4) {
+section#services figure:nth-of-type(4) {
 	background:url('resources/DSLMultitool8.png');
 	background-size:cover;
 	background-position: center;
 }
 
-section:nth-of-type(3) figcaption {	
+section#services figcaption {	
 	height:100%;
 	width:100%;
 	display:block;
@@ -280,7 +292,7 @@ section:nth-of-type(3) figcaption {
 	position:relative;
 }
 
-section.active:nth-of-type(3) figure p {
+section.active#services figure p {
 	font-size:1em;
 	width:90%;
 	margin:5% auto;
@@ -294,7 +306,7 @@ section.active:nth-of-type(3) figure p {
 }
 
 
-section:nth-of-type(4) {	
+section#work {	
 	background-color:#2F2a2a;
 	display:grid;
 	text-align:center;
@@ -303,7 +315,7 @@ section:nth-of-type(4) {
 	grid-template-rows: auto auto 2vmax auto 2vmax;
 }
 
-section:nth-of-type(4) figure {	
+section#work figure {	
 	height:18vmax;
 	width:32vmax;
 	border-radius:1vmax;
@@ -315,39 +327,39 @@ section:nth-of-type(4) figure {
 	
 }
 
-section:nth-of-type(4) h1 {
+section#work h1 {
 	grid-column-start: 1;
 	grid-column-end:6;
 	grid-row-start: 1;
 }
 
 
-section:nth-of-type(4) h1,section:nth-of-type(4) p {	
+section#work h1,section#work p {	
 	opacity:0;
 }
-section.active:nth-of-type(4) h1,section.active:nth-of-type(4) p {	
+section.active#work h1,section.active#work p {	
 	animation: 1s ease-out 0s 1 slideInFromTop;
 	opacity:1;
 }
 
-section.active:nth-of-type(4) figure {
+section.active#work figure {
 	animation: 3s ease-out 0s 1 fadeIn;
 	opacity:1;
 }
 
-section:nth-of-type(4) figure:nth-of-type(1) {
+section#work figure:nth-of-type(1) {
 	background:url('resources/template2.png');
 	background-size:cover;
 	grid-column-start: 2;
 	grid-row-start: 2;
 }
-section:nth-of-type(4) figure:nth-of-type(2) {
+section#work figure:nth-of-type(2) {
 	background:url('resources/backchat.png');
 	background-size:cover;
 	grid-column-start: 4;
 	grid-row-start: 2;
 }
-section:nth-of-type(4) figure:nth-of-type(3) {
+section#work figure:nth-of-type(3) {
 	background:url('resources/bethNecklace.jpg');
 	background-size:cover;
 	background-position:top 0px left 24px ;
@@ -355,14 +367,14 @@ section:nth-of-type(4) figure:nth-of-type(3) {
 	grid-row-start: 4;
 }
 
-section:nth-of-type(4) figure:nth-of-type(4) {
+section#work figure:nth-of-type(4) {
 	background:url('resources/cage.png');
 	background-size:cover;
 	grid-column-start: 4;
 	grid-row-start: 4;
 }
 
-section:nth-of-type(4) figcaption {	
+section#work figcaption {	
 	height:100%;
 	width:100%;
 	display:block;
@@ -378,20 +390,48 @@ section:nth-of-type(4) figcaption {
 	padding-top:7vmax;
 }
 
-section:nth-of-type(4) figure:nth-of-type(1) figcaption {
+section#work figure:nth-of-type(1) figcaption {
 	background-color: rgba(10,0,0,0.5);
 }
-section:nth-of-type(4) figure:nth-of-type(2) figcaption {
+section#work figure:nth-of-type(2) figcaption {
 	background-color: rgba(10,0,0,0.8);
 }
 
-section.active:nth-of-type(4) figure p {
+section.active#work figure p {
 	font-size:1em;
 	width:90%;
 	margin:0 auto;
 	margin-top:2vmin;
 	animation: 3s ease-out 0s 1 fadeIn;
 	opacity:1;
+}
+
+section#contact a {
+    display:block;
+    text-decoration:none;
+    font-size: 1.25em;
+    text-align: center;
+    line-height:2em;
+    margin:0 auto;
+    width:10vw;
+    height:12vw;
+}
+
+#contactGrid{
+    display:grid;
+    grid-template-columns: 10vw 10vw 10vw;
+	grid-template-rows: 35vh 35vh;
+    align-content: space-around;
+    grid-column-gap:8vw;
+    grid-row-gap:2vh;
+    margin:25px auto;
+    width:80vw;
+    justify-content:center;
+}
+
+i, .fab, .fas {
+    font-size:10vmax;
+    display:block;
 }
 
 
