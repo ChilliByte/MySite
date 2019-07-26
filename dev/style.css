@@ -3,7 +3,6 @@ html,body{
 	width:100%;
 	margin:0;
 	padding:0;
-	
 }
 
 * {
@@ -420,7 +419,7 @@ section#contact a {
 #contactGrid{
     display:grid;
     grid-template-columns: 10vw 10vw 10vw;
-	grid-template-rows: 35vh 35vh;
+	grid-template-rows: 25vh 25vh;
     align-content: space-around;
     grid-column-gap:8vw;
     grid-row-gap:2vh;
@@ -429,7 +428,7 @@ section#contact a {
     justify-content:center;
 }
 
-i, .fab, .fas {
+#contact i {
     font-size:10vmax;
     display:block;
 }
