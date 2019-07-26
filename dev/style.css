@@ -14,7 +14,7 @@ html,body{
 }
 
 body {
-	background-image:url('jose-aljovin-486564-unsplash.jpg');
+	background-image:url('resources/jose-aljovin-486564-unsplash.jpg');
 	background-size:cover;
 	background-attachment:fixed;
 	background-position:right 0;
@@ -146,59 +146,71 @@ section {
 	padding-left:5vw;
 }
 
-section:nth-of-type(1) img {	
+#content {
+    position:absolute;
+	bottom:10vmin;
+	right:3vw;
+	animation: 1s ease-out 0s 1 slideInFromRight;
+}
+
+#content img {	
 	height:30vmin;
 	width:30vmin;
 	border-radius:50%;
-	border-bottom: 2px solid #999999;
-	border-left: 2px solid #999999;
-	box-shadow: -5px 5px 0px 0px rgba(255,255,255,1);
+	box-shadow: -3px 3px 0px 0px rgba(255,255,255,1);
 	transform: scaleX(-1);
 }
 
-section:nth-of-type(1) div {	
-	position:absolute;
-	bottom:10vmin;
-	right:10vmin;
-	animation: 1s ease-out 0s 1 slideInFromRight;
+#content p {
+    width: 80vw;
 }
+
 
 section h1 {	
 	font-size:3em;
 }
 
 section p {
-	font-size:1.5em;
+	font-size:1.25em;
 }
 
 section:nth-of-type(2) {	
 	text-align:left;
 	background-color:#2F2a2a;
-	height:50vh;
+	height:auto;
 	padding-left:10vw;
+    display:grid;
+    grid-template-columns: auto auto auto;
 }
 
-section:nth-of-type(2) h1,section:nth-of-type(2) p {	
+section:nth-of-type(2) h1,section:nth-of-type(2) p {
 	opacity:0;
-	width:50%;
+	width:70%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
 }
+
 section.active:nth-of-type(2) h1,section.active:nth-of-type(2) p {	
 	animation: 1s ease-out 0s 1 slideInFromLeft;
 	opacity:1;
 }
 
 section:nth-of-type(2) img {	
-	height:30vmin;
-	width:30vmin;
+	height:40vmin;
+	width:40vmin;
 	border-radius:50%;
 	border-bottom: 2px solid #999999;
 	border-right: 2px solid #999999;
 	box-shadow: 5px 5px 0px 0px rgba(255,255,255,1);
-	position:absolute;
-	top:110vh;
-	right:10vw;
+    display:inline-grid;
 	object-fit:cover;
 	opacity:0;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin:auto;
 }
 
 section.active:nth-of-type(2) img {
@@ -237,21 +249,21 @@ section.active:nth-of-type(3) figure {
 }
 
 section:nth-of-type(3) figure:nth-of-type(1) {
-	background:url('code.png');
+	background:url('resources/code.png');
 	background-size:cover;
 	
 }
 section:nth-of-type(3) figure:nth-of-type(2) {
-	background:url('template.png');
+	background:url('resources/template.png');
 	background-size:cover;
 }
 section:nth-of-type(3) figure:nth-of-type(3) {
-	background:url('epq.jpg');
+	background:url('resources/epq.jpg');
 	background-size:cover;
 	background-position:top 0px left -150px ;
 }
 section:nth-of-type(3) figure:nth-of-type(4) {
-	background:url('DSLMultitool8.png');
+	background:url('resources/DSLMultitool8.png');
 	background-size:cover;
 	background-position: center;
 }
@@ -324,19 +336,19 @@ section.active:nth-of-type(4) figure {
 }
 
 section:nth-of-type(4) figure:nth-of-type(1) {
-	background:url('template2.png');
+	background:url('resources/template2.png');
 	background-size:cover;
 	grid-column-start: 2;
 	grid-row-start: 2;
 }
 section:nth-of-type(4) figure:nth-of-type(2) {
-	background:url('backchat.png');
+	background:url('resources/backchat.png');
 	background-size:cover;
 	grid-column-start: 4;
 	grid-row-start: 2;
 }
 section:nth-of-type(4) figure:nth-of-type(3) {
-	background:url('bethNecklace.jpg');
+	background:url('resources/bethNecklace.jpg');
 	background-size:cover;
 	background-position:top 0px left 24px ;
 	grid-column-start: 2;
@@ -344,7 +356,7 @@ section:nth-of-type(4) figure:nth-of-type(3) {
 }
 
 section:nth-of-type(4) figure:nth-of-type(4) {
-	background:url('cage.png');
+	background:url('resources/cage.png');
 	background-size:cover;
 	grid-column-start: 4;
 	grid-row-start: 4;
@@ -392,6 +404,7 @@ footer {
 	padding:0 25px;
 	font-weight:bold;
 	line-height:50px;
+    text-align:center;
 }
 
 figcaption h3 {
