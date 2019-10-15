@@ -15,20 +15,22 @@ var range = "'Catapult Moments'!B7";
 var minimumLaunchVelocity = "'Catapult Moments'!B9";
 var springRestLength = 0.078//"'Catapult Constants'!B16";
 
-for (springInUprightPos = 0; springInUprightPos < numberOfHolesInUpright; springInUprightPos++) {
-  for (armInUprightPos = 0; armInUprightPos < numberOfHolesInUpright; armInUprightPos++) {
-    for (armAlongUprightPos = 0; armAlongUprightPos < numberOfHolesInArm; armAlongUprightPos++) {
-        if(ConfigIsValid(springInUprightPos,armInUprightPos,springInArmPos)}{
+window.onload = function() {
+  for (springInUprightPos = 0; springInUprightPos < numberOfHolesInUpright; springInUprightPos++) {
+    for (armInUprightPos = 0; armInUprightPos < numberOfHolesInUpright; armInUprightPos++) {
+      for (armAlongUprightPos = 0; armAlongUprightPos < numberOfHolesInArm; armAlongUprightPos++) {
+        if(ConfigIsValid(springInUprightPos,armInUprightPos,springInArmPos){
            var theta = LaunchAngle(springRestLength,(springInUprightPos-armInUprightPos)*10,40+12.5*armAlongUprightPos);
            var maxDeflection = maxDeflection();
            var distance = distance();
            var spread = findSpread();
            data += armInUprightPos + "," + springInUprightPos + "," + armAlongUprightPos + "," + theta + "," + maxDeflection + "," + distance + "," + spread + "\n"; 
         };
+      }
     }
   }
+  console.log(data);
 }
-
 function ConfigIsValid(springInUp,armInUp,springInArm) {
   //check if spring and arm in same hole 
   if(springInUp == armInUp) {return false}
