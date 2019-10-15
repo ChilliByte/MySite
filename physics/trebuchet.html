@@ -26,7 +26,7 @@ window.onload = function() {
            var maxDeflection = MaximumDeflection();
            var distance = MaximumDistance();
            var spread = Spread();
-           data += armInUprightPos + "," + springInUprightPos + "," + armAlongUprightPos + "," + theta + "," + maxDeflection + "," + distance + "," + spread + "\n"; 
+           data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + theta + "," + maxDeflection + "," + distance + "," + spread + "\n"; 
         };
       }
     }
@@ -43,7 +43,7 @@ function ConfigIsValid(springInUp,armInUp,armAlongUp) {
 }
   
 function LaunchAngle(a,b,c) {
-  return Math.acos((b*b)+(c*c)-(a*a)/(2*b*c));
+  return Math.acos((b*b)+(c*c)-(a*a)/(2*b*c)) * 180 / Math.PI; 
 }
   
 function MaximumDeflection() {
