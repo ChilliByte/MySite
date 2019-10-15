@@ -24,7 +24,7 @@ window.onload = function() {
         if(ConfigIsValid(springInUprightPos,armInUprightPos,armAlongUprightPos)){
            var theta = LaunchAngle(springRestLength,((springInUprightPos-armInUprightPos)*10)/1000,(40+12.5*armAlongUprightPos)/1000);
            if(theta != undefined) {
-             var maxDeflection = MaximumDeflection();
+             var maxDeflection = MaximumDeflection(springInUprightPos,armInUprightPos,armAlongUprightPos,theta);
              var distance = MaximumDistance();
              var spread = Spread();
              data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + radToDeg(theta) + "," + radToDeg(maxDeflection) + "," + distance + "," + spread + "\n"; 
@@ -52,9 +52,14 @@ function LaunchAngle(a,b,c) {
   }
 }
   
-function MaximumDeflection() {
-  return 0;
+function MaximumDeflection(springInUp,armInUp,armAlongUp,theta) {
+  len = 160 + (numberOfHolesInArm - armAlongUp)*12.5;
+  h = (numberOfHolesInUpright - armInUp)*10
+  d = Math.sqrt((len*len)-(h*h))
+  phi = Math.asin(d/len);
+  return Math.PI/2 + phi - theta;
 }
+  
 function MaximumDistance() {
  return 1;
 }
