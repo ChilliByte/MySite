@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html><head></head>
+<body>
+<script>
+var numberOfHolesInUpright = 20;
+var numberOfHolesInArm = 10;
+
+var springInUprightPos = 0;
+var armInUprightPos = 0;
+var armAlongUprightPos = 0;
+
+var massOfProjectile = "'Catapult Moments'!B3";
+var diameterOfProjectile = "'Catapult Moments'!B5";
+var range = "'Catapult Moments'!B7";
+var minimumLaunchVelocity = "'Catapult Moments'!B9";
+var springRestLength = 0.078//"'Catapult Constants'!B16";
+
+for (springInUprightPos = 0; springInUprightPos < numberOfHolesInUpright; springInUprightPos++) {
+  for (armInUprightPos = 0; armInUprightPos < numberOfHolesInUpright; armInUprightPos++) {
+    for (armAlongUprightPos = 0; armAlongUprightPos < numberOfHolesInArm; armAlongUprightPos++) {
+        if(ConfigIsValid(springInUprightPos,armInUprightPos,springInArmPos)}{
+           var theta = LaunchAngle(springRestLength,(springInUprightPos-armInUprightPos)*10,40+12.5*armAlongUprightPos);
+           var maxDeflection = maxDeflection();
+           var distance = distance();
+           var spread = findSpread();
+           data += armInUprightPos + "," + springInUprightPos + "," + armAlongUprightPos + "," + theta + "," + maxDeflection + "," + distance + "," + spread + "\n"; 
+        };
+    }
+  }
+}
+
+function ConfigIsValid(springInUp,armInUp,springInArm) {
+  //check if spring and arm in same hole 
+  if(springInUp == armInUp) {return false}
+  //check if spring is below arm pivot
+  if(springInUp < armInUp) {return false}
+
+  
+  function LaunchAngle(a,b,c) {
+    return Math.acos((b*b)+(c*c)-(a*a)/(2*b*c));
+  }
+  
+  function maxDeflection() {
+   return 0;
+  }
+  function distance() {
+   return 1;
+  }
+  function findSpread() {
+   return 2;
+  }
+  </script>
+  </body>
+  </html>
