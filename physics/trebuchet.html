@@ -34,11 +34,12 @@ window.onload = function() {
   console.log(data);
   document.body.innerText += data;
 }
-function ConfigIsValid(springInUp,armInUp,springInArm) {
+function ConfigIsValid(springInUp,armInUp,armAlongUp) {
   //check if spring and arm in same hole 
   if(springInUp == armInUp) {return false}
   //check if spring is below arm pivot
   if(springInUp < armInUp) {return false}
+  return true
 }
   
 function LaunchAngle(a,b,c) {
