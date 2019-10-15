@@ -36,21 +36,21 @@ function ConfigIsValid(springInUp,armInUp,springInArm) {
   if(springInUp == armInUp) {return false}
   //check if spring is below arm pivot
   if(springInUp < armInUp) {return false}
-
+}
   
-  function LaunchAngle(a,b,c) {
-    return Math.acos((b*b)+(c*c)-(a*a)/(2*b*c));
-  }
+function LaunchAngle(a,b,c) {
+  return Math.acos((b*b)+(c*c)-(a*a)/(2*b*c));
+}
   
-  function maxDeflection() {
-   return 0;
-  }
-  function distance() {
-   return 1;
-  }
-  function findSpread() {
-   return 2;
-  }
+function maxDeflection() {
+  return 0;
+}
+function distance() {
+ return 1;
+}
+function findSpread() {
+ return 2;
+}
   </script>
   </body>
   </html>
