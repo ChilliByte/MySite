@@ -71,7 +71,7 @@ function MaximumDistance(springInUp,armInUp,armAlongUp,theta,maxDef) {
   var l2 = lengthFromPivotToSpringAlongArm / 1000;
   var l3 = lengthFromPivotToSpringAlongUpright / 1000;
   var x,y,lengthOfSpring,extensionOfSpring,force,perpForce,springAngle,angularAcceleration,changeInAngle;
-  var timeStep = 0.01//seconds
+  var timeStep = 0.2//seconds
   while (currentDef > 0) {
      //simulate the catapult
      var currentAngle = theta - currentDef;
