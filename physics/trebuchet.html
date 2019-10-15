@@ -22,7 +22,7 @@ window.onload = function() {
     for (armInUprightPos = 0; armInUprightPos < numberOfHolesInUpright; armInUprightPos++) {
       for (armAlongUprightPos = 0; armAlongUprightPos < numberOfHolesInArm; armAlongUprightPos++) {
         if(ConfigIsValid(springInUprightPos,armInUprightPos,armAlongUprightPos)){
-           var theta = LaunchAngle(springRestLength,(springInUprightPos-armInUprightPos)*10,40+12.5*armAlongUprightPos);
+           var theta = LaunchAngle(springRestLength,((springInUprightPos-armInUprightPos)*10)/1000,(40+12.5*armAlongUprightPos)/1000);
            var maxDeflection = MaximumDeflection();
            var distance = MaximumDistance();
            var spread = Spread();
