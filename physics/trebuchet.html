@@ -14,7 +14,8 @@ var diameterOfProjectile = "'Catapult Moments'!B5";
 var range = "'Catapult Moments'!B7";
 var minimumLaunchVelocity = "'Catapult Moments'!B9";
 var springRestLength = 0.078//"'Catapult Constants'!B16";
-
+var springConstant = 1082;
+var momentOfInertia = 0.007;
 var data = "";
 
 window.onload = function() {
@@ -25,8 +26,8 @@ window.onload = function() {
            var theta = LaunchAngle(springRestLength,((springInUprightPos-armInUprightPos)*10)/1000,(40+12.5*armAlongUprightPos)/1000);
            if(theta != undefined) {
              var maxDeflection = MaximumDeflection(springInUprightPos,armInUprightPos,armAlongUprightPos,theta);
-             var distance = MaximumDistance();
-             var spread = Spread();
+             var distance = MaximumDistance(springInUprightPos,armInUprightPos,armAlongUprightPos,theta,maxDeflection);
+             var spread = Spread(springInUprightPos,armInUprightPos,armAlongUprightPos,theta,maxDeflection,distance);
              data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + radToDeg(theta) + "," + radToDeg(maxDeflection) + "," + distance + "," + spread + "\n"; 
           }
         }
@@ -60,11 +61,43 @@ function MaximumDeflection(springInUp,armInUp,armAlongUp,theta) {
   return Math.PI/2 + phi - theta;
 }
   
-function MaximumDistance() {
- return 1;
+function MaximumDistance(springInUp,armInUp,armAlongUp,theta,maxDef) {
+  var currentDef = maxDef;
+  var angularSpeed = 0;
+  var lengthFromCupToPivot = 160 + (numberOfHolesInArm - armAlongUp)*12.5;
+  var lengthFromPivotToSpringAlongArm = 40+12.5*armAlongUp;
+  var lengthFromPivotToSpringAlongUpright = (springInUp - armInUp)*10
+  var l1 = lengthFromCupToPivot / 1000;
+  var l2 = lengthFromPivotToSpringAlongArm / 1000;
+  var l3 = lengthFromPivotToSpringAlongUpright / 1000;
+  var x,y,lengthOfSpring,extensionOfSpring,force,perpForce,springAngle,angularAcceleration,changeInAngle;
+  var timeStep = 0.01//seconds
+  while (currentDef > 0) {
+     //simulate the catapult
+     var currentAngle = theta - currentDef;
+     x = l2*Math.sin(currentAngle);
+     y = l2*Math.cos(currentAngle);
+     lengthOfSpring = Math.sqrt((x*x) + (y-l3)*(y-l3));
+     extensionOfSpring = lengthOfSpring-springRestLength;
+     force = springConstant * extensionOfSpring;
+     springAngle = Math.acos(((l2*l2)+(lengthOfSpring*lengthOfSpring)-(l3*l3))/(2*l2*lengthOfSpring))
+     perpForce = force * Math.sin(springAngle)
+     angularAcceleration = (l2*perpForce)/(momentOfInertia);
+     angularSpeed = angularSpeed + angularAcceleration*timeStep;
+     changeInAngle = angularSpeed * timeStep;
+     currentDef = currentDef - changeInAngle;
+  }
+  
+  var linearVelocity = angularSpeed * l1;
+  var vX = linearVelocity * Math.cos(theta);
+  var vY = linearVelocity * Math.sin(theta);
+  var height = (numberOfHolesInUpright - armInUp)*10;
+  var timeOfFlight = (vY + Math.sqrt(vY*vY - 2*9.806*h))/(2*9.806);
+  return vX*timeOfFlight;
 }
-function Spread() {
- return 2;
+
+function Spread(springInUp,armInUp,armAlongUp,theta,maxDef,dist) {
+ return dist - MaximumDistance(springInUp,armInUp,armAlongUp,theta,maxDef-1);
 }
   
 function radToDeg(x){ return x * 180 / Math.PI}
