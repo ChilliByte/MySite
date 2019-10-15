@@ -26,7 +26,7 @@ window.onload = function() {
            var maxDeflection = MaximumDeflection();
            var distance = MaximumDistance();
            var spread = Spread();
-           data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + theta + "," + maxDeflection + "," + distance + "," + spread + "\n"; 
+           data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + radToDeg(theta) + "," + radToDeg(maxDeflection) + "," + distance + "," + spread + "\n"; 
         };
       }
     }
@@ -43,7 +43,7 @@ function ConfigIsValid(springInUp,armInUp,armAlongUp) {
 }
   
 function LaunchAngle(a,b,c) {
-  return Math.acos((b*b)+(c*c)-(a*a)/(2*b*c)) * 180 / Math.PI; 
+  return Math.acos((b*b)+(c*c)-(a*a)/(2*b*c)); 
 }
   
 function MaximumDeflection() {
@@ -55,6 +55,8 @@ function MaximumDistance() {
 function Spread() {
  return 2;
 }
+  
+function radToDeg(x){ return x * 180 / Math.PI}
   </script>
   </body>
   </html>
