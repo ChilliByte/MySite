@@ -44,6 +44,7 @@ function ConfigIsValid(springInUp,armInUp,armAlongUp) {
   if(springInUp == armInUp) {return false}
   //check if spring is below arm pivot
   if(springInUp < armInUp) {return false}
+  if((springInUp - armInUp)*10 > springRestLength*10 + 40+12.5*armAlongUp ) {return false}
   return true
 }
   
