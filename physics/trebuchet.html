@@ -23,9 +23,9 @@ window.onload = function() {
       for (armAlongUprightPos = 0; armAlongUprightPos < numberOfHolesInArm; armAlongUprightPos++) {
         if(ConfigIsValid(springInUprightPos,armInUprightPos,armAlongUprightPos)){
            var theta = LaunchAngle(springRestLength,(springInUprightPos-armInUprightPos)*10,40+12.5*armAlongUprightPos);
-           var maxDeflection = maxDeflection();
-           var distance = distance();
-           var spread = findSpread();
+           var maxDeflection = MaximumDeflection();
+           var distance = MaximumDistance();
+           var spread = Spread();
            data += armInUprightPos + "," + springInUprightPos + "," + armAlongUprightPos + "," + theta + "," + maxDeflection + "," + distance + "," + spread + "\n"; 
         };
       }
@@ -46,13 +46,13 @@ function LaunchAngle(a,b,c) {
   return Math.acos((b*b)+(c*c)-(a*a)/(2*b*c));
 }
   
-function maxDeflection() {
+function MaximumDeflection() {
   return 0;
 }
-function distance() {
+function MaximumDistance() {
  return 1;
 }
-function findSpread() {
+function Spread() {
  return 2;
 }
   </script>
