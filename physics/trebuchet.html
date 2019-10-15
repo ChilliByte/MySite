@@ -74,7 +74,7 @@ function MaximumDistance(springInUp,armInUp,armAlongUp,theta,maxDef) {
   var timeStep = 0.2//seconds
   while (currentDef > 0) {
      //simulate the catapult
-     var currentAngle = theta - currentDef;
+     var currentAngle = Math.abs(theta - currentDef);
      x = l2*Math.sin(currentAngle);
      y = l2*Math.cos(currentAngle);
      lengthOfSpring = Math.sqrt((x*x) + (y-l3)*(y-l3));
@@ -85,6 +85,7 @@ function MaximumDistance(springInUp,armInUp,armAlongUp,theta,maxDef) {
      angularAcceleration = (l2*perpForce)/(momentOfInertia);
      angularSpeed = angularSpeed + angularAcceleration*timeStep;
      changeInAngle = angularSpeed * timeStep;
+     if(changeInAngle < 0) {alert("error")};
      currentDef = currentDef - changeInAngle;
   }
   
