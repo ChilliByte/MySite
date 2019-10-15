@@ -85,8 +85,7 @@ function MaximumDistance(springInUp,armInUp,armAlongUp,theta,maxDef) {
      angularAcceleration = (l2*perpForce)/(momentOfInertia);
      angularSpeed = angularSpeed + angularAcceleration*timeStep;
      changeInAngle = angularSpeed * timeStep;
-     if(changeInAngle < 0) {alert("error")};
-     currentDef = currentDef - changeInAngle;
+     currentDef = currentDef + changeInAngle;
   }
   
   var linearVelocity = angularSpeed * l1;
