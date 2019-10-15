@@ -45,15 +45,15 @@ function ConfigIsValid(springInUp,armInUp,armAlongUp) {
   if((springInUp - armInUp)*10 > springRestLength*10 + 40+12.5*armAlongUp ) {return false}
   return true
 }
-  
+var countExcel = 0;  
 function LaunchAngle(a,b,c) {
   /*var angle =  Math.acos(((b*b)+(c*c)-(a*a))/(2*b*c)); 
   if (angle > 0 && angle < Math.PI/2) {return angle} 
   else if (angle > Math.PI * 1.5 && angle < 2*Math.PI) {
     return (2*Math.PI - angle)
   }*/
-  
-  return "=acos((" + b + "*" + b + ") + (" + c + "*" + c + ") - (" + a + "*" + a + "))/(2*" + b + "*" + c + "))"  
+  countExcel++;
+  return "=acos(((B"+countExcel+"*B"+countExcel+") + (C"+countExcel+"*C"+countExcel+") - (A"+countExcel+"*A"+countExcel+"))/(2*B"+countExcel+"*C"+countExcel+"))";  
 }
   
 function MaximumDeflection(springInUp,armInUp,armAlongUp,theta) {
