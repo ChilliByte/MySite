@@ -28,8 +28,10 @@ window.onload = function() {
              var maxDeflection = MaximumDeflection(springInUprightPos,armInUprightPos,armAlongUprightPos,theta);
              var distance = MaximumDistance(springInUprightPos,armInUprightPos,armAlongUprightPos,theta,maxDeflection);
              var spread = Spread(springInUprightPos,armInUprightPos,armAlongUprightPos,theta,maxDeflection,distance);
-             data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + radToDeg(theta) + "," + radToDeg(maxDeflection) + "," + distance + "," + spread + "\n"; 
-          }
+           }
+           else {theta = "";maxDeflection="";spread=""}  
+           data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + radToDeg(theta) + "," + radToDeg(maxDeflection) + "," + distance + "," + spread + "\n"; 
+          
         }
       }
     }
