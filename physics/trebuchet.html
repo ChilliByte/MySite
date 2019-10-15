@@ -28,10 +28,8 @@ window.onload = function() {
              var maxDeflection = MaximumDeflection(springInUprightPos,armInUprightPos,armAlongUprightPos,theta);
              var distance = MaximumDistance(springInUprightPos,armInUprightPos,armAlongUprightPos,theta,maxDeflection);
              var spread = Spread(springInUprightPos,armInUprightPos,armAlongUprightPos,theta,maxDeflection,distance);
+             data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + radToDeg(theta) + "," + radToDeg(maxDeflection) + "," + distance + "," + spread + "\n"; 
            }
-           else {var theta = -Math.PI/2,maxDeflection=0,spread=Infinity;}  
-           data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + radToDeg(theta) + "," + radToDeg(maxDeflection) + "," + distance + "," + spread + "\n"; 
-          
         }
       }
     }
@@ -65,7 +63,6 @@ function MaximumDeflection(springInUp,armInUp,armAlongUp,theta) {
 }
   
 function MaximumDistance(springInUp,armInUp,armAlongUp,theta,maxDef) {
-   return 0;
   var currentDef = maxDef;
   var angularSpeed = 0;
   var lengthFromCupToPivot = 160 + (numberOfHolesInArm - armAlongUp)*12.5;
@@ -76,6 +73,8 @@ function MaximumDistance(springInUp,armInUp,armAlongUp,theta,maxDef) {
   var l3 = lengthFromPivotToSpringAlongUpright / 1000;
   var x,y,lengthOfSpring,extensionOfSpring,force,perpForce,springAngle,angularAcceleration,changeInAngle;
   var timeStep = 0.2//seconds
+  console.log(l1,l2,l3);
+  return 0;
   while (currentDef > 0) {
      //simulate the catapult
      var currentAngle = Math.abs(theta - currentDef);
