@@ -13,7 +13,8 @@ var massOfProjectile = "'Catapult Moments'!B3";
 var diameterOfProjectile = "'Catapult Moments'!B5";
 var range = "'Catapult Moments'!B7";
 var minimumLaunchVelocity = "'Catapult Moments'!B9";
-var springRestLength = 0.078//"'Catapult Constants'!B16";
+var springRestLength = 0.078//
+var springRef = "'Catapult Constants'!B16";
 var springConstant = 1082;
 var momentOfInertia = 0.007;
 var data = "";
@@ -53,7 +54,7 @@ function LaunchAngle(a,b,c) {
     return (2*Math.PI - angle)
   }*/
   countExcel++;
-  return "=acos(((B"+countExcel+"*B"+countExcel+") + (C"+countExcel+"*C"+countExcel+") - (A"+countExcel+"*A"+countExcel+"))/(2*B"+countExcel+"*C"+countExcel+"))";  
+  return "=acos(((((A"+countExcel+"-B"+countExcel+")/100)*((A"+countExcel+"-B"+countExcel+")/100)) + ((40+12.5*C"+countExcel+")/1000)*((40+12.5*C"+countExcel+")/1000)) - ("+springRef+"*"+springRef+"))/(2*((A"+countExcel+"-B"+countExcel+")/100)*((40+12.5*C"+countExcel+")/1000))))";  
 }
   
 function MaximumDeflection(springInUp,armInUp,armAlongUp,theta) {
