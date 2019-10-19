@@ -26,7 +26,7 @@ window.onload = function() {
         if(ConfigIsValid(springInUprightPos,armInUprightPos,armAlongUprightPos)){
            var theta = LaunchAngle(springRestLength,((springInUprightPos-armInUprightPos)*10)/1000,(40+12.5*armAlongUprightPos)/1000);
            if(theta != undefined) {
-             var maxDeflection = MaximumDeflection(springInUprightPos,armInUprightPos,armAlongUprightPos,theta);
+             var maxDeflection = MaximumDeflection(springRestLength,((springInUprightPos-armInUprightPos)*10)/1000,(40+12.5*armAlongUprightPos)/1000,springInUprightPos,armInUprightPos,armAlongUprightPos);
              var distance = MaximumDistance(springInUprightPos,armInUprightPos,armAlongUprightPos,theta,maxDeflection);
              var spread = Spread(springInUprightPos,armInUprightPos,armAlongUprightPos,theta,maxDeflection,distance);
              data += springInUprightPos + "," + armInUprightPos + "," + armAlongUprightPos + "," + radToDeg(theta) + "," + radToDeg(maxDeflection) + "," + distance + "," + spread + "\n"; 
@@ -57,12 +57,17 @@ function LaunchAngle(a,b,c) {
   return "=acos(((((A"+countExcel+"-B"+countExcel+")/100)*((A"+countExcel+"-B"+countExcel+")/100)) + ((40+12.5*C"+countExcel+")/1000)*((40+12.5*C"+countExcel+")/1000)) - ("+springRef+"*"+springRef+"))/(2*((A"+countExcel+"-B"+countExcel+")/100)*((40+12.5*C"+countExcel+")/1000))))";  
 }
   
-function MaximumDeflection(springInUp,armInUp,armAlongUp,theta) {
+function MaximumDeflection(a,b,c,springInUp,armInUp,armAlongUp) {
+  var angle =  Math.acos(((b*b)+(c*c)-(a*a))/(2*b*c)); 
+  if (angle > 0 && angle < Math.PI/2) {return angle} 
+  else if (angle > Math.PI * 1.5 && angle < 2*Math.PI) {
+    return (2*Math.PI - angle)
+  }
   len = 160 + (numberOfHolesInArm - armAlongUp)*12.5;
   h = (numberOfHolesInUpright - armInUp)*10
   d = Math.sqrt((len*len)-(h*h))
   phi = Math.asin(d/len);
-  return Math.PI/2 + phi - theta;
+  return Math.PI/2 + phi - angle;
 }
   
 function MaximumDistance(springInUp,armInUp,armAlongUp,theta,maxDef) {
