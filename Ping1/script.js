@@ -3,7 +3,7 @@ const graphDiv = document.getElementById("graph");
 
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
-  setInterval(main, 50);
+  setInterval(main, 100);
 });
 
 var labels = [
