@@ -50,7 +50,7 @@ var currentChart = new Chart(
 ); 
 
 function main() {
-	//ahah("IMUdata.json","data");
+	ahah("IMUdata.json","data");
 } 
 
 function back() {
