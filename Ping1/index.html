@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PING1 GUI</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Varela+Round&display=swap" rel="stylesheet">
+	
+	<script src="ahah.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div id="mainWindow">
+	<canvas id="anim"></canvas>
+	<div id="graph"> 
+		<div class="chart-container" style="position: relative; height:85vh; width:70vw">
+			<canvas id="chart"></canvas>
+		</div>
+		<hr />
+		<button onclick="back()">Back to 3D render</button>
+	</div>
+</div>
+
+<aside>
+<h1>PING 1 Prototype Data</h1>
+<p>Click on the categories below to view its related IMU data, plotted on a graph.</p>
+<hr />
+<h2>Rig</h2>
+<ul>
+  <li><a onclick="clickhandler('rigRawData')">Raw Data</a></li>
+  <li><a onclick="clickhandler('rigAccel')">Acceleration</a></li>
+  <li><a onclick="clickhandler('rigGyro')">Rotation</a></li>
+  <li><a onclick="clickhandler('rigForces')">Forces</a></li>
+  <li><a onclick="clickhandler('rigVelocity')">Velocity</a></li>
+  <li><a onclick="clickhandler('rigMotion')">Movement</a></li>
+</ul>
+<h2>Arm</h2>
+<ul>
+  <li><a onclick="clickhandler('armRawData')">Raw Data</a></li>
+  <li><a onclick="clickhandler('armAccel')">Acceleration</a></li>
+  <li><a onclick="clickhandler('armGyro')">Rotation</a></li>
+  <li><a onclick="clickhandler('armForces')">Forces</a></li>
+  <li><a onclick="clickhandler('armVelocity')">Velocity</a></li>
+  <li><a onclick="clickhandler('armMotion')">Movement</a></li>
+</ul>
+<h2>Ball</h2>
+<table>
+<tbody>
+  <tr>
+    <td>Ball Speed <br />(mph):</td>
+    <td><input type="number" id="ballSpeed" min="0"></td>
+    <td>Launch <br /> Angle (deg):</td>
+	<td><input type="number" id="launchAngle" min="0" max="90"></td>
+  </tr>
+  <tr>
+    <td>Push/Pull:</td>
+    <td><input type="text" id="pushPull"></td>
+    <td>Carry <br />(yds):</td>
+    <td><input type="number" id="carry" min="0"></td>
+  </tr>
+  <tr>
+    <td>Side Spin: </td>
+    <td><input type="text" id="sideSpin"></td>
+    <td>Back Spin:<br/>RPM</td>
+    <td><input type="number" id="backSpin" min="0"></td>
+  </tr>
+</tbody>
+</table>
+</aside>
+<div id="data"></div>
+<script src="script.js"></script>
+</body>
+</html>
