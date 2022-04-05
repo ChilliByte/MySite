@@ -9,7 +9,7 @@ from threading import Timer
 host_name = 'ping1.local'  # Change this to your Raspberry Pi IP address
 host_port = 49000
 
-def dataHandler(): 
+def dataHandler(s): 
 	s.send_response(200)
 	s.send_header("Content-type", "application/json")
 	s.end_headers()
@@ -23,8 +23,7 @@ class MyServer(BaseHTTPRequestHandler):
 	
 	def do_GET(self):
         if self.path == '/imuData':
-      		dataHandler()
-		raise HardwareInterrupt	
+      		dataHandler(self)
 		self.send_response(200)
 
 if __name__ == '__main__':
