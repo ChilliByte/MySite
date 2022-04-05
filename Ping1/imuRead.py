@@ -1,4 +1,4 @@
-import SocketServer
+import socketserver
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 from mpu6050 import mpu6050
@@ -13,7 +13,7 @@ def dataHandler(s):
 	s.send_response(200)
 	s.send_header("Content-type", "application/json")
 	s.end_headers()
-    s.wfile.write('{"time": 1649089213986,"imu1": {"ax": "0","ay": "-1","az": "-1","rx": "46","ry": "105","rz": "58","temp": "38"},"imu2": {"ax": "-1","ay": "0","az": "0","rx": "95","ry": "-105","rz": "138","temp": "42"}}') 
+    s.wfile.write('{"time": 1649089213986,"imu1": {"ax": "0","ay": "-1","az": "-1","rx": "46","ry": "105","rz": "58","temp": "38"},"imu2": {"ax": "-1","ay": "0","az": "0","rx": "95","ry": "-105","rz": "138","temp": "42"}}'.encode('utf-8')) 
 
 class MyServer(BaseHTTPRequestHandler):
     def do_HEAD(self):
@@ -22,7 +22,14 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
 	
 	def do_GET(self):
-        if self.path == '/imuData':
+        if self.path == '/home':
+			f = open("index.html") 
+            self.send_response(200)
+            self.send_header('Content-type',    'text/html')
+            self.end_headers()
+            self.wfile.write(f.read())
+            f.close()
+		if self.path == '/imuData':
       		dataHandler(self)
 		self.send_response(200)
 
