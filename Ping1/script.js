@@ -1,9 +1,30 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+
 const animCanvas = document.getElementById("anim");
 const graphDiv = document.getElementById("graph");
 
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
   setInterval(main, 300);
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color('skyblue');
+  const fov = 35; // AKA Field of View
+  const aspect = animCanvas.clientWidth / animCanvas.clientHeight;
+  const near = 0.1; // the near clipping plane
+  const far = 100; // the far clipping plane
+  const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.set(0, 0, 10);
+  const geometry = new THREE.BoxBufferGeometry(2, 2, 2);
+  const material = new THREE.MeshBasicMaterial();
+  const cube = new THREE.Mesh(geometry, material);
+  scene.add(cube);
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.append(renderer.domElement);
+  
+  const controls = new OrbitControls( camera, renderer.domElement );  
 });
 
 var labels = [
@@ -50,7 +71,9 @@ var currentChart = new Chart(
 ); 
 
 function main() {
-	ahah("IMUdata.json","data");
+	cube.rotation.x -= 0.02;
+	cube.rotation.y -= 0.02;
+	renderer.render(scene, camera);
 } 
 
 function back() {
