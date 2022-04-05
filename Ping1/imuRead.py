@@ -6,6 +6,9 @@ import time
 import RPi.GPIO as GPIO
 from threading import Timer
 
+host_name = 'ping1.local'  # Change this to your Raspberry Pi IP address
+host_port = 49000
+
 def dataHandler(): 
 	s.send_response(200)
 	s.send_header("Content-type", "application/json")

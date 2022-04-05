@@ -65,10 +65,7 @@ var config = {
 	plugins: [plugin]
 };
   
-var currentChart = new Chart(
-    document.getElementById('chart'),
-    config
-); 
+var currentChart = new Chart(document.getElementById('chart'),config); 
 
 function main() {
 	cube.rotation.x -= 0.02;
